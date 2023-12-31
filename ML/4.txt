@@ -1,0 +1,1437 @@
+3
+2
+0
+2
+
+c
+e
+D
+6
+1
+
+]
+L
+M
+
+.
+t
+a
+t
+s
+[
+
+1
+v
+0
+7
+2
+0
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Random Models for Fuzzy Clustering Similarity
+Measures
+
+Ryan DeWolfe1 and Jeffrey L. Andrews1
+
+1University of British Columbia – Okanagan Campus, Kelowna,
+BC, Canada
+
+Abstract
+
+The Adjusted Rand Index (ARI) is a widely used method for com-
+paring hard clusterings, but requires a choice of random model that is
+often left implicit. Several recent works have extended the Rand Index
+to fuzzy clusterings, but the assumptions of the most common random
+model is difficult to justify in fuzzy settings. We propose a single frame-
+work for computing the ARI with three random models that are intuitive
+and explainable for both hard and fuzzy clusterings, along with the ben-
+efit of lower computational complexity. The theory and assumptions of
+the proposed models are contrasted with the existing permutation model.
+Computations on synthetic and benchmark data show that each model
+has distinct behaviour, meaning that accurate model selection is impor-
+tant for the reliability of results.
+
+1
+
+Introduction
+
+In unsupervised clustering, where true labels do not technically exist and accu-
+racy is poorly defined, it is still useful to compare the results of several cluster
+analyses. These techniques are called external comparison/validity indices and
+are used to measure the similarity of two clustering results. Clustering algo-
+rithm performance is often reported in terms of the ability to produce a clus-
+tering that is similar to some known clustering that is treated as correct. With
+the variety of external comparison indices, each having particular assumptions
+and behaviours, it is not rare to see several used in simulation studies without
+any attempt to indicate which index is the most meaningful for the situation.
+
+A popular external comparison index is the Rand index [1], the proportion of
+
+Support for this work was provided by the Natural Sciences and Engineering Research
+Council of Canada Discovery Grants program (RGPIN-2020-04646, Dr. Jeffrey L. Andrews)
+
+1
+
+ 
+ 
+ 
+ 
+ 
+ 
+pairs of points that both clustering algorithms agree on the answer to: are these
+points in the same cluster? The maximum of the Rand index is 1, and is ob-
+tained by identical clustering results (up to a permutation of labels). However,
+even cluster allocations performed at random often have large Rand index val-
+ues, making it difficult to determine if clustering algorithms are finding similar
+structures. To rectify this, the Rand index was adjusted for chance [2] via
+
+ARI =
+
+RI − Emodel[RI]
+max[RI] − Emodel[RI]
+
+.
+
+(1)
+
+Here, a value of 1 still represents maximum similarity, but 0 now represents the
+level of expected similarity if the cluster allocations had been chosen at random.
+Of course ‘at random’ is not well defined, and several models for adjustment
+have been suggested in the hard clustering literature ([3], [2], [4]).
+
+Some clustering approaches, such as mixture model-based ([5], [6]), produce
+fuzzy or probabilistic cluster allocations.
+In these cases, points can partially
+belong to several clusters, allowing for the algorithm to provide uncertainty in
+the allocations. This type of clustering result also benefits from external com-
+parison indices, and there have been several extensions of the Rand Index to
+fuzzy cluster allocations ([7], [8], [9], [10]). One random model — the permuta-
+tion model — has been used as a fuzzy extension to the adjusted Rand index
+([7], [11]), but in the fuzzy realm where cluster sizes are not well defined, the
+assumptions of this model become muddled and difficult to justify.
+
+In this paper, we propose a unified approach to extending the original multi-
+nomial model [4] to fuzzy allocations in such a way the it can mimic two of
+the hard adjustment models [3], along with assumptions that transfer cleanly
+to fuzzy clustering. Section 2 defines the Rand index and examines previously
+proposed models for hard clustering. Some extensions of the Rand index to
+probabilistic clustering are summarized in Section 3. Our models, along with
+some theory, are presented in Section 4 with benchmarks and simulations in
+Section 5. Finally, we summarize the performance of our models and suggest
+some directions for future work in Section 6.
+
+2 Hard Random Models
+
+2.1 The Rand Index
+
+Definition 1 (Clustering)
+Let I be an index set of the points being clustered. A clustering of I into up
+to n clusters is a function C : I → [0, 1]n.
+
+• Any clustering can be considered possibilistic.
+
+• C is a fuzzy or probabilistic clustering if Image(C) ⊂ ∆n−1. The n − 1
+
+2
+
+dimensional canonical simplex ∆n−1 is the set of vectors in [0, 1]n whose
+coordinates sum to 1.
+
+• C is a hard clustering if ∀i ∈ I, C(i) contains one 1 and the rest are 0.
+
+The Rand index [1] is a measure of similarity between two hard clustering
+results with a maximum of 1 denoting perfect similarity. There are many equiv-
+alent formulations of the Rand index so we will provide the original equation
+and a reformulation that will be useful in Sections 3 and 4.
+
+Let P = {{p1, p2}|p1 < p2 ∀ p1, p2 ∈ I} be the unordered two element subsets
+of I. Let C1 and C2 be hard cluster allocations. Partition P as follows:
+
+• p ∈ A if C1(p1) = C1(p2) and C2(p1) = C2(p2).
+
+• p ∈ B if C1(p1) = C1(p2) and C2(p1) ̸= C2(p2).
+
+• p ∈ C if C1(p1) ̸= C1(p2) and C2(p1) = C2(p2).
+
+• p ∈ D if C1(p1) ̸= C1(p2) and C2(p1) ̸= C2(p2).
+
+Definition 2 (Rand Index)
+
+RI(C1, C2) =
+
+|A| + |D|
+|A| + |B| + |C| + |D|
+
+=
+
+|A| + |D|
+(cid:1)
+(cid:0)|I|
+2
+
+(2)
+
+The set A∪D is called the concordant pairs and B∪C the discordant pairs.
+A pair p is concordant if C1 and C2 have the same answer to the question: Are
+p1 and p2 in the same cluster? This is the context of the original formulation
+[1].
+
+In an equivalent formulation we require two functions to sort the concordant
+pairs. The first in an intra-clustering agreement function that will measure
+whether two points are placed into the same cluster. The second is an inter-
+cluster concordance function which will measure the similarity of the agreement
+value from the two clustering results.
+Definition 3 (Agreement)
+An agreement function aC : P → [0, 1] is any function such that
+
+1. C(p1) = C(p2) =⇒ aC(p) = 1
+
+2. C(p1) ̸= C(p2) =⇒ aC(p) = 0
+
+Definition 4 (Concordance)
+
+concC1,C2 (p) =
+
+(cid:40)
+
+1 aC1 (p) = aC2 (p)
+0 aC1 (p) ̸= aC2 (p)
+
+(3)
+
+3
+
+In general we will exclude the subscripts where the clustering(s) under consid-
+
+eration are arbitrary or evident given the situation.
+Definition 5 (Equivalent Rand Index)
+An equivalent formulation of the Rand index is the expectation of the concor-
+dance function over a uniform distribution on the set P.
+
+RI = E[conc]
+
+(4)
+
+While both formulations are identical for hard cluster allocations, the agree-
+ment and concordance functions can be easily extended to consider fuzzy mem-
+bership vectors and less than perfect agreement. Several such extensions have
+been proposed and will be reviewed in Section 3.
+
+2.2 Permutation Model
+
+The most common model for adjusting the Rand index is the permutation
+model, proposed in by Hubert and Arabie in 1985 [2]. A random clustering
+is selected by applying a random permutation to the set I selected with uni-
+form probability. This random model has the effect of fixing both the number
+and size of clusters to those in C1 and C2.
+
+Given hard clustering C1, let c(1) be a vector of length n, with each ci counting
+the number of points with the one in dimension i from C1. Similarly define c(2)
+given C2. Let N = |P| = (cid:0)|I|
+(cid:1) be the number of pairs. The expectation of the
+2
+rand index under the permutation model is as follows.
+
+EP erm[RI] =
+
+(cid:80)
+i
+
+(cid:0)c(1)
+i
+2
+
+(cid:1) ∗ (cid:80)
+
+i
+
+(cid:0)c(2)
+i
+2
+
+(cid:1) +
+
+(cid:16)
+
+N − (cid:80)
+i
+
+(cid:0)c(1)
+i
+2
+
+(cid:1)(cid:17)
+
+(cid:16)
+
+∗
+
+N − (cid:80)
+i
+
+(cid:0)c(2)
+i
+2
+
+(cid:1)(cid:17)
+
+N
+
+(5)
+
+This model is widely used and many properties have been explored in previous
+papers ([12], [13], [14], [15]). However, the model is quite restrictive and the
+assumptions are not always reasonable. For example, the K-means algorithm
+[16] fixes the number, but not the size, of clusters. Thus, the permutation model
+does not consider all possible cluster allocations that could have reasonably been
+produced by the K-means algorithm, as mentioned in [3].
+
+2.3 Categorical/Multinomial
+
+The first proposed random model was presented in 1984 [4] and assumed the
+cluster size vector c follows a multinomial distribution. This model is usually
+presented in terms of the multinomial random variable, but for following sections
+it is useful to decompose it into a sum of categorical random variables. For
+consistency, first let us define a categorical random variable.
+
+4
+
+Definition 6 (Categorical Random Variable)
+A categorical random variable Cat with n categories, parameterized by a vector
+pi ∈ ∆n−1 has the following distribution.
+
+P (Cat = ei) = pi where ei is a n dimensional vector with a 1 in the ith
+dimension and 0 elsewhere.
+
+Given cluster allocations C1 and C2 with n1 and n2 number of clusters re-
+spectively, categorical variables Cat1 and Cat2 are parameterized by cluster
+proportion vectors p1 = c(1)
+|I| . Pairs of random cluster allocations
+are generated by assigning each i ∈ I an independently sampled membership
+vector from Cat1 and Cat2. The expectation can then be calculated.
+
+|I| and p2 = c(2)
+
+ECat[RI] =
+
+n1(cid:88)
+
+n2(cid:88)
+
+(cid:16)
+
+i=1
+
+j=1
+
+p(1)
+i
+
+(cid:17)
+
+(cid:16)
+
+∗
+
+p(2)
+j
+
+(cid:17)
+
++
+
+(cid:16)
+
+1 − p(1)
+
+i
+
+(cid:17)
+
+(cid:16)
+
+∗
+
+1 − p(2)
+
+j
+
+(cid:17)
+
+(6)
+
+Every pair of cluster allocations with up to n1 and n2 clusters is present in
+this model, but the probability is not evenly distributed. Up to a permutation
+of cluster labels, it is more likely that cluster allocations with close to n1 and
+n2 clusters will be chosen. The assumptions are less rigid, but the proportion
+vectors p ensures that randomly chosen allocations are likely to have similar
+number and size of clusters to the originals.
+
+Written in this format, it is clear that what Morey and Agresti were consid-
+ering is that the points are randomly (independently) assigned clusters. Each
+point’s random membership vector being independent is a powerful feature that
+is unique to this model. In Section 4, we will leverage this independence to sim-
+plify the expectation calculation. While this model is significantly less used than
+the permutation model, it does have some studies comparing its performance
+to the permutation model ([13], [17]).
+
+2.4 Num and All
+
+To relax the assumptions of the permutation model, Gates and Ahn [3] proposed
+two more random allocation models.
+In the first model, Num , a random
+clustering is selected from C by uniformly selecting from all possible cluster
+allocations (up to a permutation of labels) of I into n clusters. In this model,
+the number of clusters is assumed to match the number of clusters observed,
+but the cluster sizes can vary.
+
+EN um[RI] =
+
+S(N − 1, n1)
+S(N, n1)
+
+S(N − 1, n2)
+S(N, n2)
+
+(cid:18)
+
++
+
+1 −
+
+S(N − 1, n1)
+S(N, n1)
+
+(cid:19) (cid:18)
+
+1 −
+
+(cid:19)
+
+S(N − 1, n2)
+S(N, n2)
+(7)
+
+5
+
+EN um[RI] ≈
+
+1
+n1 ∗ n2
+
+(cid:18)
+
++
+
+1 −
+
+(cid:19) (cid:18)
+
+1 −
+
+1
+n1
+
+(cid:19)
+
+1
+n2
+
+(8)
+
+Where S(|I|, n) is the Stirling number of the second kind, the number of ways
+to partition a set of size |I| into n clusters. Stirling numbers become difficult
+to compute with large n, so Gates and Ahn suggest approximating S which is
+used is Equation 8.
+
+The second model is All, where a clustering is selected uniformly from every
+
+possible clustering of I (implicitly into up to |I| clusters):
+
+EAll[RI] =
+
+(cid:18) BN −1
+BN
+
+(cid:19)2
+
+(cid:18)
+
++
+
+1 −
+
+(cid:19)2
+
+BN −1
+BN
+
+(9)
+
+Where BN is the Bell number BN = (cid:80)N
+
+i=1 S(N, i).
+
+These models, along with the permutation model, provide varying levels of as-
+sumptions that consider different sets of random clusters. Shown above are the
+two-sided adjustments where both clustering results are randomized. A com-
+mon use for similarity indices is benchmarking, where one of the allocations is
+held known and fixed. In these cases, one-sided models are considered advanta-
+geous. Gates and Ahn provide one sided formulas for Num and All , but to our
+knowledge a one sided categorical model has not been previously studied.
+
+3 Fuzzy Rand Extensions
+
+Several clustering algorithms, such as mixture models, result in fuzzy cluster
+allocations to reflect uncertainty or overlap. As these results also benefit from
+comparison measures, there are several extensions of the Rand index to han-
+dle fuzzy clustering results. Since hard allocations are quite limited, and the
+Rand index has many equivalent formulations when extended to the proba-
+bilistic space. We consider a fuzzy Rand extension to be an Agreement-
+Concordance Type Rand Extension if it can be written in the form of
+Definition 5 with appropriate extensions of agreement and concordance. It is
+possible to create other types of fuzzy rand extensions, ([7],[18]), but our method
+relies on the structure of the expectation calculation.
+
+3.1 Brouwer
+
+Brouwer [8] uses the cosine similarity as the agreement function.
+
+aC(p) =
+
+C(p1)
+||C(p1)||2
+
+·
+
+C(p2)
+||C(p2)||2
+
+6
+
+And a concordance function
+
+conc(p) = aC1(p)aC2(p) + (1 − aC1 (p))(1 − aC2(p))
+
+This choice of a maintains our expected boundary behaviour and has some
+nice metric properties. The conc function is an extension, but it does not have
+necessary properties in the interior. If both agreements are less than 1, even
+if they are equal, the concordance is less than 1. This choice of concordance
+makes the index not reflexive, meaning identical clustering results do not always
+produce the maximum index. This maximum decreases as the ‘fuzziness’ of
+the allocation increases, which Andrews et al.
+[7] propose a fix for with the
+‘Frobenius adjusted Rand index’.
+
+3.2 NDC and ACI
+
+Hullermeier et al.
+[10] proposed a reflexive Rand extension, the Normalized
+Degree of Concordance or NDC. The construction works for any proper
+metric || · || on [0, 1]n, but only the ℓ1 norm has been used in simulations.
+
+aC(p) = 1 −
+
+||C(p1) − C(p2)||1
+2
+
+conc(p) = 1 − |aC1(p) − aC2 (p)|
+
+(10)
+
+(11)
+
+The ℓ1 metric is intuitive since identical vectors always have perfect agreement.
+Furthermore, if we view fuzzy membership vectors as probabilities of cluster
+membership, the probability that points with orthogonal membership vectors
+will be placed in the same cluster is 0.
+
+The NDC was corrected for chance using the permutation model by D’Ambrosio
+et al. [11] to create the Adjusted Concordance Index (ACI). Andrews et al.
+[7] then provided a reasonably fast algorithm for the exact computation of the
+ACI with run time O(N 2logN ).
+
+4 Dirichlet Random Models
+
+Despite its popularity and extensive study for hard cluster allocations, the as-
+sumptions of the permutation model do not transfer well to probabilistic clus-
+tering. For hard clustering, fixing the number and size of clusters is intuitive,
+but for fuzzy clustering, sizes of clusters are less well defined. Permuting a fixed
+set of membership vectors is very restrictive, and many reasonable clustering
+results are never considered under this model. Furthermore, it is unclear in
+what situation the permutation model correctly matches the assumptions in
+
+7
+
+the clustering algorithm, since selecting the available set of fuzzy membership
+vectors before clustering would be problematic.
+
+In this section, we will describe extending the categorical random model to the
+fuzzy realm using Dirichlet random variables. The assumptions of these models
+are simple to explain and justify. The underlying Dirichlet random variable
+will be selected to convey some assumptions about what other clustering results
+should be considered feasible. First, we will develop the theory for any proba-
+bility distribution on the simplex with any extended concordance functions, and
+then we will introduce the Fit, Sym, and Flat random models.
+
+4.1 Theory
+
+Suppose we are creating random cluster allocations by sampling i.i.d member-
+ship vectors from distribution D1, D2 supported on simplices ∆1, ∆2. Let f
+and g be their respective probability density functions. The key to these mod-
+els is the random membership vectors are independent and identical samples
+from these distributions. Since each pair is equally likely, we can calculate the
+expected concordance over the whole clustering by only considering one pair.
+Furthermore, the independent membership vectors mean the 4 condition prob-
+ability can be split into the product of the individual probabilities.
+
+ED1,D2 [conc]
+1
+N
+
+(cid:88)
+
+P
+
+P (C1(p1) = z11 ∧ C1(p2) = z12 ∧ C2(p1) = z21 ∧ C2(p2) = z22) conc(z11, z12, z21, z22)
+
+=
+
+=P (C1(p1) = z11) P (C1(p2) = z12) P (C2(p1) = z21) P (C2(p2) = z22) conc(z11, z12, z21, z22)
+
+(cid:90)
+
+(cid:90)
+
+(cid:90)
+
+(cid:90)
+
+=
+
+∆1
+
+∆1
+
+∆2
+
+∆2
+
+f (z11)f (z12)g(z21)g(z22)conc(z11, z12, z21, z22)dz11dz12dz21dz22
+
+(12)
+
+With equation 12 we can compute the expected value of any Agreement-
+Concordance Type Rand extension given two distributions with which to create
+random clusterings. Equation 12 is generally not available in closed form, and
+the total dimension of integration, 2∗n1 +2∗n2, is a barrier to computation. We
+will discuss the implemented and explored approximation methods in Section
+5.1.
+
+4.2 Dirichlet Models
+
+By replacing the random variable from the Categorical model with a Dirich-
+let random variable, we can easily extend the model to consider fuzzy cluster
+allocations.
+Definition 7
+A random variable X with support on the the open n − 1 canonical simplex
+
+8
+
+follows the Dirichlet distribution X ∼ Dir(α) if the pdf is given by
+
+f (x) =
+
+1
+B(α)
+
+n
+(cid:89)
+
+i=1
+
+xαi−1
+i
+
+B(α) =
+
+(cid:81)n
+Γ((cid:80)n
+
+i=1 Γ(αi)
+i=1 αi)
+
+(13)
+
+(14)
+
+Where α is a n dimensional vector with positive entries, called the concentra-
+tion vector. If all coordinates in α are equal, X is a Symmetric Dirichlet, as
+there is no preference for any coordinate. Finally, if all entries in α are 1, X
+is a Flat Dirichlet. The flat Dirichlet is the uniform probability distribution
+across the open simplex.
+
+It’s worth noting that this distribution will never produce a hard membership
+vector as part of the model. However, since we will be integrating we do not need
+the function defined on the boundary. In this sense, every possible clustering
+with up to n clusters will be considered, even those with fewer clusters (i.e. the
+probability that no points belong to the ith cluster more than ε is non-zero).
+Additionally, the limit of a sequence of Dirichlet distributions with α → 0 is
+a categorical distribution with a parameter vector pi = lim αi
+. This makes
+(cid:80)
+the Dirichlet distribution a natural extension of the categorical distribution
+previously used for the hard case by Morey and Agresti [4].
+
+i αi
+
+We now propose the three fuzzy models.
+
+• Fit D1 and D2 are the maximum likelihood estimated Dirichlet distribu-
+
+tions from the observed cluster allocations C1 and C2.
+
+• Sym D1 and D2 are the maximum likelihood estimated symmetric Dirich-
+
+let distributions from the observed cluster allocations C1 and C2.
+
+• Flat D1 and D2 are flat Dirichlet distributions with the same number of
+
+dimensions as clusters in C1 and C2 respectively.
+
+Fit is a true fuzzy extension of the hard categorical model, in the sense when the
+observed cluster allocations C1 and C2 are hard (or sufficiently close), the max-
+imum likelihood estimated Dirichlet distributions will be the appropriately pa-
+rameterized categorical distribution (or sufficiently close). Compared to the pre-
+viously proposed models, Fit is obviously most similar to the multinomial/categorical
+model, but it can also be seen as similar to the permutation model. The assump-
+tions in the permutation model is that random models have the same number
+of clusters and cluster sizes. While the Fit model does consider other values for
+the two assumptions, it is more likely that a random cluster allocation will have
+similar number of clusters and cluster sizes, especially as |I| >> n.
+
+9
+
+The Sym model makes an assumption about the number of clusters, but not
+about the cluster sizes. It is more likely that the clusters will have equal sizes
+but that is a result of the nature of independently assigning cluster labels. If the
+cluster allocations C1 and C2 are hard, the distributions will be evenly weighted
+n into equation 6, we see that the
+categorical distributions.
+expectation for Sym is the same as the approximation given for Num . When
+|I| >> n, the probability that a random clustering from Sym will have fewer
+than n clusters is extremely small so the distribution of models Sym and Num
+is quite similar, but ours can be easily extended to fuzzy cluster allocations.
+The arguments proposed by Gates and Ahn [3] for selecting between Num and
+Perm also apply to choosing between Sym and Fit, and apply seamlessly to
+fuzzy cluster allocations as well.
+
+Inserting pi = 1
+
+The Flat model does not have an analogous hard model, but can be considered
+as having the fewest amount of assumptions. It is not well defined what the
+maximum number of clusters in a fuzzy scenario would be, since there could be
+more clusters than points, so the cluster number model parameter is necessary.
+This model includes no information about preferred fuzziness nor cluster sizes.
+
+In addition, all three models can have one-sided variants where only one of
+the cluster allocations is random and always compared to a fixed C2. Instead
+of integrating over all possible pairs of membership vectors, we sum over the
+observed pairs for clustering C2.
+
+ED1,C2[conc] =
+
+1
+N
+
+(cid:90)
+
+(cid:88)
+
+(cid:90)
+
+P
+
+∆1
+
+∆1
+
+4.3 Stability
+
+f1(z11)f2(z12)conc (z11, z12, C2(p1), C2(p2)) dz11dz12
+
+(15)
+
+Unfortunately, the Dirichlet distribution does not have a closed-form maximum
+likelihood estimator, and must be solved iteratively. Several estimation methods
+are described by Minka[19], with up to quadratic convergence to the true param-
+eters. Thus, it is important that our estimations of the Dirichlet distributions
+used in the calculation do not have large effects on the results. We show that
+the expected index is indeed stable with respect to the Dirichlet distributions
+used, and close estimations will provide accurate results. The proof is presented
+in Appendix A
+Proposition 4.1 (Stability)
+Let ˜D1 be an approximation of the distribution D1 with support on ∆1, with
+pdf ’s ˜f and f respectively, such that
+
+(cid:90)
+
+∆1
+
+(cid:12)
+(cid:12)
+(cid:12)
+
+(cid:12)
+˜f (x) − f (x)
+(cid:12)
+(cid:12) dx <
+
+ε
+4
+
+10
+
+Similarly for ˜D2, D2, ˜g, and g on ∆2 such that
+
+(cid:90)
+
+∆2
+
+|˜g(x) − g(x)| dx <
+
+ε
+4
+
+Then,
+
+(cid:12)
+(cid:12)
+(cid:12)
+
+E ˜D1, ˜D2
+
+[conc] − ED1,D2[conc]
+
+(cid:12)
+(cid:12)
+(cid:12) < ε
+
+(16)
+
+5 Benchmark and Simulation
+
+5.1 Computational Considerations
+
+The required computation for the proposed adjustment models can be consid-
+ered in two parts; finding the Dirichlet parameters, and calculating the expected
+index. The first part has been studied previously in Minka [19] and makes use
+of the convexity of the log-likelihood function of the Dirichlet distribution. We
+implemented fixed point iterations for both Fit and Symmetric distribution es-
+timation with a stopping condition of movement less than 10−10 or a maximum
+of 10 000 iterations. Several integration techniques were tested for computing
+the integral from equations 12 and 15, including Monte Carlo, Quasi-Monte
+Carlo and Cubature methods. However, since sampling from from a Dirichlet
+distribution is simple and extremely fast, the best performing method was to
+average many independent random samples from the estimated distribution.
+
+The Dirichlet parameter estimation and index computation algorithms 1 were
+implemented in Julia [20], with distribution definitions and sampling from the
+Distributions.jl [21].
+
+5.2 Toy Example
+
+Uneven Low Fuzzy
+
+Even Low Fuzzy
+
+High Fuzzy
+
+Figure 1: Toy Fuzzy clustering results
+
+In this example, we make use of five synthetic cluster allocations of nine points
+into three clusters. The three fuzzy clusterings are visualised in Figure 1, with
+the other two being hard versions of UnevenLowFuzzy and EvenLowFuzzy. Of
+the two even cluster allocations, each has 3 points assigned to each cluster, with
+
+1Available at https://github.com/ryandewolfe33/DirichletRandAdjustmentModels.
+
+11
+
+Figure 2: Toy Example ACI under each adjustment model.
+
+12
+
+C1
+
+C2
+Even LF
+HF
+
+Id
+1 Uneven LF
+2 Uneven LF
+3 Uneven LF Uneven H
+4 Uneven LF
+5
+6
+7
+8
+9
+10 Uneven H
+
+Even H
+HF
+Uneven H
+Even H
+Uneven H
+Even H
+Even H
+
+Even LF
+Even LF
+Even LF
+HF
+HF
+
+NDC Perm Fit
+3
+3
+7
+7
+10
+1
+6
+6
+4
+10
+2
+4
+8
+2
+9
+8
+5
+5
+1
+9
+
+3
+7
+2
+8
+1
+6
+10
+4
+5
+9
+
+Sym Flat
+
+3
+7
+8
+2
+6
+4
+9
+10
+5
+1
+
+3
+7
+2
+8
+1
+6
+10
+4
+5
+9
+
+Table 1: Comparison Ids.
+Low
+Fuzzy (LF), High Fuzzy (HF), Hard
+(H)
+
+Table 2: ACI for each Comparison.
+Sorted Most similar to least similar.
+
+the low fuzzy cluster allocation assigning a probability of 0.98 to one cluster,
+and 0.01 to each of the other two. The two uneven cluster allocations have
+the same values, but 7 points are assigned to one cluster and one point to the
+two remaining. Finally we have a high fuzzy clustering where every point has
+a membership vector close to [0.33, 0.33, 0.33]. We calculate comparisons on
+all pairs of these clustering results using the implemented two-sided random
+models.
+
+As seen in Table 2, comparisons 3 and 7 are consistently measured as the most
+similar. These correspond to the Uneven Low Fuzzy & Uneven Hard and the
+Even Low Fuzzy & Even Hard comparisons respectively. Given the data sets,
+it is clear that these should be considered as the most similar by far, and their
+consistently high similarity as seen in Figure 2 serves as a evidence that all the
+models behave as expected.
+
+Other than the obviously similar comparisons, the rest of the list is not stable
+between adjustment models. For example, comparison 1 is reported as the third
+most similar under the permutation model, but the least similar under both the
+Fit and Sym models.
+
+Using the Sym model, the adjustment tends to be dominated by concordance
+by disagreement. This effect increases as the number of clusters grows, and does
+not reflect cluster allocations that have different sized clusters. An example
+of where Sym may not be the best choice is in comparison 10. The Uneven
+Low Fuzzy clustering has one group much larger than the others, and is being
+compared with a clustering that has even sized clusters. It is highly unlikely
+that the model would produce such a pair of clustering results, and in general
+two algorithms that provide symmetrical sized groups are more similar than
+these two. This behaviour is neither good nor bad, but must be considered
+when selecting an adjustment model.
+
+13
+
+Considering the interpretability of the results, Figure 2 displays the ACI values
+for each of the models. Of note, the permutation model has no negative values,
+indicating that all these comparisons are more similar than random. However,
+the other models, especially Flat suggest that many of the comparisons are
+worse than random. In particular, comparison 1 has an ACI of 0.1 using the
+permutation model and between -0.3 and -1 for the three new models. The
+clustering results from this comparison have very different cluster sizes and low
+fuzziness which we would not think to be very similar, and in fact are probably
+quite dissimilar. But since the permutation model only considers clustering
+results with these exact attributes, all of the comparisons are going to be very
+dissimilar, and it is never considered that slightly less uneven clusters sizes
+could have occurred, which, once considered, significantly improve the measured
+similarity.
+
+5.3 Error Analysis
+
+Since the sampling method for calculating the expected index has a random ele-
+ment, it is necessary to analyze the variability of the computation. We consider
+a range of synthetic clustering results, using a factorial scheme over number
+of clusters (2, 50), number of points (100, 1000), cluster size imbalance 2 (0.8,
+0.2), percentage of points that are randomized (0.5, 1.0), and precision of the
+Dirichlet used to generate random membership vectors (0.1, 1, 1.5). In total
+there are 48 parameter settings, each of which was used to generate 10 pairs
+of cluster allocations. The adjusted index was computed 100 times using a two
+sided comparison for each of the three Dirichlet models.
+
+Since most studies will be looking for high, or at least positive, index values,
+we dropped all comparisons where all 100 of the computations were negative.
+Removing these results does decrease the reported variability due to negative
+values generally having smaller denominators in Equation 1, but the results will
+be more accurate for common use cases including the other simulations in this
+section. With the cleaned data set, we calculate the mean absolute error using
+the mean of the 100 values as the true expectation. Since expectation is linear,
+the mean of the 100 values is equal to doing one computation with 1 000 000
+000 samples, far more than is feasible for a reasonable run time (a few seconds
+vs. several minutes).
+
+For all three models, over 99.5% of computations have an absolute error of
+less than 0.01. Furthermore, the maximum absolute error of the models is 0.02
+for Fit and Sym and 0.002 for Flat. These results give confidence that the
+computation method yields adjusted index values sufficiently close to the ‘true’
+value for accurate and meaningful comparison of cluster allocation similarity.
+
+2This value indicate the proportion of clusters to which 80% of points are assigned, evenly
+
+split among the clusters.
+
+14
+
+Variable
+No. Clusters
+No. Points
+Cluster Imbalance
+Precision
+Randomize Rate
+
+Values
+2, 4, 8, 16, 32, 64, 128
+128, 256, 512, 1024, 2048, 4096, 8192
+0.8, 0.6, 0.4, 0.2
+0, 0.01, 0.1, 1, 1.5
+0.2, 0.4, 0.6, 0.8, 1.0
+
+Table 3: Parameter Space for the Factorial Simulation
+
+5.4 A Factorial Benchmark
+
+In this section we analyze the behaviour of the proposed indices across a full
+factorial simulation. Five cluster attributes were considered; number of clusters,
+number of points, cluster size imbalance, precision, and randomize rates with
+values in Table 3. Each run begins with two hard cluster allocations with
+perfect agreement. The cluster imbalance setting was used to give 80% of points
+to the specified proportion of clusters. A Dirichlet parameterized using the
+precision variable, with 80% of the precision weight given to the same cluster
+imbalance proportion of clusters. The trial with 0 precision corresponds to using
+a categorical random variable instead of a Dirichlet to produce random hard
+membership vectors. The randomize rate proportion of points from clustering
+allocations had their membership vectors replaced by i.i.d samples from the
+Dirichlet (or Categorical) distribution. For each set of parameters, 5 pairs of
+clusters were randomly generated.
+
+In order to measure the trends associated with changing only one parameter, we
+consider the mean index value over all other parameters and over all runs. The
+particular index values for this type of simulation can be difficult to interpret,
+since so many variations are considered in each case. We will instead focus our
+analysis on the trends, which can be clearly seen and interpreted.
+
+As expected, the Fit and Perm models behave quite similarly across all param-
+eters, as seen in Figure 3, with a maximum difference of only 0.07. However, we
+see different trends in the Sym and Flat models. On average, the Flat model
+increases quickly with more clusters, while the Sym decreases quickly. The Fit
+and Perm models both decrease quite slowly, an interesting result that conflicts
+with the purely hard case where the permutation model is known to increase
+with more clusters [22]. Additionally, both the Flat and Sym models increase
+on average as the cluster sizes become more balanced, while the Fit and Perm
+models remain unchanged. Finally, as the only graph where we have an expected
+outcome, all four models decrease as the randomize rate increase, reflecting that
+less similar models do receive lower index values in all cases
+
+We repeat the simulation, but only randomizing one clustering, and using
+the one-sided variants of the indexes. This is the scenario most common for
+algorithm benchmarks; the reference clustering is fixed and many runs of an
+
+15
+
+Figure 3: Mean Index values of the two sided factorial benchmark. The mean
+of all runs and all parameters, except for the title parameter, were averaged at
+each x value.
+
+Figure 4: Mean Index values of the one sided factorial benchmark. The mean
+of all runs and all parameters, except for the title parameter, were averaged at
+each x value.
+
+algorithm produce variants on a second clustering. The trends for this scenario
+are much different than when both clusters are randomized, as seen in Figure
+4. The trends for increasing number of clusters are quite complex. The Fit ,
+Sym , and Perm models all decrease from 2 to 16 clusters, but then Fit begins
+increasing while Sym and Perm remain constant. Flat sharply increases from
+2 to 32 clusters, and then increases more slowly afterwards. As before, Fit
+
+16
+
+and Perm are constant with respect to cluster imbalance, while Sym and Flat
+increase as clusters become more balanced. Finally, as expected all indices are
+constant with respect to increasing number of points and decreasing with respect
+to more randomization.
+
+6 Conclusions
+
+In this paper, we defined Agreement-Concordance type Rand Extensions for
+fuzzy clustering results and proposed three Dirichlet random models for index
+adjustment. The Fit model is a generalization of the Categorical (Multinomial)
+model proposed by Morey and Agresti [4], with the Sym and Flat models used
+to bring the ideas of Gates and Ahn [3] to the fuzzy realm. Since the random
+model in index adjustment is used to set the baseline, a unified framework for
+randomness that has clear and explainable assumptions is of great benefit when
+communicating results of new or improved clustering algorithms.
+
+The theory provided for the expected index of a random model are sufficient for
+any probability density function defined on a simplex, and various kernel density
+estimates or generalized Dirichlet distributions could be considered in future
+work. These distributions could capture more information about covariance
+structure or levels of fuzziness. Of course, if it is not fast to generate samples,
+numerical integration methods would also need to be explored.
+
+Finally, we would like to reiterate the point from Gates and Ahn [3] that one
+model is not better, or more accurate, than the others, and that model selection
+should be considered based on the assumptions used in a particular clustering
+algorithm. Two-sided versions can be used when comparing pairs of clustering
+results. The one-sided versions are useful when comparing competing models to
+a single reference set of allocations — as is common for benchmarking purposes.
+
+References
+
+[1] William M Rand. Objective criteria for the evaluation of clustering meth-
+ods. Journal of the American Statistical association, 66(336):846–850, 1971.
+
+[2] Lawrence Hubert and Phipps Arabie. Comparing partitions. Journal of
+
+classification, 2:193–218, 1985.
+
+[3] Alexander J Gates and Yong-Yeol Ahn. The impact of random models on
+clustering similarity. Journal of Machine Learning Research, 18:1–28, 2017.
+
+[4] Leslie C Morey and Alan Agresti. The measurement of classification agree-
+ment: An adjustment to the rand statistic for chance agreement. Educa-
+tional and Psychological Measurement, 44(1):33–37, 1984.
+
+17
+
+[5] Geoffrey J McLachlan, Sharon X Lee, and Suren I Rathnayake. Finite
+mixture models. Annual review of statistics and its application, 6:355–378,
+2019.
+
+[6] Paul D McNicholas. Mixture model-based classification. CRC press, 2016.
+
+[7] Jeffrey L Andrews, Ryan Browne, and Chelsey D Hvingelby. On assess-
+ments of agreement between fuzzy partitions. Journal of Classification,
+39(2):326–342, 2022.
+
+[8] Roelof K Brouwer. Extending the rand, adjusted rand and jaccard indices
+to fuzzy partitions. Journal of Intelligent Information Systems, 32:213–235,
+2009.
+
+[9] Andrea Campagner, Davide Ciucci, and Thierry Denœux. A general frame-
+work for evaluating and comparing soft clusterings. Information Sciences,
+623:70–93, 2023.
+
+[10] Eyke Hullermeier, Maria Rifqi, Sascha Henzgen, and Robin Senge. Com-
+paring fuzzy partitions: A generalization of the rand index and related
+measures. IEEE Transactions on Fuzzy Systems, 20(3):546–556, 2011.
+
+[11] Antonio D’Ambrosio, Sonia Amodio, Carmela Iorio, Giuseppe Pandolfo,
+and Roberta Siciliano. Adjusted concordance index: an extensionl of the
+adjusted rand index to fuzzy partitions. Journal of Classification, 38:112–
+128, 2021.
+
+[12] Douglas Steinley. Properties of the hubert-arable adjusted rand index.
+
+Psychological methods, 9(3):386, 2004.
+
+[13] Douglas Steinley and Michael J Brusco. A note on the expected value of
+the rand index. British Journal of Mathematical and Statistical Psychology,
+71(2):287–299, 2018.
+
+[14] Douglas Steinley, Michael J Brusco, and Lawrence Hubert. The variance
+of the adjusted rand index. Psychological methods, 21(2):261, 2016.
+
+[15] Matthijs J Warrens and Hanneke van der Hoef. Understanding the adjusted
+rand index and other partition comparison indices based on counting object
+pairs. Journal of Classification, 39(3):487–509, 2022.
+
+[16] Anil K Jain. Data clustering: 50 years beyond k-means. Pattern recognition
+
+letters, 31(8):651–666, 2010.
+
+[17] Martina Sundqvist, Julien Chiquet, and Guillem Rigaill. Adjusting the
+adjusted rand index: A multinomial story. Computational Statistics,
+38(1):327–347, 2023.
+
+18
+
+[18] Derek T Anderson, James C Bezdek, Mihail Popescu, and James M Keller.
+Comparing fuzzy, probabilistic, and possibilistic partitions. IEEE Trans-
+actions on Fuzzy Systems, 18(5):906–918, 2010.
+
+[19] Thomas Minka. Estimating a dirichlet distribution, 2000.
+
+[20] Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral B Shah. Julia: A
+fresh approach to numerical computing. SIAM Review, 59(1):65–98, 2017.
+
+[21] Dahua Lin, John Myles White, Simon Byrne, Douglas Bates, Andreas
+Noack, John Pearson, Alex Arslan, Kevin Squire, David Anthoff, Theodore
+Papamarkou, Mathieu Besan¸con, Jan Drugowitsch, Moritz Schauer, and
+other contributors. JuliaStats/Distributions.jl: a Julia package for proba-
+bility distributions and associated functions, July 2019.
+
+[22] Yang Lei, James C Bezdek, Simone Romano, Nguyen Xuan Vinh, Jeffrey
+Chan, and James Bailey. Ground truth bias in external cluster validity
+indices. Pattern Recognition, 65:58–70, 2017.
+
+A Proof of Stability
+
+Proposition 4.1 (Stability)
+Let ˜D1 be an approximation of the distribution D1 with support on ∆1, with
+pdf ’s ˜f and f respectively, such that
+
+(cid:90)
+
+∆1
+
+(cid:12)
+(cid:12)
+˜f (x) − f (x)
+(cid:12)
+(cid:12)
+(cid:12) dx <
+(cid:12)
+
+Similarly for ˜D2, D2, ˜g, and g on ∆2 such that
+
+(cid:90)
+
+∆2
+
+|˜g(x) − g(x)| dx <
+
+ε
+4
+
+ε
+4
+
+Then,
+
+(cid:12)
+(cid:12)
+(cid:12)
+
+E ˜D1, ˜D2
+
+[conc] − ED1,D2[conc]
+
+(cid:12)
+(cid:12)
+(cid:12) < ε
+
+(16)
+
+19
+
+Proof 1
+
+−
+
+(cid:90)
+
+≤
+
+≤
+
+(cid:12)
+(cid:12)
+(cid:12)
+
+∆1
+
+(cid:90)
+
+∆1
+(cid:90)
+
++
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+=
+
+E ˜D1, ˜D2
+(cid:90)
+(cid:90)
+
+[conc] − ED1,D2[conc]
+(cid:90)
+
+(cid:90)
+
+(cid:12)
+(cid:12)
+(cid:12)
+
+˜f (z11) ˜f (z12)˜g(z21)˜g(z22)conc(z11, z12, z21, z22)dz11dz12dz21dz22
+
+∆1
+(cid:90)
+
+∆1
+(cid:90)
+
+∆2
+(cid:90)
+
+∆2
+(cid:90)
+
+f (z11)f (z12)g(z21)g(z22)conc(z11, z12, z21, z22)dz11dz12dz21dz22
+
+∆1
+(cid:90)
+
+∆1
+(cid:90)
+
+∆2
+(cid:90)
+
+∆2
+(cid:12)
+˜f (z11) ˜f (z12)˜g(z21)˜g(z22) − f (z11)f (z12)g(z21)g(z22)
+(cid:12)
+(cid:12)
+
+(cid:12)
+(cid:12)
+(cid:12) dz11dz12dz21dz22
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+∆2
+
+∆2
+
+∆1
+(cid:12)
+˜f (z11) − f (z11)
+(cid:12)
+(cid:12) dz11 +
+
+(cid:90)
+
+(cid:12)
+˜f (z12) − f (z12)
+(cid:12)
+(cid:12)
+
+(cid:12)
+(cid:12)
+(cid:12) dz12
+
+|˜g(z22) − g(z22)| dz22
+
+∆1
+(cid:90)
+
+|˜g(z21) − g(z21)| dz21 +
+
+∆2
+ε
+4
+
++
+
++
+
+ε
+4
+
++
+
+ε
+4
+
+≤
+
+ε
+4
+=ε
+
+∆2
+
+20
+
+

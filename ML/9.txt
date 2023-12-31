@@ -1,0 +1,1090 @@
+3
+2
+0
+2
+c
+e
+D
+7
+2
+
+]
+I
+
+A
+.
+s
+c
+[
+
+1
+v
+4
+6
+3
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Robustness Verification for Knowledge-Based
+Logic of Risky Driving Scenes
+
+Xia Wang
+Vanderbilt University
+Nashville, TN, USA
+xia.wang@vanderbilt.edu
+
+Anda Liang
+Vanderbilt University
+Nashville, TN, USA
+anda.liang@vanderbilt.edu
+
+Jonathan Sprinkle
+Vanderbilt University
+Nashville, TN, USA
+johnathan.sprinkle@vanderbilt.edu
+
+Taylor T. Johnson
+Vanderbilt University
+Nashville, TN, USA
+taylor.johnson@vanderbilt.edu
+
+Abstract. Many decision-making scenarios in modern life benefit from the decision support of ar-
+tificial intelligence algorithms, which focus on a data-driven philosophy and automated programs
+or systems. However, crucial decision issues related to security, fairness, and privacy should con-
+sider more human knowledge and principles to supervise such AI algorithms to reach more proper
+solutions and to benefit society more effectively. In this work, we extract knowledge-based logic
+that defines risky driving formats learned from public transportation accident datasets, which haven’t
+been analyzed in detail to the best of our knowledge. More importantly, this knowledge is critical
+for recognizing traffic hazards and could supervise and improve AI models in safety-critical systems.
+Then we use automated verification methods to verify the robustness of such logic. More specifically,
+we gather 72 accident datasets from Data.gov1 and organize them by state. Further, we train Deci-
+sion Tree and XGBoost models on each state’s dataset, deriving accident judgment logic. Finally, we
+deploy robustness verification on these tree-based models under multiple parameter combinations.
+
+Keywords: Formal specification, robustness verification, driving accident dataset
+
+1 Introduction
+
+As real-world domains become more complex, sophisticated, and dynamic, knowledge-based sys-
+tems face the challenge of preserving the coherence and soundness of their knowledge bases. Moreover,
+since the current mainstream autonomous driving technology still requires the intervention of human
+drivers, the interpretability of such driving assistance technologies and algorithms, as well as the use of
+human-understandable logic to build driving scenario applications, has become an essential requirement.
+Finally, since the application scenario of such data-driven and human-understandable logic is closely
+related to security issues, it is becoming increasingly important for the system knowledge base to be for-
+mally verified [1]. Understanding and learning risky driving properties via corresponding traffic accident
+videos is an intuitive way. Although it may be possible to train a neural network and directly output for
+the importance of each video frame, such an approach would require a large amount of hand-annotated
+data [2]. Directly collecting car accident videos from dashboard cameras would also be unethical. Ad-
+ditionally, only using deep learning models for video analysis is purely data-driven and therefore lacks
+comprehensiveness when the data availability is limited [3]. To solve such issues mentioned above fac-
+ing these obstacles, we propose to gather knowledge or rule logic for detecting risky driving behaviors
+
+1https://catalog.data.gov/dataset/?tags=crash
+
+Submitted to:
+FMAS 2023
+
+© X. Wang, A. Liang, J. Sprinkle, & T.T. Johnson
+This work is licensed under the Creative Commons
+Attribution-Noncommercial License.
+
+ 
+ 
+ 
+ 
+ 
+ 
+2
+
+Robustness Verification for Risky Driving Scenes
+
+from the public transportation accident dataset, which contains great value to assist other tasks such as
+anomaly detection and accident prevention but lacks of comprehensive analysis for now.
+
+Since the data formats of different states are different we train decision tree models and decision tree
+ensembles on each state’s dataset separately. Also, we employed a pre-established formal verification
+method2 [4] to measure the robustness of these decision-based models. Such formal verification not
+only enhances our models but is also necessary. In fact, recent studies have demonstrated that neural
+network models are vulnerable to adversarial perturbations—a small and human imperceptible input
+perturbation can easily change the predicted label [5–7]. This has created serious security threats to
+many real applications so it becomes important to formally verify the robustness of machine learning
+models. Usually, the robustness verification problem can be cast as finding the minimal adversarial
+perturbation to an input example that can change the predicted class label. In this work, we build tree-
+based models to gain human-understandable logic to support driving and transportation management
+tasks. Thus, we target the studies focusing on robustness verification of tree-based models. Recent
+studies have demonstrated decision tree models are also vulnerable to adversarial perturbations [8–10].
+Tree-based models may provide additional insights into situations that result in accidents, which
+may have benefits for safety and could save lives. However, it is important to understand their robustness
+in making accurate predictions. In this paper, we will describe our approach to constructing tree-based
+models using publicly available accident datasets to determine the characteristics of risky driving scenar-
+ios and verify the robustness of those decision trees. To summarize, our framework offers the following
+contributions:
+
+• To the best of our knowledge, this work is the first comprehensive collation and analysis of large-scale
+
+traffic accident data across the United States.
+
+• We extract human-understandable rule and logic to further support driving and transportation manage-
+
+ment tasks, and even safety-critical AI tasks related to traffic scenarios.
+
+• We provide suggestions on unified accident data collection, which could be a guidance for different
+
+states to follow and to gather unified data format of traffic accident recordings.
+
+2 Related Work
+
+Formal verification of risky driving situations has been an active area of research for the past few
+years. This section summarizes some of the relevant works in this field, organized into two subsections:
+modeling of driving scenarios and formal verification techniques.
+
+2.1 Modeling of Driving Scenarios
+
+There have been many research efforts focused on the development of realistic models for driv-
+ing scenarios, which are used as inputs for formal verification tools. For example, prior research has
+developed stochastic models of drivers’ behavior based on Reachability Analysis [11], Convex Markov
+Chains [12] and tools such as the CARLA simulator, for validation of autonomous driving systems [13].
+We seek to explore different models and simulators with public transportation datasets and apply formal
+verification to check the logic and/or rule for consistency and comprehensiveness.
+
+Our proposed method combines insights from autonomous vehicle studies and formal verification
+literature. Alawadhi et al.’s review work on autonomous vehicle adoption factors, including safety, lia-
+bility, and trust, forms a crucial base [14]. Many researchers, like Tahir and Alexander, have proposed
+
+2https://github.com/chenhongge/treeVerification#configuration-file-parameters
+
+X. Wang, A. Liang, J. Sprinkle, & T.T. Johnson
+
+3
+
+coverage-based testing for self-driving vehicles. Their paper aims to increase public confidence in self-
+driving autonomous vehicles by verifying and validating the techniques used in their development [15].
+Other research has tackled the challenge of ensuring the coherence and soundness of knowledge-
+based systems, including those used for video processing. For example, Liu et al. proposed a formal
+verification method for knowledge-based systems using Petri networks to analyze the reachability of
+certain states [1]. Meanwhile, Kumar et al. explored the application of deep learning models for video
+analysis [2]. Although this study does not employ formal verification methods, it provides insights into
+the coordination and protocols needed to anticipate, predict, and prevent accidents at common locations
+such as intersections. Other studies have also examined the general aspects of knowledge-based systems,
+demonstrating the versatility of formal verification methods in this area.
+
+2.2 Formal Verification Techniques
+
+Many formal verification techniques have been proposed for the verification of driving scenarios.
+These techniques range from model checking and theorem proving to more advanced methods such as
+abstraction and constraint-based analysis. In fact, prior studies have examined a scenario-based approach
+for formal modeling [16] and scenario-based probabilistic collision risk estimator [17].
+
+Robustness verification is a process of evaluating the resilience of a system or a model to different
+types of perturbations or uncertainties. This type of verification is crucial for ensuring the reliability
+and safety of complex systems, such as autonomous vehicles, aerospace systems, and medical devices.
+As we mentioned above, there are several works that focus on robustness verification of deep neural
+networks [18, 19]. Björn et al. [20] propose an approach to verify the robustness of the reinforcement
+learning algorithm, which is demonstrated on a Deep Q-Network policy and is shown to increase ro-
+bustness to noise and adversaries in pedestrian collision avoidance scenarios and a classic control task.
+Zhouxing et al. [21] provides a formal robustness verification method for Transformers that have com-
+plex self-attention layers. Also, some works investigate applications in safety-critical domains, such as
+autonomous vehicles [22, 23].
+
+In this work, we utilize the robustness verification method on tree-based models [4]3 to verify the
+
+robustness of the accident detection logic gained from government crash datasets.
+
+3 Proposed Method
+
+3.1 System Overview
+
+Fig. 1 depicts an overview of our proposed approach.
+
+3.2 Unified Feature Engineering
+
+The unified feature engineering step is an essential part of the data analysis process, as it ensures that
+the data is uniform and can be used to generate accurate results. In different states, the category values
+of one common feature vary due to different encoding policies in different states or errors in manual
+recording, so the key data pre-processing progress is to standardize and unify the encoding policy for
+these features.
+
+3https://github.com/chenhongge/treeVerification
+
+4
+
+Robustness Verification for Risky Driving Scenes
+
+Figure 1: Our approach leverages nationwide accident datasets, tree-based models, and robustness ver-
+ification technologies. The main contributions of this work are 1) it provides Unified data collection
+suggestions, and 2) it provides human-readable logic that could support safety-critical AI tasks.
+
+For example, the category values of collision types in each state are quite different. We refer to the
+unified manner of collision code4, which includes 11 collision categories in total, to unify the category
+values of Maryland and Arizona shown in Table 1. The detailed code for all unified feature engineering
+processes can be found in this repository: https://github.com/WilliamStar007/decision-tree.
+This pre-processing step ensures that the data is on a uniform basis for features and allows us to
+continue generating decision trees. To facilitate data analysis, categorical variables in the dataset are
+encoded as numbers for easy manipulation and calculation.
+
+Overall, the unified feature engineering step is an important part of the data analysis process as it
+helps ensure data consistency, reliability, and accuracy in generating results. Furthermore, the unified
+feature engineering manner could provide suggestions for traffic accident data collection to facilitate
+accident recordings of different states maintaining unified.
+
+3.3 Tree-based Models
+
+Going forward, we develop tree-based models that extract rule logic from decision trees and utilize
+
+robustness verification methods on XGBoost models.
+
+Our analysis involves using a set of independent variables that are commonly found in most states.
+These independent variables may differ between states and include factors such as weather conditions,
+lighting conditions, road surface conditions, collision type, causes of accidents, and the number of vehi-
+cles involved. Our aim is to classify accidents into two categories: those that result in fatalities, such as
+injuries or death, and minor accidents that do not result in any fatalities.
+
+To accomplish our goal, we initially constructed several binary decision trees using a selected max-
+imum depth and a minimum number of samples for the split. The maximum depth was chosen from
+[3,4,5], and the minimum number of samples was chosen from [2,10,20,50].
+
+Next, we aim to identify the best performance decision tree for each state. All datasets are split
+into a training set (20%) and a testing set (80%), and we use grid search to find the best performance
+tree with the highest F1 score by running it on the test set. F1 score is the harmonic mean of precision
+and recall, and its value ranges between 0 and 1. A high F1 score indicates that the model has high
+precision and recall, while a low F1 score suggests that the model either lacks precision or is unable to
+identify all positive instances. In the case of ties in the F1 score, we selected the tree with the lower depth
+
+4https://masscrashreportmanual.com/crash/manner-of-collision/
+
+X. Wang, A. Liang, J. Sprinkle, & T.T. Johnson
+
+5
+
+Table 1: Unified collision manner values mapping policy of Maryland and Arizona.
+
+Maryland State mapping values
+
+Arizona State mapping values
+
+’Single Vehicle’
+
+’Single Vehicle’
+
+’Same Direction Rear End’,
+’Same Direction Rear End Left Turn’,
+’Same Direction Rear End Right Turn’
+
+’Rear End’
+
+’Same Movement Angle’,
+’Angle Meets Right Turn’,
+’Same Direction Right Turn’,
+’Angle Meets Left Turn’,
+’Same Direction Left Turn’,
+’Same Direction Both Left Turn’
+
+’ANGLE (Front To Side)-
+-(Other Than Left Turn)’,
+’Left Turn’,
+’Angle-
+-Other Than Left Turn 2’,
+’U Turn’
+
+‘Same Direction Sideswipe’
+
+‘Sideswipe Same Direction’
+
+’Opposite Direction Both Left Turn’,
+‘Opposite Direction Sideswipe’
+
+‘Sideswipe Opposite Direction’
+
+’Head On’,
+’Head On Left Turn’,
+‘Angle Meets Left Turn Head On’
+
+‘Head On’
+
+‘Rear To Rear’
+
+Code
+
+Attribute
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+Single
+Vehicle
+Crash
+
+Rear-end
+
+Angle
+
+Sideswipe,
+Same
+Direction
+
+Sideswipe,
+Opposite
+Direction
+
+Head on
+
+Rear to Rear
+
+Front to Rear
+
+Front to Front
+
+10
+
+Rear to Side
+
+Definition
+Indicates a crash involving no more
+than one motor vehicle. Common
+types of single-vehicle crashes are
+noncollisions or crashes involving
+pedestrians, fixed objects, wild animals
+or unrestrained domestic animals.
+The front end of one vehicle collides
+with the rear end of another vehicle, while
+the two vehicles are traveling in the same
+direction.
+
+A crash where two motor vehicles
+impact at an angle. For example,
+the front of one motor vehicle
+impacts the side of another motor
+vehicle.
+
+Two vehicles traveling in the
+same direction impact one another
+in a manner wherein the initial engagement
+does not overlap the corner of either vehicle
+so that there is no significant involvement
+of the front or rear surface areas.
+The impact then swipes along the surface
+of the vehicle parallel to the direction of travel.
+Two vehicles traveling in opposite directions
+impact one another in a manner wherein the
+initial engagement does not overlap the corner
+of either vehicle so that there is no significant
+involvement of the front or rear surface areas.
+The impact then swipes along the surface of
+the vehicle parallel to the direction of travel.
+The front end of one vehicle impacts with
+the front end of another vehicle, while the
+two vehicles are traveling in opposite
+directions.
+The rear end of a vehicle impacts with
+the rear end of another. This can happen
+when two vehicles are backing up.
+The front end of one vehicle impacts with
+the rear end of another vehicle, while the
+two vehicles are traveling in the same
+direction.
+The front end of one vehicle impacts with
+the front end of another vehicle, while the
+two vehicles are traveling in opposite
+directions.
+The rear end of one vehicle impacts with
+the side of another vehicle. This can occur
+when one vehicle is moving forward and
+another is attempting to merge or change
+lanes, or when a vehicle backing out of a
+parking space collides with a vehicle
+moving perpendicularly to it.
+
+99
+
+Unknown
+
+If this attribute is used, an explanation
+in the narrative is recommended.
+
+‘Other’,
+‘Unknown’,
+‘Not Applicable’
+
+‘Rear To Side’,
+’10’
+
+‘Other’,
+‘Unknown’,
+NULL
+
+since its effects are more interpretable. These chosen trees will be used in any further analysis. Also,
+we consider evaluation metrics of accuracy, precision, and recall rate. Accuracy is the percentage of
+correctly classified instances out of the total number of instances. Precision is the ratio of true positives
+
+6
+
+Robustness Verification for Risky Driving Scenes
+
+(TP) to the total number of instances that the model predicted as positive. Recall rate is defined as the
+ratio of true positives (TP) to the sum of TP and false negatives (FN).
+
+In Table 2, we provide additional information on the analysis for each state.
+
+Table 2: Detailed information on the analysis for each state.
+
+State
+
+Input Features
+
+Best DT
+Performance
+
+Best XGBoost
+Performance
+
+Human-understandable
+Logic Involved Features
+
+Arizona State
+
+Maryland State
+
+New York State
+
+Washington State
+
+1. junction relation
+2. collision manner
+3. light condition
+4. weather
+5. road surface condition
+6. driver violation manner one
+7. driver violation manner two
+8. driver action one
+9. driver action two
+10. alcohol use label
+11. drug use label
+1. light description
+2. junction description
+3. collision type description
+4. surface condition description
+5. road condition description
+6. road division description
+7. fix object description
+8. weather description
+9. harm event description one
+10. harm event description two
+11. lane code
+1. lighting conditions
+2. collision type descriptor
+3. road descriptor
+4. weather conditions
+5. traffic control device
+6. road surface conditions
+7. pedestrian bicyclist action
+8. event descriptor
+9. number of vehicles involved
+1. weather
+2. address type
+3. collision type
+4. junction type
+5. light condition
+6. road condition
+7. inattention label
+8. hit parked car label
+9. speeding label
+10. vehicle number
+11. pedestrian number
+12. pedal cyclist number
+13. person number
+
+Accuracy: 70.32%
+Precision: 56.43%
+Recall: 19.11%
+F1-Score: 28.56%
+
+Accuracy: 71.74%
+Precision: 67.18%
+Recall: 17.47%
+F1-Score: 27.72%
+
+1. driver violation manner one
+2. collision manner
+3. driver action one
+4. driver action two
+5. junction relation
+6. road surface condition
+
+Accuracy: 66%
+Precision: 56.4%
+Recall: 38.53%
+F1-Score: 45.78%
+
+Accuracy: 67.33%
+Precision: 60.34%
+Recall: 35.94%
+F1-Score: 45.05%
+
+1. harm event description one
+2. collision type description
+3. fix object description
+4. junction description
+5. harm event description two
+6. weather description
+7. road division description
+
+Accuracy: 75.09%
+Precision: 84.51%
+Recall: 20.72%
+F1-Score: 33.28%
+
+Accuracy: 75.55%
+Precision: 83.91%
+Recall: 22.84%
+F1-Score: 35.91%
+
+1. pedestrian bicyclist action
+2. event descriptor
+3. number of vehicles involved
+4. road descriptor
+5. traffic control device
+6. collision type descriptor
+
+Accuracy: 77.78%
+Precision: 77.15%
+Recall: 28.9%
+F1-Score: 42.04%
+
+Accuracy: 77.84%
+Precision: 74.71%
+Recall: 31.06%
+F1-Score: 43.88%
+
+1. pedestrian number
+2. collision type
+3. person number
+4. pedal cyclist number
+5. weather
+6. vehicle number
+7. light condition
+8. junction type
+9. road condition
+
+X. Wang, A. Liang, J. Sprinkle, & T.T. Johnson
+
+7
+
+3.4 Accident Rules
+
+We can simply extract several severe accident rules from the decision trees mentioned above. For
+instance, for New York State, we have three rules. Here, we note the classification label as label, and the
+value mappings are: accidents with injure or death: labelyes, accidents without injure or death: labelno.
+We note the feature of pedestrian bicyclist action as pba, and the value mappings are: crossing, no signal:
+pba0, crossing, with signal: pba1, getting on/off vehicle: pba2, in the roadway: pba3, not in the roadway:
+pba4, unknown: pba5. We note the event descriptor as ed and the value mappings are: collision with
+bicyclist: ed0, collision with fixed object: ed1, collision with animal: ed2, non-collision: ed3, collision
+with motor vehicles: ed4, collision with pedestrian: ed5, collision with railroad train: ed6. We note the
+number of vehicles involved as vno. We note traffic control device as tcd, and the value mappings are:
+flashing light: tcd0, none: tcd1, officer: tcd2, railroad crossing: tcd3, school zone: tcd4, stop sign: tcd5,
+no passing zone: tcd6, traffic signal: tcd7, unknown: tcd8, work area: tcd9.
+
+1. ((pba =⇒ pba0)∨(pba =⇒ pba1)∨(pba =⇒ pba2)∨(pba =⇒ pba3)∨(pba =⇒ pba4) =⇒
+
+(label =⇒ labelyes)
+
+2. ((pba =⇒ pba5) ∧ (ed =⇒ ed0) =⇒ (label =⇒ labelyes)
+3. ((pba =⇒ pba5) ∧ ((ed =⇒ ed1) ∨ (ed =⇒ ed2) ∨ (ed =⇒ ed3) ∨ (ed =⇒ ed4) ∨ (ed =⇒
+ed5)∨(ed =⇒ ed6))∧(vno ≥ 2)∧((tcd =⇒ tcd2)∨(tcd =⇒ tcd3)∨(tcd =⇒ tcd4)∨(tcd =⇒
+tcd5) ∨ (tcd =⇒ tcd6) ∨ (tcd =⇒ tcd7) ∨ (tcd =⇒ tcd8) ∨ (tcd =⇒ tcd9)) =⇒ (label =⇒
+labelyes)
+Thus, Rule 1 and Rule 2 indicate that if there are some specific pedestrian or bicyclist actions
+involved in accidents, we may imply these accidents are injurious or even fatal. The potential reason for
+this logic may relate to the vulnerability and lack of physical protection of pedestrians or bicyclists in
+running traffic. Rule 3 indicates that although there’s no pedestrian or bicyclist involved in the accidents,
+chaos situations above average level, which include more vehicles (more than two vehicles involved) and
+non-strong supervised traffic control (not supervised by a police officer), may also be implied as injurious
+or even fatal accidents.
+
+3.5 Robustness Verification
+
+In the context of machine learning, robustness verification typically involves testing the performance
+of a trained model against various perturbations of its input data, such as random noise or deliberate
+modifications designed to cause the model to make incorrect predictions. The goal of this process is to
+identify any weaknesses or vulnerabilities in the model’s performance and to ensure that it can effectively
+handle unexpected inputs or situations.
+
+Robustness verification is important because machine learning models are often used in high-stakes
+applications where incorrect predictions can have serious consequences, such as in medical diagnosis or
+autonomous driving. By verifying the robustness of these models, we can increase their reliability and
+safety, and reduce the risk of errors or failures.
+
+For decision tree or decision tree ensembles, formal robustness verification involves finding the
+exact minimal adversarial perturbation or a guaranteed lower bound of it. Here, we give the definition of
+minimal adversarial perturbation in (1). For the input sample x, assuming that y0 = f (x) is the correct
+label, where f (.) mean the tree model, and if we add δ to x could change the prediction for sample x,
+the minimal δ is the minimal adversarial perturbation, noted as r∗:
+
+r∗ = min
+
+δ
+
+∥δ ∥∞
+
+s.t. f (x + δ ) ̸= y0
+
+(1)
+
+8
+
+Robustness Verification for Risky Driving Scenes
+
+For a single tree, a given sample x = [x1, ..., xd] with d dimensions will start from the root node
+and traverse the tree to reach a final leaf node based on the decision threshold of each decision node.
+For example, for decision node i, which has the two children (the left child and the right child), if
+the samples will separate based on feature ti and the threshold value is ηi, x will be passed to the left
+child if xti ≤ ηi and to the right child otherwise. The main idea of the single tree verification is to
+compute a d-dimensional box for each leaf node such that any sample in this box will fall into this
+leaf. Mathematically, the node i’s box is defined as the Cartesian product Bi = (li
+d].
+More specifically, if p, q are node i’s left and right child node respectively, then we can set their boxes
+Bp = (l p
+
+1] × · · · × (li
+
+d, ri
+
+1, ri
+
+1 , r p
+
+1 ] × · · · × (l p
+
+d , r p
+
+d ] and Bq = (lq
+
+d] by setting (2):
+
+1] × · · · × (lq
+
+1, rq
+
+d, rq
+
+t , r p
+(l p
+
+t ] =
+
+t , rq
+(lq
+
+t ] =
+
+(cid:40)
+
+(cid:40)
+
+t , ri
+(li
+t],
+t , min{ri
+(li
+t , ri
+(li
+t],
+(max{li
+
+t, ηi}],
+
+t , ηi}, ri
+t],
+
+if t ̸= ti
+if t = ti
+
+if t ̸= ti
+if t = ti
+
+(2)
+
+With the boxes computed for each leaf node, the minimum perturbation required to change x to go
+
+to a leaf node i can be written as a vector ε(x, Bi) ∈ R defined as (3):
+
+ε(x, Bi)t =
+
+
+
+
+0,
+xt − ri
+t,
+
+li
+t − xt,
+
+t , ri
+t]
+
+if xt ∈ (li
+if xt > ri
+t
+if xt ≤ li
+t
+
+(3)
+
+Thus, the minimal adversarial perturbation could be computed as r∗ = mini:vi̸=y0 ∥ε(x, Bi)∥∞.
+
+4 Evaluations
+
+4.1 Data
+
+When searching for “crash” datasets, 72 related links are displayed on Data.gov. By categorizing the
+data by state, we can see that there are 1 federal-level dataset and 10 state-level datasets, which include
+Arizona, Louisiana, Iowa, Maryland, Massachusetts, New York, North Carolina, Pennsylvania, Ten-
+nessee, and Washington. These datasets are further divided into state-level, city-level, and county-level
+datasets. To make the data more manageable, we select Arizona, Maryland, New York, and Washington.
+We chose these states based on the size and format of the data.
+
+4.2 Evaluation of Decision Trees
+
+In this study, we fine-tuned our decision tree models for each state, focusing on optimizing perfor-
+mance metrics such as accuracy, precision, recall, and F1 score. To achieve this, we explored various
+hyperparameters as aforementioned. By closely monitoring the impact of these adjustments on the eval-
+uation metrics, we were able to identify the best-performing model for each state. The evaluation results
+are shown in Figure 2.
+
+X. Wang, A. Liang, J. Sprinkle, & T.T. Johnson
+
+9
+
+Figure 2: Evaluation of Decision Trees of the Chosen States
+
+4.3 Evaluation of Robustness Verification
+
+In this study, we utilize a state-of-the-art decision tree robustness verification method [4] to evaluate
+the robustness of our decision trees under adversarial attacks. Here we don’t solve the problem to get the
+exact r∗, but to find a lower bound r, which guarantees that no adversarial sample exists within radius
+r because the exact verification problem is NP-complete. A high-quality lower bound r should be close
+to r∗. The “average bound” is the lower bound of minimum adversarial distortion averaged over all test
+examples. A larger value typically indicates better overall robustness of the model. Also, the “verified
+error” is the upper bound of error under any attacks, which could be treated as an index to measure the
+worst case performance.
+
+By default, the model evaluates the robustness under adversarial attacks of a fixed number (1000) of
+test points from a given dataset (in LIBSVM format), using an initial epsilon value for the binary search
+process. We consider 5 parameters:
+
+1. eps_init: the first epsilon in the binary search. This epsilon is also used to compute verified errors.
+
+2. max_search: maximum number of binary searches for searching the largest epsilon that our al-
+gorithm can verify. By setting max_search to 1, the algorithm will disable binary search and only
+return the verified error at a certain epsilon.
+
+3. max_level: maximum number of levels of clique search. A larger number will produce better
+
+quality bounds but the verification process becomes much slower.
+
+4. max_clique: maximum number of nodes in a clique.
+
+5. dp: by setting DP to 1, the algorithm will use dynamic programming, to sum up nodes on the last
+level. The default is 0, which means DP is not used, and a simple summation is used instead.
+
+10
+
+Robustness Verification for Risky Driving Scenes
+
+Table 3: Robustness verification evaluations under different experimental settings (↑ represents that
+larger values are deemed more favorable or superior within the given context, Conversely, ↓ represents
+that smaller values are considered more advantageous or preferable within the scope of the situation).
+
+experiment settings
+
+setting 1:
+eps_init: 0.3,
+max_clique: 2,
+max_search: 10,
+max_level: 1
+
+setting 2:
+eps_init: 0.5,
+max_clique: 2,
+max_search: 10,
+max_level: 1
+
+setting 3:
+eps_init: 0.3,
+max_clique: 2,
+max_search: 1,
+max_level: 1
+
+state
+NY
+ML
+WA
+AZ
+
+avg. bound ↑
+0.23
+0.59
+0.56
+0.51
+
+verified error ↓
+0.77
+0.40
+0.44
+0.49
+
+avg. bound ↑
+0.23
+0.59
+0.56
+0.51
+
+verified error ↓
+0.77
+0.41
+0.44
+0.49
+
+avg. bound ↑
+0.07
+0.18
+0.17
+0.15
+
+verified error ↓
+0.77
+0.40
+0.44
+0.49
+
+experiment settings
+
+setting 4:
+eps_init: 0.3,
+max_clique: 2,
+max_search: 10,
+max_level: 2
+
+setting 5:
+eps_init: 0.3,
+max_clique: 4,
+max_search: 10,
+max_level: 1
+
+setting 6:
+eps_init: 0.3,
+max_clique: 2,
+max_search: 10,
+max_level: 1,
+dp: 1
+
+state
+NY
+ML
+WA
+AZ
+
+avg. bound ↑
+0.51
+0.64
+0.62
+0.68
+
+verified error ↓
+0.49
+0.36
+0.36
+0.32
+
+avg. bound ↑
+0.51
+0.64
+0.62
+0.68
+
+verified error ↓
+0.49
+0.36
+0.38
+0.32
+
+avg. bound ↑
+0.68
+0.64
+0.67
+0.71
+
+verified error ↓
+0.32
+0.35
+0.33
+0.29
+
+For a more in-depth analysis, we run this verification model with different configurations against all
+our decision trees, exploring the impact of various parameters on the model’s ability to verify robustness.
+The verification results are shown in Table 3. Here, we gain two observations: first, since the average
+bound larger is better and the verified error smaller is better, we see the tree models of Maryland State
+and Arizona State perform better in robustness than others, which is partly because the two states have
+larger datasets and the data quality may be better too. Second, we can compare the results under setting
+1 and each of setting 2-5, since only one parameter is changed in the latter settings compared to the
+settings. We can see that (1) the initial epsilon almost doesn’t have an influence on the results; (2) binary
+search is crucial to find the average bound; (3) the larger the maximum number of levels of clique search,
+the larger maximum number of nodes in a clique and dynamic programming is beneficial for locating a
+better robustness estimation.
+
+5 Discussion and Conclusion
+
+The application of robustness verification to tree-based models assumes paramount significance,
+particularly within transportation systems. This emphasis stems from the indispensable need for accurate
+and dependable predictions. Our meticulous approach to validation serves as a robust safeguard, ensuring
+the reliability and safety of these models in critical contexts.
+
+In this work, we compile a comprehensive real-world dataset encompassing four states within the
+United States. This dataset serves as the foundation for training decision tree models dedicated to pre-
+dicting severe accidents. Through this process, we extract invaluable accident detection insights and
+rule-based logic. Notably, we introduce an innovative approach to constructing tree-based models, tai-
+lored for the identification of high-risk driving scenarios. Subsequently, we employ robustness verifica-
+
+X. Wang, A. Liang, J. Sprinkle, & T.T. Johnson
+
+11
+
+tion techniques on these tree ensembles, a pivotal stride that gauges both our confidence level and the
+limitations that safeguard the logic against potential failures.
+
+In conclusion, we have determined that the tree path rules possess both meaningful and explicable
+qualities. Moreover, the implementation of a unified feature engineering process holds the potential
+to foster a more standardized and uniform paradigm for the collection of traffic accident data in each
+state. This, in turn, would facilitate the amalgamation of available data nationwide, resulting in a more
+consistent and comprehensive dataset. Additionally, the utilization of a larger dataset accompanied by
+enhanced recording quality has the potential to correspondingly elevate the level of robustness. Lastly, it
+is noteworthy that an increased maximum number of levels in clique search, along with a larger maximum
+number of nodes in a clique and dynamic programming, holds the potential to significantly enhance the
+accuracy of robustness estimation.
+
+Acknowledgment
+
+This material is based upon work supported by the National Science Foundation under Grant 2151500.
+
+References
+
+[1] Liu, Nga Kwok. "Formal verification of some potential contradictions in knowledge base using a high level
+
+net approach." Applied Intelligence 6 (1996): 325-343.
+
+[2] Kumar, Dr T. Senthil. "Video based traffic forecasting using convolution neural network model and transfer
+
+learning techniques." Journal of Innovative Image Processing 2.3 (2020): 128-134.
+
+[3] Seshia, Sanjit A., Dorsa Sadigh, and S. Shankar Sastry. "Toward verified artificial intelligence." Communica-
+
+tions of the ACM 65.7 (2022): 46-55.
+
+[4] Chen, Hongge, et al. "Robustness verification of tree-based models." Advances in Neural Information Pro-
+
+cessing Systems 32 (2019).
+
+[5] Szegedy, Christian, et al. "Intriguing properties of neural networks." arXiv preprint arXiv:1312.6199 (2013).
+
+[6] Carlini, Nicholas, and David Wagner. "Towards evaluating the robustness of neural networks." 2017 ieee
+
+symposium on security and privacy (sp). Ieee, 2017.
+
+[7] Goodfellow, Ian J., Jonathon Shlens, and Christian Szegedy. "Explaining and harnessing adversarial exam-
+
+ples." arXiv preprint arXiv:1412.6572 (2014).
+
+[8] Chen, Hongge, et al. "Robust decision trees against adversarial examples." International Conference on Ma-
+
+chine Learning. PMLR, 2019.
+
+[9] Cheng, Minhao, et al. "Query-efficient hard-label black-box attack: An optimization-based approach." arXiv
+
+preprint arXiv:1807.04457 (2018).
+
+[10] Kantchelian, Alex, J. Doug Tygar, and Anthony Joseph. "Evasion and hardening of tree ensemble classifiers."
+
+International conference on machine learning. PMLR, 2016.
+
+[11] Tran, Hoang-Dung, et al. "Safety verification of cyber-physical systems with reinforcement learning control."
+
+ACM Transactions on Embedded Computing Systems (TECS) 18.5s (2019): 1-22.
+
+[12] Sadigh, Dorsa, et al. "Data-driven probabilistic modeling and verification of human driver behavior." AAAI
+
+Spring Symposium-Technical Report. 2014.
+
+[13] Dosovitskiy, Alexey, et al. "CARLA: An open urban driving simulator." Conference on robot learning.
+
+PMLR, 2017.
+
+12
+
+Robustness Verification for Risky Driving Scenes
+
+[14] Alawadhi, Mohamed, et al. "A systematic literature review of the factors influencing the adoption of au-
+tonomous driving." International Journal of System Assurance Engineering and Management 11 (2020): 1065-
+1082.
+
+[15] Tahir, Zaid, and Rob Alexander. "Coverage based testing for V&V and safety assurance of self-driving au-
+tonomous vehicles: A systematic literature review." 2020 IEEE International Conference On Artificial Intelli-
+gence Testing (AITest). IEEE, 2020.
+
+[16] Xu, Bingqing, et al. "A scenario-based approach for formal modelling and verification of safety properties in
+
+automated driving." IEEE Access 7 (2019): 140566-140587.
+
+[17] Ledent, Philippe, et al. "Formal validation of probabilistic collision risk estimation for autonomous driving."
+2019 IEEE International Conference on Cybernetics and Intelligent Systems (CIS) and IEEE Conference on
+Robotics, Automation and Mechatronics (RAM). IEEE, 2019.
+
+[18] Li, Renjue, et al. "PRODeep: a platform for robustness verification of deep neural networks." Proceedings of
+the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Founda-
+tions of Software Engineering. 2020.
+
+[19] Yang, Pengfei, et al. "Enhancing robustness verification for deep neural networks via symbolic propagation."
+
+Formal Aspects of Computing 33.3 (2021): 407-435.
+
+[20] Lütjens, Björn, Michael Everett, and Jonathan P. How. "Certified adversarial robustness for deep reinforce-
+
+ment learning." conference on Robot Learning. PMLR, 2020.
+
+[21] Shi, Zhouxing, et al. "Robustness verification for transformers." arXiv preprint arXiv:2002.06622 (2020).
+
+[22] Zhang, Zhaodi, et al. "Robustness verification of swish neural networks embedded in autonomous driving
+
+systems." IEEE Transactions on Computational Social Systems (2022).
+
+[23] Sadigh, Dorsa, S. Shankar Sastry, and Sanjit A. Seshia. "Verifying robustness of human-aware autonomous
+
+cars." IFAC-PapersOnLine 51.34 (2019): 131-138.
+
+

@@ -1,0 +1,933 @@
+From Dialogue to Diagram: Task and Relationship Extraction from
+Natural Language for Accelerated Business Process Prototyping
+
+Sara Qayyum
+
+Muhammad Moiz Asghar Muhammad Fouzan Yaseen
+
+3
+2
+0
+2
+c
+e
+D
+6
+1
+
+]
+L
+C
+.
+s
+c
+[
+
+1
+v
+2
+3
+4
+0
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Abstract
+
+The automatic transformation of verbose, nat-
+ural language descriptions into structured pro-
+cess models remains a challenge of significant
+complexity - This paper introduces a contem-
+porary solution, where central to our approach,
+is the use of dependency parsing and Named
+Entity Recognition (NER) for extracting key
+elements from textual descriptions. Addition-
+ally, we utilize Subject-Verb-Object (SVO) con-
+structs for identifying action relationships and
+integrate semantic analysis tools, including
+WordNet, for enriched contextual understand-
+ing. A novel aspect of our system is the ap-
+plication of neural coreference resolution, inte-
+grated with the SpaCy framework, enhancing
+the precision of entity linkage and anaphoric
+references. Furthermore, the system adeptly
+handles data transformation and visualization,
+converting extracted information into BPMN
+(Business Process Model and Notation) dia-
+grams. This methodology not only streamlines
+the process of capturing and representing busi-
+ness workflows but also significantly reduces
+the manual effort and potential for error inher-
+ent in traditional modeling approaches.
+
+1
+
+Introduction
+
+In the dynamic domain of business process
+management (BPM), the task of translating de-
+tailed process descriptions from their natural,
+often verbose, linguistic form into structured,
+formal models stands as a critical yet arduous
+endeavor. This task, which has traditionally
+been dependent on manual interpretation and
+modeling by experts, is riddled with inherent
+challenges. Among these, the most prominent
+are the significant consumption of time and
+resources, the introduction of subjectivity and
+human bias from the varying resources carry-
+ing out a singular process, and the consequent
+high propensity for errors. Such challenges
+
+are compounded when dealing with complex,
+multifaceted business processes that are often
+described in a language rich with nuances and
+implicit meanings.
+
+The emergence and continual advancement
+of Natural Language Processing (NLP) tech-
+nologies herald a transformative shift in this
+landscape. Their application in the field of
+BPM is particularly significant, as it holds
+the promise of solving the varying challenges
+of converting unstructured text into structured
+process models, and with our efforts, we in-
+tend to create a holistic solution for automation.
+This automation is more than a mere transla-
+tion of words; it involves an understanding of
+linguistic constructs, the identification and ex-
+traction of key process elements such as tasks,
+participants, decision points, and the contex-
+tual interpretation of these elements to ensure
+coherence in the resulting models.
+
+Moreover, the ability of NLP to process and
+analyze language at scale can address the ineffi-
+ciencies associated with manual modeling. By
+leveraging techniques such as semantic analy-
+sis, syntactic parsing, entity recognition, and
+co-reference resolution, NLP can sift through
+complex process narratives, distill essential in-
+formation, and represent it in a standardized
+format like BPMN (Business Process Model
+and Notation). This capability not only en-
+hances the accuracy and consistency of process
+models but also significantly expedites the pro-
+cess modeling exercise, thereby enabling or-
+ganizations to rapidly document, analyze, and
+optimize their business processes.
+
+In essence, the integration of NLP into BPM
+represents a confluence of linguistic intelli-
+gence and process management acumen, of-
+
+ 
+ 
+ 
+ 
+ 
+ 
+fering a pathway to more efficient, accurate,
+and scalable business process documentation.
+This intersection has the potential to fundamen-
+tally alter how organizations approach process
+modeling and optimization, marking a pivotal
+advancement in the field of business process
+management.
+
+2 Problem Statement
+
+To succinctly restate, at the heart of this re-
+search lies the ambitious endeavor of automat-
+ing the transformation of unstructured, natural
+language descriptions of business processes
+into structured BPMN diagrams. This transfor-
+mation is not merely a linear translation but a
+complex re-engineering of text into a formal,
+diagrammatic representation that captures the
+intricacies and nuances of business processes.
+Despite the remarkable advancements in NLP,
+the application of these technologies in the
+realm of business process modeling poses dis-
+tinct and multifaceted challenges.
+
+A primary challenge is the accurate identi-
+fication and categorization of various entities
+and actions embedded in the text. Business
+process descriptions in natural language are
+typically riddled with specialized terminology,
+implicit assumptions, and complex constructs
+that vary significantly across different organi-
+zations and industries. Extracting meaningful
+and relevant information from such varied and
+intricate narratives demands an NLP system
+that goes beyond basic text parsing to under-
+stand the context and underlying semantics.
+
+Moreover, understanding the relationships
+between extracted entities is critical. In busi-
+ness process narratives, entities do not exist in
+isolation; their interactions and interdependen-
+cies form the backbone of the process. The
+NLP system must, therefore, be capable of
+discerning these relationships, often implied
+or intricately expressed, and accurately reflect
+them in the BPMN diagrams.
+
+Related challenges, as a result of the nu-
+ances of the English language, revolve around
+concepts like, ’Alias Detection’, where diverse
+linguistic expressions often obscurely refer-
+ence the same participant or entity. This issue
+
+necessitates an in-depth linguistic analysis to
+accurately identify participants amid numer-
+ous potential aliases. The second challenge
+pertains to the idea of ’Anaphora Resolution’,
+which involves clarifying pronouns and other
+references in the text to mitigate interpreta-
+tional ambiguity and ensure precision in the
+subsequent process mapping.
+
+Another significant challenge is the effective
+mapping of identified entities and relationships
+into a standardized business process frame-
+work. BPMN, being a globally recognized
+and widely used standard, has specific nota-
+tions and conventions that must be adhered to.
+The translation from text to BPMN involves
+not only placing entities and actions into ap-
+propriate BPMN constructs but also ensuring
+that the flow and logic of the process are pre-
+served. An envisioned solution would follow
+a pipeline similar to Figure 1.
+
+Figure 1: Proposed solution for task and relationship
+extraction from natural language
+
+Lastly, and perhaps most critically, is the
+challenge of maintaining the semantic integrity
+of the original text during this transformation.
+The effectiveness of a BPMN diagram hinges
+on its fidelity to the original process descrip-
+tion. Any loss of meaning or context in the
+translation can lead to inaccuracies in the dia-
+gram, potentially resulting in misinterpretation
+and misapplication of the process. Thus, the
+NLP system must be sensitive to the subtleties
+of language and context, ensuring that the
+BPMN diagrams it produces are not only struc-
+turally accurate but also semantically faithful
+to the source text.
+
+3 Objectives and NLP Techniques in
+
+solving BPM Problems
+
+The overarching objective of this research ini-
+tiative is to pioneer the development of a sys-
+tem with solution-oriented NLP techniques,
+each playing a pivotal role in the system’s func-
+tionality.
+
+Foremost among these techniques is depen-
+dency parsing, a critical tool for deciphering
+the syntactic structure of sentences. By dis-
+cerning how words in a sentence relate to one
+another, dependency parsing enables the sys-
+tem to extract the core components of business
+processes, such as tasks, participants, and tem-
+poral sequences, with remarkable precision.
+
+Complementing this is the use of Named
+Entity Recognition (NER), an NLP technique
+adept at identifying and classifying key terms
+within text. In the context of BPM, NER is
+invaluable for pinpointing specific business en-
+tities, actions, and resources, thereby laying
+the groundwork for their accurate representa-
+tion in BPMN diagrams.
+
+Another cornerstone of this system is neural
+coreference resolution. This advanced tech-
+nique addresses the challenge of understand-
+ing pronouns and other referring expressions
+within the text, linking them back to the ap-
+propriate entities. The integration of neural
+coreference resolution ensures that the system
+can maintain narrative coherence across a busi-
+ness process description, a crucial factor for
+the accurate mapping of processes, addressing
+our earlier concerns of aliases and anaphoras
+within text.
+
+Additionally, the system leverages the se-
+mantic analysis capabilities of tools like Word-
+Net. By providing a rich semantic network
+of English words, WordNet allows the system
+to delve beyond surface-level text interpreta-
+tion, enabling it to grasp the nuanced meanings
+and relationships inherent in business process
+descriptions.
+
+4 Review of Existing Approaches in the
+
+Literature
+
+The recent advancements in the intersection of
+NLP and BPM have led to innovative method-
+
+ologies for transforming textual descriptions
+into structured BPMN models. This integra-
+tion is crucial for automating and streamlining
+the process of BPMN generation, as illustrated
+by the breadth of research in this domain.
+
+Chen et al. (2021) explored event-centric
+NLP, laying the groundwork for understanding
+complex event structures in text, which is es-
+sential for accurate BPMN model extraction.
+Their work aligns with Guimin et al. (2021),
+who delved into relation extraction with type-
+aware map memories, emphasizing the impor-
+tance of understanding word dependencies in
+NLP for BPMN.
+
+Loper and Bird’s (2002) introduction of the
+NLTK toolkit offered foundational NLP tools
+and methodologies, facilitating the analysis
+and processing of natural language, a key step
+in BPMN model generation. Sinha and Parad-
+kar (2010) utilized use cases to convert pro-
+cess specifications into BPMN, demonstrating
+a practical application of NLP in BPM.
+
+Kennedy and Boguraev (1996) addressed
+the challenge of pronominal anaphora reso-
+lution, a critical aspect in understanding and
+maintaining the coherence of textual descrip-
+tions for BPMN conversion. On the other hand,
+Epure et al. (2015) contributed by automating
+process model discovery from textual method-
+ologies, showcasing the potential of NLP in
+extracting meaningful process information.
+
+Honkisz, Kluza, and Wi´sniewski (2018) pro-
+posed a novel concept for generating BPMN
+models from natural language, emphasizing
+the need for effective syntactic analysis in NLP
+for BPMN generation. Similarly, Van der Aa et
+al. (2019, 2020) focused on extracting declar-
+ative process models from natural language
+and further advanced the field by integrating
+speech recognition, enhancing the accessibil-
+ity and intuitiveness of BPMN model gener-
+ation. We also see this in the research of De
+Marneffe and Manning (2008) contributed to
+the syntactic parsing techniques essential for
+understanding natural language, a key step in
+BPMN model generation. Santoro, Borges,
+and Pino (2008) and Ghose, Koliadis, and
+Chueng (2007) explored narrative structures
+
+and process discovery from textual artifacts,
+enriching the methodologies for BPMN model
+generation from diverse text sources.
+
+In conclusion, these studies collectively rep-
+resent a significant leap forward in BPMN
+model generation from text. By addressing
+the complexities of natural language and lever-
+aging various NLP techniques, these research
+efforts have not only streamlined the process
+of BPMN generation but also enhanced the ac-
+curacy and efficiency of these models, thereby
+making significant contributions to the field of
+business process management.
+
+5 Methodology
+
+Our multifaceted approach is not simply about
+deploying NLP algorithms in isolation but
+rather about orchestrating a series of intercon-
+nected and sophisticated steps, each critically
+contributing to the ultimate goal of automating
+and refining business process modeling.
+
+To begin,
+
+the constants module in this
+project serves as an essential cornerstone for
+the NLP-based processing, encapsulating a so-
+phisticated understanding of language struc-
+ture crucial for analyzing business process
+descriptions. It meticulously defines a com-
+prehensive set of enumerations, each pivotal
+for different aspects of syntactic and semantic
+analysis within the NLP framework. For in-
+stance, the Descriptor class outlines key gram-
+matical roles and dependencies fundamental
+to dependency parsing, a vital NLP technique
+that deciphers the syntactic hierarchy and re-
+lationships between words in a sentence. This
+parsing is crucial for extracting meaningful in-
+formation like tasks, participants, and actions
+from complex textual descriptions. Similarly,
+the VerbType and KeywordType classes cate-
+gorize verbs and keywords that are instrumen-
+tal in identifying specific actions and decision
+points in business processes, such as message
+events and conditional flows. These catego-
+rizations are critical in parsing business logic
+from natural language, enabling the system
+to distinguish and prioritize elements that are
+essential for BPMN modeling.
+
+A crucial aspect of the methodology in-
+
+volves Subject-Verb-Object (SVO) extraction,
+which enhances the approach introduced by
+Krzysztof et al. (2018). Hopping off of their
+approach of identifying key components from
+the text, i.e. ’Activity’, ’Condition’, ’Who’,
+and ’Terminated’ as seen in Table 1 - we en-
+hance this approach by delving deeper into the
+different roles and enhancing contextual un-
+derstanding of those roles through WordNet
+within our system - we also introduced indus-
+try specific roles as part of a larger project
+to inculcate newer roles not found in the ear-
+lier addressed framekwork. Additionally, we
+swapped the static condition extraction, the
+participant extraction methodology, and the
+general model creation through bpmn-python
+for more efficient and accurate alternatives,
+and the inclusion of swimlanes, not previously
+found in explored literature.
+
+These method employs advanced syntactic
+analysis techniques to identify SVO constructs
+within the text. The SVO extraction method is
+based on the concept that tasks performed by
+an entity can be effectively summarized in a
+Subject-Verb-Object format, comprising three
+key components:
+
+1. Subject: Represents the entity or actor
+
+initiating the action or task.
+
+2. Verb: Signifies the action or operation
+
+being performed.
+
+3. Object: Denotes the entity or object upon
+which the action is executed or the target
+of the task.
+
+SVO constructs are essential for represent-
+ing the tasks and activities within business pro-
+cesses. They play a fundamental role in un-
+derstanding the dynamics and interactions de-
+picted in process narratives. By systematically
+extracting and analyzing SVO constructs, the
+methodology provides a structured approach
+to dissecting business process descriptions, fa-
+cilitating more effective modeling, analysis,
+and optimization. This approach enhances the
+understanding of how various entities interact
+within the business context, ultimately improv-
+
+Order Activity
+
+Condition
+
+Who
+
+Terminated
+
+0
+1
+2
+3a1
+
+start
+Follow Textbook Process
+Inform Affairs Department
+Close Request
+
+Affairs Department
+Production Manager
+Affairs Director
+
+Affairs Director
+rejects request
+
+3b1
+
+Document Required Knowledge Affairs Director
+
+Affairs Director
+
+approves request
+
+Send Requirement
+Check Status
+
+4
+5
+6
+
+Confidential Secretary
+Affairs Director
+
+yes
+
+Table 1: Krzysztof et al. (2018)’s approach to creating a CSV layout for bpmn-python
+
+ing process management and resource alloca-
+tion.
+
+More critically, the participant extractor
+module plays a critical role in meticulously
+identifying and extracting participant informa-
+tion from business process descriptions. This
+module employs targeted NLP techniques to
+recognize and categorize various entities, in-
+cluding users, systems, or roles mentioned in
+the text. Accurate categorization within the
+context of the business process is essential for
+constructing comprehensive process models
+that reflect all stakeholders accurately. How-
+ever, in the process of identifying participants,
+the presence of pronouns or aliases referring
+to entities can hinder accurate identification of
+SVO constructs. To address this challenge,
+the neural coreference resolution technique
+was integrated into the system. The neural
+coreference resolution process involves iden-
+tifying and replacing all aliases and pronouns
+that refer to a specific entity within the natu-
+ral language text with the neuralcoref library.
+This ensures that the text is consistently repre-
+sented in terms of the identified entities. Sub-
+sequently, this information serves as the basis
+for deriving roles and responsibilities within
+the business process, and aided in the creation
+of lanes within the pool of the BPMN diagram,
+contributing to the overall effectiveness of the
+participant extraction module.
+
+The conversion module in conjunction with
+this handles the challenge posed by the het-
+erogeneity and variability of data formats and
+structures inherent in natural language sources.
+It meticulously standardizes and prepares the
+textual data from these diverse formats, ensur-
+ing that it is in a suitable and uniform structure
+
+for detailed and intricate NLP analysis. This
+pre-processing step is pivotal; By standardiz-
+ing the format and structure of the input text,
+this module ensures that the text is optimally
+primed for accurate interpretation and in-depth
+analysis by the subsequent NLP algorithms.
+We address the complex challenge of represent-
+ing the fluid and often ambiguous constructs
+of human language in a structured, machine-
+processable format by creating clearly defined
+data models and structures for entities such as
+processes, tasks, or actors, this module trans-
+lates the intricacies and subtleties of human
+language into a structured, organized format
+that can be effectively processed and analyzed
+by machines.
+
+In our concluding note, we created a mod-
+ule to manually create the xml for the model
+generation as no current tools create a holistic
+BPMN with discernible roles, and while pe-
+ripheral to the core NLP techniques, is vital
+in the context of data integration and handling.
+It focuses on the graphical representation of
+the processed data, including the creation of
+BPMN diagrams and other forms of visualiza-
+tions. This module is critical for translating
+the structured process data, which has been
+meticulously analyzed and modeled through
+the application of various NLP techniques, into
+visual formats that are easily understandable
+and accessible to users. The ability to present
+complex process models and data in a visually
+intelligible and appealing format is essential
+for the practical application and usability of
+the insights gained from the NLP analysis. It
+enables users, who may not be experts in NLP
+or BPMN, to understand, interpret, and utilize
+the results of the process modeling exercise
+
+effectively.
+
+In conclusion, the methodology adopted in
+this project exemplifies a deep and sophisti-
+cated understanding of both NLP and its prac-
+tical applications in the realm of business pro-
+cess management. From the initial preparation
+and standardization of data to the intricate lin-
+guistic analysis, entity extraction, and the final
+visual representation, each step in the method-
+ology is carefully designed and executed to
+contribute to the seamless translation of natu-
+ral language into structured, actionable busi-
+ness process models. This approach not only
+demonstrates technical proficiency and innova-
+tion but also reflects a keen awareness of the
+practical needs and challenges in the field of
+business process management.
+
+6 Results
+
+The application of the proposed methodol-
+ogy in this project successfully automated sev-
+eral critical aspects of transforming natural
+language process descriptions into structured
+BPMN diagrams. The results were notable in
+the areas of participant extraction, relationship
+extraction, alias detection, anaphora resolution,
+and condition/decision extraction, as a holistic
+solution. Each of these components played a
+pivotal role in accurately and efficiently mod-
+eling business processes. The creation of the
+model is seen in Figure 2.
+
+Figure 2: Generated BPMN against Table 1
+
+The results of this project demonstrate the
+substantial potential of NLP techniques in au-
+tomating and enhancing the process of busi-
+
+ness process modeling. The identification
+of tasks, participants, relationships, and de-
+cision points, coupled with effective alias and
+anaphora resolution, underscores the system’s
+capability to transform natural language de-
+scriptions into comprehensive and accurate
+BPMN diagrams. These findings make a sig-
+nificant contribution to the field of BPM, par-
+ticularly by introducing a role-based perspec-
+tive in BPMN modeling. This novel approach,
+absent in previous literature, holds great signif-
+icance within a business context as it facilitates
+a comprehensive understanding of how tasks
+align with the resources responsible for their
+execution, fostering improved cooperation and
+resource utilization.
+
+7 Discussion
+
+7.1
+
+Interpretation of Results
+
+The results obtained from this project provide
+a compelling insight into the efficacy of NLP
+techniques in the domain of business process
+modeling. The successful implementation of
+task identification, participant extraction, rela-
+tionship extraction, alias detection, anaphora
+resolution, and condition/decision extraction
+signifies a major stride in addressing the core
+research question: How can NLP techniques
+be effectively utilized to transform unstruc-
+tured natural language descriptions into struc-
+tured BPMN diagrams?
+
+The identification of tasks and participants,
+and the extraction of their interrelationships,
+directly contribute to creating comprehensive
+BPMN models that accurately mirror real-
+world business processes. This is a significant
+advancement, considering the complexity and
+nuances involved in interpreting unstructured
+text. The ability to detect aliases and resolve
+anaphoras further enhances the coherence and
+consistency of the BPMN diagrams, ensuring
+that they are not only accurate but also under-
+standable and usable for business analysts.
+
+Moreover, the extraction of conditions and
+decision points from the process descriptions
+is particularly noteworthy. This aspect of the
+system goes beyond mere structural modeling,
+delving into the logical and decision-making
+
+It demon-
+elements of business processes.
+strates the system’s capability to handle not
+just the ’what’ and ’who’ of processes but also
+the ’how’ and ’why,’ which are often more
+challenging to model.
+
+7.2 Comparison with Existing Literature
+
+When compared with existing literature and
+methodologies in the field, the results of this
+project exhibit several distinct advantages. Tra-
+ditional approaches to BPMN modeling often
+rely heavily on manual interpretation and con-
+version of process descriptions, which can be
+time-consuming and prone to errors. In con-
+trast, the automated approach developed in this
+project significantly reduces the time and ef-
+fort required for process modeling, while also
+improving accuracy and consistency.
+
+Previous studies and tools in the domain,
+such as those discussed in the literature review,
+have demonstrated various degrees of success
+in automating parts of the business process
+modeling task. However, many of these ap-
+proaches have limitations, particularly in han-
+dling complex linguistic structures, detecting
+nuanced relationships, and maintaining coher-
+ence in the models, and perhaps, more criti-
+cally - poor identification of participants in lieu
+of creating lanes within the subsequent BPMN
+model. The comprehensive approach of this
+project, which integrates multiple advanced
+NLP techniques, addresses these limitations ef-
+fectively. It not only automates the extraction
+of basic process elements but also successfully
+interprets and models complex linguistic and
+logical constructs present in natural language
+descriptions.
+
+8 Limitations
+
+While the project demonstrates significant ad-
+vancements in employing Natural Language
+Processing (NLP) techniques for business pro-
+cess modeling, it is important to acknowledge
+certain limitations inherent in the approach.
+
+8.1 Dependence on Language Quality
+
+The system’s accuracy and effectiveness heav-
+ily depend on the quality of the natural lan-
+
+guage input. In cases where process descrip-
+tions are poorly structured, ambiguous, or con-
+tain a high degree of colloquial language, the
+system may face challenges in accurately ex-
+tracting process elements. This limitation high-
+lights the need for well-articulated and clearly
+structured input, which may not always be fea-
+sible in real-world business scenarios.
+
+8.2 Handling of Complex and Nested
+
+Structures
+
+While the system performs well with standard
+and moderately complex process descriptions,
+it may struggle with highly complex or deeply
+nested linguistic structures. Processes involv-
+ing multiple layers of decision-making or intri-
+cate participant interactions may not be fully
+captured by the current NLP techniques im-
+plemented. This limitation points to the need
+for further development and refinement of the
+algorithms to handle such complexities more
+effectively.
+
+8.3 Limitations of the SVO approach
+
+In the context of task identification, while SVO
+constructs provide a structured framework for
+representing actions within business processes,
+it is important to acknowledge that SVO alone
+may not always be the best approach. Tasks
+within complex business processes can exhibit
+intricate dependencies and nuanced interac-
+tions that may not be fully encapsulated by a
+simplistic SVO format. SVO constructs tend to
+oversimplify the statement creating unnatural
+In sce-
+representations of the task at hand.
+narios where tasks involve conditional actions,
+parallel processing, or intricate decision trees,
+relying solely on SVO constructs may lead to
+an incomplete and inaccurate representation
+of the actual process dynamics. Therefore,
+a more comprehensive approach will produce
+more natural and accurate tasks for the BPMN.
+
+8.4 Generalizability Across Languages
+
+The current implementation primarily focuses
+on English language process descriptions. The
+system’s applicability and effectiveness in
+other languages have not been fully explored.
+
+This limitation is significant in a global context
+where business processes often span multiple
+languages and cultural contexts.
+
+9 Conclusion
+
+This project represents a significant advance-
+ment in the application of NLP techniques for
+transforming natural language process descrip-
+tions into structured BPMN diagrams. The
+methodology developed and the results ob-
+tained underscore the potential of NLP in au-
+tomating and refining business process mod-
+eling, a task traditionally characterized by its
+manual intensity and complexity.
+
+The system’s ability to accurately identify
+tasks, extract participants, delineate relation-
+ships, detect aliases, resolve anaphora, and ex-
+tract conditions and decision points from natu-
+ral language text is a testament to the power of
+NLP. It not only enhances the efficiency and
+accuracy of BPMN modeling but also offers a
+deeper, more coherent interpretation of process
+descriptions than many existing methods.
+
+However, as acknowledged in the limita-
+tions section, the system does have constraints,
+including its dependence on the quality of the
+input language, contextual understanding, scal-
+ability, and language generalizability. These
+limitations offer valuable insights and direc-
+tions for future research. Addressing these
+challenges could lead to even more sophisti-
+cated NLP systems capable of handling a wider
+variety of business process modeling scenarios,
+including those involving real-time processing,
+complex decision-making structures, and mul-
+tilingual environments.
+
+In conclusion, this project paves the way
+for further advancements in the field of BPM,
+opening new avenues for research and devel-
+opment. The integration of advanced NLP
+techniques in business process modeling has
+the potential to significantly transform how or-
+ganizations document, analyze, and optimize
+their processes. As NLP technology continues
+to evolve, its integration into BPM tools is ex-
+pected to become more refined, making these
+tools even more powerful and essential in the
+world of business process management.
+
+References
+
+J. Becker, M. Rosemann, and C. Von Uthmann. Guide-
+lines of business process modeling. In Business pro-
+cess management, pages 30–49. Springer, 2000.
+
+Guimin Chen, Yuanhe Tian, Yan Song, and Xiang Wan.
+Relation extraction with type-aware map memories
+of word dependencies. In Findings of the Association
+for Computational Linguistics: ACL-IJCNLP 2021,
+pages 2501–2512. Association for Computational
+Linguistics, 2021a.
+
+M. Chen, H. Zhang, Q. Ning, M. Li, H. Ji, K. McKe-
+own, and D. Roth. Event-centric natural language
+processing. In Proceedings of the Joint Conference
+of the 59th Annual Meeting of the Association for
+Computational Linguistics and the 11th International
+Joint Conference on Natural Language Processing:
+Tutorial Abstracts, pages 6–14. Association for Com-
+putational Linguistics, 2021b.
+
+M.-C. De Marneffe and C. D. Manning. The Stanford
+typed dependencies representation. In Coling 2008:
+Proceedings of the Workshop on Cross-framework
+and Cross-domain Parser Evaluation, pages 1–8,
+2008.
+
+E. V. Epure, P. Martín-Rodilla, C. Hug, R. Deneckère,
+and C. Salinesi. Automatic process model discov-
+ery from textual methodologies. In 2015 IEEE 9th
+International Conference on Research Challenges
+in Information Science (RCIS), pages 19–30. IEEE,
+2015.
+
+F. Friedrich, J. Mendling, and F. Puhlmann. Pro-
+cess model generation from natural language text.
+In International Conference on Advanced Informa-
+tion Systems Engineering, pages 482–496. Springer,
+2011.
+
+A. Ghose, G. Koliadis, and A. Chueng. Process dis-
+covery from model and text artefacts. In 2007 IEEE
+Congress on Services (Services 2007), pages 167–
+174. IEEE, 2007.
+
+J. Herbst and D. Karagiannis. An inductive approach to
+the acquisition and adaptation of workflow models.
+In Proceedings of the IJCAI, volume 99, pages 52–57.
+Citeseer, 1999.
+
+K. Honkisz, K. Kluza, and P. Wi´sniewski. A concept
+for generating business process models from natural
+language description. In International Conference on
+Knowledge Science Engineering and Management,
+pages 91–103. Springer, 2018.
+
+C. Kennedy and B. Boguraev. Anaphora for everyone:
+Pronominal anaphora resolution without a parser. In
+COLING 1996 Volume 1: The 16th International
+Conference on Computational Linguistics, 1996.
+
+E. Loper and S. Bird. NLTK: The natural language
+In Proceedings of the ACL-02 Workshop
+toolkit.
+on Effective Tools and Methodologies for Teaching
+
+Natural Language Processing and Computational
+Linguistics, pages 63–70, 2002.
+
+J. Mendling, H. Leopold, and F. Pittke. 25 challenges of
+semantic process modeling. International Journal of
+Information Systems and Software Engineering for
+Big Companies (IJISEBC), 1(1):78–94, 2015.
+
+F. M. Santoro, M. R. Borges, and J. A. Pino. Tell us
+your process: A group storytelling approach to co-
+operative process modeling. In 2008 12th Interna-
+tional Conference on Computer Supported Coopera-
+tive Work in Design, pages 29–34. IEEE, 2008.
+
+A. Sinha and A. Paradkar. Use cases to process speci-
+fications in business process modeling notation. In
+2010 IEEE International Conference on Web Ser-
+vices, pages 473–480. IEEE, 2010.
+
+H. Van der Aa, C. Di Ciccio, H. Leopold, and H. A.
+Reijers. Extracting declarative process models from
+natural language. In International Conference on
+Advanced Information Systems Engineering, pages
+365–382. Springer, 2019.
+
+H. Van der Aa, K. J. Balder, F. M. Maggi, and A. Nolte.
+Say it in your own words: Defining declarative pro-
+cess models using speech recognition. In Interna-
+tional Conference on Business Process Management,
+pages 51–67. Springer, 2020.
+
+

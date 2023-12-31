@@ -1,0 +1,1371 @@
+3
+2
+0
+2
+
+c
+e
+D
+6
+2
+
+]
+
+G
+L
+.
+s
+c
+[
+
+1
+v
+6
+2
+9
+5
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+1
+
+FedMS: Federated Learning with Mixture of
+Sparsely Activated Foundations Models
+
+Panlong Wu, Kangshuo Li, Ting Wang, and Fangxin Wang, Member, IEEE
+
+Abstract—Foundation models have shown great success in natural language processing, computer vision, and multimodal tasks. FMs
+have a large number of model parameters, thus requiring a substantial amount of data to help optimize the model during the training.
+Federated learning has revolutionized machine learning by enabling collaborative learning from decentralized data while still preserving
+the data privacy of clients. Despite the great benefits foundation models can have empowered by federated learning, they face severe
+computation, communication, and statistical challenges. In this paper, we propose a novel two-stage federated learning algorithm
+called FedMS. A global expert is trained in the first stage and a local expert is trained in the second stage to provide better
+personalization. We construct a Mixture of Foundation Models (MoFM) with these two experts and design a gate neural network with an
+inserted gate adapter that joins the aggregation every communication round in the second stage. To further adapt to edge computing
+scenarios with limited computational resources, we design a novel Sparsely Activated LoRA (SAL) algorithm that freezes the
+pre-trained foundation model parameters inserts low-rank adaptation matrices into transformer blocks and activates them progressively
+during the training. We employ extensive experiments to verify the effectiveness of FedMS, results show that FedMS outperforms other
+SOTA baselines by up to 55.25% in default settings.
+
+Index Terms—Federated Learning, Foundation Model, Edge Computing
+
+✦
+
+1 INTRODUCTION
+
+Foundation Model (FM) has emerged as a potent solu-
+tion to address the growing demand for machine learning
+services. It presents several advantages over its predeces-
+sors, the traditional smaller models. FM stands out primar-
+ily due to its extensive number of parameters, surpassing
+the capacity of earlier models. This massive increased pa-
+rameter space allows FM to capture intricate patterns and
+relationships in the data, resulting in improved performance
+across various machine learning tasks.
+
+FM follows a distinct training methodology compared
+to smaller models. While smaller models often rely on
+task-specific training, FM employs a pre-training and fine-
+tuning strategy. Pre-training with large datasets allows FM
+to acquire a broad data understanding and representation
+learning capabilities. This pre-training phase acts as a step-
+ping stone, equipping FM with substantial knowledge and
+context from diverse data sources. Consequently, when fine-
+tuning FM for specific tasks, they derive significant ad-
+vantages from the initial pre-training, leading to enhanced
+performance across a diverse set of tasks.
+
+• Panlong Wu is with the Future Network of
+
+Intelligence Institute
+and the School of Science and Engineering, The Chinese Univer-
+sity of Hong Kong, Shenzhen, Shenzhen 518172, China. E-mail: pan-
+longwu@link.cuhk.edu.cn.
+
+• Kangshuo Li is with the School of Data Science, The Chinese University
+of Hong Kong, Shenzhen, Shenzhen 518172, China. E-mail: 24gan-
+batte@gmail.com.
+
+•
+
+• Ting Wang is with the School of Science and Engineering, The Chinese
+University of Hong Kong, Shenzhen, Shenzhen 518172, China. E-mail:
+011tingwang@gmail.com.
+Fangxin Wang is with the School of Science and Engineering and the
+Future Network of Intelligence Institute, The Chinese University of Hong
+Kong, Shenzhen and Guangdong Provincial Key Laboratory of Future
+Networks of Intelligence. Email: wangfangxin@cuhk.edu.cn.
+
+Manuscript received xxx; revised xxx.
+
+Federated learning (FL) has revolutionized the landscape
+of machine learning by enabling the collaborative training of
+a shared model across multiple edge devices without the
+need to share raw data. By adopting FL, we can utilize
+the distributed edge data while preserving data privacy
+and overcoming the limitations of centralized training ap-
+proaches. This collaboration allows for collective learning
+from diverse datasets while respecting user privacy and
+local data ownership.
+
+FMs with a tremendous number of parameters are data-
+hungry for the reason that they have a large parameter
+space to be optimized during the training. By combining
+the power of FM with the decentralized approach of FL,
+we can leverage FL by allowing decentralized data from
+different sources to be used, thus enabling the enhanced
+generalization ability of FM. Each device in the federation
+contributes its local knowledge and data patterns to the
+training process, resulting in a more comprehensive and
+diverse understanding of the data. This combination allows
+us to harness the benefits of both FL’s collaborative training
+across edge devices while preserving data privacy and FM’s
+large parameter capacity and pre-training strategy.
+
+Several challenges arise in the domain of FL with FM
+which make FL with FM hard to employ in real-world
+applications.
+
+• The first challenge lies within the substantial num-
+ber of parameters possessed by FMs, which distin-
+guishes them from traditional FL models that possess
+much fewer parameters. This differentiation intro-
+duces impediments in the areas of communication
+and networking, as the transmission of parameters of
+these FMs is significantly time-consuming for mod-
+ern mobile networks.
+
+ 
+ 
+ 
+ 
+ 
+ 
+IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+2
+
+• The second challenge arises from the huge compu-
+tational resource requirements posed by FMs, par-
+ticularly for edge devices with limited computing
+resources. The considerable computational costs as-
+sociated with these FMs create difficulties in imple-
+menting FL on resource-constrained edge devices.
+• The third challenge is that FL encounters statisti-
+cal challenges due to non-IID decentralized data,
+potentially resulting in issues such as parameter
+divergence and data distribution biases which can
+significantly harm the performance.
+
+To fill the gap, this paper addresses the challenges asso-
+ciated with FL with FM by introducing FedMS algorithm,
+an FL algorithm with a Mixture of Foundations Models that
+have Sparsely Activated Parameters. The proposed FedMS
+algorithm consists of two training stages.
+
+In the first training stage, each client owns a foundation
+model, and low-rank adaption matrices are inserted into
+every transformer block of the foundation model. During
+the training, the pre-trained weights of the foundation are
+frozen, and all the parameters of inserted matrices are acti-
+vated to better extract global information. In each communi-
+cation round only the inserted matrices join the weight ag-
+gregation to reduce bandwidths consumption. The trained
+foundation model in the first stage will be frozen in the
+second stage and act as the global expert.
+
+In the second training stage, we for the first time form a
+Mixture of Foundation Models (MoFM) system in FL which
+specifically addresses the statistical challenges encountered
+in FL. We leverage the foundation model trained in the first
+stage as a global expert and introduce another local expert
+which is a foundation model initialized from the weights
+of the global model to provide better personalization. We
+design a gate model with a specially designed gate adapter
+inserted into it so that it can quickly adapt to the change
+of relationship between two experts and intelligently as-
+sign weights to the final decision of two experts. In each
+communication round, only the gate adapter’s activated
+parameters join the aggregation to save communication
+resources. To further tackle the computation challenges, we
+propose a Sparsely Activated LoRA (SAL) algorithm to acti-
+vate inserted low-rank adaptation matrices in a progressive
+way through a controller to suit different edge resource
+conditions.
+
+In summary, the main contributions of this paper can
+
+be summarized as follows:
+
+• We propose
+
+a
+
+communication and computa-
+tion friendly two-stage personalized FL algorithm
+FedMS, which can capture the global feature infor-
+mation through collaborative learning and capture
+the local feature information through personalized
+learning.
+
+• We propose a Sparsely Activated LoRA (SAL) al-
+gorithm that sparsely activates the trainable low-
+rank decomposition matrices injected into founda-
+tion models in a progressive way through a self-
+defined controller to adapt to scarce computation
+and communication resources in edge computing
+scenarios.
+
+• We propose a Mixture of Foundation Models (MoFM)
+algorithm which is, to our best knowledge the first
+work to construct a mixture of vision language foun-
+dation models in personalized federated learning to
+tackle the data heterogeneous in federated learning
+and we further prove the effectiveness of FedMS
+through extensive experiments.
+
+2 BACKGROUND AND RELATED WORK
+2.1 Foundation Model
+
+Recently, FMs have achieved remarkable success in various
+domains such as natural language processing, computer
+vision, and multimodal tasks. By utilizing deep learning
+techniques like self-supervised Learning and contrastive
+learning, FMs with a massive number of model parameters
+are trained on large datasets. Consequently, these models
+exhibit strong generalization, feature extraction, and com-
+prehension abilities.
+
+Various works have been done related to FMs in
+natural language processing. Bert [1], referred to as Bidi-
+rectional Encoder Representation from Transformers, is an
+advanced natural language processing model introduced
+by Devlin et al. (2018). This model employs a transformer
+architecture and is pre-trained on extensive text data, using
+a masked language model pre-training objective. GPT-3 [2]
+is trained using a language modeling pre-training objective.
+By making the model do the next token prediction, it can
+utilize the massive unlabeled data from the internet and
+have a powerful few-shots learning ability.
+
+There are also various works that have been done
+related to visual language FMs. Contrastive Language
+Image Pre-training (CLIP) [3], as a famous FM proposed by
+OpenAI. This model a visual encoder and a text encoder
+to extract the semantic meaning and encode images and
+texts into image features and text features. Throughout
+the training process, contrastive learning is employed to
+maximize the similarity between related images and texts
+while minimizing the similarity between unrelated ones.
+DALL-E 3 [4] is a modern text-to-image system that has
+extraordinary prompt-following capability. It addresses the
+noisy and inaccurate image captions issue by training an-
+other specially designed image captioner.
+
+2.2 Federated Learning
+
+Federated learning [5] is a machine learning technique that
+enables the training of decentralized data while preserving
+the privacy of clients participating in the training. Typically,
+every client doesn’t share their data but their private model
+after local training in each communication round. Despite
+that FL has shown great potential in the Internet of Things,
+financial field, and smart healthcare, it still faces lots of
+challenges.
+
+Many studies focus on solving the statistical chal-
+lenges. FL faces serious statistical challenges because the
+data distribution of the datasets is often non-iid which can
+lead to weight divergence after model aggregation. Li et al.
+[6] propose FedProx that handles the system heterogeneity
+by introducing an additional proximal term to prevent
+the local model updates from being far from the global
+
+IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+3
+
+Fig. 1: FedMS Workflow
+
+model and thus can safely aggregate the local updates in
+statistical heterogeneity conditions. Li et al. [7] introduce
+MOON which uses the idea of contrastive learning to
+compare the representation learned by local models and
+the global model. Inspired by the philosophy of the global
+model has better feature extraction ability than local models
+that are trained on skewed local datasets. Zhang et al.
+[8] design FedLC that introduces a fine-grained calibrated
+cross-entropy loss to mitigate the local gradient deviation
+and gives theoretical proof of the deviation bound after
+calibration. Zec et al. [9] propose a personalized federated
+learning algorithm with a mixture of experts with a training
+pipeline of global expert training, local expert training, and
+mixer training.
+
+The communication efficiency issue is also an impor-
+tant issue that many researchers focus on. MAO et al. [10]
+propose an Adaptive Quantized Gradient (AQG) algorithm
+to decide the level of quantization according to the gradient
+update of heterogeneous clients. Huang et al. [11] propose
+a Residual Pooling Network (RPN) based on the approx-
+imation of parameters and selection of parameters, and
+apply it to a CNN-based model FL training. Haddadpour et
+al. [12] introduce an algorithm with periodical compressed
+communication. Specifically, they introduce the FedCOM
+algorithm to tackle the homogeneous client situation and
+the FedCOMGATE algorithm to tackle heterogeneous client
+situations. Chen et al. [13] propose a federated learning
+algorithm that considers the weight quantization in wireless
+transmission and formulate the federated learning prob-
+lem into a mixed-integer programming problem. Zhang et
+al. [14] introduce a CFEL algorithm that jointly considers
+cloud-based federated learning and edge-based federated
+
+learning. Qu et al. [15] design a partially Synchronized
+federated learning algorithm to accelerate the federated
+learning training.
+
+2.3 FL with FM
+
+Not many works have been done related to FL with FM.
+Zhang et al. [16] propose a federated generative learning
+framework to utilize FM on the server to generate syn-
+thesized images given the transmitted prompt from the
+clients to improve the training performance of the model.
+Tao et al. [17] propose a PromptFL algorithm to replace
+the model aggregation in traditional FL to prompt aggre-
+gation to reduce communication and computation costs.
+Cai et al. [18] design a AdaFL algorithm to fine-tune FMs
+for modern natural language processing tasks by inserting
+adapters into models, dividing clients into three groups, and
+observing each group’s training accuracy to decide the best
+configuration for adapters. Lu et al. [19] propose a FedCLIP
+algorithm to insert adapters in the visual encoder of FM
+CLIP and test it on datasets in different domains. Zhang
+et al. [20] introduce a Federated Instruction Tuning (FedIT)
+algorithm to leverage federated learning in induction tuning
+of FM to enhance their performance. However, none of these
+works consider the cooperation of FMs and thus cannot
+achieve good performance in data heterogeneous conditions
+on challenging datasets.
+
+3 DESIGN OF FEDMS
+3.1 Overview of FedMS
+
+We consider a typical FL scenario with a total number of
+N clients with non-iid dataset {D1, ..., DN }. Our method
+
+Server…Gate adapter parametersof client 1Gate aggregationGate adapter parametersof client NClient 1Local trainingCosLocal expertGlobal expertGate adapterOutput mix ratio:𝛼CosMixed cosine similaritiesImagesThis is a picture of {}Prompts…………Gate modelClient N…Visual encoderText encoderText encoderVisual encoderGlobal gate adapter  parametersLocal gate adapter  parametersServer…Lora parametersof client 1Lora parametersof client NAggregationClient NClient 1Local trainingVisual encoderText encoderCosThis is a picture of {}PromptsImages………Global  activated LoRAparametersLocal activated LoRAparameters12IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+4
+
+Fig. 2: Iteration process of SAL
+
+FedMS consists of two stages of training as depicted in Fig.1.
+In the first stage, low-rank adaptation matrices are in-
+serted into every transformer block of the foundation model
+[21]. All the clients freeze the pre-trained foundation model
+weights and only update and upload the weights of the
+inserted matrices in every communication round. In this
+stage, every client collaboratively trains a global model Wg,
+which will be the global expert in stage two. The objective
+function of stage one can be expressed as
+
+F =
+
+1
+N
+
+N
+(cid:88)
+
+i=1
+
+E(xi,yi)∼diLi(xi, yi; Wg)
+
+(1)
+
+where Li is the loss function of client i ∈ [N ], xi is its private
+data and yi is the corresponding label. di denotes the data
+distribution of client i.
+
+In the second stage, each client utilizes the trained global
+expert in the first stage and trains its personalized model.
+This model consists of a global expert, a local expert, and
+a gate model together constitute a Mixture of Foundation
+Models. During the second stage, local experts are only
+trained on clients’ local datasets using a novel Sparsely
+Activated LoRA algorithm and do not engage the global
+aggregation. We optimize
+
+Fi = E(xi,yi)∼diLi(xi, yi; Wi)
+
+(2)
+
+where Wi is the parameters of the local expert of client i.
+
+We design and insert a gate adapter into the gate model
+and aggregate all the parameters of gate adapters in each
+communication round. We optimize the gate adapter pa-
+rameters by
+
+Fgate =
+
+1
+N
+
+N
+(cid:88)
+
+i=1
+
+E(xi,yi)∼diLi(xi, yi; Gi)
+
+(3)
+
+where Gi is the parameters of the gate model of client i.
+
+We propose two novel algorithms to tackle challenges
+
+raised by FL with FM.
+
+3.2 Sparsely Activated LoRA
+
+parameters of the model. FL with FM presents substantial
+challenges to the communication and computation of the
+distributed system.
+
+In traditional FL [5], [6], model parameters after local
+training are usually transmitted to the server for model
+weights aggregation in each communication round. This
+paradigm faces great challenges when FMs are trained in
+a FL procedure. Suppose we have a FM whose parameters
+are represented by Wf . For full parameters fine-tuning, we
+need to calculate and store another model Wk which has
+the same parameter size of Wf for each task k. FM typically
+consists of over 10 million model parameters, resulting
+in significant transmission time requirements for modern
+mobile communication networks. Moreover, the training of
+FM necessitates substantial computation power and storage
+capacity, whereas edge devices typically possess limited
+computational capabilities and storage space. Therefore, it
+is imperative to develop an algorithm that mitigates the
+communication and computation costs associated with FL
+using FM.
+
+To tackle these challenges, we design a novel Sparsely
+Activated LoRA (SAL) algorithm that can achieve the SOTA
+performance while only tuning less than 1% of the total
+parameters of FM. Common pre-trained language models
+are capable of efficient learning even when randomly pro-
+jected into a smaller subspace because they have a very low
+intrinsic dimension [23]. Edward J. Hu et al. [21] propose
+Low-rank adaptation (LoRA) to insert trainable low-rank
+decomposition matrices in FMs, enabling model optimiza-
+tion with minimal parameter tuning.
+
+Inspired by this, we insert trainable low-rank decom-
+position matrices in every layer of the visual encoder and
+the text encoder of the CLIP model. We denote the weight
+parameter matrix as W0 ∈ RE×F and the inserted low-rank
+decomposition matrices as ∆W , which can be calculated by
+two low-rank matrices ∆W = WAWB, WA ∈ RE×H and
+WB ∈ RH×F (H << min(E, F )). For WA, we employ a
+random Gaussian initialization, while WB is initialized with
+zero. During training, W0 is frozen and only WA and WB
+are optimized to save computation and storage costs.
+
+According to [22], the capability of the deep neural net-
+work tends to improve with the increase of the number of
+
+Suppose the input of the weight matrices and the in-
+serted low-rank decomposition matrices is x. The output
+
+Client: Iteration i Visual Encoder: …Text Encoder: …: Newly activated TB: Activated Transformer Block (TB): Frozen TBClient: Iteration i+1Visual Encoder: …Text Encoder: ………Client: Iteration i Visual Encoder: …Text Encoder: …Do not activate new parametersActivate new parametersCurrent iteration accuracy and history accuraciesControllerIEEE TRANSACTIONS ON MOBILE COMPUTING
+
+can be calculated by
+
+y = (W0 + WAWB)x.
+
+creating a mixture of Foundation Models to simultaneously
+learn personalized feature information as well as global
+feature information on each client.
+
+(4)
+
+5
+
+The procedure of the proposed SAL algorithm is de-
+picted in Fig.2. We activate the low-rank decomposition
+matrices sparsely instead of activating them all during the
+training. At the beginning of the training stage, every layer
+of the visual encoder and the text encoder are inserted with
+frozen low-rank decomposition matrices. In deep neural
+networks, lower layers can better extract general informa-
+tion than higher layers [24]. During the first training stage,
+low-rank decomposition matrices in all layers are activated
+to better extract general information to form a global expert
+while in the second stage, we unfreeze the low-rank decom-
+position matrices from higher layers to lower layers during
+the training.
+
+More specifically, we introduce a Capability Queue with
+a maximum queue length of Q. Image classification accura-
+cies of clients are forwarded to the Capability Queue after
+every communication round. Once the Capability Queue is
+full, the previously added accuracies will be popped out.
+We set an accuracy threshold δ to help decide whether the
+training comes into a bottleneck. The incremental factor ∆
+of client j in communication round i is
+
+∆i,j = Acci,j −
+
+1
+Q
+
+i−1
+(cid:88)
+
+t=i−Q
+
+Acct,j
+
+(5)
+
+Where Acci,j denotes the image classification accuracy of
+the model of client j in communication round i. If ∆i,j < δ,
+the training is considered to come into a bottleneck. Then
+low-rank decomposition matrices in the next lower layer
+will be activated.
+
+The design of the SAL algorithm is inspired by the fact
+that the performance of FM is usually affected by the model
+size, dataset size, and the quality of the dataset. Challenging
+datasets require more model parameters to be optimized to
+better extract the semantic meaning of the data. However,
+there is no silver bullet configuration in the training of FL
+with FM. So we introduce a Capability Queue to intelli-
+gently decide the number of tuning parameters and enable
+the training on computation resource-limited devices.
+
+3.3 Mixture of Foundation Models
+
+In traditional FL, a global model is trained using the decen-
+tralized data of clients. Only model weights are aggregated
+in the central server while the local data of clients are kept
+private to ensure clients’ data privacy. This paradigm faces
+statistical challenges especially when the data distribution
+of clients is non-iid. Such non-iid data distribution could
+cause the weight divergence during the training [25] and
+cause significant performance drops. Moreover, training a
+single global model and applying it to all clients can not
+suit different clients’ needs when their data have different
+data distributions. Training personalized models while ben-
+efiting from utilizing a global model is essential to providing
+better performance for different clients.
+
+As shown in Fig.1, in the first stage of training, every
+client collaboratively trains a global FM ζg with weight
+Wg. Low-rank decomposition matrices are inserted in every
+layer of the visual encoder and the text encoder. This global
+FM acts as a global expert. In the second stage, a local expert
+ζi with weight Wi is created for each client i to cooperate
+with the global expert.
+
+More specifically, the local experts have the same neural
+network architecture as the global expert and are initialized
+with the weights of the global expert. A gate function
+Gi with weight ξi for each client i is a neural network
+introduced to control the relative contribution of the global
+expert and the local expert to the final image classification
+decision given different images. We denote the extracted
+image features and text features by the global expert as Vg
+and Tg and the extracted image features and text features by
+the local expert i as Vi and Ti. The final cosine similarity of
+image features and text features extracted from the dataset
+of client i can be denoted by
+
+˜Oi = λi < Vg, Tg > +(1 − λi) < Vi, Ti >
+
+(6)
+
+where λi ∈ (0, 1) is a weight factor representing the mixing
+ratio of the global expert and the local expert of client i.
+Larger λi indicates more global knowledge is used while
+smaller λi indicates more personal knowledge is used.
+
+During the second training stage of FedMS, the weights
+of the global expert are frozen, and the local expert ζi and
+the gate model are optimized only using the local data of
+client i. The adapter [26] has been a popular parameter-
+efficient tuning method in FMs. It works by inserting very
+few layers into FMs and optimizing FM by only tuning the
+inserted very few parameters.
+
+We design a gate adapter to adapt to the local datasets
+while maintaining a low computation and communication
+cost. In each communication round, clients’ activated gate
+adapter parameters are aggregated to learn global feature
+information, thus maintaining a low computation and com-
+munication cost.
+
+We denote the gate adapter of gate i as Zi and the gate
+adapter after aggregation as Zg. Specifically, we construct
+the gate adapter with a Multi-Layer Perceptron (MLP), a
+batch norm layer, an MLP, a batch norm layer, and finally a
+Softmax function to ensure the output is between (0, 1). The
+gate adapter aggregation procedure is denoted as:
+
+Zg =
+
+Li,j
+j=0 Li,j
+
+(cid:80)N
+
+N
+(cid:88)
+
+i=1
+
+Zi
+
+(7)
+
+where Li,j denotes the loss on the dataset of client j in
+communication round i.
+
+4 EXPERIMENTS
+
+To tackle this challenge, we design a novel Mixture of
+Foundation Models (MoFM) algorithm to utilize an FM as
+the global expert and another FM as the local expert thus
+
+In this section, we conduct comprehensive experiments
+compared to SOTA baselines to verify the effectiveness of
+FedMS under different settings.
+
+IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+6
+
+(a) Food101
+
+(b) UCF101
+
+(c) EuroSAT
+
+Fig. 3: Average accuracy on different datasets when under different visual encoders
+
+(a) Food101
+
+(b) UCF101
+
+(c) EuroSAT
+
+Fig. 4: Average accuracy on different datasets at different non-iid α
+
+4.1 Experiments set up
+
+4.1.1 Datasets
+
+We select some representative datasets that are widely used
+in the image classification task of the CLIP model. Specifi-
+cally, we select Food101 [27] which is a food classification
+dataset containing 101 classes, EuroSAT [28] which is a
+dataset for land use and land cover classification containing
+10 classes, and UCF101 [29] which is a dataset for human
+actions classification in the wild containing 101 classes.
+
+4.1.2 Baselines
+
+To verify the effectiveness of the proposed FedMS algo-
+rithm, we compare image classification accuracy with the
+following state-of-the-art baselines.
+
+• Vanilla Fine-Tuning (FT): This is one of the most
+representative fin-tuning algorithms used in natural
+language processing and computer vision areas [1].
+
+• PromptFL [17]: This algorithm does prompt tuning
+instead of tuning the parameters of FM. prompts
+from different clients are aggregated in every com-
+munication round.
+LayerFreeze Fine-Tuning
+algorithm
+freezes several layers in FMs, and only the activated
+layers will be aggregated in every communication
+round to save communication and computation re-
+sources.
+
+(LFFT): This
+
+•
+
+4.1.3 Default training settings
+
+We set the backbone of the visual encoder of CLIP to be
+ViT-B/16. The batch size is set to be 512. The learning rate
+is set to be 2e−4. The optimizer is set to be Adam, with
+β1 = 0.9, β2 = 0.98, ϵ = 1e−6, and weight decay to be
+0.05. The number of clients is set to be 10. The rank of the
+inserted low-rank decomposition matrices is set to 1, The
+dropout probability of the inserted low-rank decomposition
+matrices is set to 0.1. The number of communication rounds
+of training stage one is set to 25 and the number of commu-
+nication rounds of training stage two is set to 25.
+
+4.2 Results Comparisons
+
+We assume the non-iid data partition in FL to follow the
+Dirichlet distribution [30]. The α parameter in Dirichlet dis-
+tribution represents the degree of heterogeneity. The smaller
+the α, the more non-iid the data distributed in the clients
+will be. We test the image classification accuracy of various
+datasets in different non-iid levels.
+
+4.2.1 Impact of different system settings
+
+Impact of degrees of data heterogeneity. Fig. 4 shows
+the image classification accuracy of Food101, UCF101, and
+EuroSAT datasets respectively, assuming different degrees
+of data heterogeneity. Specifically, we set the α to be 0.1, 1,
+and 10. From the results, we can find that FedMS achieves
+the highest accuracy among the four algorithms in all cases.
+FedMS has surpassed the average accuracy of FT, PromptFL,
+and LFFT in all datasets by 20.57%, 30.06%, and 11.17%
+
+Vit-B/16Vit-B/32Visual encoder0.700.750.800.850.900.95AccuracyFedMSFTLFFTPromptFLVit-B/16Vit-B/32Visual encoder0.60.70.80.9AccuracyFedMSFTLFFTPromptFLVit-B/16Vit-B/32Visual encoder0.40.60.81.0AccuracyFedMSFTLFFTPromptFL0.1110Value of non-iid 0.750.800.850.900.95AccuracyFedMSFTLFFTPromptFL0.1110Value of non-iid 0.60.70.80.9AccuracyFedMSFTLFFTPromptFL0.1110Value of non-iid 0.40.60.81.0AccuracyFedMSFTLFFTPromptFLIEEE TRANSACTIONS ON MOBILE COMPUTING
+
+7
+
+(a) Food101
+
+(b) UCF101
+
+(c) EuroSAT
+
+Fig. 5: Average accuracy on different datasets under different number of clients
+
+Fig. 6: Accuracy under different accu-
+racy thresholds in capability queue
+
+Fig. 7: Total communication time at dif-
+ferent bandwidths
+
+Fig. 8: Accuracy under backdoor at-
+tacks
+
+respectively. Our method has a minimum accuracy gain of
+6.36%, 14.43%, and 12.71% and a maximum accuracy gain
+of 9.62%, 23.82%, and 59.21% on Food101, UCF101, and
+EuroSAT datasets respectively compared to other baselines
+when α is set to 1.
+
+By observing the accuracy at different data heterogeneity
+levels, we can find that the performance of these algorithms
+does not always follow a positive correlation relationship
+with the data heterogeneity level. On Food101 and UCF101
+datasets, the accuracy of FedMS when α is 10 has an increase
+of 0.24% and 0.15% compared to the case when α is 0.1.
+On the EuroSAT dataset, FedMS has an accuracy of 99.46%
+when α = 1, but has an accuracy of 97.67% when α = 10.
+
+This is because higher data heterogeneity may lead to
+a smaller number of classes in clients’ local datasets. For
+example, a client’s local dataset may contain data from 10
+classes at a low data heterogeneity level but may contain 3
+classes at a high data heterogeneity level, which can lower
+the difficulty of identifying the right class given an image.
+
+Impact of number of clients. We test the performance
+of FedMS and other baselines under different number of
+clients. Specifically, we set the number of clients to 5, 10,
+and 15.
+
+From Fig. 5 we can conclude that FedMS has the
+highest accuracy in different client number cases. When
+the number of clients is 5, FedMS achieves the accu-
+racy of 91.67%, 85.18%, and 98.51% in Food101, UCF101,
+and EuroSAT datasets respectively while the best accuracy
+of the other three baselines in these three datasets are
+87.56%, 77.15%, and 90.40%. FedMS suppresses the best
+
+performance of other baselines by 4.11%, 8.03%, and 8.11%.
+In the case when there are 10 clients, FedMS has a maximum
+accuracy increase of 9.67%, 22.2%, and 55.24% compared
+to the three baselines. When the number of clients reaches
+15, the accuracy of FedMS is 89.31%, 77.31%, and 97.03%
+while the highest accuracy of the other three baselines
+are 87.44%, 62.86%, and 83.44%. Results show that FedMS
+works well under different scales.
+
+4.2.2 Impact of training settings
+
+Impact of visual encoders. We test the performance of
+FedMS under visual encoders ViT-B/16 and ViT-B/32 to
+further verify the effectiveness of FedMS under various
+visual encoders.
+
+We can observe from Fig. 3 that FedMS achieves the
+highest image classification accuracy on all datasets using
+the visual backbone Vit-B/16 or Vit-B/32. Results show that
+visual encoders with a larger number of parameters can
+achieve better performance than those with smaller visual
+encoders. The accuracy of the four algorithms increased by
+1.01%, 11.85%, 4.57%, and 4.25% when using ViT-B/16 as
+the visual encoder on the UCF101 dataset which confirms
+the theoretical analysis that larger models have better fea-
+ture extraction ability.
+
+Our method suppresses other baselines by a maximum
+of 55.25% and a minimum of 8.55% when using Vit-B/16
+and suppresses other baselines by a maximum of 60.09%
+and a minimum of 6.01% when using Vit-B/32. Results
+show that FedMS can adapt to visual encoders with different
+scales.
+
+51015Number of clients0.750.800.850.900.95AccuracyFedMSFTLFFTPromptFL51015Number of clients0.60.70.80.9AccuracyFedMSFTLFFTPromptFL51015Number of clients0.40.60.81.0AccuracyFedMSFTLFFTPromptFLFood101UCF101EuroSATDifferent accuracy thresholds0.800.850.900.951.00Accuracy=0.001=0.005=0.01=0.020.1110Bandwidth (MB/s)0.02.55.07.510.012.515.0Cmmunication time  with log scale (ms)FedMSFTLFFTPromptFLFood101UCF101EuroSATDatasets0.00.20.40.60.8AccuracyFedMSFTLFFTPromptFLIEEE TRANSACTIONS ON MOBILE COMPUTING
+
+8
+
+Fig. 9: Accuracy with different LoRA
+ranks
+
+Fig. 10: Accuracy with different LoRA
+dropout rates
+
+Fig. 11: Accuracy with different LoRA
+weight decays
+
+the accuracy decreased from 88.48% to 88.24% when δ
+increased from 0.001 to 0.02. The largest accuracy difference
+in the three datasets is 1.09%, 0.0024%, and 0.0016%.
+
+Results imply the effectiveness of the design of SAL
+because of leveraging the idea of curriculum learning that
+progressively increases the number of activates low-rank
+adaptation matrices in the visual encoder and the text en-
+coder. In the optimization process of FM, it is often easier
+at the beginning, while the optimization of parameters
+becomes more difficult as it progresses, making it harder
+to improve accuracy. We increase the number of activated
+parameters through a controller during the training to tackle
+the increasing difficulty of optimizing the FM during train-
+ing.
+
+Imapct of learning rates. We show the accuracy of
+FedMS in three datasets under different learning rates. We
+set the learning rate to 2e−3, 2e−4, and 2e−5.
+
+From Fig. 12 we can observe that when the learning rate
+is 2e−5 the model shows a slow convergence rate, especially
+in UCF101 datasets, the accuracy is 70.61% which has an
+accuracy loss of 16.72% compared to the accuracy when
+the learning rate is 2e−4. When the learning rate is 2e−3,
+the accuracy has a sharp increase in the first few epochs
+in all datasets but may encounter severe oscillation in the
+following epochs which is because of the large learning rate
+can cause instability in model training. This phenomenon
+is especially usual in the training of FMs for the reason
+that they usually have a large number of parameters and
+the scale of gradient calculations will increase which may
+cause the gradient explosion. Moreover, models with large
+parameters tend to have more complex optimization spaces,
+resulting in the training process being more easily affected
+by noise and instability.
+
+Impact of LoRA ranks. In FedMS, we incorporate LoRA
+for model training and optimization. The rank in LoRA
+refers to the degree of model compression or pruning, and
+different rank settings can have an impact on the model
+training performance. We examine the training accuracy
+performance of FedMS under different LoRA ranks, specifi-
+cally rank is set to 1, 4, 8, and 16.
+
+From Fig. 9, we can observe that as the LoRA rank
+increases, FedMS shows a certain trend in accuracy perfor-
+mance across different datasets: it performs the best at LoRA
+rank=4, but the model accuracy decreases as the LoRA rank
+further increases. This trend is particularly evident on the
+UCF101 dataset, where changes in LoRA rank can cause
+
+Fig. 12: Comparison of accuracy of FedMS under different
+learning rates
+
+Impact of accuracy thresholds. We further discuss the
+performance of FedMS when the value of the accuracy
+threshold δ is different. Typically, if the clients have more
+computation resources, they can have a higher δ to encour-
+age more inserted low-rank decomposition matrices to be
+activated, and if their computing resources are scarce they
+can set a small δ to save more computation resources.
+
+We set the accuracy threshold to 0.001, 0.005, 0.01, and
+0.02 to see its effect on the model performance. From Fig.
+6 we can find that the accuracy does not always increase
+with δ. On the Food101 dataset, the accuracy is 94.05%
+when α is 0.02 and is 92.96% when α is 0.001, which has an
+increase of 1.09% and on the EuroSAT dataset, the accuracy
+increase from 99.23% to 99.39%. But on the UCF101 dataset,
+
+14816Lora rank0.860.880.900.920.940.960.981.00AccuracyFood101UCF101EuroSAT00.10.30.5Lora drop out rate0.860.880.900.920.940.960.981.00AccuracyFood101UCF101EuroSAT00.050.10.20.5Weight decay0.840.860.880.900.920.940.960.981.00AccuracyFood101UCF101EuroSAT01020304050Epochs0.840.860.880.900.920.94AccuracyFood101lr=2103lr=2104lr=210501020304050Epochs0.60.70.8AccuracyUCF101lr=2103lr=2104lr=210501020304050Epochs0.20.40.60.81.0AccuracyEuroSATlr=2103lr=2104lr=2105IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+9
+
+the performance of the final model to fluctuate within a 5%
+range. One possible reason is that the semantic information
+that the UCF101 dataset contains is difficult for the model
+to capture and thus requires more training to optimize the
+model. A high LoRA rank can lead to a large optimization
+space which raises challenges for the training. On the other
+hand, the information patterns in the Food101 and EuroSAT
+datasets are relatively simpler and easy for the inserted low-
+rank matrices with different ranks to capture, so the model’s
+learning performance is not affected significantly.
+
+Impact of LoRA dropout rates. The dropout coefficient
+in LoRA affects the probability of applying dropout reg-
+ularization during the model training process. In FedMS,
+we apply dropout to prevent neural networks from over-
+fitting and enhance the model’s generalization ability. In
+our experiment, the group with a dropout rate of 0 will
+serve as the control group to represent the accuracy of
+the model without using dropout techniques. The groups
+with dropout rates of 0.1, 0.3, and 0.5 will serve as the
+experimental groups to investigate the impact of different
+dropout coefficients.
+
+From Fig. 10, we can clearly see that dropout has a
+significant effect on the final model accuracy when set to
+0.1. It results in a noticeable improvement of 0.5%, 2%, and
+0.6% respectively on the Food101, UFC101, and EuroSAT
+datasets. This improvement is quite significant, especially
+when the model itself already has a high accuracy on the
+dataset. Similar to the LoRA rank experiment, FedMS shows
+a decrease in accuracy on the UFC101 dataset with higher
+dropout rates. This is expected due to the more complex
+information patterns in the UFC101 dataset. Setting dropout
+too high increases the number of discarded neurons during
+model training, leading to a decrease in the model’s learning
+and expressive capacity. Similarly, due to the simpler infor-
+mation patterns in the Food101 and EuroSAT datasets, the
+higher dropout rates contribute to the improved accuracy of
+the FedMS model on these two datasets.
+
+Impact of weight decays. Weight decay is used to solve
+the overfitting problem. By adding a regularization term to
+the loss function, it can encourage the model to have small
+weight values during the training. In our experiment, we set
+up five different experimental groups with varying degrees
+of weight decay. The group with a weight decay value of 0
+represents the training performance of FedMS without using
+weight decay.
+
+From Fig. 11 we can conclude that weight decay has
+a different impact on different datasets. On the UCF101
+dataset, it has a significant impact on the accuracy. When
+the weight decay is 0.5 it has an accuracy loss of 4.53%
+compared to the case when weight decay is 0.1. Weight
+decay has less impact on Food101 and UCF101 datasets, the
+accuracy under different weight decay varies less than 1%
+on these two datasets. Overall, the performance of FedMS
+improves with the use of weight decay but decreases when
+the weight decay value is set too high. This is because
+large weight decay can lead to excessive constraints on
+parameters, limiting the effective information learned by the
+model.
+
+Impact of backdoor attacks. To further verify the ro-
+bustness of FedMS we test the performance of FedMS and
+the three baselines under backdoor attack. We suppose that
+
+Methods
+FedMS (Stage 1)
+FedMS (Stage 2)
+FT
+LFFT
+PromptFL
+
+Proportion
+0.1%
+0.27 %
+100%
+50%
+0.005%
+
+TABLE 1: Proportion of training parameters of different
+methods
+
+there is a certain ratio of malicious clients controlled by the
+attacker. The controlled malicious clients update the reverse
+weight of their local model in the weight aggregation every
+communication round to attack the FL system.
+
+We set the ratio of malicious clients to the total number
+of clients to 20% and compare the accuracies. From Fig.
+8 we can observe that the backdoor attack can severely
+harm the performance of the algorithm. FedMS has the
+highest accuracy in all datasets. It has an accuracy gain of
+6.97%, 14.94%, and 14.23% on three datasets compared to
+the highest accuracy of the three baselines. On the UCF101
+dataset, the accuracy of the FT, LFFT, and, PromptFL have
+an accuracy of 1.20%, 65.09%, and 57.90% respectively.
+Three baselines have the lowest average on the EuroSAT
+dataset which is 36.11%, and they achieve the highest av-
+erage accuracy of 86.88% on the Food101 dataset. FMs are
+pre-trained on large-scale datasets which enables them to
+have strong zero-shot ability. The FM we use has the highest
+zero-shot accuracy on the Food101 dataset among the three
+datasets which makes it more resistant to backdoor attacks
+when it is trained on the Food101 dataset. The FT algorithm
+is the most easily poisoned because it exposes all parame-
+ters to the attack. Although the LFFT algorithm performs
+inferior to FT when there are no attacks, it outperforms FT
+under backdoor attacks due to the reason that the frozen
+transformer layers can help maintain the feature extraction
+ability of FM.
+
+4.2.3 Comparison of resource consumption
+
+Comparison of the number of training parameters. Tab. 1
+illustrates the proportion of the number of training param-
+eters of FedMS and other baselines to the total parameters
+of the FM. Results show that FedMS only tunes 0.1% and
+0.108% of parameters on training stage one and training
+stage two. FT and LFFT tune 100% and 50% of parameters.
+Notice that although PromptFL can save 0.095% to 0.103%
+trainable parameters compared to FedMS, it has a cost of
+severe performance drop. FedMS achieves the best trade-off
+between training parameter saving and model performance.
+Comparison of transmission time. Considering the sce-
+nario in mobile computing and the Internet of Things, we
+test the proposed FedMS in different bandwidth conditions.
+Specifically, we set the bandwidth to be 0.1 MB/s, 1 MB/s,
+and 10 MB/s which are typical bandwidths in modern
+mobile communication networks.
+
+Fig. 7 illustrates the communication time of the pro-
+posed FedMS and other baselines on different datasets per
+communication round under different network bandwidths.
+Low bandwidth results in long data transmission time for
+parameter aggregation in each communication round thus
+impairs the training efficiency of FL.
+
+IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+10
+
+(a) Food101
+
+(b) UCF101
+
+(c) EuroSAT
+
+Fig. 13: Comparison of the accuracy on different datasets using model with MoFM (ViT-B/16) and model without MoFM
+(ViT-L/14)
+
+Model type
+Model with MoFM (Vit-B/16)
+Model without MoFM (Vit-L/14)
+
+Number of parameters
+311M
+428M
+
+TABLE 2: Comparison of the number of parameters of the
+model
+
+Datasets
+Food101
+UCF101
+EuroSAT
+
+Accuracy
+Gate adapter only All gate parameters
+
+93.73%
+87.33%
+99.46%
+
+93.64%
+86.67%
+99.11%
+
+TABLE 3: Comparison of accuracy on different datasets
+
+From the results, we can observe that when the band-
+width is 0.1 MB/s, the time for FedMS to finish a com-
+munication round is 3.08 seconds while the communication
+time for FT, LFFT, and PromptFL per communication round
+is 5,984 seconds, 2,992 seconds, and 0.32 seconds. FedMS
+save 99.95% communication time compared to the FT algo-
+rithm. When the bandwidth is 1 MB/s and 10 MB/s, the
+difference in training time between different algorithms is
+reduced. FedMS and PromptFL have communication times
+of fewer than 5 seconds per communication round in all
+network bandwidth conditions. Although PromptFL has
+the minimum communication resource consumption, both
+FedMS and PromptFL are communication efficient in real-
+world scenarios and FedMS has much higher accuracy on
+all datasets compared with PromptFL.
+
+4.2.4 Ablation study
+
+Impact of Mixture of Foundation Models architecture. We
+compare the image classification accuracy of the model with
+the MoFM architecture using the visual encoder ViT-B/16 and
+the model without the MoFM architecture but with a visual
+encoder ViT-L/14, which has a much larger number of
+parameters. The first model is trained through all two stages
+of FedMS and the second model is trained through the first
+stage of FedMS. The total number of epochs of both models
+is set to 50 to ensure fair comparison. The comparison of the
+total number of parameters is shown in Tab. 2. The model
+with MoFM architecture but with a smaller visual encoder
+has 27.33% parameter less than another model.
+
+We can observe from Fig. 13 that although with much
+fewer parameters, the model with the MoFM architecture
+and trained through complete two stages achieves a higher
+accuracy on all datasets. It has an average accuracy increase
+of 2.36% on all datasets. More specifically, with an increase
+of 2.03%, 3.24%, and 1.82% on Food101, UCF101, and Eu-
+roSAT datasets.
+
+Model types Number of parameters
+Gate adapter
+Gate model
+
+264.19k
+11.44M
+
+TABLE 4: Comparison of the number of parameters of the
+gate adapter and the gate model
+
+This surprising result demonstrates the superiority of
+the MoFM architecture as it can intelligently assign different
+weights to different experts according to the characteristics
+of the images to be classified. This enables better generaliza-
+tion ability to data that is out of the distribution of clients’
+local datasets and enables better personalization ability to
+data that follow the local distribution of the local clients’
+local datasets.
+
+Impact of aggregation of gate parameters. We compare
+the image classification accuracy of FedMS and FedMS with
+all gate parameters activated in the second training stage.
+We can observe from Tab. 4 that by only fine-tuning the
+last layer of the gate adapter, we can achieve an accuracy
+of 93.73%, 87.33%, and 99.46% in Food101, UCF101, and
+EuroSAT datasets which is 0.09%, 0.66%, and 0.35% higher
+than tuning full parameters of the gate model. Moreover, we
+save the communication resource consumption by 97.69%.
+
+This is because the parameters changing of the local
+expert during training can cause the relationship between
+the global expert and the local expert to keep changing
+which makes it hard for the gate model to decide the
+decision weight it assigns to the two FMs and can cause
+unstableness in training which harm the performance. By
+freezing the gate parameters and inserting a lightweight
+gate adapter, the gate model can quickly adapt to the newly
+optimized parameters of the local expert while maintaining
+the feature extraction ability.
+
+01020304050Epochs0.840.860.880.900.920.94AccuracyViT-B/16ViT-L/1401020304050Epochs0.650.700.750.800.85AccuracyViT-B/16ViT-L/1401020304050Epochs0.40.50.60.70.80.91.0AccuracyViT-B/16ViT-L/14IEEE TRANSACTIONS ON MOBILE COMPUTING
+
+5 CONCLUSIONS
+
+In this paper, we propose a novel FedMS algorithm that
+contains two training stages to address the computation,
+communication, and statistical heterogeneous challenges in
+federated learning with foundation models. In the first
+stage, we freeze the pre-trained FM weight and insert low-
+rank decomposition matrices in every transformer block.
+We activate all the inserted matrices to better extract global
+feature information. In every communication round only
+the parameters of low-rank decomposition matrices join the
+weight aggregation. In the second stage, we take FM trained
+in the first stage as the global expert and construct an-
+other local expert to provide personalization for individual
+clients. We are the first to form the global expert and the
+local expert as a Mixture of Foundation Models (MoFM) in
+federated learning. We specially design and insert a gate
+adapter into the gate model to help assign the decision
+weight of the two experts. Moreover, to enable efficient
+training in computation-scarce scenarios, we propose a
+Sparsely Activated LoRA (SAL) algorithm to activate the
+low-rank adaptation matrices progressively according to
+past accuracies in the Capability Queue.
+
+We test the performance of FedMS through extensive ex-
+periments in various settings, and results show that FedMS
+outperforms other SOTA baselines.
+
+REFERENCES
+
+[1]
+
+J. D. M.-W. C. Kenton and L. K. Toutanova, “Bert: Pre-training of
+deep bidirectional transformers for language understanding,” in
+Proceedings of NAACL-HLT, 2019, pp. 4171–4186.
+
+[2] T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhari-
+wal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell et al., “Lan-
+guage models are few-shot learners,” Advances in neural informa-
+tion processing systems, vol. 33, pp. 1877–1901, 2020.
+
+[3] A. Radford, J. W. Kim, C. Hallacy, A. Ramesh, G. Goh, S. Agar-
+wal, G. Sastry, A. Askell, P. Mishkin, J. Clark et al., “Learning
+transferable visual models from natural language supervision,”
+in International conference on machine learning.
+PMLR, 2021, pp.
+8748–8763.
+J. Betker, G. Goh, L. Jing, T. Brooks, J. Wang, L. Li, L. Ouyang,
+J. Zhuang, J. Lee, Y. Guo et al., “Improving image generation with
+better captions,” 2023.
+
+[4]
+
+[5] B. McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Ar-
+cas, “Communication-efficient learning of deep networks from
+decentralized data,” in Artificial intelligence and statistics. PMLR,
+2017, pp. 1273–1282.
+
+[6] T. Li, A. K. Sahu, M. Zaheer, M. Sanjabi, A. Talwalkar, and V. Smith,
+“Federated optimization in heterogeneous networks,” Proceedings
+of Machine learning and systems, vol. 2, pp. 429–450, 2020.
+
+[7] Q. Li, B. He, and D. Song, “Model-contrastive federated learning,”
+in Proceedings of the IEEE/CVF conference on computer vision and
+pattern recognition, 2021, pp. 10 713–10 722.
+J. Zhang, Z. Li, B. Li, J. Xu, S. Wu, S. Ding, and C. Wu, “Federated
+learning with label distribution skew via logits calibration,” in
+International Conference on Machine Learning.
+PMLR, 2022, pp.
+26 311–26 329.
+
+[8]
+
+[9] E. L. Zec, O. Mogren, J. Martinsson, L. R. S ¨utfeld, and D. Gillblad,
+“Specialized federated learning using a mixture of experts,” arXiv
+preprint arXiv:2010.02056, 2020.
+
+[10] Y. Mao, Z. Zhao, G. Yan, Y. Liu, T. Lan, L. Song, and W. Ding,
+“Communication-efficient federated learning with adaptive quan-
+tization,” ACM Transactions on Intelligent Systems and Technology
+(TIST), vol. 13, no. 4, pp. 1–26, 2022.
+
+[11] A. Huang, Y. Chen, Y. Liu, T. Chen, and Q. Yang, “Rpn: A residual
+pooling network for efficient federated learning,” arXiv preprint
+arXiv:2001.08600, 2020.
+
+11
+
+[12] F. Haddadpour, M. M. Kamani, A. Mokhtari, and M. Mahdavi,
+“Federated learning with compression: Unified analysis and sharp
+guarantees,” in International Conference on Artificial Intelligence and
+Statistics. PMLR, 2021, pp. 2350–2358.
+
+[13] R. Chen, L. Li, K. Xue, C. Zhang, M. Pan, and Y. Fang, “Energy
+efficient federated learning over heterogeneous mobile devices via
+joint design of weight quantization and wireless transmission,”
+IEEE Transactions on Mobile Computing, vol. 22, no. 12, pp. 7451–
+7465, 2023.
+
+[14] Z. Zhang, Z. Gao, Y. Guo, and Y. Gong, “Scalable and low-latency
+federated learning with cooperative mobile edge networking,”
+IEEE Transactions on Mobile Computing, vol. 23, no. 1, pp. 812–822,
+2024.
+
+[15] Z. Qu, S. Guo, H. Wang, B. Ye, Y. Wang, A. Y. Zomaya, and
+B. Tang, “Partial synchronization to accelerate federated learning
+over relay-assisted edge networks,” IEEE Transactions on Mobile
+Computing, vol. 21, no. 12, pp. 4502–4516, 2022.
+
+[16] J. Zhang, X. Qi, and B. Zhao, “Federated generative learning with
+
+foundation models,” arXiv preprint arXiv:2306.16064, 2023.
+
+[17] T. Guo, S. Guo, J. Wang, X. Tang, and W. Xu, “Promptfl: Let feder-
+ated participants cooperatively learn prompts instead of models-
+federated learning in age of foundation model,” IEEE Transactions
+on Mobile Computing, 2023.
+
+[18] D. Cai, Y. Wu, S. Wang, F. X. Lin, and M. Xu, “Efficient federated
+learning for modern nlp,” in Proceedings of the 29th Annual Inter-
+national Conference on Mobile Computing and Networking, 2023, pp.
+1–16.
+
+[19] W. Lu, H. Xixu, J. Wang, and X. Xie, “Fedclip: Fast generalization
+and personalization for clip in federated learning,” in ICLR 2023
+Workshop on Trustworthy and Reliable Large-Scale Machine Learning
+Models, 2023.
+
+[20] J. Zhang, S. Vahidian, M. Kuo, C. Li, R. Zhang, G. Wang, and
+Y. Chen, “Towards building the federated gpt: Federated instruc-
+tion tuning,” arXiv preprint arXiv:2305.05644, 2023.
+
+[21] E. J. Hu, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang, W. Chen
+et al., “Lora: Low-rank adaptation of large language models,” in
+International Conference on Learning Representations, 2021.
+
+[22] J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess,
+R. Child, S. Gray, A. Radford, J. Wu, and D. Amodei, “Scaling
+laws for neural language models,” arXiv preprint arXiv:2001.08361,
+2020.
+
+[23] A. Aghajanyan, S. Gupta, and L. Zettlemoyer, “Intrinsic di-
+mensionality explains the effectiveness of language model fine-
+tuning,” in Proceedings of the 59th Annual Meeting of the Association
+for Computational Linguistics and the 11th International Joint Confer-
+ence on Natural Language Processing (Volume 1: Long Papers), 2021,
+pp. 7319–7328.
+
+[24] J. Yosinski, J. Clune, Y. Bengio, and H. Lipson, “How transferable
+are features in deep neural networks?” Advances in neural informa-
+tion processing systems, vol. 27, 2014.
+
+[25] Y. Zhao, M. Li, L. Lai, N. Suda, D. Civin, and V. Chandra, “Feder-
+ated learning with non-iid data,” arXiv preprint arXiv:1806.00582,
+2018.
+
+[26] N. Houlsby, A. Giurgiu, S. Jastrzebski, B. Morrone, Q. De Larous-
+silhe, A. Gesmundo, M. Attariyan, and S. Gelly, “Parameter-
+efficient transfer learning for nlp,” in International Conference on
+Machine Learning. PMLR, 2019, pp. 2790–2799.
+
+[27] L. Bossard, M. Guillaumin, and L. Van Gool, “Food-101–mining
+discriminative components with random forests,” in Computer
+Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland,
+September 6-12, 2014, Proceedings, Part VI 13.
+Springer, 2014, pp.
+446–461.
+
+[28] P. Helber, B. Bischke, A. Dengel, and D. Borth, “Eurosat: A novel
+dataset and deep learning benchmark for land use and land
+cover classification,” IEEE Journal of Selected Topics in Applied Earth
+Observations and Remote Sensing, vol. 12, no. 7, pp. 2217–2226, 2019.
+[29] K. Soomro, A. R. Zamir, and M. Shah, “Ucf101: A dataset of 101
+human actions classes from videos in the wild,” arXiv preprint
+arXiv:1212.0402, 2012.
+
+[30] M. Yurochkin, M. Agarwal, S. Ghosh, K. Greenewald, N. Hoang,
+and Y. Khazaeni, “Bayesian nonparametric federated learning of
+neural networks,” in International conference on machine learning.
+PMLR, 2019, pp. 7252–7261.
+
+

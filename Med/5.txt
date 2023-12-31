@@ -1,0 +1,3951 @@
+REVIEW
+J Geriatr Cardiol 2021; 18(8): 663–685
+
+Atypical antipsychotics and oxidative cardiotoxicity: review
+of literature and future perspectives to prevent sudden cardiac
+death
+
+Stefano D’Errico1, Raffaele La Russa2,3, Aniello Maiese3,4, Alessandro Santurro5, Matteo Scopetti5,
+Silvia Romano5, Martina Zanon1, Paola Frati3,5, Vittorio Fineschi3,5,✉
+1. Department  of  Medical,  Surgical  and  Health  Sciences,  University  of  Trieste,  Trieste,  Italy;  2. Department  of  Clinical
+and Experimental Medicine, University of Foggia, Foggia, Italy; 3. IRCSS Neuromed Mediterranean Neurological Institute,
+Pozzilli, Italy; 4. Department of Surgical Pathology, Medical, Molecular and Critical Area, University of Pisa, Pisa, Italy;
+5. Department  of  Anatomical,  Histological,  Forensic  and  Orthopaedic  Sciences,  Sapienza  University  of  Rome,  Rome,
+Italy
+✉ Correspondence to: vittorio.fineschi@uniroma1.it
+https://doi.org/10.11909/j.issn.1671-5411.2021.08.002
+
+ABSTRACT　 Oxidative  stress  is  considered  the  principal  mediator  of  myocardial  injury  under  pathological  conditions.  It  is
+well known that reactive oxygen (ROS) or nitrogen species (RNS) are involved in myocardial injury and repair at the same time
+and that cellular damage is generally due to an unbalance between generation and elimination of the free radicals due to an inad-
+equate mechanism of antioxidant defense or to an increase in ROS and RNS. Major adverse cardiovascular events are often asso-
+ciated with drugs with associated findings such as fibrosis or inflammation of the myocardium. Despite efforts in the preclinical
+phase of the development of drugs, cardiotoxicity still remains a great concern. Cardiac toxicity due to second-generation anti-
+psychotics  (clozapine,  olanzapine,  quetiapine)  has  been  observed  in  preclinical  studies  and  described  in  patients  affected  with
+mental disorders. A role of oxidative stress has been hypothesized but more evidence is needed to confirm a causal relationship.
+A better knowledge of cardiotoxicity mechanisms should address in the future to establish the right dose and length of treatment
+without impacting the physical health of the patients.
+
+Second-generation (atypical) antipsychotics
+
+are used in the treatment of mental dis-
+orders (schizophrenia, bipolar disorder,
+major depressive disorder). Since marketed, cloza-
+pine was widely used because of its efficacy in drug-
+resistant schizophrenia and freedom from extrapyr-
+amidal effects. After clozapine, other antipsychotics
+were introduced (olanzapine, quetiapine, risperidone)
+with similar effects and the same safer profile and
+soon became the mainstay of the treatment of
+schizophrenia.[1] The therapeutic effect of second-
+generation antipsychotic agents is related to dopa-
+minergic D2 receptor antagonism and to the block-
+age of serotonin receptors. Major cardiovascular ad-
+verse effects (tachycardia, bradycardia, hyperten-
+sion, hypotension, syncopal episodes) and electro-
+cardiographic abnormalities (prolonged QT interval)
+are reported in patients suffering from mental dis-
+orders and treated with antipsychotics.[2–8] An in-
+
+© 2021 JGC All rights reserved; www.jgc301.com
+
+creased risk of sudden death has been also reported
+but the risk of underreporting is concrete because of
+the lack of a systematic post-mortem examination.[9–13]
+In addition, individuals with schizophrenia are
+known to be at greater risk of cardiac death, in part
+linked to inadequate lifestyles that predispose to
+cardiovascular disease, in part due to poor compli-
+ance with health care.[14–16] However, many typical
+and atypical antipsychotic drugs have been reported
+in the literature to significantly increase the risk of
+sudden cardiac death in patients with psychiatric
+disorders,[17] and this has led to restrictions in clinical
+practice or the withdrawal of these molecules from
+the market. A retrospective cohort study showed
+that the incidence of sudden cardiac death in sub-
+jects taking antipsychotics is increased (dose-related
+increase) compared to non-users of antipsychotics,
+regardless of the pharmacological class.[18]
+
+Sudden antipsychotic cardiac death appears to be
+
+Journal ofGeriatric CardiologyJournal ofGeriatric CardiologyJournal ofGeriatric CardiologyJournal ofGeriatric CardiologyJournal ofGeriatric Cardiology 
+  
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+linked to arrhythmic mechanisms, dilated heart dis-
+ease, and myocarditis.[19–21] In the pathogenesis of
+the aforementioned cardiological alterations, an in-
+volvement of oxidative stress has been suggested,
+with an increase in reactive oxygen (ROS).[22] ROS
+modulates multiple cellular signaling pathways in
+physiological conditions. However, when the pro-
+duction of intracellular ROS is excessive it causes
+damage to the molecular components of the cell, fa-
+voring the pathogenesis of various diseases with
+particular reference to cardiovascular ones.
+
+Despite the large use, factors underlying cardi-
+ovascular disease in patients treated with anti-
+psychotics are still far to be completely understood
+and need to be deeply studied.[23–27] Growing in-
+terest is aimed at understanding the contribution of
+antipsychotic therapy in the genesis of cardiac tox-
+icity in schizophrenic patients.
+
+The purpose of the present study is to review the
+scientific literature on the topic and propose a pos-
+sible explanation of antipsychotics-related cardi-
+otoxicity.
+
+LITERATURE ANALYSIS
+
+Relevant scientific articles were identified from
+PubMed, Cochrane Central, Scopus, Web of Science,
+Science Direct, EMBASE up to January 2020 using
+the following keywords: “atypical antipsychotics”,
+
+“cardiomyopathy”, “myocarditis”, “oxidative
+stress”, and “sudden cardiac death”. The main
+keywords were individually searched in associ-
+ation with each of the others.
+
+The resulting 527 references were screened to ex-
+clude duplicates, which left 67 articles for further
+consideration. In addition, non-English papers were
+excluded and the following inclusion criteria were
+used: original research articles, reviews and mini-
+reviews, documents and guidelines promulgated by
+scientific societies and international organizations,
+and book chapters.
+
+The papers not suitable for the review were ex-
+cluded, a hand search was performed through the
+reference lists of the included articles. These public-
+ations were carefully evaluated considering the
+main aims of the review. An excel data extraction
+form was used to extract pivotal data, including
+publication year, first author, types of scientific art-
+icles, the topic of the study. This evaluation left 106
+scientific papers, distributed as original research
+articles, reviews, and mini-reviews (Figure 1). These
+reports were published between 1981 and 2020.
+
+The features of included papers were described in
+Tables 1–3. The table was organized by dividing the
+main topics of the present review into three sub-
+groups: the relationship between heart disease and
+use of antipsychotic drugs, the relationship between
+
+Figure  1      Relevant  scientific  articles  were  identified  from  PubMed,  Cochrane  Central,  Scopus,  Web  of  Science,  Science  Direct,
+EMBASE up to January 2020 using the following keywords: “atypical antipsychotics”, “cardiomyopathy”, “myocarditis”, “oxidative
+stress", "sudden cardiac death". The main keywords were individually searched in association with each of the others. The resulting
+527  references  were  screened  to  exclude  duplicates,  which  left  67  articles  for  further  consideration.  In  addition,  non-English  papers
+were  excluded  and  the  following  inclusion  criteria  were  used:  original  research  articles,  reviews  and  mini-reviews,  documents  and
+guidelines promulgated by scientific societies and international organizations, and book chapters.
+
+664
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Table 1    Baseline characteristics of the studies with the correlation between use of antipsychotics and heart disease.
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Ariyarajah, et al.[115]
+
+2010
+
+Observational study (Case
+series)
+
+Tree cases series of patients with
+schizophrenia, treated with clozapine
+
+Cardiac magnetic resonance diagnostic role in
+clozapine-induced myocarditis
+
+Belhani, et al.[87]
+
+2006
+
+Preclinical study
+
+Bellissima, et al.[116]
+
+2018
+
+Review
+
+Eight groups of six New-Zealand White
+rabbits were treated for three months: group I:
+controls (saline); group II: amisulpride; group
+III: haloperidol; group IV: levomepromazine;
+group V: olanzapine; group VI: risperidone;
+group VII: levomepromazine + haloperidol;
+group VIII: levomepromazine + risperidone
+
+Reviewed of 359 cases of clozapine-induced
+myocarditis through individual case reports,
+case series, summated case series, spontaneous
+pharmacovigilance reporting and reviews
+
+Bugge, et al.[49]
+
+2016
+
+Observational study (Case
+report)
+
+Case report of a schizophrenic patient treated
+with clozapine
+
+Chow, et al.[24]
+
+2014
+
+Observational study
+(Multicentre cross-
+sectional cohort study)
+
+100 schizophrenic patients treated with
+clozapine, without a history of cardiac
+pathology; 21 schizophrenic patients (controls)
+treated with non-clozapine antipsychotics; 20
+controls without schizophrenia
+
+Evaluate the hypothesis that myocardial
+lesions can be induced by neuroleptic drugs
+
+Identify and prevent myocarditis associated
+with clozapine therapy
+
+Description of a case of perimyocarditis and
+parenchymal lung disease caused by clozapine
+treatment
+
+Evaluation of prevalence of subclinical
+cardiomyopathy in the three groups analysed
+
+Coulter, et al.[4]
+
+2001 Observational study
+
+WHO database on antipsychotics side-effects
+
+Examine the relation between antipsychotic
+drugs and myocarditis and cardiomyopathy
+
+Curto, et al.[2]
+
+2016
+
+Review
+
+De Berardis D, et al.[20]
+
+2018
+
+Review
+
+Reviewed of 88 articles about clozapine and
+cardiac desease
+
+Analise the correlation between clozapine and
+cardiac desease
+
+Reviewed of 93 articles about clozapine and
+myocarditis
+
+Analise the correlation between clozapine and
+myocarditis
+
+Fineschi, et al.[13]
+
+2004
+
+Observational study (Case
+report)
+
+Case concerns the sudden death of a 29-year-
+old male during clozapine therapy
+
+Clozapine-induced hypersensitivity
+myocarditis
+
+Gareri, et al.[117]
+
+2008
+
+Review
+
+Current knowledge on clozapine use in elderly
+patients
+
+Study the safety of clozapine in elderly
+patients
+
+Hussein, et al.[118]
+
+2015
+
+Observational study (Case-
+control)
+
+19 patients diagnosed with schizophrenia,
+schizoaffective, and bipolar disorder; 10
+healthy volunteers
+
+Jerrell, et al.[119]
+
+2010
+
+Observational study
+(Retrospective cohort
+design)
+
+2,231 schizophrenic adults assemed atypical or
+conventional antipsychotic medications
+
+Investigate the effect of short-term (two
+months) treatment with atypical anti-
+psychotics on coronary heart disease risk
+factors, in psychiatric patients
+
+Examine the risk of cerebro- and
+cardiovascular disorders associated with
+antipsychotic treatment among adults with
+schizophrenia
+
+Katta, et al.[120]
+
+2016
+
+Observational study (Case
+report)
+
+Case concerns the sudden death of a 54-year-
+old male during clozapine therapy
+
+Clozapine-induced hypersensitivity
+myocarditis
+
+Khan, et al.[12]
+
+2017
+
+Observational study
+(Cohort study)
+
+503 patients with treatment-resistant
+schizophrenia maintained on clozapine during
+the study (between January 2009 and
+December 2015)
+
+Incidence of sudden death and time to
+myocarditis in patients treated with clozapine
+
+Kontoangelos, et al.[121]
+
+2014
+
+Observational study (Case
+report)
+
+Case report of a schizophrenic patient treated
+with clozapine
+
+Myocarditis is a recognized complication
+associated with clozapine
+
+Korkmaz, et al.[122]
+
+Lang, et al.[123]
+
+Lee, et al.[3]
+
+2019
+
+2008
+
+2003
+
+Observational study
+(Cross sectional study)
+
+40 schizophrenic adults treated with
+antipsychotics; 40 healthy volunteers
+
+Scrutinize the changes that occur in left
+ventricle in adults treated with antipsychotics
+
+Observational study (Case
+report)
+
+Case report of a 50-year-old man treated with
+clozapine
+
+Investigate treatment options after clozapine
+in treatment resistant schizophrenia
+
+Observational study (Case
+report)
+
+Case report of a 84-year-old man treated with
+olanzapine
+
+Description of a case of cardiac side effects
+caused by olanzapine treatment
+
+Mackin, et al.[42]
+
+2008
+
+Review
+
+A revision on common side effects associated
+with psychotropic drugs
+
+Description of the common effects of
+psychotropic drugs on the cardiovascular
+system
+
+Marti, et al.[124]
+
+2005
+
+Observational study (Case
+report)
+
+Case report of a 29-year-old man
+schizophrenic patient treated with risperidone
+
+Description of a case of sudden cardiac death
+attributed to risperidone therapy
+
+Merrill, et al.[48]
+
+2005
+
+Review
+
+Review current literature on adverse cardiac
+events associated with clozapine
+
+Study the association between clozapine and
+adverse cardiac events
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+665
+
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+Continued
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Papazisis, et al.[9]
+
+2012
+
+Observational study (Case
+report)
+
+Case report of a 60-year-old man treated with
+quetiapine
+
+Description of a case of sudden cardiac death
+attributed to quietapina therapy
+
+Patel, et al.[62]
+
+2019
+
+Review
+
+Peters, et al.[125]
+
+2014
+
+Observational study (Case
+report)
+
+Review current literature on life-threating
+cardiovascular side effects associated with
+clozapine, edited until 2019
+
+Case report of a 62-year-old woman treated
+suffering from bipolar affective disorder was
+treated with a mixture of olanzapine,
+amisulpride, biperiden, benperidol and
+lithium carbonate
+
+Pillinger, et al.[11]
+
+2019
+
+Observational study (Case-
+control study)
+
+14 schizophrenic patients treated with
+antipsychotic; 17 controls
+
+Examine the proposed aetiologies, diagnostic
+approaches and subsequent management
+strategies of cardiotoxicity associated with
+clozapine use
+
+Description of a case of tako tsubo
+cardiomyopathy in a patient treated with a
+mixture of olanzapine, amisulpride, biperiden,
+benperidol and lithium carbonate
+
+Role of antipsychotics in fibro-inflammatory
+myocardial process that contribute to the
+excess cardiovascular mortality associated
+with schizophrenia
+
+Polcwiartek, et al.[126]
+
+2015
+
+Review
+
+Polcwiartek, et al.[127]
+
+2016
+
+Review
+
+Examination of preclinical, clinical, and
+epidemiological studies on cardiac safety of
+aripiprazole
+
+Assess aripiprazole’s cardiac safety in patients
+at high risk for torsade
+
+Review current literature about cardiovascular
+safety of antipsychotics, edited until 2016
+
+Discuss side effect of antipsychotics and
+current guidelines regarding routine
+electrocardiogram monitoring
+
+Ray, et al.[18]
+
+2009
+
+Observational study
+(Retrospective cohort
+study)
+
+44,218 users of typical antipsychotics; 46,089
+users of atypical antipsychotics; 186,600
+matched nonuser controls
+
+Role of typical and atypical on dose-related
+increased risk of sudden cardiac death
+
+Roden, et al.[90]
+
+2004
+
+Review
+
+Review literature about drug-induced
+(including antipsychotic) prolongation of the
+QT interval and torsade de pointes, edited
+until 2004
+
+Summarize the current knowledge about
+molecular and clinical predictors of drug-
+induced prolongation of the QT interval and
+torsade de pointes, consider how new
+molecular predictors of a drug’s activity might
+be incorporated into drug-development
+programs and clinical practice, and suggest a
+general approach to drugs that are suspected
+of causing this problem
+
+Salvo, et al.[17]
+
+2016
+
+Observational study
+(Meta-analysis)
+
+Meta-analysis of observational studies: two
+cohort (740,306 person-years) and four case-
+control (2,557 cases; 17,670 controls) studies
+
+Estimate the risk of sudden cardiac death or
+sudden unexpected death related to individual
+antipsychotics
+
+Serrano, et al.[128]
+
+2013
+
+Observational study (Two
+cross-sectional studies)
+
+Sicouri, et al.[129]
+
+2008
+
+Review
+
+125 patients treated with clozapine; 59 patients
+with other antipsychotics; 88 patients treated
+with clozapine; 61 patients treated with
+atypical antipsychotics; 23 patients treated
+with typical antipsychotics; 11 patients treated
+with atypical and typical antipsychotics; 36
+patients treated with other drugs
+
+Review current literature about arrhythmic
+liability of antipsychotic and antidepressant
+drugs capable of inducing long QT and/or
+Brugada syndrome phenotypes
+
+Observational study (Case
+report)
+
+A case of a 37-year-old woman treated with
+high doses of quetiapine
+
+Observational study (Case
+report)
+
+A case of a 15-year-old female taking clozapine
+in a suicide attempt
+
+Examine the risk of cardiomyopathy and
+hyponatraemia in patients treated with
+antipsychotics
+
+Provide an update on the ionic and cellular
+mechanisms thought to be involved in, and the
+genetic and environmental factors that
+predispose to, the development of cardiac
+arrhythmias and sudden cardiac death among
+patients taking antidepressant and
+antipsychotic drugs that are in clinical use
+
+A case of cardiomyopathy due to quetiapine
+
+A case of atrioventricular total cardiac block
+associated with the taking of clozapine in a
+suicide attempt
+
+Observational study (Case-
+control study)
+
+116 patients with schizophrenia; 88 healthy
+patients
+
+Describe higher cardiovascular risk in
+schizophrenic patients taking antipsychotics
+
+Observational study (Case-
+series)
+
+Two schizophrenic death men under
+olanzapine treatment
+
+Describe correlation between fatal eosinophilic
+myocarditis and olanzapine
+
+Vieweg, et al.[131]
+
+2003
+
+Review
+
+Review literature about antipsychotic drug
+and QT interval, edited until 2002
+
+Examine the risk of QT interval prolongation
+and antipsychotics administration
+
+Wassef, et al.[54]
+
+2015
+
+Observational study (Case
+report)
+
+A case of an 18-year-old man taking
+quietapine
+
+A case of myocarditis induced by quietapine
+
+666
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+Smolders, et al.[130]
+
+Türe, et al.[50]
+
+Unsal, et al.[26]
+
+Vang, et al.[8]
+
+2017
+
+2019
+
+2013
+
+2016
+
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Wu, et al.[10]
+
+2015
+
+Observational study (Case-
+crossover study)
+
+Zhu, et al.[132]
+
+2019
+
+Review
+
+17,718 patients with incident ventricular
+arrhythmia and/or sudden cardiac death
+treated with antipsychotic drug (control time
+windows of 7, 14, and 28 days)
+
+Review current literature about adverse
+cardiac effects associated with antipsychotics
+
+Describe higher ventricular arrhythmia and/or
+sudden cardiac death risk in schizophrenic
+patients taking antipsychotics
+
+Examine adverse cardiac effects associated
+with antipsychotics and suggest the
+application of preventive measures
+
+Continued
+
+Table 2    Baseline characteristics of the studies with the correlation between use of antipsychotics and oxidative stress.
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Abdel Wahab, et al.[69]
+
+2014
+
+Preclinical study
+
+Abdel Wahab, et al.[74]
+
+2014
+
+Preclinical study
+
+Arumugan, et al.[79]
+
+2012
+
+Preclinical study
+
+Arumugan, et al.[133]
+
+2012
+
+Preclinical study
+
+Auger, et al.[134]
+
+2018
+
+Preclinical study
+
+Histological hallmarks and biochemical
+markers of myocarditis, proinflammatory
+cytokines and parameters of oxidative stress
+were assessed in rats treated with
+coadministration of captopril and clozapine
+
+Rats treated with clozapine were assessed in
+echocardiographic, histopathological and
+immunohistochemical parameters, including
+markers of cardiotoxicity, oxidative stress,
+inflammation and apoptosis
+
+Rat with experimental autoimmune
+myocarditis and treated with edaravone were
+assessed on echocardiographic study and
+histopathological markers
+
+Western blotting, histopathological staining
+and immunohistochemical analyses to
+measure the myocardial expressions of AMPK
+signaling and oxidative stress related
+parameters werw carried out in normal and
+vehicle or edaravone-treated experimental
+autoimmune myocarditis rats, respectively
+
+Two groups of mice were treated once a week,
+for 22 weeks, with intraperitoneal injection of
+risperidone; two other groups received
+intraperitoneal injection of the vehicle of
+risperidone following the same schedule. Mice
+of one risperidone-treated groups and of one
+of vehicle-treated groups were fed a diet with
+curcumin, while mice of the two other groups
+received the standard diet
+
+Breier, et al.[65]
+
+1994 Observational study
+
+Double-blind, parallel groups design
+
+Dogan, et al.[135]
+
+2018
+
+Observational study (Case-
+control)
+
+Thirteen schizophrenic patients using atypical
+antipsychotic drugs and 30 healthy controls
+
+Investigate the protective effect of captopril
+against clozapine-induced myocarditis in rats
+
+Investigate a possible mechanisms of clozapine-
+induced cardiotoxicity in a rat model
+
+Determined whether edaravone protects
+against cardiac remodelling in dilated
+cardiomyopathy
+
+Involvement of MAPK, AMPK signaling in the
+progression of experimental autoimmune
+myocarditis and if it can be blocked by the
+treatment with antioxidant edaravone
+
+Investigate the potential capacity of curcumin,
+to attenuate the risperidone-induced metabolic
+dysfunction
+
+Compare the effects of clozapine and
+haloperidol on plasma levels of
+norepinephrine
+
+Determine the changes in oxidative status and
+thiol disulfide homeostasis in schizophrenic
+patients using atypical antipsychotic drugs
+
+Elman, et al.[66]
+
+1999
+
+Observational study (Case-
+control)
+
+10 schizophrenic patients treated with
+clozapine; 7 schizophrenic patients treated
+with fluphenazine; 7 schizophrenic patients
+treated with placebo
+
+Compare the effects of clozapine on plasma
+levels of norepinephrine respect to
+norepinephrine levels of patients treated with
+fluphenazine or placebo
+
+Fehsel, et al.[136]
+
+Haak, et al.[76]
+
+2005
+
+2003
+
+Observational study (Case-
+control)
+
+5 Olanzapine-treated patients; 14
+polymedicated schizophrenic patients; 19
+healthy subjects; 8 septic shock patients
+
+Examined cellular effects of clozapine on
+blood cells of treated patients with and
+without clozapine-induced agranulocytosis
+
+Observational study (Case
+series)
+
+Four cases of patients with schizophrenia,
+treated with clozapine
+
+Role of clozapine in the development of
+inflammation
+
+Heiser, et al.[95]
+
+2010
+
+Preclinical study
+
+Hendouei, et al.[137]
+
+2018 Observational study
+
+Measure formation of reactive oxygen in the
+whole blood of rats treated with haloperidol,
+clozapine and olanzapine
+
+100 patients with chronic schizophrenia
+treated with clozapine or risperidone or
+perphenazine
+
+Examine reactive oxygen formation after
+treatment with antipsychotics by using
+electron spin resonance spectroscopy and test
+the protective capacity of vitamin C
+
+Comparison of serum level of glutathione,
+protein carbonyl, lipid peroxidation,
+superoxide dismutase and Ferric reducing
+ability of plasma in the three groups analysed
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+667
+
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+Continued
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Li, et al.[27]
+
+2019
+
+Preclinical study
+
+Nikolić-Kokić, et al.[138]
+
+2018
+
+Preclinical study
+
+Quetiapine-treated mice hearts showed were
+evaluated in inflammatory infiltration and
+fibrosis marker. Pharmacologic blockade of
+necroptosis using its specific inhibitor
+Necrostatin-1 was assessed in its ability to
+attenuate quetiapine-induced myocardial
+injury in mice
+
+Adult male Wistar rats were treated with
+clozapine, ziprasidone, and sertindole.
+Histopathological analysis of the heart was
+performed and expression and activity of
+antioxidant enzymes were determined
+
+Padurariu, et al.[139]
+
+2010
+
+Observational study (Case-
+control)
+
+35 schizophrenic patients treated with
+different antipsychotics; 10 healthy control
+
+Vidović, et al.[140]
+
+2013
+
+Observational study (Case-
+control)
+
+30 schizophrenic patients with atypical
+antipsychotic therapy; 60 control subjects
+
+Wang, et al.[64]
+
+2008
+
+Preclinical study
+
+Male Balb/C mice were administered
+clozapine: one group was administered
+clozapine plus propranolol. Saline-treated
+mice served as controls. histopathological
+examination on heart section, plasmatic
+catecholamines and myocardial TNF-alpha
+were determined
+
+Study a novel cell death type, quetiapine-
+induced necroptosis, which accounted for
+quetiapine cardiotoxicity and propose
+therapeutic strategies
+
+Examine the role of atipycal antipsychotics on
+rat heart morphology and determine whether
+redox imbalance plays a role in development
+of histopathological changes
+
+Evaluate the specific activity of some
+peripheral antioxidant defences (SOD and
+GPX) and the level of MDA (lipid peroxidation
+maker), in schizophrenic patients treated with
+antipsychotics, and compared with age-
+matched healthy subjects
+
+Describe an increased oxidative stress and
+changed lipid profile in schizophrenic patients
+treated with atypical antipsychotic therapy
+
+Examine whether clozapine administration
+cause myocarditis in association with an
+increase in catecholamines
+
+Williams, et al.[72]
+
+2003
+
+Preclinical study
+
+Mice were administered clozapine and the
+extent of covalent binding was assessed by
+Western blotting
+
+Evaluated whether clozapine undergoes
+bioactivation by murine cardiac tissue, in
+comparison to hepatic tissue
+
+cardiovascular pathologies and oxidative stress,
+and the relationship between antipsychotics and
+cardiac oxidative stress. In each subgroup, the type
+of scientific article, the methods used and the pur-
+pose of the work were indicated.
+
+Oxidative Stress and Cardiac Injury
+
+Superoxide anion (O2-), hydroxyl radical (OH-),
+hydrogen peroxide (H2O2), singlet oxygen, carbon-
+centered radicals, peroxynitrite (ONOO-), nitric oxide
+(NO), and nitrogen dioxide radicals are the free
+radicals identified in the human heart. Under basal
+conditions, the production of free radicals is low.
+However, the maintenance of intracellular redox
+homeostasis is fundamental to guarantee the phy-
+siological cardiac functions (development and mat-
+uration of cardiomyocytes, the release of intracellular
+calcium, and the coupling of cardiac excitation/
+contraction).[28] The physiological intracellular levels
+of ROS are maintained by an antioxidant defense
+system which includes superoxide dismutases,
+catalase, the glutathione peroxidase/reductase sys-
+tem, and the peroxiredoxin/thioredoxin system.
+When pathological conditions occur (e.g., myocar-
+
+dial ischemia), hyperproduction of O2- is observed
+from multiple cellular sources, the cellular antiox-
+idant defense system is depleted and the free radicals
+scavenging enzyme system superoxide dismutase,
+glutathione peroxidase, chloramphenicol acetyl-
+transferase is significantly reduced.[29] ROS can
+cause severe oxidative damage, especially to DNA,
+lipids, and proteins. Lipids are the class of biological
+molecules most susceptible to attack by oxygen
+free radicals. Oxidation takes place on the fatty
+acids present in cell membranes or lipoproteins,
+producing toxic substances for cells and tissues.
+Furthermore, as far as proteins are concerned, these,
+following the oxidation of the –SH groups of some
+amino acids (His, Arg, Lys, Pro) and the liberation
+of iron by the degradation of the porphyrin rings by
+ROS, lose their physiological structure and there-
+fore functionality. In DNA, the oxidative phenomena
+concern the purine and pyrimidine bases;[30] one of
+the most studied markers of DNA damage from
+oxidative damage is represented by 8-OHdG.[31] The
+excessive production of ROS determines the activa-
+tion of cell death, with consequent apoptosis or
+myocardial necrosis.[32] In the pathogenesis of cardiac
+
+668
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Table 3    Baseline characteristics of the studies with the correlation between oxidative stress and heart disease.
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Abu-Elsaad, et al.[141]
+
+2018
+
+Preclinical study
+
+Akao, et al.[142]
+
+2003
+
+Preclinical study
+
+Brown, et al.[143]
+
+2010 Review
+
+Doroshow, et al.[59]
+
+1981
+
+Preclinical study
+
+Esposito, et al.[85]
+
+2009 Review
+
+Fineschi, et al.[144]
+
+2010 Review
+
+Finkel, et al.[86]
+
+1992
+
+Preclinical study
+
+Frangogiannis, et al.[82]
+
+2002 Review
+
+Gong, et al.[98]
+
+2018
+
+Preclinical study
+
+Ishiyama, et al.[83]
+
+1997
+
+Preclinical study
+
+Javadi, et al.[145]
+
+2017
+
+Preclinical study
+
+Joseph, et al.[97]
+
+2016
+
+Preclinical study
+
+Karagueuzian, et al.[146]
+
+1982 Review
+
+Killian, et al.[147]
+
+1999
+
+Preclinical study
+
+Kishimoto, et al.[148]
+
+2003
+
+Experimental study
+
+Koponen, et al.[149]
+
+2008 Review
+
+Histopathological examinations of stained heart
+sections on lipid profile, oxidative stress, and
+cardiac function biomarkers in rats received
+high-carbohydrate/high-fat diet concurrently
+with luteolin
+
+Test luteolin protective effect against high-
+carbohydrate/high-fat diet-induced cardiac
+dysfunction in rats
+
+Study the H2O2-induced response (loss of
+mitochondrial membrane potential and cell
+death) in cultured cardiac myocytes
+
+Describe cardiac cellular responses after
+oxidant stress and identify target for
+intervention in the prevention of cell death
+
+Review of articles about cardiac mitochondria
+involved in the genesis of arrhythmia, edited
+until 2010
+
+CDF1 mice were pretreated with a
+pharmacologic dose of n-acetyl-l-cysteine
+before doxorubicin administration
+
+Discuss the correlation between arrhythmia
+and cardiac mitochondrial alterations, in order
+to prevent arrhythmias by preserving
+mitochondrial membrane potential in the face
+of oxidative stress
+
+Investigate the effect of N-acetylcysteine.
+administration on the toxicity of doxorubicin
+
+Review of articles about the role of nitroso
+radicals in circulatory shock, edited until 2009
+
+Analyse the involment of oxidative and
+nitrosative stress in cardiovascular pathologies
+
+Review of articles about stress-induced
+cardiomyopathy, edited until 2010
+
+Examine correlation between alterations in
+catecholamine system functions stress-related
+and acute and chronic cardiovascular disorders
+
+Study the effects of pro-inflammatory cytokines
+on the contractility of mammalian heart and
+evaluate if the nitric oxide synthase inhibitor
+NG-monomethyl-L-arginine blocked these
+negative inotropic effects
+
+Examine if the direct negative inotropic effect
+of cytokines is mediated through a myocardial
+nitric oxide synthase
+
+Review of articles about processes regulating
+the inflammatory response following
+myocardial ischemia and reperfusion, edited
+until 2001
+
+Summarize current understanding of the
+cellular and molecular mechanisms regulating
+the inflammatory response following
+myocardial ischemia and reperfusion
+
+Evaluation of serum glucose and insulin levels,
+lactate dehydrogenase and creatine kinase, the
+expression of pro-inflammatory cytokines and
+activation of nuclear factor-κB in Tmbim1
+knockout mice
+
+20 rats with autoimmune miocarditis were
+adserum level of ministered aminoguanidine
+and evaluated in serum level of creatine kinase-
+muscle/brain, and himmunohistochemical
+exam for inducible nitric oxide synthase and
+nitrotyrosine
+
+Assess the efficacy of natural molecules (e.g.
+apigenin, berberine and quercetin) along with
+some plant extracts in experimental
+autoimmune myocarditis animal models
+
+Examine if down regulation of Tmbim1
+enhance high fat diet-induced cardiomyopathy
+by increasing inflammation and oxidative stress
+
+Investigate the role of nitric oxide in the
+development of myocardial damage and the
+effects of aminoguanidine, an inhibitor of
+inducible nitric oxide synthase, on
+experimental autoimmune myocarditis
+
+Evaluations of inflammatory and
+immunological mechanism and oxidative stress
+in experimental autoimmune myocarditis
+
+Evaluations of heart rhythm and calcium
+homeostasis in a transgenic mouse model of
+cardiac lipid overload, the peroxisome
+proliferator-activated receptor-γ
+
+Examine the hypothesis that the increase in
+ventricular ectopy during cardiac lipid
+overload is caused by increased mitochondrial
+oxidative stress
+
+Summarize current knowledge on oxidative
+stress-mediated arrhythmogenesis, and discuss
+how myocardial fibrosis promotes ventricular
+arrhythmias
+
+Identify in patients started clozapine treatment
+the cases of myocarditis and cardiomyopathy in
+Australiafrom voluntary reports to the
+Australian Adverse Drug Reaction Committee
+
+Nine patients (six in myocarditis, three in acute
+dilated cardiomyopathy) were treated with
+high-dose intravenous Ig (1–2 g/kg, over two
+days)
+
+An update of the prevalence and mechanisms
+for sudden cardiac death in schizophrenia from
+1966 and 2007
+
+Propose a sinergic antifibrotic therapy, to
+reduce the risk of sudden cardiac death caused
+by arrhythmias
+
+Investigated the cardiovascular complications
+for clozapine
+
+Examine the effects of intravenous Ig by the
+analyses of inflammatory cytokines and
+oxidative stress
+
+Describe the sudden cardiac death related
+antipsychotics
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+669
+
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+Continued
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Krexi, et al.[150]
+
+2016
+
+Retrospective
+observational study
+
+110 cases of sudden cardiac death in relation to
+a stressful event
+
+Li, et al.[94]
+
+2007
+
+Preclinical study
+
+Li, et al.[151]
+
+2013
+
+Preclinical study
+
+Normal cardiomyocytes or traumatic
+cardiomyocytes were cultured with normal
+plasma or traumatic plasma and apoptosis was
+determined by caspase-3 activation
+
+In a coxsackievirus B3 murine myocarditis
+model effects of carvedilol and metoprolol was
+assessed in myocardial histopathological
+changes, cardiac function, texpression of 4-
+HNE, superoxide dismutase and glutathione
+peroxidases activities
+
+Sudden death occurred in the absence of
+structural heart disease may reflect the
+proarrhythmic potential of high catecholamines
+on the structurally normal heart
+
+Study the molecular mechanisms responsible
+for cardiomyocyte apoptosis induced by
+trauma
+
+Determine whether levels of lipid peroxides are
+elevated in the myocardium and whether
+carvedilol reduces the lipid peroxidation level
+and increases antioxidant enzyme activities in
+viral murine myocarditis model
+
+Marian, et al.[152]
+
+2006
+
+Experimental study
+(Randomised controlled
+trial)
+
+42 subjects with hypertrophic cardiomyopathy,
+one half treated with antioxidant N-
+acetylcysteine and the others with placebo
+
+Analyse the protective cardiac effect of N-
+acetylcysteine
+
+Matsui, et al.[58]
+
+1999
+
+Preclinical study
+
+Melendez, et al.[91]
+
+2010
+
+Preclinical study
+
+Mito, et al.[153]
+
+2011
+
+Preclinical study
+
+Sprague-Dawley rats were treated with
+doxorubicin, carvedilol, doxorubicin,
++carvedilol, or atenolol +doxorubicin. Cardiac
+performance and myocardial lipid peroxidation
+were assessed
+
+Adult male Sprague-Dawley rats were infused
+with IL-6 and compared with vehicle-infused,
+aged-matched controls. Left ventricular
+function, myocardial interstitial collagen
+volume fraction and isolated cardiomyocyte
+size were assessed
+
+Rats with autoimmune myocarditis were
+divided randomly into a treatment (curcumin)
+and vehicle group. Myocardial protein
+expression of inducible nitric oxide synthase,
+the catalytic subunit of nicotinamide adenine
+dinucleotide phosphate reduced oxidase and
+myocardial endoplasmic reticulum stress
+signaling proteins were assessed
+
+Test if carvedilol protects against doxorubicin-
+induced cardiomyopathy
+
+Examine if elevated levels of IL-6 mediate
+myocardial remodeling
+
+Examine the mechanism of curcumin in
+experimental autoimmune myocarditis
+
+Miyamoto, et al.[154]
+
+2004
+
+Preclinical study
+
+Histopathology and thioredoxin expression in
+spontaneous myocarditis in inbred strains of
+mice was assessed
+
+Investigate the role of thioredoxin and redox-
+regulating system in spontaneously developed
+myocarditis
+
+Nimata, et al.[77]
+
+2005
+
+Preclinical study
+
+Rats with experimental autoimmune
+myocarditis treated with ederavone and
+untreated rats were compared in histological
+markers
+
+Octavia, et al.[155]
+
+2012 Review
+
+Review of articles about the role of oxidative
+stress in heart failure, edited until 2012
+
+Determine if the free radical scavenger
+edaravone protects against acute experimental
+autoimmune myocarditis in rats by the radical
+scavenging action associated with the
+suppression of cytotoxic myocardial injury
+
+Discuss the importance of nicotinamide
+adenine dinucleotide phosphate oxidase-
+dependent reactive oxygen generation in the
+various subtypes of heart failure and its
+implications
+
+Pacher, et al.[93]
+
+2005 Review
+
+Pacher, et al.[156]
+
+2008 Review
+
+Review of articles about the role of
+peroxynitrite or matrix metalloproteinases and
+poly (ADP-ribose) polymers in the
+experimental therapy of various forms of
+myocardial injury, edited until 2005
+
+Discuss the role of nitrosative stress and
+downstream mechanisms, including activation
+of matrix metalloproteinases and poly (ADP-
+ribose) polymers, in various forms of heart
+failure
+
+Review of articles about the pathophysiological
+relevance of the peroxynitrite-poly (ADP-
+ribose) polymers pathway in various forms of
+heart injury and systemic pathology, edited
+until 2008
+
+Examine the correlations between peroxynitrite-
+peroxynitrite-poly (ADP-ribose) polymers
+pathway and oxidative DNA damage in heart
+injury and systemic pathology
+
+Raucci, et al.[157]
+
+2019 Review
+
+Review current literature about the role of
+HMGB1 in heart desease
+
+Summarizes recent findings on HMGB1 biology
+and heart dysfunctions and discusses the
+therapeutic potential of modulating its
+expression, localization, and oxidative-
+dependent activities
+
+670
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Continued
+
+Shimada, et al.[158]
+
+2015
+
+Preclinical study
+
+Shimazaki, et al.[159]
+
+2010
+
+Preclinical study
+
+Shinoda, et al.[89]
+
+2016
+
+Preclinical study
+
+Shin, et al.[75]
+
+2002 Review
+
+Rats with experimental autoimmune
+myocarditis were treated with N-acetylcysteine
+and N(G)-nitro-l-arginine methylester (inhibitor
+of nitric oxide)/ N(G)-nitro-d-arginine
+methylester (an inactive enantiomer)
+
+Investigate the effects of N-acetylcysteine, a
+potent antioxidant, on experimental
+autoimmune myocarditis in rats
+
+Rats with experimental autoimmune
+myocarditis and treated with edaravone were
+studied in echocardiographic parameters and
+inflammation and oxidative stress parameters
+
+Determine if edaravone ameliorate the
+progression of experimental autoimmune
+myocarditis by inhibiting oxidative and
+endoplasmic reticulum stress and cardiac
+apoptosis
+
+Neonatal rat cardiomyocytes werw treated with
+haloperidol, and exposed to angiotensin II.
+Hypertrophy, σ1R expression, mitochondrial
+Ca (2+) transport and ATP levels were assessed
+
+Examine if sudden cardiac failure induced by
+haloperidol is mediated by chronic haloperidol
+inhibition of cardiac σ1R
+
+Review literature about the role of chemokines
+(MCP-1, IL-8) in the pathogenesis of vascular
+disease, edited until 2002
+
+Supports the pivotal role of chemokines in the
+pathogenesis of vascular disease and suggest
+delineating the patterns of gene expression
+(MCP-1, IL-8) to identify molecular targets for
+the prevention and treatment of atherosclerosis
+
+Singh, et al.[159]
+
+2008
+
+Observational study
+(Randomized cross-
+sectional study)
+
+Two groups of fifty schizophrenic patients
+treated by haloperidol and olanzapine,
+respectively for at least six months
+
+Examine the correlations between serum
+antioxidants parameters and antipsychotics
+
+Skrzypiec-Spring , et al.[160] 2018
+
+Preclinical study
+
+Sovari, et al.[78]
+
+2013
+
+Preclinical study
+
+Sugiyama, et al.[102]
+
+2016
+
+Preclinical study
+
+Sukumaran, et al.[161]
+
+2011
+
+Preclinical study
+
+Tse, et al.[99]
+
+2016 Review
+
+Turillazzi, et al.[57]
+
+2017
+
+Observational study (Case-
+control)
+
+Wu, et al.[162]
+
+2018
+
+Preclinical study
+
+Yang, et al.[163]
+
+2015 Review
+
+Yuan, et al.[164]
+
+2004
+
+Preclinical study
+
+Carvedilol in 3 doses (2, 10, and 30 mg/kg) was
+given daily to 3 study groups of rats with
+experimental autoimmune myocarditis
+
+Evaluate the effects of carvedilol administration
+in acute myocarditis and its impact on matrix
+metalloproteinases’ activation
+
+Wild type mouse and ACE8/8 (an animal
+model of cardiac renin-angiotensin system
+activation were treated with different
+antioxidant therapies
+
+Determine the source of reactive oxygen and if
+reactive oxygen played a role in the
+arrhythmogenesis
+
+Induce oxidative stress in NOS1AP knockout
+mice to evaluate electrocardiographic and
+echocardiographic parameters
+
+Evaluate the relationship between oxidative
+stress and ventricular tachyarrhythmia/heart
+failure in genetic variations at NOS1AP
+
+Experimental autoimmune myocarditis was
+induced in rats by immunization with porcine
+cardiac myosin. The rats were divided into two
+groups and treated with either telmisartan (10
+mg/kg per day) or vehicle for 21 days and
+expression of inflammatory cytokines and
+oxidative stress markers was evaluated
+
+Investigation of telmisartan (angiotensin II type
+1 receptor antagonist) protects against
+experimental autoimmune myocarditis by
+suppression of inflammatory cytokines and
+oxidative stress
+
+Literature review on investigation the effects of
+reactive oxygen on cardiac ion channel
+function, remodeling and arrhythmogenesis
+
+Study the relationship between increased
+oxidative stress cardiovascular pathologies
+such as diabetes and hypertension associated
+with arrhythmias
+
+Biochemical and immunohistological markers
+of oxidative/nitrosative stress were evaluated
+in subjects who had died from high doses of
+cocaine, compared to the control group
+
+Examine the hypothesis that cardiac toxicity by
+acute exposure to high dosage of cocaine could
+be mediated by unbalanced myocardial
+oxidative stress
+
+A model of experimental autoimmune
+myocarditis on which Toll-like receptors 4
+activation or inhibition was performed to
+induce chronic inflammation
+
+Examine the role of mitochondrial dynamics in
+Toll-like receptors 4 activation-mediated
+dilated cardiomyopathy
+
+Scientific evidence on the mechanisms linking
+metabolic derangement and cardiac excessive
+oxidative stress that predisposes to ventricular
+arrhythmias and sudden cardiac death
+
+Report the association between cardiac
+oxidative stress and malignant arrhythmias
+providing novel therapeutics to prevent sudden
+cardiac death
+
+Rats with experimental autoimmune
+myocarditis induced by porcine myosin and
+treated with carvedilol, racemic carvedilol,
+metoprolol, or propranolol was assessed in
+echocardiographic study and inflammatory and
+oxisative stress parameters
+
+Investigate whether carvedilol exert protective
+effect against experimental autoimmune
+myocarditis by suppression of inflammatory
+cytokines and its antioxidant properties
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+671
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+Continued
+
+Authors
+
+Year
+
+Types of study designs
+
+Methods
+
+Aim of the study
+
+Varga, et al.[55]
+
+2015 Review
+
+Review literature about mitochondrion-
+mediated cardiotoxicity, edited until 2015
+
+Wang, et al.[64]
+
+2008
+
+Preclinical study
+
+Examine expression of pro-inflammatory
+cytokines, activation of nuclear factor κB,
+markers of oxidative stress and apoptosis
+pathway in platelet-activating factor receptor-
+knockout mice
+
+Zhang, et al.[35]
+
+2010
+
+Observational study (Case-
+control)
+
+92 schizophrenic patients treated with typical
+and atypical antipsychotics; 50 control subjects
+
+Zhang, et al.[34]
+
+2015
+
+Experimental study
+(Randomised controlled
+trial)
+
+41 schizophrenic patients treated with
+risperidone; 37 schizophrenic patients treated
+with haloperidol; 30 control subjects
+
+Discuss the mechanisms of mitochondrion-
+mediated cardiotoxicity of commonly used
+drugs and some potential cardioprotective
+strategies to prevent these toxicities
+
+Explore if platelet-activating factor receptor
+could modulate myocardial I/R injury in mice
+by inflammation and oxidative stress
+
+Evaluate antioxidant enzymes and lipid
+peroxidation in schizophrenic patient treated
+with antipsychotics
+
+Compare antioxidant enzyme activity and
+nitric oxide levels in schizophrenic patients
+treated with typical and atypical antipsychotics,
+respectively
+
+pathologies, a fundamental role is played by
+mitochondrial-derived ROS, which derives from
+electron transfer into the mitochondrial respiratory
+chain complexes and from the action of mitochon-
+drial proteins. Mitochondria are one of the main
+drivers of intracellular oxidant production and other
+relevant sources are nicotinamide adenine dinuc-
+leotide phosphate (NADPH) oxidases (NOX family
+of enzymes). Besides, other enzymes contribute to
+intracellular ROS production, including xanthine
+oxidase, nitric oxide synthase (NOS), cyclooxy-
+genases, cytochrome P450 enzymes, and lipoxy-
+genases.
+
+Several data in the literature suggest that this
+type of ROS is involved in the pathogenesis of nu-
+merous cardiac pathologies, such as myocardial in-
+farction, heart failure, and diabetic cardiomyopathy.[28]
+Specifically, in cardiac infarction, hypoxia induces a
+decrease in adenosine triphosphate (ATP) with con-
+sequent loss of depolarization of the mitochondrial
+membrane with activation of anaerobic glycolysis,
+lactate formation, and cytosolic calcium accumulation.[33]
+These cellular damages are finally further imple-
+mented by the reperfusion of hypoxic cells, causing
+an increase in cellular necrosis. Otherwise, in heart
+failure, the cellular modifications related to ROS occur
+in a more dilated time span. The basis of these
+modifications is the interaction between the in-
+crease in angiotensin II and the increase in myocar-
+dial stress, with consequent cardiac remodeling,
+contractile dysfunction, and the onset of arrhythmias.[34]
+The role played by NADPH oxidase (NOX) seems
+to be relevant in the failure, which can uncouple the
+NO synthase and promote O2-.[35] Also, angiotensin
+
+II-mediated ROS increase activates nuclear factor
+kappaB induced hypertrophy pathway.[32]
+
+Instead, diabetic heart disease is linked to the ac-
+cumulation of fatty acids in cardiomyocytes with a
+consequent reduction in the use of carbohydrates as
+an energy substrate especially during periods of
+high demand for ATP and, consequently, increased
+formation of ROS with mitochondrial damage and
+promotion of apoptosis of cardiomyocytes. The per-
+oxisome proliferator-activated receptor, a nuclear
+hormone receptor which modulates the metabolism
+of glucose and fatty acids, is involved in this heart
+disease.[36]
+
+Finally, oxidative stress, in association with the
+increase in inflammation products, promotes en-
+dothelial dysfunction through the inactivation of
+NO, an important molecule with a vasodilator and
+anti-atherogenic role. NO inactivation is promoted
+by NADPH oxidase and uncoupled NOS.[37]
+
+In light of these data, there is growing interest in
+the literature about the role played by ROS in the
+pathogenesis of cardiovascular diseases and the
+possible experimental use of antioxidant molecules
+in the treatment of heart diseases.
+
+Cardiovascular Complications from Antipsychotics
+
+Atypical antipsychotic therapy is notoriously as-
+sociated with cardiovascular pathologies and an in-
+crease in sudden cardiac death.
+
+Second-generation antipsychotic drugs have a
+significant influence on the development of meta-
+bolic syndrome, which is known to be a risk factor
+for cardiovascular disease. Furthermore, a correla-
+tion is known with myocarditis,[8] dilated heart dis-
+
+672
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+ease,[10] and QT tract prolongation, which repres-
+ents an important risk factor for the development of
+malignant arrhythmias and sudden cardiac death.[38]
+In addition to this, subjects affected by schizo-
+phrenia, regardless of the therapy taken, have addi-
+tional cardiovascular risk factors on a dysmetabolic
+basis, such as type 2 diabetes mellitus, reduced
+glucose tolerance, insulin resistance, and obesity.[5]
+
+As for the adverse effects of the dysmetabolic
+type, as previously mentioned, atypical antipsy-
+chotics can cause weight gain, especially olanzapine
+and clozapine, and related metabolic disorders such
+as insulin resistance, type 2 diabetes mellitus, dys-
+lipidemia, and diabetic ketoacidosis.[16]
+
+It is also known that obese and diabetic subjects
+have an increased incidence of atrial fibrillation,
+ventricular ectopia, and long QT.[39] Besides, dia-
+betes mellitus and obesity are associated with an in-
+creased risk of sudden cardiac death, which is often
+caused by ventricular arrhythmias. As regards the
+electrocardiographic changes induced by antipsy-
+chotics, it has been observed that the use of these
+drugs is associated with prolongation of the QTc,
+that is, prolonged cardiac repolarization.[40] QTc is
+defined on the electrocardiogram as the period
+between the onset of the Q wave (ventricular depol-
+arization) and the cessation of the T wave (ventricular
+repolarization) corrected for heart rate. It is known
+to be an indicator of potential proarrhythmic tox-
+icity as it can lead to a specific polymorphic ventri-
+cular arrhythmia known as torsade de pointes
+which can develop into malignant arrhythmias such
+as ventricular fibrillation and sudden cardiac death.
+The most common mechanism of antipsychotic me-
+diated QTc prolongation appears to be blockage of
+the hERG channel in the myocardium which pre-
+vents outward movement of potassium responsible
+for ventricular depolarization.[41] The risk increases
+in the presence of underlying heart diseases associ-
+ated with abnormal repolarization, electrolyte ab-
+normalities, and co-treatment with other drugs (di-
+uretics, antidepressants, mood stabilizers).[42] For
+this reason, treatment with antipsychotics should
+only be undertaken if there is a concrete therapeutic
+advantage and some authors propose the applica-
+tion of stratification measures for patients at greater
+risk of developing this condition before starting
+therapy.
+
+Among antipsychotics, there was an increased
+risk of QTc prolongation for typical antipsychotics;
+in particular droperidol and thioridazine are associ-
+ated with an increase in QTc in a dose-dependent
+manner.[43] However, there are data in the literature
+that also describe it for atypical antipsychotics. Clinical
+studies have reported a clear association of the
+aforementioned electrocardiographic alteration and
+sertindole and risperidone, in a dose-dependent
+manner,[42] although among the atypical antipsy-
+chotics, ziprasidone is the riskiest,[44] so much so
+that it has been proposed to take an electrocardio-
+gram at the start of therapy.[45]
+
+Preclinical studies have reported a dose-dependent
+prolongation of the QT interval with other atypical
+antipsychotics as well, namely clozapine and olan-
+zapine.[42] Finally, antipsychotic therapy, although
+rarely, can be associated with severe complications
+such as myocarditis and evolving cardiomyopathies
+towards decompensation. This is especially true of
+clozapine,[45] an atypical antipsychotic used for res-
+istant schizophrenia and prevention of suicide risk.[46]
+In addition to myocarditis, cases of cardiomyopathy
+have been described, albeit more rarely.[47] This is
+also more frequent with clozapine with a later onset
+than myocarditis (the average onset was reported in
+a study after 12 months) and associated with high
+mortality.[48] Specifically, clozapine, in therapeutic
+doses, can also be associated with the occurrence of
+serious cardiovascular side effects, very rare but de-
+scribed in the literature as dilated cardiomyopathy,
+pericarditis and concomitant myopericarditis asso-
+ciated with parenchymal lung disease.[49] Finally,
+complete atrioventricular blockage by ingestion of
+massive drug doses of clozapine has been described,[50]
+which can be fatal if not promptly recognized and
+managed.
+
+For this reason, the United States Food and Drug
+Administration has included potentially fatal events
+and cautious use of clozapine in patients with pre-
+existing cardiac diseases and with severe cardiac
+conditions among the adverse effects of clozapine.[11]
+A retrospective study of all adverse drug reactions
+reported voluntarily to the Australian Adverse
+Drug, identified an incidence of suspected myocar-
+ditis ranging between 0.7% and 1.2% of patients
+treated with clozapine, with an average age of 30
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+673
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+years; the disease developed on average two weeks
+after starting therapy with a mortality rate of 10.3%.[51]
+Myocarditis is an uncommon, dose-independent,
+potentially lethal adverse effect; probably underes-
+timated due to the often, atypical clinical manifesta-
+tion and the poor compliance of these patients with
+medical treatment. In fact, the clinical presentation
+can be very variable, ranging from subclinical forms
+to fulminant heart failure.
+
+Sudden death after clozapine intoxication due to
+eosinophilic myocarditis was first described in
+1992,[52] but the same was also reported in sub-
+sequent several clinical cases with the use of thera-
+peutic doses of the drug.[53]
+
+Although with extremely rare incidence, cardi-
+omyopathy has also been described with quetiapine,
+an atypical antipsychotic structurally similar to
+clozapine, suggesting a pharmacological class
+effect.[54] According to the WHO’s program for in-
+ternational drug monitoring, myocarditis and cardi-
+omyopathy induced by the use of quetiapine are
+typically present mimicking myocardial infarction
+with acute ST-segment elevation on electrocardio-
+gram. As well as for clozapine, the mechanism of
+quetiapine-induced cardiotoxicity is still undefined.
+The use of antipsychotics is burdened by an in-
+creased risk of sudden cardiac death; in fact, in sub-
+jects taking antipsychotics, the risk of sudden cardiac
+death has more than doubled in consideration also
+of weight gain, dyslipidemia, and type 2 diabetes
+mellitus related to antipsychotic treatment.[15] To these
+risk factors, additional environmental cardiovascular
+risk factors are added, such as smoking, alcohol
+abuse, poor diet, a sedentary lifestyle, and stress,
+which are often present in individuals suffering
+from schizophrenia.
+
+Sudden cardiac death in patients taking anti-
+psychotics has a multifactorial nature, resulting
+from a complex interaction between the aforemen-
+tioned environmental factors, any pre-existing car-
+diac substrates, both structural and genetic, and the
+pathological action of these drugs at the cardiac
+level. However, the underlying molecular mechan-
+isms are still to be understood also concerning the
+causal weight of a possible heritable component
+that can make individuals taking antipsychotics
+more susceptible to sudden cardiac death.
+
+OXIDATIVE STRESS IN ANTIPSYCHOTIC-
+RELATED CARDIOMYOPATHIES
+
+Marketed drugs have been often associated with
+cardiovascular major adverse events and safety con-
+cerns due to a significantly increased risk of cardiac
+fibrosis, myocardial infarction, and myocardial in-
+flammation. Despite efforts in the preclinical phase
+of the development of drugs, cardiotoxicity remains
+a great concern due to the lack of sufficient know-
+ledge of the mechanism of cardiotoxicity. Linkage
+with the entity of intracellular ROS and RNS reac-
+tion has been evocated to explain drug-induced
+myocardial injury.[55] Oxidative and nitrative modi-
+fications of key mitochondrial proteins have a central
+role in drug-induced cardiotoxicity.[56] The oxid-
+ative stress resulting from increased free radical
+generation in cardiomyocytes produces an energetic
+imbalance, impairment of mitochondrial function,
+activation of stress-related signaling pathways, p53
+accumulation, and cellular loss.[57] By the way, it has
+been supposed that administration of antioxidants
+(vitamin C and vitamin E, carvedilol, L-carnitine,
+N-acetylcysteine, coenzyme Q10, dexrazoxane) is
+associated with a decrease in ROS-induced cardi-
+omyocytes damage and can play a role in reducing
+drug-induced cardiotoxicity.[58,59]
+
+An analysis of the literature highlights the need
+to acquire more data on the pathogenesis of heart
+disease induced by atypical antipsychotics through
+post-mortem studies. Conversely, numerous pre-
+clinical studies on animal models have been carried
+out to understand the pathogenesis of heart disease
+associated with individual antipsychotics. To clarify
+the role played by oxidative stress in the origin of
+pathologies affecting the heart induced by atypical
+antipsychotic drugs, it appears useful to analyze the
+cardiac pictures related to them individually (Figure 2).
+
+Myocarditis
+
+Myocarditis is mainly described in patients tak-
+ing clozapine, although it has also been reported in
+association with the use of other second-generation
+antipsychotics.
+
+Clear evidence about dose-related clozapine car-
+diotoxicity is still far to be demonstrated. The mech-
+anism by which clozapine induces cardiotoxicity re-
+mains unclear but numerous hypotheses have been
+
+674
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Figure 2    Antipsychotic drugs appear to be linked to arrhythmic mechanisms, dilated heart disease, and myocarditis. In the path-
+ogenesis  of  the  aforementioned  cardiological  alterations,  an  involvement  of  oxidative  stress  has  been  suggested,  with  an  increase  in
+reactive oxygen and nitrogen species.
+
+proposed. An immunoglobulin E-mediated hyper-
+sensitivity (type I allergy) has been proposed for the
+first time by Killian, et al.[60] as a mechanism of car-
+diac toxicity in clozapine-treated patients. The res-
+ults of necropsy showed mainly lymphocytic and
+mixed infiltrates with myocytolysis, consistent with
+an acute pharmacological reaction.[61] Then, eosino-
+philic myocarditis was described in the sudden
+death of patients treated with clozapine, and a hy-
+pereosinophilic action of clozapine was proposed as
+the main mechanism of cardiotoxicity.[13,20,62,63] Fi-
+nally, a role of pro-inflammatory cytokines, cat-
+echolamines, and oxidative stress was proposed.[64–66]
+Bioactivation of clozapine in the myocardial tissues
+is associated with the generation of a chemically re-
+active nitronium ion metabolite which stimulates
+cellular injury, lipid peroxidation, and formation of
+free radical. When bound with a protein of the
+myocardium, this nitronium ion produces an anti-
+genic complex that stimulates an immune response,
+and activates macrophages releasing proinflamma-
+tory cytokines.[67,68]
+
+To support the importance of oxidative stress in
+clozapine-associated myocarditis, there is a study
+conducted by Abdel-Wahab, et al.[69] This study
+aimed to study the protective effect of captopril
+against clozapine-induced myocarditis in rats and
+the possible mechanisms underlying this effect. Ad-
+
+ministration of the angiotensin converting enzyme
+inhibitor reduced the histological signs and bio-
+chemical markers (creatine phosphokinase–MP
+isoenzyme and lactate dehydrogenase) of myocarditis,
+as well as reduced the oxidative stress parameters
+(NO and DNA degradation products) in a dose-
+dependent manner, suggesting how the cardio-
+interpretive effect exerted by captopril, in the pres-
+ence of clozapine-induced myocarditis, is also me-
+diated by the reduction of oxidative stress.
+
+A clinical study reported that the erythrocyte
+concentration of selenium, an antioxidant molecule,
+was reduced in schizophrenic patients taking cloza-
+pine compared to those who did not take it and
+compared to patients with mood disorders and
+healthy controls. This evidence suggests that re-
+duced antioxidant activity may contribute to the de-
+velopment of cardiological complications related to
+clozapine, including myocarditis.[70]
+
+High levels of tumor necrosis factor-alpha (TNF-α)
+in association with an increase in catecholamines
+have also been described in antipsychotic-related
+myocarditis and dose dependence has been demon-
+strated. TNF-α hyperproduction is related to the at-
+traction of leukocytes and the generation of further
+free radicals and cytotoxic proteins.[71–76] High levels
+of myeloperoxidase were observed in experimental
+studies with clozapine-treated animals and were in-
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+675
+
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+dicated as a sensitive marker of neutrophil migra-
+tion and myocardial injury.[74] Histopathological ex-
+amination of the heart of mice treated with cloza-
+pine showed a significant dose-related increase in
+myocardial inflammation. The latter correlated with
+plasma catecholamine and TNF-α levels. Further-
+more, this effect was significantly reduced in mice
+treated with propranolol, compared to controls,
+suggesting a potential immune-mediated mecha-
+nism of action of clozapine.[64]
+
+A preclinical study was conducted to investigate
+the influence of clozapine, ziprasidone, and sertin-
+dole on rat heart morphology and determine whether
+redox status plays a role in the development of car-
+diac histopathological changes induced by anti-
+psychotic.[67] The results showed that all three drugs
+induced cardiac histopathological changes related
+to a picture of toxic myocarditis. In particular,
+clozapine increased the activity of superoxide dis-
+mutase 1 while ziprasidone reduced the activity of
+glutathione reductase. Sertindole did not exert any
+marked effect on the function of antioxidant en-
+zymes in the heart even though myocardial degen-
+eration was observed. In conclusion, treatment with
+clozapine or ziprasidone induced pathophysiolo-
+gical changes in the rat heart, which seemed to be
+associated with disturbances in antioxidant capa-
+city. Finally, an antioxidant molecule (edaravone) is
+effective in reducing myocardial damage in animal
+models of acute autoimmune myocarditis in associ-
+ation with a reduced state of oxidative stress.[77]
+
+Cardiomyopathy and Cardiac Injury
+
+Heart disease is another adverse effect associated
+with antipsychotics, although the pathophysiolo-
+gical mechanisms underlying the processes of
+myocardial remodeling in association with a pro-
+arrhythmic condition with increased risk of sudden
+death are not clear in this context too.
+
+A preclinical study supports the importance of
+mitochondrial oxidative stress in the presence of
+heart disease characterized by an increase in an-
+giotensin II levels, proposing the use of mitochon-
+drial antioxidants in the prevention of evolving ar-
+rhythmias towards sudden cardiac death in the
+presence of the renin-angiotensin axis.[78] An in-
+creasing amount of data in the literature indicate
+that cardiac mitochondria are involved in the genesis
+
+of arrhythmia. In fact, the energetic state of the
+mitochondrial network can alter the potassium
+flows through the ATP-sensitive potassium chan-
+nels (essential for cell survival in the face of oxid-
+ative stress), creating the electrical conditions to
+favor fatal arrhythmias. For this reason, the cardiac
+mitochondrial network has emerged as a key target
+for strategies that seek to reduce arrhythmias through
+the maintenance of mitochondrial integrity in the
+face of metabolic stress, preserving the integrity of
+the membrane potential.
+
+Preclinical data also clearly show that edaravone,
+a new free radical scavenger, improves the evolu-
+tion of dilated cardiomyopathy and cardiac remod-
+eling by modulating oxidative stress.[79]
+
+Cardiomyopathy related to taking atypical anti-
+psychotics can, at least in part, be due to cardi-
+omyocyte apoptosis, known to be important in the
+pathogenesis of patients with severe heart failure
+from various etiologies.[80] Experimental studies on
+mice proposed a programmed cell necrotic death
+(necroptosis) as a possible explanation for the cardi-
+otoxicity of quetiapine. Myocytes treated with
+quetiapine showed disruption of the cellular mem-
+brane, mitochondria swelling with reticulum ex-
+pansion and generation of oxygen reactive species.
+These effects are reversed by the administration of
+necrostatin-1, a TNF inhibitor,[27,81] suggesting a
+close correlation between inflammation, oxidative
+stress, and cell death.
+
+Treatment with clozapine has been also associ-
+ated with an increased cardiac level of total nitrite, a
+stable end product, an indirect marker of NO. In-
+creased formation of NO produced by inducible
+NOS has a negative inotropic effect and contributes
+to the progression of myocardial damage poten-
+tially leading to cardiac fibrosis.[82–91] Besides, hyper-
+expression of peroxynitrite in cardiac samples was
+observed at an immunohistochemical study which
+was involved in direct oxidative damage to lipids,
+proteins, cardiac cells, and myocytes and in the ni-
+tration of tyrosine residues of pro-apoptotic pro-
+teins in cardiomyocytes.[92,93] In fact, increased NO
+formation is associated with lipid peroxidation, in-
+activation of enzymes, and depletion of reduced
+glutathione and it confirmed that antipsychotic car-
+diotoxicity is related to increased oxidative stress
+and weakened antioxidant defense.[94,95]
+
+676
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Metabolic Syndrome
+
+The use of atypical antipsychotics is associated
+with the development of the metabolic syndrome. It
+has been proposed that the metabolic alterations in-
+duced by these molecules and the increase in ar-
+rhythmic risk related to lipid accumulation in cardi-
+omyocytes involve oxidative stress.[96] Cardiac lipid
+accumulation gives rise to non-ischemic cardiomy-
+opathy called lipotoxic cardiomyopathy.
+
+A preclinical study used a transgenic mouse
+model of cardiac lipid overload with cardiac over-
+expression specific to the peroxisome proliferator-
+activated receptor gamma, a paradigm of metabolic
+syndrome in humans.[97] Lipotoxic cardiomyocytes
+have been shown to exhibit increased ROS produc-
+tion and impaired calcium homeostasis with in-
+creased ventricular ectopy. This arrhythmic effect is
+improved by the inhibition of mitochondrial ROS
+through the use of a mitochondrial antioxidant mo-
+lecule suggesting a potential role of mitochondrial
+antioxidants in the prevention of arrhythmia and
+sudden cardiac death in obesity and diabetes mel-
+litus.
+
+The role of metabolic stress concerning oxidative
+stress in the development of these cardiomyopa-
+thies is also highlighted in the preclinical study con-
+ducted by Gong, et al.[98] Here it was shown that the
+knockout mice of BAX transmembrane inhibitor
+motif-containing 1, a suppressor of BAX-mediated
+cell death and associated with the regulation of
+ROS, present promotion of metabolic disorders and
+cardiac dysfunctions induced by the diet rich in fats
+with increased proinflammatory cytokines and ox-
+idative damage.
+
+In the light of these data, a clear relationship
+seems to emerge between metabolic/inflammatory
+alterations and oxidative stress, key elements for
+the development of structural and arrhythmogenic
+heart diseases that can lead to fulminant fatal events.
+
+Sudden Cardiac Death
+
+As for sudden cardiac death linked to antipsy-
+chotics, this is probably caused by an arrhythmic
+mechanism, but other mechanisms may be involved,
+including autonomic effects, inhibition of other ion
+channels or other acute cardiotoxicities, such as
+myocarditis associated with the use of clozapine.
+
+In the literature, numerous data are supporting
+the involvement of oxidative stress in pathological
+conditions involved in the genesis of sudden cardiac
+death.
+
+Ventricular arrhythmia is the main cause of su-
+dden cardiac death. A relationship between metabolic
+disorder and excessive oxidative stress has been
+proposed with cardiac ion channel dysfunction,
+which predisposes to ventricular arrhythmias and
+sudden cardiac death.
+
+ROS production has been hypothesized to play a
+significant role in arrhythmic substrate production.[99]
+In particular, an abnormal mitochondrial function
+can lead to an altered function or expression of the
+cardiac ion channels responsible for the generation
+of the cardiac action potential with the possibility of
+generating re-entry phenomena implicated in the
+development of malignant arrhythmias.
+
+It is also known that an altered redox state is im-
+plicated in cardiovascular pathologies such as athero-
+sclerosis, diabetes mellitus and myocardial ischemia,
+all conditions that can create a structural substrate
+for increasing sudden cardiac death.[100] In particular,
+in myocardial ischemia and heart failure, the effi-
+ciency of the mitochondrial electron transport chain
+is compromised with a consequent increase in ROS
+production.[101] The aforementioned pathological
+conditions are notoriously arrhythmogenic and pre-
+dispose to sudden cardiac death and this could be
+linked to an altered intracellular electrical and ionic
+hemostasis consequent to the increase in ROS pro-
+duction.
+
+To support the importance of oxidative stress in
+the genesis of heart disease associated with sudden
+cardiac death, some data are emerging from pre-
+clinical studies. Doxorubicin (molecule that increases
+oxidative stress) injection knockout mice for the neuronal
+nitric oxide synthase-1 adaptive (NOS1AP) protein
+compared to wild types showed significantly higher
+mortality, QTc prolongation, and reduced contra-
+ctile function, as well as the development of spontan-
+eous ventricular tachyarrhythmias. The administra-
+tion of the antioxidant N-acetyl-L-cysteine signific-
+antly reduced the mortality of knockout NOS1AP
+mice and prevented the prolongation of the QT in-
+terval and the reduction of systolic function, sug-
+gesting a fundamental role of oxidative stress in the
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+677
+
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+development of ventricular tachyarrhythmias and
+heart failure, which can cause sudden cardiac death.[102]
+
+POST-MORTEM STUDIES
+
+Several post-mortem studies have been carried
+out on subjects who used antipsychotics in life to
+highlight a correlation between the increase in mor-
+tality from cardiovascular causes observed on
+schizophrenics and the use of antipsychotics, typical
+and atypical (Table 4).
+
+As can be seen in Table 4, epidemiological/obser-
+vational studies and a cohort study have been car-
+ried out to assess cardiovascular risk in subjects
+taking antipsychotics with a descriptive methodo-
+logy.[8,18,103–107] In fact, databases were analyzed from
+hospitals, mainly psychiatric, or from national re-
+gisters, where the causes of death (cardiac and non-
+cardiac) were reported in the appropriate death cer-
+tificates.
+
+However, in the literature, there are few system-
+atic necropsy studies aimed at analyzing this aspect.
+The post-mortem investigation described by Kelly,
+et al.[104] analyzed a sample of sixty-two deceased
+subjects treated at life with atypical antipsychotics
+(clozapine and risperidone), highlighting that 11%
+of the patients treated with clozapine and 7% of
+those treated with risperidone had died of cardi-
+ovascular causes. Also, three cases of cardiomy-
+opathy were described in the group of subjects taking
+clozapine and two cases in those taking risperidone.
+Besides, three cases of myocarditis have been de-
+scribed only in subjects taking clozapine.[104] A post-
+mortem diagnosis of myocarditis has also been de-
+scribed by Vang, et al.[8] This study included two
+case reports relating to the death of two young men,
+both who took olanzapine at therapeutic doses,
+who died suddenly. In both cases, an autopsy, his-
+tological and toxicological tests were carried out,
+which made it possible to make diagnoses of death
+of eosinophilic myocarditis. Another epidemiolo-
+gical study carried out using a database on autopsy
+data of all deaths occurring over a 26-year period
+(1984–2009) in adults receiving care in one large
+psychiatric hospital in New York, revealed the pres-
+ence of twenty-two deaths from cardiovascular dis-
+ease on one hundred cases of sudden death. The
+twenty-two deaths from cardiovascular death were
+
+divided as follows: fifteen deaths due to acute
+coronary syndrome, two deaths due to heart failure,
+two deaths due to aortic dissection, two deaths due
+to myocarditis, and one death due to commotio
+cordis.[103] Also, Ifteni,  et al.[106] used a register of
+autopsy data from Maryland hospital databases
+from 1989 to 2013. This study included a cohort of
+7,198 schizophrenic patients hospitalized in psychi-
+atric facilities. Of these, fifty-seven patients died of
+sudden death during hospitalization and fifty-one
+patients underwent autopsy. On autopsy, 62.8% of
+deaths were attributed to cardiovascular causes,
+such as myocardial infarction (52.9%), myocarditis
+(5.9%), and dilated cardiomyopathy.
+
+However, it should be noted that no studies have
+analyzed the correlation between antipsychotic-
+induced cardiac death and oxidative stress in hu-
+mans. In this regard, numerous preclinical studies
+previously exposed have highlighted the link
+between cardiac damage induced by oxidative
+stress/inflammation and antipsychotics. Concern-
+ing this, numerous molecules have been analyzed at
+the murine level; the alterations highlighted in the
+various studies conducted included an increase in
+TNF-α, an increase in catecholaminergic tone, an in-
+crease in the ROS and nitrate pathways, the pres-
+ence of DNA degradation products, and lipid per-
+oxidation, as well as alteration of endogenous anti-
+oxidant systems.
+
+Specifically, animal models of myocarditis associ-
+ated with the use of clozapine have shown an in-
+crease in TNF-α and free radicals, effects that were
+reduced with the use of propranolol, suggesting
+that the increase in catecholaminergic tone could
+mediate the inflammatory increase and oxidative
+stress in this pathology.[64] The scarcity of post-
+mortem studies suggests the need for research in
+this sense, to be able to highlight whether oxidative
+stress can at least partially mediate cardiotoxicity
+due to antipsychotics also in human subjects. In this
+sense, the increase in TNF-α can be assessed in hu-
+mans through immunohistochemistry investiga-
+tions on cardiac histological sections previously
+treated with anti-TNF-α.[57] Furthermore, an index
+of cardiac damage from oxidative stress is repres-
+ented by the increase in the levels of malondialde-
+hyde, an indicator of lipid peroxidation, and the re-
+duced glutathione/oxidized glutathione ratio, both
+
+678
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+Table  4      Post-mortem  studies  carried  out  on  subjects  who  used  antipsychotics  in  life  to  highlight  a  correlation  between  the
+increase in mortality from cardiovascular causes observed on schizophrenics and the use of antipsychotics, typical and atypical.
+
+Authors
+
+Year Type of article
+
+Case
+
+Drug
+
+Death diagnosis
+
+Investigations
+
+Autopsy; histological
+examination
+
+Revision of an
+administrative database;
+identifications of
+cardiovascular desease in
+death certificates; no
+autopsy were done; no
+histological examination
+
+Kelly, et al.[104]
+
+2009
+
+Descriptive
+epidemiologi
+cal study
+
+People with schizophrenia
+who had received
+clozapine (n = 62) or
+risperidone (n = 42). Use of
+a database on autopsy data
+about cardiac desease
+
+Clozapina; risperidone
+
+7 of the 62 (11%) in the
+clozapine treated group died
+of cardiovascular disease; 3
+of the 42 (7%) in the
+risperidone group died of
+cardiovascular disease; 3 of
+the 62 (5%) patients died of
+cardiomyopathy in the
+clozapine group; 2 of the 42
+(5%) patients of risperidone
+groups died of
+cardiomyopathy; 3 of the 62
+(5%) died of myocarditis in
+the clozapine group
+
+Kelly, et al.[105]
+
+2010
+
+Descriptive
+epidemiologi
+cal study
+
+Vang, et al.[8]
+
+2016
+
+Case reports
+
+136 deaths; use of an
+administrative database of
+schizophrenia patients
+treated in Maryland, con
+clozapine (n = 1 084) con
+risperidone)( n = 602)
+between 1994 and 2000
+
+2 cases: a 39-year-old man
+with known substance
+abuse and schizophrenia;
+36-year-old man diagnosed
+with schizophrenia, found
+dead unexpectedly
+
+Clozapina; risperidone
+(Control)
+
+43 cardiovascular disease
+
+Case 1: olanzapine 40
+mg/day; pregabalin;
+venlafaxine; oxazepam
+Case 2: olanzapine 20
+mg/day +5 mg;
+aripiprazole 30 mg/day;
+mirtazapine 30 mg/day
+
+Eosinophilic myocarditis
+
+Autopsy; histological
+examination; toxicological
+investigation
+
+Manu, et al.[103]
+
+2011
+
+Descriptive
+epidemiologi
+cal study
+
+100 cases of sudden death;
+utilizzo di un database on
+autopsy data of all deaths
+occurring over a 26-year
+period (1984–2009) in
+adults receiving care in
+one large psychiatric
+hospital in New York
+
+First and second
+generation:
+antipsychotics;
+antidepressants; mood
+stabilizers;
+benzodiazepine;
+methadone;
+psychostimulants
+
+Ifteni, et al.[106]
+
+2014
+
+Descriptive
+epidemiologi
+cal study,
+autopsy data
+
+cohort of 7,189
+schizophrenia patients
+admitted to a free-
+standing, psychiatric
+teaching hospital from
+1989 to 2013
+
+Antipsychotics
+
+Cardiovascular diseases (22);
+acute coronary syndrome
+(15); heart failure (2); aortic
+dissection (2); myocarditis
+(2); commotio cordis (1);
+upper airway obstruction
+(5); pulmonary emboli (4);
+thrombotic strokes (3)
+
+57 patients died suddenly
+and unexpectedly; 51
+autopsies performed. Causes
+of sudden death were most
+commonly cardiovascular
+disorders (62.8%), including
+myocardial infarction
+(52.9%), pneumonia (11.8%),
+airway obstruction (7.8%),
+myocarditis (5.9%), and
+dilated cardiomyopathy,
+hemopericardium,
+pulmonary embolus,
+hemorrhagic stroke and
+brain tumor (2.0% each)
+
+Autopsy; histological
+examination
+
+Autopsy findings using data
+extracted from their medical
+records and the post-
+mortem examination report
+
+Ray, et al.[165]
+
+2009
+
+Retrospective
+cohort
+
+Jones, et al.[107]
+
+2013
+
+Descriptive
+epidemiologi
+cal study
+
+1,870 sudden cardiac
+deaths. Cohort: 44,218 and
+46,089 baseline users of
+single typical and atypical
+drugs; and 186,600
+matched nonuser controls.
+Study data were obtained
+from computerized files of
+Tennessee Medicaid from
+1990 to 2005
+
+General Practice Research
+Database was used to
+identify cohorts of
+antipsychotic users and
+nonusers with psychiatric
+illness (patients registered
+in database from January
+1995 to January 2011)
+
+Antipsychotics
+
+1,870 sudden cardiac deaths
+
+Revision of a database
+(computerized files of
+Tennessee Medicaid)
+
+183,392 antipsychotic
+users (20,954 olanzapine
+users) and 193,920
+psychiatric nonuses
+
+Cardiac mortality (number
+of events): nonuser
+psychiatric (1,289). User
+psychiatric: atypical (1,200);
+typical (1,180); olanzapine
+(206)
+
+Evaluate cardiac mortality,
+including coronary heart
+disease, and life-threatening
+ventricular arrhythmias
+using death certificate data
+and records from national
+registry of hospital
+admission
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+679
+
+ 
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+of which can be assessed in humans through bio-
+chemical analyzes, respectively of chromatographic
+and spectrophotometric type.[108,109]
+
+In addition to this, to highlight the presence of a
+correlation between oxidative stress and heart dis-
+ease induced by antipsychotics, it would be useful
+to carry out immunohistochemical investigations
+aimed at assessing the presence of oxidative stress
+markers, such as inducible NOS, 8-OHdG, NOX2,
+and finally the pathways of apoptotic death by
+TUNEL assay.[57]
+
+CONCLUSIONS
+
+Cardiotoxicity of atypical antipsychotics repres-
+ents a major concern in clinical practice due to its
+large use in mental disorders. Major cardiovascular
+adverse events and sudden unexpected deaths are
+reported, but the mechanism of myocardial injury is
+not completely known. An increase in myocardial
+oxidative stress and inflammatory cytokines may
+play an important role in cellular death and DNA
+damage. Post-mortem examination is still crucial for
+research and must be seen as an opportunity for
+early detection of patients at risk for an unexpected
+death, and discovery of preventive measures.[110,111]
+Post-mortem studies carried out show increased
+cardiac death in subjects taking antipsychotics com-
+pared to the general population, reporting cases of
+myocarditis, cardiomyopathy, and sudden cardiac
+death. However, the pathogenesis of cardiac tox-
+icity induced by these molecules is still unclear. A
+potential role of oxidative stress in cardiotoxicity
+caused by antipsychotics has been proposed in nu-
+merous preclinical studies, but post-mortem data
+from subjects taking atypical antipsychotics during
+life is extremely lacking. It would be desirable to
+carry out biochemical and immunohistochemical in-
+vestigations on cardiac tissue of subjects who died
+of cardiac death related to antipsychotics, to verify
+whether oxidative stress can at least partially med-
+iate the cardiotoxicity associated with the use of
+these molecules. If the mechanism of cardiac tox-
+icity of antipsychotics is clarified in the future clini-
+cians will be able to better establish the dose and
+length of treatment improving mental disease without
+impacting the physical health of the patients redu-
+cing mortality.[112–114]
+
+ACKNOWLEDGMENTS
+
+All authors had no conflicts of interest to disclose.
+
+REFERENCES
+
+[1]
+
+[2]
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+[11]
+
+[12]
+
+[13]
+
+[14]
+
+[15]
+
+[16]
+
+ Divac N, Prostran M, Jakovcevski I, et al. Second-gen-
+eration antipsychotics and extrapyramidal adverse eff-
+ects. Biomed Res Int 2014; 2014: 656370.
+ Curto M, Girardi N, Lionetto L, et al. Systematic review
+of clozapine cardiotoxicity. Curr Psychiatry Rep 2016;
+18: 68.
+ Lee TW, Tsai SJ, Hwang JP. Severe cardiovascular side
+effects of olanzapine in elderly patient: case report. Int
+J Psychiatry Med 2003; 33: 399−401.
+ Coulter DM, Bate A, Meyboom RH, et al. Antipsychotic
+drugs and heart muscle disorder in international pha-
+rmacovigilance: data miming study. BMJ 2001; 322: 1207−
+1209.
+ Li KJ, Greenstein AP, Delisi LE. Sudden death in schi-
+zophrenia. Curr Opin Psychiatry 2018; 31: 169−175.
+ Abdel-Wahab BA, Abdalla ME, El-khawanki MM. Does
+clozapine  induce  myocarditis,  myocardial  oxidative
+stress and DNA damage in rats? Egypt J Forensic Sci
+2014; 4: 75−82.
+ Haas  SJ,  Hill  R,  Krum  H, et al.  Clozapine-associated
+myocarditis: a review of 116 cases of suspected myoc-
+arditis associated with the use of clozapine in Australia
+during 1993–2003. Drug Saf 2007; 30: 47−57.
+ Vang T, Rosenzweig M, Bruhn CH, et al. Eosinophilic
+myocarditis  during  treatment  with  olanzapine-report
+of two possible cases. BMC Psychiatry 2016; 16: 70.
+ Papazisis  G,  Mastrogianni  O,  Chatzinikolaou  F, et al.
+Sudden  cardiac  death  due  to  quetiapine  overdose.
+Psychiatry Clin Neurosci 2012; 66: 535.
+ Wu CS, Tsai YT, Tsai HJ. Antipsychotic drugs and the
+risk of ventricular arrhythmia and/or sudden cardiac
+death: a nation-wide case-crossover study. J Am Heart
+Assoc 2015; 4: e001568.
+ Pillinger T, Osimo EF, de Marvao A, et al. Cardiac stru-
+cture and function in patients with schizophrenia tak-
+ing antipsychotic drugs: an MRI study. Transl Psychiatry
+2019; 9: 163.
+ Khan AA, Ashraf A, Baker D, et al. Clozapine and in-
+cidence  of  myocarditis  and  sudden  death:  long-term
+Australian experience. Int J Cardiol 2017; 238: 136−139.
+ Fineschi V, Neri M, Riezzo I, et al. Sudden cardiac death
+due  to  hypersensitivity  myocarditis  during  clozapine
+treatment. Int J Legal Med 2004; 118: 307−309.
+ Barber S, Thornicroft G. Reducing the mortality gap in
+people  with  severe  mental  disorders:  the  role  of  life-
+style psychosocial interventions. Front Psychiatry 2018;
+9: 463.
+ Engl J, Laimer M, Fleischhacker WW, et al. To: Mackin
+P,  Watkinson  HM,  Young  AH  (2005)  Prevalence  of
+obesity, glucose homeostasis disorders and metabolic
+syndrome  in  psychiatric  patients  taking  typical  or
+atypical  antipsychotic  drugs:  a  cross-sectional  study.
+Diabetologia 2005; 48: 1430−1431.
+ Kritharides  L,  Chow  V,  Lambert  TJ,  et al.  Cardiova-
+scular  disease  in  patients  with  schizophrenia. Med J
+
+680
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+ 
+ 
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+[17]
+
+[18]
+
+[19]
+
+[20]
+
+[21]
+
+[22]
+
+[23]
+
+[24]
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+
+Aust 2017; 206: 91−95.
+ Salvo  F,  Pariente  A,  Shakir  S,  et al.  Sudden  cardiac
+and sudden unexpected death related to antipsychotics:
+a meta-analysis of observational studies. Clin Pharmacol
+Ther 2016; 99: 306−314.
+ Ray WA, Chung CP, Murray KT, et al. Atypical anti-
+psychotic drugs and the risk of sudden cardiac death.
+N Engl J Med 2009; 360: 225−235.
+ Lynge TH, Nielsen TS, Gregers Winkel B, et al. Sudden
+cardiac  death  caused  by  myocarditis  in  persons  aged
+1 –49  years:  a  nationwide  study  of  14,  294  deaths  in
+Denmark. Forensic Sci Res 2019; 4: 247−256.
+ De Berardis D, Rapini G, Olivieri L, et al. Safety of an-
+tipsychotics for the treatment of schizophrenia: a focus
+on the adverse effects of clozapine. Ther Adv Drug Saf
+2018; 9: 237−256.
+ Arias LHM, Fadrique RS, García SP, et al. Antipsych-
+otics  and  cardiovascular  risk:  a  case/non-case  study.
+Psychiatry Res 2018; 270: 341−347.
+ Xu T, Ding W, Ji X, et al. Oxidative stress in cell death
+and  cardiovascular  diseases.  Oxid Med Cell Longev
+2019; 2019: 9030563.
+ Korkmaz S, Korkmaz H, Özer Ö, et al. Assessment of
+left ventricle systolic and diastolic functions in schizo-
+phrenia patients. Psychiatry Res 2016; 240: 348−351.
+ Chow V, Yeoh T, Ng AC, et al. Asymptomatic left ven-
+tricular dysfunction with long-term clozapine treatment
+for schizophrenia: a multicentre cross-sectional cohort
+study. Open Heart 2014; 1: e000030.
+ Curto M, Comparelli A, Ciavarella GM, et al. Impair-
+ment  of  left  ventricular  function  early  in  treatment
+with clozapine: a preliminary study. Int Clin Psycho-
+pharmacol 2015; 30: 282−289.
+ Unsal  C,  Oran  M,  Tureli  HO, et al. Detection  of   sub-
+clinical  atherosclerosis  and  diastolic  dysfunction  in
+patients with schizophrenia. Neuropsychiatr Dis Treat
+2013; 9: 1531−1537.
+ Li X, Peng Z, Zhou Y, et al. Quetiapine induces myo-
+cardial  necroptotic  cell  death  through  bidirectional
+regulation of cannabinoid receptors. Toxicol Lett 2019;
+313: 77−90.
+ Peoples  JN,  Saraf  A,  Ghazal  N,  et al.  Mitochondrial
+dysfunction and oxidative stress in heart disease. Exp
+Mol Med 2019; 51: 1−13.
+ Collin F. Chemical basis of reactive oxygen species re-
+activity and involvement in neurodegenerative diseases.
+Int J Mol Sci 2019; 20: 2407.
+ Nikolaidis MG, Kyparos A, Spanou C, et al. Redox bio-
+logy of  exercise:  an  integrative  and  comparative   con-
+sideration of some overlooked issues. J Exp Biol 2012;
+215: 1615−1625.
+ Valavanidis A, Vlachogianni T, Fiotakis C. 8-hydroxy-
+2 ’-deoxyguanosine  (8-OHdG):  a  critical  biomarker  of
+oxidative stress and carcinogenesis. J Environ Sci Health
+C Environ Carcinog Ecotoxicol Rev 2009; 27: 120−139.
+ Xu T, Ding W, Ji X, et al. Oxidative stress in cell death
+and  cardiovascular  diseases.  Oxid Med Cell Longev
+2019; 2019: 9030563.
+ Murphy  E,  Steenbergen  C.  Mechanisms  underlying
+acute protection from cardiac ischemia-reperfusion in-
+jury. Physiol Rev 2008; 88: 581−609.
+
+[34]
+
+[35]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+[41]
+
+[42]
+
+[43]
+
+[44]
+
+[45]
+
+[46]
+
+[47]
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+ Zhang M, Prosser BL, Bamboye MA, et al. Contractile
+function  during  angiotensin-II  activation:  increased
+NOX2  activity  modulates  cardiac  calcium  handling
+via phospholamban phosphorylation. J Am Coll Cardiol
+2015; 66: 261−272.
+ Zhang M, Brewer AC, Schröder K, et al. NADPH oxi-
+dase-4  mediates  protection  against  chronic  load-in-
+duced stress in mouse hearts by enhancing angiogen-
+esis. Proc Natl Acad Sci USA 2010; 107: 18121−18126.
+ Duncan JG. Mitochondrial dysfunction in diabetic car-
+diomyopathy. Biochim Biophys Acta 2011; 1813: 1351−
+1359.
+ Senoner T, Dichtl W. Oxidative stress in cardiovascu-
+lar diseases: still a therapeutic target? Nutrients 2019;
+11: 2090.
+ Reilly  JG,  Ayis  SA,  Ferrier  IN, et al. QTc-interval   ab-
+normalities and psychotropic drug therapy in psychi-
+atric patients. Lancet 2000; 355: 1048−1052.
+ Zemva  A,  Zemva  Z.  Ventricular  ectopic  activity,  left
+ventricular  mass,  hyperinsulinemia,  and  intracellular
+magnesium  in  normotensive  patients  with  obesity.
+Angiology 2000; 51: 101−106.
+ Smith  RC,  Leucht  S,  Davis  JM.  Maximizing  response
+to first-line antipsychotics in schizophrenia: a review focused
+on  finding  from  meta-analysis.  Psychopharmacology
+(Berl) 2019; 236: 545−559.
+ Howell  S,  Yarovova  E,  Khwanda  A, et al.  Cardiovas-
+cular  effects  of  psychotic  illnesses  and  antipsychotic
+therapy. Heart 2019; 105: 1852−1859.
+ Mackin  P.  Cardiac  side  effects  of  psychiatric  drugs.
+Hum Psychopharmacol 2008; 23: S3−S14.
+ Jensen KG, Juul K, Fink-Jensen A, et al. Corrected QT
+changes  during  antipsychotic  treatment  of  children
+and adolescents: a systematic review and meta-analysis
+of clinical trials. J Am Acad Child Adolesc Psychiatry
+2015; 54: 25−36.
+ Lin YL, Wu YC, Tsai GF. Electrocardiographic monitoring
+for QT prolongation in patients treated with ziprasidone--
+a  claims  database  approach. Pharmacoepidemiol Drug
+Saf 2009; 18: 842−847.
+ Coulter  DM,  Bate  A,  Meyboom  RH, et al.  Antipsych-
+otic  drugs  and  heart  muscle  disorder  in  international
+pharmacovigilance: data mining study. BMJ 2001; 322:
+1207−1209.
+ Kerwin  RW,  Bolonna  AA.  Is  clozapine  antisuicidal?
+Expert Rev Neurother 2004; 4: 187−190.
+ Patel RK, Moore AM, Piper S, et al. Clozapine and car-
+diotoxicity: a guide for psychiatrists written by cardi-
+ologists. Psychiatry Res 2019; 282: 112491.
+ Merrill DB, Dec GW, Goff DC. Adverse cardiac effects
+associated with clozapine. J Clin Psychopharmacol 2005;
+25: 32−41.
+ Bugge E, Nissen T, Wynn R. Probable clozapine-induced
+parenchymal lung disease and perimyocarditis: a case
+report. BMC Psychiatry 2016; 16: 438.
+ Türe  M,  Bilici  M,  Akın  A,  et al.  Complete  atrioven-
+tricular  block  associated  with  clozapine  intoxication:
+case report. Turk J Pediatr 2019; 61: 618−621.
+ Haas  SJ,  Hill  R,  Krum  H, et al.  Clozapine-associated
+myocarditis: a review of 116 cases of suspected myoca-
+rditis associated with the use of clozapine in Australia
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+681
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+during 1993–2003. Drug Saf 2007; 30: 47−57.
+ Meeker  JE,  Herrmann  PW,  Som  CW, et al.  Clozapine
+tissue  concentrations  following  an  apparent  suicidal
+overdose of Clozaril. J Anal Toxicol 1992; 16: 54−56.
+ Bandelow B, Degner D, Kreusch U, et al. Myocarditis
+under therapy with clozapine. Schizophr Res 1995; 17:
+293−294.
+ Wassef N, Khan N, Munir S. Quetiapine-induced myo-
+carditis presenting as acute STEMI. BMJ Case Rep 2015;
+2015: bcr2014207151.
+ Varga ZV, Ferdinandy P, Liaudet L, et al. Drug-induced
+mithocondrial  dysfunction  and  cardiotoxicity.  Am J
+Physiol Heart Circ Physiol 2015; 309: H1453−H1467.
+ Cerretani D, Fineschi V, Bello S, et al. Role of oxidative
+stress  in  cocaine-induced  cardiotoxicity  and  cocaine-
+related death. Curr Med Chem 2012; 19: 5619−5623.
+ Turillazzi E, Cerretani D, Cantatore S, et al. Myocardial
+oxidative damage is induced by cardiac Fas-dependent
+and  mitochondria-dependent  apoptotic  pathways  in
+human cocaine-related overdose. Sci Rep 2017; 7: 44262.
+ Matsui H, Morishima I, Numaguchi Y, et al. Protective
+effects of  carvedilol  against  doxorubicin  induced   car-
+diomyopathy in rats. Life Sci 1999; 65: 1265−1274.
+ Doroshow JH, Locker GY, Ifrim I, et al. Prevention of
+doxorubicin cardiac toxicity in the mouse by N-acetyl-
+cysteine. J Clin Invest 1981; 68: 1053−1064.
+ Kilian JG, Kerr K, Lawrence C, et al. Myocarditis and
+cardiomyopathy associated with clozapine. Lancet 1999;
+354: 1841−1845.
+ Hägg S, Spigset O, Bate A, et al. Myocarditis related to
+clozapine treatment. J Clin Psychopharmacol 2001; 21:
+382−388.
+ Patel RK, Moore AM, Piper S, et al. Clozapine and car-
+diotoxicity: a guide for psychiatrists written by cardi-
+ologists. Psychiatry Res 2019; 282: 112491.
+ Christoffersen  RK,  Vestergård  LD,  Høimark  L,  et al.
+[Eosinophilic myocarditis and sudden unexpected death
+in a younger patient treated with antipsychotics]. Ugeskr
+Laeger 2011; 173: 2799−2800. [In Danish].
+ Wang  JF,  Min  JY,  Hampton  TG,  et al.  Clozapine-in-
+duced myocarditis: role of catecholamines in a murine
+model. Eur J Pharmacol 2008; 592: 123−127.
+ Breier  A,  Buchanan  RW,  Waltrip  RW  2nd, et al.  The
+effect of clozapine on plasma norepinephrine: relation-
+ship  to  clinical  efficacy.  Neuropsychopharmacology
+1994; 10: 1−7.
+ Elman I, Goldstein DS, Eisenhofer G, et al. Mechanism
+of peripheral noradrenenrgic stimulation by clozapine.
+Neuropsychopharmacology 1999; 20: 29−34.
+ Nikolić-Kokić  A,  Tatalović  N,  Nestorov  J, et al.  Cloza-
+pine,  ziprasidone,  and  serindole-induced  moprholo-
+gical changes in the rat heart and their relationship to
+antioxidant enzymes function. J Toxicol Environ Health
+A 2018; 81: 844−853.
+ Pirmohamed  M,  Williams  D,  Madden  S, et al.  Meta-
+bolism and bioactivation of clozapine by human liver
+in vitro. J Pharmacol Exp Ther 1995; 272: 984−990.
+ Abdel-Wahab  BA,  Metwally  ME,  El-khawanki  MM,
+et al.  Protective  effect  of  captopril  against  clozapine-
+induced  myocarditis  in  rats:  role  of  oxidative  stress,
+proinflammatory  cytokines  and  DNA  damage. Chem
+
+[52]
+
+[53]
+
+[54]
+
+[55]
+
+[56]
+
+[57]
+
+[58]
+
+[59]
+
+[60]
+
+[61]
+
+[62]
+
+[63]
+
+[64]
+
+[65]
+
+[66]
+
+[67]
+
+[68]
+
+[69]
+
+682
+
+[70]
+
+[71]
+
+[72]
+
+[73]
+
+[74]
+
+[75]
+
+[76]
+
+[77]
+
+[78]
+
+[79]
+
+[80]
+
+[81]
+
+[82]
+
+[83]
+
+[84]
+
+[85]
+
+[86]
+
+[87]
+
+Biol Interact 2014; 216: 43−52.
+ Vaddadi KS, Soosai E, Vaddadi G. Low blood seleni-
+um concentrations in schizophrenic patients on cloza-
+pine. Br J Clin Pharmacol 2003; 55: 307−309.
+ Heiser P, Sommer O, Schmidt AJ, et al. Effects of anti-
+psychotics and vitamin C on the formation of reactive
+oxygen species. J Psychopharmacol 2010; 24: 1499−1504.
+ Williams DP, O’Donnell CJ, Maggs JL, et al. Bioactiva-
+tion of clozapine by murine cardiac tissue in vivo and
+in vitro. Chem Res Toxicol 2003; 16: 1359−1364.
+ Pollmächer T, Hinze-Selch D, Mullington J. Effects of
+clozapine on plasma cytokine and soluble cytokine re-
+ceptor levels. J Clin Psychopharmacol 1996; 16: 403−409.
+ Abdel-Wahab  BA,  Metwally  ME.  Clozapine-induced
+cardiotoxicity: role of oxidative stress, tumour necrosis
+factor Alpha and NF-κβ. Cardiovasc Toxicol 2015; 15:
+355−365.
+ Shin  WS,  Szuba  A,  Rockson  SG.  The  role  of  chemok-
+ines in human cardiovascular pathology: enhanced bio-
+logical insights. Atherosclerosis 2002; 160: 91−102.
+ Haack  MJ,  Bak  ML,  Beurskens  R, et al.  Toxic  rise  of
+clozapine plasma concentrations in relation to inflam-
+mation. Eur Neuropsychopharmacol 2003; 13: 381−385.
+ Nimata M, Okabe TA, Hattori M, et al. MCI-186 (edara-
+vone), a novel free radical scavenger, protects against
+acute  autoimmune  myocarditis  in  rats. Am J Physiol
+Heart Circ Physiol 2005; 289: H2514−H2518.
+ Sovari  AA,  Rutledge  CA,  Jeong  EM, et al.  Mitochon-
+dria oxidative stress, connexin43 remodeling, and sudden
+arrhythmic death. Circ Arrhythm Electrophysiol 2013;
+6: 623−631.
+ Arumugam S, Thandavarayan RA, Veeraveedu PT, et al.
+Beneficial effects of edaravone, a novel antioxidant, in
+rats with dilated cardiomyopathy. J Cell Mol Med 2012;
+16: 2176−2185.
+ Watanabe N, Nakagawa S, Fukunaga T, et al. Acute nec-
+rotizing  eosinophilic  myocarditis  successfully  treated
+by high dose methylprednisolone. Jpn Circ J 2001; 65:
+923−926.
+ Xie  X,  Zhao  Y,  Ma  CY,  et al. Dimethyl  fumarate   in-
+duces  necroptosis  in  colon  cancer  cells  through  GSH
+depletion/ROS  increase/MAPKs  activation  pathway.
+Br J Pharmacol 2015; 172: 3929−3943.
+ Frangogiannis NG, Smith CW, Entman ML. The infla-
+mmatory response in myocardial infarction. Cardiovasc
+Res 2002; 53: 31−47.
+ Ishiyama S, Hiroe M, Nishikawa T, et al. Nitric oxide
+contributes to the progression of myocardial damage in
+experimental autoimmune myocarditis in  rats. Circulation
+1997; 95: 489−496.
+ Hogan K, Ahmed O, Markos F. N-desmethylclozapine
+an M1 receptor agonist enhances nitric oxide’s cardiac
+vgal facilitation in the isolated innervated rat right at-
+rium. Auton Neurosci 2007; 137: 51−55.
+ Esposito  E,  Cuzzocrea  S.  Role  of  nitroso  radicals  as
+drug targets in circulatory shock. Br J Pharmacol 2009;
+157: 494−508.
+ Finkel  MS,  Oddis  CV,  Jacob  TD, et al. Negative   ino-
+tropic  effects  of  cytokines  on  the  heart  mediated  by
+nitric oxide. Science 1992; 257: 387−389.
+ Belhani D, Frassati D, Mégard R, et al. Cardiac lesions
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+[88]
+
+[89]
+
+[90]
+
+[91]
+
+[92]
+
+[93]
+
+[94]
+
+[95]
+
+[96]
+
+[97]
+
+[98]
+
+[99]
+
+[100]
+
+[101]
+
+[102]
+
+[103]
+
+[104]
+
+induced by neuropleptic drugs in the rabbit. Exp Toxicol
+Pathol 2006; 57: 207−212.
+ Yan H, Li WL, Xu JJ, et al. D2 dopamine receptor ant-
+agonist  raclopride  induces  non-canonical  autophagy
+in cardiac myocytes. J Cell Biochem 2013; 114: 103−110.
+ Shinoda  Y,  Tagashira  H,  Bhuiyan  MS, et al.  Haloper-
+idol aggravates transverse aortic constriction-induced
+heart failure via mitochondrial dysfunction. J Pharmacol
+Sci 2016; 131: 172−183.
+ Roden DM. Drug-induced prolongation of the QT in-
+terval. N Engl J Med 2004; 350: 1013−1022.
+ Meléndez GC, McLarty JL, Levick SP, et al. Interleuk-
+in 6 mediates myocardial fibrosis, concentric hypertro-
+phy,  and  diastolic  dysfunction  in  rats.  Hypertension
+2010; 56: 225−231.
+ Johnson TL, Tulis DA, Keeler BE, et al. The dopamine
+D3  receptor  knockout  mouse  mimics  aging-related
+changes  in  autonomic  function  and  cardiac  fibrosis.
+PLoS One 2013; 8: e74116.
+ Pacher P, Schulz R, Liaudet L, et al. Nitrosative stress
+and pharmacological modulation of heart failure. Trends
+Pharmacol Sci 2005; 26: 302−310.
+ Li S, Jiao X, Tao L, et al. Tumor necrosis factor-alpha
+in  mechanic  trauma  plasma  mediates  cardiomyocyte
+apoptosis. Am J Physiol Heart Circ Physiol 2007; 293:
+H1847−H1852.
+ Heiser P, Sommer O, Schmidt AJ, et al. Effects of anti-
+psychotics and vitamin C on the formation of reactive
+oxygen species. J Psychopharmacol 2010; 24: 1499−1504.
+ Duncan JG. Mitochondrial dysfunction in diabetic car-
+diomyopathy. Biochim Biophys Acta 2011; 1813: 1351−
+1359.
+ Joseph LC, Subramanyam P, Radlicz C, et al. Mitoch-
+ondrial  oxidative  stress  during  cardiac  lipid  overload
+causes intracellular calcium leak and arrhythmia. Heart
+Rhythm 2016; 13: 1699−1706.
+ Gong F, Gu J, Wang H. Up regulated Tmbim1 activa-
+tion promotes high fat diet (HFD)-induced cardiomy-
+opathy by enhancement of inflammation and oxidative
+stress. Biochem Biophys Res Commun 2018; 504: 797−
+804.
+ Tse G, Yan BP, Chan YW, et al. Reactive oxygen spe-
+cies,  endoplasmic  reticulum  stress  and  mitochondrial
+dysfunction:  the  link  with  cardiac  arrhythmogenesis.
+Front Physiol 2016; 7: 313.
+ Bornfeldt  KE,  Tabas  I.  Insulin  resistance,  hyperglyce-
+mia, and atherosclerosis. Cell Metab 2011; 14: 575−585.
+ Tompkins  AJ,  Burwell  LS,  Digerness  SB,  et al.  Mito-
+chondrial dysfunction in cardiac ischemia-reperfusion
+injury: ROS from complex I, without inhibition. Biochim
+Biophys Acta 2006; 1762: 223−231.
+ Sugiyama  K,  Sasano  T,  Kurokawa  J,  et al.  Oxidative
+stress induced ventricular arrhythmia and impairment
+of cardiac function in NOS1AP deleted mice. Int Heart
+J 2016; 57: 341−349.
+ Manu P, Kane JM, Correll CU. Sudden deaths in psy-
+chiatric patients. J Clin Psychiatry 2011; 72: 936−941.
+ Kelly DL, Wehring HJ, Linthicum J, et al. Cardiac-related
+findings at  autopsy  in  people  with  severe  mental   ill-
+ness treated with clozapine or risperidone. Schizophr
+Res 2009; 107: 134−138.
+
+[105]
+
+[106]
+
+[107]
+
+[108]
+
+[109]
+
+[110]
+
+[111]
+
+[112]
+
+[113]
+
+[114]
+
+[115]
+
+[116]
+
+[117]
+
+[118]
+
+[119]
+
+ Kelly  DL,  McMahon  RP,  Liu  F, et al.  Cardiovascular
+disease  mortality  in  patients  with  chronic  schizophr-
+enia treated with clozapine: a retrospective cohort study.
+J Clin Psychiatry 2010; 71: 304−311.
+ Ifteni  P,  Correll  CU,  Burtea  V,  et al.  Sudden  unexp-
+ected death in schizophrenia: autopsy findings in psy-
+chiatric inpatients. Schizophr Res 2014; 155: 72−76.
+ Jones ME, Campbell G, Patel D, et al. Risk of mortal-
+ity (including sudden cardiac death) and major cardi-
+ovascular events in users of olanzapine and other an-
+tipsychotics: a study with the general practice research
+database.  Cardiovasc Psychiatry Neurol  2013;  2013:
+647476.
+ Tietze F. Enzymic method for quantitative determina-
+tion of nanogram amounts of total and oxidized gluta-
+thione:  applications  to  mammalian  blood  and  other
+tissues. Anal Biochem 1969; 27: 502−522.
+ Shara  MA,  Dickson  PH,  Bagchi  D, et al.  Excretion  of
+formaldehyde,  malondialdehyde,  acetaldehyde  and
+acetone  in  the  urine  of  rats  in  response  to  2,  3,  7,  8-
+tetrachlorodibenzo-p-dioxin, paraquat, endrin and car-
+bon tetrachloride. J Chromatogr 1992; 576: 221−233.
+ Santurro A, Vullo AM, Borro M, et al. Personalized me-
+dicine applied to forensic sciences: new advances and
+perspectives for a tailored forensic approach. Curr Pharm
+Biotechnol 2017; 18: 263−273.
+ La Russa R, Catalano C, Di Sanzo M, et al. Postmortem
+computed tomography angiography (PMCTA) and tra-
+ditional autopsy in cases of sudden cardiac death due
+to  coronary  artery  disease:  a  systematic  review  and
+meta-analysis. Radiol Med 2019; 124: 109−117.
+ Di Sanzo M, Cipolloni L, Borro M, et al. Clinical appli-
+cations of personalized medicine: a new paradigm and
+challenge. Curr Pharm Biotechnol 2017; 18: 194−203.
+ La  Russa  R,  Fineschi  V,  Di  Sanzo  M, et al.  Personal-
+ized medicine and adverse drug reactions: the experience
+of an Italian teaching hospital. Curr Pharm Biotechnol
+2017; 18: 274−281.
+ Borro M, Gentile G, Cipolloni L, et al. Personalised heal-
+thcare: the DiMA clinical model. Curr Pharm Biotechnol
+2017; 18: 242−252.
+ Ariyarajah V, Shaikh N, Garber PJ, et al. Cardiovascu-
+lar magnetic resonance in mild to moderate clozapine-
+induced  myocarditis:  is  there  a  role  in  the  absence  of
+electrocardiographic and echocardiographic abnorma-
+lities? J Magn Reson Imaging 2010; 31: 1473−1476.
+ Bellissima BL, Tingle MD, Cicović A, et al. A system-
+atic  review  of  clozapine-induced  myocarditis.  Int J
+Cardiol 2018; 259: 122−129.
+ Gareri P, De Fazio P, Russo E, et al. The safety of clo-
+zapine  in  the  elderly. Expert Opin Drug Saf  2008;  7:
+525−538.
+ Hussein O, Izikson L, Bathish Y, et al. Anti-atherogenic
+properties  of  high-density  lipoproteins  in  psychiatric
+patients before and after two months of atypical anti-
+psychotic therapy. J Psychopharmacol 2015; 29: 1262−
+1270.
+ Jerrell  JM,  McIntyre  RS,  Tripathi  A.  Incidence  and
+costs  of  cardiometabolic  conditions  in  patients  with
+schizophrenia treated with antipsychotic medications.
+Clin Schizophr Relat Psychoses 2010; 4: 161−168.
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+683
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+REVIEW
+
+ Katta N, Balla S, Aggarwal K. Clozapine-induced hy-
+persensitivity myocarditis presenting as sudden cardi-
+ac death. Autops Case Rep 2016; 6: 9−13.
+ Kontoangelos K, Loizos S, Kanakakis J, et al. Myocar-
+ditis  after  administration  of  clozapine. Eur Rev Med
+Pharmacol Sci 2014; 18: 2383−2386.
+ Korkmaz  H,  Korkmaz  S.  Hearts  and  minds:  real-life
+cardiotoxicity with clozapine in psychosis. J Clin Psy-
+chopharmacol 2019; 39: 694.
+ Lang UE, Willbring M, von Golitschek R, et al. Clozapine-
+induced  myocarditis  after  long-term  treatment:  case
+presentation and clinical perspectives. J Psychopharmacol
+2008; 22: 576−580.
+ Marti  V.  Sudden  cardiac  death  due  to  risperidone
+therapy in a patient with possible hypertrophic cardi-
+omyopathy. Ann Pharmacother 2005; 39: 973.
+ Peters S, Klein HU. Life-threatening ventricular arrhyth-
+mias due to atypical mid-ventricular tako tsubo cardiom-
+yopathy in a patient with chronic QT interval prolon-
+gation  under  anti-psychotic  medication. Int J Cardiol
+2014; 172: e534−e536.
+ Polcwiartek C, Sneider B, Graff C, et al. The cardiac saf-
+ety  of  aripiprazole  treatment  in  patients  at  high  risk
+for  torsade:  a  systematic  review  with  a  meta-analytic
+approach. Psychopharmacology (Berl) 2015; 232: 3297−
+3308.
+ Polcwiartek C, Kragholm K, Schjerning O, et al. Cardi-
+ovascular safety of antipsychotics: a clinical overview.
+Expert Opin Drug Saf 2016; 15: 679−688.
+ Serrano  A,  Rangel  N,  Carrizo  E.  Safety  of  long-term
+clozapine administration. Frequency of cardiomyopa-
+thy and  hyponatraemia:  two  cross-sectional,   natural-
+istic studies. Aust N Z J Psychiatry 2014; 48: 183−192.
+ Sicouri S, Antzelevitch C. Sudden cardiac death secon-
+dary to antidepressant and antipsychotic drugs. Expert
+Opin Drug Saf 2008; 7: 181−194.
+ Smolders DME,  Smolders  WAP.  Case  report  and   re-
+view of the literature: cardiomyopathy in a young wo-
+man on high-dose quetiapine. Cardiovasc Toxicol 2017;
+17: 478−481.
+ Vieweg WV. New generation antipsychotic drugs and
+QTc  interval  prolongation.  Prim Care Companion J
+Clin Psychiatry 2003; 5: 205−215.
+ Zhu J,  Hou  W,  Xu  Y.  Antipsychotic  drugs  and   sud-
+den cardiac  death:  a  literature  review  of  the   chal-
+lenges  in  the  prediction,  management,  and  future
+steps. Psychiatry Res 2019; 281: 112598.
+ Arumugam  S,  Thandavarayan  RA,  Veeraveedu  PT.
+Beneficial effects of edaravone, a novel antioxidant, in
+rats with dilated cardiomyopathy. J Cell Mol Med 2012;
+16: 2176−2185.
+ Auger  F,  Martin  F,  Pétrault  O.  Risperidone-induced
+metabolic dysfunction is attenuated by Curcuma longa
+extract administration in mice. Metab Brain Dis 2018;
+33: 63−77.
+ Dogan HO, Ersan EE, Aydin H. Thiol disulfide home-
+ostasis in schizophrenic patients using atypical antips-
+ychotic  drugs. Clin Psychopharmacol Neurosci  2018;
+16: 39−45.
+ Fehsel K, Loeffler S, Krieger K. Clozapine induces ox-
+idative stress and proapoptotic gene expression in neutro-
+
+[120]
+
+[121]
+
+[122]
+
+[123]
+
+[124]
+
+[125]
+
+[126]
+
+[127]
+
+[128]
+
+[129]
+
+[130]
+
+[131]
+
+[132]
+
+[133]
+
+[134]
+
+[135]
+
+[136]
+
+684
+
+[137]
+
+[138]
+
+[139]
+
+[140]
+
+[141]
+
+[142]
+
+[143]
+
+[144]
+
+[145]
+
+[146]
+
+[147]
+
+[148]
+
+[149]
+
+[150]
+
+[151]
+
+phils of schizophrenic patients. J Clin Psychopharmacol
+2005; 25: 419−426.
+ Hendouei N, Farnia S, Mohseni F, et al. Alterations in
+oxidative stress markers and its correlation with clin-
+ical findings in schizophrenic patients consuming per-
+phenazine,  clozapine  and  risperidone.  Biomed Phar-
+macother 2018; 103: 965−972.
+ Nikolić-Kokić A, Tatalović N, Nestorov J, et al. Clozapine,
+ziprasidone, and sertindole-induced morphological cha-
+nges in the rat heart and their relationship to antioxid-
+ant enzymes function. J Toxicol Environ Health A 2018;
+81: 844−853.
+ Padurariu M, Ciobica A, Dobrin I, et al. Evaluation of
+antioxidant enzymes activities and lipid peroxidation
+in  schizophrenic  patients  treated  with  typical  and
+atypical  antipsychotics. Neurosci Lett  2010;  479:  317−
+320.
+ Vidović  B,  Dorđević  B,  Milovanović  S, et al.  Selenium,
+zinc,  and  copper  plasma  levels  in  patients  with  sch-
+izophrenia:  relationship  with  metabolic  risk  factors.
+Biol Trace Elem Res 2013; 156: 22−28.
+ Abu-Elsaad N, El-Karef A. The falconoid luteolin mit-
+igates the myocardial inflammatory response induced
+by  high-carbohydrate/high-fat  diet  in  wistar  rats.
+Inflammation 2018; 41: 221−231.
+ Akao  M,  O ’Rourke  B,  Teshima  Y, et al.  Mechanistic-
+ally distinct steps in the mitochondrial death pathway
+triggered by oxidative stress in cardiac myocytes. Circ
+Res 2003; 92: 186−194.
+ Brown DA, O’Rourke B. Cardiac mitochondria and ar-
+rhythmias. Cardiovasc Res 2010; 88: 241−249.
+ Fineschi  V,  Michalodimitrakis  M,  D ’Errico  S.  Insight
+into stress-induced  cardiomyopathy  and  sudden   car-
+diac death due to stress. A forensic cardio-pathologist
+point of view. Forensic Sci Int 2010; 194: 1−8.
+ Javadi  B,  Sahebkar  A.  Natural  products  with  anti-in-
+flammatory and immunomodulatory activities against
+autoimmune  myocarditis.  Pharmacol Res  2017;  124:
+34−42.
+ Karagueuzian HS,  Katzung  BG.  Voltage-clamp   stud-
+ies of transient inward current and mechanical oscilla-
+tions induced by ouabain in ferret papillary muscle. J
+Physiol 1982; 327: 255−271.
+ Kilian JG, Kerr K, Lawrence C, et al. Myocarditis and
+cardiomyopathy associated with clozapine. Lancet 1999;
+354: 1841−1845.
+ Kishimoto C, Shioji K, Kinoshita M, et al. Treatment of
+acute inflammatory  cardiomyopathy  with   intraven-
+ous immunoglobulin ameliorates left ventricular func-
+tion associated  with  suppression  of  inflammatory   cy-
+tokines  and  decreased  oxidative  stress.  Int J Cardiol
+2003; 91: 173−178.
+ Koponen  H,  Alaräisänen  A,  Saari  K, et al.  Schizoph-
+renia and sudden cardiac death: a review. Nord J Psy-
+chiatry 2008; 62: 342−345.
+ Krexi  L,  Georgiou  R,  Krexi  D,  et al.  Sudden  cardiac
+death  with  stress  and  restraint:  the  association  with
+sudden  adult  death  syndrome,  cardiomyopathy  and
+coronary artery disease. Med Sci Law 2016; 56: 85−90.
+ Li YC, Luo Q, Ge LS, et al. Ivabradine inhibits the pro-
+duction  of  proinflammatory  cytokines  and  inducible
+
+http://www.jgc301.com; jgc@jgc301.com  
+
+REVIEW
+
+JOURNAL OF GERIATRIC CARDIOLOGY
+
+nitric oxide synthase in acute coxsackievirus B3-induced
+myocarditis. Biochem Biophys Res Commun 2013; 431:
+450−455.
+ Marian  AJ,  Senthil  V,  Chen  SN, et al. Antifibrotic   ef-
+fects of antioxidant N-acetylcysteine in a mouse mod-
+el of human hypertrophic cardiomyopathy mutation. J
+Am Coll Cardiol 2006; 47: 827−834.
+ Mito S,  Watanabe  K,  Harima  M.  Curcumin   amelior-
+ates  cardiac  inflammation  in  rats  with  autoimmune
+myocarditis. Biol Pharm Bull 2011; 34: 974−979.
+ Miyamoto S, Kawano H, Sakamoto T, et al. Increased
+plasma levels of thioredoxin in patients with coronary
+spastic angina. Antioxid Redox Signal 2004; 6: 75−80.
+ Octavia Y, Brunner-La Rocca HP, Moens AL. NADPH
+oxidase-dependent  oxidative  stress  in  the  failing
+heart: from pathogenic roles to therapeutic approach.
+Free Radic Biol Med 2012; 52: 291−297.
+ Pacher P, Szabo C. Role of the peroxynitrite-poly (ADP-
+ribose)  polymerase  pathway  in  human  disease. Am J
+Pathol 2008; 173: 2−13.
+ Raucci A, Di Maggio S, Scavello F, et al. The Janus face
+of  HMGB1  in  heart  disease:  a  necessary  update. Cell
+Mol Life Sci 2019; 76: 211−229.
+ Shimada  K,  Uzui  H,  Ueda  T,  et al.  N-acetylcysteine
+ameliorates experimental autoimmune myocarditis in
+rats via nitric oxide. J Cardiovasc Pharmacol Ther 2015;
+20: 203−210.
+ Singh  OP,  Chakraborty  I,  Dasgupta  A, et al. A   com-
+parative study  of  oxidative  stress  and   interrelation-
+ship of important antioxidants in haloperidol and olan-
+
+[152]
+
+[153]
+
+[154]
+
+[155]
+
+[156]
+
+[157]
+
+[158]
+
+[159]
+
+[160]
+
+[161]
+
+[162]
+
+[163]
+
+[164]
+
+[165]
+
+zapine  treated  patients  suffering  from  schizophrenia.
+Indian J Psychiatry 2008; 50: 171−176.
+ Skrzypiec-Spring M, Haczkiewicz K, Sapa A, et al. Car-
+vedilol  inhibits  matrix  metalloproteinase-2  activation
+in experimental  autoimmune  myocarditis:   possibilit-
+ies of cardioprotective application. J Cardiovasc Phar-
+macol Ther 2018; 23: 89−97.
+ Sukumaran V, Veeraveedu PT, Gurusamy N, et al. Car-
+dioprotective effects of telmisartan against heart failure
+in rats induced by experimental autoimmune myocar-
+ditis through the modulation of angiotensin-converting
+enzyme-2/angiotensin 1-7/mas receptor axis. Int J Biol
+Sci 2011; 7: 1077−1092.
+ Wu B,  Li  J,  Ni  H.  TLR4  activation  promotes  the   pro-
+gression  of  experimental  autoimmune  myocarditis  to
+dilated  cardiomyopathy  by  inducing  mitochondrial
+dynamic imbalance. Oxid Med Cell Longev 2018; 2018:
+3181278.
+ Yang KC, Kyle JW, Makielski JC, et al. Mechanisms of
+sudden  cardiac  death:  oxidants  and  metabolism. Circ
+Res 2015; 116: 1937−1955.
+ Yuan Z, Shioji K, Kihara Y, et al. Cardioprotective ef-
+fects  of  carvedilol  on  acute  autoimmune  myocarditis:
+anti-inflammatory  effects  associated  with  antioxidant
+property. Am J Physiol Heart Circ Physiol  2004;  286:
+H83−H90.
+ Ray WA, Chung CP, Murray KT, et al. Atypical anti-
+psychotic drugs and the risk of sudden cardiac death.
+N Engl J Med 2009; 360: 225−235.
+
+Please cite this article as: D’Errico S, La Russa R, Maiese A, Santurro A, Scopetti M, Romano S, Zanon M, Frati P, Fineschi V. Atypical
+antipsychotics  and  oxidative  cardiotoxicity:  review  of  literature  and  future  perspectives  to  prevent  sudden  cardiac  death. J Geriatr
+Cardiol 2021; 18(8): 663−685. DOI: 10.11909/j.issn.1671-5411.2021.08.002
+
+  http://www.jgc301.com; jgc@jgc301.com
+
+685
+
+

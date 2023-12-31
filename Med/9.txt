@@ -1,0 +1,3754 @@
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+HHS Public Access
+Author manuscript
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+Published in final edited form as:
+
+Circ Heart Fail. 2016 July ; 9(7): . doi:10.1161/CIRCHEARTFAILURE.115.002638.
+
+Anti-Hyperglycemic Medication Use Among Medicare 
+Beneficiaries With Heart Failure, Diabetes, and Chronic Kidney 
+Disease
+
+Priyesh A. Patel, MDa, Li Liang, PhDa, Prateeti Khazanie, MDa, Bradley G. Hammill, DrPHa, 
+Gregg C. Fonarow, MDb, Clyde W. Yancy, MDc, Deepak L. Bhatt, MD, MPHd, Lesley H. Curtis, 
+PhDa, and Adrian F. Hernandez, MD, MHSa,e
+aDuke Clinical Research Institute, Durham, North Carolina
+
+bRonald-Reagan UCLA Medical Center, Los Angeles, California
+
+cDivision of Cardiology, Department of Medicine, Northwestern University Feinberg School of 
+Medicine, Chicago, IL
+
+dBrigham and Women's Hospital Heart & Vascular Center, Harvard Medical School, Boston, 
+Massachusetts
+
+eDuke University Medical Center, Durham, North Carolina
+
+Abstract
+
+  Background—Diabetes, heart failure (HF), and chronic kidney disease (CKD) are common 
+co-morbidities, but overall use and safety of anti-hyperglycemic medications (AHM) among 
+patients with these co-morbidities are poorly understood.
+
+  Methods and Results—Using Get With the Guidelines-Heart Failure (GWTG-HF) and 
+linked Medicare Part D data, we assessed AHM use within 90 days of hospital discharge among 
+HF patients with diabetes discharged from GWTG-HF hospitals between 1-1-2006 and 10-1-2011. 
+We further summarized use by renal function and assessed renal contraindicated AHM use for 
+patients with eGFR <30mL/min/1.73m2. Among 8,791 patients meeting inclusion criteria, the 
+median age was 77 (interquartile range [IQR] 71-83), 62.3% were female, median BMI was 29.7 
+(IQR 25.5-35.3), median HbA1c was 6.8 (IQR 6.2-7.8), and 34% had ejection fraction <40%. 
+74.9% of patients filled a prescription for an AHM, with insulin (39.5%), sulfonylureas (32.4%), 
+and metformin (17%) being the most commonly used AHMs. Insulin use was higher and 
+sulfonylurea/metformin use was lower among patients with lower renal function classes. Among 
+1,512 patients with eGFR <30mL/min/1.73m2, 35.4% filled prescriptions for renal contraindicated 
+AHMs per prescribing information, though there was a trend toward lower renal contraindicated 
+AHM use over time (Cochran-Mantel-Haenszel row-mean score test p=0.048). While use of other 
+AHMs was low overall, thiazolidinediones were used in 6.6% of HF patients and DPP4-inhibitors 
+were used in 5.1%, with trends for decreasing thiazolidinedione use and increased DPP4-inhibitor 
+use over time (p<0.001).
+
+Correspondence to: Priyesh A. Patel, MD; 2400 Pratt Street, Durham, NC 27705; Tel: 919-619-5837; Fax: 919-668-7058; 
+priyesh.patel@dm.duke.edu. 
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 2
+
+  Conclusions—Treatment of diabetes in patients with HF and CKD disease is complex, and 
+these patients are commonly treated with renal contraindicated AHMs, including over 6% 
+receiving a thiazolidinedione despite known concerns regarding heart failure. More research 
+regarding safety and efficacy of various AHMs among HF patients is needed.
+
+Keywords
+
+heart failure; diabetes mellitus; chronic kidney disease
+
+Diabetes is common among heart failure patients, occurring in 28-44% of heart failure 
+patients, and is associated with adverse outcomes regardless of ejection fraction, including 
+increased risk of both cardiovascular death and heart failure hospitalization.1-3 Despite the 
+high prevalence of comorbid heart failure and diabetes, there are few randomized clinical 
+trial data to inform the management of diabetes among patients with heart failure.4
+
+While improved glucose control is associated with fewer microvascular complications from 
+diabetes, clinicians must balance these potential benefits with the risk of adverse effects 
+from anti-hyperglycemic medications (AHMs). For example, hypoglycemic episodes are 
+more frequent among heart failure patients with diabetes than in patients without heart 
+failure, and certain AHMs such as thiazolidinediones and dipeptidyl peptidase-4 (DPP4) 
+inhibitors may increase the risk of heart failure, which led the Food and Drug 
+Administration to consider manufacturer labelling outlining this risk.5-8 For the DPP-4 
+inhibitor saxagliptin in particular, the risk of heart failure may increase with chronic kidney 
+disease (CKD), which is present in up to half of ambulatory patients with heart failure, 
+though the drug has been studied and does not appear to increase ischemic events in patients 
+with renal insufficiency.9, 10
+
+The treatment of diabetes in patients with acute decompensated heart failure (ADHF) 
+presents a particular challenge since nearly 2/3 of these patients have impaired renal 
+function, which affects the safety of many AHMs used in the treatment of diabetes.11, 12 In 
+particular, metformin, sulfonylureas, meglitinides, incretin mimetics (glucagon-like 
+peptide-1 receptor agonists), DPP4-inhibitors, and alpha-glucosidase inhibitors carry 
+specific cautions in their prescribing information recommending against use or cautious dose 
+adjustment in patients with renal impairment. While impaired renal function is prevalent in 
+patients hospitalized with acute decompensated heart failure, it is unclear how this affects 
+the choice of AHMs for patients with diabetes. Moreover, the overall use and outcomes 
+associated with use of AHMs with renal contraindications among heart failure patients are 
+poorly understood. We performed an analysis of Get With The Guidelines-Heart Failure 
+(GWTG-HF) linked with Medicare claims data to characterize utilization of AHMs after 
+hospitalization for heart failure based on renal function.
+
+  Methods
+
+  GWTG-HF
+
+GWTG-HF is a national quality improvement initiative aimed at improving heart failure 
+care, and details of the program have been previously published.13, 14 Participating hospitals 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 3
+
+must receive approval through their local institutional review boards or a waiver of 
+individual consent under the common rule. Trained personnel regularly review hospital 
+records and identify patients admitted with heart failure. Medical history and demographic 
+data are abstracted, and de-identified data are entered into a central database using a web-
+based patient management tool. Quintiles (Cambridge, MA) is the data collection 
+coordination center for the American Heart Association/American Stroke Association 
+GWTG programs. The Duke Clinical Research Institute (Durham, NC) serves as the data 
+analysis center and has an agreement to analyze the aggregate, de-identified data for 
+research purposes.
+
+  Study Population
+
+Using GWTG-HF, we identified patients with heart failure who had either a prior medical 
+history of diabetes or new diagnosis of diabetes established during the index heart failure 
+hospitalization and were discharged from hospital between 01/01/2006 and 10/01/2011. 
+Patients had to be continuously enrolled in Medicare fee-for-service and Medicare Part D at 
+index discharge and for the 90 days post discharge. Among a total of 61,093 Medicare 
+beneficiaries identified in GWTG-HF during this study period, 22,873 (37.4%) had diabetes 
+and were discharged prior to 10/1/2011. We excluded patients who died in hospital (n=671), 
+transferred out of index hospital (n=587), who were discharged to hospice (n=585), had end 
+stage renal disease (n=1387), or had transplant or LVAD implantation during hospitalization 
+(n=22). Of the remaining patients, 8,791/19,621 (44.8%) were enrolled in Medicare fee-for-
+service and Medicare Part D continuously within the 90 days post index discharge and were 
+included in the final study population.
+
+  Statistical Analysis
+
+Patients were classified into three renal function classes (eGFR<30mL/min/1.73m2, 30≤ 
+eGFR<60mL/min/1.73m2, and eGFR≥60mL/min/1.73m2) using the Modification of Diet in 
+Renal Disease (MDRD) formula and serum creatinine on admission to hospital. Percentages 
+and medians with 25th and 75th percentiles (IQRs) were reported to describe the distribution 
+of categorical and continuous variables, respectively. The patient characteristics, including 
+demographics, clinical data, medical history, and hospital characteristics as captured in 
+GWTG-HF were compared between the three renal function groups. Pearson Chi-square and 
+Kruskal-Wallis tests were used to test the difference for categorical and continuous 
+variables.
+
+To assess use of AHMs, we linked GWTG-HF data to Medicare Part D claims to identify 
+diabetes medications filled within 90 days of index discharge for heart failure, including 
+metformin/biguanide, sulfonylurea, meglitinide, glucagon like peptide-1 (GLP-1) agonist, 
+DPP4-inhibitor, alpha-glucosidase inhibitor, thiazolidinedione, insulin, and amylin analog. 
+For patients with greater than one hospitalization, only the first claim for AHM and its 
+corresponding hospitalization and was used for analysis. If multiple claims for one AHM 
+class were found within 90 days, that AHM was counted only once. If a patient had claims 
+for two or more medications in different AHM classes, for example both insulin and 
+metformin, it was counted for each of the AHM classes. AHMs with labeling to avoid or 
+reduce dosage in chronic kidney disease were categorized as renal contraindicated AHMs, 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 4
+
+including metformin, sulfonylureas, meglitinides, incretin mimetics (GLP-1 agonists), 
+DPP4-inhinitors, and alpha-glucosidase inhibitors. Renal contraindicated use was defined as 
+the use of a renal contraindicated AHM among patients with eGFR<30mL/min/1.73m2 on 
+admission to hospital, as captured in GWTG-HF. The trend in renal contraindicated AHM 
+use from 2006 to 2011 was tested using Cochran-Mantel-Haenzsel row-mean score statistic.
+
+A multivariable logistic regression analysis was conducted to examine the factors associated 
+with renal contraindicated AHM use among the patients with eGFR<30mL/min/1.73m2. 
+Generalized estimating equation (GEE) methods were used to account for the within-
+hospital clustering of patients. The regression model included demographics, age, gender, 
+non-Caucasian race, Hispanic ethnicity, prior medical histories (atrial fibrillation/flutter, 
+chronic obstructive pulmonary disease [COPD], hyperlipidemia, hypertension, peripheral 
+vascular disease [PVD], ischemic heart disease including prior myocardial infarction [MI], 
+coronary artery disease [CAD], percutaneous coronary intervention [PCI], or coronary artery 
+bypass grafting [CABG], cerebrovascular accident/transient ischemic attack [CVA/TIA], 
+implantable-cardioverter defibrillator [ICD], heart failure, anemia, pacemaker, renal 
+insufficiency, depression and smoking history in past 6 months), ejection fraction, BMI, 
+respiratory rate at admission and heart rate, systolic blood pressure at discharge, sodium, 
+eGFR, blood urea nitrogen (BUN), hemoglobin at admission, and potassium at discharge, 
+length of stay, and hospital characteristics, including region, number of beds, rural (vs. 
+urban) location, and hospitals teaching status. Most variables had missing rate less than 5% 
+except Hispanic ethnicity had 12% missing and BMI had 13% missing and potassium had 
+16% missing. Therefore, multiple imputation was used to address missing variables.
+
+A p value <0.05 was considered statistically significant for all tests. All analyses were 
+performed with SAS software version 9.2 (SAS Institute, Cary, NC).
+
+Among 8,791 Medicare patients with heart failure and diabetes included in our study, the 
+median age was 77 (IQR 71-83), 62.3% female, with median EF 47% (IQR 30-60). The 
+median BMI was 29.7 (IQR 25.5-35.3) and median HbA1c was 6.8 (IQR 6.2-7.8). In this 
+cohort, 17.2% had eGFR<30mL/min/1.73m2, 49.1% had 30≤ eGFR<60mL/min/1.73m2, and 
+32.5% had eGFR≥60mL/min/1.73m2 (Table 1). Patients in lower renal function classes 
+included higher proportion of females (71.1 vs. 64.9 vs. 53.6, p<0.001), more patients with 
+multiple comorbidities (4 vs. 3 vs. 3, p<0.001), lower proportion of patients with reduced 
+ejection fraction (30.4 vs. 33.7 vs. 36.2, p=0.001), and slightly longer lengths of stay (5 
+(IQR 3-7.5) vs. 4 (IQR 3-7) vs. 4 (IQR 3-6), p<0.001).
+
+AHM use varied considerably by renal function (Table 2). The proportion of patients filling 
+prescriptions for insulin, which is generally used as monotherapy, was higher among patients 
+with more severe renal dysfunction (47.4% vs. 40.9% vs. 33%, p<0.001 among patients with 
+eGFR<30mL/min/1.73m2 vs. 30≤ eGFR<60mL/min/1.73m2 vs. eGFR≥60mL/min/1.73m2, 
+respectively). In contrast, metformin use (3.5% vs. 13.5% vs. 29.5%) and sulfonylurea use 
+(26.9% vs. 34.3% vs. 32.9%) was lower among patients with more severe renal dysfunction. 
+Prescription fills for other AHMs were low overall, though thiazolidinediones were 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+  Results
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 5
+
+surprisingly used in 6.6% of patients with heart failure despite the known risk for worsening 
+heart failure. DPP-4 inhibitors were likewise used in 5.1% of patients overall, though there 
+was a trend towards increased use of DPP-4 inhibitors and decreased use of 
+thiazolidinediones among all patients over time (p<0.001) (Figure 1).
+
+Among 1,512 patients with eGFR<30mL/min/1.73m2, 35.4% received renal contraindicated 
+AHMs, though there was a trend toward less renal contraindicated AHM use over time 
+during the study period (p=0.048) (Figure 2A). In particular, there was a temporal trend 
+towards less sulfonylurea use (p=0.005), more DPP-4 inhibitor use (p<0.001) and less 
+thiazolidinedione use (p<0.001) (Figure 2B). The proportion of patients with a prior history 
+of insulin treated diabetes was lower (32.3% vs. 65.3%, p<0.001) and age slightly higher (77 
+(IQR 72-84) vs. 76 (IQR 70-83), p<0.005) among patients receiving renal contraindicated 
+AHMs compared to those not (Table 3). There was also a slightly higher HbA1c (6.9 (IQR 
+6.2-7.7) vs. 6.6 (IQR 6-7.3), p=0.030) and slightly greater proportion of patients with low 
+ejection fraction among patients receiving renal contraindicated AHMs (33.6% vs. 28.7%, 
+p=0.049). Surprisingly, patients receiving renal contraindicated AHMs had less number of 
+comorbidities (p=0.03). Among hospital characteristics, only hospital region showed an 
+association with renal contraindicated AHM use. We performed a multivariable logistic 
+regression analysis to identify independent predictors of renal contraindicated AHM use, but 
+no clinically meaningful variables were found to have clear association with renal 
+contraindicated AHM use (Supplement Table).
+
+  Discussion
+
+In this study, we have reported novel data regarding usage patterns of AHMs among 
+Medicare patients with heart failure and diabetes. AHMs are used in ∼75% of patients with 
+heart failure and diabetes, with insulin being the most commonly prescribed medication 
+regardless of renal function class, followed by sulfonylureas and metformin. Moreover, we 
+show that AHMs that may worsen heart failure, including thiazolidinediones and potentially 
+some DPP4-inhibitors based on data that emerged after the study period, are used in one-
+tenth of patients with heart failure and that over one-third of patients with eGFR 
+<30mL/min/1.73m2 are treated with renal contraindicated AHMs. There were strikingly few 
+differences among patients receiving renal contraindicated AHMs vs. not receiving renal 
+contraindicated AHMs among patients with eGFR<30mL/min/1.73m2, suggesting that 
+provider choices, rather than patient factors, may be driving these prescribing patterns.
+
+Current guidelines provide little guidance for managing complex comorbidities such as 
+diabetes and chronic kidney disease in heart failure patients, reflecting the relatively paucity 
+of data regarding management of these complex comorbidities. Where data are lacking, 
+safety is generally the primary driver for prescribing, yet we showed that 35.4% of 
+prescriptions for AHMs among patients with diabetes and eGFR<30mL/min/1.73m2 are 
+renal contraindicated, thereby potentially exposing patients to a higher risk of adverse 
+events, particularly hypoglycemia. We suspect this reflects a lack of awareness regarding the 
+safe use of various AHM classes among patients with diabetes and CKD. Moreover, we 
+observed an approximate 10% prescription rate for AHMs that may worsen heart failure. 
+While data regarding the potential increased risk of heart failure with the DPP-4 inhibitor 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 6
+
+saxagliptin did not emerge until 2013, data regarding the heart failure risk with 
+thiazolidinediones was available throughout most of the study period.7, 15
+
+The impact of renal contraindicated AHM prescription on healthcare utilization and 
+outcomes are poorly understood and need further investigation. This is particularly 
+important because heart failure patients are prone to fluctuations in renal function because 
+neurohormonal and hemodynamic derangements, volume status, and even the medicines 
+used to treat heart failure or concomitant comorbidities can have significant effects on renal 
+function and clearance of AHMs. While it is possible that renal contraindicated AHMs were 
+being used as a strategy to obtain better glycemic control (Hba1c 6.9 vs. 6.6 among patients 
+with renal contraindicated AHM vs. not), glycemic control was good overall and data is 
+mixed regarding blood glucose control and heart failure outcomes. Though some data 
+suggest improvement in diastolic dysfunction with enhanced blood glucose control, large 
+randomized trials have shown higher risks of hypoglycemia with intensive blood glucose 
+control strategies without improvements in macrovascular outcomes or incident heart 
+failure.18-20 As such, we need more data to guide diabetes management strategies for 
+patients with heart failure, including specific glycemic control targets and recommendations 
+for medication choices, especially among patients with CKD who are prone to adverse 
+medication effects from renal contraindicated AHMs.
+
+Unfortunately, the optimal diabetes treatment strategy among patients with heart failure is 
+unclear, even among patients without CKD. Thiazolidinediones have been shown to increase 
+risk of heart failure in case reports from as early as 2002, which has been supported by 
+clinical trial and observational data and led to an FDA issued black box warning in 2007 
+against their use in heart failure patients.5, 21-24 Observational studies suggest that insulin 
+and sulfonylureas may be associated with higher risks for fluid retention and heart failure 
+respectively, and the initial results of the FIGHT trial suggest that liraglutide provides no 
+cardiovascular outcome benefit to heart failure patients.25-27 Recently, heart failure risk with 
+DPP4 inhibitors has been rigorously studied, with one study showing no increased risk of 
+heart failure (TECOS – Trial Evaluating Cardiovascular Outcomes with Sitagliptin) and two 
+showing neutral to higher risk (EXAMINE – Examination of cArdiovascular outcoMes with 
+alogliptIN vs standard of carE in patients with type 2 diabetes and acute coronary syndrome 
+and SAVOR-TIMI 53 – Saxagliptin Assesment of Vascular Outcomes Recorded in Patients 
+with Diabetes Mellitus).8, 28, 29 These studies did not specifically enroll heart failure 
+patients, and the TECOS trial excluded patients with eGFR <30mL/min/1.73m2. 
+Nevertheless, for saxagliptin patients with CKD had a greater risk for heart failure.7, 8 
+Metformin potentially has the best observational data supporting its use in heart failure 
+patients, but it continues to carry warnings against its use in CKD patients despite evidence 
+suggesting it may be cautiously used in setting of mild to moderate CKD.30, 31 
+Unfortunately there is little data on how CKD affects heart failure risk among other AHMs. 
+While choice of an optimal AHM in heart failure patients is not straightforward, it should be 
+noted that thiazolidinediones were prescribed in ≥3% of patients during the last two years of 
+our study despite strong evidence against their use. Moreover, 32.3% of patients who 
+received renal contraindicated AHMs were also prescribed insulin.
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 7
+
+Despite a growing body of knowledge addressing the complex interplay between metabolic 
+derangements of heart failure and diabetes, a safe and effective AHM remains elusive.32, 33 
+The SGLT-1 inhibitor empaglaflozin may be promising based on the recent results of 
+EMPA-REG trial, which showed a lower risk of heart failure hospitalization (hazard ratio 
+0.65) and death from cardiovascular causes (hazard ratio 0.62).34 Unfortunately, SGLT-1 
+inhibitor use was not assessed in this study because it was not FDA approved during the 
+study period. Additional studies are underway to assess cardiovascular outcomes with nearly 
+all classes of AHMs.35 Nevertheless, these trials are not specifically designed to recruit heart 
+failure patients and many limit enrollment of patients with CKD, so we believe there need to 
+be more dedicated trials of AHMs specifically for heart failure patients with complex 
+comorbidities such as CKD.
+
+This study has a number of limitations that must be mentioned. GWTG-HF is a voluntary 
+quality improvement program and may not represent prescribing patterns at non-
+participating hospitals. Also, care for patients with Medicare and Part D may differ from 
+care of younger patients in different care settings. It is possible that renal function at baseline 
+in our patients with acute decompensated heart failure did not reflect baseline outpatient 
+renal function; nevertheless we believe that our results are still applicable to a broad 
+population of patients because labile renal function should itself be considered when 
+prescribing AHMs with renal contraindications to mitigate risks of adverse drug effects. In 
+addition, AHM use was assessed in the first 90 days after hospital discharge. We were 
+therefore unable to capture if AHM therapy was altered by outpatient providers after this 
+time frame or if patients continued to fill prescriptions for AHMs. It should be noted that 
+nearly one quarter of patients failed to fill a prescription for AHM regardless of renal 
+function class, which could signify either lack of adherence, diet-control, or sufficient pre-
+existing supply of AHMs. Due to limitations of data, we are unable to identify whether 
+factors that are not captured in GWTG-HF may have affected choice and safety of AHMs 
+used to treat patients in this study. Lastly, these data are observational and hypothesis 
+generating. While nearly one-third of AHMs prescribed among patients with eGFR 
+<30mL/min/1.73m2 have renal contraindications, further research is needed to assess how 
+this affects outcomes.
+
+In conclusion, AHMs are used in a majority of patients with heart failure and diabetes, 
+though a considerable proportion of prescriptions are renal contraindicated or thought to 
+exacerbate heart failure. There is a strong need to increase awareness among both providers 
+and patients to prevent and investigate the incidence and impact of adverse events based on 
+these prescribing patterns. Moreover, there are few data to guide management of diabetes in 
+the setting of comorbid heart failure and CKD. Future clinical trials are needed to assess 
+outcomes among patients receiving specific classes of AHMs, including renal 
+contraindicated AHMs.
+
+  Supplementary Material
+
+Refer to Web version on PubMed Central for supplementary material.
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 8
+
+  Acknowledgments
+
+Sources of Funding: This project was supported in part by grant number U19HS021092 from the Agency for 
+Healthcare Research and Quality. The content is solely the responsibility of the authors and does not necessarily 
+represent the official views of the Agency for Healthcare Research and Quality. PA Patel was additionally supported 
+by National Institutes of Health grant T32-HL1007101.
+
+References
+
+1. Adams KF Jr, Fonarow GC, Emerman CL, LeJemtel TH, Costanzo MR, Abraham WT, Berkowitz 
+
+RL, Galvao M, Horton DP. Characteristics and outcomes of patients hospitalized for heart failure in 
+the United States: Rationale, design, and preliminary observations from the first 100,000 cases in 
+the Acute Decompensated Heart Failure National Registry (ADHERE). American Heart Journal. 
+2005; 149:209–216. [PubMed: 15846257] 
+
+2. Cavender MA, Steg PG, Smith SC, Eagle K, Ohman EM, Goto S, Kuder J, Im K, Wilson PW, Bhatt 
+
+DL. Impact of diabetes on hospitalization for heart failure, cardiovascular events, and death: 
+Outcomes at 4 years from the REACH registry. Circulation. 2015; 132:923–31. [PubMed: 
+26152709] 
+
+3. MacDonald MR, Petrie MC, Varyani F, Ostergren J, Michelson EL, Young JB, Solomon SD, 
+
+Granger CB, Swedberg K, Yusuf S, Pfeffer MA, McMurray JJ. Impact of diabetes on outcomes in 
+patients with low and preserved ejection fraction heart failure: An analysis of the candesartan in 
+heart failure: Assessment of reduction in mortality and morbidity (CHARM) programme. European 
+Heart Journal. 2008; 29:1377–1385. [PubMed: 18413309] 
+
+4. Fonarow GC. Diabetes medications and heart failure: Recognizing the risk. Circulation. 2014; 
+
+130:1565–7. [PubMed: 25189212] 
+
+5. Dormandy JA, Charbonnel B, Eckland DJ, Erdmann E, Massi-Benedetti M, Moules IK, Skene AM, 
+Tan MH, Lefebvre PJ, Murray GD, Standl E, Wilcox RG, Wilhelmsen L, Betteridge J, Birkeland K, 
+Golay A, Heine RJ, Koranyi L, Laakso M, Mokan M, Norkus A, Pirags V, Podar T, Scheen A, 
+Scherbaum W, Schernthaner G, Schmitz O, Skrha J, Smith U, Taton J, investigators PR. Secondary 
+prevention of macrovascular events in patients with type 2 diabetes in the PROactive study 
+(prospective pioglitazone clinical trial in macrovascular events): A randomised controlled trial. 
+Lancet. 2005; 366:1279–1289. [PubMed: 16214598] 
+
+6. Gitt AK, Bramlage P, Binz C, Krekler M, Deeg E, Tschope D. Comorbidity, hypoglycaemia and 
+appropriate selection of antidiabetic pharmacotherapy in diabetic patients with heart failure in 
+clinical practice in germany. Results of the DiaRegis registry. Herz. 2012; 37:294–300. [PubMed: 
+22476616] 
+
+7. Scirica BM, Bhatt DL, Braunwald E, Steg PG, Davidson J, Hirshberg B, Ohman P, Frederich R, 
+Wiviott SD, Hoffman EB, Cavender MA, Udell JA, Desai NR, Mosenzon O, McGuire DK, Ray 
+KK, Leiter LA, Raz I, Committee S-TS, Investigators. Saxagliptin and cardiovascular outcomes in 
+patients with type 2 diabetes mellitus. The New England Journal of Medicine. 2013; 369:1317–
+1326. [PubMed: 23992601] 
+
+8. Scirica BM, Braunwald E, Raz I, Cavender MA, Morrow DA, Jarolim P, Udell JA, Mosenzon O, Im 
+K, Umez-Eronini AA, Pollack PS, Hirshberg B, Frederich R, Lewis BS, McGuire DK, Davidson J, 
+Steg PG, Bhatt DL, for the S-TSC, Investigators. Heart failure, saxagliptin and diabetes mellitus: 
+Observations from the SAVOR - TIMI 53 randomized trial. Circulation. 2014; 130:1579–88. 
+[PubMed: 25189213] 
+
+9. Heywood JT, Fonarow GC, Yancy CW, Albert NM, Curtis AB, Stough WG, Gheorghiade M, 
+
+McBride ML, Mehra MR, O'Connor CM, Reynolds D, Walsh MN. Influence of renal function on 
+the use of guideline-recommended therapies for patients with heart failure. The American Journal of 
+Cardiology. 2010; 105:1140–1146. [PubMed: 20381667] 
+
+10. Udell JA, Bhatt DL, Braunwald E, Cavender MA, Mosenzon O, Steg PG, Davidson JA, Nicolau 
+JC, Corbalan R, Hirshberg B, Frederich R, Im K, Umez-Eronini AA, He P, McGuire DK, Leiter 
+LA, Raz I, Scirica BM, Committee S-TS, Investigators. Saxagliptin and cardiovascular outcomes 
+in patients with type 2 diabetes and moderate or severe renal impairment: Observations from the 
+SAVOR-TIMI 53 trial. Diabetes Care. 2015; 38:696–705. [PubMed: 25552421] 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 9
+
+11. Patel UD, Hernandez AF, Liang L, Peterson ED, LaBresh KA, Yancy CW, Albert NM, Ellrodt G, 
+Fonarow GC. Quality of care and outcomes among patients with heart failure and chronic kidney 
+disease: A Get With The Guidelines -- Heart Failure program study. American Heart Journal. 
+2008; 156:674–681. [PubMed: 18946892] 
+
+12. Heywood JT, Fonarow GC, Costanzo MR, Mathur VS, Wigneswaran JR, Wynne J, Committee 
+
+ASA, Investigators. High prevalence of renal dysfunction and its impact on outcome in 118,465 
+patients hospitalized with acute decompensated heart failure: A report from the ADHERE 
+database. Journal of Cardiac Failure. 2007; 13:422–430. [PubMed: 17675055] 
+
+13. LaBresh KA, Gliklich R, Liljestrand J, Peto R, Ellrodt AG. Using “Get With The Guidelines” to 
+improve cardiovascular secondary prevention. Joint Commission Journal on Quality and Safety. 
+2003; 29:539–550. [PubMed: 14567263] 
+
+14. Smaha LA, American Heart A. The American Heart Association Get With The Guidelines 
+
+Program. American Heart Journal. 2004; 148:S46–48. [PubMed: 15514634] 
+
+15. Lago RM, Singh PP, Nesto RW. Congestive heart failure and cardiovascular death in patients with 
+prediabetes and type 2 diabetes given thiazolidinediones: A meta-analysis of randomised clinical 
+trials. Lancet. 2007; 370:1129–1136. [PubMed: 17905165] 
+
+16. Investigators DT. Gerstein HC, Yusuf S, Bosch J, Pogue J, Sheridan P, Dinccag N, Hanefeld M, 
+
+Hoogwerf B, Laakso M, Mohan V, Shaw J, Zinman B, Holman RR. Effect of rosiglitazone on the 
+frequency of diabetes in patients with impaired glucose tolerance or impaired fasting glucose: A 
+randomised controlled trial. Lancet. 2006; 368:1096–1105. [PubMed: 16997664] 
+
+17. Nissen SE, Wolski K. Effect of rosiglitazone on the risk of myocardial infarction and death from 
+cardiovascular causes. The New England Journal of Medicine. 2007; 356:2457–2471. [PubMed: 
+17517853] 
+
+18. Action to Control Cardiovascular Risk in Diabetes Study G. Gerstein HC, Miller ME, Byington 
+RP, Goff DC Jr, Bigger JT, Buse JB, Cushman WC, Genuth S, Ismail-Beigi F, Grimm RH Jr, 
+Probstfield JL, Simons-Morton DG, Friedewald WT. Effects of intensive glucose lowering in type 
+2 diabetes. The New England Journal of Medicine. 2008; 358:2545–2559. [PubMed: 18539917] 
+
+19. Investigators OT. Gerstein HC, Bosch J, Dagenais GR, Diaz R, Jung H, Maggioni AP, Pogue J, 
+
+Probstfield J, Ramachandran A, Riddle MC, Ryden LE, Yusuf S. Basal insulin and cardiovascular 
+and other outcomes in dysglycemia. The New England Journal of Medicine. 2012; 367:319–328. 
+[PubMed: 22686416] 
+
+20. von Bibra H, Hansen A, Dounis V, Bystedt T, Malmberg K, Ryden L. Augmented metabolic 
+control improves myocardial diastolic function and perfusion in patients with non-insulin 
+dependent diabetes. Heart. 2004; 90:1483–1484. [PubMed: 15547039] 
+
+21. Gallagher AM, Smeeth L, Seabroke S, Leufkens HG, van Staa TP. Risk of death and 
+
+cardiovascular outcomes with thiazolidinediones: A study with the general practice research 
+database and secondary care data. PloS one. 2011; 6:e28157. [PubMed: 22164237] 
+
+22. Masoudi FA, Inzucchi SE, Wang Y, Havranek EP, Foody JM, Krumholz HM. Thiazolidinediones, 
+metformin, and outcomes in older patients with diabetes and heart failure: An observational study. 
+Circulation. 2005; 111:583–590. [PubMed: 15699279] 
+
+23. Scheen AJ. DREAM study: Prevention of type 2 diabetes with ramipril and/or rosiglitazone in 
+persons with dysglycaemia but no cardiovascular desease. Revue medicale de Liege. 2006; 
+61:728–732. [PubMed: 17209507] 
+
+24. Wooltorton E. Rosiglitazone (avandia) and pioglitazone (actos) and heart failure. CMAJ : Canadian 
+
+Medical Association journal = journal de l'Association medicale canadienne. 2002; 166:219.
+25. Gilbert RE, Krum H. Heart failure in diabetes: Effects of anti-hyperglycaemic drug therapy. 
+
+Lancet. 2015; 385:2107–2117. [PubMed: 26009231] 
+
+26. Zhong J, Goud A, Rajagopalan S. Glycemia lowering and risk for heart failure: Recent evidence 
+from studies of dipeptidyl peptidase inhibition. Circulation Heart failure. 2015; 8:819–825. 
+[PubMed: 26199308] 
+
+27. Late-breaking clinical trial abstracts. Circulation. 2015; 132:2267–2285. [PubMed: 26644250] 
+28. Green JB, Bethel MA, Armstrong PW, Buse JB, Engel SS, Garg J, Josse R, Kaufman KD, Koglin 
+J, Korn S, Lachin JM, McGuire DK, Pencina MJ, Standl E, Stein PP, Suryawanshi S, Van de Werf 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 10
+
+F, Peterson ED, Holman RR, Group TS. Effect of sitagliptin on cardiovascular outcomes in type 2 
+diabetes. The New England Journal of Medicine. 2015; 373:232–42. [PubMed: 26052984] 
+
+29. Zannad F, Cannon CP, Cushman WC, Bakris GL, Menon V, Perez AT, Fleck PR, Mehta CR, 
+
+Kupfer S, Wilson C, Lam H, White WB, Investigators E. Heart failure and mortality outcomes in 
+patients with type 2 diabetes taking alogliptin versus placebo in examine: A multicentre, 
+randomised, double-blind trial. Lancet. 2015; 385:2067–2076. [PubMed: 25765696] 
+30. Eurich DT, Weir DL, Majumdar SR, Tsuyuki RT, Johnson JA, Tjosvold L, Vanderloo SE, 
+
+McAlister FA. Comparative safety and effectiveness of metformin in patients with diabetes 
+mellitus and heart failure: Systematic review of observational studies involving 34,000 patients. 
+Circulation Heart failure. 2013; 6:395–402. [PubMed: 23508758] 
+
+31. Inzucchi SE, Lipska KJ, Mayo H, Bailey CJ, McGuire DK. Metformin in patients with type 2 
+
+diabetes and kidney disease: A systematic review. JAMA : the Journal of the American Medical 
+Association. 2014; 312:2668–2675. [PubMed: 25536258] 
+
+32. Dei Cas A, Fonarow GC, Gheorghiade M, Butler J. Concomitant diabetes mellitus and heart 
+
+failure. Current Problems in Cardiology. 2015; 40:7–43. [PubMed: 25499908] 
+
+33. Dei Cas A, Khan SS, Butler J, Mentz RJ, Bonow RO, Avogaro A, Tschoepe D, Doehner W, Greene 
+SJ, Senni M, Gheorghiade M, Fonarow GC. Impact of diabetes on epidemiology, treatment, and 
+outcomes of patients with heart failure. JACC Heart Failure. 2015; 3:136–145. [PubMed: 
+25660838] 
+
+34. Zinman B, Wanner C, Lachin JM, Fitchett D, Bluhmki E, Hantel S, Mattheus M, Devins T, 
+Johansen OE, Woerle HJ, Broedl UC, Inzucchi SE, Investigators E-RO. Empagliflozin, 
+cardiovascular outcomes, and mortality in type 2 diabetes. The New England Journal of Medicine. 
+2015; 373:2117–2128. [PubMed: 26378978] 
+
+35. Lathief S, Inzucchi SE. Approach to diabetes management in patients with CVD. Trends in 
+
+Cardiovascular Medicine. 2016; 26:165–79. [PubMed: 26411567] 
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 11
+
+Clinical Perspective
+
+Diabetes and chronic kidney disease are common comorbidities among heart failure 
+patients and are associated with adverse outcomes including death and heart failure 
+hospitalization. This is particularly challenging because many anti-hyperglycemic 
+medications (AHMs) including metformin, sulfonylureas, meglitinides, incretin mimetics 
+(glucagon-like peptide-1 receptor agonists), DPP4-inhibitors, and alpha-glucosidase 
+inhibitors carry specific cautions in their prescribing information recommending against 
+use or cautious dose adjustment in patients with renal impairment. We used Get With The 
+Guidelines Heart Failure and Medicare Part D to study and report novel data regarding 
+AHM prescribing patterns among heart failure patients with diabetes and CKD. We found 
+that 75% of patients with heart failure and diabetes were treated with AHMs, and that 
+over one-third of patients with estimated glomerular filtration rate (eGFR) <30mL/min/
+1.73m2 were treated with renal contraindicated AHMs. This may reflect a lack of 
+awareness regarding the safe use of various AHM classes among patients with diabetes 
+and CKD and could potentially expose patients to a higher risk of adverse events, 
+particularly hypoglycemia. There is a strong need to increase awareness among both 
+providers and patients to prevent and investigate the impact of renal contraindicated 
+AHM prescriptions on healthcare utilization and outcomes. Moreover, there is little 
+randomized data to guide management of diabetes in heart failure patients, and there need 
+to be more dedicated trials of AHMs specifically for heart failure patients, including 
+patients with complex comorbidities such as CKD.
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 12
+
+Figure 1. Overall Semi-Annual AHM Use
+This graph describes overall use of AHMs on a semi-annual basis among all patients 
+included in this study. Arrowheads represent, in chronological order from left to right, the 
+publication of DREAM trial (DREAM=Diabetes REduction Assessment with ramipril and 
+rosiglitazone Medication Trial) showing higher numerical risk of heart failure by 
+rosiglitazone, publication of meta-analysis suggesting HF risk by thiazolidinediones, and 
+date of FDA black box warning for thiazolidinediones for heart failure15, 16, 17. Information 
+regarding potential HF risk for DPP4-inhibitors was not available until late 2013.7 Cochran-
+Mantel-Haenszel Row Mean Score Test for Trend: metformin p=0.433, sulfonylurea 
+p<0.001, meglitinide p=0.024, GLP-1 agonist p=0.035, DPP-4 inhibitor p<0.001, alpha-
+glucosidase inhibitor p=0.017, thiazolidinedione p<0.001, insulin p=0.113, amylin analog 
+p=0.280. Abbreviations: AHM=antihyperglycemic medication, DPP4=dipeptidyl-peptidase 
+4 inhibitor, GLP-1 agonist=glucagon like peptide 1 agonist
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+Patel et al.
+
+Page 13
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Patel et al.
+
+Page 14
+
+Figure 2. 
+Panel A: Use of AHMs Among Patients with eGFR<30mL/min/1.73m2. Use of renal 
+contraindicated AHM was 35.4% overall, with a trend towards lower renal contraindicated 
+use over time (Cochran-Mantel-Haenszel row-mean score test p=0.048). Panel B: Overall 
+Use of AHMs Among Patients with eGFR<30mL/min/1.73m2. Cochran-Mantel-Haenszel 
+row-mean score tests: metformin p=0.542, DPP-4 inhibitors p<0.001, thiazolidinediones 
+p<0.001, sulfonylurea p=0.005, meglitinide p=0.381. Arrowheads represent, in 
+chronological order from left to right, the publication of DREAM trial showing higher 
+numerical risk of heart failure by rosiglitazone, publication of meta-analysis suggesting HF 
+risk by thiazolidinediones, and date of FDA black box warning for thiazolidinediones for 
+heart failure15, 16, 17. Information regarding potential HF risk for DPP4-inhibitors was not 
+available until late 2013.7 Abbreviations: AHM=antihyperglycemic medication, 
+eGFR=estimated glomerular filtration rate, DPP4=dipeptidyl-peptidase 4 inhibitor
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+Patel et al.
+
+Page 15
+
+Characteristics of Heart Failure Patients with Diabetes Categorized by Renal Function
+
+Table 1
+
+Variable
+
+Age (years)
+
+Female Sex
+
+Race
+
+  White
+
+  Black
+
+  Other/Unknown
+
+Medical History
+
+  CKD (Cr >2 mg/dL)
+
+  Diabetes – insulin treated
+
+Ischemic heart disease
+
+  CVA/TIA
+
+  Atrial fibrillation/flutter
+
+  Hyperlipidemia
+
+  Hypertension
+
+  Peripheral vascular disease
+
+  Pulmonary disease
+
+  Smoking
+
+Median number of comorbidities
+
+  0 comorbidities
+
+  1-2 comorbidities
+
+  3-4 comorbidities
+
+  >4 comorbidities
+
+Other history
+
+eGFR<30
+mL/min/1.73m2
+N=1,512
+
+30≤ eGFR <60
+mL/min/1.73m2
+N=4,313
+
+eGFR≥60
+mL/min/1.73m2
+N=2,861
+
+p-value
+
+77 (71-83)
+
+78 (71-84)
+
+76 (70-82)
+
+71.1
+
+76.1
+
+14.2
+
+9.7
+
+57.1
+
+53.6
+
+65.2
+
+16.5
+
+26.5
+
+54.5
+
+83.9
+
+19.8
+
+28.8
+
+7.2
+
+4
+
+1.3
+
+17.4
+
+45.6
+
+35.6
+
+64.9
+
+77
+
+14.4
+
+8.6
+
+19.7
+
+44.3
+
+67.3
+
+18.1
+
+34.1
+
+55.7
+
+82.8
+
+15.3
+
+30.9
+
+8.7
+
+3
+
+1.3
+
+26.1
+
+46.5
+
+26.1
+
+53.6
+
+72.4
+
+19.2
+
+8.4
+
+3.4
+
+36.8
+
+63.1
+
+18.0
+
+33.5
+
+52.9
+
+83.6
+
+13.5
+
+33.2
+
+12.4
+
+3
+
+1.9
+
+30.9
+
+48.3
+
+18.9
+
+<0.001
+
+<0.001
+
+<0.001
+
+<0.001
+
+<0.001
+
+<0.001
+
+0.354
+
+<0.001
+
+0.061
+
+0.474
+
+<0.001
+
+0.010
+
+<0.001
+
+<0.001
+
+  Ejection Fraction <40% or moderate or severe dysfunction
+
+  Length of Stay (days)
+
+Admission Exam
+
+30.4
+
+5 (3-7)
+
+33.7
+
+4 (3-7)
+
+36.2
+
+4 (3-6)
+
+0.001
+
+<0.001
+
+  Systolic Blood Pressure (mmHg)
+
+143 (124-165)
+
+143 (124-162)
+
+144 (128-164)
+
+0.028
+
+  Heart Rate (beats/min)
+
+  Body Mass Index
+
+Labs
+
+  Creatinine (mg/dL)
+
+  eGFR (mL/min/1.73m2)
+
+  HbA1c (%)
+
+Meds at Discharge
+
+ ACE/ARB
+
+  Beta-blocker
+
+  Aldosterone Antagonist
+
+  Hydralazine/Nitrate
+
+75 (65-88)
+
+79 (68-92)
+
+82 (70-95)
+
+<0.001
+
+30.1 (25.9-35.9)
+
+29.8 (25.7-35.4)
+
+29.3 (25.0-35.0)
+
+<0.001
+
+2.4 (2.1-3)
+
+1.4 (1.2-1.6)
+
+0.9 (0.8-1.0)
+
+<0.001
+
+23.2 (18.4-26.8)
+
+44.0 (37.3-51.2)
+
+75.2 (66.2-87.7)
+
+<0.001
+
+6.7 (6.1-7.5)
+
+6.9 (6.2-7.8)
+
+6.8 (6.2-7.8)
+
+0.017
+
+42.2
+
+80.6
+
+9.1
+
+26.9
+
+65.0
+
+80.6
+
+15.3
+
+17.2
+
+77.6
+
+78.7
+
+17.1
+
+9.0
+
+<0.001
+
+0.090
+
+<0.001
+
+<0.001
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+ 
+ 
+ 
+ 
+ 
+ 
+Patel et al.
+
+Variable
+
+Number of meds prescribed
+
+  0
+
+  1-2
+
+  3-4
+
+  >4
+
+Hospital Characteristics
+
+  Academic
+
+  Urban
+
+Page 16
+
+eGFR<30
+mL/min/1.73m2
+N=1,512
+
+30≤ eGFR <60
+mL/min/1.73m2
+N=4,313
+
+eGFR≥60
+mL/min/1.73m2
+N=2,861
+
+0.8
+
+8.6
+
+27.1
+
+62.8
+
+59.3
+
+89.6
+
+0.6
+
+6.5
+
+22.3
+
+70.2
+
+59.9
+
+89.7
+
+0.7
+
+5.6
+
+22.7
+
+70.6
+
+61.7
+
+90.1
+
+p-value
+
+<0.001
+
+0.256
+
+0.204
+
+Categorical variables are presented as percentages, and continuous variables are presented as medians (interquartile ranges). eGFR= estimated 
+glomerular filtration rate, CKD=chronic kidney disease, Cr=creatinine, CVA/TIA=cerebrovascular accident/transient ischemic attack, 
+Hba1c=hemoglobin a1c, ACE/ARB=angiotensin converting enzyme inhibitor/angiotensin receptor blocker, min = minute
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+ 
+ 
+ 
+ 
+Patel et al.
+
+Page 17
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+2
+e
+l
+b
+a
+T
+
+e
+r
+u
+
+l
+i
+a
+F
+t
+r
+a
+e
+H
+r
+o
+f
+
+e
+g
+r
+a
+h
+c
+s
+i
+D
+
+f
+o
+
+s
+y
+a
+D
+0
+9
+n
+i
+h
+t
+i
+
+w
+
+t
+a
+
+e
+s
+U
+M
+H
+A
+
+l
+l
+a
+r
+e
+v
+O
+
+e
+u
+
+l
+a
+v
+-
+p
+
+0
+6
+≥
+R
+F
+G
+e
+
+0
+6
+<
+R
+F
+G
+e
+≤
+0
+3
+
+0
+3
+<
+R
+F
+G
+e
+
+l
+l
+a
+r
+e
+v
+O
+
+e
+l
+b
+a
+i
+r
+a
+V
+
+t
+s
+i
+n
+o
+g
+a
+
+1
+
+e
+d
+i
+t
+p
+e
+p
+
+e
+k
+i
+l
+
+n
+o
+g
+a
+c
+u
+l
+g
+=
+t
+s
+i
+n
+o
+g
+a
+
+1
+-
+P
+L
+G
+
+,
+r
+o
+t
+i
+b
+i
+h
+n
+i
+
+4
+
+e
+s
+a
+d
+i
+t
+p
+e
+p
+-
+l
+y
+d
+i
+t
+p
+e
+p
+i
+d
+=
+4
+P
+P
+D
+
+,
+n
+o
+i
+t
+a
+c
+i
+d
+e
+m
+c
+i
+m
+e
+c
+y
+l
+g
+r
+e
+p
+y
+h
+i
+t
+n
+a
+=
+M
+H
+A
+
+.
+s
+e
+g
+a
+t
+n
+e
+c
+r
+e
+p
+
+t
+n
+e
+s
+e
+r
+p
+e
+r
+
+s
+e
+u
+l
+a
+V
+
+1
+0
+0
+.
+0
+<
+
+1
+0
+0
+.
+0
+<
+
+5
+0
+0
+.
+0
+
+7
+7
+4
+.
+0
+
+7
+1
+1
+.
+0
+
+1
+0
+0
+.
+0
+<
+
+4
+8
+2
+.
+0
+
+6
+2
+4
+.
+0
+
+9
+9
+9
+.
+0
+
+1
+0
+0
+.
+0
+<
+
+2
+
+m
+3
+7
+.
+1
+/
+
+i
+
+n
+m
+L
+m
+
+/
+
+2
+
+m
+3
+7
+.
+1
+/
+n
+m
+L
+m
+
+i
+
+/
+
+2
+
+m
+3
+7
+.
+1
+/
+
+i
+
+n
+m
+L
+m
+
+/
+
+1
+6
+8
+,
+2
+=
+N
+
+3
+1
+3
+,
+4
+=
+N
+
+2
+1
+5
+,
+1
+=
+N
+
+5
+.
+9
+2
+
+9
+.
+2
+3
+
+0
+.
+3
+
+7
+.
+4
+
+4
+.
+6
+
+0
+.
+3
+3
+
+5
+.
+0
+
+4
+.
+0
+
+1
+.
+0
+
+4
+.
+6
+2
+
+3
+.
+4
+4
+
+9
+.
+2
+2
+
+5
+.
+6
+
+5
+.
+3
+1
+
+3
+.
+4
+3
+
+6
+.
+3
+
+3
+.
+5
+
+2
+.
+7
+
+9
+.
+0
+4
+
+4
+.
+0
+
+6
+.
+0
+
+1
+.
+0
+
+3
+.
+4
+2
+
+6
+.
+1
+5
+
+9
+.
+8
+1
+
+2
+.
+5
+
+5
+.
+3
+
+9
+.
+6
+2
+
+9
+.
+4
+
+9
+.
+4
+
+7
+.
+5
+
+4
+.
+7
+4
+
+2
+.
+0
+
+6
+.
+0
+
+1
+.
+0
+
+0
+.
+5
+2
+
+8
+.
+8
+5
+
+5
+.
+3
+1
+
+7
+.
+2
+
+0
+.
+7
+1
+
+4
+.
+2
+3
+
+7
+.
+3
+
+1
+.
+5
+
+6
+.
+6
+
+5
+.
+9
+3
+
+4
+.
+0
+
+5
+.
+0
+
+1
+.
+0
+
+1
+.
+5
+2
+
+4
+.
+0
+5
+
+3
+.
+9
+1
+
+2
+.
+5
+
+e
+n
+o
+i
+d
+e
+n
+i
+d
+i
+l
+o
+z
+a
+i
+h
+T
+
+r
+o
+t
+i
+b
+i
+h
+n
+i
+-
+4
+P
+P
+D
+
+t
+s
+i
+n
+o
+g
+a
+
+1
+-
+P
+L
+G
+
+n
+i
+l
+u
+s
+n
+I
+
+a
+e
+r
+u
+l
+y
+n
+o
+f
+l
+u
+S
+
+e
+d
+i
+n
+i
+t
+i
+l
+g
+e
+M
+
+n
+i
+m
+r
+o
+f
+t
+e
+
+M
+
+y
+p
+a
+r
+e
+h
+T
+
+r
+o
+t
+i
+b
+i
+h
+n
+i
+
+e
+s
+a
+d
+i
+s
+o
+c
+u
+l
+g
+-
+a
+h
+p
+l
+A
+
+d
+e
+l
+l
+i
+F
+s
+
+M
+H
+A
+
+f
+o
+
+r
+e
+b
+m
+u
+N
+
+g
+o
+l
+a
+n
+A
+n
+i
+l
+y
+m
+A
+
+0
+
+1
+
+2
+
+2
+>
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Patel et al.
+
+Page 18
+
+Factors Associated with Renal Contraindicated AHM Use Among Patients with 
+eGFR<30mL/min/1.73m2
+
+Table 3
+
+Variable
+
+Age (years)
+
+Female Sex
+
+Race
+
+  White
+
+  Black
+
+  Other/Unknown
+
+Medical History
+
+  CKD (Cr >2mg/dL)
+
+  Diabetes – Insulin treated
+
+Ischemic heart disease
+
+  CVA/TIA
+
+  Atrial fibrillation/flutter
+
+  Hyperlipidemia
+
+  Hypertension
+
+  Peripheral Vascular Disease
+
+  Pulmonary disease
+
+  Adult history of smoking
+
+Number of comorbidities
+
+  0 comorbidities
+
+  1-2 comorbidities
+
+  3-4 comorbidities
+
+  >4 comorbidities
+
+Renal
+contraindicated
+AHM use
+(N=535)
+
+No renal
+contraindicated
+AHM use
+(N=977)
+
+p-value
+
+77 (72-84)
+
+76 (70-83)
+
+71.2
+
+77.0
+
+13.8
+
+9.2
+
+53.1
+
+32.3
+
+64.3
+
+12.5
+
+29.2
+
+53.8
+
+84.3
+
+16.5
+
+26.5
+
+8.8
+
+1.5
+
+21.1
+
+44.7
+
+32.7
+
+71.0
+
+75.6
+
+14.4
+
+9.9
+
+59.3
+
+65.3
+
+65.7
+
+18.6
+
+25.1
+
+54.9
+
+83.6
+
+21.7
+
+30.1
+
+6.4
+
+1.2
+
+15.4
+
+46.2
+
+37.3
+
+28.7
+
+0.005
+
+0.941
+
+0.560
+
+0.020
+
+<0.001
+
+0.582
+
+0.002
+
+0.086
+
+0.701
+
+0.733
+
+0.014
+
+0.145
+
+0.084
+
+0.030
+
+0.049
+
+0.108
+
+0.068
+
+0.502
+
+Ejection Fraction <40% or moderate or severe dysfunction
+
+33.6
+
+Length of Stay (days)
+
+Admission Exam
+
+5 (3-7)
+
+5 (3-8)
+
+  Systolic Blood Pressure (mmHg)
+
+142 (123-162)
+
+144 (124-167)
+
+  Heart Rate (beats/minute)
+
+74 (64-88)
+
+76 (65-88)
+
+  Body Mass Index
+
+Labs at admission
+
+  eGFR (mg/dL/1.73m2)
+
+  Hba1c (%)
+
+Meds at Discharge
+
+  ACE/ARB
+
+  Beta-blocker
+
+  Aldosterone Antagonist
+
+  Hydralazine/Nitrate
+
+29.6 (25.9-34.6)
+
+30.4 (25.9-36.8)
+
+0.038
+
+23.7 (18.8-27.2)
+
+23 (18.0-26.6)
+
+6.9 (6.2-7.7)
+
+6.6 (6-7.3)
+
+44.9
+
+80
+
+9.4
+
+23.7
+
+40.7
+
+80.9
+
+9.0
+
+28.6
+
+0.043
+
+0.030
+
+0.130
+
+0.561
+
+0.886
+
+0.032
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+ 
+ 
+ 
+ 
+ 
+Page 19
+
+Patel et al.
+
+Variable
+
+Number of meds prescribed (as captured in GWTG-HF)
+
+  0
+
+  1-2
+
+  3-4
+
+  >4
+
+Hospital Characteristics
+
+  Academic
+
+  Urban
+
+Region
+
+  West
+
+  South
+
+  Midwest
+
+  Northeast
+
+p-value
+
+0.377
+
+0.430
+
+0.934
+
+0.023
+
+Renal
+contraindicated
+AHM use
+(N=535)
+
+No renal
+contraindicated
+AHM use
+(N=977)
+
+1.3
+
+8.6
+
+26.3
+
+63.8
+
+58.3
+
+90.1
+
+10.3
+
+33.5
+
+24.5
+
+31.2
+
+0.5
+
+8.7
+
+27.9
+
+63.0
+
+59.9
+
+89.4
+
+8.9
+
+38.8
+
+26.8
+
+24.7
+
+Categorical variables are presented as percentages, and continuous variables are presented as medians (interquartile ranges). 
+AHM=antihyperglycemic medication, eGFR=estimated glomerular filtration rate, CKD=chronic kidney disease, Cr=creatinine, CVA/
+TIA=cerebrovascular accident/transient ischemic attack, Hba1c=hemoglobin a1c, ACE/ARB=angiotensin converting enzyme inhibitor/angiotensin 
+receptor blocker, GWTG-HF=Get With The Guidelines Heart Failure
+
+Circ Heart Fail. Author manuscript; available in PMC 2017 July 01.
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+ 
+ 
+ 
+ 
+

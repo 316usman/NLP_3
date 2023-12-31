@@ -1,0 +1,1823 @@
+Draft version December 29, 2023
+Typeset using LATEX twocolumn style in AASTeX631
+
+3
+2
+0
+2
+c
+e
+D
+8
+1
+
+]
+
+R
+S
+.
+h
+p
+-
+o
+r
+t
+s
+a
+[
+
+1
+v
+6
+8
+1
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Discovery of astrometric accelerations by dark companions in the globular cluster ω Centauri
+
+Imants Platais
+
+,1 Johannes Sahlmann ,2, ∗ L´eo Girardi
+
+,3 Vera Kozhurina-Platais
+
+,4
+
+Sebastian Kamann ,5 Dimitri Pourbaix,6, † Florence Wragg ,5 Gerard Lemson,1 and Arik Mitschang1
+
+1Department of Physics and Astronomy, Johns Hopkins University, 3400 North Charles Street, Baltimore, MD 21218, USA
+2RHEA Group for the European Space Agency (ESA), European Space Astronomy Centre (ESAC),
+Camino Bajo del Castillo s/n, 28692 Villanueva de la Ca˜nada, Madrid, Spain
+3Osservatorio Astronomico di Padova - INAF, Vicolo dell’Osservatorio 5, I-35122 Padova,Italy
+4Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218, USA
+5Astrophysics Research Institute, Liverpool John Moores University, IC2 Liverpool Science Park, 146 Brownlow Hill, Liverpool L3 5RF,
+UK
+6FNRS, Institut d’Astronomie et d’Astrophysique, Universit´e Libre de Bruxelles, Boulevard du Triomphe, 1050 Bruxelles, Belgium
+
+ABSTRACT
+
+We present results from the search for astrometric accelerations of stars in ω Centauri using 13 years
+of regularly-scheduled Hubble Space Telescope WFC3/UVIS calibration observations in the cluster
+core. The high-precision astrometry of ∼160 000 sources was searched for significant deviations from
+linear proper motion. This led to the discovery of four cluster members and one foreground field star
+with compelling acceleration patterns. We interpret them as the result of the gravitational pull by an
+invisible companion and determined preliminary Keplerian orbit parameters, including the companion’s
+mass. For the cluster members our analysis suggests periods ranging from 8.8 to 19+ years and dark
+companions in the mass range of ∼0.7 to ∼1.4M⊙. At least one companion could exceed the upper
+mass-boundary of white dwarfs and can be classified as a neutron-star candidate.
+
+Keywords: Unified Astronomy Thesaurus concepts: Space astrometry (1541); Hubble Space Telescope
+
+(761); Astrometric binary stars (79); Proper motions (1295); Globular cluster (656)
+
+1. INTRODUCTION
+
+Since the beginning of measuring proper motions it is
+implied that individual stars move along straight lines.
+This is still a good approximation for most sources even
+now in the Gaia era. If the motion indicates curvilin-
+ear pattern, that would change the proper motion by
+astrometric acceleration, usually measured in mas yr−2.
+Stronger accelerations may allow to invoke the Keple-
+rian formalism (e.g. Jia et al. 2019). Thus, the detec-
+tion of astrometric accelerations near the radio source
+Sagittarius A∗ was instrumental to eliminate all other
+alternatives to the supermassive black hole (Ghez et al.
+2000; GRAVITY Collaboration et al. 2018). This dis-
+covery and additional astrometric accelerating sources
+
+Corresponding author: Imants Platais, Johannes Sahlmann
+imants@jhu.edu, Johannes.Sahlmann@ext.esa.int
+
+∗ This author shares the lead authorship
+† Deceased on 14 November 2021
+
+in the same area are examples of ground-based astrom-
+etry of binary motion where one component is dark.
+
+In 1990-1993 the Hipparcos space astrometry mission
+regularly observed multiple times ∼118,000 pre-selected
+stars. For the first time in history regular astrometric
+observations were obtained outside the Earth’s atmo-
+sphere and covering the entire celestial sphere. This ef-
+fort resulted in 2622 acceleration candidates (Lindegren
+et al. 1997) but none with a genuine invisible companion.
+The third data release (DR3) of the Gaia space as-
+trometry mission used data acquired between July 2014
+and May 2017 and reported 338,215 acceleration solu-
+tions and 165,500 orbital solutions (Halbwachs et al.
+2023). A few illustrative cases of compact and invisi-
+ble companions are presented by the Gaia consortium
+in Gaia Collaboration et al. (2023a). To ‘weigh‘ an in-
+visible companion one must determine the mass of the
+primary source and it is desirable to obtain epoch radial
+velocities. This recipe made it possible to discover Gaia
+BH1 and Gaia BH2, two dormant black holes (BH) in
+
+ 
+ 
+ 
+ 
+ 
+ 
+2
+
+intermediate-period binaries (El-Badry et al. 2023a,b).
+An opportunity to enhance the accuracy of proper mo-
+tions and to probe very long-period accelerations is the
+combination of the Hipparcos and Gaia catalogs (e.g.
+Brandt 2021).
+
+Although the Hubble Space Telescope (HST ) is not
+an astrometric observatory, it has provided spectacular
+science results such as the detection of the very small
+tangential velocity of the Andromeda galaxy at 17.0 km
+s−1 (van der Marel et al. 2012), establishing the up-
+per limit of a putative, intermediate-mass black hole in
+ω Cen (van der Marel & Anderson 2010), precision par-
+allaxes (±45 µas) for long-period Cepheids in the Milky
+Way with the spatial scanning technique (Riess et al.
+2018), and the detection of astrometric microlensing by
+a black hole (Sahu et al. 2022).
+
+These breakthroughs gave us confidence that measure-
+ments of astrometric accelerations are feasible with the
+prime HST WFC3/UVIS camera. One configuration
+that can generate a measurable acceleration in a few
+years is a double star with a faint or dark secondary com-
+ponent. In order to maximize the number of surveyed
+sources and therefore the odds of detection, we focused
+on dense stellar system such as the core of globular clus-
+ters. Thanks to the foresight of the HST WFC3 team,
+a multi-cycle calibration program targeting the center
+of ω Cen (NGC 5139) was set in motion in 2010. So
+far, a total of ∼200 well time-spread frames have been
+accumulated, spanning over a total of 13 years. In cer-
+tain aspects these observations may surpass the available
+Gaia catalogues due to the 2-dimensional pointed ob-
+servations, the longer time span, and the slightly better
+spatial resolution which is critical in very crowded stel-
+lar environments such as the cores of globular clusters.
+However, the Gaia limitations due to source blending
+and onboard resources discussed in (Gaia Collaboration
+et al. 2016, Sect. 6.6) were partially mitigated by a spe-
+cial observing mode (e.g. Sahlmann et al. 2016) and a
+focused product release in the ω Cen region was pub-
+lished on 10 October 2023 (Gaia Collaboration et al.
+2023b), see Sect. 6.3.
+
+A similar HST program (GO-12911, PI L.R. Bedin)
+targeted the nearest (∼1.7 kpc) Galactic globular clus-
+ter M 4 (NGC 6121 Bedin et al. 2013). However, the
+timespan of these observations is only one year with an
+expectation that this would be sufficient to detect the
+astrometric ‘wobble‘. As of this writing, no accelerating
+source in M 4 has been reported. The combined analy-
+sis of proper motions from HST and Gaia DR3 claim a
+central dark mass of 800 M⊙ in M 4 (Vitral et al. 2023).
+
+2. HST /WFC3 OBSERVATIONS OF ω CEN
+
+The observations of ω Cen were taken with the fourth-
+generation imaging camera WFC3/UVIS on-board HST
+installed during Servicing Mission 4 in May 2009, with
+the angular field of view of 2.′73 × 2.′73. The first ob-
+servation in calibration program CAL-12094 (PI J. Kim
+Quijano) was taken on 2009-07-15 to monitor the flat-
+field uniformity through the filter F606W at the adopted
+center of ω Cen (RA=201.◦69283 Dec=−47.◦47905).
+The following calibration programs CAL-11911 (PI
+E. Sabbi), CAL-12094 (PI L. Petro), CAL-12339 (PI
+E. Sabbi) and the successive calibration programs 12353,
+12714, 13100, 13570, 14031, 14393, 15000, 15593, 15733,
+16413, 16588 (all by PI V. Kozhurina-Platais) are ad-
+dressing a variety of specific aspects of the WFC3 in-
+strumental calibration, such as photometric stability,
+geometric distortions, and their stability (for the lat-
+ter aspect, see also Sahlmann et al. 2019). All of these
+programs used F606W besides some other filters and rel-
+atively short exposure times of 35-40 or 60 sec and a va-
+riety of roll angles from −170◦ to 180◦. During the first
+five years nearly 50% of frames had a large 40′′ dither.
+From the view-point of precision astrometry such dithers
+could be detrimental due to the partial overlap. The
+large variety of roll-angles produced a lower number of
+total detections outside the radius of r=80′′ from the
+adopted center. At larger radius and certain roll angles
+some targets cannot be observed. This is visible in Fig-
+ure 1. Altogether, for this study we selected a total of
+175 images spanning 13 years with the last observation
+on 2022-01-11.
+
+The distribution of epochs over each calendar year is
+not even. There are two intervals without observations:
+April 29 to June 3 (35 days) and September 6 to De-
+cember 12 (97 days). These ‘holes‘ are due to the un-
+schedulability of ω Cen at those times. Some of the
+other missing observations are due to failure of guide-
+star acquisition.
+In some cases, such periodic pattern
+may spawn spurious one-year signals in the periodogram
+analysis (Section 6).
+
+3. DATA REDUCTION
+
+The chosen flc- type images from the HST Mikul-
+ski Archive for Space Telescopes (MAST) are a stan-
+dard output of the HST calibration pipeline CALWFC3
+with bias and dark subtraction, and flat-fielded on orig-
+inal pixels. The flc.fits images are corrected for the
+charge-transfer efficiency (CTE) in the HST pipeline
+(Anderson et al. 2021). The effect of CTE tend to in-
+crease with time and can affect the point-spread func-
+tion (PSF). This can have an impact on the measure-
+ments of stellar centroids and flux. Therefore, the pixel-
+based corrections is a crucial step towards deriving high-
+
+3
+
+The output of hst1pass provides a geometrically-
+correct gnomonic projection for a tiny part of the celes-
+tial sphere. We used Gaia Early Data Release 3 (EDR3)
+(Gaia Collaboration et al. 2021) to provide the reference
+frame. Preliminary tests showed that EDR3 source qual-
+ity is atypical in the center part of ω Cen. If we limit
+the EDR3 sources to the ones with positional error less
+than 1 mas, then nearly 50% of them are missing proper
+motion and there is a cut-off at G ∼18 mag. Clearly,
+this is a consequence of the crowding and limitations of
+Gaia onboard resources (Gaia Collaboration et al. 2016;
+Cantat-Gaudin et al. 2023).
+
+Similar to Bellini et al. (2017) we selected the seed-
+frame ibc301qrq flc taken on 2010-01-14. If we trans-
+late the Gaia celestial coordinates to the epoch 2010.12
+and then convert into gnomonic coordinates and align
+them to the measured pixel coordinates of the seed
+frame, the rms of the resulting residuals is ∼4.4 mas.
+There are 440 common stars for this transformation.
+In contrast, any pair of WFC3/UVIS frames with close
+epochs generates an rms of ∼0.7 mas. Such disparity
+may imply that the EDR3 positions near the center of
+ω Cen have substantially lower accuracy then expected.
+For this reason we decided to use the EDR3 positions
+only for aligning the seed-frame to the RA and Dec axes
+and to derive the WFC3/UVIS pixel scale in the F606W
+filter.
+
+To align the seed frame it had to be rotated by 149.◦751
+around the location of star 227418 (Table 7 Bellini et al.
+2017). At this stage we decided to use the Bellini et al.
+(2017) numbering system to designate our sources since
+it covers the same area. Also, the availability of celes-
+tial coordinates in both data-sets make it easy to cross-
+identify the sources. Our estimate of the WFC3/UVIS
+pixel scale is 39.770 mas and is not corrected for the ve-
+locity aberration. As noted by Bellini et al. (2011); An-
+derson (2007) the effect of velocity aberration changes
+only the pixel scale. In this sense, our pixel scale is not
+absolute.
+
+Next, all frames were converted into pixel-based coor-
+dinates of the seed-frame using a least-squares minimiza-
+tion. The number of common stars in the magnitude
+range 15.4 < F606W < 17.5 span from 1093 to 2434 de-
+pending on the dither pattern and the HST roll angle.
+If the pixel coordinates are free of geometric distortions,
+then a linear 3-term polynomial should be sufficient to
+align any pair of frames. Our analysis of the residuals
+yielded the following results:
+
+• The rms of the residuals is correlated with the
+epoch of observations. Early epochs produce low
+rms at ∼0.015 pix whereas the last epochs have
+values as high as ∼0.22 pix. The significant inter-
+
+Figure 1. Distribution of the locations of two stars on the
+WFC3/UVIS CCD detector over 175 epochs. Red points
+correspond to star 290133 with 174 detections, blue points
+correspond to star 212028 with 149 detections. Red points
+are more concentrated and that resulted in higher overall
+accuracy. The background are stars with mF 606W ≤ 18.5.
+
+precision measurements of basic stellar parameters, it
+is implemented in the universal and versatile software
+routine hst1pass (Anderson 2022). It also contains 2-D
+libraries of empirical PSFs based on specific variations
+of the PSF due to the HST thermal breathing and small
+changes in the HST focus adjustment to the particular
+focus level of each exposure (Anderson & Bedin 2017;
+Anderson 2018).
+
+hst1pass produces the catalog of X&Y positions, the
+measured flux provided in the instrumental magnitude
+and qfit, the quality parameter of the PSF fit. We lim-
+ited our sample to measurements with 0.0<qfit≤0.1.
+The typical distribution of qfit as a function of instru-
+mental magnitude can be found in (Figure 4; Platais
+et al. 2015), which shows two easily-separable popula-
+tions of artifacts (with larger qfit) and genuine mea-
+surements. Our goal is quality, not completeness, and
+the applied constraint only selects the very-best mea-
+surements. The derived high-precision positions are cor-
+rected for geometric distortions (Bellini et al. 2011) and
+hst1pass also simultaneously provided celestial coordi-
+nate RA & Dec. The WFC3/UVIS geometric distortions
+are known to be stable over time (Kozhurina-Platais &
+Anderson 2015). Nevertheless, the still-ongoing distor-
+tion monitoring is one of the goals in the multi-cycle
+WFC3 calibration program.
+
+3.1. Astrometric registration
+
+4
+
+nal velocity dispersion near the center of ω Cen at
+0.75 mas yr−1 (Anderson & van der Marel 2010)
+is the main reason this increase. Such patterns
+are not only detrimental to the astrometric accu-
+racy but may also impact the prospects of finding
+accelerations.
+
+• Initial solutions using only three linear terms re-
+vealed a small (up to 0.05 pix) but persistent
+quadratic pattern in the residuals, mainly along
+the Y -axis. Unfortunately, we do not know
+whether the seed-frame itself is free from quadratic
+markings. There are a handful of cases with nearly
+perfect distribution of residuals but not necessarily
+at the same HST roll angle.
+
+• About a dozen frames show atypical box-shaped
+distributions of residuals. Since such frames ap-
+pear close in time to typical frames, we suspect
+that sometime the guiding of HST was not per-
+fect, especially for some short exposures used in
+this calibration program.
+
+The solution to these issues is a three-pronged ap-
+
+proach:
+
+• Subtract from all X&Y pixel-positions the effect
+of proper motion relative to the epoch of the seed-
+frame. We subtracted the effect of the known rela-
+tive proper motion from each X&Y position at ev-
+ery epoch relative to the epoch of the seed-frame.
+In practice, the known proper motion is multiplied
+by the time difference in years and the result is
+subtracted from X&Y . As the result, all positions
+have zero proper motion up to its formal precision.
+Then, these positions are averaged and the mean is
+subtracted. In essence, our approach levels the po-
+sitional accuracy over all epochs. This can be seen
+in Figure 2 in the even scatter of residuals in time.
+At each epoch we calculate the amount of this ef-
+fect and convert it into pixels using exact scale
+at 40 mas per pixel and then rotate around the
+adopted zeropoint at Xc=2073.19 and Yc=2292.38
+pix using the HST position angle P A V 3. Since
+the proper motion is strictly vectorial, it cannot af-
+fect the inferred acceleration. The opposite, how-
+ever, is true: acceleration can bias the inferred
+proper motion.
+
+• The modified pixel coordinates Xm, Ym are then
+translated into the system of the seed-frame po-
+sitions by a least-squares regression using a poly-
+nomial model with 6 terms (linear and quadratic)
+for both axes (e.g., Bellini et al. 2014). The output
+
+are epoch positions Xf , Yf free of proper-motion
+effects to the level of their accuracy. For sources of
+particular interest, e.g. with likely acceleration sig-
+nals, we also subtracted a small local offset in both
+coordinates by using all sources within ∼ 50 pix-
+els around the target and at all epochs. Then the
+averages of these offsets are applied to all epochs.
+
+• A total of 17 epochs are excluded from the final
+analysis, the recalculation of proper motion, and
+the search for acceleration. It is most likely that at
+these epochs HST experienced jitter in its pointing
+stability due to the degrading gyro (Anderson &
+Sabbi 2018). There is no sharp divide between
+the normal jitter (∼ 11 mas) and the increased
+ones. We note that such HST calibration frames
+may not be science grade but still can be used
+for engineering purpose. Hence they are in the
+MAST.
+
+4. LONG-PERIOD ACCELERATIONS
+
+The new astrometric catalog includes 162,604 sources
+down to mF 606W ≃ 21.5. We examined the parameter
+space so that it is optimal for the detection of acceler-
+ations. The suitable limits appear to be at mF 606W
+16.1 − 20.0 mag and no less then 120 epochs evenly
+spread over 13 years. There are 22,466 such sources.
+Each set of Xf ,Yf then is used to calculate small addi-
+tional proper motion and acceleration which can be ap-
+proximated by the quadratic term in each axis, X 2 and
+Y 2. Thus, the output of the least-squares minimization
+yields two formal accelerations along each axis, named
+ξ−2
+X and ξ−2
+(see Table 1). The crucial parameter is the
+ratio the acceleration term and its formal error, desig-
+nated as QX and QY . This ratio (ignoring the sign)
+should be at least ∼5 in one or both axis (see QX and
+QY in Table 1 and Figure 2). With this criterion we find
+four clear cases of astrometric acceleration discovered in
+a globular cluster.
+
+Y
+
+Using a smaller threshold of 3-5 on the Q-parameter
+generates ∼400 candidates, but these are heavily pol-
+luted by impostors. A typical example is an offset or
+unusual spread at some narrow bunch of epochs in the
+same HST program. Generally, our search is limited by
+the known noise-floor of geometric-distortion corrections
+at ∼0.3 mas (Bellini et al. 2011).
+
+In addition, the long-period acceleration of source
+233697 was detected in the independent periodogram
+analysis of the astrometric time-series, see Section 6.
+Among the astrometric accelerations this source has the
+shortest period at 8.8 yrs. Due to the complete orbit
+and more, the quadratic term will diminish or may even
+flip its sign.
+
+5
+
+Table 1. Astrometric binaries discovered in this work: as-
+trometry at the Gaia DR1 reference epoch J2015.0 (from
+Bellini et al. 2017) and photometry of the visible components
+and acceleration parameters. mV and mI are HST WFC3
+Vega magnitudes in F606W and F814W filters; proper mo-
+tions µX , µY , and their errors σµX , σµY in mas yr−1; Nframe
+number of frames (epochs) followed by accelerations and
+their significance. The last column indicates our designa-
+tion of these newly-discovered binaries.
+
+ID
+143023
+212028
+233697
+290133
+317591
+
+µX
+-2.350
+0.434
+0.951
+-0.407
+0.882
+
+ξ−2
+X
+-0.0359
+0.0109
+· · ·
+-0.0329
+-0.0098
+
+mV
+17.056
+18.073
+17.398
+18.148
+18.811
+
+µY
+5.653
+-0.171
+-0.023
+0.233
+0.270
+
+ξ−2
+Y
+-0.0159
+-0.0387
+· · ·
+-0.0343
+-0.0274
+
+mV − mI
+0.855
+0.610
+0.650
+0.591
+0.633
+
+RA (deg)
+201.6675417
+201.7154333
+201.6714500
+201.7047500
+201.7239958
+
+Dec (deg)
+-47.4739278
+-47.4673472
+-47.4852972
+-47.4809222
+-47.4788750
+
+σµX
+0.017
+0.013
+0.011
+0.013
+0.013
+
+QX
+10.5
+3.0
+· · ·
+12.9
+2.8
+
+σµY
+0.014
+0.018
+0.011
+0.013
+0.016
+
+QY
+5.4
+11.4
+· · ·
+14.7
+7.7
+
+Nframe
+135
+134
+139
+157
+132
+
+Designation
+HSToC-1 AB
+HSToC-2 AB
+HSToC-3 AB
+HSToC-4 AB
+HSToC-5 AB
+
+In the absence of any information other than the pho-
+tometry, their mass can only be estimated via theoreti-
+cal isochrones (Serenelli et al. 2021). For instance, one
+can simply select the isochrone with the most appro-
+priate value of age and metallicity, then shift it to the
+appropriate distance modulus and foreground reddening
+and then read the stellar mass from the isochrone that
+is closest to the observed star in the color-magnitude
+diagram (CMD).
+
+In the case of ω Cen this procedure is complicated
+due to the wide range of metallicity (see e.g. Frinchaboy
+et al. 2002). Indeed, if we take a 12-Gyr isochrone with
+the mean metallicity of ω Cen, namely [Fe/H]= −1.53,
+and relocate it to the distance of 5.24 kpc (Soltis et al.
+2021) and redden it by E(B − V ) = 0.132 mag (cf. Bono
+et al. 2019), then the high-acceleration stars clearly fall
+to the red, meaning that they are probably more metal
+rich.
+
+In order to create a more realistic model for these
+stars, we simulated a cluster composed of single stars
+only, with an age of 12 Gyr and using the entire distri-
+
+Figure 2. Four cases of long-period acceleration. Magenta
+lines show quadratic least-square fits. Green lines indicate
+If a star lacks acceleration, all measured XY
+zero offset.
+(black points) would cluster around a straight line in both
+axes. As an example of borderline acceleration is star 317591
+in X-axis. This star would be rejected if not the prominent
+acceleration in the Y -axis.
+
+We inspected the F606W photometric timeseries and
+found them to be stable with robust scatter estimates
+(Lindegren et al. 2012) of between 14 and 42 mmag,
+without noticeable correlations with the acceleration sig-
+nals.
+
+Figure 3. Star 233697 has a low acceleration signal, indis-
+tinguishable from normal stars.
+Its Keplerian motion was
+detected in the periodogram (Figure 7). Green line indicates
+zero offset, although a careful inspection shows small outbal-
+ances within 1 mas.
+
+5. MASSES OF VISIBLE COMPONENTS FROM
+
+STELLAR EVOLUTIONARY MODELS
+
+Three of the cluster members with high accelera-
+tion are clearly main sequence stars located just below
+the turn-off of ω Cen, see Fig. 4, and the fourth one
+(ID=233697) is on the sub-giant branch.
+
+6
+
+Figure 4. Observational CMD of ω Cen in the HST pho-
+tometric Vega system through WFC3/UVIS F606W and
+F814W filters (Bellini et al. 2017). A randomly-chosen subset
+of ∼10% of all stars is shown. Red circles show the locations
+of the astrometric binaries. The reddest of these is the field
+binary HSToC-1.
+
+bution of [Fe/H] derived by Frinchaboy et al. (2002). We
+note that their metallicity distribution function is based
+on photometry with Washington M , T2 and DDO51 fil-
+ters, but that it was confirmed by the high-resolution
+spectroscopy from APOGEE (M´esz´aros et al. 2021).
+This simulation contains a tail of metal-rich stars ex-
+tending far enough to the red and cover our four accel-
+erating stars (see left panel in Fig. 5).
+
+Table 2. Astrophysical parameters of the visible compo-
+nents. Masses were estimated on the basis of the sources’
+positions in the CMD.
+
+ID
+143023
+
+M⊙
+See Appendix A
+
+[Fe/H]
+
+If d = 5.24 ± 0.11 kpc:
+
+212028
+233697
+290133
+317591
+
+−0.18
+
+0.794+0.013
+0.784+0.005
+0.773+0.014
+0.750+0.014
+
+−0.012 −0.82+0.12
+−0.004 −1.38+0.12
+−0.013 −1.14+0.26
+−0.017 −0.75+0.16
+
+−0.32
+
+−0.10
+
+−0.38
+
+If d = 5.426 ± 0.047 kpc:
+
+212028
+233697
+290133
+317591
+
+−0.14
+
+0.793+0.010
+0.780+0.004
+0.776+0.014
+0.760+0.013
+
+−0.010 −0.78+0.12
+−0.002 −1.48+0.10
+−0.012 −0.90+0.14
+−0.017 −0.66+0.15
+
+−0.10
+
+−0.31
+
+−0.12
+
+To estimate the masses of the four visible components
+with high acceleration, we proceed as follows: For every
+
+star in the simulation with color c and magnitude m, a
+weight wi is assigned as
+
+wi = exp[−(ci − c0)2/σ2 − (mi − m0)2/σ2]
+
+(1)
+
+where (c0, m0) is the color-magnitude position of the
+visible components, and σ = 0.02 mag is the typi-
+cal photometric error for both color and magnitude.
+These weights reflect the likelihood that the color-
+magnitude location of the observed stars derive from
+the theoretically-predicted location plus a Gaussian dis-
+tribution of photometric errors. These weights are used
+together with the masses and metallicities of the sim-
+ulated stars, to build the probability density functions
+(PDF) for both mass and metallicity. These functions
+are depicted in the central and right panels of Fig. 5.
+From these PDFs, we then derive the median and 68%
+confidence (1σ-equivalent) intervals for both mass and
+metallicity. Their values are listed in Table 2.
+
+Table 2 initially presents the values obtained by as-
+suming the standard reference to the distance of ω Cen
+(5.24±0.11 kpc; Soltis et al. 2021) based on Gaia EDR3
+parallaxes. The error in distance modulus in this case is
+of just 0.004 mag, which is one fifth of the error we al-
+ready assume in our derivation of the masses and metal-
+licities, and hence not able to significantly affect our esti-
+mations. However, there are alternative values to ω Cen
+distance that are worth exploring. The review of GC
+distances by Baumgardt & Vasiliev (2021), for instance,
+provides a 5.426 ± 0.047 kpc distance; these authors ar-
+gue that the Gaia parallaxes have small-scale correlated
+errors and systematic biases but this is not well yet un-
+derstood in EDR3, particularly for ω Cen. The bottom
+part of Table 2 presents the mass and metallicity esti-
+mates that are obtained with this distance value. As
+it can be appreciated, changes in the mass values are
+smaller than 0.01M⊙.
+
+En passant, we note that the location of our high-
+acceleration stars on the simulated CMD indicate that
+the metallicities of these stars are higher than the mean
+value of ω Cen [Fe/H]= −1.53 (see Table 2).
+
+6. PERIODOGRAMS OF ASTROMETRIC
+
+TIME-SERIES
+
+To search for deviations from the linear astrometric
+motion expected for a single source, we processed the
+two-dimensional astrometric timeseries as follows. For
+every source we subtracted the average position from
+the timeseries and fitted a four-parameter linear model
+corresponding to two positional offsets and two proper
+motions. This analysis is therefore independent of the
+amount of proper-motion displacement subtracted in the
+pre-processing and analysis discussed in Sect. 3.1. We
+
+Finally, we identified several sources with long-period
+periodogram peaks and small FAP whose origin is gen-
+uine Keplerian motion.
+
+7
+
+Figure 6. Density histogram of FAP as a function of peak
+period for the ∼160 000 sources for which the periodogram
+could be computed. The two vertical lines are at periods of
+0.5 and 1 year. The black stars indicate the location of the
+five sources in Table 1.
+
+6.1. Constraints on the orbital parameters and masses
+
+of the companions
+
+For the sources identified in the previous section on
+the basis of their small periodogram FAP, we attempted
+to derive constraints on the possible orbital parameters.
+One source (143023) turned out to be a foreground bi-
+nary and is discussed in Appendix A. The periodograms
+of the astrometric timeseries residuals for the remaining
+four sources are shown in Fig. 7. All of them except
+233697 show a dominant peak at roughly the observa-
+tion timespan with a large tail towards longer periods.
+This is typical for astrometric data that cover only a
+small or moderate portion of the astrometric orbit. This
+is also evident when inspecting the timeseries in Fig. 2.
+For source 233697, whose timeseries is shown in Fig. 3,
+the periodogram peak is at ∼ 3230 days (8.85 yrs) with
+an observation timespan of ∼4730 days (12.96 yrs), in-
+dicating that more than one orbital revolution has been
+observed.
+
+We analyse the data of these sources under the as-
+sumption that the non-standard motion is caused by a
+single dark companion in a Keplerian orbit about the
+visible source. In three out of four cases, the observa-
+tion time-span is too short to derive tight constraints
+on the orbital parameters and we therefore attempt to
+determine the range of possible configurations and their
+astrophysical interpretations.
+
+For every source we use kepmodel to fit the data with
+the initial four-parameter model plus a 7-parameter Ke-
+plerian model with initial parameters estimated from
+the periodogram. The orbit-fitting results are therefore
+
+Figure 5. Left panel: a simulated CMD of ω Cen (black
+tiny dots), built to estimate the masses and metallicities of
+the four visible components with high acceleration (coloured
+dots). The central and right panels show the probability den-
+sity functions for both mass and metallicity for these stars, as
+derived from the stars with similar color–magnitude position
+in the simulation (see text for details).
+
+omitted the parallax term because we do not expect to
+measure the parallax signal for cluster members, due to
+the inherently relative nature of our astrometric mea-
+surements.
+
+We then computed the periodogram of the fit resid-
+uals using the kepmodel package (Delisle & S´egransan
+2022). The period and false-alarm probability (FAP)
+of the highest periodogram peak were retained and are
+shown in Figure 6. The FAP indicates the probability
+that the peak is caused by random noise, i.e. a small
+FAP indicates the presence of periodicity in the time-
+series. The lower and upper boundaries of the periodic-
+ity search were 10 days and 20 000 days, respectively.
+
+Most sources exhibit insignificant periodogram peaks
+with large FAP, and we performed detailed analysis for
+all sources with small FAP. A few sources show signif-
+icant signals with periods of one year or half a year.
+These are likely foreground sources for which measur-
+able parallax offsets are present. The list of sources
+with FAP < 10−10 and periods around half a year
+is 420482, 414263, 396157, 421049, 421381, 427775,
+428247, 428253, 428571, 434388, 412665, 421379,
+421520, 427880, 396159, 421074. The list of sources with
+FAP < 10−10 and periods around one year is 247164,
+276969, 109223, 87685, 387712, 116672, 107882, 312186.
+As a by-product of our analysis, we have therefore iden-
+tified 24 sources that probably are foreground sources
+and not members of the Omega Cen cluster.
+
+The pile-up at long periods is caused by the upper
+boundary of the period search. Some of these peaks
+have small FAP but visual inspection of the time-series
+revealed systematic offsets and/or few measurements in
+the astrometric timeseries. The same applies to the few
+short-period (P < 100 day) sources and to the small-
+FAP source at P ∼ 10 yr visible in Figure 6.
+
+8
+
+Figure 7. Residual periodogram of the four-parameter
+model for 212028 (top), 233697 (second), 290133 (third), and
+317591 (bottom). The vertical grey dashed line shows the
+location of the highest peak, whose period and FAP are in-
+dicated in the panel title. The black dotted line corresponds
+to the observation timespan for this source.
+
+independent of the amount of proper-motion displace-
+ment subtracted in the pre-processing (Sect. 3.1). We
+do not impose priors on any of the parameters but we
+set an upper limit of 0.3 to the eccentricity for 143023
+and 317591. For the remaining sources that limit is 0.95.
+This is to avoid high-eccentricity solutions which often
+are preferred in orbit-fitting results using incomplete or-
+bital coverage or otherwise sub-optimal sampling. We
+assigned a uniform uncertainty of 0.3 mas to every indi-
+vidual astrometric measurement, which is motivated by
+the distortion-correction noise floor. This choice is val-
+idated by the typical value of an additional jitter term,
+which we included in the model. The model fitting is
+always performed on the individual-frame data, hence
+no binning is applied. For visual display, however, we
+
+compute normal points as averages of individual frames
+grouped in time.
+
+We fit the combined model with a standard maximum-
+likelihood algorithm and report a few of the best-fit pa-
+rameters in Table 3, which has some caveats:
+
+• The algorithm tends to converge towards the
+smallest period compatible with the data set.
+However, the true period of the system may be
+much longer which influences the estimated pa-
+rameters of companion.
+
+• For two sources we applied the e < 0.3 constraint.
+The true eccentricities may be larger than 0.3,
+which can imply larger semi-major axe and, there-
+fore, companion mass estimates. Table 3 also
+shows the solution parameters for larger eccentric-
+ities. For 143023 a larger eccentricity results in a
+larger semimajor axis and longer period, but the
+companion mass is nearly unchanged. For 317591
+a larger eccentricity results in a longer period and
+larger companion mass, but the semimajor axis is
+nearly unchanged.
+
+• When inferring the companion mass, we assumed
+one single dark companion. This assumption may
+not be justified, which we discuss below. The
+alternative scenarios include a pair of quasi-dark
+companions or a companion object that is not dark
+but contributes significant light. In the latter case,
+the mass of that companion has to be even larger
+than what we inferred.
+
+The uncertainties of orbital period P , eccentricity e, and
+semi-major axis of the primary a1 (Table 3) correspond
+to the formal uncertainties returned by the minimisation
+routine and are indicative only. The companion mass
+M2 was estimated from the orbital parameters and an
+average of the primary-mass estimates M1 in Table 21,
+with uncertainties propagated using Monte-Carlo resam-
+pling.
+
+Since several of these orbits are not fully covered by
+our data and both proper motions and orbital parame-
+ters are free parameters in the fitted model, it can hap-
+pen that proper motion is mistaken for orbital motion
+and vice versa. This is however not the case for our
+solutions. We verified that the residual proper motion
+determined as part of the orbital fit is comparable to or
+smaller than its uncertainties. This is important to safe-
+guard against potential instabilities in the fitting routine
+
+1 The systematic primary-mass uncertainty has insignificant influ-
+
+ence on the results.
+
+101102103104Period (d)0.00.10.20.30.4Normalized power212028   P=5557.161 d                    FAP=2.5e-23101102103104Period (d)0.00.10.20.30.4Normalized power233697   P=3226.889 d                    FAP=4.2e-22101102103104Period (d)0.00.20.40.6Normalized power290133   P=5884.014 d                    FAP=1.5e-53101102103104Period (d)0.00.10.2Normalized power317591   P=4167.987 d                    FAP=1.3e-10where a spurious proper motion and long-period Keple-
+rian offsets compensate each other.
+
+Although the systematic and formal uncertainties are
+significant, we can categorize the four binaries into two
+groups: 233697 and 317591 are probably systems with
+similar component masses, whereas the solutions for
+212028 and 290133 indicate companions that appear to
+be significantly more massive than the primary star, but
+yet might be much dimmer.
+
+The secondary masses in Table 3 were derived un-
+der the assumption that the companion is dark, i.e. the
+positions of the system’s photocentre and the primary
+coincide. The semimajor axis of the photocentre mo-
+tion aphoto that we determine directly is then equal to
+the semimajor axis of the primary’s barycentric motion
+a1 = aphoto. If the companion contributes light, the pho-
+tocentre motion gets diluted and a1 > aphoto which im-
+plies an even larger mass of the companion. The scaling
+between a binary’s photocentre and barycentre orbit size
+is determined by the fractional mass f = M2/(M1 +M2)
+of the components and their fractional luminosity β =
+L2/(L1 + L2) (Heintz 1978):
+
+¯aphoto = ¯arel(f − β),
+
+(2)
+
+where ¯aphoto is the photocentre orbit size in linear units
+and ¯arel is the semimajor axis of the relative orbit in
+linear units. Using Kepler’s third law in SI units this
+can be written as
+
+¯aphoto = 3(cid:112)GP 2/(4π2) 3(cid:112)
+
+M1 + M2(f − β)
+
+(3)
+
+and therefore
+
+aphoto ∝ ¯aphoto ∝ 3(cid:112)
+
+M1 + M2
+
+(cid:18) M2
+
+M1 + M2
+
+−
+
+L2
+L1 + L2
+
+(cid:19)
+
+.
+
+(4)
+From Eq. 4 it is clear that to maintain the observed
+aphoto constant between the dark companion limit
+(where L2 = 0 and a1 = aphoto) and a luminous com-
+panion with L2 > 0, the companion mass M2 has to
+increase.
+
+With the data available to us we cannot exclude that
+the companions contribute light, but if they do it implies
+that they are fainter and at the same time more massive
+than the primary.
+
+Two configurations that could satisfy these constraints
+for HSToC-2 and HSToC-4, which have the largest es-
+timated companion masses, are (a) the companion is a
+tight pair of white dwarfs (see Section 8) or (b) the com-
+panion is a tight pair of main-sequence stars. We sim-
+ulated the latter configuration by generating synthetic
+triple systems that have the same astrometric signature
+in terms of period but are composed of a primary with
+
+9
+
+properties from Table 2 and a twin-binary companion
+of the same metallicity with individual masses between
+∼0.4–0.8 M⊙. Using the isochrones discussed in Section
+5 and Eq. 2 we found that the corresponding photocen-
+ter orbit size is largest when the total companion mass is
+∼1 M⊙, but that it remains 0.2 − 0.25 mas smaller than
+the measured orbit size. This scenario therefore seems
+excluded for HSToC-4 and unlikely for HSToC-2.
+
+6.2. Orbital motion of 290133/HSToC-4
+
+The source 290133 stands out as having the largest es-
+timated companion mass. We show the orbital motion
+of 290133 in the plane of the sky in Figure 8 and as a
+function of time in Figure 9. For the sake of better visu-
+alisation only, we computed averages over time-bins of
+∼100 days (normal points). We stress that these figures
+show only one possible realisation of the orbital parame-
+ters, the actual orbit may look different. However, these
+visualisations are useful to ascertain the Keplerian or-
+bital motion.
+
+In Figure 9 it can be appreciated that the excess sig-
+nal after subtracting parallax and proper motion has a
+standard deviation of 0.51 mas (both axes, computed
+on normal points) which is reduced to 0.25 mas when
+including the Keplerian model. The equivalent figures
+for the other sources are shown in Figures 15, 17, and
+16 of the Appendix.
+
+6.3. Gaia catalogues in ω Cen
+
+In the Gaia DR3 source catalog there are no counter-
+parts to the binary sources listed in Table 1 when we
+impose a maximum separation of 5′′, a Gaia magnitude
+mG < 20 and magnitude difference |mV − mG| < 2, and
+the presence of a Gaia parallax measurement.
+
+On 10 October 2023, however, Gaia published a Fo-
+cused Product Release (FPR) that includes an cata-
+logue of additional sources in ω Cen (Gaia Collabo-
+In that catalogue (Gaia archive
+ration et al. 2023b).
+table gaiafpr.crowded field source, epoch J2017.5),
+we found unique positional matches to all five sources
+within a radius of 30 mas. We did not correct for proper
+motion between the DR1 and FPR epochs. The details
+of these matched sources are given in Table 4. They
+have small magnitude differences |mV − mG| < 0.3 mag
+and the next closest positional matches are at separa-
+tions ≳ 0.3′′. We briefly explore the properties of these
+Gaia data here.
+
+Figure 10 shows the FPR ‘astrometric excess noise‘
+(AEN) parameter for our binaries in comparison with
+roughly comparable sources in that catalogue. This
+parameter corresponds to a jitter term that is added
+quadratically to the individual Gaia measurement un-
+certainties to account for the residual scatter in the
+
+10
+
+Table 3. Preliminary estimates of some Keplerian parameters and the masses of the companions. These were obtained under the
+assumption of a single and dark companion and with a prior on eccentricity for sources HSToC-1/143023 and HSToC-5/317591.
+Formal uncertainties from the minimisation routine are given only for orientation. M1 is derived from Table 2. The foreground
+source HSToC-1/143023 is discussed in Appendix A. The second part of the table shows indicative results for HSToC-1/143023
+and HSToC-5/317591 when relaxing the eccentricity prior and allowing for values of ∼0.5 and ∼0.8. The KRV is the estimated
+radial-velocity amplitude.
+
+Designation / ID
+
+HSToC-1 / 143023
+HSToC-2 / 212028
+HSToC-3 / 233697
+HSToC-4 / 290133
+HSToC-5 / 317591
+HSToC-1 / 143023∗
+HSToC-1 / 143023∗
+HSToC-5 / 317591∗
+HSToC-5 / 317591∗
+
+Period
+(yrs)
+19 ± 8
+15 ± 3
+8.8 ± 0.5
+13 ± 2
+11.5 ± 2.0
+
+∼ 22
+∼ 44
+∼ 12
+∼ 14
+
+e
+
+< 0.3
+0
+0.2 ± 0.2
+0.3 ± 0.2
+< 0.3
+
+∼ 0.50
+∼ 0.80
+∼ 0.50
+∼ 0.80
+
+aphoto
+(mas)
+0.9 ± 0.3
+0.91 ± 0.27
+0.47 ± 0.05
+0.86 ± 0.08
+0.53 ± 0.07
+
+0.9 ± 0.3
+1.4 ± 0.9
+0.6 ± 0.1
+0.6 ± 0.3
+
+M1
+(M⊙)
+0.68 ± 0.03
+0.80 ± 0.01
+0.784 ± 0.005
+0.78 ± 0.01
+0.75 ± 0.02
+
+0.68 ± 0.03
+0.68 ± 0.03
+0.75 ± 0.02
+0.75 ± 0.02
+
+M2 KRV
+(M⊙)
+km/s
+0.15+0.06
+−0.05 ∼ 0.9
+1.25+0.87
+∼ 9
+−0.70
+0.77 ± 0.14
+∼ 6
+1.36+0.36
+−0.26 ∼ 10
+0.71+0.23
+∼ 7
+−0.16
+0.19+0.04
+∼ 1
+−0.04
+0.19+0.23
+∼ 1
+−0.09
+0.7+0.4
+∼ 8
+−0.2
+0.8+1.2
+−0.4 ∼ 11
+
+11
+
+Figure 8. Orbital motion of HSToC-4/290133 in the sky
+after subtracting the standard 5-parameter model. The grey
+curve corresponds to the best-fit orbital parameters. Uncer-
+tainties represented as error-bars were estimated from the
+dispersion of the data accumulated in the normal point.
+Dashed lines connect observed and computed locations.
+
+Table 4. Gaia FPR identifiers and relevant properties. The
+ρ column indicates the match distance and the AEN column
+lists the FPR ‘astrometric excess noise‘.
+
+ID
+
+Gaia FPR source id
+
+143023
+212028
+233697
+290133
+317591
+
+6083701663102358400
+6083701972347609216
+6083701456942300288
+6083701800545532544
+6083698948678055168
+
+mV
+(mag)
+17.056
+18.073
+17.398
+18.148
+18.811
+
+mG
+(mag)
+17.023
+17.869
+17.363
+17.913
+18.820
+
+ρ
+(′′)
+0.026
+0.013
+0.019
+0.016
+0.022
+
+AEN
+(mas)
+2.02
+20.90
+2.92
+15.97
+5.36
+
+single-source astrometric solution (Lindegren et al.
+2021). Without access to the Gaia astrometric time-
+series it is a powerful metric to identify and sometimes
+even characterise astrometric binaries (e.g. Kiefer et al.
+2019; Belokurov et al. 2020; Gandhi et al. 2022).
+
+Whereas HSToC-1/143023, HSToC-3/233697, and
+HSToC-5/317591 exhibit values close to the mode of the
+distribution, HSToC-2/212028 and HSToC-4/290133
+show elevated levels of Gaia excess noise. These lat-
+ter sources are also the ones with the larger orbital
+signatures (a1 ≃ 0.9 mas) inferred from the HST data
+compared to HSToC-3 and HSToC-5 with a1 ≃ 0.5 mas.
+This is a strong indication that the Gaia FPR is sensi-
+tive to orbital motion with amplitudes of ∼1 mas in ω
+Cen.
+
+Figure 9. Orbital motion of HSToC-4/290133 after sub-
+tracting the standard model (top panels) as a function of
+time. The final residuals of the full-model fit are shown in the
+middle and bottom panels. The top and middle panel show
+normal points computed by combining individual frames,
+whereas the bottom panels show individual frame data. Left
+panels are in RA direction and right panels are in Declina-
+tion.
+
+Figure 10. Histogram of the ‘astrometric excess noise‘
+for 98,179 FPR sources with 17 < mG < 19, ‘astromet-
+ric params solved‘ = 95, and ‘astrometric n good obs al‘ >
+50. The vertical grey lines indicate the values for our five
+binaries.
+
+The foreground source HSToC-1 does, however, not
+match that pattern since we estimated an orbit size of
+∼0.9 mas, but its AEN is unremarkable. This may be
+due to the long (and uncertain) period of this binary
+compared to the FPR timespan of 5 years, which re-
+duces the probability that orbital acceleration shows up
+as elevated AEN.
+
+0.50.00.51.0Offset in Right Ascension (mas)0.50.00.51.01.5Offset in Declination (mas)290133 ()101Offset in RA/Dec (mas)101O-C (mas)200002000MJD - 56991.1101Frame O-C (mas)200002000MJD - 56991.1290133 ()020406080100astrometric_excess_noise (mas)101103CountHSToC-2HSToC-412
+
+It is evident in Figure 10 that there are many sources
+with AEN values similar or even much larger than
+HSToC-3 and HSToC-5. A fraction of those are likely
+of instrumental origin, e.g. source blending, but another
+fraction could indicate acceleration signals. Using the
+Gaia FPR astrometric excess noise may therefore be a
+promising avenue for the discovery of new astrometric
+binaries in ω Cen, especially in regions not covered by
+the HST observations.
+
+7. MUSE OBSERVATIONS
+
+The sources 212028 and 290133 are covered by the
+footprint of the mosaic observed with MUSE (Bacon
+et al. 2010) as part of the survey of Galactic globular
+clusters presented in Kamann et al. (2018). The qual-
+ity cuts routinely performed prior to searches for bi-
+nary stars (see Giesers et al. 2019) result in sets of six
+radial velocity (RV) measurements for 212028 and five
+RV measurements for 290133, with typical uncertain-
+ties of > 10 km s−1 for the former and 5 − 10 km s−1 for
+the latter. None of the stars shows signs of variability
+in the MUSE data. However, given the relative large
+uncertainties compared to the expected velocity semi-
+amplitudes (Table 3), this does not seem unexpected.
+
+We note that the spatial resolution of the MUSE data,
+with a typical FWHM of ∼ 0.8 arcsec, is lower com-
+pared to the HST data by a factor of ∼8. Therefore,
+even though the stars are bright enough to perform ac-
+curate RV measurements with MUSE, crowding limits
+our abilities to do so. Both sources have similarly bright
+stars located at about 0.5× the FWHM and significantly
+brighter neighbours at distances of ∼ 1′′. Future obser-
+vations with the MUSE narrow field mode will be able
+to overcome this problem.
+
+8. DISCUSSION AND FUTURE STUDIES
+
+The largest Milky Way globular cluster ω Cen now is
+the first cluster with detected astrometric accelerations.
+Whether or not the relatively small range of the deduced
+masses of the invisible components is typical for Milky
+Way globular clusters remains to be answered by future
+studies. However, we can get some cues from another
+rare populations such as millisecond pulsars (MSP) and
+X-ray sources. Curiously, the first bona fide MSPs in
+ω Cen were discovered only in 2020 (Dai et al. 2020)
+followed by observations with the MeerKAT radio tele-
+scope and discovery of 13 more MSPs (Chen et al. 2023).
+Four of them are in our field (Figure 11).
+
+Since MSPs and neutron stars share the same phys-
+ical phenomenon observed in different wavelengths, we
+inspected the known binary systems anywhere in the sky
+with well-measured component masses (Table 1 ¨Ozel &
+
+Freire 2016). These binary systems yield fairly-tight
+mass limits of 1.38 ± 0.05M ⊙. Two of our targets,
+212028 and 290133, fit very well to these mass limits
+and thus provide a strong argument that their invisible
+component could be a neutron star.
+In fact, the esti-
+mated properties of these two systems are very similar
+in luminosity, acceleration, component masses, and Ke-
+plerian parameters such as the semi-major axis.
+
+An alternative option for the nature of these compan-
+ions would be a tight pair of white dwarfs, but such
+a scenario may not be effective in the cores of globu-
+lar clusters. The presence of MSPs in our field itself is
+auspicious to the neutron star scenario.
+
+Old stellar systems such as globular clusters contain
+low-luminosity X-ray sources. The most comprehensive
+rework of archival ω Cen observations with the Chandra
+X-ray Observatory Advanced CCD Imaging Spectrom-
+eter provide the best sample of these sources (Henley-
+willis et al. 2018). There are 14 X-ray sources within
+the boundaries of our field. None of them is close to the
+detected astrometric binaries. In globular clusters the
+typical X-ray sources are cataclysmic variables (Belloni
+& Rivera 2021). They are relatively tight binaries com-
+posed of a white dwarf or a neutron star and a main
+sequence star as donor. Our field has four cataclysmic
+variables but their potential semi-major axis would be
+totally imperceptible.
+
+Figure 11. Distribution of rare objects in ω Cen. The cen-
+ter of the gnomonic projection is the best-known kinematic
+center of ω Cen. Black dots show randomly-chosen 7% of all
+program stars. Red points are oue newly-discovered binaries.
+The one in the upper-right quadrant is the foreground field
+binary. Green points indicate millisecond pulsars and blue
+ones X-ray sources.
+
+Future studies can expand on our work in several
+Including archival HST ACS/WFC images of
+ways.
+ω Cen taken prior to WFC3/UVIS images and accu-
+mulating more data from the ongoing WFC3/UVIS cal-
+ibration program will expand the time baseline of the
+observations and therefore lead to better constraints on
+the binaries’ orbital and mass parameters.
+
+Independently, one could experiment with relaxing the
+conservative cutoff value for the image quality parameter
+qfit to increase the number of available measurements
+per source, hence potentially increase sensitivity.
+
+Access to the epoch positions Xf ,Yf , free of the effect
+of proper motions using Bellini et al. (2017) data, and
+new calibrated magnitudes will be granted upon request
+to the authors and made available through the SciServer
+platform.
+
+Further exploration of the Gaia FPR dataset of ω Cen
+has the potential to lead to the discovery of additional
+binaries in this cluster.
+
+9. SUMMARY AND CONCLUSIONS
+
+This study is trailblazing astrometric acceleration
+searches in a relatively distant globular cluster popu-
+lated by roughly solar- and subsolar-mass sources. We
+demonstrated the viability of this project by obtaining
+high-precision astrometric timeseries for tens of thou-
+sands of sources, thereby improving the proper motions
+of more than 22,000 cluster members with an average
+precision of 0.011 mas yr−1. We discovered five new bi-
+naries, one in the foreground and four cluster-members,
+and characterised their Keplerian motion.
+
+Despite the large distance of ω Cen of over 5 kpc we
+were able to detect the first astrometric binaries. Those
+have very-small orbital semi-major axes below one 1 mas
+(Table 3). These binaries have periods longer than our
+survey timespan, except for HSToC-3, where we ob-
+served more than one Keplerian orbit allowing us to de-
+rive better constraints on the mass of the companion.
+Inspection of the Gaia FPR dataset of ω Cen indepen-
+dently supports the discovery of the larger-amplitude
+binaries HSToC-2 and HSToC-4, which have elevated
+levels of Gaia astrometric excess noise.
+
+Our preliminary best-fit mass estimates for the in-
+visible companions in ω Cen range from ∼0.7M⊙ to
+∼1.4M⊙ and from ∼0.6M⊙ to ∼2.1M⊙ if we account
+for the associated 1-σ uncertainties. The true range of
+allowed companion masses is likely even larger, but there
+are essentially three likely scenarios of their nature: a
+
+13
+
+single white dwarf2, a pair of white dwarfs, or a neu-
+tron star. Because of the uncertainties in our estimates
+and the Chandrasekhar limit on the maximum mass of
+white dwarfs at 1.4 M⊙, we are unable to pinpoint the
+most-likely scenario.
+
+Our initial goal was to probe the existence of stellar-
+mass black holes in binaries of ω Cen. Although we have
+not unambiguously identified a BH candidate, we have
+demonstrated that surveys like ours are sufficiently sen-
+sitive to discover them if they exist. A system akin to
+Gaia BH2 at the distance of ω Cen generates an astro-
+metric signal with a semi-amplitude of ∼0.9 mas and a
+period of 3.5 years, which lies well within the sensitivity
+limit of our survey, cf. Table 3. Shorter period systems
+akin to Gaia BH1 would generate a signal of ∼0.25 mas
+and a period of 0.5 years, thus are more challenging to
+detect.
+
+10. ACKNOWLEDGMENTS
+
+2 According to Bellini et al. (2017) the top of white dwarf sequence
+in ω Cen is at mF 606W ∼22 mag which is ∼4 mag fainter than
+the faint limit of our binaries.
+
+Facilities: Hubble Space Telescope (WFC3/UVIS),
+
+Gaia
+
+14
+
+thanks Andrea Bellini
+
+for sharing the astro-
+I.P.
+photometric catalog, Timothy Brandt for testing a tar-
+get, Terrence Girard for the parallax-related code and
+general advising. J.S. thanks Jari Kajava for checking
+for X-ray and radio counterparts to our binaries.
+
+This research makes use of the SciServer platform.
+The SciServer is a collaborative research environment
+for large-scale data-driven science.
+It is being devel-
+oped at, and administered by, the Institute for Data In-
+tensive Engineering and Science at Johns Hopkins Uni-
+versity. The authors gratefully acknowledge grant sup-
+port for HST program AR-16629, provided by NASA
+through grants from the Space Telescope Science Insti-
+tute, which is operated by the Association of Universities
+for Research in Astronomy, Inc., under NASA contract
+NAS 5-26555.
+
+The HST data underlying this research are available
+
+at MAST: 10.17909/dwtd-kr81.
+
+This research made use of pystrometry, an open
+source Python package for astrometry timeseries analy-
+sis (Sahlmann 2019).
+
+This work has made use of data from the Euro-
+pean Space Agency (ESA) mission Gaia (https://www.
+cosmos.esa.int/gaia), processed by the Gaia Data Pro-
+cessing and Analysis Consortium (DPAC, https://www.
+cosmos.esa.int/web/gaia/dpac/consortium).
+Funding
+for the DPAC has been provided by national institu-
+tions, in particular the institutions participating in the
+Gaia Multilateral Agreement.
+
+APPENDIX
+
+A. THE FOREGROUND BINARY STAR HSToC-1
+
+The astrometry periodogram of source HSToC-1/143023 after fitting the four-parameter linear model reveals a strong
+signature at a one-year period which persists in the residuals of tentative orbit-model fits. This is a strong indication
+that this is a foreground source whose un-modelled parallax motion introduces the periodicity. We therefore computed
+the parallax factors using the formalism provided by van de Kamp (1981) and then fitted the standard five-parameter
+model. As shown in Fig. 12 this cancels the power at one year. We therefore modelled the astrometry of this source
+with models that include the parallax term.
+
+To estimate the potential orbital parameters, we modelled the data with the combination of the standard five-
+parameter model and a single Keplerian model with initial parameters compatible with the highest periodogram-peak.
+Since the orbital motion is only partially covered (Fig. 2) we can only determine a lower limit to the period and give
+indicative bounds to the possible mass range of the companion. Since orbital eccentricity is essentially unconstrained
+at this point, we limited its allow range to <0.3 (see Table 3).
+
+One possible orbital solution with a period of ∼ 7000 days is shown in Fig. 13. However, the orbital period could be
+as short as the ∼ 4000 day timespan of the data or much longer. The orbital motion and fit residuals for this solution
+as a function of time are shown in Figure 14.
+
+The determined parallax of the system is almost independent of the orbital parameters because the timescales are
+very different for such long-period systems. We determined a relative parallax of ϖrel = 0.55 ± 0.12 mas. Since that is
+
+15
+
+Figure 12. Residual periodogram of the four- (top) and five-parameter (bottom) models for HSToC-1/143023. The power at
+long period is hardly affected but including the parallax in the model makes the power around 365 days disappear.
+
+measured relative to cluster members, we need to account for the cluster distance of 5.24 kpc (Soltis et al. 2021) and
+obtain an absolute parallax of HSToC-1 of ϖabs = 0.73 ± 0.12 mas.
+
+Adopting this latter parallax value, and assuming that the HSToC-1 primary is a metal-poor halo star with the
+same foreground extinction as ω Cen, its placement in theoretical isochrones provides a mass estimate in the range
+between 0.65 and 0.71 M⊙. Assuming a primary mass of 0.68 , the companion mass for this particular solution would
+be ∼0.15M⊙, where we neglect any light contribution by the companion, which could dilute the photocentre motion
+and lead to an underestimation of the companion mass (Table 3).
+
+B. ADDITIONAL FIGURES
+
+REFERENCES
+
+Anderson, J. 2007, Variation of the Distortion Solution,
+
+Anderson, J., & Bedin, L. R. 2017, MNRAS, 470, 948,
+
+Instrument Science Report ACS 2007-08, 12 pages
+
+—. 2018, Focus-Diverse PSFs for Five Commonly Used
+
+doi: 10.1093/mnras/stx1278
+
+WFC3/UVIS Filters, Instrument Science Report WFC3
+
+Anderson, J., & Sabbi, E. 2018, Impact of Increased Jitter
+
+2018-14, 19 pages
+
+—. 2022, One-Pass HST Photometry with hst1pass,
+
+Instrument Science Report WFC3 2022-5, 55 pages
+
+Anderson, J., Baggett, S., & Kuhn, B. 2021, Updating the
+
+WFC3/UVIS CTE model and Mitigation Strategies,
+
+Instrument Science Report 2021-9, 44 pages
+
+on WFC3/UVIS PSFs, Instrument Science Report
+
+WFC3 2018-7, 16 pages
+
+Anderson, J., & van der Marel, R. P. 2010, ApJ, 710, 1032,
+
+doi: 10.1088/0004-637X/710/2/1032
+
+101102103104Period (d)0.00.10.20.30.4Normalized power143023   P=20000.000 d                    FAP=1.4e-21101102103104Period (d)0.00.10.20.30.4Normalized power143023   P=7144.695 d                    FAP=1.1e-2616
+
+Figure 13. Parallax and proper motion (top) and orbital motion (bottom) of HSToC-1 in the sky.
+
+Figure 14. Orbital motion of HSToC-1 after subtracting the standard model (top panels). The standard deviation of 0.59 mas
+(both axes, computed on normal points) in the top panels is is reduced to 0.32 mas when including the Keplerian model.
+
+Bacon, R., Accardo, M., Adjali, L., et al. 2010, in Society of
+
+Bedin, L. R., Anderson, J., Heggie, D. C., et al. 2013,
+
+Photo-Optical Instrumentation Engineers (SPIE)
+
+Conference Series, Vol. 7735, Ground-based and Airborne
+
+Instrumentation for Astronomy III, ed. I. S. McLean,
+
+S. K. Ramsay, & H. Takami, 773508,
+
+doi: 10.1117/12.856027
+
+Baumgardt, H., & Vasiliev, E. 2021, MNRAS, 505, 5957,
+
+doi: 10.1093/mnras/stab1474
+
+Astronomische Nachrichten, 334, 1062,
+
+doi: 10.1002/asna.201311911
+
+Bellini, A., Anderson, J., & Bedin, L. R. 2011, PASP, 123,
+
+622, doi: 10.1086/659878
+
+Bellini, A., Anderson, J., Bedin, L. R., et al. 2017, ApJ,
+
+842, 6, doi: 10.3847/1538-4357/aa7059
+
+Bellini, A., Anderson, J., van der Marel, R. P., et al. 2014,
+
+ApJ, 797, 115, doi: 10.1088/0004-637X/797/2/115
+
+17
+
+Figure 15. Orbital motion of HSToC-2 after subtracting the standard model (top panels). The standard deviation of 0.38 mas
+(both axes, computed on normal points) in the top panels is is reduced to 0.27 mas when including the Keplerian model.
+
+Figure 16. Orbital motion of HSToC-3 after subtracting the standard model (top panels). The standard deviation of 0.30 mas
+(both axes, computed on normal points) in the top panels is is reduced to 0.16 mas when including the Keplerian model.
+
+Figure 17. Orbital motion of HSToC-5 after subtracting the standard model (top panels). The standard deviation of 0.36 mas
+(both axes, computed on normal points) in the top panels is is reduced to 0.31 mas when including the Keplerian model.
+
+Belloni, D., & Rivera, L. 2021, in The Golden Age of
+
+Belokurov, V., Penoyre, Z., Oh, S., et al. 2020, MNRAS,
+
+Cataclysmic Variables and Related Objects V, Vol. 2-7,
+
+13, doi: 10.22323/1.368.0013
+
+496, 1922
+
+18
+
+Bono, G., Iannicola, G., Braga, V. F., et al. 2019, ApJ, 870,
+
+115, doi: 10.3847/1538-4357/aaf23f
+
+Brandt, T. D. 2021, ApJS, 254, 42,
+doi: 10.3847/1538-4365/abf93c
+
+Cantat-Gaudin, T., Fouesneau, M., Rix, H.-W., et al. 2023,
+
+A&A, 669, A55
+
+Chen, W., Freire, P. C. C., Ridolfi, A., et al. 2023, MNRAS,
+
+520, 3847, doi: 10.1093/mnras/stad029
+
+Dai, S., Johnston, S., Kerr, M., et al. 2020, ApJL, 888, L18,
+
+doi: 10.3847/2041-8213/ab621a
+
+Delisle, J. B., & S´egransan, D. 2022, A&A, 667, A172
+El-Badry, K., Rix, H.-W., Quataert, E., et al. 2023a,
+
+MNRAS, 518, 1057
+
+Kamann, S., Husser, T. O., Dreizler, S., et al. 2018,
+MNRAS, 473, 5591, doi: 10.1093/mnras/stx2719
+
+Kiefer, F., H´ebrard, G., Sahlmann, J., et al. 2019, A&A,
+
+631, A125
+
+Kozhurina-Platais, V., & Anderson, J. 2015, Standard
+Astrometric Catalog and Stability of WFC3/UVIS
+Geometric Distortion, Instrument Science Report WFC3
+2015-02, 22 pages
+
+Lindegren, L., Lammers, U., Hobbs, D., et al. 2012, A&A,
+
+538, A78
+
+Lindegren, L., Mignard, F., S¨oderhjelm, S., et al. 1997,
+
+A&A, 323, L53
+
+Lindegren, L., Klioner, S. A., Hern´andez, J., et al. 2021,
+
+El-Badry, K., Rix, H.-W., Cendes, Y., et al. 2023b,
+
+A&A, 649, A2
+
+MNRAS, 521, 4323
+
+Frinchaboy, P. M., Rhee, J., Ostheimer, J. C., et al. 2002,
+in Astronomical Society of the Pacific Conference Series,
+Vol. 265, Omega Centauri, A Unique Window into
+Astrophysics, ed. F. van Leeuwen, J. D. Hughes, &
+G. Piotto, 143, doi: 10.48550/arXiv.astro-ph/0112169
+Gaia Collaboration, Prusti, T., de Bruijne, J. H. J., et al.
+
+2016, A&A, 595, A1
+
+Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al.
+2021, A&A, 649, A1, doi: 10.1051/0004-6361/202039657
+Gaia Collaboration, Arenou, F., Babusiaux, C., et al. 2023a,
+
+A&A, 674, A34, doi: 10.1051/0004-6361/202243782
+Gaia Collaboration, Weingrill, K., Mints, A., et al. 2023b,
+
+arXiv e-prints, arXiv:2310.06551
+
+Gandhi, P., Buckley, D. A. H., Charles, P. A., et al. 2022,
+
+MNRAS, 510, 3885
+
+Ghez, A. M., Morris, M., Becklin, E. E., Tanner, A., &
+
+Kremenek, T. 2000, Nature, 407, 349,
+doi: 10.1038/35030032
+
+Giesers, B., Kamann, S., Dreizler, S., et al. 2019, A&A,
+
+632, A3, doi: 10.1051/0004-6361/201936203
+
+GRAVITY Collaboration, Abuter, R., Amorim, A., et al.
+
+2018, A&A, 615, L15
+
+Halbwachs, J.-L., Pourbaix, D., Arenou, F., et al. 2023,
+A&A, 674, A9, doi: 10.1051/0004-6361/202243969
+
+Heintz, W. D. 1978, Geophysics and Astrophysics
+
+Monographs, 15
+
+Henleywillis, S., Cool, A. M., Haggard, D., et al. 2018,
+
+MNRAS, 479, 2834, doi: 10.1093/mnras/sty675
+Jia, S., Lu, J. R., Sakai, S., et al. 2019, ApJ, 873, 9,
+
+doi: 10.3847/1538-4357/ab01de
+
+M´esz´aros, S., Masseron, T., Fern´andez-Trincado, J. G.,
+
+et al. 2021, MNRAS, 505, 1645,
+doi: 10.1093/mnras/stab1208
+
+¨Ozel, F., & Freire, P. 2016, ARA&A, 54, 401,
+doi: 10.1146/annurev-astro-081915-023322
+
+Platais, I., van der Marel, R. P., Lennon, D. J., et al. 2015,
+
+AJ, 150, 89, doi: 10.1088/0004-6256/150/3/89
+
+Riess, A. G., Casertano, S., Yuan, W., et al. 2018, ApJ,
+
+855, 136, doi: 10.3847/1538-4357/aaadb7
+
+Sahlmann, J. 2019, Johannes-Sahlmann/pystrometry:
+
+Release for Zenodo, v0.0dev59, Zenodo,
+doi: 10.5281/zenodo.3515526
+
+Sahlmann, J., Mart´ın-Fleitas, J., Mora, A., et al. 2016, in
+
+SPIE, Vol. 9904
+
+Sahlmann, J., Nelan, E., Averbukh, J., Cox, C., & Lallo,
+
+M. 2019, A comprehensive approach to HST focal plane
+geometric calibration, ISR TEL 2019-1
+
+Sahu, K. C., Anderson, J., Casertano, S., et al. 2022, ApJ,
+
+933, 83, doi: 10.3847/1538-4357/ac739e
+
+Serenelli, A., Weiss, A., Aerts, C., et al. 2021, A&A Rv, 29,
+
+4, doi: 10.1007/s00159-021-00132-9
+
+Soltis, J., Casertano, S., & Riess, A. G. 2021, ApJL, 908, L5
+van de Kamp, P. 1981, Stellar Paths,
+doi: 10.1007/978-94-009-8450-9
+
+van der Marel, R. P., & Anderson, J. 2010, ApJ, 710, 1063,
+
+doi: 10.1088/0004-637X/710/2/1063
+
+van der Marel, R. P., Fardal, M., Besla, G., et al. 2012,
+
+ApJ, 753, 8, doi: 10.1088/0004-637X/753/1/8
+
+Vitral, E., Libralato, M., Kremer, K., et al. 2023, MNRAS,
+
+522, 5740, doi: 10.1093/mnras/stad1068
+
+

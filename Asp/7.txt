@@ -1,0 +1,333 @@
+Submitted for publication in
+Journal of Physics: Conference Series
+(HAPP 10th Anniversary Commemorative Volume)
+
+3
+2
+0
+2
+
+c
+e
+D
+8
+2
+
+]
+P
+E
+.
+h
+p
+-
+o
+r
+t
+s
+a
+[
+
+1
+v
+7
+4
+8
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+SETI at FAST in China
+
+1,2Tong-Jie Zhang, 1,2Bo-Lun Huang, 1,2Jian-Kang Li, 1,2,3Zhen-Zhao
+Tao, 1,2Xiao-Hang Luan, 6Zhi-Song Zhang, 1,4,5Yu-Chen Wang
+1Institute for Frontiers in Astronomy and Astrophysics, Beijing Normal University, Beijing
+102206, China
+2Department of Astronomy, Beijing Normal University, Beijing 100875, China
+3Institute for Astronomical Science, Dezhou University, Dezhou 253023, China
+4Kavli Institute for Astronomy and Astrophysics, Peking University, Beijing 100871, China
+5Department of Astronomy, School of Physics, Peking University, Beijing 100871, China
+6National Astronomical Observatories, Chinese Academy of Sciences, Beijing 100012, China
+
+E-mail: tjzhang@bnu.edu.cn
+
+Abstract. Since the commencement of the first SETI observation in 2019, China’s Search for
+Extraterrestrial Intelligence program has garnered momentum through domestic support and
+international collaborations. Several observations targeting exoplanets and nearby stars have
+been conducted with the FAST. In 2023, the introduction of the Far Neighbour Project(FNP)
+marks a substantial leap forward, driven by the remarkable sensitivity of the FAST telescope
+and some of the novel observational techniques. The FNP seeks to methodically detect
+technosignatures from celestial bodies, including nearby stars, exoplanetary systems, Milky
+Way globular clusters, and more. This paper provides an overview of the progress achieved by
+SETI in China and offers insights into the distinct phases comprising the FNP. Additionally, it
+underscores the significance of this project’s advancement and its potential contributions to the
+field.
+
+1. Introduction
+Humans have been wondering about the universe even before the emergence of our civilizations.
+With the belief that intelligent life inhabited among the stars would share similar ambitions
+and imaginations as we do, the concept of Search for Extraterrestrial Intelligence(SETI) was
+therefore raised in the early 20th century.
+In the past century, with the innovation and
+construction of radio telescopes, astronomers can finally look for artificial signals from outer
+space in the radio domain of the electromagnetic spectrum. Early SETI projects like Project
+Ozma and Project Phoenix laid the groundwork for subsequent efforts in the ongoing quest
+to detect signals or signs of intelligent life beyond Earth [1, 2]. While no definitive evidence
+has been found to date, these endeavours have contributed to advancing our understanding
+In 2016, The Five-hundred-
+of the cosmos and the potential existence of other intelligence.
+meter Aperture Spherical Telescope(FAST), as shown in Fig.1, started its collaboration with
+the Breakthrough Listen Initiative to search for weak radio technosignaures from nearby stars,
+and the first SETI observation in China was conducted in the year 2019. From 2019 to 2023, we
+have conducted multiple observations targeting various celestial objects including nearby stars,
+exoplanets found by the Kepler space telescope, and sky regions that are considered to contain
+potential extraterrestrial intelligence(ETI) sources by the SETI@home program. In 2023, with
+
+ 
+ 
+ 
+ 
+ 
+ 
+developments in data analysis techniques and observation strategies, we decided to propose the
+first long-term SETI project in China named the Far Neighbour Project(FNP) that aims to
+systematically search for ETI signals or leakage signals with a comprehensive workflow.
+
+2. SETI in China 2019-2023
+SETI is one of the five core scientific objectives of FAST, and its implementation commenced
+promptly following the completion of the FAST construction in 2016. In 2019, FAST was able
+to make its first step in the SETI observation, and multiple observations have taken place
+subsequently in the following years in collaboration with the Breakthrough Listen initiative and
+the University of California, Berkeley [3].
+
+Figure 1. A panoramic view of the FAST in early 2020 [4].
+
+2.1. First SETI observation in China
+After three years of testing and technical adjustments, the development of compatible software
+and the installation of hardware, the first SETI observation in China was successfully conducted
+with the newly installed 19-beam receiver and the SERENDIP VI spectrometer on FAST
+[5]. With improvement in sensitivity, FAST is also receiving an enormous amount of weak
+radio frequency interference(RFI). Machine learning techniques were used to mitigate the RFI
+collected by FAST. This observation served as a test observation and it demonstrated that the
+majority of RFI was filtered out by the machine learning algorithm and the signal ranking
+pipeline called Nebula is also compatible with the observational data generated from FAST.
+The first SETI observation in China and its data analysis pipeline have proven the feasibility of
+SETI research with FAST, moreover, it marks the starting point of SETI in China [3].
+
+2.2. Observation towards 33 exoplanets
+During April 2021 and September 2021, we conducted 11 rounds of targeted observations
+towards 33 exoplanetary systems [6]. These exoplanets were selected generally based on their
+habitability and whether or not they are in the Earth Transit Zone.
+In SETI, we usually
+quantify the sensitivity of a particular survey by the minimum detectable Effective Isotropic
+Radiated Power(EIRP) of a hypothetical extraterrestrial transmitter on that target. For the
+nearest exoplanetary system in this survey and its host star, Ross 128, the minimum detectable
+EIRP of a transmitter located in the Ross 128 stellar system for FAST is calculated to be
+1.48 × 109 W which is almost three orders of magnitudes less than the EIRP of the planetary
+radar mounted at the Arecibo observatory. Therefore, under the assumption that some of the
+alien civilizations are actively broadcasting their messages, FAST is capable of detecting such
+a signal even if the transmitter of the sender civilization possesses a significantly lower EIRP
+than the planetary radar at Arecibo. Furthermore, a new observation method is proposed and
+applied for this mission which is called the MultiBeam Coincidence Matching(MBCM) method.
+This method is similar to the ON-OFF method which has been widely utilized in the field of
+targeted SETI observation and the principle is that a sky-localized signal would not be detected
+in different telescope pointings(pointings are at least six half-power beam-width away from each
+other). The MBCM method takes advantage of the FAST’s 19-beam receiver by simultaneously
+recording data in the centre beam and the six outermost beams. With the assistance of the
+MBCM method, we successfully eliminated all but one signal named NBS 210629 as can be seen
+in Fig. 2. However, it was later determined to be RFI by comparisons with RFI that showed
+similar frequency and polarization characteristics. In the re-observation towards NBS 210629
+in November 2021, no signal that possesses similar characteristics was detected by the same
+instrument and observation strategy.
+
+In 2022, the observational data was revisited with the blind search mode of the MBCM method
+which aims to search for signals from the vicinity of the target exoplanets (radar or leakage
+radiation from a spacecraft) [7]. The blind search mode successfully found the signal NBS
+210629, and another signal named NBS 210421 that the standard MBCM failed to return.
+However, NBS 210421 was thought to most likely come from a ground-based RFI due to similar
+features with the other four obvious RFI.
+
+2.3. Observation targeting nearby stars
+Nearby stars have been a popular type of observation target since the beginning of SETI
+research. Suppose we are under the assumption that the distribution or model that describes
+the possible range of power levels of signals emitted by extraterrestrial transmitters follows a
+power law, which means that lower power transmitters are more abundant than those with a
+higher power. FAST, as the world’s largest filled-aperture radio telescope, is ideal for searching
+weak radio signals from nearby stars with its extreme sensitivity.
+In 2022, we observed 14
+nearby stars which were selected by their distance and whether they were in the Earth Transit
+Zone. However, no signal was considered a candidate ETI signal. In 2023, we conducted an
+observation of Barnard’s star system with the minimum detectable EIRP reaching 4.36 × 108
+which is impossible to achieve by any other instrument to date [8]. Furthermore, we developed
+a novel observation strategy called MultiBeam Point-source scanning(MBPS) observation as
+shown in Fig.3 based on the configuration of the FAST’s 19-beam receiver and tested it in an
+observation towards the TRAPPIST-1 system. The MBPS is especially sensitive to persistent
+narrowband signal detection because a cross-verification procedure can be implemented with
+several newly introduced parameters in a single observation [9].
+
+Figure 2. The signal NBS 210629. It was detected around 1140.604 MHz during our 20-minute
+observation of Kepler-438. The relative position of the subfigures stands as a representation of
+the 19-beam receiver of the FAST. The signal is detected only in the central beam, and not in
+any of the reference beams.[6]
+
+Figure 3. The MBPS works by scanning the target object, each of the 19 beams would show a
+different representation of the signal and it is time-dependent because of their slightly different
+pointings during the scanning observation. [9]
+
+5045403530252015105051015RA (arcmin)15105051015Dec (arcmin)(17.22, 0)16171815671914512813439121110161718156719145128134391211102.4. Observation with SETI@home
+With our collaboration with the SETI@home program, we re-observed the most promising
+candidates from the SETI@home Arecibo Sky survey using FAST. The SETI@home team has
+collected a list of the top SETI candidate sky regions obtained from 14 years of commensal
+multibeam observation at Arecibo [10]. This data collection involved numerous years of volunteer
+In 2022, we
+computing time, followed by analysis using the Nebula SETI data pipeline.
+conducted an observation of 51 sky regions from the SETI@home candidate list, and we are
+currently in the process of developing a new algorithm to search for signals that were previously
+detected by the SETI@home Arecibo sky survey.
+
+To achieve an RFI excision like in the Nebula pipeline, we introduced a method involving the
+detection of continuous narrowband RFI using a threshold for sky separation and identifying
+drifting RFI using the Hough transform. Additionally, we incorporate machine learning to
+further eliminate RFI and pinpoint potential candidates. Our study compares this approach to
+previous work on the same FAST data. Despite its computational simplicity, the new method
+efficiently removed more RFI while retaining simulated ETI signals, except for those severely
+affected by RFI. Moreover, we identified a greater number of candidate signals, encompassing
+about twelve new candidates not previously reported [11].
+
+3. Far Neighbour Project
+With increasing observation opportunities at FAST and the desire to explore the unknowns, we
+initiated the Far Neighbour Project(FNP) at Beijing Normal University in the summer of 2023.
+The FNP stands as a long-term project, there are generally four stages in this project.
+
+3.1. Stage I: Search for technosignaures beyond Earth
+At the initial stage of the FNP, we aim to systematically search for technosignaures from
+various celestial objects under a rigorous framework and pipeline. The FNP target selection
+strategy is designed in a way that maximizes the probability of detecting ETI signals. For
+example, we will conduct observation towards some of the Milky Way globular clusters as
+well as nearby stars in the first year of the FNP. The list of observation targets is updated
+every year, and it is determined according to the latest SETI theories and other related
+fields like astrobiology, exoplanetary science, etc. With our collaborative relationship with the
+Breakthrough Listen initiative and the SETI@home program, we continue the re-observation to
+observe the best candidates from the SETI@home Arecibo Sky survey. And together with the
+Breakthrough Listen team, we test and develop new data analysis techniques to remove RFI
+like the polarization characteristics, and dispersion feature [12, 13, 14].
+
+3.2. Stage II: Searching and messaging
+This stage is initiated only if more than one high-confidence ETI signal is found. In this stage,
+the FNP will endeavour to decode the incoming messages and conduct detailed investigations of
+the source objects. Once an agreement is established based on the results of the investigation, a
+simple and straightforward message will be transmitted to the source object from a spacecraft
+that is located at a sufficiently distant region from Earth, the exact distance is determined by
+how far the source object is and the advancement of our technology at that time. We expect
+that the FNP will remain at this stage for a timescale of tens of years (messages from nearby
+stars), thousands of years (messages from Milky Way globular clusters), or longer than millions
+of years (messages from other galaxies).
+
+3.3. Stage III: Searching and Communication
+This stage will be heavily dependent on our technological and cultural development at that
+time, thus it is difficult to even broadly predict the timescale. Generally, in this stage, we will
+progressively establish trust through consistent and cautious communication and explore limited
+collaborations in areas like information exchange or basic scientific knowledge.
+
+3.4. Stage IV: The Far Neighbour atlas
+This stage will commence after we have gained a comprehensive understanding of multiple
+extraterrestrial civilizations. By working with various civilizations, the FNP will be assisting in
+the writing of the Far Neighbour atlas, both a map and catalogue that describe the vastness of
+the Milky Way and more importantly, the civilizations that reside within it.
+
+4. Conclusion
+To this date, our species has been conducting SETI research under a series of scientific theories for
+decades which is merely a tiny fraction even compared to the age of our civilization. With China’s
+involvement in SETI research, we will accelerate the progress of SETI studies and conduct more
+sensitive observations of a greater number of celestial targets. Our novel observation methods,
+such as MBCM and MBPS, are expected to significantly enhance the efficiency and accuracy
+of data processing. In addition to observational efforts, we are also committed to integrating
+multiple disciplines to continuously refine the theoretical frontier of SETI.
+
+In the FNP, we are dealing with signals with unknown characteristics, therefore, we propose
+the FNP as a long-term project without a predetermined duration. For Stage I, observations
+and development of SETI theories and new data processing techniques are the major focus.
+However, in this paper, the descriptions for Stages II to IV are relatively succinct compared to
+Stage I. This is because we envision the FNP as a program that can span over a millennium
+and more, provided our civilization endures. Given such an extended timescale, the rapid
+pace of technological development and scientific discoveries might significantly advance the
+methods and efficiencies outlined in our project. Therefore, we have refrained from elaborately
+detailing the implementation of stages II to IV, which have yet to be initiated. To date, we
+possess no evidence pertaining to the existence of extraterrestrial civilizations, let alone their
+spatial distribution. Consequently, the prospective outcome of the FNP remains challenging to
+anticipate. Nonetheless, even following meticulous observation and analysis, should the quest
+for any discernible ETI signals yield no results, we shall attain a more profound comprehension
+of the distribution of technological civilizations in the cosmos. Additionally, while conducting
+SETI research, we will also use data from SETI observations to explore other auxiliary scientific
+research in the field of astrophysics.
+
+Acknowledgments
+This work was supported by the National SKA Program of China (2022SKA0110202) and the
+National Natural Science Foundation of China (grants No. 11929301).
+
+References
+
+[1] Shuch H P 2010 Project ozma: the birth of observational seti Searching for Extraterrestrial
+
+Intelligence: SETI Past, Present, and Future (Springer) pp 13–18
+
+[2] Backus P et al. 2004 Project phoenix: A summary of seti observations and results, 1995-
+
+2004 American Astronomical Society Meeting Abstracts# 204 vol 204 pp 75–04
+
+[3] Zhang Z S, Werthimer D, Zhang T J, Cobb J, Korpela E, Anderson D, Gajjar V, Lee R,
+
+Li S Y, Pei X et al. 2020 The Astrophysical Journal 891 174
+
+[4] FAST-program 2020 Panoramic view of the fast URL https://fast.bao.ac.cn/static/
+
+uploadfiles/202003/202003311002132561.jpg
+
+[5] Zhang Z S, Zhang H Y, Zhu Y et al. 2020 Journal of Deep Space Exploration 7 158–163
+[6] Tao Z Z, Zhao H C, Zhang T J, Gajjar V, Zhu Y, Yue Y L, Zhang H Y, Liu W F, Li S Y,
+
+Zhang J C et al. 2022 The Astronomical Journal 164 160
+
+[7] Luan X H, Tao Z Z, Zhao H C, Huang B L, Li S Y, Liu C, Wang H F, Liu W F, Zhang
+
+T J, Gajjar V et al. 2023 The Astronomical Journal 165 132
+
+[8] Tao Z Z, Huang B L, Luan X H, Li J K, Zhao H C, Wang H F and Zhang T J 2023 The
+
+Astronomical Journal (Accepted), arXiv preprint:2309.15377
+
+[9] Huang B L, Tao Z Z and Zhang T J 2023 The Astronomical Journal (Under review), arXiv
+
+preprint:2307.11368
+
+[10] Werthimer D, Anderson D, Bowyer C S, Cobb J, Heien E, Korpela E J, Lampton M L,
+Lebofsky M, Marcy G W, McGarry M et al. 2001 Berkeley radio and optical seti programs:
+Seti@ home, serendip, and sevendip The Search for Extraterrestrial Intelligence (SETI) in
+the Optical Spectrum III vol 4273 (SPIE) pp 104–109
+
+[11] Wang Y C, Tao Z Z, Zhang Z S, Lyu C, Zhang T, Zhang T J and Werthimer D 2023 The
+
+Astronomical Journal 166 146
+
+[12] Li J K, Chen Y, Tao Z Z, Luan X H, Zhang T J, Huang B L, Sun X H and Gajjar V 2023
+
+The Astronomical Journal (Under review), arXiv preprint:2305.15715
+
+[13] Gajjar V, LeDuc D, Chen J, Siemion A P, Sheikh S Z, Brzycki B, Croft S, Czech D, DeBoer
+
+D, DeMarines J et al. 2022 The Astrophysical Journal 932 81
+
+[14] Li J K, Zhao H C, Tao Z Z, Zhang T J and Xiao-Hui S 2022 The Astrophysical Journal
+
+938 1
+
+

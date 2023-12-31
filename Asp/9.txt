@@ -1,0 +1,2426 @@
+MIT-CTP/5650
+
+Close encounters of the primordial kind:
+a new observable for primordial black holes as dark matter
+
+Tung X. Tran,1, ∗ Sarah R. Geller,1, 2, 3, † Benjamin V. Lehmann,1, ‡ and David I. Kaiser1, §
+1Center for Theoretical Physics, Massachusetts Institute of Technology, Cambridge, MA 02139, USA
+2Santa Cruz Institute for Particle Physics, Santa Cruz, CA 95064, USA
+3Department of Physics, University of California, Santa Cruz, Santa Cruz, CA 95064, USA
+(Dated: December 29, 2023)
+
+Primordial black holes (PBHs) remain a viable dark matter candidate in the asteroid-mass range. We point
+out that in this scenario, the PBH abundance would be large enough for at least one object to cross through the
+inner Solar System per decade. Since Solar System ephemerides are modeled and measured to extremely high
+precision, such close encounters could produce detectable perturbations to orbital trajectories with characteristic
+features. We evaluate this possibility with a suite of simple Solar System simulations, and we argue that the
+abundance of asteroid-mass PBHs can plausibly be probed by existing and near-future data.
+
+I.
+
+INTRODUCTION
+
+Our Universe contains a substantial amount of dark mat-
+ter (DM), per decades-old consensus [1, 2]. Despite well-
+motivated theoretical models for various particle DM candi-
+dates spanning nearly fifty orders of magnitude in mass (see
+e.g. Refs. [3–7]), there is as yet no direct evidence that DM
+consists of a new elementary particle species. In recent years,
+an alternative hypothesis has regained traction: that perhaps
+much or all of the DM consists of primordial black holes
+(PBHs) [8–10]. Numerous observables restrict the properties
+of PBHs that could account for DM, but a window of about
+six orders of magnitude in mass remains fully unconstrained.
+For masses 1017 g ≲ MPBH ≲ 1023 g—that is, for masses
+typical of asteroids—PBHs could account for the entire DM
+abundance. (For recent reviews, see Refs. [11–15].)
+
+The constraints at the boundaries of this region are well
+established. The upper limit is set by constraints from ex-
+tragalactic microlensing surveys [16, 17]. The lower limit
+arises from efficient Hawking evaporation, since high-energy
+cosmic rays emitted by light black holes would be read-
+(See also Refs. [11–15].) How-
+ily detectable [18–24].
+ever, the asteroid-mass range has proven difficult to probe.
+Originally, microlensing constraints were thought to apply
+in this regime as well as at higher masses [25]. However,
+Refs. [16, 17, 26] demonstrated that the effects of wave optics
+and finite source sizes severely weaken lensing constraints be-
+low 1023 g.1 Moreover, limits from stellar capture estimated
+by Ref. [27] were later weakened by updated arguments in
+Ref. [26]. As a result, PBH DM remains largely unconstrained
+in the asteroid-mass regime, and the future of the PBH DM
+hypothesis depends crucially on probes of this portion of the
+parameter space.
+
+In this paper, we consider a novel means to probe PBHs
+in the asteroid-mass range. We focus on the effects of PBHs
+
+∗ tungtran@mit.edu
+† sageller@ucsc.edu
+‡ benvlehmann@gmail.com
+§ dikaiser@mit.edu
+1 These effects were later incorporated into an updated version of Ref. [25].
+
+on the motions of individual astronomical objects, similarly
+to Refs. [28–30]. In particular, in order to achieve the high-
+est possible sensitivity, we propose the use of the highest-
+precision astronomical measurements available: Solar System
+ephemerides. Given more than five decades of lunar laser-
+ranging data [31–33], more than two decades of precision
+monitoring of Mars orbiters [34, 35], and sophisticated track-
+ing of the motions of thousands of smaller objects [36–40],
+our own Solar System is richly instrumented for the detection
+of massive interlopers. We therefore evaluate the observable
+effects of low-mass PBH encounters on the revolutions of the
+celestial spheres [41].
+
+In particular, we study the prospects for detecting perturba-
+tions to the measured distances between Earth and Solar Sys-
+tem objects (SSOs) due to PBH flybys. If they account for all
+of DM, the abundance and phase space distribution of PBHs
+can be readily determined—and if MPBH lies in the asteroid-
+mass range, then at least several flybys through the Solar Sys-
+tem should be expected to have occurred over the lifetime of
+modern observing programs. The expected rate of observ-
+able events depends both on the PBH mass distribution and
+on the precision with which the motions of various Solar Sys-
+tem objects are presently monitored. As we demonstrate here,
+if the entire DM abundance consists of PBHs with masses
+1018 g ≲ MPBH ≲ 1023 g, then Solar System ephemerides
+could plausibly detect PBH flybys at a rate of order once per
+decade. This could either enable a quasi-direct detection of
+PBHs or place new constraints in the asteroid-mass range.
+
+This paper is organized as follows. In Section II, we per-
+form a simple order-of-magnitude estimate of the expected ef-
+fects of a PBH transit on Solar System observables, demon-
+strating a favorable detection rate for perturbations to the dis-
+tances between Earth and Solar System objects from flybys
+at an impact parameter of several au. In Section III, we im-
+prove on our analytical estimate with simplified Solar Sys-
+tem simulations, and we identify the expected properties of
+observable signals, focusing on the distances between Earth
+and various inner planets (Mercury, Venus, and Mars). We
+justify this choice with a discussion of damping mechanisms
+that might attenuate a signal of a PBH transit, and argue that
+our minimalist simulations are representative of the qualita-
+tive features of transits. In Section IV, we analyze ensembles
+
+3
+2
+0
+2
+
+c
+e
+D
+8
+2
+
+]
+
+O
+C
+.
+h
+p
+-
+o
+r
+t
+s
+a
+[
+
+1
+v
+7
+1
+2
+7
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+ 
+ 
+ 
+ 
+ 
+ 
+of simulated PBH transits, and estimate the sensitivity of So-
+lar System ephemerides to transits with varying parameters.
+Section V summarizes our proposal for a new means of prob-
+ing asteroid-mass PBHs. We also discuss next steps, particu-
+larly the incorporation of more sophisticated numerical meth-
+ods that include additional physical effects. We highlight the
+prospects for our proposed observable to test the hypothesis
+that PBHs account for all of DM.
+
+Throughout this paper, we work in natural units with c =
+
+ℏ = kB = 1 unless otherwise noted.
+
+II. ENCOUNTERS IN THE SOLAR SYSTEM
+
+In this section, we introduce our proposed observable, and
+perform a rough estimate of the size of the effect. This leads
+us to a first estimate of the rate of detectable flyby events.
+We then discuss the physical effects that complicate a proper
+computation of the flyby signature, motivating the application
+of numerical computations in the following section.
+
+A. Detecting PBH flybys
+
+If a PBH were to transit our Solar System, it would perturb
+the motion of visible objects. State-of-the-art simulations of
+the motions of objects within our Solar System include the
+DE441 model maintained by the Jet Propulsion Laboratory
+[37] and the INPOP21a model maintained by the Observa-
+toire de Paris [39]. (See also Refs. [42, 43].) The JPL DE441
+model, for example, incorporates the Sun and eight planets,
+nearly 300 planetary satellites, more than 1.3 million aster-
+oids, and almost 4000 comets. Such simulations depend on
+high-precision observations of various objects for benchmark-
+ing. Among the most precise data used in these ephemerides
+concern the Earth–Moon distance and the Earth–Mars dis-
+tance. For the Earth–Moon distance, lunar laser ranging has
+succeeded in achieving an accuracy of
+(1 mm) over the past
+fifteen years [31, 32], while precision monitoring of various
+Mars orbiters and landers since the late 1990s yields an accu-
+racy of
+
+(10 cm) for the Earth–Mars distance [34, 35, 39].
+
+O
+
+Motivated by the extraordinary precision of these measure-
+ments, we consider the Solar System as a single large com-
+pact object detector. The calculation of the rate of observ-
+able flybys is similar to the calculation of the event rate in
+a DM direct detection experiment. For simplicity, we as-
+sume a monochromatic mass distribution for PBHs at a mass
+MPBH. Given the mass density ρPBH, the number density is
+nPBH = ρPBH/MPBH. If PBHs account for all of DM, then
+0.4 GeV/cm3 in the solar neighborhood [44–46].
+ρPBH
+In particular, within a sphere centered on the Sun with radius
+equal to the orbit of Jupiter (5.2 au), one expects to find a
+[MPBH/(1018 g)]−1
+number of PBHs given by NPBH = 1.4
+at any given time. Moreover, these objects should have a
+Maxwellian distribution of velocities, with a typical speed
+of v0
+220 km/s [45, 46]. Thus, given a geometric cross
+section σ, the rate of transits through this patch is given by
+Γ =
+
+nPBHσv0.
+
+≃
+
+≈
+
+×
+
+O
+
+nPBHσvPBH
+⟨
+
+⟩ ≃
+
+2
+
+We now estimate the cross section σ for detectable PBH
+flybys. As a first estimate of the effect on various Solar Sys-
+tem objects from a PBH flyby, we consider a simplified pic-
+ture involving only the Newtonian interaction of two point
+masses: a PBH of mass MPBH and a visible Solar System
+object of mass MSSO. Since v0 is much larger than typical or-
+30 km/s and
+bital speeds in the Solar System—e.g., vMoon
+24 km/s—we may assume an instantaneous interac-
+vMars
+tion, in which the Solar System object remains at rest while
+the PBH travels in a straight path along its initial direction
+ˆv, with an impact parameter bPBH with respect to the object.
+Then the instantaneous force perpendicular to ˆv exerted on the
+Solar System object by the PBH flyby will have magnitude
+
+≈
+
+≈
+
+F⊥ =
+
+GMPBHMSSO
+b2
+PBH + (v0t)2
+
+bPBH
+
+b2
+PBH + (v0t)2
+
+.
+
+(1)
+
+(cid:0)
+
+(cid:1)
+
+(cid:112)
+
+Since the flyby occurs on a timescale that is very short com-
+pared to the orbital period of the Solar System body, we can
+ignore the effects of other forces on this timescale and com-
+pute the imparted momentum from the instantaneous force
+within the well-known impulse approximation. The instan-
+taneous momentum imparted to the Solar System object is
+dp⊥ = F⊥ dt = F⊥ dx/v0. The net impulse velocity
+δv = p⊥/MSSO imparted to the Solar System object by the
+PBH flyby can then be estimated by integrating this differen-
+tial impulse over the entire trajectory, yielding
+
+δv
+
+≃
+
+(cid:90)
+
+dx
+v0
+
+GMPBHbPBH
+PBH + x2)3/2 =
+(b2
+
+2GMPBH
+bPBHv0
+
+.
+
+(2)
+
+We now use Eq. (2) to estimate the rate of detectable per-
+turbations at the order-of-magnitude level. Suppose that the
+object is monitored for a time ∆t following the perturba-
+tion. Over this time, the difference induced in the mea-
+sured distance from Earth, r, can be crudely estimated by
+∆t. The actual value of δr is dependent on all of
+δr = δv
+the parameters of the encounter. However, the value δv
+∆t
+can be plausibly attained if the encounter accelerates the ob-
+ject along its direction of motion, modifying its orbital period.
+Over time, the orbit accumulates a slight phase difference with
+respect to the original trajectory, corresponding to a difference
+in the distance with respect to Earth.
+
+×
+
+×
+
+This shift, δr, is the difference between the distance r that
+would be measured with a PBH flyby versus without, as a
+function of time. In the context of a Solar System model, δr
+would be the residual introduced between the model and data
+when the system is perturbed by a PBH flyby. We will refer to
+δr as the “residual” or “perturbation” for the remainder of this
+work. Note that r always denotes the distance between Earth
+and a given Solar System object. We use x to denote the posi-
+tion of an object in barycentric coordinates, so the distance of
+an object from the Sun is denoted by x =
+
+x
+|
+
+.
+|
+
+For a first estimate of the detection rate, we take a flyby
+to be detectable if δr exceeds the uncertainty σr of the mea-
+∆t ≳ σr. Saturating the in-
+sured distances, i.e., if δv
+equality yields the maximal impact parameter for a detectable
+
+×
+
+encounter as
+
+bmax(∆t) =
+
+2GMPBH
+
+v0σr ×
+
+∆t.
+
+(3)
+
+The impact parameter bmax translates to a cross section σ =
+πb2
+max for detectable events. The total observing time (includ-
+ing time before the encounter) is bounded below as ∆tobs
+≥
+∆t, so Nobs ≳ Γ
+∆t. Thus, we can solve for the min-
+imum observing time required for the expected number of
+detectable encounters to exceed 1. We obtain ∆tmin =
+[v0σ2
+
+r /(4πG2MPBHρPBH)]1/3, or
+
+×
+
+∆tmin
+
+26 yr
+
+≈
+
+MPBH
+1020 g
+
+(cid:18)
+
+σr
+0.1 m
+
+×
+
+(cid:16)
+
+−1/3
+
+(cid:19)
+2/3
+
+(cid:17)
+
+(cid:18)
+
+v0
+220 km/s
+
+(cid:19)
+
+(cid:18)
+
+ρPBH
+0.4 GeV/cm3
+
+1/3
+
+−1/3
+
+.
+
+(4)
+
+(cid:19)
+
+The corresponding value of bmax is given by
+
+bmax(∆tmin) =
+
+2
+π
+
+GM 2
+PBH
+ρPBHv2
+0
+
+1/3
+
+,
+
+1
+σr (cid:19)
+
+(cid:18)
+
+(5)
+
+which is 3.3 au for the benchmark values in Eq. (4). This sug-
+gests that current and near-future ephemerides are capable of
+probing PBH DM at masses that are otherwise unconstrained,
+with sensitivity driven mainly by flybys at distances typical of
+inner planet orbits. This enormous effective detector area is
+what enables the “direct detection” of such massive DM par-
+ticles.
+
+∼
+
+∼
+
+Even as crude approximations, these results are only viable
+in a fairly narrow mass range. At low masses, the result of
+Eq. (4) is cut off when bmax becomes comparable to the ra-
+dius of the object in question. For Mars, this occurs at a very
+1012 g, but such a detection would require
+low mass MPBH
+104 yr.
+an implausibly long observing time of order ∆tmin
+Moreover, such perturbations will be damped by other physi-
+cal effects on timescales that are long compared to the orbital
+period of the target object. We anticipate that perturbations
+could be detectable for PBH masses as low as 1018 g, but no
+lower—indeed, our observable breaks down entirely at low
+masses, since the high number density of PBHs would lead
+to a high rate of encounters, introducing interference between
+different flyby signatures and ultimately washing out the sig-
+nal of interest. At very high PBH masses, when bmax
+r,
+Earth itself receives a comparable impulse, and δr is sup-
+pressed. For this reason, we do not expect to constrain PBH
+masses above 1023 g. Conveniently, 1023 g is also the upper
+bound of the unconstrained mass range for PBH DM.
+
+≫
+
+Note that ∆tmin has no dependence on the parameters of
+the target object itself, but only the precision with which the
+distance between the target and Earth is measured. Naively,
+this suggests that the Earth–Moon system would be the ideal
+detector: since the Earth–Moon distance is measured with a
+1 mm, one might hope to detect objects
+precision of σr
+with MPBH
+10 yr.
+This would fully cover the open window for PBH DM. How-
+ever, as we will discuss in the next subsection, damping ef-
+
+1017 g on a short timescale of ∆tmin
+
+∼
+
+∼
+
+∼
+
+3
+
+fects are more significant in the Earth–Moon system, and the
+methods we use here are not well suited to estimate δr in this
+case. Instead, we will focus on the distances between Earth
+and the other inner planets, which guides our estimates in the
+following sections.
+
+B. Damping of orbital perturbations
+
+We emphasize that the estimate in the previous subsec-
+tion assumes not only that observational measurements of dis-
+tances can be performed with precision σr, but also that sim-
+ulations can reproduce these distances with comparable accu-
+racy, so that the residual δr can be meaningfully computed.
+This is no small feat: such simulations are extremely complex
+and computationally expensive. In this work, we develop only
+a proof of principle, and we make no effort to reproduce the
+sophisticated simulation frameworks developed over several
+decades in the Solar System dynamics community. Instead,
+we seek a case in which the many physical effects in these
+simulations should make a small fractional contribution to the
+residual δr induced by a PBH flyby, regardless of their impact
+on the distance r itself.
+
+More precisely, we estimate δr in a perturbative framework,
+separating the response of the system into an initial perturba-
+tion, δr0, and higher-order terms δrn describing the backre-
+action of the system on the modeled perturbation due to the
+unmodeled effects. Formally, we write
+
+∞
+
+δr = δr0 +
+
+δrn[δrn−1],
+
+(6)
+
+n=1
+(cid:88)
+where we note that δrn depends on the functional form of
+δrn−1(t) as a function of time. We assume that in the pres-
+ence of the perturbation δr0, each unmodeled effect makes
+an instantaneous contribution δr′′
+1 (t) to δr′′(t), which can
+be integrated over the observing period to give δr1(t) =
+t
+1 (t2). The perturbation δr1 itself sources a
+0 dt1
+correction δr2, and so on. We seek a case where the higher-
+(cid:82)
+∞
+order contribution
+n=1 δrn is small compared to δr0. This
+framework is illustrated in Fig. 1, which shows schematically
+how δr0 can be interpreted as an approximation to δr.
+
+t1
+0 dt2 δr′′
+(cid:82)
+
+(cid:80)
+
+The interpretation of the higher-order terms is best illus-
+trated by an example. A PBH flyby occurs, and we compute
+the residual in our simple model: this is the modeled initial
+perturbation δr0. However, our model does not include the
+acceleration due to solar radiation pressure, which is slightly
+modified in the presence of the perturbation δr0. The differ-
+ence in radiation pressure gives rise to a difference in the ac-
+celeration of the object in question, which is integrated to give
+a correction δrrad
+. This correction again modifies the acceler-
+ation due to radiation pressure, which gives rise to a correction
+δrrad
+2
+Our computation of δr0 from modeled effects is a reli-
+able approximation to δr only under conditions in which the
+higher-order terms δrn>0 can be shown to be small in com-
+parison to the initial perturbation. In what follows, we demon-
+1 over the obser-
+strate that for the inner planets,
+
+, and so on.
+
+δr1/δr0
+
+1
+
+|
+
+| ≪
+
+vational timescale for all effects that are not included in our
+model but that are included in reference-quality models such
+as DE441 [36] and INPOP21a [38]. We assume, in particu-
+lar, that
+1 for all
+n. This is equivalent to the assumption that our perturbative
+treatment is valid.
+
+δrn/δrn−1
+|
+
+δr1/δr0
+|
+
+1 implies that
+
+| ≪
+
+| ≪
+
+Notice that when δr0 = 0, all of the terms δrn>0 also van-
+ish, which might lead one to think that the higher-order terms
+δrn>0 scale with δr0/r. This need not be the case, because
+these terms may instead scale with other dimensionless ratios
+δr0/ℓi. There are many other length scales ℓi—for example,
+the distances to other bodies, the radius of the object, the scale
+of inhomogeneities within the object, and the gravitational pa-
+rameters GMi of various bodies. These other length scales
+can be much smaller than r, so that δr0/ℓi can be large even
+when δr0/r is small.
+
+Using this perturbative language, we now identify specific
+unmodeled contributions and assess their significance for our
+computations. The simple estimates of the previous section
+neglect several physical effects that must be included when
+simulating the motion of visible objects within our Solar Sys-
+tem to the accuracy attained by reference-quality models. In
+this section, we study the size of the ratio
+for each
+of the effects which are considered in the detailed numerical
+simulations of Refs. [36, 38] but which are not included in our
+simple model, and we identify cases where the corrections are
+subdominant over the relevant observational time-scale.
+
+δr1/δr0
+|
+
+|
+
+We consider four categories of corrections, in roughly de-
+
+scending order of importance for Solar System flybys:
+
+1. Inclusion of additional bodies. State-of-the-art compu-
+tational models of Solar System ephemerides include
+many Solar System objects beyond the Sun and planets.
+(We address this point in Section III.)
+
+2. Newtonian finite-size effects. Since Solar System ob-
+jects are not point masses, there are tidal forces between
+extended bodies, which allow energy loss to heating
+and deformation. The nonvanishing surface area of ex-
+tended bodies leads to an additional force from solar
+radiation pressure.
+
+3. Relativistic point-mass effects. Post-Newtonian point-
+mass corrections to the gravitational interactions among
+N bodies, proportional to both (v/c)2 and to the New-
+tonian potential GM/r, modify the acceleration of each
+object.
+
+4. Relativistic finite-size effects. Finally, in the context of
+extended bodies, post-Newtonian corrections including
+the Lense–Thirring effect contribute to spin–orbit cou-
+pling in particular.
+
+Each of these effects contributes to δr1 and higher terms in
+Eq. (6).
+
+It is tempting to think of a PBH flyby of an orbiting body
+in the Solar System as a perturbation to an equilibrium system
+in the same way that we think of perturbations to a classical
+harmonic oscillator. However, such a simple picture is inac-
+curate. Indeed, over very long time-scales, the orbits of So-
+lar System bodies are far from stable [47–49]. Furthermore,
+
+4
+
+FIG. 1. A schematic illustration summarizing the notation and
+premise of Section II B. In this work, we approximate δr with a sim-
+plified model, which is not sufficient for accurate predictions of real
+ephemeris data. Still, under certain conditions, we can use our sim-
+plified model to compute the differences in distance produced by a
+PBH flyby at time t0. The bottom panel shows distances from Earth
+to a given Solar System object (SSO) as might be produced by the
+simple model (yellow curve). The simple model closely fits mock
+data (yellow crosses) before the PBH flyby, but is always a poor fit
+to actual ephemerides (blue crosses). Fitting these is possible only
+with a sophisticated, reference-quality model (blue curve). Nonethe-
+less, we seek a case in which the residuals between data and model
+induced by the PBH flyby (gray bars) are comparable in the simple
+model and the reference-quality model. The top panel shows both
+sets of residuals, with the difference between them (shaded region)
+accounted for by terms δrn>0 in Eq. (6). We argue in Sections II
+and III that for some Solar System objects, the higher-order contribu-
+tion is small compared to the residuals, as illustrated in the top panel.
+This is precisely why we need not attain the amazing precision of
+models like DE441 or INPOP21a in order to estimate sensitivity to
+PBH flybys.
+
+this approach misses the key difference that while energy-
+dissipating effects, such as friction, tend to damp the perturba-
+tions to a classical harmonic oscillator, the opposite can some-
+times be true for dissipative effects in complex Solar System
+orbits over long time-scales (i.e. many orbital periods) [50].
+Moreover, dissipative effects in the Solar System are driven
+by finite-size effects that are suppressed by the small sizes of
+objects in comparison with their distances. Nondissipative ef-
+fects can also correct δr, particularly many-body effects that
+can transfer energy from the body in question and redistribute
+it amongst other Solar System bodies. But ultimately, to good
+approximation, bodies in the Solar System conserve their me-
+chanical energy on time-scales of order their orbital periods
+
+Residual(data−model)Schematicδr0(simplemodel)δr(reference-qualitymodel)Higher-ordercontributions:δr−δr0=P∞n=1δrnt0TimeEarth–SSOdistanceSimplemodel(thiswork)Reference-qualitymodelMockdataRealdata0[50]. Thus, if a perturber exchanges energy with one of the
+bodies in the system, there is no mechanism to quickly restore
+the system’s prior configuration.
+
+That said, the observable that we consider here is an ex-
+tremely small effect, so even a very small amount of differen-
+tial dissipation or energy exchange could erase the signature
+of a PBH transit. Thus, in the remainder of this section, we
+briefly estimate the significance of each of effects 2–4 above.
+Effect 1 is treated in Section III.
+
+×
+
+∼
+
+Newtonian finite-size effects. Finite-size effects are fa-
+mously nonnegligible between planets and their moons. In-
+deed, for the Earth–Moon system, these effects are significant:
+given that REarth = 6357 km and the average Earth–Moon
+105 km, the suppression of
+distance is rEarth–Moon = 3.84
+10−2. On
+tidal effects is only of order REarth/rEarth–Moon
+the other hand, finite-size effects are much more strongly sup-
+pressed for the Earth–Mars system, with REarth/rEarth–Mars
+∼
+10−5. Therefore, for the remainder of this paper, we focus on
+quantities such as the Earth–Mars distance rather than on the
+Earth–Moon system. Treating such well-separated objects as
+point masses is consistent with the treatment in the reference-
+quality models DE441 [37] and INPOP21a [39, 40]. For sim-
+ilar reasons, we neglect spin-orbit coupling, which remains
+thoroughly subdominant for the systems and scales of interest
+here. Fully controlling corrections from tidal dissipation in the
+Earth–Moon system requires more sophisticated simulations,
+and is beyond the scope of this work.
+
+The effects of solar radiation pressure, on the other hand,
+are easy to approximate. The incident radiation power is
+SSO), where RSSO denotes
+Prad
+
+SSO)/(4πx2
+
+(πR2
+
+L⊙
+
+≃
+
+×
+
+5
+
+×
+
+the radius of the object, xSSO denotes the distance from the
+1012 GeV2 is the solar luminos-
+Sun, and L⊙ = 1.60
+ity. If all of the light is reflected, then the force is Frad =
+2Prad = 1
+2 L⊙(RSSO/xSSO)2. Thus, following a perturbation
+δr0 directed away from the Sun, the force changes
+δx0
+L⊙(RSSO/xSSO)2 (δr0/xSSO). The
+by at most δFrad
+differential displacement over one (circular) orbital period is
+then bounded above as
+
+≃ −
+
+∼
+
+≲ 2π2R2
+
+SSOL⊙
+GMSSOM⊙
+
+δrrad
+1
+δr0 (cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+10−12
+
+∼
+
+×
+
+−1
+
+MSSO
+MMars (cid:19)
+
+2
+
+RSSO
+RMars (cid:19)
+
+.
+
+(7)
+
+(cid:18)
+
+(cid:18)
+Thus, regardless of the direction of δr, the displacement in-
+duced by differential radiation pressure is minuscule. For
+a spherical object with the same density as Mars, achieving
+≳ δr0 requires RSSO ≲ 10 µm, so this effect is not
+δrrad
+1
+relevant even for the smallest visible objects.
+
+Relativistic point-mass effects. State-of-the-art ephemeris
+computations incorporate the leading-order post-Newtonian
+(PN) corrections to the motion of N point masses moving
+under their mutual gravitation [37, 39, 40], as encapsulated
+in the Einstein–Infeld–Hoffmann–Droste–Lorentz (EIHDL)
+equations of motion [51–53]. We may parameterize the EI-
+HDL corrections by writing the spatial acceleration ai of
+the ith body (in the barycentric reference frame) in the form
+ai = ˜ai + δai, where ˜ai =
+ij is the usual
+Newtonian contribution, and
+
+j̸=i GMj ˆxij/x2
+
+(cid:80)
+
+GMj ˆxij
+x2
+ij
+
+δai =
+
+j̸=i
+(cid:88)
+
+i + 2v2
+v2
+
+j −
+
+
+
+
+
+4 vi
+
+vj
+
+·
+
+−
+
+3
+2
+
+(ˆxij
+
+·
+
+vj)2
+
+4
+
+−
+
+k̸=i
+(cid:88)
+
++
+
+j̸=i
+(cid:88)
+
+GMk
+xik −
+
+GMj
+x2
+ij (cid:20)
+
+k̸=j
+(cid:88)
+
+(vi
+
+GMk
+xjk −
+
+1
+2
+
+(xij
+
+aj)
+
+
+
+·
+
+vj)
+
+ˆxij
+
+(4vi
+
+·
+
+−
+
+−
+
+(cid:2)
+
+
+3vj)
+
++
+
+7
+2
+
+(cid:3)
+
+xijaj
+
+.
+
+(8)
+
+(cid:21)
+
+|
+
+−
+
+xj
+
+xi
+|
+
+(Recall we use natural units in which c = 1.) Here xij
+≡
+xj is the vector that points from the ith to the jth body,
+xi
+−
+is its norm, and ˆxij is the associated unit vec-
+xij =
+tor. The largest contribution to δr from the EIHDL corrections
+on a Solar System object comes from the post-Newtonian ac-
+celeration imparted to the Solar System object by the Sun. As
+we did for the case of radiation pressure, we consider a per-
+δr0. The EIHDL acceleration then makes
+turbation δx0
+an instantaneous contribution to δr′′(t), which gives an inte-
+grated contribution to δr1 of order
+
+∼
+
+5
+2
+
+G M⊙
+xSSO (cid:18)
+
+3G M⊙
+x3
+SSO −
+
+SSO
+
+2v2
+x2
+SSO (cid:19)
+
+≃
+
+t2,
+
+×
+
+(9)
+
+where vSSO is taken to be the average orbital velocity of the
+Solar System body and xSSO is the object’s distance from the
+
+δrPN
+1
+δr0 (cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+Sun at perihelion. For the Earth–Mars system, we arrive at the
+conservative bound
+
+2
+
+.
+
+(cid:18)
+
+(cid:19)
+
+×
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+(10)
+
+Earth–Mars
+
+≲ 10−4
+
+t
+10 yr
+
+δrPN
+1
+δr0 (cid:12)
+(cid:12)
+(cid:12)
+On a 10-year timescale, the effect on the Earth–Venus system
+(cid:12)
+10−4, and for the Earth–
+is about four times larger, at up to 5
+10−3.
+Mercury system, the correction can be as large as 5
+Note that the dependence on observation time is quadratic, so
+a longer observation time has a pronounced effect on the size
+of the EIHDL correction. For example, over 100 years, the
+fractional correction for the Earth–Mercury system reaches
+10−1, which is no longer negligible. However, even on
+5
+this timescale, the correction to the Earth–Mars distance re-
+mains small.
+
+×
+
+×
+
+×
+
+Relativistic finite-size effects. Here we evaluate the impact
+of the Lense–Thirring effect.
+In the Lense–Thirring effect,
+also called the gravitomagnetic or “frame-dragging” effect,
+the rotation of the Sun contributes to the precession angular
+velocity of a Solar System object by an amount δΩ, given by
+[37, 40]
+
+δΩ =
+
+G
+x3
+SSO (cid:18)
+
+J⊙ +
+
+−
+
+3 (J⊙
+
+·
+
+xSSO) xSSO
+x2
+SSO
+
+,
+
+(cid:19)
+
+(11)
+
+6
+
+where J⊙ is the spin angular momentum of the Sun and xSSO
+is the instantaneous position of the Solar System object with
+respect to the Sun. Over a time t, the accumulated angular
+displacement due to the Lense–Thirring angular velocity is
+given by δθ =
+t. Taking the motion
+≃
+of the SSO to be parametrically described by an ellipse with
+semimajor and semiminor axes aSSO and bSSO, respectively,
+the SSO accumulates a spatial displacement δx in a time t
+given by
+
+t
+0 dt1 δΩ(t1)
+
+δΩ
+
+×
+
+(cid:82)
+
+δx(t) =
+
+aSSO cos[θ(t) + δθ(t)]
+bSSO sin[θ(t) + δθ(t)]
+
+aSSO cos θ(t)
+bSSO sin θ(t)
+
+.
+
+−
+
+(cid:18)
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+(cid:19)(cid:12)
+(12)
+(cid:12)
+(cid:12)
+Over any observational timescale of interest, we can be as-
+(cid:12)
+1, so we
+sured that the LT precession angle is small, δθ
+have δx(t)
+
+≪
+(aSSO sin θ)2 + (bSSO cos θ)2.
+
+δθ
+
+(cid:18)
+
+(cid:19)
+
+≃
+
+×
+
+(cid:112)
+
+The perturbation δr0 induces a correction δΩ1 to the
+angular velocity of precession, which induces a correc-
+tion δθ1 to the integrated angular precession, which finally
+leads to a correction to the displacement δx1 = δθ1
+
+(aSSO sin θ)2 + (bSSO cos θ)2
+
+×
+aSSO δθ1. This displace-
+ment correction approximately bounds the correction to the
+(cid:112)
+Earth–SSO distance, i.e., δr1 ≲ δx1. We now make this
+bound explicit by estimating δΩ1. Equation (11) implies that
+If the perturbation δr0 changes the
+δΩ
+|
+semiminor axis from bSSO to bSSO
+δr0, and the semima-
+jor axis from aSSO to aSSO + δr0, then the induced change in
+the Lense–Thirring angular velocity δΩ1 is bounded as
+
+2G J⊙/b3
+
+SSO.
+
+| ≤
+
+≤
+
+−
+
+δΩ1
+
+|
+
+|
+
+≲ 6G J⊙
+
+b4 × |
+
+δr0
+
+.
+
+|
+
+(13)
+
+Taking the spin angular momentum of the Sun to be J⊙ =
+1.9
+
+1041 kg m2/s [54], this leads to the bound
+
+×
+
+δrLT
+1
+δr0 (cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+≲ 6G J⊙
+b3
+SSO
+
+aSSO
+bSSO ×
+
+t
+
+10−11
+
+∼
+
+−3
+
+bSSO
+bMars (cid:19)
+
+×
+
+(cid:18)
+
+t
+10 yr
+
+(cid:19)
+
+(cid:18)
+
+.
+
+(14)
+
+Clearly, then, the Lense–Thirring contribution to δr1 is negli-
+gible for the inner planets on the timescale of interest.
+
+The above discussion accounts for all effects of interest ex-
+cept for item 1 in our original list: the inclusion of other Solar
+System objects. This is intractable analytically, so in the next
+section, we turn to simulations to study the correction δrNB
+due to a complex N -body Solar System.
+
+1
+
+FIG. 2. Trajectories for the example PBH encounter considered in
+Section III. Objects beyond the inner planets are omitted from the
+figure. The PBH perihelion distance is 1.98 au.
+
+III. SOLAR SYSTEM SIMULATIONS
+
+A. Features of flybys
+
+We simulate PBH flybys using the REBOUND code [55],
+taking the masses and initial conditions of Solar System ob-
+jects (SSOs) from the JPL Horizons database [56]. Our sim-
+ulations include all of the planets and a selection of smaller
+objects. To simplify integration, we combine planets and their
+moons into single particles. The full list of objects is given
+in Table I. We perform the simulations using the WHFast in-
+tegrator [57]. For high-precision simulations, the IAS15 inte-
+grator [58] is usually more appropriate, despite higher com-
+putational complexity. We directly compared the behavior of
+WHFast to IAS15, and found that WHFast is sufficient for the
+cases considered in this work.
+
+As discussed in Section II B, our simulations are much sim-
+pler than the state-of-the-art simulations used to construct So-
+lar System ephemerides. Relativistic corrections, radiation
+pressure, and extended-body effects are not included. Ad-
+ditionally, the list of objects is far from exhaustive. Beyond
+moons, high-quality simulations include at least hundreds of
+individual asteroids, and additionally include the averaged ef-
+fects of many smaller asteroids [36–40].
+
+The population of Solar System asteriods is of particular
+relevance. After all, one might expect that asteroids would
+have effects on the same order as PBHs in the “asteroid-mass”
+range, which could pose a challenge to the goal of using Solar
+System dynamics to identify PBHs at these masses. However,
+the unconstrained window for PBH DM actually extends to
+masses that are quite high for asteroids. There are very few
+
+x[au]y[au]z[au]MercuryVenusEarthMarsPBHObject
+Sun
+Mercury
+Venus
+Earth
+
+Moon / (Earth)
+
+Mars
+
+Phobos
+Deimos
+Jupiter
+
+Io
+Europa
+Ganymede
+Callisto
+
+Saturn
+Titan
+Uranus
+Neptune
+Pluto
+Ceres
+Vesta
+
+Mass [g]
+2.0
+3.3
+4.9
+6.0
+7.3
+6.4
+1.1
+1.8
+1.9
+8.9
+4.8
+1.5
+1.1
+5.7
+1.3
+8.7
+1.0
+1.5
+9.4
+2.6
+
+1033
+1026
+1027
+1027
+1025
+1026
+1019
+1018
+1030
+1025
+1025
+1026
+1026
+1029
+1026
+1028
+1029
+1025
+1023
+1023
+
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+×
+
+Horizons ID
+10
+199
+299
+399
+301
+499
+401
+402
+599
+501
+502
+503
+504
+699
+606
+799
+899
+999
+2000001
+2000004
+
+TABLE I. Solar System objects included in the simulations per-
+Planets and their moons (indented) are
+formed in this work.
+combined into single particles to reduce computational complexity.
+Names and IDs are drawn directly from the JPL Horizons database
+[56].
+
+asteroids in our Solar System with masses of order 1023 g,
+and those asteroids are well tracked [59]. Moreover, even as-
+teroids at lower masses have manifestly different kinematics:
+most noticeably, their influence on the ephemerides of other
+Solar System objects is periodic, as opposed to the single im-
+pulse delivered by a PBH. Thus, we expect that the effects of
+a PBH at the upper end of the “asteroid-mass” range can be
+differentiated from the effects of asteroids.
+
+0
+
+When adding a PBH to the simulation, we give the PBH
+a fixed initial speed of 200 km/s, reflecting the typical DM
+velocity in the Milky Way halo. We specify the flyby with
+six parameters: one for the mass, three for the initial position,
+and two for the direction of the initial velocity. The initial
+position rPBH
+is specified with respect to the Solar System
+barycenter in spherical coordinates rPBH
+, Π0, and ϕ0. The
+initial distance rPBH
+it controls
+the phase of the orbits at the time of the encounter. The di-
+rection of the initial velocity vPBH
+is specified by two angles
+0
+α and β in another spherical coordinate system whose polar
+rPBH
+axis is aligned with
+. Here α denotes the angle be-
+0
+−
+and vPBH
+rPBH
+, and β denotes the azimuthal angle,
+tween
+0
+0
+chosen such that the projection of a vector with β = 0 into
+the xy plane coincides with ˆx. In this parametrization, α di-
+rectly corresponds to the impact parameter bPBH of the PBH
+
+is an important parameter:
+
+−
+
+0
+
+0
+
+7
+
+.
+
+0
+
+≈
+
+αrPBH
+0
+
+bPBH, we have bPBH
+
+with respect to the barycenter—and given that the encounter
+is fast, this is approximately equivalent to the perihelion. In
+particular, for rPBH
+
+0 ≫
+We begin with a benchmark simulation taking MPBH =
+1021 g, rPBH
+= 450 au, Π0 = ϕ0 = 0, α = 2/450, and
+β = π. These parameters are chosen so that the impact pa-
+rameter with the barycenter (and therefore the perihelion) is
+approximately 2 au. We show a point in time from this simu-
+lation in Fig. 2. The estimates in the preceding sections sug-
+gest that an impulse from a PBH flyby should be detectable in
+Solar System ephemerides. However, in the context of the real
+Solar System, two critical questions must still be addressed:
+
+1. Is a measurable impulse generated at all, given realistic
+
+orbital trajectories?
+
+2. How do complicated N -body dynamics affect the evo-
+
+lution of the initial perturbation?
+
+In this section, we answer these questions using N -body sim-
+ulations. We configure simulations with and without a per-
+turbing PBH and directly estimate δr (that is, compute δr0)
+by comparing these simulations.
+
+B. Simulation configuration
+
+We run our simulations for a total of 20 years, and we sam-
+ple the positions of objects in our simulations with a realistic
+observational cadence of 20 days (40 days for Mars). At each
+sample time, we record the distance rSSO(t) between Earth
+and each tracked object. We also perform a simulation with
+no added PBH, obtaining timeseries rbase
+SSO(t). For each SSO,
+we then obtain
+
+δrSSO(t)
+
+≈
+
+δrSSO
+0
+
+(t) = rSSO(t)
+
+rbase
+SSO(t).
+
+(15)
+
+−
+
+The value of δr0 in this simulation is shown as a function
+of time for each of the inner planets in the left panel of Fig. 3.
+The simple estimate of the impulse model in Eq. (2) is shown
+by the dashed lines. A few qualitative features are immedi-
+ately clear from the figure:
+
+1. The flyby is rapid: the vertical gray band shows the ex-
+tent of the time period during which the PBH is within
+10 au of any of the Solar System objects for which δr is
+shown. The PBH flyby indeed represents a momentary
+impulse.
+
+2. For this combination of parameters, δrMars
+
+exceeds
+σr = 0.1 m within
+(1 yr) and grows to 1 m within
+ten years of PBH perihelion, even though Mars has the
+largest distance to the PBH among the objects tracked.
+
+O
+
+0
+
+3. The impulse model predicts the size of δr at the order-
+of-magnitude level, but noticeably fails at the
+(1)
+level. In particular, the sizes of the impulse predictions
+follow the opposite order from those of the simulated
+δr values. The difference is especially pronounced for
+Mercury.
+
+O
+
+8
+
+FIG. 3. Left: δr between Earth and Mercury (purple), between Earth and Venus (green), and between Earth and Mars (orange) for the same
+encounter shown in Fig. 2. For each object, the distance of closest approach of the PBH is given in parentheses. We set t = 0 at the PBH
+perihelion. (Note that the PBH follows a hyperbolic trajectory, so perihelion occurs only once.) The vertical gray band indicates times at which
+t. Right:
+the PBH lies within 10 au of any of the objects shown here. Dashed lines show the simple prediction of Eq. (2), i.e., δr = δv
+[δr] for the 100 years following the PBH perihelion. Vertical lines mark the peak frequency of the PSD of the
+Power spectral density (PSD)
+unperturbed distance between Earth and each object,
+[r]. The power peaks sharply at these frequencies, as expected for a slight modification
+to the orbital parameters.
+
+×
+
+P
+
+P
+
+4. Each perturbation is oscillatory, and indeed nearly
+monochromatic. The envelope grows almost linearly
+with time.
+
+We now comment briefly on the implications of each of these
+features.
+
+The fact that the flyby is rapid justifies the use of the im-
+pulse approximation in Eq. (2), explaining why this remark-
+ably simple computation succeeds at predicting the rough be-
+havior of δr. It also establishes a clear distinction between
+the kinematics of a PBH flyby and what might be expected
+of a close encounter between two Solar System objects: the
+PBH flyby is nearly instantaneous on the dynamical timescale
+of the Solar System. Any successful fit of a PBH transit
+model to data will sharply identify the time at which the transit
+took place, whereas Solar System objects interact over longer
+timescales.
+
+Moreover, one of the objects tracked in this fairly generic
+simulation exhibits a computed δr larger than any of the esti-
+mates from the impulse approximation. This serves as the first
+numerical evidence for the plausibility of our overall premise:
+that detection of PBHs is possible with current and future data
+on realistic observational timescales.
+
+However, despite the order-of-magnitude success of
+Eq. (2), the fact that this computation fails to predict the rela-
+tive magnitudes of the impulses delivered to each of the Solar
+System objects signifies the importance of the phases of the
+planets in their orbits and the precise location and direction
+of the PBH flyby. In particular, this means that Eq. (2) is not
+well suited to predict event rates, and we should expect the
+rates of Eq. (4) to be substantially modified in the context of
+simulations. This also means that even an order-of-magnitude
+estimate of the overall rate requires an ensemble of simula-
+
+tions in order to properly marginalize over arrival directions
+and times.
+
+r
+
+Finally, we observe that the actual perturbation δr is not
+only oscillatory, but is dominated by a particular frequency:
+the peak frequency of the variation in the unperturbed Earth–
+SSO distance r(t). Motivated by the nearly-monochromatic
+oscillations in the left panel of Fig. 3, we show in the right
+panel the power spectral density of δr for the 100 years fol-
+lowing the PBH perihelion. The dashed vertical lines mark
+the frequencies f SSO
+at which the power spectral density of
+the unperturbed r(t) attains its maximum for each tracked
+object—essentially, the inverse period of the main component
+of the distance from Earth to each object. This is to be ex-
+pected for small changes to the orbital parameters, since the
+perturbation to the distance will then oscillate on the timescale
+of the orbital period. The spectrum of δr also contains de-
+creasing peaks at the integer harmonics nf SSO
+for each ob-
+ject. This characteristic profile in frequency space is of great
+utility, since it enables the use of template-matching tech-
+niques to identify PBH flyby events in noisy data. We discuss
+this possibility further in the coming sections.
+
+r
+
+At this point, we have performed a simple estimate of δr
+using the impulse approximation in Eq. (2); we have argued
+that all of the neglected physical effects are unimportant to the
+computation of δr, apart from the presence of other bodies;
+and we have performed N -body simulations to demonstrate
+that the signal in δr remains viable in a realistic Solar Sys-
+tem, and indeed has several valuable properties. Our first set
+of simulations also suggests that such parameters as arrival di-
+rection and the phases of planetary orbits cannot be neglected.
+Since PBHs would arrive from random directions and at ran-
+dom times, the effects of these parameters should be included
+into our estimates via an ensemble of simulations. We take up
+
+−7.5−5.0−2.50.02.55.07.510.0TimefromPBHperihelion[yr]−1.0−0.50.00.51.0Simulatedδr[m]MPBH=1021gPBHwithin10auMercury(2.09au)Venus(2.70au)Mars(3.05au)Impulsemodel0.00.51.01.52.02.53.03.54.0f[yr−1]10−710−610−510−410−310−210−1100101P[δr](f)[m2/yr−1]PSDargmaxfP[r](f)this task in the next section.
+
+IV. PROSPECTS FOR DETECTING PBH DARK MATTER
+
+We now combine the results of the previous sections to ob-
+tain appropriate figures of merit for potential constraints on
+PBH dark matter. We frame the expected detection rate Γ in
+language similar to DM direct detection experiments. The de-
+tection rate for fixed PBH parameters Π is simply the flux Φ
+of objects multiplied by the probability p of detection. That
+is, we have
+
+Γ =
+
+dnΠ
+
+(cid:90)
+
+dΦ
+dΠ ×
+
+p(Π).
+
+(16)
+
+The flux of objects is n¯σv0, where n is the number den-
+sity, v0 is the typical velocity, and ¯σ is the cross section of
+the “detector”—in our case, an arbitrary large volume en-
+compassing the inner Solar System. (The larger the volume,
+the lower the average probability of detection.) We choose
+this volume to be a sphere of radius rtarget
+50 au cen-
+tered at the Solar System barycenter, so that ¯σ = π(50 au)2,
+and we fix v0 = 200 km/s. Then the differential rate is
+dΓ/dΠ = ¯σv0 (dn/dΠ) p(Π).
+
+≡
+
+We estimate Γ by taking a simple representative form for
+the probability of detection: we say that a PBH flyby is de-
+tected if the peak value of δr exceeds some threshold value
+in ratio to the width of the noise in the measurement of r.
+Specifically, we define qfom as the maximum value of the sum
+in quadrature of qSSO
+over all objects. That
+is,
+
+δrSSO/σSSO
+
+≡
+
+r
+
+qfom
+
+max
+t
+
+≡
+
+SSO
+
+(cid:115)(cid:88)
+
+(δrSSO(t)/σSSO
+
+r
+
+)2.
+
+(17)
+
+This is a figure of merit for the size of the perturbation in-
+duced by the flyby with a form motivated by statistical con-
+siderations, and we set p(Π) = Θ(qfom
+q0) for some fixed
+q0, where Θ is the Heaviside step function. With this def-
+inition, p(Π) is an indicator function on the PBH flyby pa-
+rameter space that is 1 for detectable flybys and 0 otherwise.
+We can then perform the integral in Eq. (16) directly by sam-
+pling flybys with impact parameter bPBH < 50 au, i.e., flybys
+whose trajectories pass through the target region with cross
+section ¯σ.
+
+−
+
+Detailed analysis of the range of realistic values for q0 is
+beyond the scope of the present work. Obviously, the value
+of q0 = 1, corresponding to max δr = σr, corresponds to a
+large effect, and surely should be counted as detectable. How-
+ever, given the properties of the perturbation in our numerical
+results, much smaller values of q0 are plausibly accessible.
+The perturbation δr is very long-lived, with a regular and pre-
+dictable form in Fourier space, which suggests that filtration
+techniques from signal processing can substantially enhance
+the sensitivity to small signals. As a reference point, we con-
+sider the methods used in the analysis of LIGO data, which
+routinely enables extraction of signals with an amplitude of
+
+9
+
+FIG. 4. Size of δr for Mars as a function of PBH mass. The magni-
+tude is shown at a fixed time, 10 years after PBH perihelion, in ratio
+to δr with MPBH = 1025 g. All other parameters are consistent
+with the encounters shown in Figs. 2 and 3. For sufficiently small
+perturber mass, the size of the perturbation is linear in the mass, as
+anticipated from Eq. (2). For an encounter with these parameters,
+PBH masses below 1031 g are in the linear regime.
+
+order 10−4 relative to noise [60]. This level of refinement
+is prior to any analysis of correlations between detectors, an
+analogue of which is also possible in our case by use of corre-
+lations between perturbations to different Solar System ob-
+jects. Hence, for the remainder of this work, we consider
+10−2 < q0 < 10−4 as a benchmark range.
+
+0
+
+We numerically approximate the integral of Eq. (16) by
+sampling values of Π. We work at fixed mass and speed,
+so only five parameters remain: rPBH
+, θ0, ϕ0, α, and β, per
+the parametrization of Section III. We sample uniformly in ϕ0
+and cos θ0, reflecting a random arrival direction. (We neglect
+the DM “wind” associated with the motion of the Solar Sys-
+tem in the galactic frame.) We sample rPBH
+uniformly on
+[300 au, 700 au], so that all starting points are far from the
+Solar System, and with perihelion times in a uniform range
+with a width of 400 au/(200 km/s)
+9.5 yr. We sample
+β uniformly on [0, 2π]. We sample α uniformly subject to
+the restriction that the impact parameter should fall within the
+cross section of the target, i.e., bPBH = r0 tan α
+rtarget.
+We draw 218 = 2.6
+105 samples from this parameter space
+using the Sobol sequence method.
+
+×
+
+≈
+
+≤
+
+0
+
+Naively, one might expect to evaluate this integral anew
+for each PBH mass of interest. We simplify our computa-
+tion by observing that Eq. (3) predicts that δr is linear in
+MPBH. Equation (3) is only a simple estimate, but this feature
+motivates us to check linearity within our numerical simula-
+tions: while linearity should not hold for general MPBH, it
+should be restored for sufficiently small MPBH. We thus di-
+rectly compute δr for Mars ten years after the PBH perihelion
+in our benchmark configuration for a range of different PBH
+masses, with the results shown in Fig. 4. We find that δr is
+indeed linear in the PBH mass as long as MPBH ≲ 1031 g.
+All of the masses we consider in this work are well within
+
+10251027102910311033103510371039MPBH[g]100102104106108101010121014(cid:12)(cid:12)δr(MPBH)/δr(1025g)(cid:12)(cid:12)10yearsafterPBHperihelionLinearNumerical10
+
+number density, and hence inversely with the PBH mass at
+fixed mass density. The mass Mdet is marked with a dot for
+each curve in Fig. 5. As the mass is lowered below Mdet, the
+survival function drops below 1, and the detectable event rate
+is limited by the detection sensitivity. The rate peaks at
+
+M peak
+
+PBH = M base
+
+PBH ×
+
+(γ + 2)1/(γ+1)
+
+q0
+qmax
+fom
+
+,
+
+×
+
+(20)
+
+which corresponds to M peak
+q0. This is
+indicated by the dashed black line in Fig. 5. At yet lower
+masses, the survival function drops rapidly to zero, and the
+detection rate with it.
+
+PBH ≈
+
+1018 g
+
+2.3
+
+×
+
+×
+
+O
+
+Under the assumptions above, Fig. 5 demonstrates the po-
+tential for nontrivial constraints on PBH DM in the range
+1018 g < MPBH < 1023 g with the use of
+(30 yr) of
+ephemeris data. Above 1023 g, the rate is suppressed by the
+very small number density of PBHs in the neighborhood of
+our Solar System. Below 1018 g, despite the high rate shown
+in Fig. 5, the flux becomes so large that there are many en-
+counters over the observing period, and our estimates are no
+longer valid. Backgrounds also become much more signifi-
+cant in this regime, as there are numerous Solar System ob-
+jects with masses of this order, and not all of them are well
+tracked.
+
+V. DISCUSSION AND CONCLUSIONS
+
+Primordial black holes (PBHs) remain a compelling can-
+didate for dark matter (DM). To date, a combination of ob-
+servational and theoretical constraints leaves open a window
+1017 g ≲ MPBH ≲ 1023 g within which PBHs could ac-
+count for the entire DM abundance [11–15]. Probing this mass
+range—either to yield a quasi-direct detection of a DM can-
+didate or to further constrain PBHs as DM—has proven dif-
+ficult. In this paper, we describe a new observable for PBHs
+as DM, which leverages decades of precision tracking of the
+motions of objects within the inner Solar System. In partic-
+ular, we demonstrate that the inner Solar System itself could
+function as a compact-object detector, by exploiting state-of-
+the-art observing programs and Solar System ephemerides.
+
+In this paper we have identified robust observables from
+transient flybys of PBHs within several au of the Solar Sys-
+tem barycenter; estimated the likely effects on the motion of
+closely tracked Solar System objects from such flybys; and
+simulated an ensemble of such flybys with which to estimate
+a realistic detection rate. Given these simulations, much of
+the presently allowed mass range 1017 g ≲ MPBH ≲ 1023 g
+could be successfully probed using the types of data and Solar
+System simulations that are already available.
+
+Our present N -body simulations have neglected subdom-
+inant effects on objects’ motions—such as Newtonian finite-
+size effects, relativistic point-mass corrections, and relativistic
+finite-size effects—and our simulations include only a subset
+of the huge number of Solar System objects that are included
+in leading ephemerides programs such as the DE441 model
+maintained by the Jet Propulsion Laboratory [36, 37] and the
+
+FIG. 5. Estimated detectable encounter rate as a function of PBH
+mass. The rate peaks for PBH masses within the unconstrained
+asteroid-mass range. Dots indicate the transition from scaling with
+PBH number density to scaling with flyby detectability (Mdet). The
+dashed line shows the peak rate varying the threshold q0, following
+Eq. (20). See text for details.
+
+PBH ≡
+
+the linear regime, so we can always obtain δr at any mass of
+interest from a simulation at a single mass by simply rescal-
+ing the result. We choose to perform all simulations with
+MPBH = M base
+
+1027 g.
+
+The numerical sampling produces a full distribution of qfom
+at MPBH = M base
+PBH. Given that qfom can also be rescaled lin-
+early with the PBH mass, we can readily study the behavior of
+the detection rate as a function of mass. We fit a power law to
+the tail of the distribution of qfom, truncating at the most ex-
+treme values (qmin
+fom ) obtained in our simulations. This
+simple form for the distribution of qfom, combined with the
+simple form for p(Π), leads to a simple and interpretable mass
+dependence. The survival function of qfom takes the form
+
+fom , qmax
+
+S(qfom) = 
+
+
+
+1
+
+fom )γ+1
+
+(qmax
+fom )γ+1
+
+qγ+1
+fom
+fom )γ+1
+
+−
+(qmin
+
+−
+
+(qmax
+0
+
+qfom < qmin
+fom
+
+qfom
+
+qmin
+fom ≤
+qfom > qmax
+fom ,
+
+≤
+
+qmax
+fom
+
+(18)
+where γ is the index of the power law fit, which we find to
+1.68. As noted above, the quantity S(qfom) is computed
+be
+only for MPBH = M base
+PBH. Then the rate with a threshold q0 is
+estimated as
+
+−
+
+Γ(q0)
+
+ρPBH
+MPBH ×
+
+≃
+
+¯σv0
+
+S
+
+×
+
+M base
+PBH
+MPBH
+
+(cid:18)
+
+q0
+
+.
+
+(cid:19)
+
+(19)
+
+This estimate is shown for several values of q0 in Fig. 5,
+assuming ρPBH = ρDM. The features of Γ(MPBH) are read-
+ily understood. At masses above a critical value Mdet =
+(q0/qmin
+PBH, the probability of detection is very high, i.e.,
+the survival function in Eq. (19) is 1. In this regime, the detec-
+tion rate is simply the flyby rate, which scales with the PBH
+
+fom )M base
+
+101410161018102010221024MPBH[g]10−410−310−210−1100101Detectableeventrate[yr−1]q0>10−4q0>10−3q0>10−2INPOP21a model maintained by the Observatoire de Paris
+[38–40]. Nonetheless, by quantifying the relative contribu-
+tions to Solar System dynamics from the types of objects and
+dynamics that our simulations neglect, we have argued that
+our proposed observable provides a viable and realistic possi-
+bility for probing the stubborn, remaining mass range within
+which PBHs could account for all of DM.
+
+To move beyond the estimates analyzed in this paper, sev-
+eral steps will be necessary. First, because the expected
+signals δr from transient PBH flybys are comparable to the
+present errors σr with which the distances between Earth and
+various Solar System objects are tracked, it will be imperative
+to use more precise Solar System simulations and decades of
+high-precision observational data.
+
+Second, upon using more accurate models of Solar Sys-
+tem dynamics, one may exploit the quasi-periodic nature of
+the expected signal from a PBH flyby, as shown in Fig. 3, to
+develop a bank of time-series templates with which observa-
+tional data may be filtered, akin to standard procedures for
+projects like LIGO [60]. In addition, observable signals could
+be extracted from real-world noisy data by focusing on cor-
+relations among the (perturbed) motions of several Solar Sys-
+tem objects, such as Mars and Venus, rather than focusing on
+single objects alone.
+
+By using decades of high-precision tracking data from
+various Solar System observing programs, combined with
+expertise already at hand within the Solar System dynam-
+ics community, the intriguing possibility that DM consists
+
+[1] J. de Swart, G. Bertone, and J. van Dongen, How Dark
+Matter Came to Matter, Nature Astron. 1, 0059 (2017),
+arXiv:1703.00013 [astro-ph.CO].
+
+[2] P. J. E. Peebles, Cosmology’s Century: An Inside History of Our
+Modern Understanding of the Universe (Princeton University
+Press, 2022).
+
+[3] A. Boveia and C. Doglioni, Dark Matter Searches at Colliders,
+Ann. Rev. Nucl. Part. Sci. 68, 429 (2018), arXiv:1810.12238
+[hep-ex].
+
+[4] A. Weltman et al., Fundamental physics with the Square Kilo-
+metre Array, Publ. Astron. Soc. Austral. 37, e002 (2020),
+arXiv:1810.02680 [astro-ph.CO].
+
+[5] P. Agrawal et al., Feebly-interacting particles: FIPs 2020 work-
+shop report, Eur. Phys. J. C 81, 1015 (2021), arXiv:2102.12143
+[hep-ph].
+
+[6] J. Cooley et al., Report of the Topical Group on Particle Dark
+(2022), arXiv:2209.07426 [hep-
+
+Matter for Snowmass 2021,
+ph].
+
+[7] R. L. Workman et al. (Particle Data Group), Review of Particle
+
+Physics, PTEP 2022, 083C01 (2022).
+
+[8] I. D. Zel’dovich, Ya.B.; Novikov, The Hypothesis of Cores Re-
+tarded during Expansion and the Hot Cosmological Model, So-
+viet Astron. AJ (Engl. Transl. ), 10, 602 (1967).
+
+[9] S. Hawking, Gravitationally collapsed objects of very low mass,
+
+Mon. Not. Roy. Astron. Soc. 152, 75 (1971).
+
+[10] B. J. Carr and S. W. Hawking, Black holes in the early Universe,
+
+Mon. Not. Roy. Astron. Soc. 168, 399 (1974).
+
+[11] M. Y. Khlopov, Primordial Black Holes, Res. Astron. Astro-
+
+phys. 10, 495 (2010), arXiv:0801.0116 [astro-ph].
+
+11
+
+of PBHs may soon be investigated within our own Earthly
+neighborhood—adding a novel search strategy to the decades
+of direct-detection efforts that have been devoted to finding a
+well-motivated DM candidate.
+
+Note added: As we were completing this work, Ref. [61]
+appeared, which likewise proposes a means of detecting
+(or constraining) PBHs within the asteroid-mass range using
+decades of high-precision tracking data, in their case from net-
+works of global navigation satellite systems (GNSS) in Earth
+orbit. The PBH masses to which each method is most sensi-
+1017 g for Ref. [61], and
+tive are complementary: MPBH
+1018 g as treated here.
+MPBH
+
+≤
+
+≥
+
+ACKNOWLEDGMENTS
+
+We thank Thomas Baumgarte, Agn`es Fienga,
+
+Jared
+Machtinger, Olivier Minazzoli, and Clifford Will for help-
+ful discussions. Portions of this work were conducted in
+MIT’s Center for Theoretical Physics and supported in part
+by the U. S. Department of Energy under Contract No. DE-
+SC0012567. T.X.T. is also supported by the MIT Under-
+graduate Research Opportunities Program (UROP). S.R.G. is
+also supported in part by the NSF Mathematical and Physi-
+cal Sciences Ascend postdoctoral fellowship. B.V.L. is also
+supported in part by a Pappalardo Fellowship from the MIT
+Department of Physics.
+
+[12] B. Carr and F. Kuhnel, Primordial Black Holes as Dark Mat-
+ter: Recent Developments, Ann. Rev. Nucl. Part. Sci. 70, 355
+(2020), arXiv:2006.02838 [astro-ph.CO].
+
+[13] A. M. Green and B. J. Kavanagh, Primordial Black Holes
+as a dark matter candidate, J. Phys. G 48, 043001 (2021),
+arXiv:2007.10722 [astro-ph.CO].
+
+[14] P. Villanueva-Domingo, O. Mena, and S. Palomares-Ruiz, A
+brief review on primordial black holes as dark matter, Front. As-
+tron. Space Sci. 8, 87 (2021), arXiv:2103.12087 [astro-ph.CO].
+[15] A. Escriv`a, F. Kuhnel, and Y. Tada, Primordial Black Holes,
+
+(2022), arXiv:2211.05767 [astro-ph.CO].
+
+[16] S. Sugiyama, T. Kurita, and M. Takada, On the wave op-
+tics effect on primordial black hole constraints from optical
+microlensing search, Mon. Not. Roy. Astron. Soc. 493, 3632
+(2020), arXiv:1905.06066 [astro-ph.CO].
+
+[17] N. Smyth, S. Profumo, S. English, T. Jeltema, K. McKinnon,
+and P. Guhathakurta, Updated Constraints on Asteroid-Mass
+Primordial Black Holes as Dark Matter, Phys. Rev. D 101,
+063005 (2020), arXiv:1910.01285 [astro-ph.CO].
+
+[18] K. M. Belotsky and A. A. Kirillov, Primordial black holes with
+1017 g and reionization of the Universe, JCAP 01,
+
+mass 1016
+041, arXiv:1409.8601 [astro-ph.CO].
+
+−
+
+[19] B. J. Carr, K. Kohri, Y. Sendouda, and J. Yokoyama, Constraints
+on primordial black holes from the Galactic gamma-ray back-
+ground, Phys. Rev. D 94, 044029 (2016), arXiv:1604.05349
+[astro-ph.CO].
+
+[20] M. Boudaud and M. Cirelli, Voyager 1 e± Further Constrain
+Primordial Black Holes as Dark Matter, Phys. Rev. Lett. 122,
+041104 (2019), arXiv:1807.03075 [astro-ph.HE].
+
+[21] R. Laha, Primordial Black Holes as a Dark Matter Candi-
+date Are Severely Constrained by the Galactic Center 511
+keV γ -Ray Line, Phys. Rev. Lett. 123, 251101 (2019),
+arXiv:1906.09994 [astro-ph.HE].
+
+[22] W. DeRocco and P. W. Graham, Constraining Primordial Black
+Hole Abundance with the Galactic 511 keV Line, Phys. Rev.
+Lett. 123, 251102 (2019), arXiv:1906.07740 [astro-ph.CO].
+[23] R. Laha, J. B. Mu˜noz, and T. R. Slatyer, INTEGRAL con-
+straints on primordial black holes and particle dark matter,
+Phys. Rev. D 101, 123514 (2020), arXiv:2004.00627 [astro-
+ph.CO].
+
+[24] M. H. Chan and C. M. Lee, Constraining Primordial Black
+Hole Fraction at the Galactic Centre using radio observa-
+tional data, Mon. Not. Roy. Astron. Soc. 497, 1212 (2020),
+arXiv:2007.05677 [astro-ph.HE].
+
+[25] H. Niikura et al., Microlensing constraints on primordial black
+holes with Subaru/HSC Andromeda observations, Nature As-
+tron. 3, 524 (2019), arXiv:1701.02151 [astro-ph.CO].
+
+[26] P. Montero-Camacho, X. Fang, G. Vasquez, M. Silva, and
+C. M. Hirata, Revisiting constraints on asteroid-mass primor-
+dial black holes as dark matter candidates, JCAP 08, 031,
+arXiv:1906.05950 [astro-ph.CO].
+
+[27] F. Capela, M. Pshirkov, and P. Tinyakov, Constraints on primor-
+dial black holes as dark matter candidates from capture by neu-
+tron stars, Phys. Rev. D 87, 123524 (2013), arXiv:1301.4984
+[astro-ph.CO].
+
+[28] J. A. Dror, H. Ramani, T. Trickle, and K. M. Zurek, Pulsar Tim-
+ing Probes of Primordial Black Holes and Subhalos, Phys. Rev.
+D 100, 023003 (2019), arXiv:1901.04490 [astro-ph.CO].
+[29] E. Belbruno and J. Green, When leaving the Solar system: Dark
+matter makes a difference, Mon. Not. Roy. Astron. Soc. 510,
+5154 (2022), arXiv:2201.06575 [astro-ph.GA].
+
+[30] G. Brown, L. He, and J. Unwin, The potential impact of primor-
+
+dial black holes on exoplanet systems, Preprint (2023).
+
+[31] T. W. Murphy, Lunar laser ranging: the millimeter challenge,
+Rept. Prog. Phys. 76, 076901 (2013), arXiv:1309.6294 [gr-qc].
+[32] J. B. R. Battat, E. Adelberger, N. R. Colmenares, M. Farrah,
+D. P. Gonzales, C. D. Hoyle, R. J. McMillan, T. W. Murphy,
+S. Sabhlok, and C. W. Stubbs, Fifteen years of millimeter ac-
+curacy lunar laser ranging with APOLLO: dataset characteriza-
+tion, (2023), arXiv:2304.11128 [astro-ph.IM].
+
+[33] N. R. Colmenares, J. B. R. Battat, D. P. Gonzales, T. W. Mur-
+phy, and S. Sabhlok, Fifteen years of millimeter accuracy lu-
+nar laser ranging with APOLLO: data reduction and calibration,
+(2023), arXiv:2304.11174 [astro-ph.IM].
+
+[34] A. S. Konopliv, R. S. Park, and W. M. Folkner, An improved
+JPL Mars gravity field and orientation from Mars orbiter and
+lander tracking data, Icarus 274, 253 (2016).
+
+[35] J. Yan, X. Yang, M. Ye, F. Li, S. Jin, W. Jin, J.-P. Bar-
+riot, and H. Li, New tracking modes and performance for
+Mars spacecraft orbit determination and lander positioning,
+Planet. Space Sci. 163, 5 (2018).
+
+[36] NASA Jet Propulsion Laboratory, Solar system dynamics (),
+
+accessed: 2023-11-20.
+
+[37] R. S. Park, W. M. Folkner, J. G. Williams, and D. H. Boggs,
+The JPL Planetary and Lunar Ephemerides DE440 and DE441,
+Astronomical Journal 161, 105 (2021).
+
+[38] L’Observatoire de Paris, Ephemerides, accessed: 2023-11-20.
+[39] A. Fienga, P. Deram, A. Di Ruscio, V. Viswanathan, J. I. B.
+Camargo, L. Bernus, M. Gastineau, and J. Laskar, INPOP21a
+planetary ephemerides, Notes Scientifiques et Techniques de
+l’Institut de M´ecanique C´eleste 110 (2021).
+
+[40] A. Fienga and O. Minazzoli, Testing Theories of Gravity with
+Planetary Ephemerides, (2023), arXiv:2303.01821 [gr-qc].
+
+12
+
+[41] N. Copernicus, De revolutionibus orbium cœlestium (Petreius,
+
+Nuremburg, 1543).
+
+[42] M. Vallisneri et al., Modeling the uncertainties of solar system
+ephemerides for robust gravitational-wave searches with pulsar-
+timing arrays, The Astrophysical Journal 893, 112 (2020).
+[43] S. L. Grimm, J. G. Stadel, R. Brasser, M. M. M. Meier, and
+C. Mordasini, GENGA II: GPU Planetary N-body Simulations
+with Non-Newtonian Forces and High Number of Particles, The
+Astrophysical Journal 932, 124 (2022).
+
+[44] N. P. Pitjev and E. V. Pitjeva, Constraints on dark mat-
+ter in the solar system, Astronomy Letters 39, 141 (2013),
+arXiv:1306.5534 [astro-ph.EP].
+
+[45] J. Binney and L. K. Wong, Modelling the Milky Way’s globular
+cluster system, MNRAS 467, 2446 (2017), arXiv:1701.06995
+[astro-ph.GA].
+
+[46] L. Posti and A. Helmi, Mass and shape of the Milky Way’s dark
+matter halo with globular clusters from Gaia and Hubble, A&A
+621, A56 (2019), arXiv:1805.01408 [astro-ph.GA].
+
+[47] N. H. Hoang, F. Mogavero, and J. Laskar, Long-term instabil-
+ity of the inner Solar system: numerical experiments, MNRAS
+514, 1342 (2022), arXiv:2205.04170 [astro-ph.EP].
+
+[48] F. Mogavero, N. H. Hoang, and J. Laskar, Timescales of Chaos
+in the Inner Solar System: Lyapunov Spectrum and Quasi-
+integrals of Motion, Physical Review X 13, 021018 (2023),
+arXiv:2305.01683 [astro-ph.EP].
+
+[49] G. Brown and H. Rein, On the long-term stability of the So-
+lar system in the presence of weak perturbations from stellar
+flybys, MNRAS 515, 5942 (2022), arXiv:2206.14240 [astro-
+ph.EP].
+
+[50] C. D. Murray and S. F. Dermott, Solar System Dynamics (Cam-
+
+bridge University Press, Cambridge, 2000).
+
+[51] H. A. Lorentz and J. Droste, The motion of a system of bod-
+ies under the influence of their mutual attraction, according
+to Einstein’s theory, in Collected Papers: Volume V, edited
+by H. A. Lorentz (Springer Netherlands, Dordrecht, 1937) pp.
+330–355.
+
+[52] A. Einstein, L. Infeld, and B. Hoffman, The gravitational equa-
+tions and the problem of motion, Annals of Mathematics 39, 65
+(1938).
+
+[53] C. M. Will, Theory and Experiment in Gravitational Physics
+
+(Cambridge University Press, New York, 2018).
+
+[54] R. Cang, J. Guo, J. Hu, and C. He, The Angular Momentum of
+the Solar System, Astronomy and Astrophysics (Hans Publish-
+ers 4, 33 (2016).
+
+[55] H. Rein and S. F. Liu, REBOUND: an open-source multi-
+purpose N-body code for collisional dynamics, A&A 537,
+A128 (2012), arXiv:1110.4876 [astro-ph.EP].
+
+[56] NASA Jet Propulsion Laboratory, Horizons system (), ac-
+
+cessed: 2023-11-20.
+
+[57] H. Rein and D. Tamayo, WHFAST: a fast and unbiased im-
+plementation of a symplectic Wisdom-Holman integrator for
+long-term gravitational simulations, MNRAS 452, 376 (2015),
+arXiv:1506.01084 [astro-ph.EP].
+
+[58] H. Rein and D. S. Spiegel, IAS15: a fast, adaptive, high-
+order integrator for gravitational dynamics, accurate to ma-
+chine precision over a billion orbits, MNRAS 446, 1424 (2015),
+arXiv:1409.4779 [astro-ph.EP].
+
+[59] F. E. DeMeo, C. M. O. Alexander, K. J. Walsh, C. R. Chapman,
+and R. P. Binzel, The Compositional Structure of the Asteroid
+Belt, in Asteroids IV (University of Arizona Press, Tuscon, AZ,
+2015) pp. 13–41.
+[60] B. P. Abbott et al.
+
+(LIGO Scientific, Virgo), A guide
+to LIGO–Virgo detector noise and extraction of transient
+gravitational-wave signals, Class. Quant. Grav. 37, 055002
+
+(2020), arXiv:1908.11170 [gr-qc].
+
+[61] B. Bertrand, M. Cuadrat-Grzybowski,
+
+P. Defraigne,
+M. Van Camp, and S. Clesse, Observing dark matter
+clumps and asteroid-mass primordial black holes in the
+
+solar system with gravimeters and GNSS networks (2023)
+arXiv:2312.14520 [astro-ph.CO].
+
+13
+
+

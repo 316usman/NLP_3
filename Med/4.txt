@@ -1,0 +1,3296 @@
+Journal of Geriatric Cardiology (2019) 16: 676688 
+©2019 JGC All rights reserved; www.jgc301.com 
+
+Research Article       
+
+ Open Access  
+
+Different  prognostic  association  of  systolic  blood  pressure  at  different  time 
+points  with  postdischarge  events  in  patients  hospitalized  for  decompensated 
+heart failure   
+
+You-Nan YAO1, Rong-Cheng ZHANG1, Tao AN1, Qi ZHANG1, Xin-Ke ZHAO2, Jian ZHANG2,# 
+1State Key Laboratory of Cardiovascular Disease, Heart Failure Care Unit of Fuwai Hospital, National Center for Cardiovascular Diseases, Chinese Acad-
+emy of Medical Sciences and Peking Union Medical College, Beijing, China 
+2The Affiliated Hospital of Gansu University of Chinese Medicine, Lanzhou, China   
+
+Abstract 
+
+Background    The association of systolic blood pressure (SBP) with mortality in heart failure (HF) patients is paradoxical, and the time 
+points of baseline SBP are also different across prior studies. We hypothesized that the levels of SBP at admission and at discharge had dif-
+ferent associations with postdischarge events. Methods    The study population included patients hospitalized for decompensated HF in the 
+Heart Failure Center of Fuwai Hospital from January 1, 2009 to December 31, 2014. The primary outcome was a composite of cardiovascu-
+lar (CV) death and heart transplantation. Multivariate Cox proportional-hazards and restricted cubic spline analyses were used to assess the 
+relationships between SBP at different time points and outcomes. Results    In total, 2005 patients were included with a median follow-up of 
+48.4 months. The median age was 59 years, and 69.9% were male. Multivariate Cox analyses showed that compared with SBP < 105 mmHg, 
+higher SBP at admission was associated with better long-term primary outcome (105–119 mmHg, HR = 0.764, P = 0.005; 120134 mmHg, 
+HR = 0.658, P < 0.001; ≥ 135 mmHg, HR = 0.657, P = 0.001). Patients whose discharge SBP was higher than 135 mmHg had a similar pri-
+mary outcome as those with SBP < 105 mmHg (HR = 0.969, P = 0.867), and the results remained unchanged even after adjusting for admis-
+sion SBP (HR = 1.235, P = 0.291). The results of restricted cubic spline analysis indicated similar associations. Conclusions    Lower but not 
+higher SBP at admission is associated with more CV deaths/heart transplantations (a reverse J-shaped curve). In contrast, there is a U-shaped 
+association between discharge SBP and CV mortality/heart transplantation. 
+
+J Geriatr Cardiol 2019; 16: 676688. doi:10.11909/j.issn.1671-5411.2019.09.009 
+
+Keywords: Admission; Discharge; Heart failure; Outcome; Systolic blood pressure 
+
+1    Introduction 
+
+Hypertension has been considered a common risk factor 
+for heart failure (HF).[1,2] It is believed that the development 
+of HF could be prevented by anti-hypertensive treatment in 
+high-risk  populations.[3–7]  However,  previous  studies  have 
+found  inconsistent  results  on  the  effects  of  systolic  blood 
+pressure  (SBP)  on  mortality  in  HF  patients.  According  to 
+the Diet, Cancer and Health (DCH) cohort study, high base-
+line blood pressure was related to adverse outcomes in inci-
+dent HF patients.[8] Conversely, other studies[9–14] showed 
+that  HF  patients  with  high  systolic  blood  pressure  (SBP), 
+even  higher  than  140  mmHg,[9,11,13]  had  a  better  prognosis 
+
+#Correspondence to: Jian ZHANG, State Key Laboratory of Cardiovascu-
+lar  Disease,  Heart  Failure  Center  of  Fuwai  Hospital,  Beilishi  Road  167, 
+
+Beijing 100037, China. E-mail: fwzhangjian62@163.com 
+
+Received: June 5, 2019 
+
+Revised: August 11, 2019 
+
+Accepted: August 20, 2019 
+
+Published online: September 28, 2019 
+
+than those with low blood pressure, regardless of the time of 
+SBP measurements (at admission or the so-called baseline). 
+The changes in SBP in HF patients have been confirmed,[15] 
+suggesting that SBP drops significantly after admission and   
+steadily increases thereafter. In OPTIMIZE-HF,[9] although 
+HF patients with high SBP (> 140 mmHg at admission) had 
+better  outcomes,  their  mean  SBP  declined  to  120139 
+mmHg at discharge. Different SBP levels at different times 
+may reflect various conditions in HF patients. For example, 
+during the decompensated phase, SBP level usually reflects 
+short-term  “cardiovascular  reserve”,  and  SBP  during  the 
+stable phase would have a long-term influence on outcomes. 
+So  far,  it  is  unclear  whether  the  SBP  levels  at  different 
+time-points have a similar association with adverse events. 
+In this study, we hypothesized that the levels of SBP at ad-
+mission and at discharge would have different associations 
+with postdischarge outcomes in a cohort of HF patients hos-
+pitalized for decompensated HF.       
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                        
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+677 
+
+2    Methods 
+
+2.1    Study population 
+
+We retrospectively assessed patients hospitalized for de-
+compensated HF at the Heart Failure Center of Fuwai Hos-
+pital from January 1, 2009 to December 31, 2014. For pa-
+tients with multiple admissions, only the first admission was 
+included in our analyses. The diagnosis of heart failure with 
+reduced  ejection  fraction  (HFrEF)  was  according  to  the 
+2012 European  Society  of  Cardiology guidelines,[16]  which 
+was  based  on  typical  HF  symptoms/signs  and  a  left  ven-
+tricular  ejection  fraction  (LVEF)  less  than  40%.  For  those 
+with  LVEF  ≥  40%,  in  addition  to  typical  symptoms/signs, 
+the diagnosis of HF required one of the following conditions 
+to  be  satisfied:  elevated  N-terminal  pro  B  type  natriuretic 
+peptide (≥ 450 ng/L), HF history, left ventricular end-dias-
+tolic diameter ≥ 55 mm, left atrial diameter ≥ 45 mm, inter-
+ventricular septal or left ventricular posterior wall thickness 
+≥ 12 mm, E/A< 1, and systolic/diastolic dysfunction, which 
+was reported by qualitative assessment. Patients without any 
+tumor, aortic dissection, stenosis of the renal artery or sec-
+ondary hypertension were  enrolled  in  this  study. Addition-
+ally,  those who  were  aged  < 18  years, had no  LVEF  data, 
+had no data on New York Heart Association (NYHA) clas-
+sification at admission, died or had a heart transplant during 
+the  first  hospitalization,  were  discharged  with  a  left  ven-
+tricular  assistance  device  or  continuous  intravenous  ino-
+tropic therapy, or transferred to another hospital for further 
+treatment  were  excluded.  All  patients  provided  written  in-
+formed consent, and the ethics committee of Fuwai Hospital 
+approved this study. 
+
+2.2    Data collection 
+
+Data on blood pressure (BP) at admission were  first  re-
+corded in the nursing notes from medical records, and data 
+on  BP  at  discharge  were obtained from  the  electronic  pro-
+gress  notes  of  the  day  of  discharge.  Both  BPs  were  meas-
+ured by an electronic sphygmomanometer in arm by nurses. 
+The  first  record  of  BP  was  obtained  before  treatments  for 
+HF on the hospital floor in a supine position, and BP at dis-
+charge was measured in a supine position after resting for at 
+least  10  minutes.  SBP  was  categorized  into  four  groups 
+(quartile at admission: < 105, 105–119, 120–134 and ≥ 135 
+mmHg) for risk estimation. 
+
+Clinical  variables  at  admission  (the  first  record  during 
+hospitalization) and at discharge (the last record during hos-
+pitalization) included demographic characteristics (age, gen-
+der and body mass index), length of hospitalization, NYHA 
+classification,  SBP,  DBP,  heart  rate,  comorbidities  (coro-
+nary  heart  disease,  hypertension,  atrial  fibrillation/flutter, 
+
+diabetes mellitus, dilated cardiomyopathy, anemia, cerebro-
+vascular  accident,  myocardial  infarction  and  pulmonary 
+artery hypertension), laboratory data (hemoglobin, total pro-
+tein, albumin, potassium, sodium, creatinine, blood urea 
+nitrogen,  uric  acid,  estimated  glomerular  filtration  rate 
+(eGFR),  triglycerides,  total  cholesterol,  high-density  lipo-
+protein and low-density lipoprotein), LVEF and medications 
+(angiotensin-converting  enzyme  inhibitor  (ACEI),  angio-
+tensin receptor blocker (ARB), spironolactone, loop diuret-
+ics,  digoxin,  calcium  channel  blockers,  statins  and  war-
+farin). 
+
+Adverse  events  with  respect  to  all-cause  death,  cardio-
+vascular  (CV)  death,  and  heart  transplantation  were  ascer-
+tained  every  three  months  via  electronic  hospital  record 
+follow-up or conversation with patients or their families by 
+telephone.  The  primary  outcome  of  our  study  was  a  com-
+posite of CV death and heart transplantation. The secondary 
+outcome  was  a  composite  of  all-cause  death  and  heart 
+transplantation. CV death was defined as progressive heart 
+failure death (progressive deterioration of HF in the absence 
+of  other  causes),  sudden  death  (unexpected  and  witnessed 
+death in a stable patient without evidence of a special cause 
+of  death),  death  due  to  myocardial  infarction  or  stroke,  or 
+other  CV  death  (such  as  mortal  complications  of  cardiac 
+surgery, rupture of an aneurysm, pulmonary embolism, aor-
+tic dissection, etc.).   
+
+To  categorize  the  potential  effects  of  different  doses  of 
+ACEIs/ARBs, beta blockers and loop diuretics on the renin- 
+angiotensin-aldosterone system that would further affect the 
+outcomes, we adjusted for some variables. Doses of ACEIs, 
+ARBs and beta blockers were divided into four quartiles: 0, 
+1%–49%,  50%–99%,  and  ≥  100%  of  the  target  dose.[16,17] 
+Loop diuretics were converted to the furosemide-equivalent 
+dose:[18] 1  mg of oral  torsemide  was  considered  equivalent 
+to  2  mg  of  oral  furosemide,  and  1  mg  of  oral  bumetanide 
+was considered equivalent to 40 mg of oral furosemide. To 
+evaluate the progression of heart failure, we introduced the 
+variable EF, which was defined as the difference between 
+LVEF at discharge and LVEF at admission.   
+
+2.3    Statistical analyses 
+
+Continuous data are presented as median with interquar-
+tile range (IQR) and were compared by the Mann-Whitney 
+U test or Kruskal-Wallis test. Categorical data are presented 
+as percentages and were analyzed using the chi-square test 
+or Fisher’s exact test, as appropriate. Comparisons were also 
+made between patients with and without follow-up informa-
+tion. 
+
+The Kaplan-Meier method was used to determine cumu-
+lative probabilities of endpoints from the time of discharge 
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+678 
+
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+throughout  the  follow-up  period.  Cumulative  event  rates 
+were compared by the log-rank test. 
+
+We  first  examined  the  association  of  SBP  at  admission 
+and outcomes in the total cohort. To explore the relationship 
+between  admission  SBP  (used  as  quartiles)  and  outcomes, 
+variables at admission that had a P value < 0.05 in univari-
+ate  Cox  proportional-hazards  analyses  were  introduced  as 
+covariates in a multivariate model with a stepwise forward 
+method (four covariates, namely, the doses of ACEIs/ARBs, 
+beta blockers, and spironolactone and EF, were forced into 
+in  the  final  models).  The  adjusted  hazard  ratios  (HRs)  for 
+each  category  of  SBP  were  estimated  in  reference  to  the 
+lowest quartile of SBP (< 105 mmHg). To examine the po-
+tential  nonlinear  relationship  between  SBP  and  outcomes, 
+restricted cubic spline analyses were also used based on the 
+same covariables in the multivariate Cox model. The incor-
+porated knots used in the model were the 5th, 50th and 95th 
+percentiles  of  SBP  (at  90,  118,  153  mmHg  for  admission 
+SBP and at 90, 110 and 130 mmHg for discharge SBP, re-
+spectively).  The  SBP  level  with  the  lowest  risk  of  events 
+was  used  as  the  reference  in  the  restricted  cubic  spline 
+model. The above-described method was repeated to evalu-
+ate  the  association  of  SBP  at  discharge  and  outcomes  (co-
+variates were those at discharge). In addition, we used SBP 
+at admission as a covariate in all final models of discharge 
+SBP.  HRs  are  presented  with  95%  confidence  intervals 
+(CIs). We  also  explored  the  relationship  between  SBP  and 
+outcomes  in  subgroups.  All  statistical  analyses  were  per-
+formed using SPSS version 22 and R 3.4. 
+
+3    Results 
+
+A  total  of  2144  patients  fulfilled  the  inclusion  criteria. 
+After excluding those patients who had no follow-up data (n 
+= 139), a total of 2005 patients were included in our analy-
+ses. The median age was 59 years (IQR: 48–69 years), and 
+69.9% were male. Their characteristics were compared with 
+those  of  the  patients  who  had  no  follow-up  data.  Patients 
+without  follow-up  data  were  more  likely  to  have  cerebro-
+vascular accidents, worse renal function (reflected by blood 
+urea nitrogen and eGFR), worse heart function (reflected by 
+LVEF  and  NYHA  classification),  and  lower  SBP  at  dis-
+charge (Supplement Table 1).   
+
+3.1    SBP at admission and patient characteristics 
+
+The characteristics of the patients categorized by admis-
+sion SBP are listed in Table 1. Patients with higher admis-
+sion SBP were older and were more likely to have coronary 
+heart  disease,  hypertension,  diabetes  mellitus  and  cere-
+brovascular accidents but less likely to have dilated cardio-
+
+myopathy  or  pulmonary  artery  hypertension.  They  were 
+also less likely to suffer from hyponatremia, had lower lev-
+els of blood urea nitrogen and uric acid levels, and had bet-
+ter  heart  function  on  admission.  EF  was  not  significantly 
+different  across  the  SBP  categories.  Patients  with  higher 
+SBP were more likely to use higher doses of ACEIs/ARBs, 
+calcium  channel  blockers  and  statins.  However,  they  were 
+less  likely  to  be  prescribed  beta  blockers,  spironolactone, 
+loop diuretics and digoxin. Most patients had experienced a 
+process of SBP decline or maintenance, except for those in 
+the lowest quartile. 
+
+3.2    SBP at discharge and patient characteristics 
+
+The  characteristics  of  the  patients  categorized  by  dis-
+charge SBP are shown in Table 2. Patients with higher SBP 
+at  discharge  were  also  older  and  were  more  likely  to  have 
+coronary  heart  disease,  hypertension,  diabetes  mellitus  and 
+cerebrovascular  accidents  but  less  likely  to  have  dilated 
+cardiomyopathy. They were also less likely to have hypona-
+tremia.  However,  they  experienced  more  anemia  at  dis-
+charge. Patients with higher discharge SBP also had higher 
+BMI,  worse  renal  function  (reflected  by  creatinine,  blood 
+urea nitrogen and eGFR) and better heart function (reflected 
+by  LVEF  and  NYHA  classification)  on  admission.  They 
+were more likely to use a higher dose of ACEI/ARB but less 
+likely to be prescribed spironolactone. 
+
+3.3    Relationship between SBPs and outcomes 
+
+During the follow-up period, 837 patients had reached an 
+endpoint, of whom  778 had died  (709 were  due  to  cardio-
+vascular reasons), and 59 had undergone heart transplanta-
+tion. The median follow-up time of our patient cohort was 
+48.4  months  (interquartile  range  20.9–72.4  months).  The 
+unadjusted survival curves for patients by SBP quartile are 
+shown in Figure 1. 
+
+In univariate Cox proportional-hazards analyses for SBP 
+at admission, patients in the highest quartile of SBP (≥ 135 
+mmHg) had a lower risk of CV death/heart transplantation 
+(HR =  0.452, 95%  CI: 0.3660.559,  P  < 0.001)  compared 
+with  SBP  <  105  mmHg,  and  the  survival  of  patients  with 
+SBP  from  105  to  134  mmHg  was  between  the  two  (105– 
+119 mmHg, HR = 0.656, 95% CI: 0.548–0.786, P < 0.001; 
+120–134  mmHg  HR  =  0.481,  95%  CI:  0.395–0.586,  P  < 
+0.001). According to the multivariate Cox model, compared 
+with  SBP  <  105  mmHg,  higher  SBP  was  also  associated 
+with  better  long-term  primary  outcome  (105–119  mmHg, 
+HR  =  0.764,  95%  CI:  0.634–0.921,  P  =  0.005;  120–134 
+mmHg,  HR  =  0.658,  95%  CI:  0.532–0.813,  P  <  0.001;  ≥ 
+135 mmHg, HR = 0.657, 95% CI: 0.515–0.837; P = 0.001). 
+
+Journal of Geriatric Cardiology | jgc@jgc301.com; http://www.jgc301.com 
+
+ 
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+679 
+
+Table 1.    Characteristics of the patients by admission SBP categories. 
+
+Male 
+
+Age, yrs 
+
+Hospitalization days 
+
+CHD 
+
+HTN 
+
+AF or atrial flutter 
+
+DM 
+
+DCM 
+
+PH 
+
+CE 
+
+MI 
+
+At admission 
+
+NYHA classification 
+
+II 
+
+III 
+
+IV 
+
+SBP, mmHg 
+
+DBP, mmHg 
+
+Heart rate, beats/min 
+
+Hb, g/L 
+
+Hypoproteinemia 
+
+Hypoalbuminemia 
+
+Hypokalemia 
+
+Hyponatremia 
+
+Cr, µmol/L 
+
+Cr ≥ 225 µmol/L 
+eGFR, mL/min per 1.73 m2 
+eGFR < 60 mL/min per 1.73 m2 
+
+BUN, mmol/L 
+
+UA, µmol/L 
+
+TG, mmol/L 
+
+TC, mmol/L 
+
+HDL, mmol/L 
+
+LDL, mmol/L 
+
+LVEF, % 
+
+LVEF ≥ 40% 
+
+At discharge 
+BMI, kg/m2 
+
+Hb, g/L 
+
+Anemia 
+
+Hypoproteinemia 
+
+Hypoalbuminemia 
+
+Hyponatremia 
+
+Cr, µmol/L 
+
+Cr > 225 µmol/L 
+eGFR, mL/min per 1.73 m2 
+eGFR < 60 mL/min per 1.73 m2 
+
+< 105 mmHg 
+
+105–119 mmHg 
+
+(n = 478) 
+
+67.4% 
+
+56 (44, 66) 
+
+13 (10, 20) 
+
+(n = 571) 
+
+70.4% 
+
+57 (47, 66) 
+
+12 (8, 17) 
+
+120134 mmHg 
+(n = 520) 
+
+73.7% 
+
+61 (50, 71) 
+
+12 (8, 18) 
+
+ 135 mmHg 
+(n = 436) 
+
+67.4% 
+
+64 (53, 72) 
+
+12 (8, 18) 
+
+28.5% 
+
+21.5% 
+
+38.7% 
+
+16.1% 
+
+36.4% 
+
+20.1% 
+
+10.3% 
+
+23.0% 
+
+11.7% 
+
+49.6% 
+
+38.7% 
+
+37.7% 
+
+33.1% 
+
+33.5% 
+
+21.7% 
+
+30.6% 
+
+13.0% 
+
+10.2% 
+
+29.2% 
+
+20.5% 
+
+50.3% 
+
+29.2% 
+
+46.0% 
+
+50.8% 
+
+35.0% 
+
+31.0% 
+
+23.8% 
+
+14.0% 
+
+11.9% 
+
+28.5% 
+
+25.6% 
+
+52.5% 
+
+21.9% 
+
+46.8% 
+
+72.5% 
+
+32.6% 
+
+35.1% 
+
+11.9% 
+
+12.8% 
+
+17.2% 
+
+29.1% 
+
+25.5% 
+
+52.3% 
+
+22.2% 
+
+97 (91, 101) 
+
+64 (58, 70) 
+
+80 (71, 92) 
+
+112 (108, 116) 
+
+126 (123, 130) 
+
+145 (139, 152) 
+
+70 (63, 77) 
+
+82 (71,96) 
+
+76 (68, 83) 
+
+80.5 (70, 93) 
+
+80 (69, 90) 
+
+80 (69, 91) 
+
+136 (124, 149) 
+
+139 (127, 151) 
+
+139 (124, 152) 
+
+135 (119, 150) 
+
+11.3% 
+
+18.0% 
+
+11.1% 
+
+28.2% 
+
+8.6% 
+
+14.4% 
+
+12.1% 
+
+21.0% 
+
+6.7% 
+
+10.8% 
+
+10.2% 
+
+16.2% 
+
+9.2% 
+
+14.9% 
+
+11.2% 
+
+12.6% 
+
+95.85 (80.83, 116.1) 
+
+93.3 (79, 112.1) 
+
+92.8 (79.23, 115.8) 
+
+92.44 (76.6, 116.4) 
+
+1.5% 
+
+0.8% 
+
+1.8% 
+
+2.6% 
+
+65.38 (50.05, 87.13) 
+
+70.93 (51.98, 93.38) 
+
+71.40 (50.94, 92.72) 
+
+67.42 (48.33, 91.77) 
+
+42.5% 
+
+37.0% 
+
+34.4% 
+
+39.0% 
+
+7.74 (5.84, 10.16) 
+
+7.36 (5.80, 9.70) 
+
+7.29 (5.60, 9.64) 
+
+7.19 (5.51, 9.22) 
+
+444.1 (361.2, 552.2) 
+
+426.6 (335.4, 538.2) 
+
+403.4 (321.6, 507.6) 
+
+384.8 (303.2, 491.0) 
+
+1.195 (0.910, 1.643) 
+
+1.360 (1.000, 1.900) 
+
+1.410 (1.073, 2.053) 
+
+1.400 (1.053, 1.960) 
+
+3.98 (3.31, 4.77) 
+
+4.13 (3.39, 4.99) 
+
+4.22 (3.52, 5.06) 
+
+4.27 (3.63, 5.12) 
+
+0.95 (0.76, 1.16) 
+
+0.97 (0.79, 1.19) 
+
+0.98 (0.82, 1.18) 
+
+1.00 (0.83, 1.26) 
+
+2.42 (1.90, 3.02) 
+
+2.46 (1.90, 3.17) 
+
+2.52 (2.02, 3.15) 
+
+2.52 (2.01, 3.14) 
+
+33 (26, 48) 
+
+36.8% 
+
+36 (28, 48) 
+
+41.3% 
+
+40 (30, 55) 
+
+52.1% 
+
+44.5 (34, 58) 
+
+62.4% 
+
+P value 
+
+0.099 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.202 
+
+< 0.001 
+
+< 0.001 
+
+0.004 
+
+0.003 
+
+0.089 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.097 
+
+0.008 
+
+0.088 
+
+0.014 
+
+0.804 
+
+< 0.001 
+
+0.571 
+
+0.154 
+
+0.045 
+
+0.062 
+
+0.049 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.001 
+
+0.154 
+
+< 0.001 
+
+< 0.001 
+
+21.63 (19.20, 24.22) 
+
+22.49 (20.20, 25.16) 
+
+24.04 (21.51, 26.49) 
+
+24.14 (21.53, 26.73) 
+
+< 0.001 
+
+133 (115, 149) 
+
+136 (120, 150) 
+
+135.5 (114, 153) 
+
+132 (110, 150) 
+
+24.3% 
+
+6.7% 
+
+20.3% 
+
+21.5% 
+
+19.3% 
+
+7.4% 
+
+17.5% 
+
+18.2% 
+
+26.4% 
+
+9.2% 
+
+17.7% 
+
+13.3% 
+
+31.0% 
+
+9.6% 
+
+16.7% 
+
+13.8% 
+
+0.031 
+
+< 0.001 
+
+0.271 
+
+0.515 
+
+0.001 
+
+91.55 (75.0, 112.51) 
+
+95.6 (77.76, 113.18) 
+
+98.0 (80.53, 117.28) 
+
+102.55 (82.05, 129.8) 
+
+< 0.001 
+
+1.0% 
+
+1.6% 
+
+2.2% 
+
+3.4% 
+
+0.042 
+
+67.47 (48.62, 88.48) 
+
+68.95 (47.32, 90.69) 
+
+67.22 (47.57, 90.16) 
+
+60.17 (40.29, 83.05) 
+
+< 0.001 
+
+38.9% 
+
+40.8% 
+
+39.6% 
+
+49.8% 
+
+0.003 
+
+< 0.001 
+
+BUN, mmol/L 
+
+8.16 (6.19, 11.01) 
+
+8.40 (6.50, 11.10) 
+
+8.50 (6.78, 11.18) 
+
+9.50 (7.00, 13.27) 
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+680 
+
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+< 105 mmHg 
+
+105–119 mmHg 
+
+(n = 478) 
+
+(n = 571) 
+
+120134 mmHg 
+(n = 520) 
+
+ 135 mmHg 
+(n = 436) 
+
+Table  1.  Cont. 
+
+P value 
+
+406.0 (297.9, 493.3) 
+
+406.1 (317.0, 502.9) 
+
+405.8 (306.4, 505.7) 
+
+399.4 (306.1, 495.8) 
+
+0.808 
+
+UA, µmol/L 
+
+LVEF, % 
+
+LVEF ≥ 40% 
+
+EF, % 
+
+SBP quartile 
+
+< 105 mmHg 
+
+105119 mmHg 
+
+120134 mmHg 
+
+≥ 135 mmHg 
+
+SBP, mmHg 
+
+DBP, mmHg 
+
+Heart rate, beats/min 
+
+ACEI/ARB 
+
+None 
+
+< 50% 
+
+50%–99% 
+
+≥ 100% 
+
+Beta-blocker 
+
+None 
+
+< 50% 
+
+50%99% 
+
+≥ 100% 
+
+Spironolactone 
+
+Loop diuretics 
+
+34% (26%, 47%) 
+
+35% (28%, 50%) 
+
+40% (30%, 56%) 
+
+45% (35%, 58%) 
+
+37.9% 
+
+0 (3, 3) 
+
+58.2% 
+
+31.8% 
+
+9.6% 
+
+0.4% 
+
+6 (2, 14) 
+
+64 (60, 70) 
+
+72 (65, 80) 
+
+62.6% 
+
+30.8% 
+
+5.9% 
+
+0.8% 
+
+16.7% 
+
+60.3% 
+
+17.8% 
+
+5.2% 
+
+80.1% 
+
+94.6% 
+
+40.1% 
+
+0 (2, 3) 
+
+34.5% 
+
+48.9% 
+
+15.9% 
+
+0.7% 
+
+5 (11,3) 
+
+67 (60, 70) 
+
+72 (65, 80) 
+
+44.5% 
+
+38.9% 
+
+14.0% 
+
+2.6% 
+
+15.1% 
+
+58.8% 
+
+21.5% 
+
+4.6% 
+
+72.5% 
+
+91.9% 
+
+52.5% 
+
+0 (2, 3) 
+
+19.2% 
+
+47.5% 
+
+29.8% 
+
+3.5% 
+
+64.4% 
+
+0 (1, 4) 
+
+7.8% 
+
+38.3% 
+
+41.5% 
+
+12.4% 
+
+13 (21, 5) 
+
+28 (36, 19) 
+
+70 (62, 74) 
+
+71 (65, 78) 
+
+70 (62, 75) 
+
+70 (63, 77) 
+
+38.8% 
+
+30.8% 
+
+21.3% 
+
+9.0% 
+
+15.2% 
+
+55.8% 
+
+23.3% 
+
+5.8% 
+
+70.4% 
+
+91.2% 
+
+35.1% 
+
+27.1% 
+
+22.0% 
+
+15.8% 
+
+22.0% 
+
+47.0% 
+
+24.1% 
+
+6.9% 
+
+62.4% 
+
+86.0% 
+
+Furosemide equivalent 
+
+40 (20, 40) 
+
+40 (20, 40) 
+
+30 (20, 40) 
+
+30 (20, 40) 
+
+CCB 
+
+Thiazide diuretic 
+
+Digoxin 
+
+Warfarin 
+
+Statin 
+
+2.7% 
+
+2.1% 
+
+72.8% 
+
+29.3% 
+
+25.5% 
+
+3.7% 
+
+3.3% 
+
+62.0% 
+
+24.9% 
+
+40.5% 
+
+9.6% 
+
+4.2% 
+
+55.6% 
+
+25.0% 
+
+49.6% 
+
+25.9% 
+
+3.7% 
+
+45.2% 
+
+26.1% 
+
+52.1% 
+
+Continuous data are presented as median with interquartile range; categorical data are presented as percentages. ACEI: angiotensin-converting enzyme inhibitor; 
+
+AF: atrial fibrillation; ARB: angiotensin receptor blocker; BMI: body mass index; BUN: blood urea nitrogen; CCB: calcium channel blocker; CE: cerebrovas-
+
+cular accident; CHD: coronary heart disease; Cr: creatinine; DBP: diastolic blood pressure; DCM: dilated cardiomyopathy; DM: diabetes mellitus; EF: ejection 
+
+fractions;  eGFR:  estimated  glomerular  filtration  rate;  Hb:  hemoglobin;  HDL:  high-density  lipoprotein;  HTN:  hypertension;  LDL:  low-density  lipoprotein; 
+
+LVEF:  left  ventricular  ejection  fraction;  MI:  myocardial  infarction;  PH:  pulmonary  hypertension;  SBP:  systolic  blood  pressure;  TC:  total  cholesterol;  TG: 
+
+triglyceride; UA: uric acid. 
+
+The  results  of  survival  analyses  for  SBP  at  discharge 
+were  dramatically  different.  In  univariate  Cox  analyses, 
+patients  in  the highest quartile  of  SBP (≥ 135  mmHg) had   
+a lower risk of CV death and transplantation compared with 
+SBP < 105 mmHg (HR = 0.688, 95% CI: 0.485–0.976, P = 
+0.036).  However,  the  multivariate  Cox  model  showed  that 
+these patients all had similar primary outcomes (HR = 0.969,   
+95% CI: 0.667–1.407, P = 0.867). This remained unchanged 
+
+even after adjusting admission SBP (HR = 1.235, 95% CI: 
+0.835–1.826,  P  =  0.291).  Detailed  results  of  multivariate 
+analyses (CV death/heart transplantation or all-cause death/ 
+heart transplantation) are shown in Tables 3 & 4. 
+
+Restricted  cubic  spline  graphical  representations  of  the 
+relationship  between SBP and  the  outcomes  of  interest  are 
+shown in Figure 2. There was a reverse J-curve relationship 
+between admission SBP and outcomes. Patients whose SBP   
+
+Journal of Geriatric Cardiology | jgc@jgc301.com; http://www.jgc301.com 
+
+< 0.001 
+
+< 0.001 
+
+0.215 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.003 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.292 
+
+< 0.001 
+
+0.352 
+
+< 0.001 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+681 
+
+Table 2.    Characteristics of the patients by discharge SBP categories. 
+
+Male 
+
+Age, yrs 
+
+Hospitalization days 
+
+CHD 
+
+HTN 
+
+AF or atrial flutter 
+
+DM 
+
+DCM 
+
+PH 
+
+CE 
+
+MI 
+
+At admission 
+
+SBP quartile 
+
+< 105 mmHg 
+
+105–119 mmHg 
+
+120–134 mmHg 
+
+≥ 135 mmHg 
+
+NYHA classification 
+
+II 
+
+III 
+
+IV 
+
+At discharge 
+BMI, kg/m2 
+
+Hb, g/L 
+
+Anemia 
+
+Hypoproteinemia 
+
+Hypoalbuminemia 
+
+Hyponatremia 
+
+Cr, µmol/L 
+
+Cr > 225 µmol/L 
+
+< 105 mmHg   
+
+105–119 mmHg 
+
+(n = 609) 
+
+68.1% 
+
+55 (43, 65) 
+
+12 (9, 17) 
+
+(n = 845) 
+
+69.9% 
+
+60 (50, 69) 
+
+12 (8, 19) 
+
+120134 mmHg 
+(n = 473) 
+
+72.1% 
+
+62 (52, 71) 
+
+13 (8, 20) 
+
+ 135 mmHg 
+(n = 78) 
+
+69.2% 
+
+64 (52, 72) 
+
+11 (7, 14) 
+
+31.5% 
+
+25.0% 
+
+33.2% 
+
+19.2% 
+
+36.8% 
+
+18.9% 
+
+9.9% 
+
+25.9% 
+
+45.6% 
+
+32.3% 
+
+16.4% 
+
+5.6% 
+
+15.5% 
+
+48.4% 
+
+36.1% 
+
+42.4% 
+
+42.5% 
+
+35.5% 
+
+25.0% 
+
+23.4% 
+
+14.4% 
+
+12.3% 
+
+29.7% 
+
+18.0% 
+
+33.0% 
+
+29.2% 
+
+19.8% 
+
+23.4% 
+
+52.7% 
+
+23.9% 
+
+44.6% 
+
+62.6% 
+
+37.2% 
+
+32.3% 
+
+20.3% 
+
+10.8% 
+
+12.9% 
+
+24.7% 
+
+9.7% 
+
+19.2% 
+
+32.8% 
+
+38.3% 
+
+22.2% 
+
+52.0% 
+
+25.8% 
+
+42.3% 
+
+83.3% 
+
+28.2% 
+
+43.6% 
+
+9.0% 
+
+14.1% 
+
+24.4% 
+
+33.3% 
+
+2.6% 
+
+5.1% 
+
+23.1% 
+
+69.2% 
+
+25.6% 
+
+50.0% 
+
+24.4% 
+
+P value 
+
+0.575 
+
+< 0.001 
+
+0.014 
+
+< 0.001 
+
+< 0.001 
+
+0.310 
+
+< 0.001 
+
+< 0.001 
+
+0.003 
+
+0.003 
+
+0.115 
+
+< 0.001 
+
+< 0.001 
+
+21.80 (19.46, 24.51) 
+
+23.11 (20.56, 25.81) 
+
+24.22 (21.67, 27.05) 
+
+24.35 (22.19, 27.06) 
+
+< 0.001 
+
+137 (122, 151) 
+
+133 (112, 149) 
+
+132 (113.5, 150) 
+
+132 (110, 149) 
+
+17.1% 
+
+5.7% 
+
+16.1% 
+
+17.4% 
+
+27.6% 
+
+8.9% 
+
+18.8% 
+
+18.8% 
+
+28.3% 
+
+10.4% 
+
+19.7% 
+
+13.5% 
+
+34.6% 
+
+6.4% 
+
+15.4% 
+
+9.0% 
+
+92.5 (76.4, 111.5) 
+
+96.0 (78.0, 117.1) 
+
+100.4 (83.7, 121.8) 
+
+114.7 (82.4, 176.2) 
+
+1.3% 
+
+1.2% 
+
+2.8% 
+
+11.3% 
+
+0.007 
+
+< 0.001 
+
+0.034 
+
+0.374 
+
+0.022 
+
+< 0.001 
+
+< 0.001 
+
+0.016 
+
+0.013 
+
+eGFR, mL/min per 1.73 m2 
+
+68.96 (48.54, 89.43) 
+
+66.00 (46.35, 89.25) 
+
+64.38 (44.61, 86.15) 
+
+55.94 (36.16, 80.83) 
+
+eGFR < 60 mL/min per 1.73 m2 
+
+38.4% 
+
+42.0% 
+
+44.2% 
+
+56.4% 
+
+BUN, mmol/L 
+
+UA, µmol/L 
+
+LVEF, % 
+
+LVEF ≥ 40% 
+
+EF 
+
+SBP, mmHg 
+
+SBP, mmHg 
+
+DBP, mmHg 
+
+Heart rate, beats/min 
+
+ACEI/ARB 
+
+None 
+
+< 50% 
+
+50%99% 
+
+≥ 100% 
+
+8.10 (6.22, 10.70) 
+
+8.52 (6.65, 11.72) 
+
+9.27 (6.90, 12.4) 
+
+9.75 (6.98, 13.5) 
+
+< 0.001 
+
+413.0 (322.4, 509.3) 
+
+395.4 (288.2, 488.6) 
+
+399.1 (318.0, 500.4) 
+
+431.3 (342.8, 488.1) 
+
+0.017 
+
+33% (26%, 45%) 
+
+40% (30%, 55%) 
+
+43% (34%, 58%) 
+
+45% (35%, 56%) 
+
+33.2% 
+
+0 (2%, 2%) 
+
+97 (92, 100) 
+
+10 (21, 1) 
+
+60 (59, 66) 
+
+72 (64, 80) 
+
+53.7% 
+
+35.8% 
+
+8.5% 
+
+2.0% 
+
+50.3% 
+
+0 (3%, 3%) 
+
+110 (108, 112) 
+
+9 (20, 2) 
+
+70 (62, 70) 
+
+72 (65, 78) 
+
+43.8% 
+
+33.0% 
+
+16.0% 
+
+7.2% 
+
+60.9% 
+
+0 (2%, 5%) 
+
+121 (120, 127) 
+
+5 (19, 5) 
+
+70 (68, 80) 
+
+70 (65, 80) 
+
+38.5% 
+
+29.0% 
+
+23.3% 
+
+9.3% 
+
+62.8% 
+
+0 (2%, 3%) 
+
+140 (138, 147) 
+
+2 (16, 10) 
+
+73 (67, 82) 
+
+70 (64, 76) 
+
+37.2% 
+
+16.7% 
+
+23.1% 
+
+23.1% 
+
+< 0.001 
+
+< 0.001 
+
+0.094 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.135 
+
+< 0.001 
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+682 
+
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+Beta blocker 
+
+None 
+
+< 50% 
+
+50%99% 
+
+≥ 100% 
+
+Spironolactone 
+
+Loop diuretics 
+
+< 105 mmHg   
+
+105–119 mmHg 
+
+(n = 609) 
+
+(n = 845) 
+
+120134 mmHg 
+(n = 473) 
+
+ 135 mmHg 
+(n = 78) 
+
+11.8% 
+
+62.6% 
+
+20.0% 
+
+5.6% 
+
+82.4% 
+
+95.6% 
+
+19.3% 
+
+53.6% 
+
+21.5% 
+
+5.6% 
+
+68.9% 
+
+90.3% 
+
+19.5% 
+
+50.7% 
+
+24.1% 
+
+5.7% 
+
+64.5% 
+
+86.7% 
+
+17.9% 
+
+57.7% 
+
+20.5% 
+
+3.8% 
+
+59.0% 
+
+91.0% 
+
+Furosemide equivalent 
+
+40 (20, 40) 
+
+30 (20, 40) 
+
+30 (20, 40) 
+
+35 (20, 40) 
+
+CCB 
+
+Thiazide diuretic 
+
+Digoxin 
+
+Warfarin 
+
+Statin 
+
+2.1% 
+
+1.3% 
+
+69.5% 
+
+25.0% 
+
+34.3% 
+
+8.0% 
+
+4.3% 
+
+57.0% 
+
+26.2% 
+
+41.8% 
+
+16.1% 
+
+4.7% 
+
+51.4% 
+
+29.2% 
+
+49.3% 
+
+51.3% 
+
+1.3% 
+
+51.3% 
+
+19.2% 
+
+55.1% 
+
+Table  2.  Cont. 
+
+P value 
+
+0.004 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+< 0.001 
+
+0.004 
+
+< 0.001 
+
+0.203 
+
+< 0.001 
+
+Continuous data are presented as median with interquartile range; categorical data are presented as percentages. ACEI: angiotensin-converting enzyme inhibitor; 
+
+AF: atrial fibrillation; ARB: angiotensin receptor blocker; BMI: body mass index; BUN: blood urea nitrogen; CCB: calcium channel blocker; CE: cerebrovas-
+
+cular  accident;  Cr:  creatinine;  CHD:  coronary  heart  disease;  DBP:  diastolic  blood  pressure;  DCM:  dilated  cardiomyopathy;  DM:  diabetes  mellitus;  eGFR: 
+
+estimated glomerular filtration rate; Hb: hemoglobin; HTN: hypertension; LVEF: left ventricular ejection fraction; MI: myocardial infarction; PH: pulmonary 
+
+hypertension; SBP: systolic blood pressure; UA: uric acid. 
+
+Figure 1.    Kaplan-Meier curve by SBP quartile. SBP: systolic blood pressure. 
+
+Table 3.    Adjusted hazard ratios for quartile of SBP at admission. 
+
+SBP at admission, mmHg 
+
+< 105 
+
+105–119 
+
+120–134 
+
+≥ 135 
+
+Adjusted HR (95% CI) 
+*Cardiovascular mortality and   
+heart transplantation 
+Reference 
+
+0.764 (0.634, 0.921) 
+
+0.658 (0.532, 0.813) 
+
+0.657 (0.515, 0.837) 
+
+P value 
+
+0.005 
+
+< 0.001 
+
+0.001 
+
+Adjusted HR (95% CI) 
+#All-cause mortality and heart   
+transplantation 
+Reference 
+
+0.801 (0.669, 0.960) 
+
+0.707 (0.577, 0.867) 
+
+0.655 (0.519, 0.827) 
+
+P value 
+
+0.016 
+
+0.001 
+
+< 0.001 
+
+Covariates  in  the models  were  consistent  with  the  results  of  multivariable  Cox  analysis  with a  stepwise  forward  method,  and  ACEIs/ARBs,  beta  blockers, 
+spironolactone  and  EF  were  forced  into  the  models.  *Adjusted  for  age,  hospitalization  days,  hypertension,  atrial  fibrillation/flutter,  myocardial  infarction, 
+hemoglobin,  hypoalbuminemia,  blood  urea  nitrogen,  uric  acid,  estimated  glomerular  filtration  rate,  triglyceride,  LVEF,  NYHA  classification,  fu-
+rosemide-equivalent dose, warfarin, ACEIs/ARBs, beta blockers, spironolactone and EF. #Adjusted for age, hospitalization days, hypertension, atrial fibrilla-
+tion/flutter, myocardial infarction, hemoglobin, hypoalbuminemia, blood urea nitrogen, uric acid, estimated glomerular filtration rate, triglyceride, high-density 
+lipoprotein, low-density lipoprotein, LVEF, NYHA classification, hydrochlorothiazide, warfarin, ACEIs/ARBs, beta blockers, spironolactone and EF. ACEI: 
+angiotensin-converting  enzyme  inhibitor;  ARB:  angiotensin  receptor  blocker;  EF:  ejection  fraction;  eGFR:  estimated  glomerular  filtration  rate;  LVEF:  left 
+ventricular ejection fraction; NYHA: New York Heart Association; SBP: systolic blood pressure. 
+
+Journal of Geriatric Cardiology | jgc@jgc301.com; http://www.jgc301.com 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+683 
+
+Table 4.    Adjusted hazard ratios for quartile of SBP at discharge. 
+
+SBP at discharge, mmHg 
+
+Adjusted HR (95% CI) 
+
+P value 
+
+*Cardiovascular mortality and heart transplantation 
+
+< 105 
+
+105–119 
+
+120–134 
+
+≥ 135 
+#All-cause mortality and heart transplantation 
+
+< 105 
+
+105–119 
+
+120–134 
+
+≥ 135 
+
+Reference 
+
+0.617 (0.518, 0.734) 
+
+0.598 (0.475, 0.752) 
+
+0.969 (0.667, 1.407) 
+
+Reference 
+
+0.600 (0.507, 0.710) 
+
+0.553 (0.443, 0.691) 
+
+0.747 (0.510, 1.093) 
+
+< 0.001 
+
+< 0.001 
+
+0.867 
+
+< 0.001 
+
+< 0.001 
+
+0.134 
+
+Admission SBP Adjusted   
+
+HR (95% CI) 
+
+P value 
+
+Reference 
+
+0.663 (0.554, 0.793) 
+
+< 0.001 
+
+0.684 (0.538, 0.870) 
+
+1.235 (0.835, 1.826) 
+
+0.002 
+
+0.291 
+
+Reference 
+
+0.641 (0.539, 0.761) 
+
+0.621 (0.493, 0.783) 
+
+0.913 (0.616, 1.353) 
+
+< 0.001 
+
+< 0.001 
+
+0.650 
+
+Covariates  in  the models  were  consistent  with  the  results  of  multivariable  Cox  analysis  with a  stepwise  forward  method,  and  ACEIs/ARBs,  beta  blockers, 
+spironolactone and EF were forced into the models.  *Adjusted for age, hospitalization days, atrial fibrillation/flutter, hypoalbuminemia, hyponatremia, esti-
+mated  glomerular  filtration  rate,  uric  acid,  LVEF,  diastolic  blood  pressure,  NYHA  classification,  furosemide-equivalent  dose,  warfarin,  ACEIs/ARBs,  beta 
+blockers, spironolactone and EF. #Adjusted for age, hospitalization days, hypertension, atrial fibrillation/flutter, hemoglobin, hypoalbuminemia, hyponatremia, 
+creatinine,  uric  acid,  LVEF,  NYHA  classification,  diastolic  blood  pressure  at  discharge,  furosemide-equivalent  dose,  hydrochlorothiazide,  warfarin, 
+ACEIs/ARBs, beta blockers, spironolactone and EF. ACEI: angiotensin-converting enzyme inhibitor; ARB: angiotensin receptor blocker; EF: ejection frac-
+tion; LVEF: left ventricular ejection fraction; NYHA: New York Heart Association; SBP: systolic blood pressure. 
+
+Figure 2.    Restricted cubic spline models for outcomes according to SBP. Covariables in models were consistent with those in the cor-
+responding multivariate Cox models. LVEF: left ventricular ejection fraction; SBP: systolic blood pressure. 
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+684 
+
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+at admission was lower than 107 mmHg had a higher risk of 
+adverse events. Additionally, we observed a U-shaped asso-
+ciation  between  discharge  SBP  and  CV  death/heart  trans-
+plantation.  Those  with  SBP  at  discharge  lower  than  101 
+mmHg and higher than 130 mmHg both shared a higher risk 
+of CV death/heart transplantation. These results were mostly 
+consistent with those in multivariate Cox analysis. 
+
+In  subgroup  analysis,  the  associations  of  SBP  at  diffe- 
+rent time points with outcomes in HF patients with or with-
+out coronary heart disease, hypertension, diabetes, myocar-
+dial infarction, atrial fibrillation/flutter, eGFR < 60 mL/min 
+per 1.73 m2 and LVEF < 40% were also consistent with the 
+overall  cohort  results  (Figure  3,  Figure  4,  Supplemental 
+Figures 1 and 2). 
+
+Figure  3.    Association  between  SBP  at  admission  and  cardiovascular  mortality/heart  transplantation.  Covariables  in  models  were 
+consistent with those in the corresponding multivariate Cox models. CHD: coronary heart disease; eGFR: estimated glomerular filtration rate; 
+LVEF: left ventricular ejection fraction; MI: myocardial infarction; SBP: systolic blood pressure. 
+
+Journal of Geriatric Cardiology | jgc@jgc301.com; http://www.jgc301.com 
+
+ 
+ 
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+685 
+
+Figure  4.    Association  between  SBP  at  discharge  and  cardiovascular  mortality/heart  transplantation.  Covariables  in  models  were 
+consistent with those in the corresponding multivariate Cox models. CHD: coronary heart disease; LVEF: left ventricular ejection fraction; 
+MI: myocardial infarction; SBP: systolic blood pressure. 
+
+4    Discussion 
+
+Our study was the first to use a hospitalized HF cohort to 
+explore  the  association  of  SBP  measured  at  different  time 
+points (at admission and at discharge) with long-term post-
+discharge mortality. Doses of ACEIs/ARBs and beta blockers   
+were used as covariates in multivariate analyses. The char-
+acteristics  of  our  cohort were  different  across  SBP  catego-
+
+ries.  In  spite  of  better  heart  function  and  higher  doses  of   
+ACEIs/ARBs,  patients  with  higher  SBP  at  admission  suf-
+fered  from  more  coronary heart disease,  hypertension,  dia-
+betes  mellitus  and  cerebrovascular  accidents.  Consistent 
+with  previous  studies,  our  study  also  showed  that  HF  pa-
+tients  with  higher  SBP  at  admission  had  better  outcomes. 
+However, when we assessed the effect of SBP at discharge, 
+we  found  dramatically  different  results  from  the  results  of 
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+ 
+686 
+
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+admission SBP.  Although patients with higher  SBP  at dis-
+charge were less likely to have dilated cardiomyopathy and 
+more  likely  to  have  better  heart  function  and  to  receive 
+higher  doses  of  ACEIs/ARBs,  they  tended  to  have  higher 
+rates of poor renal function, coronary heart disease, hyper-
+tension,  diabetes  mellitus  and  cerebrovascular  accidents. 
+After  multivariate  adjustment,  we  found  that  patients  with 
+SBP ≥ 135 mmHg shared a similar risk of adverse outcomes 
+as  patients  with  SBP  <  105  mmHg  (CV  death/heart  trans-
+plantation  HR  =  0.969,  P  =  0.867;  all-cause  death/heart 
+transplantation  HR  =  1.235,  P  =  0.291).  Restricted  cubic 
+spline  analyses  also  showed  that  patients  with  discharge 
+SBP < 101 mmHg and ≥ 130 mmHg had higher risks of CV 
+death and heart transplantation. 
+
+Like  hypertension,[1,2]  high-normal  SBP  (130–139   
+
+mmHg)[19]  is  associated  with  an  increased  risk  of  cardio-
+vascular disease (including HF). Previous clinical trials[3,20,21] 
+have shown that anti-hypertensive treatments can reduce the 
+risk of HF.  A recent  meta-analysis[5]  with stringent  criteria 
+of  including  RCTs  with  no  baseline  heart  failure  also 
+showed  a  large  and  highly  significant  reduction  of  “new- 
+onset” heart failure after blood pressure lowering. Moreover, 
+the  results  from  the  Systolic  Blood  Pressure  Intervention 
+Trial  (SPRINT)[4]  demonstrated  that  intensive  treatment 
+(SBP  less  than  120  mmHg)  in  a  non-diabetic  population 
+reduced the risk of developing heart failure.   
+
+However, in patients who have suffered from HF, the ef-
+fect of SBP on outcomes remains unclear. The time points 
+of SBP measurement are also different across prior studies. 
+Real-world evidence showed that low SBP at admission was 
+associated  with  in-hospital  death.[22,23]  However,  the  long- 
+term  relationship  between  SBP  and  mortality  is  controver-
+sial. In a group of incident HF patients,[8] the highest quartile 
+of baseline SBP was associated with a higher rate of adverse 
+events (composite  of  stroke, major bleeding  or death), and 
+restricted cubic spline analysis indicated a slightly U-shaped 
+association  for  SBP  regarding  death.  OPTIMIZE-HF[9] 
+found that lower SBP at admission was an independent pre-
+dictor  of  postdischarge  mortality  in  patients  with  HF.  The 
+results  of  other  studies[10–14]  also  showed  that  higher  base-
+line  SBP  was  associated  with  better  outcomes.  Recently, 
+Lee,  et  al.[15]  discovered  that  the  relationship  between 
+on-treatment  SBP  and  all-cause  mortality  followed  a  re-
+versed  J-curve  relationship,  and  SBP  <  100  mmHg  at  dis-
+charge  and  during  follow-up  were  associated  with  worse 
+survival  in  HF  patients.  However,  all  these  studies  did  not 
+adjust  for  the  doses  of  ACEIs/ARBs  and  beta  blockers, 
+which  would  affect  SBP  and  heart  function  at  the  same 
+time. 
+
+It is recommended by the current guidelines of the Euro-
+
+pean Society of Cardiology[16] to treat heart failure patients 
+with  reduced  EF  with  the  maximum  tolerated  doses  of 
+ACEIs/ARBs and beta blockers. Studies showed the superi-
+ority  of  higher  doses  of  ACEIs/ARBs  and  beta  blockers 
+compared  with  lower  doses.[24–26]  Physicians  may  be  more 
+aggressive in using ACEIs/ARBs and beta blockers, which 
+also  have  anti-hypertensive  effects  in  patients  with  higher 
+blood  pressure.  In  addition,  patients  with  higher  SBP  may 
+better  tolerate  higher  doses  of  these  agents,  which  could 
+improve  their prognosis.  Therefore,  in  addition  to  the high 
+rate  of  use  of  ACEIs/ARBs  and  beta  blockers,  different 
+doses of these agents may mask the effect of SBP on mor-
+tality in HF patients, especially in those with high SBP. No-
+tably,  ACEIs/ARBs  and  beta  blockers  were  introduced  in 
+previous  studies  as  binary  variables.  Previous  studies  ig-
+nored  the  importance  of  the  doses  of  these  agents,  which 
+might be a potential confounder between SBP and prognosis 
+in heart failure. We were the first to introduce ACEIs/ARBs 
+and beta blockers as dose-based covariates into a multivari-
+ate  Cox  model,  and  we  found  a  U-shaped  association  be-
+tween discharge SBP and CV mortality/heart transplantation, 
+which was  different from  the reverse  J-shaped relationship 
+between admission SBP and outcomes. 
+
+The  mechanism  of  these  opposite  relationships  between 
+the  different  SBPs  and  mortality  and  whether  these  rela-
+tionships  were  consequences  or  etiological  factors  for  out-
+comes are unclear. Higher SBP at admission may be related 
+to  greater  short-term  “cardiovascular  reserve”.  This  makes 
+such patients able to receive ACEIs/ARBs or beta blockers 
+and tolerate higher doses of these drugs. The effect of these 
+treatments  and  the  better  heart  function  drive  an  improved 
+prognosis. In contrast, after adjustment for variables at dis-
+charge, there was a U-shaped association between discharge 
+SBP and outcomes. It was independent of patient character-
+istics and was consistent in subgroup analyses. This meant 
+that even high-normal SBP at discharge may also be associ-
+ated with an increased risk of postdischarge mortality in HF 
+patients.  Our  result  was  consistent  with  the  results  of  a 
+postanalysis  of  the  COMET  (Carvedilol  Or  Metoprolol 
+European Trial) study.[27] In multivariable analysis, the SBP 
+at  four  months  played  a  more  important  role  in  prognosis 
+than baseline SBP, and patients with SBP > 140 mmHg had 
+a similar risk of mortality as those with SBP < 110 mmHg. 
+This  phenomenon  may  be  due  to  heavy  afterload  on  the 
+heart over a long period of time. Notably, we found that the 
+SBP  of  most  patients  in  the  highest  quartile  at  admission 
+declined to 105–134 mmHg (79.8%) at discharge from the 
+hospital, and only 12.4% stayed at ≥ 135 mmHg. This was 
+consistent  with  the  data  of  OPTIMIZE-HF,[9]  where  the 
+mean SBP at discharge was 128 mmHg in the third admis-
+
+Journal of Geriatric Cardiology | jgc@jgc301.com; http://www.jgc301.com 
+
+ 
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+687 
+
+sion SBP quartile (140–161 mmHg) and 138 mmHg in the 
+highest quartile (> 161 mmHg). Obviously, the majority of 
+patients  with  high  SBP  at  admission  eventually  had  their 
+SBP  decline  to  a  normal  range.  This  may  explain  the  dif-
+ferent  associations  with  outcomes  between  high  admission 
+SBP and high discharge SBP.   
+
+Our  study  provides  new  insights  into  the  relationship 
+between SBP and mortality in HF patients. First, the SBP at 
+admission  usually  reflects  the  “cardiovascular  reserve”  in 
+the decompensated phase (the higher SBP at admission, the 
+greater  “cardiovascular  reserve”).  This  explains  why  HF 
+patients with higher SBP at admission have a better prognosis.   
+Second,  HF  patients  with  uncontrolled  hypertension  at 
+discharge (in our study SBP ≥ 135 mmHg) also had a simi-
+lar risk of mortality as those with the lowest quartile SBP (in 
+our study SBP < 105 mmHg). In patients with systolic dys-
+function  and/or  heart  failure,  higher  SBP  has  been  associ-
+ated with higher stroke risk.[14] The harm of hypertension in 
+HF patients was likely to be immerged into those with high 
+admission  SBP  because  most  of  these  patients  had  normal 
+SBP at discharge (in our study SBP 105–134 mmHg).   
+
+We should be aware of the necessity of anti-hypertension 
+treatment  in  HF  patients  during  hospitalization  and  after 
+discharge from the hospital. The proposed anti-hypertension 
+strategy  was  geared  toward  preserving  systolic  function  in 
+HFrEF  or  toward  improving  diastolic  dysfunction  in  heart 
+failure  with  preserved  ejection  fraction  (HFpEF)  and  heart 
+failure with mid-range reduced ejection fraction (HFmrEF). 
+ACEIs/ARBs,  beta  blockers,  angiotensin  receptor–neprily-
+sin inhibitors, MRAs and diuretics are the first-line agents to 
+control  blood  pressure  in  HFrEF.[7]  Nondihydropyridine 
+CCBs  and  moxonidine  should  be  avoided  in  patients  with 
+HFrEF. If blood pressure was not controlled with an ACEI/ 
+ARB,  a  beta  blocker,  an  MRA  and  a  diuretic,  then  hydra-
+lazine  and  amlodipine  (or  felodipine)  are  recommended 
+agents  that  have  been  shown  to  be  safe  in  HFrEF.[16]  Cir-
+cumstantial evidence has shown that treating hypertension is 
+important in HFmrEF/HFpEF.[16] ACEIs/ARBs, MRAs and 
+diuretics all appear to be appropriate agents, but beta block-
+ers might be less effective in reducing SBP.[16] Patients with 
+HFrEF  and  hypertension  should  attain  a  blood  pressure  of 
+less than 130/80 mmHg, and SBP of less than 130 mmHg 
+was  a  recommend  for  patients  with  HFpEF  and  persistent 
+hypertension.[7]   
+
+Several limitations of this study should be acknowledged. 
+First, this was a single-center, retrospective study, and many 
+unmeasured variables could have had residual confounding 
+bias.  Second,  the  exclusion  of  those  patients  without  fol-
+low-up data might have affected our results. Third, despite 
+adjustment of the doses of ACEIs/ARBs and beta blockers, 
+
+the doses of these agents might change after discharge, and 
+the  SBP  during  follow-up  could  vary  as  the  treatment  and 
+patient condition change. Additionally, the BP measurement 
+was  not  strictly  measured  at  standardized  time  intervals), 
+and this might have affected the results of our study. Last, 
+the results of our study were based on hospitalized patients 
+with  decompensated  HF,  and  they  might  not  be  generaliz-
+able  to  ambulatory  patients  who  manifest  with  acute  de-
+compensation or chronic HF with good titration of ACEIs/ 
+ARBs and beta blockers. 
+
+In conclusion, SBP measured at different time points (at 
+admission and at discharge) has different associations with 
+postdischarge  outcomes.  Lower  but  not  higher  SBP  at  ad-
+mission is associated with more cardiovascular deaths/heart 
+transplantations (a reverse J-shaped curve). In contrast, there 
+is  a  U-shaped association between discharge  SBP  and  car-
+diovascular deaths/heart transplantations. Patients with SBP 
+≥  135  mmHg  have  a  similar  risk  of  cardiovascular  death/ 
+heart  transplantation  as patients whose SBP < 105  mmHg. 
+Blood pressure  management  remains  an  important  issue  to 
+be addressed, and further studies are needed to evaluate the 
+relationship  among  blood  pressure,  doses  of  drugs  that 
+would reduce blood pressure but improve the prognosis, and 
+outcomes in HF patients.   
+
+Acknowledgment 
+
+There was no conflict of interest in this article. This study 
+was supported by a grant for Jian Zhang from the Key Pro-
+jects in the National Science and Technology Pillar Program 
+of the 13th Five-Year Plan Period (No. 2017YFC1308300), 
+Beijing, China. 
+
+References 
+
+1    Levy D, Larson MG, Vasan RS, et al. The progression from 
+hypertension  to  congestive  heart  failure.  JAMA  1996;  275: 
+1557–1562. 
+
+2    Dunlay SM, Weston SA, Jacobsen SJ, et al. Risk factors for 
+heart failure: a population-based case-control study. Am J Med 
+2009; 122: 1023–1028.   
+
+3    The  Heart  Outcomes  Prevention  Evaluation  Study  Investiga-
+tors.  Effects  of  an  angiotensin-converting-enzyme  inhibitor, 
+ramipril,  on  cardiovascular  events  in  high-risk  patients.  N 
+Engl J Med 2000; 342: 145–153. 
+
+4    The SPRINT Research Group. A randomized trial of intensive 
+versus  standard  blood-pressure  control.  N  Engl  J  Med  2015; 
+373: 2103–2116.   
+
+5    Thomopoulos  C,  Parati  G,  Zanchetti  A.  Effects  of  blood 
+pressure-lowering treatment. 6. Prevention of heart failure and 
+new-onset  heart  failure—meta-analyses  of  randomized  trials. 
+J Hypertens 2016; 34: 373–384. 
+
+http://www.jgc301.com; jgc@jgc301.com | Journal of Geriatric Cardiology 
+
+ 
+ 
+ 
+ 
+688 
+
+YAO YN, et al. Insight into Association of SBP with Outcome in HF 
+
+6    Upadhya  B,  Rocco  M,  Lewis  CE,  et  al.  Effect  of  intensive 
+blood pressure treatment on heart failure events in the systolic 
+blood  pressure  reduction  intervention  trial.  Circ  Heart  Fail 
+2017; 10: e003613. 
+
+7    Whelton PK, Carey RM, Aronow WS, et al. 2017 ACC/AHA/ 
+AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA 
+Guideline for the prevention, detection, evaluation, and mana-
+gement  of  high  blood  pressure  in  adults.  J  Am  Coll  Cardiol 
+2018; 71: e127–e248.   
+
+8    Lip  GYH,  Skjøth  F,  Overvad  K,  et  al.  Blood  pressure  and 
+prognosis  in  patients  with  incident  heart  failure:  the  Diet, 
+Cancer  and  Health  (DCH)  cohort  study.  Clin  Res  Cardiol 
+2015; 104: 1088–1096.   
+
+9    Mihai  Gheorghiade  M,  William  T,  et  al.  Systolic  blood 
+pressure at admission, clinical characteristics, and outcomes in 
+patients hospitalized with acute heart failure. JAMA 2006; 296: 
+2217–2226.   
+
+10    Lee  TT,  Chen  J,  Cohen  DJ,  et  al.  The  association  between 
+blood pressure and mortality in patients with heart failure. Am 
+Heart J 2006; 151: 76–83.   
+
+11    Vidán MT, Bueno H, Wang Y, et al. The relationship between 
+systolic  blood  pressure  on  admission  and  mortality  in  older 
+patients with heart failure. Eur J Heart Fail 2010; 12: 148–155.   
+12    Ambrosy  AP,  Vaduganathan  M,  Mentz  RJ,  et  al.  Clinical 
+profile and prognostic value of low systolic blood pressure in 
+patients  hospitalized  for  heart  failure  with  reduced  ejection 
+fraction: Insights from the Efficacy of Vasopressin Antagonism 
+in Heart Failure: Outcome Study with Tolvaptan (EVEREST) 
+trial. Am Heart J 2013; 165: 216–225.   
+
+13    Lee JH, Lee J, Youn Y, et al. Prognostic impact of preexisting 
+hypertension and high systolic blood pressure at admission in 
+patients hospitalized for systolic heart failure. J Cardiol 2016; 
+67: 418–423.   
+
+14    Ferreira JP, Duarte K, Pfeffer MA, et al. Association between 
+mean  systolic  and  diastolic  blood  pressure  throughout  the 
+follow-up  and  cardiovascular  events  in  acute  myocardial 
+infarction  patients  with  systolic  dysfunction  and/or  heart 
+failure:  an  analysis  from  the  high-risk  myocardial  infarction. 
+Eur J Heart Fail 2018; 20: 323–331.   
+
+15    Lee SE, Lee HY, Cho HJ, et al. Reverse J-curve relationship 
+between on-treatment blood pressure and mortality in patients 
+with heart failure. JACC Heart Fail 2017; 5: 810–819.   
+16    McMurray  JJV,  Adamopoulos  S,  Anker  SD,  et  al.  ESC 
+Guidelines  for  the  diagnosis  and  treatment  of  acute  and 
+chronic heart failure 2012: The Task Force for the Diagnosis 
+and Treatment of Acute and Chronic Heart Failure 2012 of the 
+
+European  Society  of  Cardiology.  Developed  in  collaboration 
+with the Heart Failure Association (HFA) of the ESC. Eur J 
+Heart Fail 2012; 33: 1787–1847.   
+
+17    DeVore AD, Mi X, Mentz RJ, et al. Discharge heart rate and 
+beta-blocker  dose  in  patients  hospitalized  with  heart  failure: 
+Findings from the OPTIMIZE-HF registry. Am Heart J 2016; 
+173: 172–178.   
+
+18    Felker  GM,  Mentz  RJ.  Diuretics  and  ultrafiltration  in  acute 
+decompensated  heart  failure.  J  Am  Coll  Cardiol  2012;  59: 
+2145–2153.   
+
+19    Vasan RS, Larson MG, Leip EP, et al. Impact of high-normal 
+blood pressure on the risk of cardiovascular desease. N Engl J 
+Med 2001; 345: 1291–1297.   
+
+20    Liu L,  Wang  JG,  Gong  L, et al. Comparison  of  active treat-
+ment and placebo in older Chinese patients with isolated sys-
+tolic  hypertension.  Systolic  Hypertension  in  China  (Syst- 
+China) Collaborative Group. J Hypertens 1998; 16: 1823–1829. 
+21    Staessen  JA,  Fagard  R,  Thijs  L,  et  al.  Randomised  double- 
+blind  comparison  of  placebo  and  active  treatment  for  older 
+patients  with  isolated  systolic  hypertension.  The  Systolic 
+Hypertension in Europe (Syst-Eur) Trial Investigators. Lancet 
+1997; 350: 757–764.   
+
+22    Gregg  C,  Fonarow  M,  Kirkwood F,  et  al.  Risk  Stratification 
+for  in-hospital  mortality  in  acutely  decompensated  heart 
+failure. JAMA 2005; 293: 572–580. 
+
+23    Lee  SE,  Cho  H,  Lee  H,  et  al.  A  multicentre  cohort  study  of 
+acute heart failure syndromes in Korea: rationale, design, and 
+interim  observations  of  the  Korean  Acute  Heart  Failure 
+(KorAHF) registry. Eur J Heart Fail 2014; 16: 700–708. 
+24    Packer  M,  Poole-Wilson  PA,  Armstrong  PW,  et  al.  Com-
+parative  effects  of  low  and  high  doses  of  the  angiotensin- 
+converting enzyme inhibitor, lisinopril, on morbidity and mor-
+tality in chronic heart failure. Circulation 1999; 100: 2312–2318.   
+25    Konstam MA, Neaton JD, Dickstein K, et al. Effects of high- 
+dose versus low-dose losartan on clinical outcomes in patients 
+with  heart  failure  (HEAAL  study):  a  randomised,  double- 
+blind trial. Lancet 2009; 374: 1840–1848.   
+
+26    Ouwerkerk W, Voors AA, Anker SD, et al. Determinants and 
+clinical  outcome  of  uptitration  of  ACE-inhibitors  and 
+beta-blockers  in  patients  with  heart  failure:  a  prospective 
+European study. Eur Heart J 2017; 38: 1883–1890.   
+
+27    Metra  M,  Torp-Pedersen  C,  Swedberg  K,  et  al.  Influence  of 
+heart rate, blood pressure, and beta-blocker dose on outcome 
+and the differences in outcome between carvedilol and meto-
+prolol  tartrate  in  patients  with  chronic  heart  failure:  results 
+from the COMET trial. Eur Heart J 2005; 26: 2259–2268. 
+
+Journal of Geriatric Cardiology | jgc@jgc301.com; http://www.jgc301.com 
+
+ 
+ 
+Supplementary materials 
+
+Table 1.    Characteristics of patients with follow-up and without follow-up. 
+
+Follow-up (n = 2005) 
+
+Without Follow-up (n = 139) 
+
+P value 
+
+Male 
+
+Age, years 
+
+Hospitalization days 
+
+CHD 
+
+HTN 
+
+AF or atrial flutter 
+
+DM 
+
+DCM 
+
+PH 
+
+CE 
+
+MI 
+
+At admission 
+
+NYHA classification 
+
+II 
+
+III 
+
+IV 
+
+SBP, mmHg 
+
+SBP quartile 
+
+< 105 mmHg 
+
+105119 mmHg 
+
+120134 mmHg 
+
+≥ 135 mmHg 
+
+DBP, mmHg 
+
+Heart rate, beats/min 
+
+Hb, g/L 
+
+hypoproteinemia 
+
+hypoalbuminemia 
+
+hypokalemia 
+
+hyponatremia 
+
+Cr, umol/L 
+eGFR, mL/min per 1.73 m2 
+eGFR < 60 mL/min per 1.73 m2 
+
+BUN, mmol/L 
+
+UA, μmol/L 
+
+TG, mmol/L 
+
+TC, mmol/L 
+
+HDL, mmol/L 
+
+LDL, mmol/L 
+
+LVEF, % 
+
+LVEF ≥ 40% 
+
+At discharge 
+
+BMI, kg/m2 
+
+Hb, g/L 
+
+Anemia 
+
+hypoproteinemia 
+
+hypoalbuminemia 
+
+69.9% 
+
+59 (48, 69) 
+
+12 (9, 18) 
+
+39.6% 
+
+43.5% 
+
+34.9% 
+
+25.7% 
+
+26.2% 
+
+14.9% 
+
+12.2% 
+
+27.5% 
+
+20.8% 
+
+51.1% 
+
+28.1% 
+
+77% 
+
+59 (47, 68) 
+
+12 (8, 17) 
+
+41% 
+
+41% 
+
+38.1% 
+
+30.9% 
+
+26.6% 
+
+12.9% 
+
+19.4% 
+
+31.7% 
+
+16.5% 
+
+43.9% 
+
+39.6% 
+
+118 (105, 132) 
+
+117 (103, 131) 
+
+23.8% 
+
+28.5% 
+
+25.9% 
+
+21.7% 
+
+71 (63, 80) 
+
+81 (70, 94) 
+
+137 (124, 151) 
+
+8.9% 
+
+14.4% 
+
+11.2% 
+
+19.7% 
+
+93.5 (79.25, 115.12) 
+
+67.2 (49.16, 89.35) 
+
+39.5% 
+
+7.4 (5.7, 9.765) 
+
+28.1% 
+
+29.5% 
+
+20.9% 
+
+21.6% 
+
+71 (61, 80) 
+
+82 (68, 96) 
+
+140 (125, 154) 
+
+8.6% 
+
+15.1% 
+
+13.7% 
+
+24.5% 
+
+100.1 (78.8, 122.0) 
+
+63.27 (45.47, 80.43) 
+
+48.2% 
+
+8.0 (6.3, 10.6) 
+
+417.3 (327.55, 519.45) 
+
+475.0 (323.9, 581.3) 
+
+1.35 (1.00, 1.89) 
+
+4.15 (3.435, 4.98) 
+
+0.97 (0.81, 1.19) 
+
+2.48 (1.96, 3.12) 
+
+38 (30, 53) 
+
+47.6% 
+
+23.05(20.44, 25.78) 
+
+134 (115, 150) 
+
+24.9% 
+
+8.2% 
+
+18.1% 
+
+1.48 (1.05, 1.80) 
+
+4.18 (3.44, 4.98) 
+
+0.95 (0.76, 1.18) 
+
+2.57 (2.08, 3.15) 
+
+36 (28, 49) 
+
+39.6% 
+
+22.64(19.24, 25.56) 
+
+137 (121, 151) 
+
+19.4% 
+
+9.4% 
+
+18.0% 
+
+0.076 
+
+0.802 
+
+0.620 
+
+0.743 
+
+0.568 
+
+0.442 
+
+0.173 
+
+0.910 
+
+0.528 
+
+0.013 
+
+0.294 
+
+0.015 
+
+0.350 
+
+0.510 
+
+0.646 
+
+0.825 
+
+0.344 
+
+0.922 
+
+0.822 
+
+0.369 
+
+0.170 
+
+0.088 
+
+0.078 
+
+0.043 
+
+0.048 
+
+0.019 
+
+0.283 
+
+0.627 
+
+0.244 
+
+0.390 
+
+0.028 
+
+0.660 
+
+0.054 
+
+0.252 
+
+0.150 
+
+0.627 
+
+0.984 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Follow-up (n = 2005) 
+
+Without Follow-up (n = 139) 
+
+P value 
+
+Table 1. Cont. 
+
+hyponatremia 
+
+Cr, umol/L 
+
+eGFR [mL/(min·1.73 m2)] 
+
+eGFR < 60 mL/(min·1.73 m2) 
+
+BUN, mmol/L 
+
+UA, umol/L 
+
+LVEF, % 
+
+LVEF ≥ 40% 
+
+EF, % 
+
+SBP, mmHg 
+
+SBP quartile 
+
+< 105, mmHg 
+
+105119 mmHg 
+
+120134 mmHg 
+
+≥ 135 mmHg 
+
+DBP, mmHg 
+
+Heart rate, beats/min 
+
+ACEI/ARB 
+
+None 
+
+< 50% 
+
+50%99% 
+
+≥ 100% 
+
+Beta blocker 
+
+None 
+
+< 50% 
+
+50%99% 
+
+≥ 100% 
+
+Spirolactone 
+
+Loop diuretics 
+
+16.8% 
+
+96.4 (78.5, 117.85) 
+
+67.32 (47.50, 89.51) 
+
+40.2% 
+
+8.6 (6.6, 11.64) 
+
+403.7 (308.45, 500.55) 
+
+38 (30, 55) 
+
+48.1% 
+
+0 (2, 3) 
+
+110 (101, 120) 
+
+30.4% 
+
+42.1% 
+
+23.6% 
+
+3.9% 
+
+68 (60, 70) 
+
+71 (65, 79.5) 
+
+45.3% 
+
+32.3% 
+
+15.7% 
+
+6.7% 
+
+17.0% 
+
+55.8% 
+
+21.6% 
+
+5.5% 
+
+71.6% 
+
+91.1% 
+
+18.7% 
+
+96.8 (79.8, 129.7) 
+
+61.79 (43.28, 84.11) 
+
+46.0% 
+
+9.8 (6.92, 13.61) 
+
+449.5 (327.35, 567.9) 
+
+36 (28, 50) 
+
+41.0% 
+
+0 (2, 5) 
+
+109 (100, 118) 
+
+41.7% 
+
+33.8% 
+
+23.0% 
+
+1.4% 
+
+68 (60, 70) 
+
+72 (65, 80) 
+
+44.6% 
+
+35.3% 
+
+13.7% 
+
+6.5% 
+
+14.4% 
+
+59.7% 
+
+22.3% 
+
+3.6% 
+
+71.2% 
+
+92.1% 
+
+Furosemide equivalent, mg/day 
+
+40 (20, 40) 
+
+40 (20, 40) 
+
+CCB 
+
+Thiazide diuretic 
+
+Digoxin 
+
+Warfarin 
+
+Statin 
+
+9.8% 
+
+3.3% 
+
+59.3% 
+
+26.2% 
+
+41.8% 
+
+7.2% 
+
+2.9% 
+
+64.0% 
+
+19.4% 
+
+38.8% 
+
+0.553 
+
+0.225 
+
+0.115 
+
+0.179 
+
+0.004 
+
+0.004 
+
+0.033 
+
+0.106 
+
+0.581 
+
+0.025 
+
+0.026 
+
+0.932 
+
+0.223 
+
+0.866 
+
+0.612 
+
+0.930 
+
+0.684 
+
+0.125 
+
+0.310 
+
+0.768 
+
+0.267 
+
+0.076 
+
+0.496 
+
+CHD, coronary heart disease; HTN, hypertension; AF, atrial fibrillation; DM, diabetes mellitus; DCM, dilated cardiomyopathy; PH, pulmo-
+nary hypertension; CE, cerebrovascular accident; MI, myocardial infarction; SBP, systolic blood pressure; DBP, diastolic blood pressure; Hb, 
+hemoglobin;  Cr,  creatinine;  eGFR,  estimated  glomerular  filtration  rate;  BUN,  blood  urea  nitrogen;  UA,  uric  acid;  TG,  triglyceride;  TC,   
+total  cholesterol;  HDL,  high-density  lipoprotein;  LDL,  low-density  lipoprotein;  LVEF,  left  ventricular  ejection  fraction;  BMI,  body  mass 
+index; ACEI, angiotensin-converting enzyme inhibitor; ARB, angiotensin receptor blocker; CCB, calcium channel blocker. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1.    Association between SBP at admission and all-cause mortality/heart transplantation. SBP, systolic blood pressure. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.    Association between SBP at discharge and all-cause mortality/heart transplantation. 
+
+ 
+ 
+ 
+ 
+

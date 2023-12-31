@@ -1,0 +1,981 @@
+Modelling the eruptive young stellar object Re 50 N IRS 1 with ProDiMo
+
+Andreas Postel
+
+Abstract
+
+3
+2
+0
+2
+c
+e
+D
+3
+2
+
+]
+
+R
+S
+.
+h
+p
+-
+o
+r
+t
+s
+a
+[
+
+1
+v
+9
+0
+2
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Context: Episodic accretion plays an important role during the early phases of star-formation. The main processes responsible
+for the episodic accretion events remain, however, unclear.
+Aims: Our main objective is to investigate the properties of FUors and EXors by analysing observational data, along with
+numerical hydrodynamics simulations of protostellar disks, stellar evolution models of outbursting stars and thermo-chemical
+models of star–disk systems in the outburst state. Our goal is to get a better understanding of the outburst processes and their
+respective origin.
+Methods: We used the radiation thermo-chemical code ProDiMo (PROtoplanetary DIsk MOdel) to match the dust emission
+and gas emission lines originating from the environment surrounding the FUor star Re 50 N IRS 1. Our model focusses on
+the observational data obtained by Herschel and Spitzer while we use archival photometry to complete the spectral energy
+distribution.
+Results: The modelling shows that the object is composed of a complex combination of several heating sources with different
+spatial distribution. Our model uses a massive envelope with an mass infall rate of 1.35 ×10−5 M⊙ yr−1 to explain the continuum
+emission in the (sub-)mm regime. At the same time we fit the CO and 13CO ladders from 60 µm to 650 µm along with the two
+[O i] lines centered at 63.18 and 145.53 µm. To explain the strong CO emission at shorter wavelengths and the oxygen lines, we
+require a very warm disk due to a high disk accretion rate reaching 6 ×10−4 M⊙ yr−1 and an additional UV field of 3% of the
+overall emission to heat the disk.
+
+Keywords: stars: formation – stars: protostars – stars: pre-main sequence – protoplanetary disks – accretion, accretion disks –
+infrared: stars
+
+1
+
+Introduction
+
+Episodic accretion is recognized to play a central role in the
+accretion history of young stars. One of the most outstanding
+examples of episodic accretion are FUors, named after the
+archetype FU Orionis, which are low-mass young stars that
+experience strong optical outbursts that can last several decades.
+FU Orionis had its outburst in 1936, reaching an increase of 6
+mag in the B-band at the peak, and has since then been slowly
+fading (Kenyon et al. 2000). A few dozens of objects with
+similar behaviour have been identified since the outburst of
+FU Ori (Hartmann & Kenyon 1996; Reipurth & Aspin 2010).
+There have also been detections of some candidates (Quanz
+et al. 2007; Semkov & Peneva 2010; Reipurth et al. 2012;
+Fischer et al. 2012; Fischer et al. 2013) that have not been
+observed in the pre-outburst state, which however show typical
+characteristics of FUors. FUors appear to be predominantly
+protostars which still accrete from their parental envelopes or
+are in the early T-Tauri star phase with only a remnant envelope.
+Characteristic of FUors are the very strong outbursts, with a
+luminosity change from 4 to 6 mag which occur on timescales
+of days to weeks and last for several decades. Another type
+of eruptive low-mass stars is characterised by weaker (3 to
+5 mag) and shorter outbursts which however can occur more
+frequently (Herbig 1989). EX Lupi is the archetype of this
+second class, which is accordingly called EXors. There are
+indications that these objects are more evolved than FUors, but
+
+the transition between the two classes may be smooth (Audard
+et al. 2014). The formation of massive stars also diplays signa-
+tures of episodic accretion (e.g. De Wit et al. 2017; Meyer et al.
+2017), suggesting that this phenomenon is somewhat universal
+among star formation.
+
+A number of investigations at the infrared and the sub-
+millimeter regimes during the recent years finally allowed ac-
+cessing of the dust emission and lines of FUors and EXors in
+this wavelength range, which provided insights into the cir-
+cumstellar disk and possible envelopes around these objects
+(Lorenzetti 2005, Green et al. 2013b). It was found to be ex-
+tremely common that young stars show activity in the form
+of significant IR variability. The inner regions of FUors and
+EXors, which are of high interest to reveal the origin of an
+outburst, are challenging for single-dish observations as these
+phenomena cannot be proven unambiguously to occur in the
+inner disk alone. Recent studies with the Atacama Large Mil-
+limeter/submillimeter Array (ALMA) and Karl G. Jansky Very
+Large Array (JVLA) opened a new window for investigations
+of the outburst objects with very high spatial resolution and
+allowed the observation of hot inner disks (Liu et al. 2017),
+density waves in the disks (P´erez et al. 2016), outflows of the
+objects (Ru´ız-Rodr´ıguez et al. 2017a,b), and shifts of the snow
+line during outburst (Cieza et al. 2016).
+
+The origin of accretion bursts is still unclear and could be
+caused by viscous-thermal and/or magnetorotational instabil-
+ities that form in the inner disk, tidal effects caused by close
+
+1
+
+ 
+ 
+ 
+ 
+ 
+ 
+companions or close flybys of external stars, or accretion of
+gaseous clumps in gravitationally unstable disks (see Audard
+et al. 2014 for a review). We aim to investigate the properties
+of FUors and EXors by analysing observational data (Postel
+et al. 2019), along with numerical hydrodynamics simulations
+of protostellar disks (Vorobyov & Basu 2015), stellar evolu-
+tion models of outbursting stars (Elbakyan et al. 2019) and
+thermo-chemical models of star–disk systems in the outburst
+state (Rab et al. 2017). The goal of our project is to get a better
+understanding of the outburst processes and their respective
+origin.
+
+In this paper, we focus on the FUor-like object Re 50 N
+IRS 1 and present the results of a ProDiMo model (ProDiMo
+is a radiation thermo-chemical code to model protoplanetary
+disks) during a re-brightening phase. Interestingly, Chiang et al.
+2015 proposed that the object is going through a dust clearing
+phase in the optical and near-IR. Focussing on mid-/far-IR and
+sub-mm data, we analyse what Herschel and Spitzer observa-
+tions can tell us in the constraints of the model. ProDiMo has
+been extended to handle envelope structures (Rab et al. 2017),
+allowing it to not only model T-Tauri stars but also the earlier
+evolutionary stages like FUors and EXors.
+
+The main questions we aim to answer in this paper are how
+the gas lines of the object can be modelled and where they
+come from, as well as whether the envelope plays a special
+role in the scenario of Re 50 N IRS 1 and if we need episodic
+accretion to explain the observational data.
+
+Figure 1:
+Image of Re 50 N IRS 1 in PACS. The colors refer to the three
+different photometry channels of PACS, centered at 70 µm (blue), 100 µm
+(green) and 160 µm. The target coordinates of the FUor are marked with a blue
+cross. The beam of the longest used wavelength is illustrated by the circle in
+the lower left corner. We used a log scaling and removed values below zero.
+The spectra originate from the inner 39 arcsec.
+
+1.1 Re 50 N IRS 1
+Re 50 N IRS 1 / HBC 494 is a known FUor-like object (Audard
+et al. 2014) in the Orion A cloud, which is 414±7 pc (Menten
+et al. 2007) away from us, with a wide spread (Großschedl et al.
+2018) based on Galactic longitude. The object has a bolometric
+luminosity of 90 L⊙, based on the SED of our recent work in
+Postel et al. (2019). It was observed in the past with several
+instruments, covering the SED from the optical to the mm
+range with photometry and spectra, including Herschel (Sep
+2013), Spitzer (7 Nov 2008) and ALMA (Aug 2015, see Ru´ız-
+Rodr´ıguez et al. 2017b) observations. Our Herschel data shows
+many emission lines of Re 50 N IRS 1, mainly from CO from
+low to high excitation temperatures, which makes the object a
+promising candidate for detailed modelling. The object shows
+strong silicate absorption in the bending and stretching bands
+and CO2 absorption. Re 50 N IRS 1 is known for its very wide
+outflow, detected by ALMA, and strong diffuse emission in two
+Herschel instruments (PACS/SPIRE: 60-671 µm) extending to
+in the northeast and to the west, see Fig. 1.
+
+2 Methods
+
+The radiation thermo-chemical code, ProDiMo (see Kamp et al.
+2017, Thi et al. 2011, Woitke et al. 2009, Woitke et al. 2016),
+
+solves the temperature, chemical abundances and radiation
+field in a self-consistent way under constraints of axisymmetric
+distribution of gas and dust in two dimensions. The protostar is
+presented by a point source with corresponding luminosity in
+the center of the structure, surrounded by a protoplanetary disk
+and spherical envelope with outflow cavities. The code is used
+to derive atomic and molecular abundances in different regions
+of the modelled object, and calculate the spectral lines (both in
+emission and absorption) and the spectral energy distribution
+(SED). This model was already used in Rab et al. 2017, where a
+detailed explanation, about how the disk and envelope structure
+is built, is explained. In White et al. 2019 this model was used
+to fit APEX data with 3 lines but without Herschel data. More
+details about the disk accretion heating are shown in Appendix
+A.
+
+3 Modelling
+
+The procedure to find a good matching model can be separated
+in three steps. The first phase was to check the literature for
+already determined parameters. After that we matched the
+SED with ProDiMo. Once this was done, we matched the
+gas emission lines. We investigated several configurations in
+ProDiMo to probe a large parameter space. In Table 1, we
+provide the parameters of the model that we consider fits best
+
+2
+
+Table 1: Main parameters of the best fitting ProDiMo model.
+
+Quantity
+stellar mass
+central source eff. temp.
+central source luminosity
+amount of UV radiation
+disk gas mass
+disk accretion rate
+disk inner radius
+disk tapering-off radius
+inclination
+column dens. pow. ind.
+reference scale height
+flaring power index
+envelope mass
+mass infall rate
+outer radius
+cavity opening angle
+dust to gas mass ratio
+min. dust particle radius
+max. dust particle radius
+dust size dist. power ind.
+dust composition
+(volume fractions)
+
+visual extinction
+distance
+
+Symbol
+M⋆
+T⋆
+L⋆
+fUV
+Mdisk
+˙M
+Rin
+Rtap
+incl
+ϵ
+H(100au)
+β
+Menv
+˙Mif
+Rout
+βcav
+δ
+amin
+amax
+apow
+Mg0.7 Fe0.3 SiO3
+amorph. carbon
+vacuum
+AV
+d
+
+Value
+0.5 M⊙
+6000 K
+90 L⊙
+3%
+0.02 M⊙
+6 ×10−4 M⊙ yr−1
+1.0 au
+100 au
+15.3°
+1
+10 au
+1.1
+≈ 2.57 M⊙
+1.35 ×10−5 M⊙ yr−1
+15000 au
+15°
+0.01
+0.05 µm
+3000 µm
+3.5
+60%
+20%
+20%
+3.1
+414 pc
+
+Reference
+this work
+this work
+this work, based on Postel et al. (2019)
+this work
+Cieza et al. (2018)
+this work
+assumed
+Cieza et al. (2018)
+this work
+assumed
+assumed
+assumed
+this work
+fitted
+calc., based on Postel et al. (2019)
+Ru´ız-Rodr´ıguez et al. (2017b)
+Cieza et al. (2018)
+assumed
+assumed
+assumed
+assumed
+assumed
+assumed
+this work
+Menten et al. (2007)
+
+Notes: The model with no UV field has fUV=0 and the model with no disk accretion has ˙M=0. The assumed parameters were fixed during the fitting process.
+
+the Re 50 N IRS 1 gas lines and SED (mainly the Herschel one,
+see below).
+
+3.1 Literature
+
+Cieza et al. (2018) derived the dust mass from one ALMA
+continuum image. Assuming a gas to dust mass ration of 100,
+they estimated the disk mass, which are both used in this work
+beside the tapering parameter. We use a reference scale height
+of the disk of 10 au which is slightly above the margin of
+Cieza et al. (2018). Ru´ız-Rodr´ıguez et al. (2017b) delivered a
+measurement with ALMA of the opening angle of the cavity.
+Other parameters like the effective temperature of the central
+source, the mass infall rate and the disk accretion rate as well
+as the amount of the UV radiation were derived in our analysis
+which is described later in more detail. Based on photometry
+of Herschel (PACS) and Hubble, we estimate the outer radius
+of the system of Re 50 N IRS 1 at up to 15,000 au. Within this
+distance, there is no significant overlap of the emission of the
+object and the nearby reflection nebula. We assume that the line
+flux measured by Herschel from this region is not contaminated
+by another source for the modelling.
+
+3.2 SED matching
+
+The second step in our analysis was to match the broad-band
+SED, while focussing on the Herschel and Spitzer data. With
+the SED matching, we obtained better initial conditions for
+changing the model parameters and fit the gas emission lines.
+This provides constrains for the disk and envelope dust struc-
+ture. We varied several parameters while we discuss here the
+ones with the biggest impact on the SED. Other parameters
+that have been explored but are not discussed in detail are the
+luminosity of the central source, effective temperature of the
+central source and the cavity opening angle, as their impact
+on the SED was very limited. We focussed on Herschel and
+Spitzer photometry and spectra between 10-700 µm. The Her-
+schel data were observed in 2013 (Postel et al. 2019), before
+the object was found to go through a brightening phase (Chiang
+et al. 2015). The data in the optical and near-IR, as well as
+the major part of the photometry in the sub-mm and mm are
+older (1988-2001). We take here the approach that such data,
+while informative, do not necessarily correspond to the SED
+state during the Herschel observation, and therefore we do not
+optimize the parameters to match them. The Herschel data is
+therefore used as our benchmark.
+
+The first parameter we started with is the mass infall rate
+
+3
+
+onto the envelope, as this has the biggest impact on the emission
+in the far-IR/sub-mm. In the model of the rotating envelope, this
+parameter has no heating effect on the structure. The change of
+the SED is shown in Fig. 2. For the mass infall rate for our best
+model (blue curve, ˙M ≈ 10−5 M⊙ yr−1) the far-IR/sub-mm data
+of Herschel ar matched very well, which was the main goal of
+this step, but there is an extreme variation in the wavelength
+range of the Spitzer spectrum and for shorter wavelengths when
+Mi f is varied. The next step was to match the mid-IR, for which
+the inclination of the object had a major impact, which left the
+far-IR/sub-mm range mostly unchanged. We show in Fig. 3
+the corresponding SED for a variation of the inclination. While
+the model predicts higher flux between the Herschel PACS
+spectrum and the Spitzer spectrum, a solution for the short
+wavelength domain was covered within the parameter space
+at an inclination between 10° and 16.25°, which we refine to
+15.3°. As the object is embedded and stellar parameters are
+mostly unknown, we also ran a grid from 0.1-0.8 M⊙ where
+we find minor differences in the SED. The range is reasonable
+for such an object, and we eventually use a stellar mass of 0.5
+M⊙, however there is potential for large difference to the actual
+protostar. We further assume that there is extinction along the
+line of sight that is not part of the model. This extinction is set
+by the AV parameter. We find that we need some additional
+extinction to match the short-wavelength regime. The result
+of the entire SED matching process can be seen in Fig. 4, to-
+gether with observational data and the spectrum of the protostar
+without absorption caused by the envelope and disk.
+
+3.3 Gas emission lines
+
+The next step of our analysis was to match the gas emission
+lines detected with Herschel while keeping the SED untouched.
+Fig. 5 shows the emission line fluxes from Herschel together
+with the ProDiMo modelled fluxes based on the SED-matching
+model, with a variation of the stellar luminosity. The emission
+lines at long wavelengths (⪆ 300 µm) are matched quite well
+by the model, but the shorter wavelength lines, being orders
+of magnitudes too low, are not properly reproduced. Since the
+short wavelength CO lines, originating from high J transitions,
+and the oxygen emission are caused by material which is much
+hotter than the material which emits the long wavelength lines,
+we increased the effective temperature of the central source
+of the model to heat some material further. The result can be
+seen in Fig. 6. The impact was negligible. Looking at the gas
+temperature, we found that the CO and oxygen of the disk was
+simply not getting warm enough, and even raising the effective
+temperature of the central source to 12000 K did not help.
+
+We therefore investigated another parameter and introduced
+a UV field around the central source, assuming that accretion
+shocks near the protostar would create a significant UV radi-
+ation field, indicated by the high level of [O i] emission, that
+would in turn heat the disk and envelope temperature suffi-
+ciently high. The temperature increase was, however, con-
+
+centrated to the surface of the disk and did not lead to more
+emission of high J CO lines at some point but photodissoci-
+ated the CO. We therefore introduced disk accretion to have a
+disk-internal heating process in addition to the UV field. Both
+processes, which affect only the gas, are disabled in the default
+settings but appear to be a necessity for this particular object.
+
+4 Results
+
+In Fig. 7, we show three different models. Our best match result
+of the SED and lines and two other models models (Mdot=0,
+fUV=0) to compare the effects of disk accretion and UV field
+of the central source: The other two models have either dis-
+abled disk accretion but an UV field or disk accretion but no
+UV field. Neither the UV field nor the disk accretion heating
+mechanism are sufficient to raise the temperature of the disk
+high enough to reproduce the observational measurements. We
+believe therefore, that the model with both disk mass accretion
+and UV field is a better model to match the gas emission lines
+and keep the fit of the SED intact.
+
+Figure 2: Change of the SED with different mass infall rates (10−6 − 10−4
+M⊙ yr−1) for the envelope. The goal of this grid was to match the far-IR/sub-
+mm data. The Herschel and Spitzer spectra which worked as a benchmark for
+the SED matching are shown in colors (Spitzer: brown; Herschel PACS: green;
+Herschel SPIRE SSW: purple; Herschel SPIRE SLW: red)
+
+4.1 Spectral properties and surrounding emis-
+
+sion
+
+The matching of the SED (Fig. 4) with ProDiMo, mainly the
+Herschel and Spitzer data, was precise enough to recreate the
+results from the observations reasonably well. At long wave-
+lengths there is a difference to some ground based observations.
+Also, there is a gap to observational data in the range of 800
+nm to 3 µm. These observations were performed before the
+
+4
+
+101100101102103wavelength [m]10141013101210111010109108F[ergcm2s1]Mdot=106Mdot=105Mdot=104close to the cavity, and emissions at ≥325 µm have their origin
+only in the envelope. We therefore deduce that Re 50 N IRS 1
+must consist of a relatively complex set of temperatures, caused
+by multiple heating processes which are spread over a larger
+spatial area. In the Fig. 8, the level of the continuum emission
+at the respective wavelength (visible in the top left corner of the
+panels with CO emission, in micrometer) is shown, in addition
+to the area where most of the emission in vertical and radial
+direction is created. An important result for observations at
+these specific wavelengths. The CO density is strongly reduced
+in the envelope in the line of sight with the disk and the central
+source, up to a distance of ≈ 4300 au. This effect is caused
+by the freeze-out of the CO at low temperature with a weaker
+effect at low densities (i.e.
+larger distance). Closer to the
+outflow cavity, photo-desorption occurs as the UV radiation
+can penetrate into then envelope, which is however blocked by
+the disk. The behaviour of the CO abundance structure is as
+expected, see Rab et al. (2017) for more details.
+
+4.2 Rotational diagrams
+
+Fig. 10 shows the rotational diagram for CO emission for our
+best model and the Herschel observation of the object. This
+figure is an alternative way to show the line emission from
+Fig. 7, but in a normalized way. The diagram can be used to
+obtain the excitation temperatures by measuring the slope of the
+curve, and column density of the gas by measuring the offset for
+observational dat (see Goldsmith & Langer 1999, Green et al.
+2013a, Dionatos et al. 2013). The figure shows that the slope,
+i.e. the temperature distribution of the curve is matched by the
+model. However, we can see that the column density of the
+model is slightly higher than what we observed. The approach
+to split the emission lines into three domains with assumed LTE
+from Postel et al. (2019) turns out to be a solid approximation,
+albeit used due to the different Herschel instruments (PACS,
+SPIRE SSW, SPIRE SLW).
+
+4.3 UV field and accretion
+
+As we modelled the condition of Re 50 N IRS 1 during the
+phase of higher activity, it is possible that the UV field and the
+accretion rate are lower now. As ProDiMo does not have the
+capabilities to model directly the effects of shocks leading to
+sufficiently high temperatures in certain areas, especially along
+the outflow cavity, we bypass this with the introduction of the
+UV field originating from the central source. For reaching
+sufficiently high temperatures for the CO transitions with short
+wavelengths and the [O i], the respective parameters appear to
+be inevitable in the constraints of ProDiMo. It turns out that the
+UV field and the disk accretion are both a necessity to create
+the short emission lines in the observed combination, and the
+accretion of the envelope is the main parameter in our model,
+responsible for the overall shape of the SED for this object.
+
+Figure 3: Change of the SED with inclination angles, varying from 10-35°.
+The goal of this grid was to match the mid-IR data. The colour code is the
+same as in Fig. 2.
+
+Figure 4: SED of the model (blue) and the observational data of photometry
+and spectroscopy (grey). The spectrum of the central source is shown in black.
+
+re-brightening of the object. The difference to the ground-based
+observations in the (sub-)mm range are explained by our model
+by a change of the mass infall rate of the envelope by about one
+order of magnitude (see Fig. 2).
+
+Fig. 8 shows that the number density of CO is particularly
+high in the envelope close to the outflow cavity (panels with
+spatial extent up to 3000 au) and in the disk (panelss with
+spatial extent up to 50 au). A very high temperature of the
+gas causes a dissociation and depopulation of the CO (see Fig.
+9) which consequently leads to a reduced emission from that
+region. Too low temperature, however, does not result in the
+strong emission lines we see from the Herschel observation, as
+the short lines would be then too faint. ProDiMo allows us to
+pinpoint down the origin of the different CO lines, which is also
+shown in Fig. 8. While the short-wavelength lines like the 72.8
+µm emission still originates predominantly from the disk, the
+emission at 186 µm already comes mainly from the envelope
+
+5
+
+101100101102103wavelength [m]10141013101210111010109108F[ergcm2s1]incl=10°incl=22.5°incl=35°101100101102103wavelength [m]1013101210111010109108F[ergcm2s1]Figure 5: Emission lines after the SED matching was performed. Here we show the effect of different luminosities of the central source in comparison to the
+Herschel line fluxes. The numbers next to the molecules/atoms refer to the wavelength of the respective lines in micrometer. The grey boxes represent a factor of
+3 margin around the observational data. The change of the luminosity did not have a strong impact on the lines.
+
+Figure 6: Same as Fig. 5, but for different central source effective temperatures, ranging from 6000 to 10000 K.
+
+Figure 7: Line fluxes of the best model (green diamonds) compared to a model with disabled disk accretion ( ˙M = 0, fUV = 1%, blue diamonds) and with
+disabled UV field ( ˙M = 4.2 × 10−4 M⊙ yr−1, fUV = 0, orange diamonds). The best model uses both, disk accretion ( ˙M = 6 × 10−4 M⊙ yr−1 and the UV field
+(fUV = 3%) in combination.
+
+6
+
+13CO 544.1613CO 453.5013CO 388.7413CO 340.1813CO 302.4113CO 272.20CO 650.25CO 520.23CO 433.56CO 371.65CO 325.23CO 289.12CO 260.24CO 236.61CO 216.93CO 200.27CO 186.00CO 173.63CO 162.81CO 153.27CO 144.78CO 137.20CO 130.37CO 124.19CO 118.58CO 113.46CO 108.76CO 104.44CO 93.35CO 90.16CO 87.19CO 84.41CO 81.81CO 79.36CO 77.06CO 74.89CO 72.84CO 70.91CO 69.07OI 145.53OI 63.18102010191018101710161015 line flux [Wm2]L=85 LsunL=90 LsunL=95 LsunL=100 LsunObs.13CO 544.1613CO 453.5013CO 388.7413CO 340.1813CO 302.4113CO 272.20CO 650.25CO 520.23CO 433.56CO 371.65CO 325.23CO 289.12CO 260.24CO 236.61CO 216.93CO 200.27CO 186.00CO 173.63CO 162.81CO 153.27CO 144.78CO 137.20CO 130.37CO 124.19CO 118.58CO 113.46CO 108.76CO 104.44CO 93.35CO 90.16CO 87.19CO 84.41CO 81.81CO 79.36CO 77.06CO 74.89CO 72.84CO 70.91CO 69.07OI 145.53OI 63.18102010191018101710161015 line flux [Wm2]T=6000KT=8000KT=10000KObs.13CO 544.1613CO 453.5013CO 388.7413CO 340.1813CO 302.4113CO 272.20CO 650.25CO 520.23CO 433.56CO 371.65CO 325.23CO 289.12CO 260.24CO 236.61CO 216.93CO 200.27CO 186.00CO 173.63CO 162.81CO 153.27CO 144.78CO 137.20CO 130.37CO 124.19CO 118.58CO 113.46CO 108.76CO 104.44CO 93.35CO 90.16CO 87.19CO 84.41CO 81.81CO 79.36CO 77.06CO 74.89CO 72.84CO 70.91CO 69.07OI 145.53OI 63.181018101710161015 line flux [Wm2]Mdot=0fUV=0bestObs.Figure 8: Spatial distribution of the number density of CO and Hydrogen. The first line shows the smallest scale where the accretion disk is dominating. For
+the CO emission, there is a gap between the disk and the envelope which extends to a radius of about 37 au at a height of 11 au. This gap is caused by numerical
+effects at the transition region. The second and third line show plots up to 3000 and 10000 au distance from the central object, where the disk does not play a
+significant role any more. The dashed lines show the level of the continuum emission at the respective wavelength. The dotted line shows the spatial region
+where 15-85 % of the emission in vertical direction originates from. The box shows the spatial region where 15-85 % of the emission in radial direction are
+originating from.
+
+5 Discussion
+
+The major difficulty is the distribution of the temperature around
+the source, which cannot only be provided by the central source.
+
+The matching of the emission lines shows that a simple enve-
+lope + disk model of Re 50 N IRS 1 is not sufficient, but the
+system requires a higher complexity of additional heating mech-
+anisms. We therefore use the UV field to model the effects of
+
+7
+
+1020304050r [au]0510152025z [au]CO 72.84280.02.04.06.08.0lognCO[cm3]1020304050r [au]0510152025z [au]4.06.08.010.012.0lognH[cm3]050010001500200025003000r [au]050010001500200025003000z [au]CO 650CO 325.0CO 200.2725CO 186.0-4.5-3.0-1.50.01.53.0lognCO[cm3]050010001500200025003000r [au]050010001500200025003000z [au]5.06.07.08.09.0lognH[cm3]0200040006000800010000r [au]0200040006000800010000z [au]CO 650CO 325.0CO 200.2725-4.5-3.0-1.50.01.53.0lognCO[cm3]0200040006000800010000r [au]0200040006000800010000z [au]5.06.07.08.09.0lognH[cm3]Figure 9: Spatial variation of the gas component (left) and dust (right) temperature. The highest temperatures of the gas are reached on the outflow cavity on
+small distance to the central source. The hot area between the disk and envelope is caused by numerical effects due to the reduced number density of CO in this
+region (see Fig. 8).
+
+shocks in jets/outflows to recreate the high-J CO lines, since
+ProDiMo does not have the capabilities to model them directly.
+Evidence for the presence of a protostellar jet is provided by
+the strong [O i] lines in the Herschel spectra and was shown in
+other works to be a source for a radiation component (see Dion-
+atos & G¨udel 2017 and Dionatos et al. 2020). The inclination
+and the opening angle of the outflow cavity of the object play
+a main role in the visibility of the gas emission lines, as they
+affect the visibility of the accretion disk, where a large fraction
+of the emission originates from. The envelope of Re 50 N IRS
+1 is likely still dense enough to absorb most of the emission
+lines in the line of sight of the disk. Most of the CO emission
+originates in the inner disk, at some tens of au, where high J
+transition lines in our model originate from. For the intermedi-
+ate J transition lines, the envelope close to the outflow cavity
+turns out to be the major source, where another high population
+of CO is located. The cavity is also where the highest tempera-
+tures of the gas occur, which is also where the radiation field
+of shocks would be created at. Both, the CO abundance and
+temperature distribution is in agreement with former works on
+outbursts, like the hydrodynamical simulations from Vorobyov
+
+et al. (2013) which targeted the behaviour of CO.
+
+For some of the spectral features in the SED, e.g. the narrow
+absorption of CO2 ice at 15 µm, no matching happened since
+ProDiMo currently does not have the capabilities to model
+these features.
+
+The high accretion rate of the circumstellar disk of 6 ×10−4
+M⊙ yr−1 would cause the accretion disk to dissipate, if it would
+stay at this high level for a long time, since the mass infall
+rate of the envelope with 1.35 ×10−5 M⊙ yr−1 which feeds
+the disk over a long time period is significantly lower. This
+means that the object cannot keep the current properties but
+the disk accretion is currently in a burst phase which wil last
+for a limited amount of time before a lowering of the disk
+accretion rate must start. The Spitzer data have been observed
+some time before the Herschel data (2010 vs. 2013), so during
+the brightening of the object the SED in the near- and mid-IR
+could have changed. A check with recent photometry or even a
+spectrum would be interesting to confirm this. For a possible
+observation, a major part of the SED in the near- and mid-IR
+should be traced while the spectral resolution plays a minor
+role.
+
+8
+
+1020304050r [au]0510152025z [au]1.21.82.43.03.64.2logTg[K]1020304050r [au]0510152025z [au]1.21.62.02.42.8logTd[K]0200040006000800010000r [au]0200040006000800010000z [au]1.21.82.43.03.64.2logTg[K]0200040006000800010000r [au]0200040006000800010000z [au]1.21.62.02.42.8logTd[K]with the temporal dust clearing effect at shorter wavelengths.
+This could also be a reason for the higher optical extinction and
+variation they mention, ranging from AV = 50 − 26 mag. Cieza
+et al. (2018) derives an inclination of 70◦, a result that is in
+disagreement with our model. Based on the Spitzer data and as
+we show in Fig. 3, the inclination in our model is not expected
+to be above 22.5◦ while 15.3◦ reproduce the observational data
+in the best way.
+
+Assuming that the envelope temperature is in the order
+of 10-20 K, most models of FUors infer a lower envelope
+infall rate (a few 10−6M⊙/yr) if the core was initially close
+to a Bonnor-Ebert sphere. The significantly higher infall rate
+therefore means that the temperature of the core is much higher,
+possibly due to a UV source, or the initial pre-stellar core was
+off the equilibrium. The latter could happen if the core was
+created by a shock wave.
+
+Postel et al. (2019) include several objects with a similar
+shape of the SED as Re 50 N IRS 1, e.g. PP 13 S, V346 Nor,
+V883 Ori and HH 381 IRS. However, the emission lines among
+these objects appear very different, raising the question of the
+reason for this. From our results with ProDiMo for Re 50 N
+IRS 1, it appears that these objects, if they show similar line
+properties, namely PP 13 S and V346 Nor, must host a similar
+distribution of the temperature in the disk and outflow cavity.
+Thus, objects like V883 Ori and HH 381 IRS, which show very
+faint emission lines, could consist of a colder disk, which would
+imply that the activity of these objects is way lower than the
+one of Re 50 N IRS 1. Also, inclination could play a role for
+these objects, with an envelope shadowing emission lines from
+the disk, as proposed by Green et al. (2006). There could be
+also a reduced outflow cavity, obscuring the disk. This would
+mean that they are in an earlier evolutionary stage if the cavity
+did not become large yet, but the envelope shows a similar mass
+infall rate as later objects. Objects with a similar SED as Re
+50 N IRS 1 would be of interest for further modelling with
+ProDiMo, to test these assumptions, and also multi-dish (sub-
+)mm observations with high angular resolution would provide
+valuable information about the inner regions of the bjects, in
+particular the outflow cavity and the disk, which have not yet
+been observed, especially if they can provide information about
+the temperature.
+
+While the observed features of Re 50 N IRS 1 could be well
+reproduced in this work, some line features in other objects
+could be an interesting challenge. HH 354 IRS shows a different
+shape of the SED, which indicates another evolutionary stage.
+Informative here would be to check the connection of the SED
+with the presence of the strong oxygen emission at 63 µm and
+the relatively weak emission of CO and oxygen at 145.5 µm.
+
+6 Summary
+
+We provide a ProDiMo model of the young stellar object Re
+50 N IRS 1 / HBC 494 which matches observational data of
+
+Figure 10: CO rotational diagram for the best model compared to the
+observational data obtained with Herschel. The gap around 2000 K is caused
+by a non-detection of the lines in the Herschel data.
+
+When calculating the stellar radius based on the values of
+the modelled object via Rstar = 0.5 ˙MGMstar/Laccr (assuming
+that half of the energy goes into the star and half escapes),
+we would end up with a stellar radius of 52 R⊙ during the
+outburst, a too large value compared to models. This equation
+also assumes that the luminosity is dominated by the accretion
+luminosity and is therefore a lower limit. Given the small
+impact on the SED, we think that a reduction of the stellar mass
+to 0.3 M⊙ is feasible, leading to a reduced radius of 31 R⊙
+which appears still high. A larger distance than the used 414 pc
+would lead to higher luminosities, and thus, a lower radius. A
+10% increase (≈ 450 pc) would lead to 110 L⊙, and a radius of
+less than 26 R⊙, which is more of a reasonable value according
+to recent numerical simulations of stellar characteristics during
+accretion bursts (Elbakyan et al. 2019). Großschedl et al. (2018)
+showed that the Orion A cloud is inclined from the plane of sky
+and reaches up to 470 pc, depending on the Galactic longitude.
+Based on their Figure 3, at l = 211.6◦, YSOs generally are
+have distances of 425-450 pc (the range is consistent with their
+derived median distance for the Tail of Orion A, L1641, ≈ 430
+pc, although they derive an average distance of 409.36 ± 31.9
+for the above longitude, using a 1-degree longitude bin, albeit
+with a large uncertainty), suggesting that a higher distance for
+Re 50 N IRS 1 is possible.
+
+For some parameters, there seem to be strong differences
+among other works. Gramajo et al. (2014) listed for the object a
+distance of 460 pc and a luminosity of 50 L⊙ while Chiang et al.
+(2015) came to a luminosity of 250 L⊙. Also other parameters
+in their model, like the accretion rate, differ significantly from
+our results. As we mentioned earlier, Chiang et al. (2015)
+assume that a dust clearing effect occured, based on near-IR
+data. However, we see from mid-IR to sub-mm data that there
+must still be a very strong accretion, possibly in combination
+
+9
+
+Log10(Nu/gu)1213141516171819Eu(K)01.0002.0003.0004.000HerschelProDiMoHerschel and Spitzer during a phase of re-brightening of the
+object, covering both the SED and emission lines of CO, 13CO
+and two [O I] lines. We find a way to recreate the gas lines
+of the target by an accreting envelope and a circumstellar disk
+with high accretion rate and an additional UV field to heat up
+the disk and outflow cavity to form the necessary environmental
+conditions. The gas lines appear to have their origin in the disk
+and the transition region of the envelope and the outflow cavity,
+created by shocks in jets/outflows. The envelope turns out to be
+dense enough to absorb most emission in the line of sight to the
+disk. The system requires episodic accretion to be consistent
+over long time with a high disk accretion rate and a significantly
+smaller mass infall rate of the envelope.
+
+Acknowledgements
+
+We thank A. Kospal for providing the ALMA data
+
+for Re 50.
+
+References
+
+Audard, M., ´Abrah´am, P., Dunham, M. M., et al. 2014, Proto-
+
+stars and Planets VI, 387–410
+
+Chiang, H.-F., Reipurth, B., Walawender, J., et al. 2015, ApJ,
+
+805, 54
+
+Cieza, L. A., Casassus, S., Tobin, J., et al. 2016, Nature, 535,
+
+258
+
+Cieza, L. A., Ru´ız-Rodr´ıguez, D., Perez, S., et al. 2018, MN-
+
+RAS, 474, 4347
+
+D’Alessio, P., Cant¨o, J., Calvet, N., & Lizano, S. 1998, ApJ,
+
+500, 411
+
+De Wit, W.-J., Caratti, A., & Kraus, S. 2017, in Star Formation
+
+from Cores to Clusters, 15
+
+Dionatos, O. & G¨udel, M. 2017, A&A, 597, A64
+
+Dionatos, O., Jørgensen, J. K., Green, J. D., et al. 2013, A&A,
+
+558, A88
+
+Gramajo, L. V., Rod´on, J. A., & G´omez, M. 2014, AJ, 147, 140
+
+Green, J. D., Evans, II, N. J., Jørgensen, J. K., et al. 2013a, ApJ,
+
+770, 123
+
+Green, J. D., Evans, II, N. J., K´osp´al, ´A., et al. 2013b, ApJ, 772,
+
+117
+
+Green, J. D., Hartmann, L., Calvet, N., et al. 2006, ApJ, 648,
+
+1099
+
+Großschedl, J. E., Alves, J., Meingast, S., et al. 2018, A&A,
+
+619, A106
+
+Hartmann, L. & Kenyon, S. J. 1996, ARA&A, 34, 207
+
+Herbig, G. H. 1989, in European Southern Observatory Confer-
+ence and Workshop Proceedings, Vol. 33, European South-
+ern Observatory Conference and Workshop Proceedings, ed.
+B. Reipurth, 233–246
+
+Kamp, I., Thi, W.-F., Woitke, P., et al. 2017, A&A, 607, A41
+
+Kenyon, S. J., Kolotilov, E. A., Ibragimov, M. A., & Mattei,
+
+J. A. 2000, ApJ, 531, 1028
+
+Liu, H. B., Vorobyov, E. I., Dong, R., et al. 2017, A&A, 602,
+
+A19
+
+Lorenzetti, D. 2005, Space Sci. Rev., 119, 181
+
+Menten, K. M., Reid, M. J., Forbrich, J., & Brunthaler, A. 2007,
+
+A&A, 474, 515
+
+Meyer, D. M.-A., Vorobyov, E. I., Kuiper, R., & Kley, W. 2017,
+
+arXiv e-prints [arXiv:1710.02320]
+
+P´erez, L. M., Carpenter, J. M., Andrews, S. M., et al. 2016,
+
+Science, 353, 1519
+
+Postel, A., Audard, M., Vorobyov, E., et al. 2019, A&A, 631,
+
+A30
+
+Quanz, S. P., Henning, T., Bouwman, J., Linz, H., & Lahuis, F.
+
+2007, ApJ, 658, 487
+
+Rab, C., Elbakyan, V., Vorobyov, E., et al. 2017, A&A, 604,
+
+A15
+
+Dionatos, O., Kristensen, L. E., Tafalla, M., G¨udel, M., &
+
+Persson, M. 2020, arXiv e-prints, arXiv:2006.01087
+
+Elbakyan, V. G., Vorobyov, E. I., Rab, C., et al. 2019, MNRAS,
+
+Reipurth, B. & Aspin, C. 2010, in Evolution of Cosmic Objects
+through their Physical Activity, ed. H. A. Harutyunian, A. M.
+Mickaelian, & Y. Terzian, 19–38
+
+484, 146
+
+Fischer, W. J., Megeath, S. T., Stutz, A. M., et al. 2013, As-
+
+tronomische Nachrichten, 334, 53
+
+Fischer, W. J., Megeath, S. T., Tobin, J. J., et al. 2012, ApJ, 756,
+
+99
+
+Goldsmith, P. F. & Langer, W. D. 1999, ApJ, 517, 209
+
+Reipurth, B., Aspin, C., & Herbig, G. H. 2012, ApJ, 748, L5
+
+Ru´ız-Rodr´ıguez, D., Cieza, L. A., Williams, J. P., et al. 2017a,
+
+MNRAS, 468, 3266
+
+Ru´ız-Rodr´ıguez, D., Cieza, L. A., Williams, J. P., et al. 2017b,
+
+MNRAS, 466, 3519
+
+10
+
+Semkov, E. & Peneva, S. 2010, The Astronomer’s Telegram,
+
+2801
+
+Thi, W.-F., Woitke, P., & Kamp, I. 2011, MNRAS, 412, 711
+
+Vorobyov, E. I., Baraffe, I., Harries, T., & Chabrier, G. 2013,
+
+A&A, 557, A35
+
+Vorobyov, E. I. & Basu, S. 2015, ApJ, 805, 115
+
+White, J. A., K´osp´al, ´A., Rab, C., et al. 2019, ApJ, 877, 21
+
+Woitke, P., Min, M., Pinte, C., et al. 2016, A&A, 586, A103
+
+Woitke, P., Thi, W.-F., Kamp, I., & Hogerheijde, M. R. 2009,
+
+A&A, 501, L5
+
+A Disk accretion heating
+
+For the viscous heating we use the approach of (D’Alessio et al.
+1998) and adapted it to account for the tapered outer edge of
+the disk.
+Fvis(r) = 3GM∗ ˙M
+8πr3
+
+ [erg cm−2s−1],
+
+1 −
+
+(cid:33)(2−ϵ)
+
+
+−
+
+R∗
+r
+
+r
+Rtap
+
+·exp
+
+(cid:114)
+
+
+
+
+
+
+
+
+
+(cid:32)
+
+·
+
+(1)
+where r is the distance to the star, G is the gravitational constant,
+M∗ and M∗ the stellar mass and radius, Rtap the disk tapering-off
+radius and ϵ the disk column density power index. To distribute
+the heating per unit surface over the disk heat we use
+
+Γvis(r, z) = Fvis(r)
+
+(cid:82)
+
+ρP(r, z)
+ρP(r, z′)dz′
+
+[erg cm−3s−1],
+
+(2)
+
+where ρ is the gas density and P = 1.25 to avoid unstoppable
+heating in the upper disk layers where ρ drops towards zero.
+
+11
+
+

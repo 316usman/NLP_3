@@ -1,0 +1,1650 @@
+Esnaasharieh et al. 
+BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20  
+https://doi.org/10.1186/s13102-022-00415-3
+
+RESEARCH
+
+Open Access
+
+The relationship between sleep quality 
+and physical activity among patients with heart 
+failure: a cross-sectional study
+Fatemeh Esnaasharieh1, Mahlagha Dehghan2 
+
+ and Parvin Mangolian Shahrbabaki2* 
+
+Abstract 
+Background:  Sleep disorders are one of the most common and annoying problems among patients with heart 
+failure, which decrease their quality of life. Participation in physical activity is one of the most effective methods to 
+reduce sleep disorders; however, few patients participate. This study was conducted to examine the relationship 
+between physical activities and sleep quality among heart failure patients.
+
+Methods:  A convenience sample of 100 patients with heart failure referred to rehabilitation centers in southeastern 
+Iran was used in this descriptive cross-sectional study. The Pittsburgh Sleep Quality Index and the Rapid Assessment 
+of Physical Activity (RAPA) were used to collect data. The Spearman correlation coefficient and regression were used 
+to analyze the data. The significance level was < 0.05.
+
+ 2.83, with the majority of them (84.47%) 
+Results:  The results revealed that the mean score of sleep quality was 8.74 
+having poor sleep quality. The mean score of physical activity was 2.59 
+ 1.33, and the majority of them (95.15%) had 
+sub-optimal physical activity. There was a significant and inverse relationship between the total scores of sleep quality 
+and physical activity, and patients’ sleep quality improved while physical activity increased. Physical activity, sex, his-
+tory of heart surgery, and the stage of illness were found to account for 31% of the variances in patients’ sleep quality.
+
+±
+
+±
+
+Conclusion:  The results of this study showed better sleep quality among patients who were more physically active. 
+Given that the majority of patients with heart failure suffer from sleep disorders, patients’ knowledge of physical activ-
+ity should be increased to improve their quality of sleep and quality of life.
+
+Keywords:  Physical activity, Sleep quality, Heart failure
+
+Introduction
+In most countries around the world, heart failure is one 
+of the leading causes of disability [1]. It is estimated that 
+by  2030,  the  global  rate  of  heart  disease  mortality  will 
+have risen to more than 23.3 million people [2]. Patients 
+with heart failure who have a decreased functional capa-
+bility,  dyspnea,  and  disability  face  numerous  problems, 
+including sleep disorders [3].
+
+*Correspondence:  mangolian167@yahoo.com
+2 Nursing Research Center, Razi Faculty of Nursing and Midwifery, Kerman 
+University of Medical Sciences, Haft-Bagh Highway, Kerman, Iran
+Full list of author information is available at the end of the article
+
+Sleep  disorder  is  one  of  the  most  common  problems 
+among patients with heart failure, and their sleep quality 
+is  considered  a  basic  care  requirement  [4].  Deprivation 
+of  good  sleep  increases  the  secretion  of  catecholamine, 
+blood  pressure,  the  amount  of  oxygen  needed  by  the 
+heart, and ultimately increases the burden on the heart; 
+therefore, it leads to many physical and mental problems 
+as well as a decrease in the quality of life [5]. It seems that 
+lifestyle  can  affect  the  symptoms  of  heart  failure  such 
+as  sleep  disorders  [6].  However,  limitations  in  lifestyle, 
+social isolation and mood disorders make these patients 
+unable to enjoy adequate and quality sleep [7].
+
+© The Author(s) 2022. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http:// creat iveco mmons. org/ licen ses/ by/4. 0/. The Creative Commons Public Domain Dedication waiver (http:// creat iveco 
+mmons. org/ publi cdoma in/ zero/1. 0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+
+Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 2 of 8
+
+Today, physical activity is one of the simplest and pos-
+sibly the most inexpensive strategies for improving the 
+lifestyle of cardiovascular patients [8]. Physical activity 
+is any physical movement that requires energy expendi-
+ture  and  is  generated  by  skeletal  muscle  [9].  Physi-
+cal  activity  can  moderate  risk  factors  in  heart  failure 
+patients  [10].  Patients  can  do  more  activities  without 
+becoming  tired  or  short  of  breath,  and  improves  their 
+quality  of  life  because  physical  activity  improves  mus-
+cle tone, strengthens the heart muscle and cardiovascu-
+lar system, which improves the heart’s ability to pump, 
+improves  circulation  and  helps  the  body  use  oxygen 
+better  and  increase  energy  levels  [11].  Regular  physi-
+cal activity can also help sleep better, as it can increase 
+sleep  duration,  improve  sleep  quality,  and  reduce  the 
+onset  of  sleep  or  the  time  it  takes  to  fall  asleep  [12]. 
+However,  most  heart  failure  patients  do  not  engage  in 
+long-term and regular physical activity [13].
+
+According  to  reports,  heart  failure  patients’  physical 
+activity  is  on  average  16%  lower  than  that  of  healthy 
+people [14]. It seems that lack of knowledge about self-
+care  and  inadequate  care  at  home  makes  heart  failure 
+patients unaware of the importance of physical activity 
+[15]. Even patients with heart failure believe they must 
+rest and do not engage in physical activity after admis-
+sion to hospital [16]. Therefore, it is important to study 
+the  relationship  between  physical  activities  and  sleep 
+quality  and  their  effects  on  the  quality  of  life  of  heart 
+failure patients.
+
+The prevalence of heart failure in Iran is posing a seri-
+ous challenge to the Iranian health system [17]. Between 
+29 and 47% of patients are readmitted within 3–6 months 
+of  their  initial  discharge,  while  50%  of  readmissions  are 
+avoidable  [18].  On  the  other  hand,  insufficient  physi-
+cal  activity  is  a  concern  in  Iranian  society,  particularly 
+among  Iranian  adults  [19].  Thirty  to  seventy  percent  of 
+Iranian patients with cardiac diseases, like the rest of the 
+population,  do  not  engage  in  enough  physical  activity 
+[20].  Another  issue  is  that  56%  of  Iranian  patients  with 
+heart failure suffer from sleep disorders and have to take 
+sleeping  pills  [21].  A  review  of  the  literature  shows  that 
+physical activity, regardless of its mode and intensity, has 
+increased sleep efficiency, especially in patients on hemo-
+dialysis,  with  diabetes,  sleep  apnea,  obesity,  cancer,  and 
+rheumatoid arthritis [22–27].
+
+In  view  of  the  above,  it  seems  that  physical  activity 
+among  patients  with  heart  failure  has  been  neglected 
+and the problems of patients with heart failure especially 
+sleep  disorder  and  its  related  factors  should  be  given 
+more  attention.  In  addition,  physical  activity  and  sleep 
+habits  can  be  influenced  by  the  culture  and  customs  of 
+societies, which have not been studied in Iran; therefore, 
+this  study  was  performed  to  investigate  the  relationship 
+
+between  sleep  quality  and  physical  activity  among 
+patients with heart failure.
+
+Method
+Study design and setting
+
+The  current  research  was  a  cross-sectional  descriptive 
+correlational study on patients with heart failure referred 
+to cardiac rehabilitation centers affiliated to Jahrom Uni-
+versity of Medical Sciences in southeast Iran with a code 
+of  ethics  (IR.KMU.REC.1399.269)  from  Kerman  Uni-
+versity  of  Medical  Sciences  and  guideline  for  reporting 
+observational  studies  (STROBE).  This  study  lasted  from 
+October to January 2020.
+
+Sample and sampling
+Considering  correlation  coefficient  (− 0.391),  95%  con-
+fidence and 90% test power, 61 samples were calculated, 
+but with an effect size of 1.5, 110 eligible patients admit-
+ted to cardiac rehabilitation centers were recruited by the 
+convenience  sampling  method  to  minimize  the  risk  of 
+dropout and 103 patients completed the study. The inclu-
+sion  criteria  included  patients  with  stages  2–3  of  heart 
+failure diagnosed by a cardiologist [28], patients over the 
+age  of  18  who  were  physically  and  mentally  capable  of 
+answering the questionnaire items, and patients in a sta-
+ble state of the disease. The patients who did not answer 
+to one-third of the questionnaire items and had instable 
+state of the disease were excluded from the study.
+
+Data collection tools
+
+Data  were  collected  using  a  demographic  information 
+questionnaire, the Pittsburgh Sleep Quality Index (PSQI), 
+and the Rapid Assessment of Physical Activity (RAPA).
+
+Demographic information questionnaire
+
+patient’s  age,  sex,  marital  status,  occupation,  monthly 
+income,  level  of  education,  stage  of  disease,  period  of 
+illness,  other  diseases,  medications,  weight,  addiction, 
+history  of  heart  surgery,  other  chronic  illness,  and  the 
+number of admissions in the previous 6 months or year 
+were all included in the questionnaire.
+
+Pittsburgh sleep quality index (PSQI)
+
+This  questionnaire  is  used  to  assess  the  quality  of  sleep 
+and  contains  19  items  rated  on  a  4-point  Likert  scale 
+from  0  to  3.  The  questionnaire  has  seven  subscales  of 
+subjective  sleep  quality,  sleep  latency,  sleep  duration, 
+habitual sleep efficiency, sleep disturbances, use of sleep-
+ing medications and daytime dysfunction. The question-
+naire total score ranges from 0 to 21 with a score of more 
+than  five  indicating  poor  sleep  quality.  The  participant’s 
+score  in  each  item  would  range  from  0  to  three,  indi-
+cating  no  problem  at  all,  moderate  problems,  serious 
+
+Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 3 of 8
+
+problems and very serious problems, respectively. Using 
+Cronbach’s  alpha,  Buysse  et  al.  (1989),  who  developed 
+and  introduced  this  questionnaire,  obtained  an  internal 
+consistency of 0.83. According to their findings, this scale 
+has  a  sensitivity  of  89.6%  and  a  specificity  of  86.5%  in 
+the diagnosis of poor sleep (score > 5). Poor sleep quality 
+was diagnosed with a combination of clinical interviews, 
+structured  interviews,  and  polysomnographic  data  and 
+compared with the standard score above five [29, 30]. In 
+Iran, the validity of this questionnaire was confirmed by 
+content validity. Split-half reliability was used to measure 
+the  consistency  of  the  scores  of  this  questionnaire  and 
+Cronbach’s alpha coefficient was 0.79 [31].
+
+Rapid assessment of physical activity (RAPA) questionnaire
+
+RAPA  assesses  the  amount  and  intensity  of  physical 
+activity  and  consists  of  nine  items  with  the  response 
+options  of  yes  or  no.  The  first  section  of  the  question-
+naire  defines  light,  moderate,  and  vigorous  activities  for 
+the  participants,  and  the  second  section  includes  items 
+about  their  activities  during  the  week.  The  RAPA  ques-
+tionnaire consists of seven items that assess the amount, 
+intensity, and duration of physical activity, as well as two 
+items  that  assess  flexibility,  strength  and  the  total  score 
+of  physical  activity.  The  lowest  possible  score  was  zero, 
+and  the  highest  possible  score  was  nine.  A  score  of  less 
+than  six  indicates  sub-optimal  physical  activity,  while  a 
+score of more than six indicates optimal physical activity. 
+To score, choose the question with the highest score with 
+an  affirmative  response.  Any  score  less  than  six  is  sub-
+optimal. Topolski et al. (2006) used the Spearman’s rank 
+correlation  coefficients  to  validate  the  physical  activity 
+questionnaire  and  investigate  the  relationship  between 
+physical  activity  and  energy  expenditure.  They  reported 
+RAPA  questionnaire  with  high  sensitivity  (81%),  speci-
+ficity  (69%),  and  negative  predictive  value  (77%)  [28].  In 
+Iran, this instrument was used by Khajavi and Khanmo-
+hamadi  (2015).  The  validity  of  the  tool  was  confirmed 
+by  a  confirmatory  factor  analysis.  The  reliability  of  the 
+instrument  was  obtained  with  Cronbach’s  alpha  coeffi-
+cient (0.87) [32].
+
+Data analysis
+
+Data  were  analyzed  using  SPSS25.  The  demographic 
+and  background  characteristics  of  research  units,  as 
+well as the mean physical activity and sleep quality were 
+described using descriptive statistics (frequency, percent-
+age, mean and standard deviation). The normality of the 
+data  distribution  was  assessed  using  the  Kolmogorov–
+Smirnov  test.  Physical  activity  score  did  not  follow  the 
+normal  distribution,  but  distribution  of  quality  of  sleep 
+score was normal; therefore, Spearman correlation coef-
+ficient  was  used  to  examine  the  relationship  between 
+
+the overall score of sleep quality and its dimensions and 
+physical  activity.  Multiple  linear  regression  was  used 
+to  determine  predictors  of  sleep  quality  and  analyze 
+the  relationship  between  a  dependent  variable  (score  of 
+sleep  quality)  and  several  independent  variables.  Physi-
+cal  activity  and  background  variables  were  entered  into 
+regression by backward method and the final model was 
+given  in  the  table. The  significance  level  was  considered 
+P < 0.05.
+
+Results
+The  samples  had  a  mean  age  of  55.98 ± 11.38  years. 
+The  mean  disease  duration  among  the  samples  was 
+7.23 ± 5.03  years.  Table  1  lists  the  remaining  demo-
+graphic characteristics of the patients.
+
+According  to  the  results,  the  mean  sleep  quality  of 
+the  samples  was  8.74 ± 2.83.  The  majority  of  patients 
+(84.47%)  had  poor  sleep  quality,  and  among  the  dimen-
+sions  of  sleep  quality,  habitual  sleep  efficiency  was  the 
+best  and  sleep  duration  and  sleep  disturbances  were 
+the  worst.  Sleep  latency  (24.27%)  was  serious  in  nearly 
+a  quarter  of  patients,  and  it  was  very  serious  in  23.30% 
+of them. The majority of them (48.54%) had no problem 
+with habitual sleep efficiency. 63.11% of them had serious 
+sleep disorders and 43.69% of them had no daytime dys-
+function.  Subjective  sleep  quality  was  relatively  good  in 
+49.5% of the patients. However, 38.8% of them had rela-
+tively poor subjective sleep quality. 49.51% of the patients 
+slept for 6–7 h, while 37.86% slept for 5–6 h. 44.66% had 
+used sleeping medications at least once a week (Table 2). 
+The  results  showed  that  the  mean  physical  activity  in 
+patients  was  2.59 ± 1.33  and  the  majority  of  patients 
+(95.15%) had sub-optimal physical activity (Table 3).
+
+According to the results, the total score of sleep qual-
+ity had a significant and inverse relationship with physi-
+cal  activity,  meaning  that  increasing  physical  activity 
+improved  the  sleep  quality  of  heart  failure  patients.  A 
+higher  sleep  quality  score  indicates  poor  sleep  quality, 
+while a higher physical activity score indicates optimum 
+physical activity due to the inverse sleep score (Table 4). 
+Among  the  subscales  of  sleep  quality,  subjective  sleep 
+quality,  habitual  sleep  efficiency,  sleep  disturbances,  use 
+of  sleeping  medications  and  daytime  dysfunction  had  a 
+significant and inverse relationship with physical activity. 
+These results revealed that as physical activity increased, 
+sleep  quality  improved  among  the  subscales  described 
+(Table 5).
+
+Based  on  demographic  and  background  variables, 
+multiple  linear  regression  with  backward  method  was 
+used  to  predict  patients’  sleep  quality.  The  patients’ 
+sleep  quality  was  considered  as  a  dependent  vari-
+able.  Physical  activity,  age,  BMI,  period  of  illness,  sex, 
+marital  status,  income,  substance  use,  history  of  heart 
+
+ Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 4 of 8
+
+Table 1  Demographic characteristic of the patients (n 
+
+=
+
+ 103)
+
+Variable
+
+Sex
+
+ Female
+
+ Male
+
+Marital status
+
+ Married
+
+ Single/widow/widower/divorced
+
+Education level
+
+ Middle/high school
+
+ Diploma
+
+ Academic
+
+Income
+
+ < 10 million Rial
+
+ 10–20 million Rial
+
+ 20–30 million Rial
+
+ > 30 million Rial
+
+Job
+
+ Unemployed
+
+ Employed
+
+Stage of illness
+
+ 2
+
+ 3
+
+ 4
+
+Substance use
+
+ Yes
+
+ No
+
+History of heart surgery
+
+ Yes
+
+ No
+
+History of other chronic diseases
+
+ Yes
+
+ No
+
+Number of admissions
+
+ None
+
+ 1
+
+ 2
+
+ 3 days and more
+
+Variable
+
+Age (year)
+
+BMI
+
+Disease duration (year)
+
+n
+
+42
+
+61
+
+82
+
+21
+
+52
+
+20
+
+31
+
+16
+
+21
+
+33
+
+33
+
+31
+
+72
+
+23
+
+22
+
+58
+
+14
+
+89
+
+21
+
+82
+
+74
+
+29
+
+21
+
+37
+
+39
+
+6
+
+Mean
+
+55.98
+
+27.10
+
+7.23
+
+%
+
+40.78
+
+59.22
+
+79.61
+
+20.39
+
+50.49
+
+19.42
+
+30.09
+
+15.53
+
+20.39
+
+32.04
+
+32.04
+
+30.10
+
+69.90
+
+23.33
+
+21.36
+
+56.31
+
+13.59
+
+86.41
+
+20.39
+
+79.61
+
+71.84
+
+28.16
+
+20.4
+
+35.9
+
+37.9
+
+5.8
+
+SD
+
+11.38
+
+4.40
+
+5.03
+
+surgery,  stage  of  illness,  and  number  of  admissions 
+were  all  independent  variables.  Following  the  selec-
+tion of the best model, the results revealed that physical 
+activity,  sex,  history  of  heart  surgery,  and  stage  of  dis-
+ease were predictors of patients’ sleep quality, account-
+ing for 31% of the variances in sleep quality. According 
+
+to  beta  coefficients,  physical  activity  and  sex  had  an 
+indirect  effect.  Patients’  sleep  quality  has  improved  in 
+female  sex  and  as  a  result  of  increased  physical  activ-
+ity. History of heart surgery and stage of disease had a 
+direct  impact.  Patients’  sleep  quality  has  deteriorated 
+due to a history of heart surgery and increased stage of 
+illness (Table 6).
+
+Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 5 of 8
+
+Table 2  Sleep  quality  and  its  subscales  in  patients  with  heart 
+failure (n 
+
+ 103)
+
+=
+
+Sleep latency
+
+ No problem
+
+ Moderate problem
+
+ Serious problem
+
+ Very serious problem
+
+Habitual sleep efficiency
+
+ No problem
+
+ Moderate problem
+
+ Serious problem
+
+ Very serious problem
+
+Sleep disturbances
+
+ No problem
+
+ Moderate problem
+
+ Serious problem
+
+ Very serious problem
+
+Daytime dysfunction
+
+ No problem
+
+ Moderate problem
+
+ Serious problem
+
+ Very serious problem
+
+Subjective sleep quality
+
+ Very good
+
+ Relatively good
+
+ Relatively bad
+
+ Very bad
+
+Sleep duration
+
+ > 7 h
+
+ 6–7 h
+
+ 5–6 h
+
+ < 5 h
+
+Use of sleeping medications
+
+ None
+
+ Once a week
+
+ Twice a week
+
+Total sleep quality
+
+ Normal
+
+ Poor
+
+n
+
+19
+
+35
+
+25
+
+24
+
+50
+
+34
+
+10
+
+9
+
+0
+
+38
+
+65
+
+0
+
+45
+
+35
+
+17
+
+6
+
+8
+
+51
+
+40
+
+4
+
+0
+
+51
+
+39
+
+13
+
+57
+
+17
+
+29
+
+16
+
+87
+
+%
+
+18.45
+
+33.98
+
+24.27
+
+23.30
+
+48.54
+
+33.01
+
+9.71
+
+8.74
+
+0.0
+
+36.89
+
+63.11
+
+0.0
+
+43.69
+
+33.98
+
+16.50
+
+5.83
+
+7.77
+
+49.51
+
+38.83
+
+3.88
+
+0.0
+
+49.51
+
+37.86
+
+12.62
+
+55.34
+
+16.50
+
+28.16
+
+15.53
+
+84.47
+
+Table 3  Physical activity in patients with heart failure
+
+Variable
+
+Total physical activity
+
+ Sub-optimal
+
+ Optimal
+
+n
+
+98
+
+5
+
+%
+
+95.15
+
+4.85
+
+Discussion
+This  study  aimed  to  examine  the  relationship  between 
+sleep  quality  and  physical  activity  among  heart  failure 
+patients referred to rehabilitation centers in southeastern 
+Iran.
+
+The  results  showed  that  the  majority  of  patients  had 
+poor  sleep  quality.  A  significant  proportion  of  patients 
+had serious and very serious problems in the subscales of 
+sleep latency, habitual sleep efficiency, sleep disturbances, 
+and daytime dysfunction. A large number of patients had 
+poor subjective sleep quality and inadequate sleep dura-
+tion,  and  about  half  of  the  patients  took  sleeping  medi-
+cations. Consistent with the results of the current study, 
+Hajj  et  al.  (2020)  in  the  United  States,  Azevedo  et  al. 
+(2015)  in  Brazil,  Jorge-Samitier  et  al.  (2020)  in  Spain, 
+Lainsamputty  et  al.  (2018)  in  Indonesia,  and  Zeighami 
+et al. (2013) and Momayyezi et al. (2015) in Iran all found 
+that sleep quality was poor among heart failure patients 
+[4,  33–37].  According  to  LEE  et  al.  (2016),  the  major-
+ity  of  heart  failure  patients  had  sleep  problems  three  or 
+more  times  per  week  in  the  past  month,  and  less  than 
+one-third took sleeping medications in the last week [38]. 
+Abedi  et  al.  (2012)  discovered  that  half  of  the  patients 
+with  cardiovascular  disease  had  a  good  sleep  and  rest 
+pattern, which contradicted the results of this study [39]. 
+Edmealem  et  al.  (2020)  revealed  that  poor  sleep  quality 
+was not common in Ethiopian patients with heart failure. 
+The majority of patients slept for more than seven hours, 
+had high habitual sleep efficiency, and did not use sleep-
+ing medications [40]. These differences can be attributed 
+to  differences  in  the  support  provided  by  heart  failure 
+associations,  the  amount  of  training  provided  during 
+discharge,  home  care,  and  differences  in  lifestyle,  socio-
+demographic and cultural status [38–40].
+
+According  to  the  results,  majority  of  the  participants 
+had  sub-optimal  physical  activity.  Most  studies  indicate 
+that a significant number of heart failure patients do not 
+engage  in  physical  activities  [13,  41].  Fakharzadeh  et  al. 
+(2015)  conducted  a  systematic  study  in  Iran  and  found 
+that the majority of heart failure patients did not engage 
+in enough physical activity [20].
+
+The  current  study  results  revealed  a  moderate  sig-
+nificant  relationship  between  sleep  quality  and  physical 
+activity  among  patients  with  heart  failure,  implying  that 
+patients who did more physical activity had better sleep 
+quality. Furthermore, as physical activity increased, sleep 
+quality improved in all subscales of subjective sleep qual-
+ity, habitual sleep efficiency, sleep disturbances, the use of 
+sleeping  medications,  and  daytime  dysfunction.  On  the 
+other hand, when patients get enough sleep, they do not 
+feel  drowsy  during  the  day,  so  they  can  be  more  active 
+and  focus  on  their  work  more.  It  is  particularly  impor-
+tant  to  patients  who  do  more  regular  physical  activity, 
+
+ Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 6 of 8
+
+Table 4  Descriptive statistics of sleep quality, its subscales and physical activity (n 
+
+ 103)
+
+Variable
+
+Subjective sleep quality
+
+Sleep latency
+
+Sleep duration
+
+Habitual sleep efficiency
+
+Sleep disturbances
+
+Use of sleeping medications
+
+Daytime dysfunction
+
+Total score of sleep quality
+
+Physical activity score
+
+M
+
+1.39
+
+1.52
+
+1.63
+
+0.79
+
+1.63
+
+0.93
+
+0.84
+
+8.74
+
+2.59
+
+SD
+
+0.69
+
+1.05
+
+0.70
+
+0.95
+
+0.48
+
+1.21
+
+0.90
+
+2.83
+
+1.33
+
+Median
+
+1
+
+1
+
+2
+
+1
+
+2
+
+0
+
+1
+
+9
+
+2
+
+=
+IQR (Q3–Q1)
+
+Minimum
+
+Maximum
+
+(2–1)
+
+(2–1)
+
+(2–1)
+
+(1–0)
+
+(2–1)
+
+(2–0)
+
+(1–0)
+
+(11–16)
+
+(2–3)
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+0
+
+4
+
+1
+
+3
+
+3
+
+3
+
+3
+
+2
+
+3
+
+3
+
+16
+
+7
+
+Table 5  Correlation between sleep quality and physical activity 
+(n 
+
+ 103)
+
+=
+Variable
+
+Physical activity
+
+Spearman correlation 
+coefficient
+
+P value
+
+ 0.41
+
+< 0.001**
+
+Subjective sleep quality
+
+Sleep latency
+
+Sleep duration
+
+Habitual sleep efficiency
+
+Sleep disturbances
+
+Use of sleeping medications
+
+Daytime dysfunction
+
+Total score of sleep quality
+
+**Significant
+
+−
+
+−
+
+−
+
+−
+
+−
+
+−
+
+−
+
+−
+
+ 0.14
+
+ 0.15
+
+ 0.21
+
+ 0.30
+
+ 0.004
+
+ 0.31
+
+ 0.27
+
+0.16
+
+0.14
+
+0.03**
+
+0.002**
+
+0.97
+
+0.002**
+
+0.005**
+
+because good sleep can involve in the healing and repair 
+of their heart and blood vessels and boosts immune sys-
+tem/function  [42].  Studies  in  this  field  have  also  shown 
+that  patients  who  have  had  more  physical  activity  have 
+had better sleep efficiency and duration, regardless of the 
+type and intensity of activity [43, 44]. In this regard, Ash 
+et  al.  (2020)  found  that  everyday  physical  activity  was 
+
+associated  with  either  longer  sleep  at  the  same  night  or 
+more physical activity on the next day [45]. DuBose and 
+Hadi (2016) showed the long-term impacts of disturbed 
+sleep  include  lower  physical  functioning  and  increased 
+delirium [46].
+
+Paparrigopoulos et al. (2010) discovered that heart fail-
+ure patients who engaged in moderate to vigorous physi-
+cal activity were less likely to suffer from sleep disorders 
+compared with cardiac patients with light physical activ-
+ity  [2].  This  study  clarifies  the  importance  of  physical 
+activity  among  patients  with  heart  failure  and  can  help 
+health care providers improve sleep quality and quality of 
+life by training patients about physical activity.
+
+The  results  of  the  study  showed  that  the  variables 
+of  physical  activity,  sex,  history  of  heart  surgery,  and 
+the  stage  of  illness  predicted  sleep  quality  in  patients 
+with  heart  failure.  Beta  coefficients  demonstrated  that 
+patients’  sleep  quality  improved  in  women  and  as  a 
+result  of  an  increase  in  physical  activity.  Patients’  sleep 
+quality  decreased  due  to  a  history  of  heart  surgery  and 
+a  high  stage  of  disease.  Redeker  et  al.  (2005)  discovered 
+a  strong  relationship  between  sleep  quality  and  heart 
+failure  among  patients  with  chronic  heart  failure  [47]. 
+Alt et al. (2013) demonstrated that women with chronic 
+
+Table 6  Multiple linear regression model for all variables and overall sleep quality (n 
+
+=
+
+ 103)
+
+Sig
+
+95% confidence
+
+Beta
+
+–
+
+t
+
+6.53
+
+< 0.001
+
+(1.61, 3.01)
+
+R2
+
+0.310
+
+Independent variable
+
+B
+
+Constant value
+
+Physical activity
+
+BMI
+
+Sex
+
+Marital status
+
+Substance use
+
+History of heart surgery
+
+Stage of disease
+
+−
+
+−
+
+−
+
+−
+
+2.31
+
+ 0.05
+
+ 0.02
+
+ 0.14
+
+0.14
+
+ 0.18
+
+0.18
+
+0.13
+
+SE
+
+0.35
+
+0.02
+
+0.01
+
+0.07
+
+0.08
+
+0.10
+
+0.08
+
+0.04
+
+History of heart surgery: yes 
+
+=
+History of substance use: yes 
+
+ 1, No 
+
+=
+ 1, No 
+
+=
+
+ 0 Sex: male 
+
+=
+
+ 2, female 
+
+=
+
+ 1
+
+=
+
+ 0 Marital status: single/widow/widower/divorced 
+
+−
+
+−
+
+ 0.21
+
+ 0.18
+
+ 0.21
+
+−
+0.17
+
+ 0.19
+
+−
+0.22
+
+0.31
+
+−
+
+−
+
+−
+
+ 2.13
+
+ 1.90
+
+ 2.09
+
+1.83
+
+−
+
+ 1.85
+
+2.24
+
+2.83
+
+ 1, married 
+
+=
+
+ 2
+
+0.04
+
+0.06
+
+0.04
+
+0.07
+
+0.07
+
+0.03
+
+0.01
+
+=
+
+ 0.10,0)
+
+ 0.04,0)
+
+ 0.27, 
+
+ 0.01)
+
+−
+
+ 0.01, 0.30)
+
+−
+
+−
+
+−
+(
+
+−
+
+(
+
+(
+
+(
+
+(
+
+ 0.38, 0.01)
+
+−
+(0.02, 0.34)
+
+(0.04, 0.21)
+
+Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 7 of 8
+
+rhino  sinusitis  and  those  with  other  diseases  had  poor 
+sleep  quality,  which  was  not  strongly  associated  with 
+the  disease  severity  [48].  They  believe  that  the  relation-
+ship  between  disease  severity  and  poor  sleep  is  mutual, 
+and  disability  predicts  worse  sleep,  which  in  turn  may 
+predict  quality  of  life.  It  is  very  important  to  pay  atten-
+tion to physical activity and quality of sleep in heart fail-
+ure  patients  with  different  demographic  characteristics 
+because clinically changes to sleep and physical inactivity 
+in  cardiovascular  inpatients  produce  delirium,  immuno-
+suppression and depression that may lead to readmission 
+and  decrease  quality  of  life  [49].  Therefore,  it  is  recom-
+mended  that  health  care  providers  pay  attention  to  this 
+important issue in care planning and lifestyle training.
+
+This  study  had  several  limitations.  Owing  to  the  fact 
+that  temporal  and  seasonal  factors  affect  the  qual-
+ity  of  sleep,  this  cross-sectional  study  cannot  assess  the 
+patients’ quality of sleep over time and provide objective 
+information about sleep, and it only reflects patients’ per-
+ceptions of sleep and its quality. The impact of different 
+cut-off  on  physical  activity  and  sleep  may  have  different 
+results,  which  is  why  further  studies  are  recommended. 
+On the other hand, due to the low value of the correlation 
+coefficient  in  the  relationship  between  the  study  vari-
+ables,  the  existence  of  a  confounding  variable  may  have 
+caused a false or fake correlation, and finally, reverse cau-
+sality bias may exist.
+
+Conclusion
+The  results  showed  that  the  sleep  quality  of  the  major-
+ity  of  patients  with  heart  failure  in  this  study  was  poor 
+and  their  physical  activity  was  not  at  a  desired  level.  In 
+addition,  patients  who  were  more  physically  active  also 
+had better sleep quality. Therefore, it is recommended to 
+take the necessary measures to improve sleep quality by 
+controlling or eliminating the factors that cause sleep dis-
+orders, and also to identify the factors affecting patients’ 
+compliance  with  physical  activity.  It  seems  that  improv-
+ing  the  methods  of  increasing  physical  activity  can  be  a 
+cost-effective care approach in improving the sleep qual-
+ity of patients with heart failure.
+
+Acknowledgements
+The present article has been derived from the M.S thesis for critical care nurs-
+ing. We would thank all patients, the graduate department of Razi Faculty of 
+Nursing and Midwifery of Kerman that helped us in this research.
+
+Authors’ contributions
+P.M and F.E contributed in original idea and protocol, conception of the work, 
+conducting the study, revising the draft, approval of the final version of the 
+manuscript, and agreed for all aspects of the work. M.D was involved in data 
+analysis, drafting of the manuscript and approval of the final version of the 
+manuscript. All of the authors contributed in the design of the work and revis-
+ing the draft and approval of the final version of the manuscript.
+
+Funding
+The authors declare that there is no funding associated with this project.
+
+Availability of data and materials
+The datasets used and/or analyzed during the current study are available from 
+the corresponding author on reasonable request.
+
+Declarations
+
+Ethics approval and consent to participate
+The researcher referred to the target medical centers after receiving the code 
+of ethics (IR.KMU.REC.1399.269) from Kerman University of Medical Sciences 
+and a letter of introduction. The researcher took written consent from patients 
+referred to the medical center for rehabilitation after obtaining permission 
+from the authorities of these centers and providing the necessary explana-
+tions about the objectives and method of the study. Patients were included in 
+the study after their doctor confirmed that they were in good health and that 
+they were able to answer the questionnaire items, which were asked in the 
+form of interviews and recorded by the researcher.
+
+Consent for publication
+Not applicable.
+
+Competing interests
+The authors declare that they have no competing interests.
+
+Author details
+1 MS of Critical Care Nursing, Jahrom University of Medical Sciences, Jahrom, 
+Iran. 2 Nursing Research Center, Razi Faculty of Nursing and Midwifery, Kerman 
+University of Medical Sciences, Haft-Bagh Highway, Kerman, Iran. 
+
+Received: 18 June 2021   Accepted: 1 February 2022
+
+References
+ 1.  Mansouriyeh N, Poursharifi H, Sadeghi MRT, Seirafi MR. The relationship 
+between social support and self-care in patients with heart failure: the 
+role of illness related worries as a mediator. CJMB. 2018;5(2):144–8.
+
+ 2.  Baldwin SAS. Coronary heart disease knowledge, health promoting 
+
+ 3. 
+
+behaviors and perceived benefits and barriers to exercise and healthy 
+eating in Montana females. Montana State University-Bozeman, College 
+of Nursing; 2014.
+Smeltzer S, Bare B, Hinkle J, Cheever K. Brunner and Suddarth’s textbook 
+of medical surgical nursing. Chapter 26 assessment of function, vol. 1. 
+14th ed. Philadelphia: Lippincott Williams and Wilkins; 2014. p. 685.
+ 4.  Hajj J, Mathelier H, Drachman B, Laudanski K. Sleep quality, fatigue, 
+and quality of life in individuals with heart failure. J Nurse Pract. 
+2020;21(8):461–5.
+
+ 5.  Nayyeri S, Golafrooz M, Sadeghi H, Amini S, Zarrabi L, Rakhshani MH. 
+
+ 6. 
+
+The effect of the partnership care model on the quality of sleep among 
+patients with heart failure. J Sabzevar Univ Med Sci. 2015;22(3):289–99.
+Falk K, Patel H, Swedberg K, Ekman I. Fatigue in patients with chronic 
+heart failure—a burden associated with emotional and symptom dis-
+tress. Eur J Cardiovasc Nurs. 2009;8(2):91–6.
+
+ 7.  McGowan CL, Levy AS, McCartney N, MacDonald MJ. Isometric handgrip 
+
+training does not improve flow-mediated dilation in subjects with nor-
+mal blood pressure. Clin Sci. 2007;112(7):403–9.
+
+ 8.  McGowan CL, Levy AS, McCartney N, MacDonald MJ. Isometric handgrip 
+
+ 9. 
+
+training does not improve flow-mediated dilation in subjects with nor-
+mal blood pressure. Clin Sci Lond Engl 1979. 2007;112(7):403–9.
+Salehi F, Dehghan M, Mangolian Shahrbabaki P, Ebadzadeh MR. Effec-
+tiveness of exercise on fatigue in hemodialysis patients: a randomized 
+controlled trial. BMC Sports Sci Med Rehabil. 2020;12(1):1–9.
+
+ 10.  Arija V, Villalobos F, Pedret R, Vinuesa A, Timón M, Basora T, Aguas D, 
+
+Basora J, Domínguez E, Jovani D, et al. Effectiveness of a physical activity 
+program on cardiovascular disease risk in adult primary health-care 
+
+ Esnaasharieh et al. BMC Sports Science, Medicine and Rehabilitation           (2022) 14:20 
+
+Page 8 of 8
+
+users: the “Pas-a-Pas” community intervention trial. BMC Public Health. 
+2017;17(1):576.
+
+ 11.  Piercy KL, Troiano RP, Ballard RM, Carlson SA, Fulton JE, Galuska DA, 
+
+George SM, Olson RD. The physical activity guidelines for Americans. 
+JAMA. 2018;320(19):2020–8.
+
+ 12.  Kredlow MA, Capozzoli MC, Hearon BA, Calkins AW, Otto MW. The 
+
+effects of physical activity on sleep: a meta-analytic review. J Behav Med. 
+2015;38(3):427–49.
+
+ 13.  Zores F, Iliou M-C, Gellen B, Kubas S, Berthelot E, Guillo P, Bauer F, Lamblin 
+
+N, Bosser G, Damy T, et al. Physical activity for patients with heart failure: 
+position paper from the heart failure (GICC) and cardiac rehabilitation 
+(GERS-P) Working Groups of the French Society of Cardiology. Arch 
+Cardiovasc Dis Suppl. 2019;112(11):723–31.
+
+ 14.  O’Donnell J, Smith-Byrne K, Velardo C, Conrad N, Salimi-Khorshidi G, 
+
+Doherty A, Dwyer T, Tarassenko L, Rahimi K. Self-reported and objectively 
+measured physical activity in people with and without chronic heart 
+failure: UK Biobank analysis. Open Heart. 2020;7(1):e001099.
+
+ 15.  Nikbakht-Nasrabadi A, Shabany-Hamedan M. Providing healthcare ser-
+vices at home-a necessity in Iran: a narrative review article. Iran J Public 
+Health. 2016;45(7):867.
+
+ 16.  Zores F, Iliou M-C, Gellen B, Kubas S, Berthelot E, Guillo P, Bauer F, Lamblin 
+
+N, Bosser G, Damy T. Physical activity for patients with heart failure: posi-
+tion paper from the heart failure (GICC) and cardiac rehabilitation (GERS-
+P) Working Groups of the French Society of Cardiology. Arch Cardiovasc 
+Dis. 2019;112(11):723–31.
+
+ 17.  Ahmadi A, Soori H, Mobasheri M, Etemad K, Khaledifar A. Heart failure, the 
+
+outcomes, predictive and related factors in Iran. J Mazandaran Univ Med 
+Sci. 2014;24(118):180–8.
+
+ 18.  Talaei M, Sarrafzadegan N, Sadeghi M, Oveisgharan S, Marshall T, Thomas 
+GN, Iranipour R. Incidence of cardiovascular diseases in an Iranian popula-
+tion: the Isfahan Cohort Study. Arch Iran Med. 2013;16(3):138–44.
+ 19.  Mohebi F, Mohajer B, Yoosefi M, Sheidaei A, Zokaei H, Damerchilu B, 
+
+Mehregan A, Shahbal N, Rezaee K, Khezrian M. Physical activity profile 
+of the Iranian population: STEPS survey, 2016. BMC Public Health. 
+2019;19(1):1–17.
+
+ 20.  Fakhrzadeh H, Djalalinia S, Mirarefin M, Arefirad T, Asayesh H, Safiri S, 
+Samami E, Mansourian M, Shamsizadeh M, Qorbani M. Prevalence of 
+physical inactivity in Iran: a systematic review. J Cardiovasc Thorac Res. 
+2016;8(3):92.
+
+ 21.  Zeighami Mohammadi S, Shahparian M. Evaluation of sleep problems 
+
+and its associated factors in male patients with systolic heart failure. QOM 
+Univ Med Sci J. 2012;6(4):64–73.
+
+ 22.  Løppenthin K, Esbensen BA, Jennum P, Østergaard M, Christensen JF, 
+
+Thomsen T, Bech JS, Midtgaard J. Effect of intermittent aerobic exercise 
+on sleep quality and sleep disturbances in patients with rheumatoid 
+arthritis–design of a randomized controlled trial. BMC Musculoskelet 
+Disord. 2014;15(1):1–8.
+
+ 23.  Mendelson M, Borowik A, Michallet AS, Perrin C, Monneret D, Faure P, 
+
+Levy P, Pépin JL, Wuyam B, Flore P. Sleep quality, sleep duration and physi-
+cal activity in obese adolescents: effects of exercise training. Pediatr Obes. 
+2016;11(1):26–32.
+
+ 24.  Aiello KD, Caughey WG, Nelluri B, Sharma A, Mookadam F, Mookadam M. 
+Effect of exercise training on sleep apnea: a systematic review and meta-
+analysis. Respir Med. 2016;116:85–92.
+
+ 30.  Heidari A, Ehteshamzadeh P, Marashi M. Relationship between severity 
+of insomnia, sleep quality, drowsiness, and mental health disorder with 
+academic performance in girls. SRQWC. 2010;2(4):65–76.
+
+ 31.  Heydari A, Ehteshamzadeh P, Marashi M. Relationship between severity 
+of insomnia, sleep quality, drowsiness and mental health disorder with 
+educational performance in girls. J Women Cult Res. 2010;1(4):65–76.
+ 32.  Khajavi D, Khanmohamadi R. The effect of “Green Exercise” on improving 
+the sleep quality of female elderly without regular physical activity in 
+Arak city. J Woman Fam Stud. 2016;3(2):7–32.
+
+ 33.  Azevedo IG, Vieira EMA, Oliveira Neto NR, Nogueira IDB, Melo FES, 
+
+Nogueira PAMS. Correlation between sleep and quality of life in patients 
+with heart failure. Fisioter Pesqui. 2015;22(2):148–54.
+
+ 34.  Jorge-Samitier P, Durante A, Gea-Caballero V, Antón-Solanas I, Fernández-
+
+Rodrigo MT, Juárez-Vela R. Sleep quality in patients with heart failure in 
+the Spanish population: a cross-sectional study. Int J Environ Res Public 
+Health. 2020;17(21):7772.
+
+ 35.  Lainsamputty F, Chen H-M. The correlation between fatigue and sleep 
+
+quality among patients with heart failure. NurseLine J. 2018;3(2):100–14.
+ 36.  Zighami MS, Shahparian M. Evaluation of sleep problems and its associ-
+ated factors in male patients with systolic heart failure. QOM Univ Med 
+Sci J. 2013;6(4):64–73.
+
+ 37.  Momayyezi M, Fallahzadeh H, Barzegar R. Sleep quality in patients with 
+
+heart failure: comparison between patients and non-patients in Yazd, Iran 
+(2014). Iran Heart J. 2015;16(3):28–37.
+
+ 38.  Lee KS, Lennie TA, Heo S, Song EK, Moser DK. Prognostic impor-
+
+tance of sleep quality in patients with heart failure. Am J Crit Care. 
+2016;25(6):516–25.
+
+ 39.  Abedi H, Bik Mohammadi S, Abdeyazdan G, Nazari H. A survey on the 
+lifestyle of the heart desease patients after discharge from hospital in 
+Urmia Seyyed Alshohada in 2012. Nurs Midwifery J. 2014;11(12):944–54.
+
+ 40.  Edmealem A, Degu SG, Haile D, Gedfew M, Bewket B, Andualem A. Sleep 
+quality and associated factors among diabetes, hypertension, and heart 
+failure patients at Debre Markos referral hospital, Northwest Ethiopia. 
+Sleep Disord. 2020;2020(1):6125845.
+
+ 41.  Klompstra L. Physical activity in patients with heart failure: motivations, 
+self-efficacy and the potential of exergaming. Doctoral thesis, compre-
+hensive summary. Linköping: Linköping University Electronic Press; 2016.
+ 42.  Faraut B, Boudjeltia KZ, Vanhamme L, Kerkhofs M. Immune, inflammatory 
+and cardiovascular consequences of sleep restriction and recovery. Sleep 
+Med Rev. 2012;16(2):137–49.
+
+ 43.  Paparrigopoulos T, Tzavara C, Theleritis C, Soldatos C, Tountas Y. Physical 
+activity may promote sleep in cardiac patients suffering from insomnia. 
+Int J Cardiol. 2010;143(2):209–11.
+
+ 44.  Dolezal BA, Neufeld EV, Boland DM, Martin JL, Cooper CB. Interrelation-
+
+ship between sleep and exercise: a systematic review. Adv Prev Med. 
+2017;2017:1364387.
+
+ 45.  Ash G, Jeon S, Conley S, Knies AK, Yaggi HK, Jacoby D, Hollenbeak CS, 
+Linsky S, O’Connell M, Redeker NS. Day-to-day relationships between 
+physical activity and sleep characteristics among people with heart 
+failure and insomnia. Behav Sleep Med. 2021;19(5):602–14.
+
+ 46.  DuBose JR, Hadi K. Improving inpatient environments to support patient 
+
+sleep. Int J Qual Health Care. 2016;28(5):540–53.
+
+ 47.  Redeker NS, Hilkert R. Sleep and quality of life in stable heart failure. J 
+
+Cardiac Fail. 2005;11(9):700–4.
+
+ 25.  Keser İ, Özdemir K, Erer D, Onurlu İ, Bezgin S. Differences in pain, fatigue, 
+
+ 48.  Alt JA, Smith TL, Mace JC, Soler ZM. Sleep quality and disease severity in 
+
+and quality of life in patients with chronic venous insufficiency based 
+on physical activity level. Turk Gogus Kalp Damar Cerrahisi Derg. 
+2020;28(1):76–83.
+
+ 26.  Du S, Dong J, Zhang H, Jin S, Xu G, Liu Z, Chen L, Yin H, Sun Z. Taichi 
+
+exercise for self-rated sleep quality in older people: a systematic review 
+and meta-analysis. Int J Nurs Stud. 2015;52(1):368–79.
+
+ 27.  Bernard P, Ivers H, Savard M-H, Savard J. Temporal relationships between 
+sleep and physical activity among breast cancer patients with insomnia. 
+Health Psychol. 2016;35(12):1307.
+
+ 28.  Topolski TD, LoGerfo J, Patrick DL, Williams B, Walwick J, Patrick MB. The 
+
+rapid assessment of physical activity (RAPA) among older adults. Prev 
+Chronic Dis. 2006;3(4):A118.
+
+ 29.  Buysse DJ, Reynolds CF, Monk TH, Berman SR, Kupfer DJ. The Pittsburgh 
+Sleep Quality Index: a new instrument for psychiatric practice and 
+research. Psychiatry res. 1989;28(2):193–213.
+
+patients with chronic rhinosinusitis. Laryngoscope. 2013;123(10):2364–70.
+
+ 49.  Labrosciano C, Tavella R, Reynolds A, Air T, Beltrame JF, Ranasinghe I, 
+
+Adams RJ. The association between sleep duration and quality with read-
+missions: an exploratory pilot-study among cardiology inpatients. Clocks 
+Sleep. 2020;2(2):120–42.
+
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.
+
+

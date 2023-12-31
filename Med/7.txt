@@ -1,0 +1,1234 @@
+Original Paper
+
+Med Princ Pract 2022;31:59–65
+DOI: 10.1159/000521467
+
+Received: May 23, 2021
+Accepted: December 7, 2021
+Published online: December 16, 2021
+
+The Role of Serum Galectin-3 Levels in 
+Patients with Sarcoidosis
+
+a    Seda Tural Onur 
+
+a    Sinem Nedime Sokucu 
+
+a    Ozlem Kahya 
+
+b    
+
+Kaan Kara 
+Cengiz Ozdemir 
+
+a    Evin Ademoglu 
+
+c
+
+aDepartment of Chest Desease, Yedikule Chest Diseases and Chest Surgery Training and Research Hospital, Istanbul, 
+Turkey; bDepartment of Chest Desease, Nevsehir State Hospital, Nevsehir, Turkey; cDepartment of Biochemistry, 
+Istanbul Faculty of Medicine, Istanbul University, Istanbul, Turkey
+
+Highlights of the Study
+
+•  Sarcoidosis is a systemic granulomatous disease with progressive fibrosis.
+•  Galectin-3 plays a crucial role in the stimulation of inflammation and autoimmune disorders.
+•  Levels of serum galectin-3 increase in the presence of diseases like sarcoidosis that progress with pul-
+
+monary fibrosis.
+
+•  Galectin-3 can be considered for use in determining the staging and severity of sarcoidosis.
+
+Keywords
+Sarcoidosis · Galectin-3 · Pulmonary fibrosis · Inflammation
+
+Abstract
+Introduction: Galectin-3 is a multifunctional protein, the lev-
+els of which increase in the presence of diseases that prog-
+ress with pulmonary fibrosis. This study investigated the role 
+of galectin-3 levels in the staging and assessing of the sever-
+ity of sarcoidosis. Methods and Subjects: Seventy-three sub-
+jects were studied; 25 were healthy individuals and 48 pa-
+tients had pathologically confirmed diagnosis of sarcoidosis 
+in which other potential causes had been ruled out. Galec-
+tin-3 levels were measured and compared in terms of such 
+parameters as hemogram, biochemistry, age, body mass in-
+dex, and smoking status. Results: The mean galectin-3 levels 
+of the sarcoidosis patients (14.87 ± 5.57) were significantly 
+higher than those in the healthy subjects (11.81 ± 2.67), and 
+the mean galectin-3 levels differed significantly among dif-
+ferent stages of the disease (p < 0.05). The serum galectin-3 
+level in patients with stage 2, 3, and 4 sarcoidosis was found 
+
+to be higher than in patients with stage 0 and 1 sarcoidosis 
+and the control group. In addition, serum galectin-3 levels in 
+the sarcoidosis patients had significant positive correlations 
+with blood urea nitrogen, alkaline phosphatase, white blood 
+cells,  red  blood  cell,  hemoglobin,  and  neutrophil  levels 
+(34.9% [p < 0.05]; 40.1% [p < 0.05]; 41.2% [p < 0.01]; 43.3% [p 
+< 0.01]; 34.7% [p < 0.05]; and 40.6% [p < 0.01], respectively) 
+and a significant negative correlation with the platelet distri-
+bution width levels (p < 0.05). Conclusion: Serum galectin-3 
+levels are significantly elevated in sarcoidosis patients with 
+parenchymal involvement at stage 2 or higher, suggesting 
+that serum galectin-3 levels can be used to estimate disease 
+severity in sarcoidosis.
+
+© 2021 The Author(s)
+Published by S. Karger AG, Basel
+
+Introduction
+
+Sarcoidosis is a systemic granulomatous disease with 
+an unknown etiology that progresses with multi-systemic 
+involvements.  Its  yearly  incidence  has  been  reported  as 
+
+karger@karger.com
+www.karger.com/mpp
+
+© 2021 The Author(s)
+Published by S. Karger AG, Basel
+
+Correspondence to: 
+Kaan Kara, kaankara3643 @ yahoo.com
+
+This is an Open Access article licensed under the Creative Commons 
+Attribution-NonCommercial-4.0 International License (CC BY-NC) 
+(http://www.karger.com/Services/OpenAccessLicense), applicable to 
+the online version of the article only. Usage and distribution for com-
+mercial purposes requires written permission.
+
+0.1–81 per 100,000 and prevalence has been reported as 
+0.1–640 per 100,000. The prognosis and course of the dis-
+ease may be consistent with its mode of onset and extent 
+[1–3].  While  various  parameters  for  monitoring  the 
+course of the disease have been investigated, a specific bio-
+marker has yet to be identified. Several parameters have 
+been investigated to predict the activity of sarcoidosis, in-
+cluding  angiotensin-converting  enzyme  and  adenosine 
+deaminase levels, lysozyme, neopterin, β2 microglobulin, 
+hypergammaglobulinemia, Krebs von den Lungen-6, chi-
+totriosidas, fibronectin, collagenase, hyaluronan, and fi-
+bronectin levels [4, 5]. Two studies have shown that the 
+Krebs  von  den  Lungen-6  and  chitotriosidas  biomarkers 
+can be used to determine the severity of sarcoidosis [6, 7].
+Galectin-3 is a β-galactoside-binding animal lectin that 
+has sites of carbohydrate recognition [8, 9]. Galectin-3 is 
+released from the cytoplasm or nucleus of various cell types, 
+including but not limited to, monocytes (MONs), macro-
+phages, and endothelial, microglia, and epithelial cells [10]. 
+Galectin-3 is a multifunctional protein that is involved in 
+various physiological and pathologic processes, such as cell 
+growth,  angiogenesis,  carcinogenesis,  and  inflammation. 
+Extracellular galectin-3 mediates inflammation and leuko-
+cyte adhesion and plays roles in the retrieval and activation 
+of neutrophils (NEUs) [11] and also has a crucial role in the 
+stimulation of inflammation in a wide range of acute and 
+chronic events, particularly neurologic degeneration, auto-
+immune  disorders,  atherosclerosis  and  heart  failure,  and 
+response to infections or diseases of the lungs, kidney, and 
+liver [12]. A recent study by Sun et al. [13] showed a rela-
+tionship  between  galectin-3  level  and  prognosis  of  acute 
+kidney injury. These observations suggest that galectin-3 
+may result in fibrosis in several systems.
+
+Increased levels of serum galectin-3 in the presence of 
+diseases  progressing  with  pulmonary  fibrosis  have  been 
+reported [14]. Taking into account the limited number of 
+studies investigating the relationship between galectin-3 
+levels  and  pulmonary  diseases,  some  of  which  reported 
+significant findings in the presence of pulmonary fibrosis, 
+we hypothesized that serum galectin-3 may be used as a 
+biomarker  for  the  staging  and  assessment  of  severity  of 
+sarcoidosis. In the present study, we investigated the levels 
+of galectin-3 in sarcoidosis patients and healthy controls.
+
+Subjects and Methods
+
+The present study included patients aged between 18 and 75 
+years who were followed in our hospital and diagnosed with pul-
+monary  sarcoidosis  after  other  potential  causes  were  ruled  out. 
+The inducted patients had the following features: they had histo-
+
+pathological evidence of granuloma without calcification necrosis; 
+they did not have interstitial lung disease other than sarcoidosis, 
+or organ malignancy or history of chronic disorders. They made 
+regular  outpatient  clinic  visits  and  agreed  to  participate  in  the 
+study. Healthy subjects aged between 18 and 75 years with no his-
+tory of chronic disease and who voluntarily agreed to participate 
+in the study constituted the control group. The study was initiated 
+after approval was granted by the Ethics Committee of our hospi-
+tal (Research Protocol Number 4221). The patients were informed 
+about the study, and all signed an informed consent form.
+
+The following data were garnered and evaluated for the 48 pa-
+tients who agreed to participate in the study: demographic charac-
+teristics (age, gender, height, weight, and smoking status), pulmo-
+nary  function  test  results,  methods  of  diagnosis,  current  treat-
+ments, presence of extrapulmonary involvement, galectin-3 levels, 
+and  results  of  hemogram  and  biochemistry  investigations  per-
+formed within the last 6 months, obtained from hospital records.
+The following data were recorded and evaluated for the 25 healthy 
+controls who agreed to participate in the study: demographic charac-
+teristics (age, gender, height, weight, and smoking status), serum ga-
+lectin-3 levels, as well as hemogram and biochemistry investigations 
+performed within the last 6 months, obtained from hospital records. 
+Galectin-3 levels of all sarcoidosis patients (n = 48) were compared 
+along with their demographic data, pulmonary function test results, 
+current  treatments  (if  any),  presence  of  extrapulmonary  involve-
+ment,  and  hemogram  and  biochemistry  investigations  performed 
+within the last 6 months, which were obtained from hospital records. 
+Galectin-3 levels of all the healthy controls (n = 25) were compared 
+along with their demographical data, body mass index (BMI), smok-
+ing  status,  and  hemogram  and  biochemistry  investigations  per-
+formed within the last 6 months, obtained from hospital records.
+
+Blood  samples  were  obtained  from  both  groups  and  centri-
+fuged at 8,000 rpm for 10 min at 4°C. Serum samples were stored 
+in Eppendorf tubes at −21 to −40°C. Galectin-3 levels in the serum 
+samples were measured using a commercial kit based on the ELISA 
+method (eBioscience, catalog no: BMS279/4, lot no: 133218001).
+
+Based  on  the  hemogram  results  of  the  peripheral  blood,  the 
+NEU lymphocyte (LYM) ratio was calculated by dividing the ab-
+solute NEU count by the absolute LYM count, and the thrombo-
+cyte LYM ratio was calculated by dividing the absolute thrombo-
+cyte count by the absolute LYM count. Radiological classification 
+was carried out by two different blinded pulmonologists, following 
+the Scadding stage system, and classification difference between 
+the specialists was detected using the Kappa method.
+
+Numerical data were evaluated using the IBM SPSS Statistics 23 
+program, and measures of central tendency were presented as mean, 
+standard  deviation,  minimum,  and  maximum  values.  Frequency 
+distribution of the categorical variables was presented. An indepen-
+dent samples t test was used to evaluate the differences between the 
+2 groups, and a one-way variance analysis (ANOVA) was used to 
+assess the potential differences between more than 2 groups. Based 
+on the results of the ANOVA, a Levene’s test was applied to assess 
+the homogeneity of variances, and a multiple comparison test (Bon-
+ferroni or Tamhane’s T2) was carried out to identify the group(s) 
+causing significant difference. The differences between the groups 
+were investigated with a Bonferroni test for variables with homoge-
+neous variances and with Tamhane’s T2 test for variables without 
+homogeneous variances. The Pearson Correlation Coefficient was 
+used to investigate the relationship between serum galectin-3 levels, 
+clinical characteristics, and blood parameters.
+
+60
+
+Kara/Tural Onur/Nedime Sokucu/Kahya/Ozdemir/AdemogluMed Princ Pract 2022;31:59–65DOI: 10.1159/000521467Table 1. Investigation of differences in 
+parameters (independent samples t test)
+
+Parameters
+
+Galectin-3 levels
+
+Sarcoidosis patients
+Healthy controls
+
+Age
+
+Sarcoidosis patients
+Healthy controls
+
+BMI
+
+Sarcoidosis patients
+Healthy controls
+Healthy controls
+
+BUN
+
+Sarcoidosis patients
+Healthy controls
+
+Creatinine
+
+Sarcoidosis patients
+Healthy controls
+
+Uric acid
+
+Sarcoidosis patients
+Healthy controls
+
+Calcium
+
+Sarcoidosis patients
+Healthy controls
+Healthy controls
+
+LDH
+
+Sarcoidosis patients
+Healthy controls
+
+ALP
+
+Sarcoidosis patients
+Healthy controls
+
+CRP
+
+Sarcoidosis patients
+Healthy controls
+
+N
+
+48
+25
+
+48
+25
+
+48
+25
+25
+
+46
+20
+
+45
+21
+
+23
+14
+
+40
+19
+18
+
+28
+18
+
+28
+9
+
+44
+19
+
+Mean
+
+SD
+
+t
+
+p value
+
+14.87
+11.81
+
+45.21
+36.16
+
+27.27
+24.76
+9.2
+
+29.33
+23.70
+
+0.76
+0.73
+
+6.05
+4.64
+
+9.71
+9.41
+105.61
+
+212.21
+176.39
+
+75.00
+62.00
+
+6.77
+4.61
+
+5.567
+2.665
+
+11.900
+10.953
+
+5.476
+2.827
+12.261
+
+6.415
+5.768
+
+0.164
+0.181
+
+2.141
+1.197
+
+0.616
+0.464
+2.500
+
+52.959
+23.410
+
+26.980
+17.804
+
+9.993
+11.319
+
+3.171
+
+0.002**
+
+3.166
+
+0.002**
+
+2.144
+
+0.035*
+
+3.371
+
+0.001**
+
+0.659
+
+0.513
+
+2.255
+
+0.030*
+
+1.911
+
+0.061
+
+3.135
+
+0.003**
+
+1.347
+
+0.187
+
+0.755
+
+0.453
+
+LDH, lactate dehydrogenase; CRP, C-reactive protein. 
+
+p < 0.05. 
+
+p < 0.01.
+
+* 
+
+** 
+
+Results
+
+Seventy-three cases were included in this; 65.8% (n = 
+48) had been diagnosed with sarcoidosis and 34.2% (n = 
+25) were healthy controls; 58.9% (n = 43) of all subjects 
+were female and 41.1% (n = 30) were male. Women and 
+men accounted for 62.5% (n = 30) and 37.5% (n = 18) of 
+the sarcoidosis patients, while in the control group 50% 
+(n = 13) of the cases were male and 50% (n = 13) were fe-
+male. The mean age of the entire study population was 
+42.11 ± 12.29 (20–67) years, while mean age of the patient 
+and control groups was 45.21 ± 11.90 (23–67) and 36.16 
+± 10.953 (20–64) years, respectively.
+
+Of  all  subjects,  49.30%  (n  =  36)  were  smokers  and 
+50.70% (n = 37) had never smoked; smokers and those 
+who had never smoked constituted 41.10% (n = 20) and 
+58.30% (n = 28) of the patient group and 46.15% (n = 
+
+12) and 38.40% (n = 10) of the control group, respec-
+tively.
+
+The staging of the patients according to Scadding stag-
+ing was as follows: stage 0 patients 25% (n = 12), stage 1 
+patients 35.4% (n = 17), stage 2 patients 25% (n = 12), stage 
+3 patients 12.5% (n = 6), and stage 4 cases 2.1% (n = 1). Of 
+all the patients with sarcoidosis, 58.3% (n = 28) had previ-
+ously  undergone  steroid  therapy,  while  21.3%  (n  =  10) 
+were actively using steroid therapy while participating in 
+the study. In addition, 4.2% (n = 2) of patients were con-
+comitantly  receiving  methotrexate  treatment.  Extrapul-
+monary involvement was present in 37.5% (n = 18) of sar-
+coidosis patients, and eye, skin, and kidney involvement 
+was present in 6.25% (n = 3), 31.25% (n = 15), and 8.3% (n 
+= 4) of the patients, respectively. Of all the patients, 2.08% 
+(n = 1) had concomitant skin and eye involvement, where-
+as 4.16% (n = 2) had both skin and kidney involvement.
+
+61
+
+Galectin-3 Levels in SarcoidosisMed Princ Pract 2022;31:59–65DOI: 10.1159/000521467Table 2. Investigation of the differences in 
+serum galectin-3 levels according to stages 
+of sarcoidosis (independent samples t test)
+
+Stage of sarcoidosis
+
+Stage 0
+Stage 1
+Stage 2 and higher
+Total
+
+N
+
+12
+17
+19
+48
+
+p < 0.001.
+
+*** 
+
+Mean
+
+SD
+
+F
+
+p value
+
+Difference
+
+10.70
+12.75
+19.39
+14.87
+
+2.834
+3.176
+5.440
+5.567
+
+19.385
+
+0.000***
+
+0.1–2
+
+Table 3. Investigation of the relationship between serum galectin-3 levels and demographical, hematological, biochemical, and functional 
+parameters
+
+Parameters
+
+Total
+
+Sarcoidosis
+
+Healthy 
+controls
+
+Para-
+meters
+
+Total
+
+Sarcoidosis
+
+Healthy 
+controls
+
+BMI
+
+Smoking
+P/Y
+Blood glucose
+
+BUN
+
+Creatinine
+
+Uric acid
+
+Calcium
+
+AST
+
+ALT
+
+LDH
+
+ALP
+
+CRP
+
+ESR
+
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+
+0.143
+0.227
+−0.004
+0.972
+0.379
+0.003**
+0.262
+0.033*
+0.167
+0.181
+0.315
+0.057
+0.097
+0.466
+0.069
+0.584
+0.284
+0.023*
+0.449
+0.002**
+0.265
+0.112
+0.137
+0.283
+0.173
+0.262
+
+0.135
+0.362
+0.161
+0.275
+0.072
+0.628
+0.349
+0.027*
+0.181
+0.230
+0.143
+0.348
+0.230
+0.292
+−0.110
+0.576
+−0.033
+0.834
+0.294
+0.052
+0.401
+0.034*
+0.197
+0.315
+0.049
+0.800
+
+0.056
+0.792
+0.111
+0.597
+0.113
+0.592
+0.272
+0.234
+0.194
+0.412
+0.232
+0.312
+0.233
+0.424
+−0.176
+0.484
+0.346
+0.124
+0.289
+0.217
+0.051
+0.841
+0.376
+0.318
+0.484
+0.067
+
+PLT
+
+WBC
+
+RBC
+
+HGB
+
+HCT
+
+NLR
+
+PLR
+
+LYM
+
+LYM, %
+
+MON
+
+MON, %
+
+NEU
+
+NEU, %
+
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+r
+p
+
+−0.023
+0.846
+0.372
+0.001**
+0.401
+0.001**
+0.235
+0.049*
+0.308
+0.009**
+0.352
+0.003**
+0.047
+0.695
+0.074
+0.540
+−0.291
+0.014*
+0.346
+0.003**
+0.005
+0.966
+0.418
+0.000***
+0.302
+0.011*
+
+−0.133
+0.374
+0.412
+0.004**
+0.433
+0.002**
+0.312
+0.033*
+0.347
+0.017*
+0.266
+0.070
+−0.127
+0.394
+0.273
+0.063
+−0.180
+0.225
+0.406
+0.005**
+0.046
+0.759
+0.406
+0.005**
+0.214
+0.149
+
+0.078
+0.716
+0.072
+0.738
+0.328
+0.118
+0.312
+0.138
+0.408
+0.048*
+0.105
+0.625
+0.151
+0.483
+0.036
+0.869
+−0.087
+0.687
+−0.309
+0.142
+−0.248
+0.243
+0.096
+0.654
+0.108
+0.614
+
+Smoking  P/Y,  smoking  package/year;  AST,  aspartate  transaminase;  ALT,  alanine  transaminase;  LDH,  lactate  dehydrogenase;  CRP, 
+C-reactive protein; ESR, erythrocyte sedimentation rate; WBC, white blood cells; RBC, red blood cell; HCT, hematocrit; PLT, platelet; NLR, 
+NEU LYM ratio; PLR, platelets lymphocyte ratio. 
+
+p < 0.001.
+
+p < 0.05. 
+
+p < 0.01. 
+
+* 
+
+** 
+
+*** 
+
+An independent samples t test showed that mean ga-
+lectin-3 levels, age, BMI, blood urea nitrogen (BUN), uric 
+acid,  lactate  dehydrogenase,  and  sedimentation  values 
+were significantly higher in the sarcoidosis patients than 
+in  the  healthy  controls  (shown  in  Table  1).  One-way 
+ANOVA revealed a statistically significant difference in 
+serum  levels  of  galectin-3  between  sarcoidosis  disease 
+stages (p < 0.05) (Table 2). The mean levels of serum ga-
+
+lectin-3  in  the  sarcoidosis  patients  at  stage  2  or  higher 
+were significantly higher than those in patients at stage 0 
+or 1. The independent samples t test revealed no statisti-
+cally significant differences in the mean levels of serum 
+galectin-3 between the patients with and without a con-
+comitant disease, between smokers and nonsmokers, be-
+tween  patients  receiving  and  not  receiving  active  treat-
+ment, and between patients with and without extrapul-
+
+62
+
+Kara/Tural Onur/Nedime Sokucu/Kahya/Ozdemir/AdemogluMed Princ Pract 2022;31:59–65DOI: 10.1159/000521467monary involvement (p > 0.05). Compared to the healthy 
+controls,  a  significantly  stronger  relationship  was  ob-
+served between the mean serum galectin-3 levels and the 
+serum BUN, MON and NEU count, leukocyte and eryth-
+rocyte  count,  and  hemoglobin  (HGB)  and  hematocrit 
+values in the sarcoidosis patients (Table 3).
+
+Discussion
+
+Sarcoidosis is a systemic granulomatous disease with 
+unknown etiology and progresses with multi-systemic in-
+volvement. With a devious onset from asymptomatic bi-
+lateral hilar adenopathy to multiple extrapulmonary le-
+sions, the disease may result in progressive fibrosis of the 
+lungs and other organs. Prognosis and disease course may 
+be associated with its mode of onset and its extent [1–3].
+In the present study, we found that serum levels of ga-
+lectin-3  were  significantly  higher  in  the  sarcoidosis  pa-
+tients than in the healthy controls and that the levels were 
+particularly elevated in patients at stage 2 or higher (char-
+acterized by parenchymal involvement), when compared 
+to patients at stage 0 and 1. On the other hand, extrapul-
+monary involvement, smoking, age, or BMI was not sig-
+nificantly associated with serum galectin-3 levels.
+
+In vitro studies investigating galectin-3 have demon-
+strated that the absence of galectin-3 may improve fibrot-
+ic response in the kidneys, liver, and lungs [15, 16]. Previ-
+ous studies have also reported increased levels of galec-
+tin-3  in  diseases  progressing  with  fibrosis,  such  as 
+cirrhosis  and  idiopathic  pulmonary  fibrosis  [13–17].  A 
+previous study reported that galectin-3 levels were elevat-
+ed in sarcoidosis patients with cardiac involvement when 
+compared  to  the  controls  [18].  Another  study  reported 
+that  serum  galectin-3  levels  were  similar  in  sarcoidosis 
+patients and control groups [19]. These data indicate that 
+galectin-3 may result in fibrosis in several organs. In the 
+present study, we investigate the role of galectin-3 in the 
+staging  and  severity  of  sarcoidosis  that  progresses  with 
+fibrosis.
+
+Consistent with the findings of previous studies [14–
+18], galectin-3 levels were found to be significantly high-
+er  in  sarcoidosis  patients  than  in  the  healthy  controls. 
+While galectin-3 levels were compared based on the ra-
+diological stages of sarcoidosis, the levels were found to 
+be  significantly  higher  in  patients  at  stage  2  or  higher, 
+progressing with parenchymal involvement, when com-
+pared to the healthy controls, as well as patients with stage 
+0 or 1 sarcoidosis who were in remission, and who were 
+being followed without treatment. This increase in galec-
+
+tin-3  levels  indicates  that  fibrosis  developed  as  soon  as 
+parenchymal  involvement  occurred.  The  detection  of 
+high levels of galectin-3 prior to a radiological diagnosis 
+of stage 2 can indicate disease progression before radiol-
+ogy and may help with early diagnosis, and the consider-
+ation  of  alternative  treatments  before  the  full  develop-
+ment of pulmonary fibrosis.
+
+We also observed that extrapulmonary involvements 
+in such organs as the eye, kidney, and skin did not sig-
+nificantly affect galectin-3 levels in sarcoidosis patients. 
+Similarly, a previous study reported elevated serum galec-
+tin-3 levels in patients with pulmonary sarcoidosis when 
+compared to the control group but did not point to a sig-
+nificant  difference  in  galectin-3  levels  between  patients 
+with and without cardiac involvement [18]. The present 
+study showed that galectin-3 levels in the sarcoidosis pa-
+tients were not significantly affected by smoking status, 
+age, gender, BMI, creatinine, serum calcium, lactate de-
+hydrogenase, sedimentation, angiotensin-converting en-
+zyme,  FEV1%,  FVC%,  24-h  urine  calcium,  NEU,  LYM 
+ratio, or thrombocyte LYM ratio. A previous study iden-
+tified a significant relationship between serum levels of 
+galectin-3 and age and gender, found the levels to be high-
+er  in  women  than  men,  and  were  observed  to  increase 
+with age, whereas we identified no such relationships in 
+the present study [20]. The same study also reported sig-
+nificant relationships between galectin-3 levels and BMI, 
+kidney function tests, DM, C-reactive protein, and smok-
+ing status, while no such relationships were identified to 
+any significant degree between galectin-3 levels and these 
+parameters in the present study [20]. Similarly, a study 
+performed in 2007 reported significantly elevated levels 
+of  serum  galectin-3  in  bronchoalveolar  lavage  samples 
+obtained  from  patients  with  diseases  progressing  with 
+pulmonary  fibrosis,  particularly  in  patients  with  idio-
+pathic pulmonary fibrosis and interstitial lung disease as-
+sociated with connective tissue disorders. Furthermore, 
+the galectin-3 levels in patients with interstitial lung dis-
+eases associated with connective tissue disorders who un-
+derwent steroid treatment were also found to be mildly 
+decreased, although this decrease was not statistically sig-
+nificant  in  that  study,  contradicting  the  findings  of  the 
+present study [14]. This may be attributed to the inclusion 
+of a healthy control group and sarcoidosis patients with 
+normal renal functions in the present study.
+
+Previous  studies  have  also  reported  a  relationship  be-
+tween  high  serum  levels  of  galectin-3  and  prognoses  of 
+acute and chronic heart failure, pulmonary hypertension, 
+and acute coronary syndrome [20, 21]. This suggests that 
+serum galectin-3 may also be used as a marker of prognosis 
+
+63
+
+Galectin-3 Levels in SarcoidosisMed Princ Pract 2022;31:59–65DOI: 10.1159/000521467in sarcoidosis patients. The short duration of our study pre-
+vented the collection of a sufficient amount of data for the 
+investigation of the relationship between serum galectin-3 
+levels and prognosis in sarcoidosis patients. We believe that 
+future prospective studies will better establish the relation-
+ship between serum galectin-3 levels and disease prognosis.
+The results of the present study reveal that HGB, he-
+matocrit,  red  blood  cell,  white  blood  cells,  MON  and 
+NEU values, and BUN levels have a positive effect on se-
+rum  galectin-3  levels  in  sarcoidosis  patients,  although 
+contrary to our findings, a previous study involving pa-
+tients with heart failure found no significant relationship 
+between HGB and serum galectin-3 levels [22]. Previous 
+studies  have  identified  a  negative  relationship  between 
+HGB and inflammation [23]. We believe that the differ-
+ences between our findings and those of previous studies 
+may be attributed to the fact that the majority of patients 
+in the present study were in a stable phase of the disease 
+or were in regression.
+
+Elevated alkaline phosphatase (ALP) levels are detect-
+ed in up to 33 percent of sarcoidosis patients, and ALP is 
+superior  to  gamma-glutamyl  transferase  in  terms  of 
+showing liver involvement. In this study, ALP levels were 
+not  significantly  different  between  the  healthy  control 
+group and the sarcoidosis patients, although ALP levels 
+were found to be associated with galectin-3 levels in the 
+sarcoidosis  patients.  Galectin-3  levels  increase  in  the 
+presence of acute and chronic inflammation. Like galec-
+tin-3, ALP is a biomarker that is used as a marker of in-
+flammation  [24].  The  relationship  between  galectin-3 
+and ALP levels can be explained by the fact that the levels 
+of both markers increase in the presence of inflammation.
+Platelet distribution width (PDW) is associated with 
+thrombocyte activation and has been shown to play a role 
+in thrombosis, and to be elevated in the presence of bone 
+marrow involvement and inflammation [25, 26]. In the 
+present study, PDW was significantly higher in the sar-
+coidosis patients when compared to the healthy controls. 
+Moreover, a negative relationship was identified between 
+PDW and galectin-3 levels in sarcoidosis patients, where-
+as a positive association was found between these 2 pa-
+rameters in the control group. In the light of these data, it 
+may be argued that pulmonary fibrosis may develop in 
+sarcoidosis patients with low PDW values, although fur-
+ther studies are required to confirm this hypothesis.
+
+We aimed to use galectin-3 in the prognosis or staging 
+of sarcoidosis but not in the diagnosis of sarcoidosis fibro-
+sis and fibrotic process is seen in advanced stages of sar-
+coidosis and fibrosis is not a specific condition of the dis-
+ease.  Our  findings  demonstrating  that  galectin-3  levels 
+
+were significantly elevated in sarcoidosis patients at stage 
+2 or higher with parenchymal involvement suggest that se-
+rum galectin-3 can be used to assess the staging and sever-
+ity of sarcoidosis. While several parameters have been in-
+vestigated for the assessment of response to treatment and 
+progression of sarcoidosis, there is currently no universal-
+ly accepted and routinely used parameter for either of these 
+purposes. Despite being a benign disease in general, sar-
+coidosis is still is a matter of concern due to the challenges 
+faced in its diagnosis, its economic burden on health ex-
+penditure, and its consequences in terms of loss of work-
+force. We suggest that serum galectin-3 could be a useful 
+parameter in sarcoidosis for several reasons, including its 
+ease of use, its amenability for rapid testing and its ability 
+to identify fibrosis earlier than radiology, and the conse-
+quent avoidance of radiation exposure. That said, there are 
+several limitations to our study, including the low number 
+of patients at stage 3 and 4. Furthermore, this study was not 
+designed as a controlled progressive study for the monitor-
+ing of patients with diseases progressing with pulmonary 
+fibrosis.  In  addition,  only  a  snapshot  of  galectin-3  levels 
+was obtained in the study, and therefore, serum galectin-3 
+levels during the course of disease were not compared in 
+sarcoidosis patients taking into account progression status. 
+Accordingly, there is a need for prospective studies involv-
+ing larger patient groups to investigate the routine use of 
+serum galectin-3 in sarcoidosis patients and clarify its re-
+lationship with other parameters affecting disease course.
+
+Conclusion
+
+There are currently no parameters that can be used as 
+a marker of progression and disease activity in sarcoid-
+osis. In the present study, we found that serum levels of 
+galectin-3  were  significantly  elevated  in  sarcoidosis  pa-
+tients when compared to healthy controls and that levels 
+were  significantly  increased  particularly  in  patients  at 
+stage 2 or higher, associated with parenchymal involve-
+ment. Serum galectin-3 levels may be used in the moni-
+toring of sarcoidosis, being a simple and rapid approach 
+that avoids radiation exposure and reveals pulmonary fi-
+brosis prior to radiological staging.
+
+Acknowledgment
+
+The authors thank the Turkish Respiratory Society for editing 
+and  statistics.  This  work  was  presented  at  the  39th  Respiratory 
+Congress, Turkish Respiratory Society, Izmir, Turkey, April 14–
+17, 2017.
+
+64
+
+Kara/Tural Onur/Nedime Sokucu/Kahya/Ozdemir/AdemogluMed Princ Pract 2022;31:59–65DOI: 10.1159/000521467Conflict of Interest Statement
+
+The authors have no conflicts of interest to declare.
+
+Tural Onur contributed to design of the study and critical revision 
+for intellectual content. Cengiz Ozdemir and Ozlem Kahya con-
+tributed to data collection; Evin Ademoglu contributed to labora-
+tory work.
+
+Funding Sources
+
+There is no funding source. The researchers conducted the re-
+
+search with their own budgets.
+
+Author Contributions
+
+Kaan Kara contributed to idea and design of the research, pa-
+tient selection, data collection, interpretation of statistics and re-
+sults,  and  manuscript  writing;  Sinem  Nedime  Sokucu  and  Seda 
+
+Data Availability Statement
+
+The data of this study are not publicly available as they contain 
+information that could compromise the privacy of research par-
+ticipants but are available from K.K. (kaankara3643@yahoo.com) 
+upon reasonable request.
+
+References
+
+  1  Akkaynak S. Sarcoidosis. Tuberc Toraks Med. 
+
+1953; 1: 236–50.
+
+  2  Hutchinson J. Statement on sarcoidosis. Joint 
+statement of the American Thoracic Society 
+(ATS),  the  European  Respiratory  Society 
+(ERS) and the World Association of Sarcoid-
+osis  and  Other  Granulomatous  Disorders 
+(WASOG) adopted by the ATS Board of Di-
+rectors and by the ER. Am J Respir Crit Care 
+Med. 1999; 160: 55.
+
+  3  Musellim  B,  Kumbasa  OO,  Ongen  G,  Çe-
+tinkaya E, Turker H, Uzaslan E, et al. Epide-
+miological  features  of  Turkish  patients  with 
+sarcoidosis. Respir Med. 2009; 103: 907–12.
+  4  Çağatay T, Bilis S, Yanardağ H, Gülbaran Z, 
+Papila Ç. The immunoglobulin and comple-
+ment levels in the active pulmonary sarcoid-
+osis. Kobe J Med Sci. 2003; 49: 99–106.
+
+  5  Planck A, Eklund A, Grunewald J. Markers of 
+activity in clinically recovered human leuko-
+cyte  antigen-DR17-positive  sarcoidosis  pa-
+tients. Eur Respir J. 2003; 21: 52–7.
+
+  6  Alessandro M, Bergantini L, Cameli P, Vietri 
+L, Lanzarone N, Alonzi V, et al. Krebs von den 
+Lungen-6 as a biomarker for disease severity 
+assessment in interstitial lung disease:  a com-
+prehensive review. Biomark Med. 2020; 14(8): 
+665–74.
+
+  7  Bennett D, Cameli P, Lanzarone N, Carobene 
+L, Bianchi N, Fui A, et al. Chitotriosidase:  a 
+biomarker of activity and severity in patients 
+with sarcoidosis. Respir Res. 2020; 21(1).
+  8  Kim  H,  Lee  J,  Hyun  JW,  Park  JW,  Joo  HG, 
+Shin T. Expression and immunohistochemi-
+cal localization of galectin-3 in various mouse 
+tissues. Cell Biol Int. 2007; 31: 655–62.
+
+  9  Barondes SH, Cooper DN, Gitt MA, Leffler H. 
+Galectins.  Structure  and  function  of  a  large 
+family  of  animal  lectins.  J  Biol  Chem.  1994; 
+269: 20807–10.
+
+10  Sato  S,  Hughes  RC.  Regulation  of  secretion 
+and  surface  expression  of  Mac-2,  a  galacto-
+side-binding  protein  of  macrophages.  J  Biol 
+Chem. 1994; 269: 4424–30.
+
+11  Almkvist J, Karlsson A. Galectins as inflam-
+matory mediators. Glycoconj J. 2002; 19: 575–
+81.
+
+12  Ikemori  R,  Machado  CML,  Furuzawa  KW, 
+Nonogaki S, Osinaga E, Umezawa K, et al. Ga-
+lectin-3 up-regulation in hypoxic and nutri-
+ent  deprived.  PLoS  One.  2014  Nov  4; 9(11): 
+e111592.
+
+13  Sun H, Jiang H, Eliaz A, Kellum JA, Peng Z, 
+Eliaz I. Galectin-3 in septic acute kidney in-
+jury:   a  translational  study.  Crit  Care.  2021 
+Mar 18; 25(1): 109.
+
+14  Nishi Y, Sano H, Kawashima T, Okada T, Ku-
+roda T, Kikkawi K, et al. Role of galectin-3 in 
+human pulmonary fibrosis. Allergol Int. 2007; 
+56: 57–65.
+
+15  Henderson  NC,  Mackinnon  AC,  Farnworth 
+SL, Poirier F, Russo FP, Iredale JP, et al. Ga-
+lectin-3  regulates  myofibroblast  activation 
+and hepatic fibrosis. Proc Natl Acad Sci U S 
+A. 2006; 103: 5060–5.
+
+16  Mackinnon AC, Gibbons MA, Farnworth SL, 
+Leffler H, Nilsson UJ, Delaine T, et al. Regula-
+tion of transforming growth factor-β1-driven 
+lung fibrosis by galectin-3. Am J Respir Crit 
+Care Med. 2012; 185: 537–46.
+
+17  d’Alessandro  M,  Vita  ED,  Bergantini  L, 
+Mazzei MA, Valvasone S, Bonizzoli M, et al. 
+Galactin-1, 3 and 9:  potential biomarkers in 
+idiopathic  pulmonary  fibrosis  and  other  in-
+terstitial lung diseases. Respir Physiol Neuro-
+biol. 2020 Nov; 282: 103546.
+
+18  Kul S, Ozcelik HK, Uyarel H, Karakus G, Gu-
+venc TS, Yalçınsoy M, et al. Diagnostic value 
+of  strain  echocardiography,  galectin-3,  and 
+tenascin-C levels for the identification of pa-
+tients  with  pulmonary  and  cardiac  sarcoid-
+osis. Lung. 2014; 192: 533–42.
+
+19  Kobak S, Akyildiz M, Gokduman A, Atabay 
+T, Vural H. Serum galectin-3 and TGF-beta 
+levels in patients with sarcoidosis. Reumatol 
+Clin. 2021 Dec; 17(10): 562–5.
+
+20  De  Boer  R,  Van  Veldhuisen  DJ,  Gansevort 
+RT, Muller Kobold AC, Van Gilst WH, Hill-
+ege HL, et al. The fibrosis marker galectin-3 
+and outcome in the general population. J In-
+tern Med. 2012; 272: 55–64.
+
+21  Van  Der  Velde  AR,  Gullestad  L,  Ueland  T, 
+Aukrust P, Guo Y, Adourian A, et al. Prognos-
+tic value of changes in galectin-3 levels over 
+time in patients with heart failure:  data from 
+CORONA  and  COACH.  Circ  Heart  Fail. 
+2013; 6(2): 219–26.
+
+22  Gullestad L, Ueland T, Kiekshus J, Nymo SH, 
+Hulthe J, Muntendam P, et al. The predictive 
+value of galectin-3 for mortality and cardio-
+vascular  events  in  the  Controlled  Rosuvas-
+tatin  Multinational  Trial  in  Heart  Failure 
+(CORONA). Am Heart J. 2012; 164: 878–83.
+23  Wang CH, Cheng ML, Liu MH, Kuo LT, Shio 
+MS.  Metabolic  profile  provides  prognostic 
+value  better  than  galectin-3  in  patients  with 
+heart failure. J Cardiol. 2017; 70(1): 92–8.
+24  Macciò A, Madeduce C, Massa D, Mudu MC, 
+Lusso MR, Gramignano G, et al. Hemoglobin 
+levels correlate with interleukin-6 levels in pa-
+tients  with  advanced  untreated  epithelial 
+ovarian cancer:  role of inflammation in can-
+cer-related anemia. Blood. 2005; 106: 362–7.
+25  Henderson NC, Sethi T. The regulation of in-
+flammation  by  galectin-3.  Immunol  Rev. 
+2009; 230: 160–71.
+
+26  Elzey BD, Tian J, Jensen RJ, Swanson AK, Lees 
+JR, Lentz SR, et al. Platelet-mediated modula-
+tion of adaptive immunity:  a communication 
+link  between  innate  and  adaptive  immune 
+compartments. Immunity. 2003; 19: 9–19.
+
+65
+
+Galectin-3 Levels in SarcoidosisMed Princ Pract 2022;31:59–65DOI: 10.1159/000521467

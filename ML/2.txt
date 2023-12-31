@@ -1,0 +1,2461 @@
+3
+2
+0
+2
+
+c
+e
+D
+2
+1
+
+]
+h
+p
+-
+p
+e
+h
+[
+
+1
+v
+8
+4
+9
+6
+0
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Unsupervised learning in the metric space of jets
+
+Tejes Gaertner1, 2,
+
+∗ and Jared Reiten2, 3,
+
+†
+
+1Mathematical Institute, University of Oxford, Oxford, OX2 6GG, U.K.
+2Department of Physics and Astronomy, University of California, Los Angeles,CA 90095, U.S.A.
+3Mani L. Bhaumik Institute for Theoretical Physics,
+University of California, Los Angeles, CA 90095, U.S.A.
+
+In the first part of this work, we demonstrate how the metric space structure induced by the
+energy mover’s distance can be leveraged for the unsupervised tagging of jets according to their
+progenitor. Namely, we focus on the task of tagging jets initiated by a top quark from a background
+of jets initiated by light quarks and gluons. By examining the local neighborhood structure of
+this metric space, we find that the jets of each class populate the landscape in differing densities.
+This characteristic can be exploited to accurately cluster jets according to their densities through
+unsupervised clustering algorithms, such as DBSCAN. In the second part of this work, we modify the
+metric space by reducing the global notion of connectivity down to a local one and, in the process
+of doing so, modify our distance metric to be that corresponding to geodesics on an underlying
+graph. We demonstrate how this modification induces regions of both positive and negative values of
+curvature, which are then exacerbated through a Ricci flow algorithm. Differences in the curvatures
+averaged over local patches of the new graph metric space then lead to a flow which separates the
+signal top jets from the background in a fashion that is completely agnostic to any pre-determined
+jet labels.
+
+I.
+
+INTRODUCTION
+
+O
+
+In recent years, the adoption of machine-learning (ML)
+techniques by the scientific community, in general, and
+the particle physics community, in particular, has become
+increasingly widespread [1, 2]. On the particle physics
+front, such tools have found a natural home in the analy-
+sis of jets produced by the Large Hadron Collider (LHC)
+at CERN. Each jet itself is a collimated beam of
+(10)
+particles, and with each event producing similar orders
+of such jets, we see such collisions as being one of Na-
+ture’s many sources of “Big Data.” The jet substructure
+community has fruitfully adapted an enormous number
+ML and data science techniques to better understand the
+internal structure of jets [3–6]. For instance, early on
+it was realized that jets and their substructure can be
+naturally visualized and represented in the data struc-
+ture of an image [7] and subsequently passed through
+deep convolutional neural networks (DCNNs) for classi-
+fication tasks [8–10]. Variational autoencoders (VAEs)
+have provided a means of compressing the internal fea-
+tures of jets down to a low-dimensional latent represen-
+tation [11–13]. Anomaly detection has seen a great deal
+of development in efforts to uncover any potential signs
+of physics beyond the Standard Model (SM) lurking in
+the vast data sets produced by the LHC [14–16]. For an
+extensive list that covers the many applications of ML
+to particle physics, see [17]. Additionally, ML techniques
+have allowed the community to enhance its understand-
+ing of the SM itself—particularly in the identification and
+analysis of substructure features produced from the de-
+cays of heavy particles, such as top quarks. Top-tagging
+
+∗ tejes.gaertner@st-hughs.ox.ac.uk
+† jdreiten@physics.ucla.edu
+
+has become an important arena in this domain [18–21],
+for a review, see [22].
+
+However, the vast majority of the aforementioned ap-
+plications rely on neural networks that are trained with
+labeled data, that is machines that “learn” through exam-
+ples where the identity of a particular jet is known, and
+then using this learned information to accurately classify
+new instances of unlabeled jets. Accordingly, such stud-
+ies fall under the realm of supervised learning. While
+the performance of such neural networks is impressive,
+as physicists, we would ideally like to understand and
+interpret what ML techniques are learning—particularly
+in terms of quantities for which there exists a physical
+underpinning and from which one can build intuition, as
+In doing so, further applica-
+in the spirit of [23, 24].
+tions can dispense of the need for labeled data and learn
+the physical features impressed upon the data itself. Do-
+ing so would allow the community to graduate to the
+realm of unsupervised learning. An important step in
+this direction has been in the unsupervised clustering of
+jets initiated by heavy resonances such as the W and Z
+bosons, as well as top quarks through use of an attention
+mechanism on jet images [25].
+
+In addition, concepts from optimal transport (OT)
+have found a natural home in the realm of jet substruc-
+ture. The so-called Energy Mover’s Distance (EMD)
+[26, 27] provides a natural metric on the space of jets, al-
+lowing one to associate a “cost” for redistributing the sub-
+structure of one jet into that of another. A rich geometry
+results from such a construction, where various familiar
+event/jet shape observables can be understood as aris-
+ing from projections onto submanifolds in this abstract
+space [27]. The richness and utility of this construction
+has led to the investigation of various extensions, modi-
+fications, and alternatives [28, 29]. Significant work has
+been carried out in order to best visualize this space by
+
+ 
+ 
+ 
+ 
+ 
+ 
+embedding it into a lower dimensional space in such a
+way to preserve the salient features of the true manifold
+[30].
+
+The primary goal of this work is to demonstrate how
+one can leverage this geometry in order to cluster QCD
+and top jets in a way that makes no use of labels for jets,
+i.e. in a completely unsupervised fashion. This is to say,
+how one can create a top-tagger by accessing only the
+geometric information afforded by the EMD itself.
+
+This paper is organized as follows. In Sec. II we show
+how QCD and top jets populate their respective met-
+ric spaces induced by the EMD. Quantities of interest
+will be the distribution of distances between jets, the ef-
+fective dimensionalities of the respective subspaces the
+jets populate, as well as notions of nearest-neighbor dis-
+tances. These considerations reveal distinct differences in
+the geometry of QCD and top jets and lay the ground-
+work for subsequent sections which work to utilize these
+differences for the purpose of top-tagging.
+
+In Sec. III we demonstrate how the preceding geomet-
+ric structure can be used to cluster QCD from top jets
+via the unsupervised density-based clustering algorithm,
+DBSCAN. This provides us with an effective means of
+tagging top jets from QCD jets, purely through the use
+of the underlying geometry of the data.
+
+In Sec. IV we demonstrate how QCD and top jets can
+be separated geometrically through the process of Ricci
+flow. Ricci flow relies on exacerbating local curvatures in
+order to separate distinct community structures that live
+in a weighted graph, and thus, we begin this section by
+explicitly laying out the mapping of the EMD space to a
+modified graph metric space.
+
+Finally, in Sec. V we conclude and provide an outlook
+for other interesting jet-tagging tasks that could leverage
+the underlying data geometry to do so in an unsupervised
+fashion. As top-tagging has by now become a somewhat
+canonical task and test bed for ML applications, we com-
+pare our work to various other ML-based top-taggers in
+the literature. While our methods achieve competitive
+accuracies (≳ 90%), they are not state-of-the-art in this
+particular sense. However, we argue that our methods
+clearly distinguish themselves as the only ones that are
+(1) completely unsupervised, (2) rely on
+(1) input pa-
+rameters rather than the standard, which is often more
+(105), and (3) have a clear physical interpretation.
+than
+
+O
+
+O
+
+II. EMD LANDSCAPES OF QCD AND TOP
+JETS
+
+The physical intuition underpinning this work is that
+jets initiated by light quarks and gluons versus those ini-
+tiated by top quarks have fundamentally different inter-
+nal substructures—this is a well-known fact in the jet
+substructure community. The statistical hypothesis from
+which this work begins is that the labels for the jet pro-
+genitors imprint themselves on their respective substruc-
+tures, and such labels can be inferred or characterized
+
+T , zi ≡
+(η, ϕ) =
+
+J
+
+2
+
+by carefully analyzing ensembles of such substructures.
+What is to be demonstrated in this work is that such la-
+bels reveal themselves to high accuracy through the ge-
+ometry of the data itself. This section will serve to lay the
+groundwork for the rest of the paper, as well as convince
+the reader why such a thing seems plausible. Subsequent
+sections will provide the quantitative machinery required
+to convincingly demonstrate this fact.
+
+To begin, we must define the underlying structure
+of the data from which the aforementioned geometry
+emerges. Namely, we represent our jets as an unordered
+set of massless particles, where the ith particle is specified
+by (pT i, ηi, ϕi) coordinates. Normalizing each pT i by the
+total jet pjet
+T , the jet is then represented as
+
+pT i/pjet
+
+zi δ (η
+
+ηi) δ (ϕ
+
+ϕi) .
+
+−
+
+−
+
+(1)
+
+jet
+(cid:88)i
+∈
+
+This data type is known as a point-cloud. Given this
+form, we see (from a statistical viewpoint) that we can
+treat any given jet as a discrete probability distribution
+with support on a subset of the 2D Euclidean plane de-
+fined by calorimeter cells on which its constituents are
+deposited after a collision. It is important to note here
+that a set of pre-processing steps are required to cast a
+jet in this format [7, 8]. These steps consist of rotations,
+reflections, and translations to get the jet into a standard-
+ized form with common origin in (η-ϕ) space defined at
+the jet’s center.
+
+To begin, let us define the indexing set for our data set
+
+I
+
+0, 1, . . . , N
+
+≡ {
+
+.
+
+}
+
+(2)
+
+In what follows we will consider a data set consisting of
+QCD and top jets, two thousand of each, all in the point-
+cloud format of Eq. (1), and we will denote this data set
+by D:
+
+D =
+
+f
+
+QCD, top
+
+, i
+
+I
+
+,
+
+(3)
+
+Jf,i (η, ϕ)
+(cid:8)
+
+}
+
+(cid:12)
+(cid:12)
+
+(cid:9)
+
+∈
+
+∈ {
+where the first index f runs over the jet flavor labels and
+i over the indexing set of each ensemble. Our ensembles
+and labels come from the public top-tagging data set of
+[22]. The jets therein are generated through simulation
+with Pythia8 [31] for collisions at √s = 14 TeV, such
+as those at the LHC. Detector effects are modeled by
+Delphes [32] paired with use of the ATLAS card. Jets are
+clustered with the anti-kT algorithm [33] via FastJet [34],
+with a jet radius of R = 0.8. Each is the leading jet of
+their respective event. Finally, the transverse momentum
+range of the data set is pjet
+
+T ∈
+For this section, as well as the remainder of the work,
+it is important to clarify our use of the jet flavor index.
+In this present section, we will make ample use of these
+flavor labels as a means to gain intuition and understand-
+ing for the qualitative differences between QCD and top
+jets as exemplified by use of the EMD. In later sections,
+this flavor index will only be utilized as the “truth label”
+to assess the accuracy of each unsupervised classification
+
+[550, 650] GeV.
+
+task performed, as the goal of this work is to tag top jets
+in a completely unsupervised manner, that is, without
+any reference to labels affiliated with the data.
+
+With our data set D in hand, we compute EMDs be-
+tween all pairs of jets [26, 27], that is we produce a ma-
+trix of distances whose (i-j)th element will be given the
+shorthand
+
+EMDij ≡
+
+EMD (
+
+Ji,
+
+Jj) .
+
+(4)
+
+As D contains jets with transverse momenta pjet
+T ∈
+[550, 650] GeV, and this fact is controlled for at the level
+of the point-cloud representation of Eq. (1), this results in
+the EMD taking on a dimensionless value less than unity.
+Q/pjet
+We may interpret this distance then as EMD
+T
+where Q is the “traditional” EMD with units of GeV and
+pjet
+T is in the range specified above. As the dimensionful
+EMD has the interpretation of the amount of (angular)
+work required to redistribute the energy of one jet into
+another, the dimensionless/normalized EMD then can be
+interpreted as the scale of angular resolution that must
+be traversed in morphing one jet’s point-cloud into an-
+other.
+
+∼
+
+Our data set D together with the distances between
+all elements, as computed through the EMD, furnishes
+us with a metric space M = (D, EMD). The simplest
+inspection we may perform in the metric space involves
+visualizing the distribution of EMDs.
+In doing so, we
+have three distinct distributions to consider: first, the
+distances purely between QCD jets (we will refer to this
+as the “QCD-QCD” distribution), second, those purely
+between top jets (“top-top”) and third, the EMDs be-
+tween QCD and top jets (“QCD-top”). These distribu-
+tions are displayed in Fig. 1. This basic figure contains a
+wealth of information. To begin, looking just at the first
+moments of the QCD-QCD and top-top distributions, we
+see that the bulk of QCD jets situate themselves far closer
+to one another than do top jets—this suggests that the
+QCD subspace of our EMD metric space is populated
+at a higher density than is the top subspace. The next
+striking feature is that the QCD-top distribution nearly
+overlays the top-top. This is to say that there exists
+similar spacing between top jets amongst themselves as
+there does QCD and top jets. Pairing this with the fact
+that the QCD-QCD distribution is shifted towards lower
+EMD values relative to the top-top and QCD-top distri-
+butions, a significant separation between the QCD jets
+and the top jets is suggested. Thus Fig. (1) suggests
+two qualitative features of the data set: (1) that QCD
+jets populate a region of higher density than do top jets
+and (2) these two regions are widely displaced from one
+another.
+
+Let us further investigate the differing densities in
+which QCD and top jets populate M . To do so, we will
+define an important class of sets. Sets of this class will
+be defined for each
+
+D,
+
+Ji ∈
+
+EMDi ≡
+
+EMDij
+
+j
+
+∈
+
+I , j
+
+= i
+
+,
+
+(5)
+
+(cid:8)
+
+(cid:12)
+(cid:12)
+
+(cid:9)
+
+3
+
+FIG. 1: The three distinct distributions of EMDs
+affiliated with our data set of QCD and top jets. The
+QCD-QCD distribution (blue), the top-top distribution
+(orange), and the QCD-top distribution (green).
+
+Ji and
+which is simply the set of EMDs between the jet
+all other jets in D. We use the notation EMDi to elicit
+thoughts of “taking the ith row” of the matrix EMDij,
+but it is important to note that while EMDi contains the
+elements of the ith row of EMDij, it is just a set and
+therefore has no notion of “location” for any particular
+element, as would be captured by the element’s column
+number within the row. We opt for defining this class of
+sets so that we can order their elements in what follows.
+D to
+
+Next, we will define the κ-EMD for each jet
+be the K th order statistic1 of the set EMDi:
+
+Ji ∈
+
+κi = EMDi(K) ,
+
+(6)
+
+Ji and its K th nearest-
+which is simply the EMD between
+neighbor. We choose this notation to highlight the fact
+that κi is a particular matrix element. Thus, given the
+data set D, one can construct distributions in κ for each
+jet type and choice of K. Doing so creates distributions in
+κ parameterized by the nearest-neighbor number K and
+the jet flavor label f , which we denote with the notation
+p (κ; K, f ). An interesting quantity to look at will be the
+first moments of such distributions as functions of their
+parameters
+
+κf (K)
+
+≡
+
+(cid:90)
+
+dκ κ pf (κ; K) .
+
+(7)
+
+A plot containing curves for κQCD(K) and κtop(K) is
+displayed in Fig. 2. A striking feature is the clear ordering
+
+1 For a set of objects in which there exists a natural ordering (as
+is the case of EMDs as they are non-negative real numbers) the
+kth order statistic is the kth smallest element, according to the
+natural ordering, and is denoted X(k). For example, given a set
+X = {X1, . . . , Xn}, X(1) = min X and X(n) = max X.
+
+0.00.10.20.30.40.5θ0.0000.0250.0500.0750.1000.1250.1500.1750.200FractionNormalizedEMDdistributionsQCD-QCDTop-TopQCD-Top̸
+4
+
+compared to pjet
+(100) GeV, is effectively zero. This
+T ∼ O
+is to say that the characteristic angular scale for QCD
+0, or in other words, that QCD jets are
+jets is θQCD ∼
+approximately scale-free. This lack of definitive angular
+n
+scale leads to the power-law behavior dcorr,QCD(θ)
+for some n > 0.
+
+θ−
+
+∼
+
+→
+
+T ∈
+
+This is in sharp contrast to the top jets, which are
+distinguished by their characteristic energy scale mtop ∼
+173 GeV. This leads to an angular scale of around θcd ∼
+mtop/pjet
+[0.27, 0.31]. We denote this quantity by θcd,
+to allude to the fact that it defines the approximate an-
+q ¯q′b.
+gular extent of the top’s characteristic decay t
+Looking back to Fig. 3 we see that angular scales θ > θcd
+are too large to resolve any of the substructure features
+that differentiate top jets from one another, i.e.
+sep-
+arate them in the EMD metric space. This gives the
+top subspace a vanishing correlation dimension. Once
+we probe the region θ
+θcd, characteristic substructure
+is resolved, and the complexity of the top jet’s popula-
+tion in M becomes manifests itself in a rapid growth in
+dcorr,top(θ).
+In the opposite limit, i.e. θ < θcd we re-
+cover an approximate power-law dependence which can
+be understood as follows. In going far enough below this
+resolution scale, the top mass is effectively integrated out
+and we are left with a metric space population pattern
+characteristic of a scale-free theory like QCD. Physically
+what is happening is that in probing the metric space at
+small angular resolution, we are probing neighborhoods
+of jets who differ only through subtle variations in radia-
+tion patterns, generated through QCD evolution, falling
+collinear to the three (on average) hard prongs marking
+the characteristic decay pattern of top jets.
+
+∼
+
+The most significant fact regarding the correlation di-
+mensions of Fig. 3 is the striking disparity in their numer-
+ical sizes amongst the two jet flavors. At any reasonable
+angular resolution scale θ < R, where R is the jet radius,
+QCD jets populate a region of vastly lower dimensionality
+than do top jets. This provides yet another indication of
+the high-density population pattern of QCD jets relative
+to tops in EMD space. For example, consider embed-
+ding both subspaces into some larger space that contains
+both. At every resolution scale, the QCDs are confined
+to a low-dimensional subspace while the tops are free to
+diffuse across a larger subvolume.
+
+In total, these three basic considerations regarding the
+subspaces populated by QCD and top jets indicate that
+these particular flavor labels imprint themselves in a non-
+trivial way on the geometry of their resulting metric
+space. The goal of the following sections is to leverage
+these geometric features to infer such flavor labels.
+
+III. DENSITY-BASED CLUSTERING
+
+A. DBSCAN background
+
+In this section, we will give a conceptual overview of
+the DBSCAN algorithm, as implemented in Scikit Learn
+
+FIG. 2: First moments of the κ-EMD distributions for
+QCD (blue) and top (orange) jets, plotted as functions
+of the nearest-neighbor number K.
+
+between the two flavor classes. For every value of K, the
+average distance between a QCD jet and its K th nearest-
+neighbor is roughly half that of tops. This corroborates
+the intuition gleaned from Fig. 1, namely that the QCD
+jets are more tightly packed, and thus occupy a region
+of higher density in M than do top jets. We will return
+to this plot when it comes to interpreting the optimal
+values of input parameters for the DBSCAN algorithm
+in Sec. III.
+
+The set of features to investigate will be the correla-
+tion dimensions [35–37] for the QCD and top subspaces,
+as done in the case of W -jets in [26] as well as both quark
+and gluon jets in [38]. The correlation dimension is com-
+puted as a function of resolution scale θ, according to
+[26]
+
+dcorr (θ) =
+
+∂
+∂ log θ
+
+log
+
+i<j
+(cid:88)1
+≤
+≤
+
+N
+
+Θ (EMDij < θ) ,
+
+(8)
+
+) denotes the indicator function for the con-
+where Θ(
+·
+straint listed as its argument. From a geometric stand-
+point, smaller θ resolves local structure while larger θ
+resolves more global features of the metric space. Thus
+from the physics perspective, the local structure of M
+reflects IR information of the jet, while the global struc-
+ture captures the UV. We display curves of dcorr for the
+QCD and top subspaces in Fig. 3.
+
+Let us now analyze Fig. 3 in detail. We see that the
+correlation dimension for QCD jets takes the form of a
+power-law, while that of top jets exhibits a more non-
+trivial θ-dependence, with the key being an exponential
+decay in the θ ≳ 0.3 region. Both of these observations
+can be understood as manifestations of the characteristic
+energy scales for QCD and top jets.
+
+For QCD jets initiated by light quarks a gluons, the
+(100) MeV, which
+
+characteristic energy scale is ΛQCD ∼ O
+
+02004006008001000K0.0750.1000.1250.1500.1750.2000.2250.250κ(K)Firstmomentofκ-EMDdistributionvs.KQCDTopabout a given jet, as considered in [27],
+
+Bϵ (
+
+Ji) =
+
+Jj ∈
+
+D
+
+EMDij ≤
+
+ϵ
+
+,
+
+5
+
+(9)
+
+(cid:9)
+
+(cid:8)
+
+(cid:12)
+that is, the set of jets within an EMD of ϵ from the given
+(cid:12)
+jet
+Ji. The next point has to do with two qualitatively
+different types of points belonging to a cluster, namely
+what are referred to as core and border points [40]. A
+core point is defined as one whose ϵ-ball has a cardinality
+bounded below by some value, µ. This is to say that the
+jet
+
+Ji is a core point if
+
+(10)
+
+µ .
+
+| ≥
+
+Bϵ (
+
+Ji)
+
+Bϵ (
+|
+
+Ji)
+This bound is fixed in order to contrast core points from
+border points, where one can easily picture a point lying
+on the border of a cluster to have fewer jets surrounding
+JB is said to be
+it, that is
+< µ. Next, the jet
+directly density-reachable, with respect to (ϵ, µ), by the
+JB then
+JA). If
+jet
+fails to meet the core point condition itself, it is a border
+point. Thus, we see that the basic notions of core and
+border points are defined with respect to the parameter
+pair (ϵ, µ), and therefore in what follows, we will consider
+all further notions regarding the connectivity of clusters
+in our metric space to be defined with respect to this
+pair.
+
+|
+|
+JA is a core point and
+
+JA if
+
+JB ∈
+
+Bϵ (
+
+Jets
+
+J1,
+
+JK =
+
+J2, . . . ,
+
+JA and
+
+JA and
+
+JK) such that
+
+exists a sequence of jets (
+JA,
+JB and
+Ji. Jets
+if there exists a jet
+density-reachable.
+
+JB are said to be density-reachable if there
+J1 =
+Ji+1 is directly density-reachable from
+JB are then said to be density-connected
+JB are
+JC from which both
+JA and
+D according to
+DBSCAN then defines a cluster, C
+⊂
+JB, if
+JA and
+the following two conditions: (1) for all
+JA, then
+JB is density-reachable from
+JB ∈
+JA ∈
+JA is density-connected to
+C,
+C. (2) for all
+JB.
+Lastly, in contrast to a cluster, DBSCAN defines the
+noise, noise
+D, to be that which belongs to no cluster,
+for example, suppose C1, . . . , CK are clusters of D, then
+
+JB ∈
+
+C and
+
+JA,
+
+⊂
+
+noise =
+
+D
+
+/
+∈
+
+J
+
+Ci ,
+
+i
+∀
+
+J ∈
+
+1, 2, . . . , K
+
+∈ {
+
+.
+
+(11)
+
+(cid:12)
+(cid:12)
+
+(cid:8)
+
+To restate intuitively, the noise set is the set of jets where
+none of its interior points satisfy the core point condition
+of Eq. (10), which is to say that these points fall below
+the density threshold established by the parameter pair
+(ϵ, µ).
+
+}
+(cid:9)
+
+B. Unsupervised extraction of input parameters
+
+FIG. 3: Correlation dimensions for the QCD (blue) and
+top (orange) subsets of the metric space plotted as a
+function of the EMD resolution variable θ. The green
+band corresponds to the range of values taken on by the
+top’s characteristic decay angle θcd, whose finite width
+
+[550, 650] GeV. This marks the
+
+transition region for the resolution of top jets’ internal
+substructures at the level of the geometry of the data.
+
+is due to pjet
+
+T ∈
+
+[39]. Our treatment will closely follow that laid out in
+the original work [40], however instead of describing the
+general workings, we will tailor things to describe our
+specific problem at hand. For a more recent treatise, see
+[41].
+
+What makes DBSCAN particularly well-suited to the
+problem at hand lies in its reliance on two simple param-
+eters that work to quantitatively define a density thresh-
+old for elements living in a metric space. Or, to state
+things in another and equivalent way, what makes our
+data set so amendable to density-based clustering is the
+presence of a rather sharp density demarcation in the
+EMD landscape. As alluded to in the previous sections,
+when studied individually, sets of QCD- and top-initiated
+jets populate EMD space with strikingly different densi-
+ties. While this fact does not guarantee separability in
+their combined set, it certainly makes such a feat seem
+promising. Here, we will show that QCD and top jets are
+indeed separable according to their densities and the req-
+uisite density threshold that separates the domains may
+be extracted from the data in a label-free fashion.
+
+First,
+
+let us define several concepts that DBSCAN
+makes use of. We will make reference to our data set
+of jets as D. The first concept will be that of an ϵ-ball
+
+In the previous section, we outlined how DBSCAN de-
+fines points based on neighborhoods, and then forms clus-
+
+ters based on the connectivity of such neighborhoods.
+All definitions were ultimately made with respect to the
+
+10−12×10−13×10−14×10−16×10−1θ024681012dcorr(θ)Correlationdimensionvs.normalizedEMDQCDTopθcd=mtoppjetT6
+
+The Shannon entropy quantifies the number of bits (if one
+uses log base 2) required to specify the distribution. From
+a more qualitative standpoint, the entropy is a proxy for
+how much “uncertainty” lies in the random variable
+.
+C
+This being the case, we can immediately point under-
+stand two special limits. First, we have that
+
+(ϵ) = 0 ,
+
+lim
+ϵ
+→
+
+0 S
+
+(14)
+
+since for zero ball-radius, all balls have a cardinality of
+1, hence resulting distribution has all its mass contained
+in a single bin. Similarly, we have that
+
+(ϵ) = 0 ,
+
+(15)
+
+R S
+
+lim
+ϵ
+→
+EMDij
+
+}
+
+(cid:12)
+(cid:12)
+
+(cid:8)
+
+i, j
+
+∈ {
+
+0, 1, . . . , N
+
+since R ≳ max
+is the max-
+imum angular distance scale occurring in D, for in this
+scenario all balls have a cardinality n, so the entirety of
+the distribution’s mass lies in the bin containing n. So,
+since
+0, the mean value
+S →
+S ≥
+has a global maximum for some value
+theorem tells us
+of ϵ. Now, the scale at which
+reaches its global maxi-
+S
+mum is the scale at which p (
+; ϵ) is the closest it comes
+C
+to a uniform distribution, which is to say the furthest it
+comes to any sense of bimodality.
+
+0 at both endpoints and
+
+S
+
+(cid:9)
+
+C
+
+S
+
+; ϵ) occurs at the ϵ-value for which
+
+—doing so leads to a sharp increase in
+
+It turns out that the closest approach to bimodality
+in p (
+achieves a
+C
+saddle-point. As ϵ increases above zero, bin content from
+from 1 begins to redistributes itself to populate higher
+.
+values of
+S
+As this continues, bins of higher and higher cardinality
+are populated, which extends the support set of p (
+; ϵ).
+C
+Eventually, this rate slows down and reaches a local ex-
+tremum, as depicted in Fig. 5. At this point, our distri-
+bution is the approximately bimodal, with a large peak at
+550. We
+C
+refer to this critical value as ϵcrit. As we move into the re-
+gion ϵ ≳ ϵcrit, more and more bin content from 1 bleeds
+over into the “valley” separating the two peaks, hence
+lessening their respective levels of localization. This oc-
+curs until we reach ϵmax at which the global max of
+S
+occurs, where the dual-peak structure is most obscured.
+After this point, the maximally-spread distribution starts
+localizing/collapsing to the single peak at n.
+
+= 1 and a localized Gaussian hump near
+
+C ≈
+
+We find that ϵcrit ≈
+
+0.1 and we can understand the
+emergence of this scale as follows. Consider the EMD
+distributions for QCD and top jets separately, as dis-
+played in Fig. 1. We find that, in this plot, Q/pT ∼
+ϵcrit
+marks the lower-tail region of the top distribution, this
+is to say that there only exist QCD jets with inter-jet
+distances below ϵcrit. Once we reach this threshold, top
+jets start coming into the mix. Therefore, ϵcrit provides
+a natural ball-radius to assess QCD densities. Displayed
+in the (b) panel of Fig. 5 is the distribution p (
+; ϵcrit),
+where the first bin is expected to be largely populated by
+> 300,
+top jets, and higher bins, particularly those for
+are expected to be QCD jets, for these jets must be very
+dense. It is worth stressing again that while our hypothe-
+sis of the labels corresponding to bin contents is inspired
+
+C
+
+C
+
+FIG. 4: The Shannon entropy of the cardinality
+distribution as a function of ball radius ϵ. The location
+
+0.1 determines the ideal
+of the local minimum at ϵ
+∼
+value of the eps parameter to be used by DBSCAN.
+
+parameter pair (ϵ, µ). This pair forms the basic user-
+input to the DBSCAN algorithm—using the notation of
+(eps, min_samples). Now,
+Scikit-learn [39], (ϵ, µ)
+as the goal of this work is to perform top-tagging in
+an unsupervised way, we need a method to determine
+(eps, min_samples) without the use of any
+(ϵ, µ)
+labels on our data set.
+In what follows, we describe a
+particular procedure for doing so.
+
+→
+
+→
+
+Our procedure is rather simple. First, we consider the
+entire unlabeled data set consisting of an equal mixture
+of QCD and top jets. We construct ϵ-balls about each
+jet and then compute the cardinality of each ball. The
+resulting cardinality then ends up being dependent on
+both ϵ and the particular jet
+
+:
+
+J
+
+(ϵ,
+
+)
+
+J
+
+C
+
+Bϵ (
+
+≡ |
+
+.
+
+)
+|
+
+J
+
+(12)
+
+D
+|
+
+∀J ∈
+
+Next, we collect the cardinalities
+
+D and bin them
+into a histogram, normalizing by the total number of jets
+. We thus consider the resulting histogram
+N + 1 =
+|
+to be a discrete distribution in the random variable
+,
+C
+whose stochasticity is derived from that of the underlying
+set of jets forming D, and is parameterized by the vari-
+able ϵ. This is to say, that for each value of ϵ, we have
+; ϵ), where, despite using
+a probability distribution p (
+C
+“continuum” notation, we keep in mind that
+is indeed
+discrete. To state in other words, the EMD scale ϵ de-
+fines a one-parameter family of cardinality distributions
+p (
+
+C
+Lastly, we consider the one-parameter family of Shan-
+non entropies [42] resulting from our cardinality distri-
+butions
+
+; ϵ).
+
+C
+
+(ϵ) =
+
+S
+
+−
+
+p (
+
+C
+
+; ϵ) log p (
+
+C
+
+; ϵ) .
+
+(13)
+
+(cid:88)C
+
+0.00.10.20.30.40.5(cid:15)0.00.51.01.52.02.5S((cid:15))Shannonentropyfordistributionofcardinalities7
+
+FIG. 5: Cardinality distributions corresponding to the two extremum points. (Left) Distribution corresponding to
+0.1, where a well-separated bimodal structure is clear. (Right) Distribution corresponding to ϵmax ∼
+ϵcrit ∼
+where the bimodal structure is smeared to a large degree.
+
+0.5,
+
+S
+
+by the analysis of previous sections, this entire procedure
+makes no use of labels. On general grounds, the saddle-
+(ϵ) is a natural scale to emerge, and inspection
+point of
+; ϵcrit) reveals a rather striking hint at the presence
+of p (
+C
+of two clusters. The vast valley between peaks makes
+cut quite natural as well. Let us call the
+the choice of
+midpoint of the valley separating the two peaks
+= µcrit
+just to pair with ϵcrit.
+
+C
+
+C
+
+Thus, this simple procedure of examining critical EMD
+value for the one-parameter family of Shannon entropies
+resulting from the one-parameter family of cardinality
+distributions provides us with natural input parameters
+for DBSCAN in a completely unsupervised way. Thus
+we take
+
+(eps, min_samples) = (ϵcrit, µcrit) ,
+
+(16)
+
+so that DBSCAN defines a core point of a cluster to be
+
+(17)
+
+| ≥
+
+µcrit .
+
+Bϵcrit (
+|
+
+Jcore)
+Interestingly, based on our knowledge from the previous
+section, we see that by-and-large only QCD jets will meet
+this criterion, and thus we can expect DBSCAN form a
+single cluster of QCD jets and classify the top jets as
+noise. This is natural for our binary data set, as only a
+single density threshold need exist to partition our data.2
+C. Top-tagging results from density-based
+clustering
+
+Insertion of the EMD matrix for our data set and
+the application of the parameter values as determined
+
+2 If we had additional jet types, say W - or Z-jets, occupying the
+metric space in differing densities, our method could be applied
+using in successive steps, still using DBSCAN. Alternatively, one
+could in principle cluster the varying densities using a more so-
+phisticated clustering algorithm, such as HDBSCAN [43]. We
+leave such investigations to future work.
+
+in Eq. (16) to DBSCAN is the full extent of the initial-
+ization required for our clustering task. With these spec-
+ifications, DBSCAN outputs the identification of one set
+identified as a cluster, which recalling our discussion in
+Sec. III A, means that one subset of our data meets the
+criteria of density-reachability and density-connectivity
+according to Eq. (17), while the other subset does not
+meet these constraints and is thus identified as noise.
+Our analysis in Sec. II then clearly identifies QCD jets as
+those forming the cluster with tops making up the noise.
+The accuracy of this clustering is then assessed through
+the use of the F1 score, whose value is determined via
+
+F1 =
+
+2tp
+2tp + fp + fn
+
+,
+
+(18)
+
+where tp denotes a true positive, fp a false positive, and
+fn a false negative. Such is a standard metric for the
+assessment of the accuracies of unsupervised clustering
+tasks. The accuracy we obtain is
+
+F1
+
+= 0.9003 .
+
+(19)
+
+EMD+DBSCAN
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+We can visualize the efficacy of the clustering task
+through the embedding of the EMD metric space in
+a two-dimensional space obtained through use of the
+dimensionality-reduction algorithm UMAP [44]. In our
+initialization of UMAP, we specify a denseMAP [45] value
+2.0 in order to preserve some of the local density profiles
+exhibited in the EMD space. Fig. 6 displays the UMAP
+embeddings of our data set labeled according to both
+their true labels, as well as their cluster assignments de-
+termined by DBSCAN.
+
+We see that the vast majority of QCD jets are con-
+centrated in a dense pocket in the lower right corner of
+the embedding, while only a couple handfuls or so are
+dispersed over the wide and sparsely-populated region
+
+0100200300400500600C020040060080010001200FrequencyCardinalitiesforEMD-ballsofradius(cid:15)crit02505007501000125015001750C050100150200FrequencyCardinalitiesforEMD-ballsofradius(cid:15)maxdominated by the tops. Again, in light of our discus-
+sion in Sec. III A and core/cluster point criterion defined
+by Eq. (17), we can understand why DBSCAN cannot
+extend the QCD cluster too far into the top/noise land-
+scape.3 Looking back to Fig. 1, we see that the relative
+shift towards higher EMD values of the QCD-Top dis-
+tribution relative to the QCD-QCD distribution is what
+allows for the density criteria to be satisfied by rather
+pure sample of QCD jets with minimal top contamina-
+tion. This shift is then visualized in Fig. 1 by the sep-
+aration of each class’s effective center-of-mass in UMAP
+space.
+
+We remark that the physical origins of such a shift can
+be traced back to the presence of the additional scale
+(mtop) characterizing the top jets which is absent in the
+QCD jet sample. That scale not only imprints itself upon
+the Top-Top EMD distribution, but more importantly
+does so almost equivalently on the QCD-Top distribution
+as well. Thus, one may reasonably inquire about whether
+such a feature is general to jets stemming from the decay
+of heavy-resonances relative to approximately scale-free
+QCD jets. We leave such interesting investigations to
+future work.
+
+IV. RICCI FLOW ON GRAPHS
+
+A. Overview and graph-theoretic preliminaries
+
+In this section, we provide an alternative method for
+the unsupervised clustering of QCD and top jets that,
+like the previous section, utilizes only the geometric in-
+formation induced by the EMD. We use the algorithm
+developed in [46] for the unsupervised clustering of sub-
+graphs (or “communities”) within the graph defining the
+data set. The algorithm does this by computing Ricci
+curvatures between nodes in the graph and then itera-
+tively updating the weights between nodes according to
+Ricci flow. Loosely speaking, Ricci flow works to com-
+press and stretch regions of positive and negative cur-
+vature, respectively. The intuition is then that clusters
+within the graph, which are connected to one another
+through regions of negative curvature, can be stretched
+out and separated as distinct communities. We will out-
+line key technical details behind the algorithm in what
+follows.
+
+First we must get our data set into a form that is
+amenable for this Ricci flow process. Doing so first
+requires a re-interpretation of our metric space M =
+(D, EMD) as a weighted graph G [47]. This can be done
+in a very straightforward fashion by mapping M to a
+fully-connected graph G where each jet is represented
+
+3 Note the few blue points deep in the interior of the top region
+in the bottom plot of Fig. 6 are due the minor distance fluc-
+tuations/distortions inherent to the highly-nonlinear embedding
+function defined by UMAP.
+
+8
+
+FIG. 6: UMAP embeddings of the data set colored
+according to ground truth labels (above) and their
+learned labels by DBSCAN (below)—QCD (0; blue)
+and top (1; orange).
+
+by a node, with each node having edges connecting it
+to every other node, and then assigning edge weights
+given by the EMD distance between jets. The problem
+with such a procedure, though, is that it results in a
+fully-connected graph, but the Ricci curvatures for fully-
+connected graphs are uniformly positive—thus there will
+exist no regions of negative curvature for the Ricci flow
+algorithm to dilate and reveal any community structure
+among subgraphs. This is to say that we won’t be able
+to resolve any clusters of jet type through Ricci flow fol-
+lowing this procedure.
+
+However, there exists a simple way to induce regions
+of negative curvature at the graph level which relies on
+intuition gained in Secs. II and III. Namely, we can make
+use of the κ-EMD defined in Eq. (6) to reduce the edge set
+of a given vertex to define connections to a jet’s K-nearest
+neighbors only, as opposed to the entirety of the data set
+
+681012141618UMAPdimension10246810UMAPdimension2UMAPembedding:Groundtruthlabels01681012141618UMAPdimension10246810UMAPdimension2UMAPembedding:DBSCANlearnedlabels01D. Hence, we can consider each vertex to connect itself
+to a local patch of jets of a fixed cardinality, analogous
+the the core-point condition of DBSCAN, Eq. (10), but
+substituting the ball-radius ϵ for κ, and µ for K, we will
+consider the analogue of a ball in a metric space for an
+edge set in a graph. Schematically,
+
+Bϵ(
+|
+
+µ
+
+)
+| ≥
+
+Bκ(vi)
+
+= K .
+
+(20)
+
+|
+
+J
+
+←→ |
+The global connectivity of the graph is then induced
+via mutual overlap between neighboring patches about
+vertices. The remainder of this section will be devoted
+to building up the mathematical machinery required to
+make this correspondence precise.
+
+Consider our collection of jets of point-cloud data type
+and size N + 1, as in Eq. (3). The EMD furnishes us a
+metric on elements of D, i.e. EMDij provides a distance
+between jets
+Jj. This pairing of the set D with
+the EMD metric is what defines the metric space
+
+Ji and
+
+M = (D, EMD) .
+
+(21)
+
+Let us recast M as a graph. A weighted graph G is a
+collection of vertices V , edges E, and edge weights ω
+[47], i.e.
+
+G = (V, E, ω) .
+
+(22)
+
+As previously mentioned, a fully-connected graph is a
+V there exists an
+graph in which for every vertex vi ∈
+V , and it
+E connecting vi to vj for all vj ∈
+edge vivj ∈
+is this structure that we want to modify. As such we will
+construct a graph whose vertices are connected K other
+vertices, where K is not necessarily equal to N . Taking
+K = N will give the fully-connected case but in what
+follows, we will take K to be general, ultimately linking
+it to the K that defines the κ-EMD.
+
+To begin, let us consider each jet in our metric space
+as a vertex in our graph, ultimately endowing the vertex
+set with the same labeling scheme as our data set
+
+V =
+
+vi
+
+i
+
+I
+
+.
+
+∈
+
+(23)
+
+(cid:9)
+
+(cid:8)
+
+All that differs is just that we are no longer keeping track
+(cid:12)
+(cid:12)
+of the underlying point-cloud nature of each jet. Such
+information is used only for the computation of EMDs,
+which we will take as given and will be carried by the
+edge weights. At this point, we see trivially that there is
+V .
+a one-to-one correspondence between the sets D
+We will consider the mapping from the metric space
+M to the graph G to be carried out schematically by the
+function Γ
+
+←→
+
+M Γ
+
+G .
+
+(24)
+
+−−→
+This relation is schematic, as Γ will really be a pair of
+functions, one for vertices and the other for edge weights.
+The simplest instance of this mapping, which we will
+denote as Γvertex, provides the correspondence between
+jets
+
+D and vertices v
+
+V :
+
+J ∈
+
+∈
+
+Γvertex : D
+
+−→
+Ji (cid:55)−→
+
+V
+vi ,
+
+(25)
+
+9
+
+which is to say that the image of D under Γvertex is V :
+
+V = Γvertex(D) .
+
+(26)
+
+Now, given our set of vertices, we will define the edge
+set for each vertex. In doing so, we will make use of the
+EMD-set for each jet, defined by Eq. (5), and the κ-EMD
+of Eq. (6)
+
+EK(vi)
+
+vivj
+
+EMDi ≤
+
+κi , j
+
+∈
+
+≡
+
+I , j
+
+= i
+
+,
+
+(27)
+
+(cid:12)
+(cid:12)
+
+(cid:8)
+
+(cid:9)
+
+where we adorn the set with a subscript K to empha-
+size that the set inherits dependence on K through the
+κ-EMD constraint. This definition makes it so that each
+V is connected to only K neighbors. As such, the
+vi ∈
+degree of each vertex, that is, the cardinality of the edge
+= K. A set
+set for each vertex is K: deg(vi)
+which comes as a natural byproduct of EK(vi) is neigh-
+borhood set of each vertex vi:
+
+EK(vi)
+|
+
+≡ |
+
+νK(vi)
+
+vj
+
+vivj ∈
+
+≡
+
+EK(vi)
+
+.
+
+(28)
+
+(cid:12)
+We will make use of this set in the following section where
+(cid:12)
+we describe the mechanics of the Ricci flow algorithm.
+
+(cid:9)
+
+(cid:8)
+
+The total edge set for the K-connected graph is then
+
+the union of the edge sets of each vertex
+
+N
+
+EK =
+
+EK(vi) .
+
+i=0
+(cid:91)
+
+(29)
+
+Once the K-restricted edge set EK is determined, the
+weight set is simple to define, as there is naturally a one-
+to-one correspondence between ω
+EK. This cor-
+respondence is then induced by what we will label as
+Γweight:
+
+←→
+
+Γweight : EK −→
+vivj (cid:55)−→
+This is to say that ω is the image of EK under Γweight:
+
+ω
+EMDij .
+
+(30)
+(31)
+
+ω = Γweight(EK) .
+
+(32)
+
+With the aforementioned sets in hand, we define the
+
+K-connected graph GK to be the collection
+
+GK = (V, EK, ω) ,
+
+(33)
+
+where again, we highlight the fact that the edge set car-
+ries dependence on the choice of nearest-neighbor con-
+nections K, which ultimately controls all the interesting
+connectivity properties of the graph.
+
+B. Graph Ricci flow background
+
+In this section we will give an overview of the what
+goes into the computation performed by the Ricci flow
+algorithm of [46], following their exposition closely.
+In
+the previous section, we described the mapping that
+
+̸
+: GK →
+
+takes the metric space M to the graph GK. We will
+schematically write the algorithm of [46] to be a mapping
+G′K where G′K is essentially GK, but with its
+R
+set of edge weights modified. The “flow” aspect of the
+numerous times, re-
+Ricci flow will consist of iterating
+sulting in a family of edge-weight-modified graphs G(t)
+K ,
+where t can be thought of as a discretized “time” param-
+eter. The workflow from our original metric space M to
+the final graph with QCD and top subgraphs separated
+into clusters proceeds then as
+
+R
+
+M Γ
+
+−−→
+
+G(0)
+K
+
+R
+−−−→
+
+G(1)
+K
+
+R
+
+−−−→ · · ·
+
+R
+−−−→
+
+G(n)
+K .
+
+(34)
+
+To define the Ricci curvature between vertices, we must
+first define a metric on the graph. We will refer to such
+an object as d(t)
+G , which is to say that it will be up-
+. This metric will be
+dated through each iteration of
+a function of the edge weights, thus inheriting its time-
+dependence through that of ω(t). The metric for a general
+time t is defined to be
+
+R
+
+graph measure to be
+
+10
+
+α
+1
+
+P
+
+(t)
+i (vj) = 
+
+0
+
+
+where
+
+α
+
+−
+Zi
+
+exp
+
+−
+
+(cid:16)
+
+d(t)
+G (vi, vj)β
+
+if vj = vi
+
+νK (vi)
+
+if vj ∈
+otherwise ,
+
+(cid:17)
+
+(37)
+
+Zi ≡
+
+exp
+
+−
+
+(cid:16)
+
+νK (vi)
+
+(cid:88)vj
+∈
+
+dG (vi, vj)β
+
+,
+
+(38)
+
+(cid:17)
+
+is the effective partition function for the ith vertex, pro-
+viding normalization, and the parameter set (α, β) is
+taken to be (1/2, 2). The natural metric used for the
+space of measures is the 1-Wassertein distance W1, whose
+formulation falls under the scope of optimal transport
+In doing so, we in-
+[48], just like the EMD [26, 27].
+troduce a new metric space (
+, W1) atop the underlying
+graph metric space (GK, dG). This pair allows us to then
+compute the Ricci curvature is between vertices vi and
+vj according to
+
+P
+
+d(t)
+G (vi, vj) = min
+
+n
+
+1
+
+−
+
+ω(t)
+
+vAk vAk+1
+
+R(t)(vivj) = 1
+
+−
+
+W1
+
+(t)
+i
+
+,
+
+(t)
+j
+
+P
+P
+(cid:16)
+d(t)
+G (vi, vj)
+
+,
+
+(cid:17)
+
+(39)
+
+(cid:88)k=0
+
+(cid:26)
+vAk vAk+1 ∈
+
+(cid:0)
+
+(cid:1)
+EK , vA0 = vi , vAn = vj
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+.
+
+(cid:27)
+(35)
+
+where the curvature is interpreted to be along the short-
+est path between vi and vj. The curvatures then define
+the update edge weights—the flow then proceeds itera-
+tively as
+
+This may be intuitively understood as follows: due to
+the connectivity of the graph, while not all vertices are
+directly-connected to one another by a single edge, they
+are connected through a series of edges which can be
+thought of as those being traversed in hopping from one
+vertex to the next. Thus, we consider the set of all possi-
+ble sequences of edges, sum their corresponding weights,
+and take the minimum length resulting from such traver-
+sals. This being the case, we can naturally relate d(0)
+G
+directly to the EMD, as
+
+ω(0)
+
+vAk vAk+1
+
+= EMDAkAk+1 ,
+
+(36)
+
+(cid:0)
+
+(cid:1)
+albeit through the non-trivial relation of Eq. (35), which
+is a direct result of the non-trivial connectivity structure
+of G(0)
+K .
+
+The process of computing the Ricci curvature between
+vertices in a graph involves the addition of one more
+structure, that is a probability measure defined on the
+graph. This probability measure will depend on the un-
+derlying graph metric d(t)
+G and will thus inherit the time-
+dependence therefrom. The authors of [46] define the
+
+ω(t+1) (vivj) =
+
+1
+
+−
+
+R(t)(vivj)
+(cid:17)
+
+(cid:16)
+
+d(t)
+G (vi, vj) .
+
+(40)
+
+×
+
+For more details regarding the workings of the algorithm,
+see [46].
+
+At this point, it is important to comment on the in-
+terpretation of the graph resulting from the process of
+Ricci flow. As stated previously, only the initial graph
+G(0)
+K has direct relation to the physical EMD, that is has
+edge weights that can be directly related to angular res-
+olution scale through which jets differ in their physical
+substructures. Of course, even at the level of G(0)
+K , while
+this physical interpretation is valid for each vertex in rela-
+tion to its K-nearest neighbors, the modified connectivity
+structure blurs this meaning for distant jets that are con-
+nected via paths that require summing over many edges.
+For subsequent times, the edge weights ω(t) completely
+lose their physical interpretation, as they deform accord-
+ing the will of the flow algorithm. As the the metric space
+defined by the EMD has a rich manifold structure [27],
+it would be very interesting to understand any physical
+interpretation of its evolution through Ricci flow. This of
+course is far beyond the scope of the current work, which
+is simply to leverage geometric features in order to tag
+top jets from QCD. As such we leave such investigations
+to future work.
+
+11
+
+FIG. 7: Schematic depiction of the modification to the connection structure for a hypothetical jet
+
+Ji to its seven
+nearest-neighbors after reducing its connectivity to be that to its three. Note that only connections emanating from
+Ji are depicted, the connectivity structures of its neighboring points are omitted for clarity.
+
+C. Top-tagging results from Ricci flow
+
+From the discussion of the previous section, we see that
+there is essentially only one parameter having to do with
+the structure of our data set that we must determine,
+and that is the nearest-neighbor number K defining the
+reduced-connectivity structure we impose on our EMD
+metric space to transform it to that of a graph—see Fig. 7
+for a visualization of this process. We find that there
+exists a good deal of freedom in the choice of this value,
+(10) perform the best, which, perhaps
+but values of
+not surprisingly, can be understood from our discussion
+in previous sections.
+
+O
+
+We note that in Sec. III B, the determination of ϵcrit
+was due to it marking an extremum in the Shannon en-
+tropy of the cardinality distributions. Fig. 5 depicts the
+cardinality distribution affiliated with the ball radius of
+ϵcrit. We also know by Fig. 1 that this value of ϵcrit marks
+the peak of the QCD-QCD EMD distribution. Let us
+combine this information. Fig. 1 tells us that the ma-
+jority of QCD jets are within ϵcrit of one another and
+Fig. 5 corroborates this fact by telling us that the balls
+around most of these points contain sizeable portions of
+500 for these
+the QCD subset of the data, since
+balls. Thus, in choosing K
+(10), while modifying
+the connectivity drastically (reducing the graph-ball car-
+dinalities by an order of magnitude), the resultant ef-
+fect on the graph-path metric between QCD jets is ex-
+pected to be minimal due to the dense-packing of this
+corner of the metric space. One can conversely antic-
+ipate a more drastic change to in going from the EMD
+distances to the graph-path distances amongst tops, since
+their EMDs are Gaussian-distributed about θcd, so the
+reduction of their connection structure should amplify
+the number of “θcd’s” one must hop over to get from one
+corner of the top landscape to the other. This is all to
+
+∼ O
+
+C ∼
+
+∼ O
+
+say, that by reducing the connection structure drastically
+to K
+(10), we can exacerbate the graph-theoretic dif-
+ferences between QCD and top jets and use Ricci flow to
+amplify these differences. In the end, we choose K = 30
+based on these considerations, as
+(1) multiples of this
+central value all yield similar results. We find that per-
+forming fifty iterations of Ricci flow is enough to achieve
+
+O
+
+≈
+
+91% accuracy in our top-tagging task.
+Interestingly, we find that there are two ways in which
+we can use the results from the Ricci flow algorithm in
+order to tag tops jets. The first of which is the most
+straightforward. This is the simply let Ricci flow run, up-
+dating the edge weights/graph-distances between points
+at each step. This works to effectively separate the por-
+tions of the metric space corresponding to QCD and top
+jets. To visualize this separation, we take the graph-path
+metric dG, and embed its values between all elements of
+the data set into UMAP space, as done in Sec. III C.
+
+We depict such embeddings in Fig. 8, where the top
+two panels show the embedding after zero (left) and fifty
+(right) iterations without labels, while the bottom two
+panels are labeled analogues. We see such a manifest
+separation of clusters in the UMAP embedding that one
+can perform a simple cut on the coordinates to ascribe
+labels. In doing so, we yield an accuracy of 91.04%.
+
+Interestingly, we can achieve similar accuracy through
+performing a cut on another output of the Ricci flow
+algorithm. Consider the following object, which can be
+thought of as analogous to the effective partition function
+in Eq. (38):
+
+(t)
+
+R
+
+(vi) =
+
+1
+deg(vi)
+
+νK (vi)
+
+(cid:88)vj
+∈
+
+R(t)(vivj) .
+
+(41)
+
+This is effectively a Ricci curvature defined for an indi-
+vidual vertex, obtained through averaging over the cur-
+
+JiJi,1Ji,2Ji,3Ji,4Ji,5Ji,6Ji,7JiJi,1Ji,2Ji,3Ji,4Ji,5Ji,6Ji,712
+
+FIG. 8: UMAP embeddings of the graph-path metric after zero (left) and fifty (right) iterations of Ricci flow.
+Results shown for unlabeled data above, with ground truth labels depicted below.
+
+vatures between its K nearest-neighbors. Thus the dis-
+tribution of vertices induces a distribution over R. We
+, where f is the
+denote such distributions by pf
+flavor label and n is the time step. We display such dis-
+tributions in Fig. 9, where the top two panels display the
+
+R; n
+
+(cid:0)
+
+(cid:1)
+
+overall unlabeled distribution after zero (left) and fifty
+(right) iterations of Ricci flow, while the bottom two pan-
+els depict the underlying distributions colored according
+to their flavor.
+
+We see that the averaged-curvature distribution after
+fifty iterations of Ricci flow demonstrates a pronounced
+peak at the lower tail of its range, providing a clear value
+for a cut that separates the peak from the remainder of
+the distribution.
+In performing this cut and assessing
+the resultant accuracy, we achieve nearly the same level
+as with the UMAP cut: 91.13%.
+
+What is particularly noteworthy about the distribu-
+tion of averaged curvatures after fifty iterations of Ricci
+flow is the fact that the top jet distribution is strikingly
+
+localized while that of QCD jets is nearly-uniform. We
+can’t help but posit that the latter is a reflection of the
+scale-free nature of QCD while the former has to do with
+the presence of the characteristic scale defined by mtop.
+Of course, any direct numerical relation is obfuscated by
+the drastic modification that fifty flow iterations impact
+on the distances between jets, so any substantive conclu-
+sions are certainly beyond the scope of this work. We
+believe concerted effort to connect these concepts would
+be very interesting indeed.
+
+24681012UMAPdimension10123456UMAPdimension2UMAPembeddingofGK:0ﬂowiterations−2.50.02.55.07.510.012.515.0UMAPDimension12468101214UMAPDimension2UMAPembeddingofGK:50ﬂowiterations24681012UMAPdimension10123456UMAPdimension2UMAPembeddingofGK:0ﬂowiterations01−2.50.02.55.07.510.012.515.0UMAPDimension12468101214UMAPDimension2UMAPembeddingofGK:50ﬂowiterations0113
+
+Architecture
+
+Accuracy Parameters Learning
+
+ResNeXt [49]
+ParticleNET [50]
+PFN [51]
+LGN [52]
+nPELICANhidden=1 [53]
+DBSCANEMD
+Ricci-FlowCurvature
+Ricci-FlowUMAP
+
+0.9360
+0.9380
+0.9320
+0.9290
+0.8951
+0.9003
+0.9113
+0.9104
+
+1.46e6
+4.98e5
+8.20e4
+4.50e4
+11
+2
+2
+2
+
+Supervised
+Supervised
+Supervised
+Supervised
+Supervised
+Unsupervised
+Unsupervised
+Unsupervised
+
+TABLE I: Comparison to a limited selection of top-taggers from the literature.
+
+V. DISCUSSION AND CONCLUSION
+
+In this work, we have found the metric space defined
+by the EMD to be rather rich with information. By
+analyzing the space defined by a samples of QCD- and
+top-initiated jets, we find jets of each class to fill their
+respective subspaces quite differently—in fact so differ-
+ently that the labels of each jet can be determined purely
+through geometric information furnished by the EMD it-
+self. The two methods pursued are (1) the density-based
+clustering through use of the DBSCAN algorithm and (2)
+the separation of subgraphs through use of the Ricci flow
+algorithm. Both of these methods are carried out com-
+pletely unsupervised, achieve competitive accuracies, and
+each rely on only two initialization parameters. Further-
+more, such parameters can be inferred from analyzing the
+data itself through physical reasoning. We compare some
+of the features to other leading top-taggers in Table I.
+
+As can be seen, our methods distinguish themselves not
+only through their unsupervised nature, but also with the
+(1) number of parameters required for initialization. As
+O
+the sophistication of ML techniques applied to problems
+of jet substructure evolve, we believe that features such
+as simplicity and explainability are to become ever more
+important. As physicists, we don’t only want tools that
+are effective in performing their tasks, but we also want
+tools whose effectiveness can be understood intuitively.
+Through our work, we see that such goals are certainly at-
+tainable and hope that the simple applications laid forth
+
+in this paper can serve as a starting point for more re-
+fined studies. One immediate extension would be to the
+unsupervised tagging of jets initiated by other heavy res-
+onances, such as W/Z/H, as the presence of large mass
+scales in each case should presumably lead to a fair de-
+gree of separation from QCD jets in EMD space. It would
+be also interesting to analyze the circumstances needed
+for accurate clustering of jets in some low-dimensional
+space that the EMD manifolds are projected down to. In
+Ref. [30], the authors developed a means of embedding
+manifolds whose distance is defined by the EMD into var-
+ious two-dimensional subspaces in a way that preserves
+as many of the features of the true manifold as possible—
+e.g. ascribing directions corresponding to jet mass and
+pronginess. Carrying out a clustering analysis as a func-
+tion of choice of two-dimensional embedding space would
+certainly be fascinating. We leave such investigations to
+future work.
+
+ACKNOWLEDGEMENTS
+
+The authors are grateful to J.-H. Yang for his par-
+ticipation in the early stages of this work. In addition,
+the authors would like to thank to Z.-B. Kang and A.J.
+Larkoski for helpful discussions. The work of JR is sup-
+ported by the Mani L. Bhaumik Institute for Theoretical
+Physics.
+
+[1] M. D. Schwartz, “Modern Machine Learning and
+
+Particle Physics”, arXiv:2103.12226.
+
+[2] T. Plehn, A. Butter, B. Dillon & C. Krause,
+“Modern Machine Learning for LHC Physicists”,
+arXiv:2211.01421.
+
+[3] A. J. Larkoski, I. Moult & B. Nachman, “Jet Sub-
+
+structure at the Large Hadron Collider: A Review of
+Recent Advances in Theory and Machine Learning”,
+Phys. Rept. 841, 1 (2020), arXiv:1709.04464.
+
+[4] R. Kogler
+
+et
+Large Hadron Collider:
+view”, Rev. Mod. Phys. 91,
+
+al.,
+
+the
+Experimental Re-
+045003 (2019),
+
+“Jet Substructure at
+
+14
+
+FIG. 9: Averaged-curvature R distributions after zero (left) and fifty (right) iterations of Ricci flow. Results shown
+for unlabeled data above, with ground truth labels depicted below.
+
+arXiv:1803.06991.
+
+[5] P. T. Komiske, R. Mastandrea, E. M. Metodiev,
+P. Naik & J. Thaler, “Exploring the Space of Jets
+with CMS Open Data”, Phys. Rev. D 101, 034009
+(2020), arXiv:1908.08542.
+
+[6] S. Marzani, G. Soyez & M. Spannowsky, “Looking
+inside jets: an introduction to jet substructure and
+boosted-object phenomenology”, Springer (2019).
+[7] J. Cogan, M. Kagan, E. Strauss & A. Schwarzt-
+man, “Jet-Images: Computer Vision Inspired Tech-
+niques for Jet Tagging”, JHEP 1502, 118 (2015),
+arXiv:1407.5675.
+
+[8] L. de Oliveira, M. Kagan, L. Mackey, B. Nach-
+“Jet-images — deep
+(2016),
+069
+
+man & A. Schwartzman,
+learning
+edition”,
+arXiv:1511.05190.
+
+JHEP 1607,
+
+[9] P. T. Komiske, E. M. Metodiev & M. D.
+towards auto-
+Schwartz, “Deep learning in color:
+mated quark/gluon jet discrimination”, JHEP 1701,
+110 (2017), arXiv:1612.01551.
+
+[10] Y.-T. Chien & R. Kunnawalkam Elayavalli, “Prob-
+
+ing heavy ion collisions using quark and gluon jet
+substructure”, arXiv:1803.03589.
+[11] B. M. Dillon, D. A. Faroughy,
+
+J. F. Ka-
+menik & M. Szewc,
+“Learning the latent struc-
+ture of collider events”, JHEP 2010, 206 (2020),
+arXiv:2005.12319.
+
+[12] B. M. Dillon, T. Plehn, C. Sauer & P. Sorrenson,
+“Better Latent Spaces for Better Autoencoders”, Sci-
+Post Phys. 11, 061 (2021), arXiv:2104.08291.
+[13] J. H. Collins, “An Exploration of Learnt Represen-
+
+tations of W Jets”, arXiv:2109.10919.
+
+[14] K. Fraser, S. Homiller, R. K. Mishra, B. Ostdiek
+& M. D. Schwartz, “Challenges for unsupervised
+anomaly detection in particle physics”, JHEP 2203,
+066 (2022), arXiv:2110.06948.
+
+[15] G. Kasieczka et al., “The LHC Olympics 2020 a com-
+munity challenge for anomaly detection in high en-
+ergy physics”, Rept. Prog. Phys. 84, 124201 (2021),
+arXiv:2101.08320.
+
+[16] T. Buss, B. M. Dillon, T. Finke, M. Krämer,
+I. Oleksiyuk &
+
+A. Morandini, A. Mück,
+
+−0.4−0.3−0.2−0.10.00.10.20.3R0.0000.0250.0500.0750.1000.1250.1500.175p(cid:0)R;0(cid:1)Meancurvaturedistributions:0ﬂowiterations−0.194−0.192−0.190−0.188−0.186−0.184−0.182−0.180−0.178R0.000.050.100.150.200.25p(cid:0)R;0(cid:1)Meancurvaturedistributions:0ﬂowiterations−0.4−0.3−0.2−0.10.00.10.20.3R0.0000.0250.0500.0750.1000.1250.1500.175p(cid:0)R;0(cid:1)Meancurvaturedistributions:0ﬂowiterationsQCDTop−0.194−0.192−0.190−0.188−0.186−0.184−0.182−0.180R0.000.050.100.150.200.250.30p(cid:0)R;50(cid:1)Meancurvaturedistributions:50ﬂowiterationsQCDTopT. Plehn,
+arXiv:2202.00686.
+
+“What’s Anomalous in LHC Jets?”,
+
+[17] M. Feickert & B. Nachman,
+
+“A Living Re-
+view of Machine Learning for Particle Physics”,
+arXiv:2102.02770.
+
+[18] J. A. Aguilar-Saavedra, J. H. Collins & R. K. Mishra,
+“A generic anti-QCD jet tagger”, JHEP 1711, 163
+(2017), arXiv:1709.01087.
+
+[19] G. Kasieczka, T. Plehn, M. Russell & T. Schell,
+“Deep-learning Top Taggers or The End of QCD?”,
+JHEP 1705, 006 (2017), arXiv:1701.08784.
+[20] T. Heimel, G. Kasieczka, T. Plehn & J. M. Thomp-
+son, “QCD or What?”, SciPost Phys. 6, 030 (2019),
+arXiv:1808.08979.
+
+[21] E. A. Moreno, O. Cerri, J. M. Duarte, H. B.
+Newman, T. Q. Nguyen, A. Periwal, M. Pierini,
+A. Serikova, M. Spiropulu & J.-R. Vlimant, “JEDI-
+net: a jet identification algorithm based on inter-
+action networks”, Eur. Phys. J. C 80, 58 (2020),
+arXiv:1908.05318.
+
+[22] A. Butter et al.,
+
+“The Machine Learning land-
+scape of top taggers”, SciPost Phys. 7, 014 (2019),
+arXiv:1902.09914.
+
+[23] T. Faucett, J. Thaler & D. Whiteson,
+
+“Map-
+into a Human-
+ping Machine-Learned Physics
+Readable Space”, Phys. Rev. D 103, 036020 (2021),
+arXiv:2010.11998.
+
+[24] A. Bogatskiy, T. Hoffman, D. W. Miller & J. T. Of-
+fermann, “PELICAN: Permutation Equivariant and
+Lorentz Invariant or Covariant Aggregator Network
+for Particle Physics”, arXiv:2211.00454.
+
+[25] V. Mikuni & F. Canelli, “Unsupervised clustering for
+collider physics”, Phys. Rev. D 103, 092007 (2021),
+arXiv:2010.07106.
+
+[26] P. T. Komiske, E. M. Metodiev & J. Thaler, “Met-
+ric Space of Collider Events”, Phys. Rev. Lett. 123,
+041801 (2019), arXiv:1902.02346.
+
+[27] P. T. Komiske, E. M. Metodiev & J. Thaler, “The
+Hidden Geometry of Particle Collisions”, JHEP
+2007, 006 (2020), arXiv:2004.04159.
+
+[28] T. Cai, J. Cheng, N. Craig & K. Craig, “Linearized
+optimal transport for collider events”, Phys. Rev. D
+102, 116019 (2020), arXiv:2008.08604.
+
+[29] T. Cai, J. Cheng, K. Craig & N. Craig, “Which met-
+ric on the space of collider events?”, Phys. Rev. D
+105, 076003 (2022), arXiv:2111.03670.
+
+[30] S. E. Park, P. Harris & B. Ostdiek, “Neural Em-
+bedding: Learning the Embedding of the Manifold of
+Physics Data”, arXiv:2208.05484.
+
+[31] C. Bierlich et
+
+guide
+to the physics and usage of PYTHIA 8.3”,
+arXiv:2203.11601.
+
+“A comprehensive
+
+al.,
+
+[32] DELPHES 3 Collaboration, J. de Favereau, C. De-
+laere, P. Demin, A. Giammanco, V. Lemaître,
+A. Mertens & M. Selvaggi, “DELPHES 3, A mod-
+ular framework for fast simulation of a generic
+collider experiment”, JHEP 1402, 057 (2014),
+arXiv:1307.6346.
+
+15
+
+[33] M. Cacciari, G. P. Salam & G. Soyez, “The anti-kt
+jet clustering algorithm”, JHEP 0804, 063 (2008),
+arXiv:0802.1189.
+
+[34] M. Cacciari, G. P. Salam & G. Soyez, “FastJet
+User Manual”, Eur. Phys. J. C 72, 1896 (2012),
+arXiv:1111.6097.
+
+[36] B. Kégl,
+
+[35] P. Grassberger & I. Procaccia, “Characterization of
+Strange Attractors”, Phys. Rev. Lett. 50, 346 (1983).
+“Intrinsic Dimension Estimation Using
+Packing Numbers”, in “Advances in Neural Informa-
+tion Processing Systems”, ed: S. Becker, S. Thrun &
+K. Obermayer, MIT Press (2002).
+
+[37] F. Camastra, “Data dimensionality estimation meth-
+ods: a survey”, Pattern Recognition 36, 2945 (2003).
+[38] P. T. Komiske, S. Kryhin & J. Thaler, “Disentan-
+gling Quarks and Gluons with CMS Open Data”,
+arXiv:2205.04459.
+
+[39] F. Pedregosa, G. Varoquaux, A. Gramfort,
+V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret-
+tenhofer, R. Weiss, V. Dubourg, J. Vanderplas,
+A. Passos, D. Cournapeau, M. Brucher, M. Perrot
+& E. Duchesnay, “Scikit-learn: Machine Learning in
+Python”, Journal of Machine Learning Research 12,
+2825 (2011).
+
+[40] M. Ester, H. Kriegel, J. Sander & X. Xu,
+
+“A
+Density-Based Algorithm for Discovering Clusters
+in Large Spatial Databases with Noise”, Proceed-
+ings of the 2nd International Conference on Knowl-
+edge Discovery and Data Mining 12, 226 (1996).
+[41] E. Schubert, J. Sander, M. Ester, H. Kriegel &
+X. Xu, “DBSCAN revisited, revisited: why and how
+you should (still) use DBSCAN”, ACM Transac-
+tions on Database Systems (TODS) 42(3), X. Xu
+(2017).
+
+[42] T. M. Cover & J. A. Thomas, “Elements of Infor-
+mation Theory (Wiley Series in Telecommunications
+and Signal Processing)”, Wiley-Interscience (2006),
+USA.
+
+[43] L. McInnes, J. Healy & S. Astels,
+
+“hdbscan:
+Hierarchical density based clustering”, The Jour-
+nal of Open Source Software 2, S. Astels (2017),
+https://doi.org/10.21105%2Fjoss.00205.
+[44] T. Sainburg, L. McInnes & T. Q. Gentner, “Para-
+metric UMAP Embeddings for Representation and
+Semisupervised Learning”, Neural Computation 33,
+2881 (2021).
+
+[45] A. Narayan, B. Berger & H. Cho,
+
+“Density-
+Preserving Data Visualization Unveils Dynamic Pat-
+terns of Single-Cell Transcriptomic Variability”.
+[46] C.-C. Ni, Y.-Y. Lin, F. Luo & J. Gao, “Community
+Detection on Networks with Ricci Flow”, Sci Rep 9,
+9984 (2019), arXiv:1907.03993.
+
+[47] R. Diestel, “Graph Theory”, Springer Berlin, Heidel-
+
+berg (2017), GR.
+
+[48] C. Villani,
+
+“Optimal Transport: Old and New”,
+
+Springer-Verlag Berlin Heidelberg (2009), GR.
+[49] S. Xie, R. Girshick, P. Dollár, Z. Tu & K. He, “Ag-
+gregated Residual Transformations for Deep Neural
+
+Networks”, in “2017 IEEE Conference on Computer
+Vision and Pattern Recognition (CVPR)”, p. 5987-
+5995.
+
+[50] H. Qu & L. Gouskos,
+
+“Jet
+
+tagging via particle
+
+clouds”, Phys. Rev. D 101, L. Gouskos (2020).
+[51] P. T. Komiske, E. M. Metodiev & J. Thaler, “Energy
+Flow Networks: Deep Sets for Particle Jets”, JHEP
+1901, 121 (2019), arXiv:1810.05165.
+
+[52] A. Bogatskiy, B. Anderson, J. T. Offermann,
+M. Roussi, D. W. Miller & R. Kondor, “Lorentz
+Group Equivariant Neural Network for Particle
+Physics”, arXiv:2006.04780.
+
+[53] A. Bogatskiy, T. Hoffman, D. W. Miller, J. T. Of-
+fermann & X. Liu, “Explainable Equivariant Neu-
+ral Networks for Particle Physics: PELICAN”,
+arXiv:2307.16506.
+
+16
+
+

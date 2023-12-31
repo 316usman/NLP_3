@@ -1,0 +1,769 @@
+Enabling Quantum Natural Language Processing for Hindi Language
+
+Naman Srivastava
+IIIT Dharwad
+Dharwad, India
+srinaman2@gmail.com
+
+Gaurang Belekar
+IIIT Dharwad
+Dharwad, India
+belekargaurang@gmail.com
+
+Sunil Saumya
+IIIT Dharwad
+Dharwad, India
+sunil.saumya@iiitdwd.ac.in
+
+Aswath Babu H.
+IIIT Dharwad
+Dharwad, India
+aswath@iiitdwd.ac.in
+
+Abstract
+
+Quantum Natural Language Processing
+(QNLP) is taking huge leaps in solving the
+shortcomings of classical Natural Language
+Processing (NLP) techniques and moving
+towards a more "Explainable" NLP system.
+The current literature around QNLP focuses
+primarily on implementing QNLP techniques
+In
+in sentences in the English language.
+this paper, we propose to enable the QNLP
+approach to HINDI, which is the third most
+spoken language in South Asia. We present the
+process of building the parameterized quantum
+circuits required to undertake QNLP on Hindi
+sentences. We use the pregroup representation
+of Hindi and the DisCoCat framework to draw
+sentence diagrams. Later, we translate these
+diagrams to Parameterised Quantum Circuits
+based on Instantaneous Quantum Polynomial
+(IQP) style ansatz. Using these parameterized
+quantum circuits allows one to train grammar
+and topic-aware sentence classifiers for the
+Hindi Language.
+
+1
+
+Introduction
+
+In the ever-evolving landscape of information tech-
+nology and computational linguistics, Quantum
+Natural Language Processing (QNLP) represents
+a groundbreaking paradigm shift at the intersec-
+tion of Quantum Computing and natural language
+understanding. As the world delves deeper into
+the realms of Quantum Mechanics, harnessing the
+power of Quantum Computing to enhance the pro-
+cessing and comprehension of human language
+has emerged as a promising frontier. QNLP is
+a burgeoning field that promises to revolutionize
+how we interact with and extract knowledge from
+textual data, opening up new horizons for applica-
+tions ranging from machine translation and senti-
+ment analysis to information retrieval and cognitive
+computing. The first high-level Python library for
+QNLP was presented in 2021 as an open-source
+toolkit [8].
+
+Traditional Natural Language Processing (NLP)
+has made remarkable strides in automating tasks
+like text classification, machine translation, and
+sentiment analysis. However, it still grapples with
+inherent limitations, such as the inability to pro-
+cess and comprehend the vast nuances of human
+language efficiently. On the other hand, the model
+that interprets the Quantum Mechanical Phenom-
+ena is found to be equivalent to the model of natural
+language, which entails QNLP to be a quantum na-
+tive of language processing. The processing of
+linguistic structure can be easily encoded through
+a quantum regime, whereas encoding grammar in
+classical means is very tedious and costly.
+
+Quantum Computing, on the other hand, lever-
+ages the principles of superposition and entangle-
+ment, enabling it to handle complex computational
+tasks exponentially faster than classical computers.
+Performing Natural Language Processing (NLP)
+on Hindi text is significant due to the language’s
+vast user base, cultural relevance, and economic
+opportunities. It can offer insights into sentiments,
+opinions, and societal nuances, aids in governance
+and policy analysis, supports content creation and
+localization, enhances education, and has appli-
+cations in healthcare, media analysis, linguistic
+research, and disaster response.
+
+In particular, the QNLP pipeline relies on dia-
+grammatic representation, wherein it involves first
+parsing an input sentence followed by generating
+its associated string diagram. This diagram serves
+as the basis for constructing a trainable Quantum
+Circuit or a Parameterized Quantum Circuit (PQC).
+The same method is implemented here for the
+case of Hindi sentences. This research endeavor
+delves into the methodology for crafting a Param-
+eterized Quantum Circuit from Hindi sentences,
+establishing a fundamental framework for the de-
+velopment and training of a Quantum Natural Lan-
+guage Model tailored to the Hindi language. This
+work is inspired by the recent work on pregroup
+
+3
+2
+0
+2
+c
+e
+D
+2
+
+]
+L
+C
+.
+s
+c
+[
+
+1
+v
+1
+2
+2
+1
+0
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+ 
+ 
+ 
+ 
+ 
+ 
+representation of Language [6, 1]. We use the pre-
+group grammar formalism discussed by [6] to de-
+fine the word interactions and assign the pregroup
+notations.
+
+2 Background
+
+2.1 Quantum Computing
+
+Quantum Computing is a field of computing tech-
+nology that uses the principles of Quantum Me-
+chanics to perform certain types of calculations
+much faster than traditional computers. In a regu-
+lar computer, information is processed using bits,
+which can be either 0 or 1. Quantum Computers,
+on the other hand, use quantum bits or "Qubits"
+denoting the combination of both 0 and 1. What
+makes Qubits special is that they can exist in mul-
+tiple states at once. This ability to exist in multi-
+ple states at once, known as superposition, allows
+Quantum Computers to consider many possible so-
+lutions to a problem simultaneously. Additionally,
+qubits can be "entangled," meaning the state of one
+qubit can instantly affect the state of another, irre-
+spective of their physical separation, despite not
+having any sort of communication channel. This
+property of entanglement enables Quantum Com-
+puters to solve certain complex problems much
+faster than Classical Computers.
+
+2.1.1 Dirac Notation
+
+Dirac Notation, also known as bra-ket notation, is a
+mathematical notation commonly used in Quantum
+Mechancs and Quantum Computing to represent
+and manipulate quantum states and operations. It
+was developed by physicist Paul Dirac and provides
+a concise and powerful way to describe quantum
+systems and their transformations:
+
+1. A quantum state, such as the state of a qubit,
+is represented by a "ket" vector, written as |ψ⟩. For
+example, |0⟩ and |1⟩ represent the two possible
+states of a single qubit, where |0⟩ corresponds to
+the binary state 0, and |1⟩ corresponds to the binary
+state 1.
+
+2. The adjoint (complex conjugate plus trans-
+pose) of a ket vector is represented by a "bra" vec-
+tor, written as ⟨ψ|. If the ket vector is represented
+by a column vector then the bra would be a row
+vector ensuring the possible matrix multiplication
+that is analog to the scalar product existing among
+vectors.
+
+3. The inner product of two quantum states is
+denoted as ⟨α|β⟩, where |α⟩ and |β⟩ are ket vectors.
+
+This represents the probability that states |α⟩ and
+|β⟩ alike.
+
+4. Quantum operators, such as quantum gates,
+are represented by matrices and are often applied
+to quantum states using the ket-bra notation. For
+example, if you have a gate represented by the
+matrix U and you want to apply it to a qubit in state
+|ψ⟩, you can write it as U |ψ⟩.
+
+5. Quantum measurements can be represented
+by projection operators, which are expressed using
+the outer product of ket and bra. For example, if
+you want to represent a measurement that projects a
+quantum state onto |0⟩, and the involved projection
+operator is |0⟩⟨0|.
+
+Dirac Notation is especially useful in Quantum
+Computing because it provides a clear and compact
+way to represent and work with quantum states
+and operations. It simplifies complex calculations
+and transformations and makes it easier to express
+quantum algorithms and quantum circuits.
+
+2.1.2 Quantum Gates
+
+Quantum gates are fundamental building blocks in
+Quantum Computing, just like regular logic gates
+are in classical computing. They are used to manip-
+ulate and process qubits in a Quantum Computer.
+Quantum gates as tools or instructions that allow
+to change of the state of qubits. These gates per-
+form specific operations on qubits, such as flipping
+their state, rotating their orientation, or creating
+entanglement between them. Each quantum gate
+has a particular purpose, just like different tools in
+a toolbox are used for different tasks.
+
+For example, you have quantum gates called
+the X-gate, which is like a switch that flips the
+state of a qubit from 0 to 1 or vice versa. There’s
+also the Hadamard gate, which puts a qubit into
+a superposition of 0 and 1, allowing it to be in
+both states simultaneously. Other gates, like the
+CNOT gate, acting together with Hadamard create
+entanglement between two qubits, so that when
+one changes, the other does too, no matter how far
+apart they are.
+
+2.2 Quantum Natural Language Processing
+
+In Quantum Computing, the information present
+in qubits is represented in the form of vectors. A
+similar approach of using vectors (or vector spaces)
+has also been used frequently in Natural Language
+Processing involving Word Embeddings such as
+Word2Vec, and FastText. In recent years, the in-
+tersection of Natural Language Processing (NLP)
+
+and Quantum Computing has seen notable success,
+giving rise to a field known as QNLP. This hybrid
+domain harnesses the potential of Quantum Me-
+chanics to address crucial aspects of language pro-
+cessing, encompassing various NLP tasks. The ex-
+isting approaches within QNLP range from purely
+theoretical demonstrations of quantum advantage
+to practical implementations of algorithms on quan-
+tum hardware. It has many applications, such as
+machine translation, text summarization, and chat-
+bot creation. QNLP aims to use Quantum Com-
+puters to solve NLP problems. The goal of QNLP
+is to develop quantum algorithms that can outper-
+form classical algorithms for NLP tasks. To cre-
+ate an explainable NLP model, we must include
+the grammatical and syntax of the language in
+consideration[9, 4]. To incorporate such proper-
+ties of language needs the Distributional Compo-
+sitional Categorical (DisCoCat) model [5, 7, 15].
+Recent works have shown the implementation of
+QNLP techniques on sentence classification tasks
+using the DisCoCat model [12, 13]
+
+2.3 Pre Group Grammar
+
+Pregroup grammar, or pregroup formalism, is a
+mathematical approach for analyzing natural lan-
+guage syntax. It is developed by linguist Joachim
+Lambek, it offers a more precise and elegant de-
+scription of linguistic structure than traditional
+context-free grammars [9, 10] . In this framework,
+words are linked to abstract algebraic "types" rep-
+resenting grammatical information, such as nouns
+and verbs. Rules in pregroup grammar are defined
+as algebraic operations on these types, enabling
+structured composition of linguistic expressions.
+This approach efficiently captures linguistic phe-
+nomena, like word order and ambiguity, making it
+valuable in computational linguistics and linguistic
+formalism. Pregroup grammar focuses on the alge-
+braic structure within language expressions, attract-
+ing research interest in linguistics and computer
+science. Several languages such as Sanskrit, Ara-
+bic, German, French and Japanese have adopted
+pregroup calculus [3, 14]:
+
+nouns. Algebraic calculation of sentence would
+lead to flow out of sentence denoted by "s" with
+nl · n → 1 → n · nr.
+
+Ram
+
+n
+
+likes
+nrsnl
+
+School
+
+n
+
+(1)
+
+A detailed exploration of the grammatical struc-
+tures and sentence compositions of English and
+Hindi reveals a combination of similarities and dis-
+parities. Both languages encompass fundamental
+building blocks such as nouns, verbs, and adjec-
+tives, which serve as the foundational elements for
+constructing sentences. These shared components
+facilitate basic communication and comprehension
+across the two languages. However, where English
+and Hindi diverge is in the inclusion of specific
+linguistic features that are unique to each language.
+For instance, Hindi employs a concept known as
+"Karak," which plays a crucial role in assigning
+roles and relationships to different sentence ele-
+ments. This is a distinct feature absent in English
+sentence structure. Additionally, tense markers in
+Hindi such as "Hai", "Thaa" etc convey temporal
+information differently than their English counter-
+parts, introducing another layer of complexity in
+the grammatical structure. To facilitate a better
+understanding of these differences, Table 1 is pre-
+sented, illustrating the various pregroup notations
+used in both languages and their corresponding
+sentence components.
+
+Symbol
+π
+n
+p
+a
+o
+k1
+ρ
+α
+τ
+
+Meaning
+Personal Pronoun
+Noun Phrase
+Simple Predicate
+Adjective
+Object or Transitive Verb
+Karaka
+Sambandh
+Optional Auxiliary
+Tense Marker
+
+Table 1: Pregroup Notations
+
+al · a → 1 → a · ar
+
+2.4 Sentence Diagrams
+
+where al and ar denote the left and right adjoint
+of the type of word "a" respectively. For example
+in the sentence "Ram likes School", subject and
+object nouns are represented by "n" and the verb
+"likes" expects a right and left adjoints as these
+
+Sentence diagrams in QNLP are graphical repre-
+sentations that use the principles of Quantum Me-
+chanics to depict the syntactic and semantic struc-
+ture of sentences in natural language. Unlike tradi-
+tional sentence diagrams, which typically rely on
+
+sentence diagrams into quantum circuits, ultimately
+enabling us to explore the quantum advantages in
+natural language processing tasks [17, 11, 2, 12, 8].
+
+3 Methodology
+
+A standard QNLP Pipeline involves the following
+steps as described in Figure 2:
+
+• Input Sentence to String Diagram: Using
+pregroup grammar of a language we assign the
+atomic type to the words and phrases. Then,
+we use the DisCoCat framework to create
+string diagrams corresponding to a sentence
+as shown in Figure 2, wherein the words are
+connected by cup-shaped wires called "cups"
+realized using an entangled pair.
+
+• Optimising String Diagram: Once the string
+diagram for a sentence is created, we optimize
+this diagram by reducing the number of cups
+so that the dimensionality of the words be-
+comes smaller, here word "jata" needs such
+correction. This step assists in removing the
+unnecessary complexities in a sentence dia-
+gram.
+
+• String Diagram to Parametersied Quantum
+Circuit: The transition of String Diagrams to
+Parameterised Quantum Circuit (PQC) car-
+ried via standard ansatz such as Instantaneous
+Quantum Polynomial Ansatz (IQP) or Matrix
+Products States (MPS) etc.
+
+• Building and Training Model: Once the Pa-
+rameterised Quantum Circuits for each sen-
+tence have been built, we can train our predic-
+tion model in a similar manner to how we train
+a classical NLP. Each circuit is assigned initial
+parameters and then measured. This measure-
+ment output is processed further according to
+the task at hand, such as comparing with the
+expected output as part of supervised learning.
+We use a classical optimizer to modify the pa-
+rameters of the quantum circuits, thus training
+the model.
+
+3.1 The Sentences
+
+We take two simple sentences from the Hindi lan-
+guage to demonstrate how we can build String Dia-
+grams and Parameterised Quantum Circuits from
+Hindi sentences. These two sentences are: - "Main
+School Jata hu" which translates to "I go to school".
+
+Figure 1: Bra and Ket notations in Sentence Diagram:
+The quantum state (|ψ⟩) and its effect (operator obtained
+as ⟨ψ| by taking adjoint) is simply 180 degree rotation
+about the normal axis.
+
+tree structures to represent grammatical relation-
+ships, QNLP sentence diagrams employ quantum-
+inspired principles to model the complexity and
+entanglement of linguistic elements within a sen-
+tence. In QNLP, sentence diagrams, words, or lin-
+guistic units are represented as quantum-like states
+(see Figure 1) or vectors in a high-dimensional
+space, that is like |ψ⟩ = α|0⟩ + β|1⟩. These states
+can exhibit superposition, entanglement, and other
+quantum properties, allowing for a more nuanced
+representation of the relationships between words
+and their syntactic and semantic roles. The use of
+quantum principles in sentence diagrams can en-
+able more accurate modeling of phenomena like
+word ambiguity, context-dependent meaning, and
+the interaction between words within a sentence.
+QNLP sentence diagrams are part of the broader
+effort to apply Quantum Computing and quantum-
+inspired techniques to natural language understand-
+ing, with the goal of enhancing the processing and
+comprehension of human language.
+
+2.5 Quantum Circuits From Sentence
+
+Diagrams
+
+To train our NLP model using sentence diagrams
+and harness the quantum advantage, it’s essential
+to transform these diagrams into trainable param-
+eterised quantum circuits. A specified sequence
+of gates applied to specific wires in a quantum cir-
+cuit is known as "Ansatz". To convert a diagram
+to a circuit, we have several methods or ansatz,
+including the Instantaneous Quantum Polynomial
+(IQP) ansatz and Matrix Product States (MPS) ap-
+proaches. Additionally, there are hybrid Quantum
+Algorithms introduced earlier [16], offering fur-
+ther options for this transformation. These various
+ansatzes provide us with a range of tools to adapt
+
+Figure 2: Standard Quantum Natural Language Pipeline
+
+- "Mukesh ne Khana khaya" which translates to
+"Mukesh ate the food".
+
+Main
+
+School
+
+jaata
+
+hu
+
+π
+
+o
+
+orπrsτ l
+
+τ
+
+(2)
+
+Mukesh ne
+
+khaana
+
+khaya
+
+n
+
+kl
+1
+
+k1o
+
+ornrs
+
+(3)
+
+Figure 4: Diagram for Sentence 2, single wired states
+are of type b and multiple wired are of type d.
+
+parallel processes, is represented by the tensor prod-
+uct. Sequential composition mirrors the sequence
+of quantum gates.
+
+3.2 Creating Sentence Diagram
+
+Using the pregroup notations and word connection
+formulated using the pregroup grammar for Hindi,
+we create the sentence diagrams for the sentences
+mentioned in Sec 3.1. For the Sentence 2 we obtain
+Figure 3. Similarly for Sentence 3 we obtain the
+Figure 4.
+
+Figure 3: Diagram for Sentence 1, single wired states
+are of type b and multiple wired are of type d.
+
+3.3 Building the Parameterised Quantum
+
+Circuit
+
+Quantum Theory, established as a process the-
+ory, employs a diagrammatic language denoted
+by string diagrams. Specifically, in the experi-
+ments we consider, we utilize pure quantum theory.
+Within this context, processes manifest as unitary
+operations or quantum gates associated with cir-
+cuits. The monoidal structure, which facilitates
+
+Figure 5: Ansatz for word with single wire
+
+Wires assigned the basic pregroup type b are
+allocated qb qubits. Word-states with a singular
+output wire obtained from ⟨0|, see Figure 5. To
+prepare these states, we opt for a series of Unitary
+gates representing an Euler decomposition. This
+entails a series of one-qubit unitaries Rz(θ1) to
+Rz(θ3), which are a simple rotational matrices ca-
+pable of rotating the subjected quantum state vec-
+tors. Word-states with multiple output wires evolve
+from multi-qubit states on k qubits where k > 1,
+which are structured by an IQP-style circuit, see
+FIgure 6. The word-circuit is divided into d layers.
+Each layer starts with Hadamard gates and then
+connects every adjacent pair of qubit wires with
+a controlled rotational CRz(θ) gate. As all CRz
+
+Figure 8: PQC for "Main School Jata hu", end gates
+are measurements leading to information to classical
+register "c" shown at the bottom.
+
+Figure 6: Ansatz for word with multiple wire
+
+Figure 9: PQC for "Mukesh ne khana khaya", end gates
+are measurements leading to information to classical
+register "c" shown at the bottom.
+
+cuits from Hindi sentences, utilizing pre-group
+grammar and the DisCoCat model. This methodol-
+ogy holds significant relevance within the broader
+framework of a versatile QNLP Pipeline. Once we
+successfully create parameterized quantum circuits
+for a curated dataset comprising Hindi sentences,
+the next crucial step involves training these circuits
+to develop a proficient QNLP Model. Looking
+forward, our research aspirations encompass an ex-
+tension of this work to devise a nuanced sentence
+classifier for Hindi sentences, integrating topic and
+context awareness through a QNLP approach. We
+draw inspiration from a study by [13], aiming to
+align our approach with their advancements in this
+domain. However, we acknowledge the inherent
+complexities lying ahead in this endeavour. Hindi
+exhibits a notably freer word order compared to
+English, presenting a challenge in accommodat-
+ing potential restrictions on word order movements
+within the construction of the PQC. Addressing and
+overcoming these intricacies are essential compo-
+
+Figure 7: Ansatz for "Cups" or "Bell State"
+
+gates are commutative, it’s feasible to view them
+as one layer. The Kronecker tensor for n- single
+output wires of type b are connected to word states
+via a GHZ state. In essence, the GHZ circuit pro-
+duces the state (cid:80)2b
+i=1|bin(a)⟩, where "bin"
+is a binary representation. For example n = 2 cor-
+respond to Bell (Entangled) State |00⟩ + |11⟩.The
+pregroup type b is mapped to qb-many nested Bell
+effects (⟨00|+⟨11|), executed as a CNOT, followed
+by a Hadamard gate on the control qubit and post-
+selection on |00⟩ as shown in Figure 7.
+
+a=0 ⊗n
+
+4 Discussion and Future work
+
+In this study, we have delved into the process of
+constructing trainable parameterized quantum cir-
+
+[8] Dimitri Kartsaklis, Ian Fan, Richie Yeung, Anna
+Pearson, Robin Lorenz, Alexis Toumi, Giovanni
+de Felice, Konstantinos Meichanetzidis, Stephen
+Clark, and Bob Coecke. 2021. lambeq: An efficient
+high-level python library for quantum nlp. arXiv
+preprint arXiv:2110.04236.
+
+[9] Joachim Lambek. 1958.
+
+The mathematics of
+sentence structure. The American Mathematical
+Monthly, 65(3):154–170.
+
+[10] Joachim Lambek. 1999. Type grammar revisited.
+In Logical Aspects of Computational Linguistics:
+Second International Conference, LACL’97 Nancy,
+France, September 22-24, 1997 Selected Papers 2,
+pages 1–27. Springer.
+
+[11] Konstantinos Meichanetzidis, Stefano Gogioso,
+Giovanni De Felice, Nicolò Chiappori, Alexis Toumi,
+and Bob Coecke. 2020. Quantum natural language
+processing on near-term quantum computers. arXiv
+preprint arXiv:2005.04147.
+
+[12] Konstantinos Meichanetzidis, Alexis Toumi, Gio-
+vanni de Felice, and Bob Coecke. 2023. Grammar-
+aware sentence classification on quantum computers.
+Quantum Machine Intelligence, 5(1):10.
+
+[13] Maha A Metawei, Mohamed Taher, Hesham El-
+Deeb, and Salwa M Nassar. 2023. A topic-aware
+classifier based on a hybrid quantum-classical model.
+Neural Computing and Applications, pages 1–10.
+
+[14] Mehrnoosh Sadrzadeh. 2010. Clitic movement in
+pregroup grammar: a cross- linguistic approach. In
+Lecture Notes in Artificial Intelligence ‚Proceedings
+of Eighth International Tbilisi Symposium on Lan-
+guage ‚Logic and Computation ‚September 2009.
+Lecture Notes in Artificial Intelligence ‚Proceedings
+of Eighth . . . .
+
+[15] Mehrnoosh Sadrzadeh, Stephen Clark, and Bob Co-
+ecke. 2013. The frobenius anatomy of word mean-
+ings i: subject and object relative pronouns. Journal
+of Logic and Computation, 23(6):1293–1317.
+
+[16] Sukin Sim, Peter D Johnson, and Alán Aspuru-
+Guzik. 2019. Expressibility and entangling capa-
+bility of parameterized quantum circuits for hybrid
+quantum-classical algorithms. Advanced Quantum
+Technologies, 2(12):1900070.
+
+[17] Jirawat Tangpanitanon, Chanatip Mangkang,
+Pradeep Bhadola, Yuichiro Minato, Dimitris G Ange-
+lakis, and Thiparat Chotibut. 2022. Explainable nat-
+ural language processing with matrix product states.
+New Journal of Physics, 24(5):053032.
+
+nents of our ongoing and future research, paving
+the way for a more refined and accurate QNLP
+approach tailored to the nuances of the Hindi lan-
+guage.
+
+5 Conclusion
+
+In conclusion, this paper presents a significant ad-
+vancement in the field of QNLP by extending its
+applications to the Hindi language. By leveraging
+the pregroup representation of Hindi and the DisCo-
+Cat framework, we have successfully designed sen-
+tence diagrams, which are then translated into Pa-
+rameterised Quantum Circuits using the IQP style
+ansatz. The resulting parameterised circuits en-
+able the development of grammar-aware and topic-
+aware sentence classifiers tailored to the nuances of
+the Hindi language. This novel approach not only
+contributes to the growing body of QNLP research
+but also addresses the need for more explainable
+NLP systems in languages beyond English, which
+promises exciting possibilities for natural language
+understanding and processing across diverse lin-
+guistic landscapes.
+
+References
+
+[1] Mina Abbaszade, Vahid Salari, Seyed Shahin
+Mousavi, Mariam Zomorodi, and Xujuan Zhou. 2021.
+Application of quantum natural language processing
+for language translation. IEEE Access, 9:130434–
+130448.
+
+[2] Mina Abbaszadeh, S Shahin Mousavi, and Vahid
+Salari. 2021. Parametrized quantum circuits of syn-
+onymous sentences in quantum natural language pro-
+cessing. arXiv preprint arXiv:2102.02204.
+
+[3] Kumi Cardinal. 2002. An algebraic study of japanese
+
+grammar.
+
+[4] Noam Chomsky. 2002. Syntactic structures. Mouton
+
+de Gruyter.
+
+[5] Bob Coecke, Mehrnoosh Sadrzadeh, and Stephen
+Clark. 2010. Mathematical foundations for a com-
+positional distributional model of meaning. arXiv
+preprint arXiv:1003.4394.
+
+[6] Alok Debnath and Manish Shrivastava. 2019. A pre-
+group representation of word order alternation using
+hindi syntax. In Proceedings of the 2019 Conference
+of the North American Chapter of the Association for
+Computational Linguistics: Student Research Work-
+shop, pages 125–135.
+
+[7] Edward Grefenstette and Mehrnoosh Sadrzadeh.
+2011. Experimental support for a categorical com-
+positional distributional model of meaning. arXiv
+preprint arXiv:1106.4058.
+
+

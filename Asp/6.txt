@@ -1,0 +1,1972 @@
+3
+2
+0
+2
+
+c
+e
+D
+6
+2
+
+]
+
+O
+C
+.
+h
+p
+-
+o
+r
+t
+s
+a
+[
+
+1
+v
+2
+9
+2
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+MNRAS 000, 1–14 (2023)
+
+Preprint 29 December 2023
+
+Compiled using MNRAS LATEX style file v3.0
+
+A Model-Independent Precision Test of General Relativity using Bright
+Standard Sirens from ongoing and upcoming detectors
+
+★, Suvodip Mukherjee 1
+Samsuzzaman Afroz 1
+1Department of Astronomy and Astrophysics, Tata Institute of Fundamental Research, Mumbai 400005, India
+
+†
+
+Accepted XXX. Received YYY; in original form ZZZ
+
+ABSTRACT
+Gravitational waves (GWs) provide a new avenue to test Einstein’s General Relativity (GR) using the ongoing and upcoming
+GW detectors by measuring the redshift evolution of the effective Planck mass proposed by several modified theories of gravity.
+We propose a model-independent, data-driven approach to measure any deviation from GR in the GW propagation effect by
+combining multi-messenger observations of GW sources accompanied by EM counterparts, commonly known as bright sirens
+(Binary Neutron Star(BNS) and Neutron Star Black Hole systems(NSBH)). We show that by combining the GW luminosity
+distance measurements from bright sirens with the Baryon Acoustic Oscillation (BAO) measurements derived from galaxy
+clustering, and the sound horizon measurements from the Cosmic Microwave Background (CMB), we can make a data-driven
+reconstruction of deviation of the variation of the effective Planck mass (jointly with the Hubble constant) as a function of cosmic
+redshift. Using this technique, we achieve a precise measurement of GR with redshift (z) with a precision of approximately 7.9%
+for BNSs at redshift z=0.075 and 10% for NSBHs at redshift z=0.225 with 5 years of observation from LVK network of detectors.
+Employing CE&ET for just 1 year yields the best precision of about 1.62% for BNSs and 2% for NSBHs at redshift z=0.5 on the
+evolution of the frictional term, and a similar precision up to z=1. This measurement can discover potential deviation from any
+kind of model that impacts GW propagation with ongoing and upcoming observations.
+
+Key words: Gravitational waves, gravitation, cosmology: observations
+
+1 INTRODUCTION
+
+The General Theory of Relativity (GR) has stood as a cornerstone of
+our understanding of gravity for over a century. It elegantly explains
+how massive objects warp the fabric of spacetime, causing other ob-
+jects to move along curved trajectories. However, in extreme astro-
+physical environments such as black holes and the early universe, the
+GR faces challenges in its applicability (Thorne 1995; Sathyaprakash
+& Schutz 2009). Recently, a groundbreaking development occurred
+with the direct detection of gravitational waves (GWs) by the LIGO-
+Virgo collaboration (Abbott et al. 2016b,c; Scientific et al. 2017;
+Abbott et al. 2017a; Goldstein et al. 2017). This achievement has
+opened a new avenue for testing GR, particularly in the context of
+compact binary systems existing in relativistic regimes. These sys-
+tems include Binary Neutron Stars (BNS), Neutron Star-Black Hole
+pairs (NSBH), and Binary Black Holes (BBH). These compact bina-
+ries offer unprecedented opportunities to delve into the fundamental
+nature of gravity across a vast range of mass scales and cosmologi-
+cal distances. Ground-based detectors like LIGO (Aasi et al. 2015),
+Virgo(Acernese et al. 2014) and KAGRA (Akutsu et al. 2021) have
+played pivotal roles in this endeavor. Furthermore, the prospect of fu-
+ture space-based detectors such as LISA (Amaro-Seoane et al. 2017)
+and ground-based detectors such as LIGO-Aundha (LIGO-India)
+
+★ samsuzzaman.afroz@tifr.res.in
+† suvodip.mukherjee@tifr.res.in
+
+© 2023 The Authors
+
+(Saleem et al. 2021)1, Cosmic Explorer(CE) (Reitze et al. 2019), and
+the Einstein Telescope(ET) (Punturo et al. 2010) holds even greater
+promise for advancing our understanding of gravity and rigorously
+testing GR’s predictions. Through these combined efforts, we aim
+to refine and expand our comprehension of the intricate interplay
+between gravity and the cosmos. While various models proposing
+modifications to the theory of gravity have been put forth to address
+different scenarios, this study is dedicated to testing GR in the prop-
+agation of GW through a model-independent, data-driven approach.
+GWs and EM signals’ propagation speed and luminosity distance of-
+fer insight into modified gravity theories. Factors like graviton mass,
+frictional term(due to running effect of Planck mass) and anisotropic
+source term contribute to deviations (Deffayet & Menou 2007; Saltas
+et al. 2014; Nishizawa 2018; Belgacem et al. 2018a,b; Lombriser &
+Taylor 2016; Lombriser & Lima 2017). Precise measurements en-
+able rigorous testing of these alternative theories. Employing bright
+sirens that emit both GW and EM radiation provides a robust avenue
+for conducting meticulous assessments of GW propagation speed,
+graviton mass, and the frictional term(𝛾(z), see in Equation.2). The
+prompt measurement of the electromagnetic counterpart, occurring
+approximately 1.7 seconds after the BNS event GW170817, has fa-
+cilitated the imposition of exceedingly precise constraints on the
+speed of gravitational wave propagation and the mass of the graviton
+(Abbott et al. 2017a,b, 2019a).
+
+Various model-dependent parametrizations of 𝛾(𝑧) exist in the
+
+1 https://dcc.ligo.org/LIGO-M1100296/public
+
+ 
+ 
+ 
+ 
+ 
+ 
+2
+
+Afroz and Mukherjee
+
+Figure 1. This plot showcases the precision achievable in reconstructing the redshift variation of the Planck mass captured by F (𝑧) for both NSBH and BNS
+systems, employing the current LVK detector with 5 years of observation time and the future CE&ET detectors with 1 year of observation time. For LVK, the
+BNS case considers the total events corresponding to a local merger rate 𝑅0 = 500 Gpc−3yr−1, while for NSBH, 𝑅0 = 20Gpc−3yr−1. For CE&ET, the BNS
+scenario assumes 𝑅0 = 100 Gpc−3yr−1, and for NSBH, 𝑅0 = 20 Gpc−3yr−1 are used. The plot illustrates the enhanced accuracy in measuring the function F (𝑧)
+using future detectors compared to our current instruments is possible in the redshift range 0.2 to 1 which is an interesting cosmic epoch when the acceleration
+of the Universe becomes important.
+
+literature, and one such example is the (Ξ0, 𝑛) parametrization (Bel-
+gacem et al. 2018b) and its detectability is shown for LVK (Leyde
+et al. 2022) and LISA (Baker & Harrison 2021). This parameter-
+ization depends on two positive parameters, denoted as Ξ0 and n.
+When Ξ0 is set to 1, it corresponds to GR. There exist several mod-
+els of modified gravity, each providing predictions for the frictional
+term in various scenarios. One prominent category is Scalar-Tensor
+theories. These theories encompass a scalar degree of freedom, the
+dynamics of which play a pivotal role in the evolution of the uni-
+verse. Among the most well-known scalar-tensor theories of gravity
+are the Brans–Dicke theory (Brans & Dicke 1961), f(R) gravity (Hu
+& Sawicki 2007) and covariant Galileon models (Chow & Khoury
+2009). These belong to the broader class known as Horndeski theo-
+ries. Beyond Horndeski theories, we have Degenerate Higher Order
+Scalar-Tensor (DHOST) theories (Frusciante et al. 2019; Crisostomi
+et al. 2016; Achour et al. 2016). These have been constructed and
+represent, thus far, the most general scalar-tensor theories that propa-
+gate a single scalar degree of freedom alongside the helicity-2 mode
+of a massless graviton. There are several other well known modified
+gravity exist in the litarature such as f(Q) gravity, f(T) gravity (Cai
+et al. 2016), bigravity De Felice et al. (2021), gravity in some extra
+dimensions (Dvali et al. 2000; Yamashita & Tanaka 2014; Corman
+et al. 2021) and so on. In addition, there exist additional parameteri-
+zations (Belgacem et al. 2018b), with the most significant being the
+polynomial-exponential and exponential parameterizations.
+
+These models exhibit variations from one another(Belgacem et al.
+2019) from the power-law form which cannot be captured by Ξ0
+and 𝑛. It is worth mentioning that for this particular parametrization,
+the fitting formula for 𝛾(z) becomes less accurate in both low and
+high redshifts in comparison to some of the models (see for example
+(Deffayet & Menou 2007)). Additionally, beyond this limited range
+of models, the integrated effect of 𝛾(𝑧) may differ from a simple
+power-law form in reality. As a result, it is important to be able to test
+
+MNRAS 000, 1–14 (2023)
+
+GR in a model-independent way and measure the integrated effect of
+𝛾(𝑧) as a function of the data.
+
+To address these issues, we introduce a novel model-independent
+function, denoted as F (𝑧), defined in Equation 4. This function F (𝑧)
+is specifically designed to account for any deviation from the GR. It
+serves as a metric for assessing the disparity between the distances
+denoted dGW
+
+(z) so in standard GR this F (𝑧)=1.
+
+(z) and dEM
+
+l
+
+l
+
+Figure 1, highlighting the enhanced precision in measuring the
+redshift-dependent variation of the Planck mass (F (𝑧)) for NSBH
+and BNS systems. Notably, the precision achieved is approximately
+7.9% for BNS systems at redshift 0.075 and 10% for NSBH systems
+at redshift 0.225 over a 5-year observation period from the LVK
+network of detectors. Furthermore, employing CE&ET for just 1 year
+yields remarkable precision, reaching about 1.62% for BNS systems
+and 2% for NSBH systems at redshift 0.5, assuming a fixed Hubble
+constant. However, when considering a varying Hubble constant, the
+error bar increases to approximately 2 to 2.2 times that of a fixed
+Hubble constant. Figure 1 also emphasizes that the measurement of
+F (𝑧) is particularly improved in the redshift range of 0.2 to 1.0.
+This improvement is attributed to two main factors: signal-to-noise
+ratio (SNR) and the number of events. For a more detailed analysis,
+refer to Section 6. In the (Ξ0, n) frictional term parametrizations, Ξ0
+is set to 1 as the fiducial value. Notably, parameter which controls
+the redshift evolution denoted by n lacks definition at this point.
+Measuring n becomes challenging as Ξ0 nears 1 (Belgacem et al.
+2018b). Model-independent parametrization enables redshift scaling
+for F(z), even for the GR value, in contrast to parametric forms.
+
+The paper is structured as follows: In Section 2, we delve into
+the propagation of GW beyond GR. Subsequently, we present our
+proposed model-independent, data-driven reconstruction of the vari-
+ation of the effective Planck mass(frictional term). In Section 3, we
+shift our attention to the astrophysical population of GW sources
+and explore their detection using both current and future detectors.
+
+Precision Test of General Relativity with Gravitational Waves
+
+3
+
+Figure 2. This is a schematic diagram demonstrates the measurement of three distinct length scales: the sound horizon (𝑟𝑠), BAO scale (𝜃𝐵𝐴𝑂), and the GW
+luminosity distance (𝑑𝐺𝑊
+). These measurements are obtained from different independent observables such as CMB observations, galaxy correlation functions,
+and gravitational wave sources. Using this signal, we can make a data-driven test of GR as a function of redshift using Equation 6.
+
+𝑙
+
+Section 4 is dedicated to a comprehensive discussion on the model-
+independent measurement of the BAO scale from the galaxy power
+spectrum. In Section 5, we provide a detailed exposition of the for-
+malism underpinning our work. Moving forward, Section 6 encapsu-
+lates the main findings of our methodology, while Section 7 serves
+as the culmination, summarizing our key discoveries and engaging
+in a discourse on future prospects.
+
+(𝑐𝐺𝑊 ) is equivalent to the speed of light (𝑐) (Abbott et al. 2017b,
+2019a).
+
+A modification of the the anisotropic stress term (Π+,×) affects
+the phase of the binary waveforms; the recent BH–BH observations,
+in particular of GW150914 and GW151226, have set some limit
+on such modifications, although for the moment not very stringent
+Abbott et al. (2016a).
+
+2 NON-PARAMETRIC RECONSTRUCTION OF
+DEVIATION FROM GENERAL RELATIVITY:
+FORMALISM
+
+′
+
+′′
+
+h
+
+The propagation of GW in the fabric of spacetime, as described by
+the GR, can be mathematically expressed as follows
+(+,×) + c2k2h(+,×) = 0,
+
+(+,×) + 2H h
+where ℎ (+,×) is GW strain of plus (+) and cross (×) polarization,
+the prime symbol denotes the derivative with respect to the confor-
+mal time(𝜂) and H represents the Hubble parameter in comoving
+coordinates. We utilize this equation as a starting point to examine
+the propagation of GWs and evaluate the validity of the GR. The
+modified theory of gravity generalizes this equation as follows
+
+(1)
+
+h
+
+′′
+
+(+,×) + 2(1 − 𝛾(z))H h
+
+′
+
+(+,×) + (c2
+
+GWk2 + m2
+
+GWa2)h(+,×) = a2Π(+,×) ,
+
+(2)
+
+In this formulation, several additional parameters come into play.
+Firstly, we have the frictional term denoted by 𝛾(𝑧), which represents
+the influence of friction in the theory. The speed of GW propagation
+is represented by 𝑐𝐺𝑊 , a is the scale factor and the graviton mass by
+𝑚𝐺𝑊 . Finally, the anisotropic stress term is denoted by Π(+,×) .
+
+It is noteworthy that, within the framework of the GR, all these
+additional parameters assume a fiducial value of zero, except for
+𝑐𝐺𝑊 , which corresponds to the speed of light(c). In the context
+of testing GR through propagation, it is essential to scrutinize the
+additional parameters and ascertain whether they deviate from the
+values predicted by GR. Recent measurements, particularly from the
+GW170817 event, have provided stringent constraints, indicating that
+the graviton mass (𝑚𝐺𝑊 ) is zero, and the speed of GW propagation
+
+The presence of the frictional term 𝛾(z) changes the amplitude
+of the GW signal received from a source at cosmological distance.
+This is particularly interesting because it implies that the luminos-
+ity distance measured with standard sirens is in principle different
+from that measured with standard candles or other electromagnetic
+probes such as CMB or BAO, and this could provide a “smoking
+gun” signature of modified gravity. So as a consequence the GW lu-
+minosity distance dGW
+is related to the electromagnetic wave-based
+luminosity distance dEM
+by an exponential factor, where the expo-
+nent involves integrating 𝛾(z′)/(1 + z′) with respect to 𝑧′ (Belgacem
+et al. 2018a). Consequently, the expression becomes
+
+l
+
+l
+
+dGW
+l
+
+(z) = exp
+
+∫
+
+(cid:18)
+
+−
+
+(cid:19)
+
+dz′ 𝛾(z′)
+1 + z′
+
+dEM
+l
+
+(z).
+
+(3)
+
+In our investigation, we focus on tensor perturbations, where the
+impact is encoded in the non-trivial function dGW
+(z). In this
+study, we propose a non-parametric reconstruction of the deviation
+from GR as
+
+(z)/dEM
+l
+
+l
+
+l
+
+(z).
+
+GW (z) and dl
+
+(z) = F (z)dEM
+
+dGW
+(4)
+l
+The term F (𝑧) can capture any deviation from GR as a func-
+tion of redshift. The reconstruction of this quantity from obser-
+EM (z) can capture any modified gravity
+vation of dl
+models which predict a modification in the GW propagation (Bel-
+gacem et al. 2019). Alternatively, a parametric form using Ξ0 and
+𝑛, dGW
+(1+z) n is also used to capture all those
+l
+models which predicts a power-law modification with redshift of the
+GW propagation effect (Belgacem et al. 2018b).
+
+(z) = Ξ0 + 1−Ξ0
+
+(z)/dEM
+l
+
+In the realm of binary systems, GW offers a unique method for de-
+termining luminosity distance, denoted as dGW
+. This distance mea-
+surement is derived from GW events. While the luminosity dis-
+
+l
+
+MNRAS 000, 1–14 (2023)
+
+4
+
+Afroz and Mukherjee
+
+tance can also be determined using the standard ΛCDM cosmology,
+such an approach is inherently model-dependent. To obtain a model-
+independent data-driven inference of luminosity distance, we utilize
+EM luminosity distance calculations derived from various length
+scales.
+
+Data-driven inference of luminosity distance: A data-driven ap-
+proach to infer the luminosity distance can be made by using the
+BAO angular peak position (𝜃BAO) inferred from large scale struc-
+ture observation (Peebles 1973). The position of the BAO peak in the
+galaxy two-point correlation function can be inferred directly from
+observation. The angular scales are related to the comoving sound
+horizon until the redshift of drag epoch (𝑧𝑑 ∼ 1020) as
+𝑑𝑧 𝑐𝑠 (𝑧)
+√︁Ω𝑚 (1 + 𝑧)3 + ΩΛ + Ω𝑟 (1 + 𝑧)4
+
+∫ ∞
+
+𝑟𝑠 =
+
+(5)
+
+𝑧𝑑
+
+𝐻0
+
+.
+
+Combining these two and using the distance duality relation for EM
+probes, one can write the above equation as (Mukherjee et al. 2021a)
+
+F (z) =
+
+dGW
+l
+
+(z)𝜃BAO (z)
+(1 + z)rs
+
+.
+
+(6)
+
+𝑙
+
+The comoving sound horizon 𝑟𝑠 at the drag epoch can be related
+to the comoving sound horizon 𝑟∗ at the redshift of recombination
+(𝑧∗ = 1090) by 𝑟𝑑 ≈ 1.02𝑟∗. The quantity 𝑟∗ is inferred from CMB
+observation, using the position of the first peak in the CMB tempera-
+ture power spectrum 𝜃∗ = 𝑟∗/(1 + 𝑧∗)𝐷 𝐸 𝑀
+𝐴 (𝑧∗) (Spergel et al. 2007;
+Komatsu et al. 2011; Hinshaw et al. 2013; Aghanim et al. 2020).
+
+In the above equation, 𝑑𝐺𝑊
+
+(𝑧) is measured from GW sources,
+𝜃BAO is measured from galaxy two point correlation function, and
+𝑟𝑠 is inferred from the CMB temperature fluctuations. The redshift
+to the GW source can be inferred from EM counterpart for a bright
+stand siren. As a result, the product of all these observable quantities
+will lead to an identity value at all redshifts if GR and the fiducial
+ΛCDM model of cosmology is the correct theory. However, if there
+is any departure from these models, then we can measure a deviation
+from one with redshift. It is important to note that the value of 𝑟𝑠
+depends on the redshift above 𝑧𝑑 = 1020. Though it depends on
+the model of cosmology, it is a redshift independent number of a
+constant value for the low redshifts 𝑧 < 2. So, even if there is an
+inaccuracy in the inference of true 𝑟𝑠, the value of F (𝑧) will vary
+by an overall normalization. But the reconstructed redshift evolution
+of F (𝑧) will remain the same. In one of the later sections, we will
+show results for both the cases, (i) only F (𝑧) and (ii) F (𝑧) and
+𝐻0 together. The second case will make it possible to marginalise
+over any inaccurate inference of sound horizon 𝑟𝑠 due to incorrect
+inference of the Hubble constant.
+
+Several alternative models of GR predict deviation in different
+natures of the acceleration of the Universe that are predicted from the
+ΛCDM. As a result, this data-driven approach can make it possible to
+explore both deviation from GR and 𝑤 = −1 equation of state of dark
+energy. The use of different observational probes was done previously
+(Mukherjee et al. 2021a) for a parametric form of deviation from GR
+(using Ξ0 and 𝑛) valid for a class of model. However, the non-
+parametric form using F (z) proposed in this analysis, can make a
+redshift-dependent reconstruction of any deviation from GR using
+the multi-messenger observations.
+
+The redshift can be deduced through the EM counterparts as-
+sociated with these bright sirens. Ongoing and upcoming missions
+dedicated to identifying EM counterparts include DESI (Adame et al.
+2023), Vera Rubin (Abell et al. 2009), Fermi (Bissaldi et al. 2009),
+Swift (Burrows et al. 2005), HST (Scoville et al. 2007), Roman space
+telescope (Eifler et al. 2021), Chandra (Vikhlinin et al. 2009), VLA
+
+MNRAS 000, 1–14 (2023)
+
+(Benz & Guedel 1989), ZTF (Bellm 2014), Astrosat (Agrawal 2006).
+A comprehensive article on the required multi-messenger observa-
+tions can be found here (Ronchini et al. 2022). For the measurement
+of BAO scale, ongoing and upcoming missions are committed to
+spectroscopic surveys. Notable projects in this regard include eBOSS
+(Alam et al. 2017), DESI (Adame et al. 2023), Vera Rubin (Abell
+et al. 2009), Euclid (Laureĳs et al. 2011), and SPHEREx (Doré et al.
+2018). CMB measurements from the ongoing and upcoming mis-
+sions include ACTPol (Thornton et al. 2016), Simons Observatory
+(Abitbol et al. 2019), SPT-3G (Sobrin et al. 2022) and CMB-S4
+(Abazajian et al. 2016).
+
+3 GW MOCK SAMPLES FOR LVK, COSMIC EXPLORER,
+
+AND EINSTEIN TELESCOPE
+
+3.1 Modelling of the astrophysical population of GW source
+
+To accurately assess deviations from the GR model, it is crucial to
+rely on real GW events. The total number of GW events is contingent
+upon the merger rates, and mass population of the GW sources. We
+will explain below the astrophysical models used in the analysis.
+
+Merger rate: In this study we use a delay time model of the
+binary mergers (Ochsner et al. 2012; Dominik et al. 2015). In the
+delay time model, the merger rate is described in terms of the delay
+time distribution, denoted as 𝑡𝑑. The delay time refers to the elapsed
+time between the formation of stars that will eventually become black
+holes and the actual merging of these black holes. It is important to
+note that the time delay is not uniform across all binary black holes
+but instead follows a specific distribution. This distribution function
+accounts for the variations in the delay time and is defined as follows:
+
+𝑝𝑡 (𝑡𝑑 |𝑡𝑚𝑖𝑛
+
+𝑑
+
+, 𝑡𝑚𝑎𝑥
+𝑑
+
+, 𝑑) ∝
+
+(cid:40)
+
+(𝑡𝑑) −𝑑
+0
+
+, for 𝑡𝑚𝑖𝑛
+𝑑
+otherwise
+
+< 𝑡𝑑 < 𝑡𝑚𝑎𝑥
+
+𝑑
+
+,
+
+(7)
+
+The delay time is given by 𝑡𝑑 = 𝑡𝑚 − 𝑡 𝑓 , where 𝑡𝑚 and 𝑡 𝑓 are the
+lookback times of merger and formation respectively (Karathanasis
+et al. 2023). So the merger rate at redshift z can be defined as
+
+RTD (z) = R0
+
+∫ ∞
+z pt (td|tmin
+∫ ∞
+0 pt (td|tmin
+
+d
+
+d
+
+, tmax
+d
+, tmax
+d
+
+, d)RSFR (zf) dt
+dzf
+, d)RSFR (zf) dt
+dzf
+
+,
+
+dzf
+
+dzf
+
+(8)
+
+The parameter 𝑅0 represents the local merger rate, indicating the
+frequency of mergers at a redshift of z=0. According to the study in
+Abbott et al. (2023), the estimated values of 𝑅0 for BNS systems vary
+between 10 Gpc−3yr−1 and 1700 Gpc−3yr−1. For NSBH systems,
+the 𝑅0 values range from 7.8 Gpc−3yr−1 to 140 Gpc−3yr−1.
+
+In our study, we assume a standard local merger rate of 𝑅0 =
+20 Gpc−3yr−1 for NSBH systems. For BNS systems, we consider
+four different scenarios with 𝑅0 values of 100, 200, 300, and 500
+Gpc−3yr−1 respectively. This methodology allows us to examine the
+effects of different local merger rates on our results. .
+
+The numerator of the expression involves the integration over red-
+shift 𝑧 𝑓 from 𝑧 to infinity, where 𝑝𝑡 (𝑡𝑑 |𝑡𝑚𝑖𝑛
+, 𝑑) is the delay
+𝑑𝑡
+time distribution, 𝑅𝑆𝐹 𝑅 (𝑧 𝑓 ) is the star formation rate, and
+𝑑𝑧 𝑓 is the
+jacobian of the transformation. The star formation rate(𝑅𝑆𝐹 𝑅 (𝑧)), is
+determined using the Madau & Dickinson (2014) star formation rate.
+The total number of compact binary coalescing events per unit
+
+, 𝑡𝑚𝑎𝑥
+𝑑
+
+𝑑
+
+redshift is estimated as
+dNGW
+dz
+
+RTD (z)
+1 + z
+
+dVc
+dz
+
+=
+
+Tobs,
+
+(9)
+
+Precision Test of General Relativity with Gravitational Waves
+
+5
+
+𝑑𝑉𝑐
+where 𝑇𝑜𝑏𝑠 indicates the total observation time,
+𝑑𝑧 corresponds
+to the comoving volume element, and 𝑅(𝑧) denotes the merger rate
+(Karathanasis et al. 2022). We consider the delay time merger rate
+with a specific delay time 𝑡𝑑 = 500Myrs and a power-law exponent
+of 𝑑 = 1. However, it is regrettable to note that not all of these events
+can be detected due to the limitations imposed by the sensitivity
+of our current detectors. To determine which events are detectable,
+the calculation of the matched filtering signal-to-noise ratio (SNR)
+plays a crucial role. The SNR serves as a measure of the strength
+of the gravitational wave signal relative to the background noise.
+Only those events with a matched filtering SNR greater than or equal
+to a predetermined threshold SNR (𝜌TH) can be reliably detected.
+(Maggiore 2007)
+
+For a GW emitted by an optimally oriented binary system, the
+optimized SNR, denoted as 𝜌, is defined as follows (Sathyaprakash
+& Dhurandhar 1991; Cutler & Flanagan 1994; Balasubramanian et al.
+1996; Nissanke et al. 2010)
+
+𝜌2 ≡ 4
+
+∫ 𝑓max
+
+𝑓min
+
+𝑑𝑓
+
+|ℎ( 𝑓 )|2
+𝑆𝑛 ( 𝑓 )
+
+,
+
+(10)
+
+Figure 3. Total number of injected events (in blue) and the number of de-
+tectable GW events as a function of redshift for BNS sources are shown for
+CE&ET (in green) and LVK (in black). The total observation periods are
+mentioned in parentheses.
+
+Here, 𝑆𝑛 ( 𝑓 ) represents the power spectral density of the detector.
+The function ℎ( 𝑓 ) corresponds to the Gravitational Wave (GW) strain
+in the restricted post-Newtonian approximation and is defined for plus
+(+) and cross (×) polarization as (Ajith et al. 2008):
+
+h(f){+,×} =
+
+√︂
+
+5𝜂
+24
+
+(GMc)5/6
+dL𝜋2/3c3/2
+
+𝑓 −7/6𝑒 𝜄Ψ( 𝑓 ) I{+,×} ,
+
+(11)
+
+In this expression, the symbol 𝜂 represents the symmetric mass ratio.
+The term 𝑀𝑐 signifies the chirp mass of the system. The variable
+𝑑𝐿 denotes the luminosity distance. The constant c represents the
+speed of light in a vacuum. I+ = (1 + cos2 𝑖)/2 and I× = cos 𝑖
+depends on the inclination angle 𝑖. Finally, Ψ( 𝑓 ) stands for the phase
+of the waveform. However, the signal detected by a GW detector hdet
+is a complex interplay of several variables, including the detection
+antenna functions (𝐹+, 𝐹×), and can be expressed as:
+
+ℎdet = 𝐹+ℎ+ + 𝐹× ℎ×,
+here 𝐹+ and 𝐹× are the antenna functions defined as follows (Finn &
+Chernoff 1993)
+
+(12)
+
+F+ =
+
+F× =
+
+1
+2
+1
+2
+
+(1 + cos2𝜃)cos2𝜙cos2𝜓 − cos𝜃sin2𝜙sin2𝜓,
+
+(13)
+
+(1 + cos2 𝜃) cos 2𝜙cos2𝜓 + cos𝜃sin2𝜙sin2𝜓,
+
+where 𝜃 and 𝜙 define the location of the source in the sky, and 𝜓
+is related to the orientation of the binary system with respect to the
+detector. Consequently, the matched filtering SNR (𝜌) takes the form
+(Finn 1996)
+
+∫ 𝑓𝑚𝑎𝑥
+
+ℎ( 𝑓 )2/𝑆𝑛 ( 𝑓 )𝑑𝑓
+
+(cid:21) 1/2
+
+,
+
+(14)
+
+(cid:17)
+
++ (1 + cos2 𝑖)2 + 4𝐹2
+𝐹2
+
+where Θ2 ≡ 4
+. Averaging over many
+binaries inclination angle and sky positions, Finn (1996) showed that
+Θ follows a distribution
+(cid:40)
+
+× cos2 𝑖
+
+𝑃Θ (Θ) =
+
+5Θ(4 − Θ)3/256 if 0 < Θ < 4,
+0,
+
+otherwise.
+
+Mass model: The mass population used for BNS and NSBHs are
+motivated by the recent results from the third catalog of GW sources
+
+𝜌 =
+
+(cid:20)
+
+4
+
+Θ
+4
+
+𝑓𝑚𝑖𝑛
+(cid:16)
+
+by the LVK collaboration (Abbott et al. 2023; Talbot & Thrane
+2018; Abbott et al. 2019b). To model the primary mass distribution
+for black holes, we adopt a Power Law + Gaussian Peak model
+with smoothing, which combines a power law distribution with the
+inclusion of a Gaussian component encompassing masses ranging
+from 10𝑀⊙ to 20𝑀⊙. Conversely, we assume a uniform distribution
+of masses for the secondary component of the neutron star, falling
+within the range of 1𝑀⊙ to 2𝑀⊙.
+
+In this study, we employ two sets of GW detectors: one comprising
+LIGO (Aasi et al. 2015), Virgo(Acernese et al. 2014) and KAGRA
+(Akutsu et al. 2021)(LVK), and the other consisting of Cosmic Ex-
+plorer (Reitze et al. 2019) and Einstein Telescope (Punturo et al.
+2010) (CE&ET).
+
+For the LVK system, a threshold SNR of 𝜌Th = 12 is chosen.
+For CE&ET, the threshold SNR is adjusted to enable the detection
+of events up to a redshift of 3 (which corresponds to an SNR of
+25 and 55 for BNS and NSBH respectively.). A redshift bin size
+of Δ𝑧 = 0.025 is adopted, and within this bin, the total number of
+events is computed using Equation 9. Events are generated based on
+distances inferred from redshifts, the parameter Θ, and object masses
+from their respective distributions.
+
+For NSBH systems, the LVK’s 5-year operation is projected to
+yield approximately 30 detectable events (all of them need not have
+a detectable EM counterpart). However, with a one-year observation
+period, the CE&ET are expected to identify around 600 events. In
+the case of BNS systems, the LVK’s 5-year operation is anticipated
+to result in approximately 25, 39, and 60 detectable events for local
+merger rates (𝑅0) of 200, 300, and 500 Gpc−3yr−1 respectively. On
+the other hand, CE&ET are expected to detect approximately 4800
+events in a one-year observation period with 𝑅0=100.
+
+In Figure 3 and Figure 4, we present the projected total and de-
+tectable coalescing events involving BNS and NSBH systems within
+specific redshift intervals (Δ𝑧). To obtain these estimates, we first
+determine the number of merging events for each redshift bin using
+Equation 9. For each event, we employ the inverse transform method
+to derive the primary mass, secondary mass, and Θ from their respec-
+tive probability distributions. The primary mass is generated within
+the range of 10𝑀⊙ to 20𝑀⊙, the secondary mass within 1𝑀⊙ to
+2𝑀⊙, and Θ within the interval 0 to 4. Incorporating redshift in-
+
+MNRAS 000, 1–14 (2023)
+
+6
+
+Afroz and Mukherjee
+
+Figure 4. Total number of injected events (in blue) and the number of de-
+tectable GW events as a function of redshift for NSBH sources are shown
+for CE&ET (in green) and LVK (in black). The total observation periods are
+mentioned in parentheses.
+
+formation for each event, we calculate the corresponding luminosity
+distance and SNR using Equation 14 for a single detector. The total
+SNR denoted as 𝜌total, is then determined by combining individual
+√︃(cid:205)𝑖 𝜌2
+SNRs from individual detectors using the formula 𝜌total =
+𝑖 .
+This detection capability is evaluated using both the CE&ET and
+LVK network of GW detectors over a defined observation period,
+𝑇𝑂𝐵𝑆. The depicted curve in the graph illustrates the distribution
+of these events up to a redshift of z = 4. This representation of-
+fers valuable insights into the temporal occurrence of these mergers
+throughout cosmic history and the likelihood of their successful de-
+tection using current and future planned instrumentation.
+
+3.2 GW Source Parameter Estimation using Bilby
+
+We initiate the parameter estimation process for these discernible
+sources by employing the Bilby (Ashton et al. 2019) package, which
+yields realistic posterior distributions on the GW luminosity distance
+marginalized over the other source parameters. The mass of the GW
+sources and the number of sources with redshift are drawn as de-
+scribed in the last section. For the remaining source parameters, such
+as the inclination angle (𝑖), polarization angle (𝜓), GW phase (𝜙),
+right ascension (RA), and declination (Dec), we sample uniformly,
+considering a non-spinning system. With these injected parame-
+ters, we proceed to generate a GW signal using the IMRPhenomHM
+(Kalaghatgi et al. 2020) waveform model. This model incorporates
+higher-order modes that can alleviate the degeneracy between the
+luminosity distance(𝑑𝐿) and inclination angle(𝑖) for unequal mass
+sources. By constraining the priors of all other parameters to delta
+functions 2, we generate posterior distributions for 𝑚1, 𝑚2, 𝑑𝐿 and 𝑖.
+Among these, the posterior of 𝑑𝐿 is particularly crucial for our study,
+as it will be used for the inference of F (𝑧). Additionally, the detection
+probability of the electromagnetic counterpart is contingent on the
+value of the inclination 𝑖 (Chase et al. 2022; Ronchini et al. 2022).
+
+2 We have assumed here that the RA and Dec are inferred from the EM
+counterpart.
+
+MNRAS 000, 1–14 (2023)
+
+4 BARYON ACOUSTIC OSCILLATION SCALE FROM
+
+GALAXY POWER SPECTRUM
+
+Inference of BAO from galaxy two-point angular
+correlation function: The BAO arises from the intricate
+interplay between radiation pressure and gravity during the early
+stages of the Universe. Previous works on this and corresponding
+measurements can be found here (Peebles 1973; Crocce et al. 2011).
+As photons and baryons decouple, a specific length known as the
+sound horizon at the drag epoch (𝑧𝑑), represented by 𝑟𝑠, leaves
+a distinct signature on the distribution of galaxies and the power
+spectrum of CMB anisotropies (Peebles & Yu 1970; Sunyaev &
+Zeldovich 1970; Bond & Efstathiou 1987; Hu & Dodelson 2002;
+Blake & Glazebrook 2003). By examining the two-point angular
+correlation function (2PACF) of galaxy catalogs denoted by 𝑤(𝜃),
+one can identify the BAO signature, which manifests as a prominent
+feature resembling a bump. The BAO scale can be derived by fitting
+the angular correlation function 𝑤(𝜃) with a model defined as a
+combination of a power-law and a Gaussian component as (Xu et al.
+2012; Carvalho et al. 2016; Alam et al. 2017)
+
+w(𝜃, z) = a1 + a2𝜃k + a3exp
+
+(cid:18)
+
+−
+
+(𝜃 − 𝜃FIT (z))2
+𝜎2
+𝜃
+
+(cid:19)
+
+,
+
+(15)
+
+where, the coefficients 𝑎𝑖 represent the parameters of the model,
+𝜎𝜃 denotes the width of the BAO feature, and 𝜃𝐹 𝐼𝑇 corresponds to
+the best-fit value of the angular BAO scale. This signature serves
+as a robust standard ruler, enabling independent measurements of
+the angular diameter distance denoted as 𝑑 𝐴(𝑧) (Peebles & Hauser
+1974; Davis & Peebles 1983; Hewett 1982; Hamilton 1993; Landy
+& Szalay 1993).
+
+Modelling of the 2PACF: Theoretically, one can model the
+
+2PACF 𝑤(𝜃) as
+
+w(𝜃) =
+
+(cid:19)
+
+(cid:18) 2l + 1
+4𝜋
+
+∑︁
+
+l≥0
+
+Pl (cos(𝜃))Cl,
+
+(16)
+
+where 𝑃𝑙 is the Legendre polynomial of the 𝑙𝑡 ℎ order and 𝐶𝑙 the
+angular power spectrum, which can be expressed in terms of the
+three-dimensional matter power spectrum P (𝑘) as follows (Peebles
+1973; Crocce et al. 2011)
+
+∫
+
+1
+2𝜋2
+
+Cl =
+
+4𝜋k2P (k)𝜓2
+
+l (k)e−k2/k2
+eff ,
+where the quantity 𝜓𝑙 (𝑘) is defined as:
+
+∫
+
+𝜓l (k) =
+
+dz𝜙(z)jl (kr(z)),
+
+(17)
+
+(18)
+
+where 𝜙(𝑧) is the galaxy selection function and 𝑗𝑙 is the spherical
+Bessel function of the lth order, and r(z) is the comoving distance.
+To improve the convergence of the integral for the angular power
+spectrum, a damping factor 𝑒 (−𝑘2/𝑘2
+is introduced (Anderson
+et al. 2012). Throughout the calculations, we adopt a fixed value of
+1/𝑘𝑒 𝑓 𝑓 = 3 Mpc/h, which has no significant impact on the angular
+power spectrum for the scales of interest.
+
+𝑒 𝑓 𝑓 )
+
+In this study, we calculate the matter power spectrum from the
+module CAMB (Lewis & Challinor 2011), and the selection function
+on redshift is formulated as a normalized Gaussian function. The
+standard deviation of this Gaussian function is set to be 5% of the
+mean value. The anticipated photo-z error for the Vera Rubin Ob-
+servatory is described by the expression 0.03(1 + 𝑧), as referenced
+in (Mandelbaum et al. 2018). Figure 5 visually demonstrates how
+the product of 𝜃2𝑤(𝜃) changes with angular separation at a specific
+
+Precision Test of General Relativity with Gravitational Waves
+
+7
+
+Figure 5. This plot illustrates the relationship between the 2PACF(𝜃 2𝑤 ( 𝜃 ))
+is shown as a function of 𝜃 for a specific redshift, z=0.125 calculated using
+the linear matter power spectrum. Notably, a distinct bump is observed around
+𝜃 ∼ 16.0, indicating the presence of the BAO characteristic scale 𝜃𝐵𝐴𝑂.
+
+Figure 6. This plot displays the covariance matrix(Cov𝜃 𝜃′ ) calculated using
+linear matter power spectrum as a function of 𝜃 and 𝜃 ′ for a specific redshift,
+z=0.125. It is evident that as both 𝜃 and 𝜃 ′ increase, the value of the covariance
+matrix also increases indicating larger error at the large angular scales.
+
+redshift 𝑧 = 0.125. The prominent peak at 𝜃 ∼ 16.0 is a significant ob-
+servation, highlighting the characteristic scale associated with BAO,
+which is crucial for our study.
+
+The covariance of 𝑤(𝜃), denoted as 𝐶𝑜𝑣 𝜃 𝜃 ′ , is modelled as
+
+Cov𝜃 𝜃 ′ =
+
+2
+fsky
+
+∑︁
+
+l≥0
+
+2l + 1
+(4𝜋)2
+
+Pl (cos(𝜃))Pl (cos(𝜃′))
+
+(cid:18)
+
+Cl +
+
+(cid:19)2
+
+,
+
+1
+n
+
+(19)
+
+Here, 1/𝑛 is the shot noise which is related to the number density of
+galaxies 𝑛 or, more precisely, the number of objects per steradian, and
+𝑓𝑠𝑘 𝑦 represents the fraction of the sky that is covered by the survey or
+observation (Cabré et al. 2007; Dodelson & Schmidt 2020). Figure 6
+illustrates how the covariance matrix, derived from the linear matter
+power spectrum, changes concerning angular separations at a specific
+redshift. The increase in the covariance matrix as both 𝜃 and 𝜃′ rise
+suggests a correlation between these angular scales. Figure 7 provides
+a comprehensive view of how the BAO scale and its error (calculated
+by using Equation 15) evolve with redshift, emphasizing the impact
+of photo-z inaccuracies. The consistent relative error observed across
+measurements serves as a key finding, shedding light on the reliability
+of BAO scale determinations in the given redshift range. In future
+work on the application of this technique to data, one can estimate
+the covariance matrix from simulations.
+
+Several detectors are set to measure the BAO scale with impressive
+accuracy, delving into the depths of the universe’s redshift. Among
+these detectors, DESI (Adame et al. 2023) stands out as a ground-
+breaking 5-year experiment on the ground, specifically designed to
+investigate BAO and the changes in cosmic structures as seen through
+redshift-space distortions. Covering a vast area of 14,000 square de-
+grees in the sky ( 𝑓sky = 0.3), DESI aims to achieve extremely precise
+measurements of the BAO feature. The goal is to surpass an impres-
+sive precision of 0.5%, focusing on redshift intervals 0.0 < 𝑧 < 1.1,
+1.1 < 𝑧 < 1.9, and 1.9 < 𝑧 < 3.7 (Adame et al. 2023). Additionally,
+Euclid (Laureĳs et al. 2011) and the Vera Rubin Observatory (Abell
+et al. 2009; Ivezić et al. 2019), covering a vast sky area of 18,000
+square degrees will be able to make precise measurements of BAO
+up to high redshift.
+
+Figure 7. We depict the relationship between the BAO scale along with the
+associated error (in red), primarily arising from photo-z inaccuracies, as a
+function of redshift (z) up to z = 0.5. This presentation offers crucial insights
+into how the BAO scale and its error vary with z, highlighting a consistent
+relative error across measurements. For visual clarity, the error values on the
+plot have been magnified by a factor of 2.
+
+5 FORECAST FOR RECONSTRUCTING F WITH
+
+REDSHIFT
+
+5.1 Case with the fixed Hubble constant 𝐻0
+
+The intricate connection between the EM wave luminosity distance
+at a specific redshift (z) and key cosmological parameters, including
+the BAO scale (𝜃 𝐵 𝐴𝑂) and the sound horizon (𝑟𝑠), is succinctly
+captured by the equation
+(𝑧)𝜃BAO (𝑧)
+(1 + 𝑧)𝑟𝑠
+
+F (𝑧) =
+
+𝑑GW
+𝑙
+
+(20)
+
+,
+
+This equation serves as a focal point for the frictional component un-
+der consideration. In the context of (F (𝑧)), it establishes a connection
+with three distinct length scales (i)GW luminosity distance:
+The luminosity distance for detectable GW events which is deter-
+mined using Bilby. (ii) BAO scale(𝜃 𝐵 𝐴𝑂): We utilize the BAO
+scale, derived from the 2PACF using the Equation 15. This method
+
+MNRAS 000, 1–14 (2023)
+
+8
+
+Afroz and Mukherjee
+
+is not bound to any particular survey, affording us the flexibility to
+apply our methodology across a range of surveys without being re-
+stricted to a specific one. (iii) Sound Horizons distance:The
+sound horizon is measured by analyzing acoustic oscillations in the
+CMB radiation using several missions such WMAP (Hinshaw et al.
+2013), Planck (Aghanim et al. 2020), ACTPol (Thornton et al. 2016),
+SPT-3G (Sobrin et al. 2022), and CMB-S4 (Abazajian et al. 2016).
+In particular, the first peak observed in the angular power spectrum
+of the CMB corresponds to the scale of the sound horizon during the
+process of recombination. The measured sound horizon value at the
+drag epoch is found to be 147.09 ± 0.26 Mpc, indicating a high level
+of precision from Planck (Aghanim et al. 2020).
+
+We utilize a Hierarchical Bayesian framework to calculate the pos-
+terior distribution of F (𝑧) as a function of redshift for a total of 𝑛𝐺𝑊
+GW sources. The equation representing the posterior distribution on
+F (z) for bright sirens is given as (Mukherjee et al. 2021a)
+
+𝑃(F (𝑧)|{𝑑𝐺𝑊 }, {𝑧}) ∝ Π(F (𝑧))
+
+𝑛𝐺𝑊
+(cid:214)
+
+∭
+
+𝑑𝑟𝑠 𝑃(𝑟𝑠)𝑑𝑑𝐺𝑊 𝑖
+
+𝑙
+
+× 𝑑𝜃𝑖
+
+𝐵𝐴𝑂 𝑃(𝜃𝑖
+
+𝐵𝐴𝑂)L (𝑑𝐺𝑊 𝑖
+
+𝑙
+
+|F (𝑧𝑖), 𝜃𝑖
+
+𝑖=1
+𝐵𝐴𝑂, 𝑟𝑠, 𝑧𝑖),
+
+(21)
+
+𝑙
+
+𝐵𝐴𝑂
+
+|F (𝑧)𝑖, 𝜃𝑖
+
+In this equation, P(F (z)|{dGW}, {z}) denotes the posterior prob-
+ability density function of F (z) given the GW source data 𝑑𝐺𝑊
+and spectroscopic redshift from EM counterpart of these sources
+{𝑧} for 𝑖 ∈ 𝑛𝐺𝑊 events. The measurements of BAO angular scale
+𝜃 𝐵 𝐴𝑂 at the redshift (z) of the GW source where an EM counterpart
+of GW source can be measured using the galaxy survey, and it is
+marginalized over. The term L (𝑑𝐺𝑊 𝑖
+, 𝑟𝑠, 𝑧𝑖) corre-
+sponds to the likelihood function. 𝑃(𝑟𝑠) and 𝑃(𝜃𝑖
+𝐵𝐴𝑂) denote the
+prior probability distributions for the sound horizon (𝑟𝑠) and BAO
+scale respectively. The term Π(F (𝑧)) represents the prior distribu-
+tion for F (𝑧), which encapsulates our knowledge or assumptions
+about the frictional term before incorporating the measured data.
+We adopt a flat prior on the frictional term, F (𝑧) from 0.1 to 2.
+For this investigation, we make specific assumptions regarding the
+probability distribution of redshift(z) and prior to the frictional term
+F (𝑧). In this analysis, we consider bright sirens only. So, we assume
+that the host galaxy redshift of the GW sources is measured spectro-
+scopically. In this case, it implies that we have precise knowledge or
+assume that the redshift of the sources is concentrated at a particular
+value.
+
+In Figure 8, we presented the measurement of F (𝑧), with a fixed
+value of 𝐻0 for both the CE&ET and the LVK system, focusing on a
+single event. This plot illustrates a notable trend where the measure-
+ment error increases with higher redshifts. Additionally, it discerns
+that, at the same redshift, the error on F (𝑧) is more pronounced for
+BNS systems compared to NSBH systems, attributed to the lower
+SNR observed for BNS events.
+
+5.2 Case with varying the Hubble constant 𝐻0
+
+In the preceding sections, our analysis primarily focused on evalu-
+ating the frictional term denoted as F (𝑧) in Equation 20, assuming
+a fixed Hubble constant (𝐻0). However, in this section, we jointly
+infer both F (𝑧) and 𝐻0. This extension enables the simultaneous
+estimation of both the frictional term F (𝑧) and 𝐻0, derived from
+sound horizon measurements that remain constant across redshift,
+serving as an overall normalization on F (𝑧) measurements.
+
+Employing a hierarchical Bayesian analysis, our unified framework
+efficiently estimates these two parameters by incorporating diverse
+
+MNRAS 000, 1–14 (2023)
+
+observational datasets, including GW measurements, CMB measure-
+ments, and large-scale structure surveys, as discussed in previous
+sections. The hierarchical organization of these datasets ensures ro-
+bust integration, effectively handling their unique uncertainties and
+systematics. The resulting correlated constraints significantly con-
+tribute to our understanding of cosmological phenomena, address-
+ing potential discrepancies between datasets and revealing insightful
+connections among fundamental cosmological parameters.
+
+The equation representing the joint posterior distribution on F (z)
+
+and 𝐻0 for these sources is given as (Mukherjee et al. 2021a)
+
+𝑃(F (𝑧), 𝐻0|{𝑑𝐺𝑊 }, {𝑧}) ∝ Π(F (𝑧))Π(𝐻0)
+
+𝑛𝐺𝑊
+(cid:214)
+
+∭
+
+𝑖=1
+
+× 𝑑𝑟𝑠 𝑃(𝑟𝑖
+
+𝑠)𝑑𝑑𝐺𝑊 𝑖
+𝑙
+
+𝑑𝜃𝑖
+
+𝐵𝐴𝑂 𝑃(𝜃𝑖
+
+𝐵𝐴𝑂)L (𝑑𝐺𝑊 𝑖
+
+𝑙
+
+|F (𝑧𝑖), 𝐻0, 𝜃𝑖
+
+𝐵𝐴𝑂, 𝑟𝑠, 𝑧𝑖),
+(22)
+
+, 𝜃𝑖
+
+𝐵 𝐴𝑂
+
+|F (𝑧)𝑖, 𝐻𝑖
+0
+
+In this equation, P(F (z), H0|{dGW}, {z}) denotes the joint pos-
+terior probability density Function of F (z) and 𝐻0. The term
+L (𝑑𝐺𝑊 𝑖
+, 𝑟𝑠, 𝑧𝑖) corresponds to the likelihood
+𝑙
+function. The term Π(𝐻0) denotes the prior distribution for 𝐻0,
+encapsulating our knowledge or assumptions regarding the Hubble
+constant before incorporating measured data. All other terms repre-
+sent the same entities as defined in Section 5.1. In our hierarchical
+Bayesian framework, we adopt a flat prior assumption, indicating a
+lack of prior knowledge about the parameters for both the frictional
+term (F (𝑧)) and the cosmic expansion rate (𝐻0). The parameter
+ranges are defined from 0.1 to 2.0 for F (𝑧) and from 40 km/s/Mpc
+to 100 km/s/Mpc for 𝐻0.
+
+In Figure 9, we present measurements of F (𝑧) with varying values
+of 𝐻0 for both the CE&ET and the LVK system, focusing on the total
+number of events within each redshift bin (mentioned in the paren-
+thesis in the upper x-axis in the plot). This plot reveals a discernible
+trend, indicating an increase in measurement errors with higher red-
+shifts. Notably, due to the higher likelihood of BNS events compared
+to NSBH events, we can achieve a more accurate measurement of
+F (𝑧) for BNS events than for NSBH events.
+
+6 RESULT
+
+6.1 Reconstruction of F (𝑧)
+
+This study exclusively focuses on bright sirens, indicating NSBH
+and BNS mergers with distinct EM counterparts (Nakar et al. 2018;
+Kasliwal et al. 2017; Arcavi 2018; Troja et al. 2017; Hallinan et al.
+2017; Ghirlanda et al. 2019; Smartt et al. 2017; Kasen et al. 2017;
+Janka et al. 1999; Foucart 2012; Foucart et al. 2018). These include
+short GRBs and high-energy gamma-ray bursts detected by satellites
+like Fermi (Bissaldi et al. 2009) and Swift (Burrows et al. 2005). Ad-
+ditionally, kilonovae generate bright optical and infrared transients,
+offering insights into heavy element formation. Observatories like
+the Vera Rubin (Abell et al. 2009), HST (Scoville et al. 2007), and
+the upcoming Roman space telescope (Eifler et al. 2021) are poised
+to capture these events. Post-merger, afterglows spanning X-ray, UV,
+optical, and radio wavelengths are scrutinized with instruments such
+as Chandra (Vikhlinin et al. 2009), VLA Benz & Guedel (1989),
+ZTF (Bellm 2014), Astrosat (Agrawal 2006), Daksha (Bhalerao et al.
+2022) and GMRT (Bhattacharyya et al. 2016).
+
+Detecting EM counterparts in BNS and NSBH mergers poses
+challenges related to prompt collapse, ejecta mass, and orientation.
+The visibility of collimated jets is influenced by their opening angle,
+
+Precision Test of General Relativity with Gravitational Waves
+
+9
+
+Figure 8. This violin plot illustrates the posterior on the reconstruction of the non-GR parameter F (𝑧) as a function of cosmic redshift is feasible from LVK
+(in green) and CE&ET (in blue). The top and bottom plot relates to possible measurement using one BNS and NSBH source respectively, both assuming a fixed
+Hubble constant. The upper x-axis denotes the associated 1-𝜎 error bars for each measurement. It demonstrates the potential to measure F (𝑧) with greater
+precision and at significantly deeper cosmic redshifts using future detectors such as CE&ET, as opposed to the limitations of our current LVK detector.
+
+with wider angles increasing detectability. Distance, instrument sen-
+sitivity, and rapid event localization further complicate detection. In
+astrophysics, terms like "structured jets" and "off-axis viewing" de-
+scribe these phenomena (Rees & Mészáros 1998; Ramirez-Ruiz et al.
+2001; Kumar & Piran 2000). Coordinated efforts between GW and
+EM observatories are vital for insights into these cosmic collisions.
+Despite progress, challenges persist, requiring proximity, orientation,
+and sensitivity considerations. Success relies on refining theoretical
+models, combining GW and EM observations, and technological
+advancements. Future endeavors aim to optimize multi-messenger
+observations, deepen theoretical comprehension, and amplify the
+detectability of NSBH merger EM counterparts.
+
+In our study, we present cases for both the CE&ET and LVK
+systems. Specifically for CE&ET, we showcase outcomes for up to
+redshifts 𝑧 = 2 for different numbers of detectable events. In the case
+of NSBH binaries, we consider a total of 30 events with a local merger
+rate (𝑅0) set at 20 Gpc−3yr−1 in the LVK system. These events span
+redshifts from 0.125 to 0.425. Similarly, for BNS systems, we analyze
+approximately 25, 40, and 60 events with 𝑅0 set to 200 Gpc−3yr−1,
+300 Gpc−3yr−1, and 500 Gpc−3yr−1, respectively. The redshifts of
+these events range from 0.025 to 0.225 over a 5-year observation
+period. In Figure 3 and Figure 4, the number of detectable events as
+a function of redshift with different 𝑅0 and 𝑇𝑜𝑏𝑠 are presented for
+the LVK and CE&ET systems.
+
+Figure 10 and Figure 11 provide a comprehensive comparison of
+F (𝑧) measurements with fixed 𝐻0 and varying 𝐻0 across different
+scenarios for both LVK and CE&ET. These scenarios include the de-
+tection of a single event, a quarter of the events, half of the events, and
+the detection of all events. The aim is to demonstrate how the preci-
+
+sion of measurements, ranging from percentages to sub-percentages,
+can be achieved using future detectors. This comparative analysis
+sheds light on the impact of event detection rates on the precision
+of F (𝑧) measurements and underscores the potential of advanced
+detectors like CE&ET to provide increasingly accurate cosmological
+insights. In this section, we measure F (𝑧) with a constant 𝐻0 that
+remains uniform across redshifts, serving as an overall normaliza-
+tion factor for F (𝑧) measurements. Consequently, if an independent
+precise measurement of F (𝑧) in our local universe is possible, it will
+allow us to normalize it to 1, eliminating the dependence on 𝐻0. This
+normalization proves effective particularly for low redshifts, where
+the cumulative effects of modified gravity wave propagation have not
+had sufficient time to accumulate deviations from GR.
+
+√
+
+The error associated with the frictional term approximately scales
+as the inverse of the square root of the number of GW sources repre-
+sented as 1/
+NGW. This implies that as the number of GW sources
+increases, the error on the frictional term decreases, thereby improv-
+ing the precision of the measurement. However, this improvement
+reaches a saturation point, beyond which an increase in the number
+of GW sources does not lead to a significant enhancement in the mea-
+surement’s accuracy. This saturation is primarily due to the presence
+of error on the BAO scale. The BAO scale error acts as a limiting
+factor in the precision of the frictional term estimation. Therefore,
+to achieve further improvement in the estimation of the frictional
+term with redshift, a more precise measurement of the BAO scale is
+required. In essence, the precision of the frictional term estimation
+is a delicate balance between the number of GW sources and the
+accuracy of the BAO scale measurement and GW luminosity dis-
+tance. Optimizing these factors can lead to significant advancements
+
+MNRAS 000, 1–14 (2023)
+
+10
+
+Afroz and Mukherjee
+
+Figure 9. This violin plot illustrates the posterior on the reconstruction of the non-GR parameter F (𝑧) as a function of cosmic redshift is feasible from LVK (in
+green) and CE&ET (in blue). The top and bottom plot relates to possible measurement using one BNS and NSBH source respectively jointly with the Hubble
+constant. The upper x-axis denotes the associated 1-𝜎 error bars for each measurement, with the number in parentheses representing the total number of events
+in that specific redshift bin. The plot highlights the potential for more accurate measurements of F (𝑧) at significantly deeper cosmic redshifts, particularly with
+future detectors like CE&ET, in contrast to the limitations posed by our current LVK detector, similar to the case with fixed Hubble constant. Additionally, it
+underscores that we can achieve more precise measurements of F (𝑧) for BNS systems compared to NSBH events, given the higher likelihood of BNS events
+occurring.
+
+Figure 10. We show the 1-𝜎 error-bar in the measurements of F (𝑧) as a function of redshift and the number of GW events for NSBH events. The comparison
+is made between scenarios with a constant Hubble constant (𝐻0) and for the case with 𝐻0 inferred jointly with F (𝑧). All the events at each redshift bin are
+mentioned in parentheses in the figure legend.
+
+MNRAS 000, 1–14 (2023)
+
+Precision Test of General Relativity with Gravitational Waves
+
+11
+
+Figure 11. We show the 1-𝜎 error-bar in the measurements of F (𝑧) as a function of redshift and the number of GW events for BNS events. The comparison is
+made between scenarios with a constant Hubble constant (𝐻0) and those with varying 𝐻0. All the events at each redshift bin are mentioned in parentheses in
+the figure legend.
+
+𝑙
+
+𝑙
+
+(𝑧) will markedly enhance the accuracy of F (𝑧), as 𝑑𝐺𝑊
+
+in our understanding of F (𝑧) and discovering unexplored territories
+in fundamental physics. On the GW side, the measurements of F (𝑧)
+are solely dependent on 𝑑𝐺𝑊
+(𝑧). Any improvement in the precision
+of 𝑑𝐺𝑊
+(𝑧)
+𝑙
+stands out as the predominant source of error for F (𝑧). Given that
+𝑑𝐺𝑊
+(𝑧) is degenerate with other GW parameters, most notably the
+𝑙
+inclination angle (𝑖), measuring inclination angle from alternative
+sources (such as EM counterparts) can substantially reduce the error
+in 𝑑𝐺𝑊
+(𝑧) and consequently enhance the precision of F (𝑧) (Xie
+𝑙
+et al. 2023). For redshift inference from EM counterparts, the in-
+fluence of peculiar velocity contamination is particularly significant
+at low redshifts (𝑧 < 0.03) but it is not important for high redshift
+(Mukherjee et al. 2021b; Nimonkar & Mukherjee 2024). As most
+of the detected sources are at high redshift, we have ignored this
+effect. Also, weak lensing of the GW sources can be a source of
+contamination to the luminosity distance up to a few percent at red-
+shifts above 𝑧 = 0.5 (Hirata et al. 2010). In comparison to the error
+bar on luminosity distance, the weak lensing error bar is small. As
+most of the sources with better luminosity distance measurement are
+mainly at low redshift (𝑧 < 0.5), we are getting maximum constraints
+around this redshift. So, the weak lensing uncertainty is not a major
+contamination for these sources. Moreover, weak lensing can pro-
+vide additional information to constraint non-GR parameter space
+(Mukherjee et al. 2020a,b; Mpetha et al. 2023; Balaudo et al. 2023),
+which we have not considered in this analysis.
+
+6.2 Reconstruction of F (𝑧) and 𝐻0
+
+By extension of the hierarchical Bayesian framework used in the pre-
+vious section to measure F (𝑧) with fixed 𝐻0, we can jointly measure
+F (𝑧) and 𝐻0. In our framework, we measure the EM luminosity
+distance from different length scales, namely the BAO scale, sound
+horizon distance, and redshift. In Figure 10 and Figure 11, we offer
+a thorough comparison of F (𝑧) measurements with both fixed and
+
+varying 𝐻0 across different scenarios for both the LVK and CE&ET
+systems. It is noteworthy that when allowing for variations in 𝐻0,
+the errors in the measurements of F (𝑧) increased by a factor ranging
+from 2 to 2.2 compared to measurements with a fixed 𝐻0. In Figure
+1, we highlight the enhanced precision in measuring the redshift-
+dependent variation of the Planck mass (F (𝑧)) for NSBH and BNS
+systems. The figure emphasizes that the measurement of F (𝑧) is
+notably improved in the redshift range of 0.2 to 1.0. The precision
+of estimating F (𝑧) depends on accurate measurements of both the
+BAO scale and 𝑑𝐺𝑊
+(𝑧). Improved accuracy in the BAO scale mea-
+surements directly enhances precision in estimating F (𝑧). On the
+GW side, accurate measurements of F (𝑧) rely solely on 𝑑𝐺𝑊
+(𝑧).
+Enhancing the precision of 𝑑𝐺𝑊
+(𝑧) improves F (𝑧), as mentioned in
+the previous Subsection 6.1. There can also be peculiar velocity cor-
+rections and weak lensing contamination at low redshift as described
+in 6.1 which are not taken care of in this study.
+
+𝑙
+
+𝑙
+
+𝑙
+
+7 CONCLUSION AND DISCUSSION
+
+In this study, we present a model-independent approach to search
+for the frictional term, which can capture deviations at any redshift
+from GR. We propose a model-independent reconstruction of the
+frictional term as a function of redshift using a data-driven approach
+by amalgamating three length scales with redshift namely the lumi-
+nosity distance from GW sources 𝑑GW
+(𝑧), the angular scale of BAO
+𝑙
+scale from galaxy surveys 𝜃BAO (𝑧), and the sound horizon 𝑟𝑠 from
+CMB observations. We show this provides a unique opportunity to
+scrutinize theories of gravity, specifically to test the presence of a
+frictional term. In the literature, various model-dependent searches
+for the frictional term have been conducted. These searches face chal-
+lenges, especially near redshift z=0 and at large redshifts. Particularly
+noteworthy are the difficulties encountered when there is a potential
+loss of gravitons in extra dimensions. Furthermore, in the interme-
+
+MNRAS 000, 1–14 (2023)
+
+12
+
+Afroz and Mukherjee
+
+diate redshift range, the frictional term may display oscillatory be-
+havior that cannot be adequately captured by these model-dependent
+searches.
+
+We demonstrate that by integrating BAO measurements from
+galaxies, sound horizon distances from the CMB power spectrum,
+redshift information from the EM counterpart, and luminosity dis-
+tance measurements from GW sources, one can perform a compre-
+hensive measurement of cosmological parameters. Specifically, we
+highlight the potential to jointly determine the Hubble constant (𝐻0)
+and the frictional term through this integrated analysis. We have
+demonstrated the feasibility of measuring the frictional term using
+our ongoing detectors, such as LVK, across various redshifts. Ad-
+ditionally, we have explored the capabilities of upcoming detectors,
+specifically CE&ET, in quantifying the frictional term under various
+scenarios. Our analysis includes cases where a fraction of the event’s
+EM counterpart is detectable, acknowledging the inherent difficulty
+in detecting EM counterparts.
+
+We demonstrate the feasibility of achieving a precision measure-
+ment of the frictional term, ranging from a percent to sub-percent
+accuracy, as a function of cosmic redshift. This is achievable using
+data from LVK and, in the future, from CE&ET, despite the limita-
+tion of a finite number of bright sirens. The measurement of F (𝑧)
+is particularly improved in the redshift range of 0.2 to 1.0. This im-
+provement is attributed to two main factors: SNR and the number
+of events. The measurements from LVK can be further improved by
+including LIGO-India (Saleem et al. 2021)3.
+
+In the (Ξ0, n) parametrizations of the frictional term, the fiducial
+value for Ξ0 is set to 1. However, it is important to note that the
+parameter n is not defined at this fiducial value of Ξ0=1. Conse-
+quently, measuring the value of n becomes increasingly challenging
+as Ξ0 approaches 1 (Belgacem et al. 2018b). By utilizing 1000 bright
+sirens up to redshift 8, Belgacem et al. (2018b) demonstrated that
+Ξ0 can be measured with an accuracy of 0.8% using the Einstein
+Telescope for a fixed value of n. In our study, employing a model-
+independent parametrization, we found that with 1 year of obser-
+vation using CE&ET, we can measure the frictional term with an
+accuracy of 1.62% and 2% for BNS and NSBH systems at redshift
+0.5. Additionally, we can reconstruct the frictional term as a function
+of redshift without relying on any specific parametrization, as illus-
+trated in Figure 1. This error scales inversely with the square root of
+the observation time, i.e., as 1/√︁𝑇𝑜𝑏𝑠/𝑦𝑒𝑎𝑟 𝑠.
+
+Our proposed technique extends to dark sirens, where redshift
+inference becomes necessary. In such cases, we leverage the three-
+dimensional clustering scale of GW sources with galaxies to infer
+redshift information (Mukherjee & Wandelt 2018; Mukherjee et al.
+2020c; Abbott et al. 2021). Furthermore, this methodology holds
+promise for both bright and dark standard sirens in the mHz range,
+detectable by future space-based detectors like LISA. In this study,
+our exclusive focus is on bright sirens, and as a result, we exclude
+a prominent category of GW sources Binary Black Holes (BBH)
+due to their unlikely association with EM counterparts. Additionally,
+there are challenges associated with detecting EM counterparts for
+BNS and NSBH systems (Chase et al. 2022; Ronchini et al. 2022).
+One potential method to enhance the accuracy of frictional term
+measurements is to include dark sirens, which lack EM counterparts.
+In future, the integration of LIGO-India and the LISA GW detector,
+in conjunction with projects such as eBOSS, DESI, Vera Rubin, and
+Euclid for BAO measurements, along with the application of this
+
+3 https://dcc.ligo.org/LIGO-M1100296/public
+
+MNRAS 000, 1–14 (2023)
+
+technique to dark sirens, holds the potential to substantially improve
+the precision of measuring the frictional term.
+
+ACKNOWLEDGEMENTS
+
+The authors express their gratitude to Guillaume Dideron for review-
+ing the manuscript and providing useful comments as a part of the
+LIGO publication policy. This work is part of the 〈data|theory〉
+Universe-Lab, supported by TIFR and the Department of Atomic
+Energy, Government of India. The authors express gratitude to
+the computer cluster of 〈data|theory〉 Universe-Lab and the
+TIFR computer center HPC facility for computing resources. Spe-
+cial thanks to the LIGO-Virgo-KAGRA Scientific Collaboration for
+providing noise curves. LIGO, funded by the U.S. National Science
+Foundation (NSF), and Virgo, supported by the French CNRS, Ital-
+ian INFN, and Dutch Nikhef, along with contributions from Polish
+and Hungarian institutes. This collaborative effort is backed by the
+NSF’s LIGO Laboratory, a major facility fully funded by the National
+Science Foundation. The research leverages data and software from
+the Gravitational Wave Open Science Center, a service provided by
+LIGO Laboratory, the LIGO Scientific Collaboration, Virgo Collab-
+oration, and KAGRA. Advanced LIGO’s construction and operation
+receive support from STFC of the UK, Max-Planck Society (MPS),
+and the State of Niedersachsen/Germany, with additional backing
+from the Australian Research Council. Virgo, affiliated with the Eu-
+ropean Gravitational Observatory (EGO), secures funding through
+contributions from various European institutions. Meanwhile, KA-
+GRA’s construction and operation are funded by MEXT, JSPS, NRF,
+MSIT, AS, and MoST.
+
+This material is based upon work supported by NSF’s LIGO Lab-
+oratory which is a major facility fully funded by the National Science
+Foundation. We acknowledge the use of the following packages in
+this work: Astropy (Robitaille et al. 2013; Price-Whelan et al. 2018),
+Bilby (Ashton et al. 2019), Pandas (McKinney et al. 2011), NumPy
+(Harris et al. 2020), Seaborn (Bisong & Bisong 2019), CAMB (Lewis
+& Challinor 2011), Scipy (Virtanen et al. 2020), Matplotlib (Hunter
+2007), Dynesty (Speagle 2020), and emcee (Foreman-Mackey et al.
+2013)
+
+DATA AVAILABILITY
+
+The corresponding author will provide the underlying data for this
+article upon request.
+
+REFERENCES
+
+Aasi J., et al., 2015, Classical and quantum gravity, 32, 074001
+Abazajian K. N., et al., 2016, arXiv preprint arXiv:1610.02743
+Abbott B. P., et al., 2016a, Physical Review X, 6, 041015
+Abbott B. P., et al., 2016b, Physical review letters, 116, 061102
+Abbott B. P., et al., 2016c, Physical review letters, 116, 241103
+Abbott B. P., et al., 2017a, Physical review letters, 119, 161101
+Abbott B. P., et al., 2017b, The Astrophysical Journal Letters, 848, L13
+Abbott B. P., et al., 2019a, Physical review letters, 123, 011102
+Abbott B., et al., 2019b, The Astrophysical Journal Letters, 882, L24
+Abbott R., et al., 2021, arXiv preprint arXiv:2111.03604
+Abbott R., et al., 2023, Physical Review X, 13, 011048
+Abell P. A., et al., 2009, arXiv preprint arXiv:0912.0201
+Abitbol M. H., et al., 2019, arXiv preprint arXiv:1907.08284
+Acernese F. a., et al., 2014, Classical and Quantum Gravity, 32, 024001
+Achour J. B., Langlois D., Noui K., 2016, Physical Review D, 93, 124005
+
+Precision Test of General Relativity with Gravitational Waves
+
+13
+
+Adame A., et al., 2023, arXiv preprint arXiv:2306.06308
+Aghanim N., et al., 2020, Astronomy & Astrophysics, 641, A6
+Agrawal P., 2006, Advances in Space Research, 38, 2989
+Ajith et al., 2008, Physical Review D, 77, 104017
+Akutsu T., et al., 2021, Progress of Theoretical and Experimental Physics,
+
+Foreman-Mackey D., Hogg D. W., Lang D., Goodman J., 2013, Publications
+
+of the Astronomical Society of the Pacific, 125, 306
+
+Foucart F., 2012, Physical Review D, 86, 124007
+Foucart F., Hinderer T., Nissanke S., 2018, arXiv preprint arXiv:1807.00011
+Frusciante N., Kase R., Koyama K., Tsujikawa S., Vernieri D., 2019, Physics
+
+2021, 05A101
+
+Alam S., et al., 2017, Monthly Notices of the Royal Astronomical Society,
+
+470, 2617
+
+Amaro-Seoane P., et al., 2017, arXiv preprint arXiv:1702.00786
+Anderson L., et al., 2012, Monthly Notices of the Royal Astronomical Society,
+
+427, 3435
+
+Arcavi I., 2018, The Astrophysical Journal Letters, 855, L23
+Ashton G., et al., 2019, The Astrophysical Journal Supplement Series, 241,
+
+27
+
+Baker T., Harrison I., 2021, JCAP, 01, 068
+Balasubramanian R., Sathyaprakash B. S., Dhurandhar S., 1996, Physical
+
+Review D, 53, 3033
+
+Balaudo A., Garoffolo A., Martinelli M., Mukherjee S., Silvestri A., 2023,
+
+Journal of Cosmology and Astroparticle Physics, 2023, 050
+
+Belgacem E., Dirian Y., Foffa S., Maggiore M., 2018a, Physical review D,
+
+97, 104066
+
+Belgacem E., Dirian Y., Foffa S., Maggiore M., 2018b, Physical review D,
+
+98, 023510
+
+Belgacem E., et al., 2019, Journal of Cosmology and Astroparticle Physics,
+
+2019, 024
+
+Bellm E., 2014, in The Third Hot-wiring the Transient Universe Workshop.
+Benz A., Guedel M., 1989, Astronomy and Astrophysics (ISSN 0004-6361),
+
+vol. 218, no. 1-2, July 1989, p. 137-140., 218, 137
+Bhalerao V., et al., 2022, arXiv preprint arXiv:2211.12052
+Bhattacharyya B., et al., 2016, The Astrophysical Journal, 817, 130
+Bisong E., Bisong E., 2019, Building Machine Learning and Deep Learning
+Models on Google Cloud Platform: A Comprehensive Guide for Begin-
+ners, pp 151–165
+
+Bissaldi E., et al., 2009, Experimental Astronomy, 24, 47
+Blake C., Glazebrook K., 2003, The Astrophysical Journal, 594, 665
+Bond J., Efstathiou G., 1987, Monthly Notices of the Royal Astronomical
+
+Society, 226, 655
+
+Brans C., Dicke R. H., 1961, Physical review, 124, 925
+Burrows D. N., et al., 2005, Space science reviews, 120, 165
+Cabré A., Fosalba P., Gaztanaga E., Manera M., 2007, Monthly Notices of
+
+the Royal Astronomical Society, 381, 1347
+
+Cai Y.-F., Capozziello S., De Laurentis M., Saridakis E. N., 2016, Reports on
+
+Progress in Physics, 79, 106901
+
+Carvalho G., Bernui A., Benetti M., Carvalho J., Alcaniz J., 2016, Physical
+
+Review D, 93, 023530
+
+Chase E. A., et al., 2022, The Astrophysical Journal, 927, 163
+Chow N., Khoury J., 2009, Physical Review D, 80, 024037
+Corman M., Escamilla-Rivera C., Hendry M., 2021, Journal of Cosmology
+
+and Astroparticle Physics, 2021, 005
+
+Crisostomi M., Koyama K., Tasinato G., 2016, Journal of Cosmology and
+
+Astroparticle Physics, 2016, 044
+
+Crocce M., Cabré A., Gaztanaga E., 2011, Monthly Notices of the Royal
+
+Astronomical Society, 414, 329
+
+Cutler C., Flanagan E. E., 1994, Physical Review D, 49, 2658
+Davis M., Peebles P., 1983, Astrophysical Journal, Part 1 (ISSN 0004-637X),
+
+vol. 267, April 15, 1983, p. 465-482., 267, 465
+
+Letters B, 790, 167
+
+Ghirlanda G., et al., 2019, Science, 363, 968
+Goldstein A., et al., 2017, The Astrophysical Journal Letters, 848, L14
+Hallinan G., et al., 2017, Science, 358, 1579
+Hamilton A., 1993, The Astrophysical Journal, 417, 19
+Harris C. R., et al., 2020, Nature, 585, 357
+Hewett P. C., 1982, Monthly Notices of the Royal Astronomical Society, 201,
+
+867
+
+Hinshaw G., et al., 2013, The Astrophysical Journal Supplement Series, 208,
+
+19
+
+Hirata C. M., Holz D. E., Cutler C., 2010, Phys. Rev. D, 81, 124046
+Hu W., Dodelson S., 2002, Annual Review of Astronomy and Astrophysics,
+
+40, 171
+
+Hu W., Sawicki I., 2007, Physical Review D, 76, 064004
+Hunter J. D., 2007, Computing in Science & Engineering, 9, 90
+Ivezić Ž., et al., 2019, The Astrophysical Journal, 873, 111
+Janka H.-T., Eberl T., Ruffert M., Fryer C. L., 1999, The Astrophysical Journal,
+
+527, L39
+
+Kalaghatgi C., Hannam M., Raymond V., 2020, Physical Review D, 101,
+
+103004
+
+Karathanasis et al., 2022, arXiv preprint arXiv:2210.05724
+Karathanasis C., Mukherjee S., Mastrogiovanni S., 2023, Monthly Notices of
+
+the Royal Astronomical Society, 523, 4539
+
+Kasen D., Metzger B., Barnes J., Quataert E., Ramirez-Ruiz E., 2017, Nature,
+
+551, 80
+
+Kasliwal M., et al., 2017, Science, 358, 1559
+Komatsu E., et al., 2011, arXiv preprint arXiv:1001.4635
+Kumar P., Piran T., 2000, The Astrophysical Journal, 532, 286
+Landy S. D., Szalay A. S., 1993, Astrophysical Journal, Part 1 (ISSN 0004-
+
+637X), vol. 412, no. 1, p. 64-71., 412, 64
+
+Laureĳs R., et al., 2011, arXiv preprint arXiv:1110.3193
+Lewis A., Challinor A., 2011, Astrophysics source code library, pp ascl–1102
+Leyde K., Mastrogiovanni S., Steer D. A., Chassande-Mottin E., Karathanasis
+C., 2022, Journal of Cosmology and Astroparticle Physics, 2022, 012
+
+Lombriser L., Lima N. A., 2017, Physics Letters B, 765, 382
+Lombriser L., Taylor A., 2016, Journal of Cosmology and Astroparticle
+
+Physics, 2016, 031
+
+Madau P., Dickinson M., 2014, Annual Review of Astronomy and Astro-
+
+physics, 52, 415
+
+Maggiore M., 2007, Gravitational waves: Volume 1: Theory and experiments.
+
+OUP Oxford
+
+Mandelbaum R., et al., 2018, arXiv preprint arXiv:1809.01669
+McKinney W., et al., 2011, Python for high performance and scientific com-
+
+puting, 14, 1
+
+Mpetha C. T., Congedo G., Taylor A., 2023, Phys. Rev. D, 107, 103518
+Mukherjee S., Wandelt B. D., 2018, arXiv preprint arXiv:1808.06615
+Mukherjee S., Wandelt B. D., Silk J., 2020a, Physical Review D, 101, 103509
+Mukherjee S., Wandelt B. D., Silk J., 2020b, Mon. Not. Roy. Astron. Soc.,
+
+494, 1956
+
+Mukherjee S., Wandelt B. D., Silk J., 2020c, Monthly Notices of the Royal
+
+Astronomical Society, 494, 1956
+
+Mukherjee S., et al., 2021a, Monthly Notices of the Royal Astronomical
+
+De Felice A., Larrouturou F., Mukohyama S., Oliosi M., 2021, Journal of
+
+Society, 502, 1136
+
+Cosmology and Astroparticle Physics, 2021, 015
+
+Deffayet C., Menou K., 2007, The Astrophysical Journal, 668, L143
+Dodelson S., Schmidt F., 2020, Modern cosmology. Academic press
+Dominik M., et al., 2015, The Astrophysical Journal, 806, 263
+Doré O., et al., 2018, arXiv preprint arXiv:1805.05489
+Dvali G., Gabadadze G., Porrati M., 2000, Physics Letters B, 485, 208
+Eifler T., et al., 2021, Monthly Notices of the Royal Astronomical Society,
+
+507, 1746
+
+Finn L. S., 1996, Physical Review D, 53, 2878
+Finn L. S., Chernoff D. F., 1993, Physical Review D, 47, 2198
+
+Mukherjee S., Lavaux G., Bouchet F. R., Jasche J., Wandelt B. D., Nissanke
+S. M., Leclercq F., Hotokezaka K., 2021b, Astron. Astrophys., 646, A65
+Nakar E., Gottlieb O., Piran T., Kasliwal M. M., Hallinan G., 2018, The
+
+Astrophysical Journal, 867, 18
+
+Nimonkar H., Mukherjee S., 2024, Monthly Notices of the Royal Astronom-
+
+ical Society, 527, 2152
+
+Nishizawa A., 2018, Physical Review D, 97, 104037
+Nissanke S., Holz D. E., Hughes S. A., Dalal N., Sievers J. L., 2010, The
+
+Astrophysical Journal, 725, 496
+
+Ochsner E., Wisconsin-Milwaukee U., Nepal P., Qi H., 2012, ApJ, 746, 186
+
+MNRAS 000, 1–14 (2023)
+
+14
+
+Afroz and Mukherjee
+
+Peebles P., 1973, Astrophysical Journal, Vol. 185, pp. 413-440 (1973), 185,
+
+413
+
+Peebles P. J. E., Hauser M. G., 1974, The Astrophysical Journal Supplement
+
+Series, 28, 19
+
+Peebles P. J., Yu J., 1970, The Astrophysical Journal, 162, 815
+Price-Whelan A. M., et al., 2018, The Astronomical Journal, 156, 123
+Punturo M., et al., 2010, Classical and Quantum Gravity, 27, 194002
+Ramirez-Ruiz E., Merloni A., Rees M. J., 2001, Monthly Notices of the Royal
+
+Astronomical Society, 324, 1147
+
+Rees M., Mészáros P., 1998, The Astrophysical Journal, 496, L1
+Reitze D., et al., 2019, arXiv preprint arXiv:1907.04833
+Robitaille T. P., et al., 2013, arXiv preprint arXiv:1307.6212
+Ronchini S., et al., 2022, Astron. Astrophys., 665, A97
+Saleem M., et al., 2021, Classical and Quantum Gravity, 39, 025004
+Saltas I. D., Sawicki I., Amendola L., Kunz M., 2014, Physical Review Letters,
+
+113, 191101
+
+Sathyaprakash B. S., Dhurandhar S., 1991, Physical Review D, 44, 3819
+Sathyaprakash B. S., Schutz B. F., 2009, Living reviews in relativity, 12, 1
+Scientific L., et al., 2017, Physical review letters, 118, 221101
+Scoville N., et al., 2007, The Astrophysical Journal Supplement Series, 172,
+
+38
+
+Smartt S., et al., 2017, Nature, 551, 75
+Sobrin J., et al., 2022, The Astrophysical Journal Supplement Series, 258, 42
+Speagle J. S., 2020, Monthly Notices of the Royal Astronomical Society, 493,
+
+3132
+
+Spergel D. N., et al., 2007, The astrophysical journal supplement series, 170,
+
+377
+
+Sunyaev R. A., Zeldovich Y. B., 1970, Astrophysics and Space Science, 7, 3
+Talbot C., Thrane E., 2018, The Astrophysical Journal, 856, 173
+Thorne K. S., 1995, arXiv preprint gr-qc/9506086
+Thornton R., et al., 2016, The Astrophysical Journal Supplement Series, 227,
+
+21
+
+Troja E., et al., 2017, Nature, 551, 71
+Vikhlinin A., et al., 2009, The Astrophysical Journal, 692, 1060
+Virtanen P., et al., 2020, Zenodo
+Xie Y., Chatterjee D., Holder G., Holz D. E., Perkins S., Yagi K., Yunes N.,
+
+2023, Physical Review D, 107, 043010
+
+Xu X., Padmanabhan N., Eisenstein D. J., Mehta K. T., Cuesta A. J., 2012,
+
+Monthly Notices of the Royal Astronomical Society, 427, 2146
+
+Yamashita Y., Tanaka T., 2014, Journal of Cosmology and Astroparticle
+
+Physics, 2014, 004
+
+APPENDIX A: UNCERTAINTIES IN 𝐻0 IN THE
+RECONSTRUCTION OF 𝐻0 AND F (𝑍)
+
+In Section 6.2, we extended the hierarchical Bayesian framework
+previously employed for measuring F (𝑧) with a fixed 𝐻0 to a joint
+measurement scenario for both F (𝑧) and 𝐻0. Within this framework,
+a flat prior assumption was utilized, indicating a lack of prior knowl-
+edge about the parameters associated with the frictional term (F (𝑧))
+and the cosmic expansion rate (𝐻0). For the parameters governing the
+frictional term (F (𝑧)) and the Hubble constant (𝐻0), we established
+parameter ranges of 0.1 to 2.0 and 40 km/s/Mpc to 100 km/s/Mpc,
+respectively.
+
+In Figure A1, we showcase the joint posterior of F (𝑧) and 𝐻0
+for two distinct scenarios. The first scenario corresponds to CE&ET,
+considering all observed events for z=0.225 in the case of NSBH
+events. The second scenario pertains to LVK, also for z=0.225 also
+focusing on NSBH events. This visualization provides a comparative
+analysis, illustrating the potential advancements achievable with our
+future detector, CE&ET, in contrast to the current capabilities of the
+LVK detector. The joint posterior distribution offers valuable insights
+into the precision and capabilities of each detector in estimating the
+parameters F (𝑧) and 𝐻0. In Figure A2 and Figure A3 we showed
+
+MNRAS 000, 1–14 (2023)
+
+Figure A1. In this plot, we depict the joint posterior of F (𝑧) and 𝐻0 for
+CE&ET and LVK for the NSBH events for a total number of events scenario
+at z=0.225. In the parenthesis, it depicts the total no of events at that particular
+redshift.
+
+Figure A2. In this plot,we depict the Joint Posterior of F (𝑧) and 𝐻0 upto 4
+𝜎 level for LVK for the NSBH events scenario at z=0.225 for one event.
+
+Figure A3. In this plot, we depict the joint posterior of F (𝑧) and 𝐻0 upto 4
+𝜎 level for CE&ET for the NSBH events scenario at z=0.225 for one event.
+the joint posterior of F (𝑧) and 𝐻0 for CE&ET and LVK at redshift
+0.225 for just only one event.
+
+This paper has been typeset from a TEX/LATEX file prepared by the author.
+
+

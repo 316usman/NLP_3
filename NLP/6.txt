@@ -1,0 +1,1240 @@
+3
+2
+0
+2
+c
+e
+D
+9
+
+]
+I
+
+A
+.
+s
+c
+[
+
+1
+v
+9
+8
+5
+5
+0
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+A Review of Hybrid and Ensemble in Deep Learning
+for Natural Language Processing
+
+Jianguo Jia
+Department of Computing
+Hong Kong Polytechnic University
+Hong Kong SAR, China
+jianguo1.jia@connect.polyu.hk
+
+Wen Liang
+Google Inc.
+Mountain View, CA 94043
+liangwen@google.com
+
+Youzhi Liang
+Department of Computer Science
+Stanford University
+Stanford, CA 94305
+youzhil@stanford.edu
+
+Abstract
+
+This review presents a comprehensive exploration of hybrid and ensemble deep
+learning models within Natural Language Processing (NLP), shedding light on
+their transformative potential across diverse tasks such as Sentiment Analysis,
+Named Entity Recognition, Machine Translation, Question Answering, Text Clas-
+siﬁcation, Generation, Speech Recognition, Summarization, and Language Mod-
+eling. The paper systematically introduces each task, delineates key architec-
+tures from Recurrent Neural Networks (RNNs) to Transformer-based models like
+BERT, and evaluates their performance, challenges, and computational demands.
+The adaptability of ensemble techniques is emphasized, highlighting their capac-
+ity to enhance various NLP applications. Challenges in implementation, includ-
+ing computational overhead, overﬁtting, and model interpretation complexities,
+are addressed, alongside the trade-off between interpretability and performance.
+Serving as a concise yet invaluable guide, this review synthesizes insights into
+tasks, architectures, and challenges, offering a holistic perspective for researchers
+and practitioners aiming to advance language-driven applications through ensem-
+ble deep learning in NLP.
+
+1 Introduction
+
+Natural Language Processing (NLP) [1][2], an interdisciplinary ﬁeld combining elements of com-
+putational linguistics, artiﬁcial intelligence, and computer science, aims to enable machines to un-
+derstand, interpret, and generate human language [3]. Originating in the 1950s with endeavors such
+as the Georgetown experiment [4][5][6], NLP has undergone signiﬁcant transformations. Initially
+relying on rule-based systems, the ﬁeld gradually shifted towards data-driven methodologies with
+the integration of statistical models in the late 20th century [7]. This shift paved the way for contem-
+porary advancements brought about by deep learning techniques.
+
+Deep learning, a subset of machine learning, involves training neural networks on large datasets to
+perform tasks without task-speciﬁc programming [8][9][10]. It has emerged as a pivotal force in
+NLP, revolutionizing the ﬁeld with models such as recurrent neural networks (RNNs), convolutional
+neural networks (CNNs), and transformers [11]. Techniques like Word2Vec [12] have been instru-
+
+Manuscript in submission 2023, do not distribute
+
+ 
+ 
+ 
+ 
+ 
+ 
+mental in creating word embeddings, capturing semantic relationships in continuous vector spaces
+and serving as a basis for more advanced models.
+
+The application of deep learning in NLP has yielded several breakthroughs. It has enabled the auto-
+matic learning of complex patterns in large datasets, enhancing the accuracy and performance across
+various tasks. The capacity for transfer learning allows models pre-trained on substantial datasets
+to be ﬁne-tuned for niche tasks with limited data [13]. Unlike conventional methods requiring man-
+ual feature engineering, deep learning models autonomously discern features and hierarchies within
+data, resulting in more robust models [14]. The advent of architectures such as BERT [15] has
+underscored the supremacy of deep learning in NLP by establishing new benchmarks.
+
+In this context, the exploration of hybrid and ensemble deep learning approaches becomes crucial.
+These strategies aim to further augment the capabilities of individual models by combining their
+strengths and mitigating their limitations. This paper provides a comprehensive review of such
+approaches, delineating the progress and the challenges faced in the ongoing journey of NLP.
+
+Ensemble methods [16][17] involve combining multiple models to improve the overall performance
+of a machine-learning task. The underlying principle is that leveraging the strengths and mitigat-
+ing the weaknesses of multiple models can achieve better accuracy and robustness than any single
+model [18]. Ensemble learning encompasses a range of approaches, including Bagging, Boosting,
+and Stacking [19][20], which have gained signiﬁcant popularity in the ﬁeld. The technique known
+as bagging, short for Bootstrap Aggregating, entails the training of numerous iterations of a single
+model on distinct subsets of the training data, followed by the averaging of their respective predic-
+tions [21]. Boosting, on the other hand, trains models sequentially, where each new model attempts
+to correct the errors made by its predecessors [22]. Stacking involves training multiple models and
+using another model, called a meta-learner, to combine their predictions [23].
+
+Ensemble methods [16][17] in machine learning aim to enhance predictive performance by strate-
+gically combining several models. This synergistic approach often leads to improved accuracy and
+robustness compared to individual models, as it capitalizes on the strengths while offsetting the
+weaknesses of each model [18]. Traditional ensemble techniques, such as Bagging, Boosting, and
+Stacking [19][20], have been widely adopted. Bagging, or Bootstrap Aggregating, involves training
+multiple instances of a single model on different subsets of the data and then averaging their predic-
+tions to minimize variance [21]. In contrast, Boosting focuses on sequential model training, with
+successive models aiming to rectify the errors of their predecessors [22]. Stacking combines the
+predictions from multiple trained models using a secondary model, known as a meta-learner [23].
+
+In the realm of Natural Language Processing (NLP), the integration of deep learning with ensem-
+ble methods has led to the emergence of hybrid and ensemble deep learning approaches. These
+approaches combine different neural network architectures or integrate deep learning models with
+traditional machine learning algorithms. For instance, an ensemble could include a combination of
+convolutional neural networks (CNNs), recurrent neural networks (RNNs), and transformers, each
+contributing to capturing different linguistic features and patterns.
+
+The incorporation of hybrid and ensemble techniques in NLP aims to further elevate the performance
+metrics across tasks by leveraging the complementary strengths of diverse models. Ensemble meth-
+ods can enhance the generalization capabilities of deep learning models, ensuring more consistent
+performance across various datasets and domains. Hybrid models, which may fuse deep learning
+techniques with traditional machine learning approaches, strive to amalgamate the representational
+power of neural networks with the interpretability and simplicity of classical algorithms.
+
+This paper delves into the intricacies of hybrid and ensemble deep learning approaches in NLP, ex-
+ploring their conceptual foundations, applications, and the challenges and opportunities they present
+in the quest for enhanced language understanding and processing.
+
+2 Base Models for NLP
+
+This section delves into the base models employed in Natural Language Processing (NLP), with a
+speciﬁc focus on sentiment analysis. These foundational models act as essential components that
+will be incorporated into the hybrid or ensemble models discussed in the subsequent section.
+
+2
+
+2.1 Recurrent Neural Networks (RNN) in Sentiment Analysis
+
+Recurrent Neural Networks (RNNs) have signiﬁcantly inﬂuenced the ﬁeld of sentiment analysis
+within natural language processing (NLP), as evidenced by various studies [24][25][26]. Charac-
+terized by their ability to process sequential data, RNNs excel at capturing temporal information
+and context, which are crucial for understanding sentiment in text [27][28]. Unlike traditional neu-
+ral networks, RNNs process inputs sequentially, maintaining a ’memory’ of previous inputs within
+their internal state or hidden layer, allowing for effective sequential information processing [29].
+The hidden state of an RNN is determined by both the current input and the prior hidden state,
+thereby enabling the network to accumulate information over successive time steps [30]. For train-
+ing, RNNs employ Backpropagation Through Time (BPTT), a technique that involves unrolling the
+network over time before applying the standard backpropagation algorithm [31].
+
+RNNs’ ability to understand context within sentences and paragraphs is pivotal for accurate senti-
+ment analysis. Nevertheless, they sometimes encounter difﬁculties with extended sequences due to
+issues such as the vanishing gradient problem[32][33][34]. Long Short-Term Memory (LSTM) net-
+works and Gated Recurrent Units (GRUs), which are advanced variations of RNNs, often outperform
+basic RNNs in sentiment analysis tasks by providing improved accuracy and better management of
+dependencies [35][36]. Moreover, ensemble or hybrid approaches, which combine different models
+or algorithms, have been explored to further boost the performance of sentiment analysis.
+
+Among the strengths of RNNs is their enhanced contextual understanding. They are proﬁcient at cap-
+turing and processing sequential information within texts, interpreting not just individual elements
+in isolation but also their interrelations within a broader narrative [36]. This trait makes RNNs ef-
+fective for tasks such as sentiment analysis and language translation. Another advantage is their
+capability to handle variable-length inputs seamlessly[37][38]. RNNs are inherently designed to
+accommodate input sequences of varying lengths, which is essential in NLP where sentence lengths
+can differ considerably [39].
+
+However, RNNs also present certain challenges. One of the primary concerns is the high computa-
+tional demand during training, particularly for long sequences[40][41]. The step-by-step processing
+nature of RNNs necessitates frequent weight updates, becoming increasingly resource-intensive with
+longer sequences and more complex models. Additionally, the use of BPTT for training increases
+the computational load signiﬁcantly, especially for long sequences. Another fundamental problem
+faced by RNNs is the vanishing gradient issue, where gradients propagated back in time tend to
+diminish in long sequences, hindering the network’s ability to learn long-range dependencies [42].
+
+2.2 Convolutional Neural Networks (CNN) in Sentiment Analysis
+
+Convolutional Neural Networks (CNNs) have gained widespread acclaim for their capabilities in
+image processing and computer vision, and their contributions have extended signiﬁcantly to the
+ﬁeld of Natural Language Processing (NLP), particularly in the specialized arena of sentiment
+analysis[43][44]. These networks are tailored for recognizing local patterns and features, render-
+ing them particularly apt for identifying phrases and patterns in textual data that are indicative of
+sentiment[45]. The distinctive architecture of CNNs is marked by the integration of convolution lay-
+ers, pooling layers, and fully connected layers, each contributing to the nuanced task of sentiment
+detection and classiﬁcation[46][47].
+
+In sentiment analysis, CNNs employ convolution layers to apply a series of ﬁlters to input text,
+thereby extracting features with semantic signiﬁcance. These ﬁlters traverse word embeddings, dili-
+gently capturing the semantic nuances from contiguous word groupings. Subsequent pooling layers,
+predominantly max pooling, distill this information, reducing dimensionality and emphasizing the
+most prominent features. The extracted features are subsequently ﬂattened and navigated through
+fully connected layers, culminating in the ﬁnal sentiment classiﬁcation[48].
+
+CNNs have proven themselves to be exemplary in hierarchical feature learning within sentiment anal-
+ysis. From identifying simple word embeddings to extracting complex semantic structures across
+extended text sequences, their capability is prominently displayed in tasks such as discerning senti-
+ment nuances in phrases like "not good". CNNs adeptly sift sentiment-laden features from broader
+contexts, ensuring that subtle expressions that might be neglected by alternative models are cap-
+tured. The versatility of CNNs is further underscored by their ability to adapt to texts of varying
+lengths through the use of kernels of different sizes. This enables the comprehension of both suc-
+
+3
+
+cinct phrases and extensive contextual sequences. Pooling layers enhance this adaptability, ensuring
+that poignant sentiment indicators are consistently focused upon, leading to standardized outputs
+and consistent sentiment evaluations.
+
+The efﬁcacy of CNNs in sentiment analysis is highlighted by their efﬁciency and reduced
+complexity[49]. They often outperform certain recurrent models in classiﬁcation accuracy and train-
+ing efﬁciency, as demonstrated by Zhang in 2015[50]. Their versatility spans a range of sentiment
+analysis applications, from binary to ﬁne-grained sentiment classiﬁcations, thus establishing CNNs
+as a comprehensive and effective tool in sentiment analysis.
+
+CNNs are renowned for their efﬁciency, particularly when juxtaposed against Recurrent Neural
+Networks (RNNs). The architecture of CNNs facilitates parallel processing, allowing concurrent
+convolution operations across text segments[51][52]. This feature ensures reduced training times
+for large datasets and presents a distinct advantage over sequentially operating RNNs. Modern
+hardware optimizations for matrix operations, as seen in Graphics Processing Units (GPUs), further
+amplify the efﬁciency of CNNs during training and inference.
+
+In terms of feature extraction, CNNs exhibit exemplary capabilities. Their architecture excels in
+identifying position-invariant patterns within text, ensuring consistent capture of sentiment-rich
+phrases. The hierarchical structure of CNNs facilitates a tiered approach to feature detection, negat-
+ing the need for labor-intensive manual feature engineering prevalent in traditional sentiment analy-
+sis.
+
+However, CNNs are not without their limitations. A notable challenge is their sensitivity to context,
+or rather, the lack thereof. Unlike RNNs or Transformers, CNNs may occasionally falter in com-
+prehending extended contextual relationships within textual data. Another limitation arises from
+the employment of ﬁxed-size kernels, determining the contextual window from which the network
+learns. The selection of kernel size is critical and demands careful consideration, as it may im-
+pact the network’s ability to understand broader contexts and potentially restrict its effectiveness in
+complex sentiment analysis tasks.
+
+2.3 Long Short-Term Memory Networks (LSTM)
+
+Long Short-Term Memory (LSTM) networks, a specialized variant of Recurrent Neural Networks
+(RNNs), have dramatically inﬂuenced natural language processing (NLP) and sentiment analysis
+due to their capacity to encapsulate long-term dependencies in sequences[53][54]. These networks
+are built around memory cells, which, akin to computer memory, are adept at reading, writing, and
+preserving crucial information across arbitrary time intervals, ensuring the retention of contextually
+pertinent data[55]. A series of gates meticulously regulate the ﬂow of information within LSTMs:
+the forget gate, which selectively retains or discards information from the cell state; the input gate,
+which decides the values to be updated in the cell state and computes new information; and the
+output gate, which determines the next hidden state by deciding what information from the current
+cell state is outputted [56].
+
+LSTMs were developed as an antidote to the vanishing gradient problem that plagued traditional
+RNNs, which tended to forget distant information in sequences. By facilitating the effective
+ﬂow of gradients over extended sequences, LSTMs are capable of learning and retaining informa-
+tion from early inputs while processing subsequent ones, a monumental leap over conventional
+RNNs[57][58][59].
+In sentiment analysis, the LSTM’s ability to preserve and comprehend the
+broader context is paramount. For instance, they can seamlessly bridge gaps in context, providing
+a comprehensive understanding of sentiments even in complex sentences where crucial contextual
+clues may be interspersed with less relevant information. Additionally, LSTMs are proﬁcient at
+discerning the subtle shifts in sentiment based on the structure and arrangement of words within a
+sentence.
+
+LSTMs have established themselves as formidable tools in sentiment analysis by consistently achiev-
+ing benchmark results on various datasets. Furthermore, their versatility extends to integration with
+other neural network architectures to create ensemble or hybrid models. For example, combining
+LSTMs with Convolutional Neural Networks (CNNs) creates a potent system wherein LSTMs ana-
+lyze sequences and context while CNNs excel at local feature extraction. This synergistic approach
+has been proven to enhance performance in sentiment analysis tasks.
+
+4
+
+LSTMs’ proﬁciency in capturing long-range dependencies and their adaptability to handle variable
+input sequences make them remarkably ﬂexible across applications such as sentiment analysis, ma-
+chine translation, time series prediction, and music generation. However, they are not without draw-
+backs. The computational intensity of training LSTMs, particularly on extensive datasets, can be
+taxing, necessitating powerful hardware for expedited processing. Moreover, LSTMs are suscep-
+tible to overﬁtting, often requiring regularization techniques to ensure that the model generalizes
+effectively to unseen data. Overall, LSTMs, despite their few limitations, continue to be a corner-
+stone in the realm of sentiment analysis, providing nuanced and contextually rich interpretations of
+textual data.
+
+2.4 Bidirectional Encoder Representations from Transformers (BERT)
+
+Bidirectional Encoder Representations from Transformers (BERT), introduced by Google in 2018,
+has signiﬁcantly impacted the ﬁeld of Natural Language Processing (NLP), particularly in applica-
+tions such as sentiment analysis[60]. BERT is built upon the Transformer architecture, leveraging
+self-attention mechanisms to dynamically weigh different input tokens and discern relationships
+within a text. Unlike traditional NLP models that interpret text unidirectionally, BERT analyzes the
+context of a word bidirectionally, considering both preceding and following words. This approach
+ensures a holistic understanding of the context in which a word appears.
+
+BERT’s effectiveness is also attributed to its training methodology, where it undergoes pre-training
+on extensive datasets such as BooksCorpus and English Wikipedia[61][62]. This comprehensive
+training equips BERT with a broad linguistic understanding, allowing it to capture general patterns
+which can then be ﬁne-tuned for speciﬁc tasks, such as sentiment analysis. Its ability to understand
+text nuances is particularly beneﬁcial in sentiment analysis, as it can detect idioms, colloquialisms,
+and sentiment-indicative phrases effectively.
+
+In sentiment analysis, BERT demonstrates its adaptability through ﬁne-tuning for task speciﬁcity.
+Initially trained on diverse datasets, BERT can be further tailored to speciﬁc sentiment analysis
+tasks, even with limited labeled data, ensuring high accuracy. BERT’s bidirectional nature allows it
+to comprehend context and nuances, providing an advantage in sentiment analysis tasks involving
+complex textual data. It has consistently achieved state-of-the-art results across various sentiment
+analysis datasets, setting new performance benchmarks.
+
+Furthermore, BERT is scalable, with larger models generally yielding better performance. However,
+this scalability often requires increased computational resources[63]. The architecture of BERT is
+designed to facilitate transfer learning, where the model is ﬁrst trained on a large corpus of data to
+grasp linguistic patterns and then ﬁne-tuned on smaller, task-speciﬁc datasets. This approach has
+led to signiﬁcant performance improvements in NLP tasks. BERT’s contextual representations also
+mark a departure from traditional word embedding methods, offering dynamic word representations
+based on context.
+
+Despite its strengths, there are challenges associated with BERT. The model, particularly its larger
+variants, is resource-intensive, necessitating substantial computational power for both training and
+inference. This can be challenging for real-time applications or in scenarios with limited computa-
+tional resources. Additionally, like many deep learning models, BERT operates as a "black box,"
+where the internal processes leading to an output can be opaque. This lack of interpretability can be
+a concern in domains where understanding the rationale behind predictions is crucial.
+
+Moreover, BERT’s architecture allows for the exploration of ensemble or hybrid models, combining
+its strengths with other algorithms to further enhance its capabilities[64]. For instance, integrating
+BERT with other machine learning models can potentially yield a system that not only captures
+contextual information efﬁciently but also addresses speciﬁc nuances or challenges presented by
+diverse datasets[65]. Such hybrid models have the potential to further elevate the performance and
+applicability of BERT in sentiment analysis and other NLP tasks[66].
+
+2.5 Support Vector Machines (SVM)
+
+Support Vector Machines (SVM) have long been recognized as powerful tools in machine learn-
+ing, particularly for classiﬁcation problems, including sentiment analysis[67]. In sentiment analysis,
+SVMs have demonstrated efﬁcacy by delivering impressive results through the use of natural lan-
+
+5
+
+guage processing (NLP) feature extraction techniques, sometimes even surpassing more complex
+models on certain datasets[68]. SVMs operate by determining the hyperplane that optimally seg-
+regates datasets into distinct classes, ensuring maximal margin between the nearest points from
+different categories. To handle non-linearly separable data, SVMs employ the kernel trick, which
+involves transforming the data into a higher-dimensional space, rendering it linearly separable.
+
+The effectiveness of SVMs in sentiment analysis is closely tied to feature engineering. Various
+NLP features are utilized, such as Bag of Words (BoW), which represents texts as vectors indicating
+word presence or frequency; Term Frequency-Inverse Document Frequency (TF-IDF), which weighs
+terms based on their signiﬁcance in a document relative to a corpus; N-grams, which are contiguous
+sequences of n items from a text; Part-of-Speech (POS) tags, providing syntactic context; and Word
+Embeddings, continuous vector representations of words capturing semantic meaning[12]. Feature
+engineering with SVMs involves careful selection and combination of features that encapsulate sen-
+timent indicators, including word frequencies, keyword presence, and syntactic information.
+
+Moreover, SVMs offer a robust regularization mechanism that prevents overﬁtting by adjusting pa-
+rameters such as the regularization strength (C parameter), thereby ensuring that the model can
+generalize effectively to unseen data[69]. Despite potential scalability issues when dealing with
+extremely large datasets, SVMs are often preferred due to their simplicity, interpretability, and
+lightweight computational requirements. However, their performance is highly dependent on the
+choice of features and kernel, necessitating domain-speciﬁc knowledge for optimization. For in-
+stance, Maas et al.
+in 2011 demonstrated the effectiveness of SVMs in sentiment classiﬁcation
+amidst limited data availability[70].
+
+3 Hybrid and Ensemble Models for NLP
+
+This section delves into hybrid and ensemble models for NLP, exploring their applications across var-
+ious tasks. The discussion is organized by NLP tasks, encompassing machine translation, question
+answering systems, named entity recognition, and language modeling.
+
+3.1 Machine Translation (MT)
+
+Machine Translation (MT) holds a pivotal position in computational linguistics, facilitating seamless
+communication across varied languages and cultures by autonomously translating text or speech
+from one language to another [4][71]. This domain has undergone remarkable evolutionary progress,
+driven by the continuous development and integration of statistical, neural, ensemble, and hybrid
+approaches[72][73].
+
+Historically, the emergence of Statistical Machine Translation (SMT) in the late 1980s marked a
+signiﬁcant transition. It continued to be a dominant approach through the 1990s and 2000s, funda-
+mentally utilizing statistical models to deduce translation patterns from large bilingual corpora [74].
+The SMT framework comprises several components, including the Translation Model, which calcu-
+lates the probability of translation between phrases in different languages, and the Language Model,
+which ensures the coherence of the generated text in the target language[75]. The decoding step, an
+essential aspect of the process, involves optimizing to ﬁnd the most probable translation. Alignment
+algorithms, such as the IBM Models, establish correspondence between source and target words dur-
+ing training [76]. Reﬁnements in translation are achieved through phrase-based systems, reordering
+models, and model parameter tuning.
+
+To augment the capabilities of SMT, ensemble methodologies were introduced. These techniques
+combine multiple models to produce more robust translations, proving particularly useful in address-
+ing challenges associated with low-resource languages and domain adaptation[77]. Through domain
+adaptation, SMT systems can be tailored to speciﬁc niches, such as medical or legal translations, en-
+suring precise translations of domain-speciﬁc terminology[78][76]. Strategies like pivot translation,
+which involves using an intermediary language to bridge translation gaps, have proven beneﬁcial for
+languages with scarce bilingual corpora.
+
+With the advent of deep learning, Sequence-to-Sequence (Seq2Seq) models emerged as a substantial
+advancement in MT. These models utilize recurrent neural networks (RNNs) to convert sequences
+from the source to the target language [79]. A signiﬁcant enhancement to this approach was the
+introduction of attention mechanisms, allowing models to dynamically focus on different parts of the
+
+6
+
+source sentence during decoding, signiﬁcantly improving translation accuracy for longer sentences
+[80]. The attention mechanism facilitated dynamic context generation, weighted sum calculations,
+and sophisticated decoding strategies, all contributing to heightened accuracy and interpretability in
+MT.
+
+Hybrid models, which synergistically combine SMT and neural approaches, emerged as a potent
+solution. These models seek to harness the statistical robustness of SMT and the contextual nuances
+captured by neural networks, creating translations that are both semantically rich and syntactically
+correct[81].
+
+The introduction of the Transformer architecture marked another paradigm shift in MT. It moved
+away from recurrent layers and emphasized self-attention mechanisms, allowing each word in a
+sequence to attend to all others [82].
+Innovations like multi-head attention, feedforward neural
+networks, positional encoding, layer normalization, and residual connections enhanced the architec-
+ture’s capabilities. Transformer-based models, such as BERT, excelled in various NLP tasks, includ-
+ing MT, often setting new benchmarks [15]. Their parallel processing capabilities led to scalable
+models that established new standards in terms of BLEU scores and real-time translation.
+
+In response to the need for continuous improvement, ensemble methods were revisited and applied
+to Transformer models. These ensemble approaches, which amalgamate multiple Transformer mod-
+els or integrate Transformers with other architectures, consistently demonstrated improvements in
+translation quality and robustness over single-model approaches[83][73].
+
+Despite the numerous advantages of Transformers, challenges such as memory-intensive compu-
+tations and potential computational overhead for shorter sequences persist[84][11]. However, the
+evolution of MT—from statistical methods to neural, ensemble, and hybrid techniques, culminating
+in Transformers—showcases the relentless pursuit of excellence in this ﬁeld. The ongoing integra-
+tion of ensemble and hybrid models, coupled with continuous advancements in core technologies,
+indicates a promising trajectory for enhancing the efﬁciency and adaptability of MT systems.
+
+3.2 Question Answering Systems
+
+Question Answering (QA) systems, meticulously designed to extract accurate answers from a
+plethora of structured or unstructured data sources in response to speciﬁc user queries, have un-
+dergone a substantial evolution over time [85]. This impressive progress can be chieﬂy attributed
+to groundbreaking innovations such as Information Retrieval (IR)-based QA systems and Attention-
+based Sequence-to-Sequence (Seq2Seq) models, each contributing unique strengths to the realm of
+QA[86].
+
+IR-based QA systems are renowned for their proﬁciency in swiftly identifying, locating, and ranking
+pertinent documents or information segments from large-scale datasets without delving deeply into
+the semantics of the content [7]. The mechanism begins with an efﬁcient document indexing process,
+usually utilizing inverted indexing techniques to ensure rapid and accurate retrieval. Following this,
+the user’s query undergoes analysis and transformation using advanced natural language processing
+(NLP) techniques to derive context and meaning[87][88]. Relevant documents are retrieved based
+on the processed query, and algorithms such as term frequency-inverse document frequency (TF-
+IDF) and cosine similarity are applied to rank these documents based on relevance. The system
+then extracts potential answers from the top-ranked documents. IR-based systems stand out for
+their scalability and minimal training requirements, allowing them to be versatile across various
+domains[89][90]. Additionally, the transparency in sourcing answers adds a layer of interpretability.
+However, these systems may face challenges in comprehending content semantics, providing precise
+granularity in answers, and may be inﬂuenced by the quality of the underlying data.
+
+On the other hand, Attention-based Seq2Seq models, initially conceptualized for machine trans-
+lation, have been extensively repurposed and optimized for QA tasks [91]. These models typically
+include an encoder, often implemented using Long Short-Term Memory (LSTM) or Gated Recurrent
+Unit (GRU), which processes the input sequence to generate context vectors. An attention mecha-
+nism is then deployed to assign weights to these vectors, thereby signifying the signiﬁcance of each
+input token in determining the corresponding output token[92]. The decoder, in turn, uses these
+weighted context vectors to generate the ﬁnal output sequence. Attention-based Seq2Seq models
+have been pivotal in addressing several challenges in QA, such as processing extensive passages and
+enhancing answer precision, by dynamically focusing on relevant sections of the input text[93][94].
+
+7
+
+These models have delivered state-of-the-art results across numerous QA benchmarks and show-
+cased versatility across various domains and question types. Their architecture, celebrated for its
+capability to manage long sequences and its interpretability due to attention weights, is ﬂexible
+enough to be ﬁne-tuned or amalgamated into hybrid systems, thereby boosting their effectiveness.
+However, these models may pose computational challenges and are sometimes prone to overﬁtting
+on smaller datasets.
+
+The incorporation of both IR-based and Attention-based Seq2Seq models into ensemble or hybrid
+systems signiﬁes a strategic combination of diverse models aimed at capitalizing on their individual
+strengths while concurrently mitigating their respective weaknesses. Ensemble techniques such as
+bagging, boosting, or stacking can be employed to harmonize and aggregate outputs from different
+models, thereby bolstering predictive performance[95][96]. For instance, a sophisticated hybrid
+ensemble model could synergistically combine the rapid retrieval capabilities of an IR-based system
+with the deep contextual understanding of an attention-based Seq2Seq model. This amalgamation
+would yield responses that are both precise and contextually rich[97]. Such a system may also
+beneﬁt from techniques like knowledge distillation, wherein the insights from a complex ensemble
+model are transferred to a smaller, more efﬁcient model. This approach ensures an optimal balance
+between response speed and accuracy.
+
+By actively embracing and integrating ensemble and hybrid methodologies, QA systems can con-
+tinue to evolve, progressively reﬁning their capacity to provide accurate and efﬁcient responses to
+user queries[98]. These combinations can lead to the development of QA systems that are not only
+robust and comprehensive but also capable of self-improvement and adaptation to the ever-evolving
+landscape of user needs and data complexities.
+
+3.3 Named Entity Recognition (NER)
+
+Named Entity Recognition (NER) stands as a pivotal task within the realm of Natural Lan-
+guage Processing (NLP), dedicated to categorizing speciﬁc instances of words or phrases, such
+as names of individuals, organizations, and geographical locations, within textual data into prede-
+ﬁned classes[99][100]. This task is central to numerous applications, including information retrieval,
+question answering, and relationship extraction, underscoring its importance in extracting structured
+information from unstructured text.
+
+Historically, traditional models such as Conditional Random Fields (CRF) have been extensively uti-
+lized for NER tasks[101][102]. CRFs, being a type of discriminative probabilistic model, are effec-
+tive for handling sequential data. They operate by modeling the conditional probability of output se-
+quences (labels) given input sequences (words), thereby allowing context-sensitive predictions[103].
+The feature engineering process in CRFs is often intricate and involves crafting word-level features,
+linguistic features, and utilizing gazetteer lists and regular expressions to capture entity formats and
+other nuances in the data[104].
+
+With the advent of deep learning, NER experienced a transformative shift towards more sophis-
+ticated models, which signiﬁcantly reduced the reliance on manual feature engineering. Notable
+among these is the integration of Bi-directional Long Short-Term Memory networks (BiLSTMs)
+with a CRF layer, forming the BiLSTM-CRF model[105]. This combination leverages the sequen-
+tial memory and learning capabilities of BiLSTMs along with the sequence labeling strengths of
+CRFs. Such an architecture can effectively capture context from both directions (forward and back-
+ward) and model complex dependencies in data[106].
+
+Moreover, the emergence of Transformer-based models, such as BERT, has further revolutionized
+the landscape of NER[11]. BERT, with its self-attention mechanisms and extensive pre-training on
+large corpora, facilitates ﬁne-tuning for speciﬁc NER tasks. This approach has consistently demon-
+strated superior performance, as it encapsulates contextual information and intricacies of natural
+language, providing rich, dynamic representations.
+
+In light of these advancements, there is a discernible trend towards the development and implementa-
+tion of ensemble and hybrid models for NER[107]. These methodologies aim to amalgamate various
+models, harnessing their respective strengths and compensating for their weaknesses. For instance,
+an ensemble model could combine the swift retrieval capabilities of a traditional CRF model, the con-
+textual awareness of BiLSTM-CRF, and the extensive pre-trained knowledge of BERT[108][109].
+
+8
+
+By doing so, ensemble and hybrid models strive to deliver enhanced predictive accuracy, robustness,
+and generalization across diverse domains and datasets.
+
+In conclusion, while traditional models like CRFs and Support Vector Machines (SVMs) have ex-
+hibited commendable proﬁciency in NER tasks, the advent of more recent architectures such as
+BiLSTM-CRF and Transformer-based models has ushered in an era of elevated performance and
+minimized manual intervention[110][111]. Ensemble and hybrid methodologies, by virtue of their
+ability to strategically combine and leverage different models, are emerging as promising frontiers,
+poised to further advance the ﬁeld of NER[112][15].
+
+3.4 Language Modeling
+
+Language modeling stands as a cornerstone in the realm of natural language processing (NLP), un-
+derpinning a myriad of applications that encompass speech recognition, machine translation, text
+generation, and beyond [3]. By ardently seeking to predict subsequent words or tokens in a se-
+quence based on the context provided by preceding words, language models strive to capture and
+approximate the complex structures, subtleties, and nuances inherent in human language[113][114].
+The ultimate objective of these models is to closely emulate and generate human-like language by as-
+tutely estimating the probability distribution across various sequences of words, thereby facilitating
+machines in understanding and generating text that mirrors human communication.
+
+Recurrent Neural Networks (RNNs) have emerged as a transformative force in this sphere, pro-
+pelling substantial advancements in language modeling. Distinct from traditional feedforward net-
+works, RNNs are characterized by their unique capacity to process sequential data [3]. They achieve
+this by continually maintaining a hidden state that accumulates and integrates information from pre-
+vious time steps. In the operation of an RNN, at each time step, an input—commonly represented
+as a word embedding—is amalgamated with the preceding hidden state to compute a new hidden
+state. This evolving state functions as a dynamic memory mechanism, adeptly capturing nuances
+and context from preceding steps to inform subsequent predictions[115]. While RNNs have been
+revolutionary, unlocking new potentialities in language modeling, they are not without their set of
+challenges[116][117]. Notably, vanilla RNNs often grapple with the vanishing gradient problem,
+constraining their efﬁcacy in capturing long-term dependencies [59]. Metrics such as perplexity,
+used to evaluate how proﬁciently a model can predict a sequence of words, underscore that despite
+the substantial progress ushered in by RNNs, there exists a scope for reﬁnement and enhancement.
+
+To address the constraints and shortcomings of vanilla RNNs, sophisticated variants such as Gated
+Recurrent Units (GRUs) have been introduced and widely adopted [118]. GRUs symbolize a signif-
+icant evolution in the RNN architecture, incorporating gating mechanisms that empower the model
+to learn and retain longer sequences with greater efﬁcacy. The reset and update gates, pivotal to the
+GRU architecture, confer upon the model the ability to judiciously determine the information to pre-
+serve or discard[119]. The reset gate identiﬁes segments of the previous hidden state to be forgotten,
+while the update gate orchestrates the assimilation of new information into the current state. This
+architectural innovation enables GRUs to selectively and adaptively learn dependencies, leading to
+enhancements in diverse language modeling tasks. Nonetheless, even GRUs can occasionally face
+challenges in modeling highly complex dependencies and intricate linguistic structures[120].
+
+Given these factors, the exploration and adoption of ensemble and hybrid modeling approaches have
+surfaced as promising pathways for propelling further advancements in language modeling. By
+strategically combining diverse models, such as RNNs, GRUs, Long Short-Term Memory networks
+(LSTMs), and Transformers, ensemble methodologies aspire to harness and amalgamate the com-
+plementary strengths and capabilities of each architecture[121]. For example, a hybrid model could
+thoughtfully integrate the proﬁcient sequential memory capabilities intrinsic to RNNs or GRUs with
+the powerful parallel processing attributes distinctive to Transformers. These ensemble models are
+meticulously designed to navigate the complexities of language modeling, synthesizing the strengths
+of individual models to generate outputs that are not only more accurate and coherent but also en-
+riched with contextual nuances. By integrating models in a synergistic fashion, ensemble methods
+hold the potential to foster the development of robust, accurate, and sophisticated language models.
+Such models are poised to address and surmount nuanced linguistic challenges, thereby extending
+the frontiers of what is achievable in the domain of natural language understanding and generation.
+
+9
+
+In essence, ensemble and hybrid models stand as testament to the ongoing evolution in the ﬁeld of
+language modeling. By continually reﬁning and amalgamating diverse architectures, these models
+aim to deliver enhanced performance, ensuring that machines can comprehend and generate lan-
+guage that is increasingly reﬂective of human communication nuances.
+
+4 Challenges in Implementing Ensemble Deep Learning for NLP
+
+Ensemble deep learning, a sophisticated strategy that amalgamates the predictive power of multi-
+ple models, has carved out a signiﬁcant niche in the realm of natural language processing (NLP)
+[73]. This technique is engineered to bolster overall predictive performance by synthesizing insights
+and capabilities across diverse models[122]. However, the deployment of ensemble deep learning
+brings to light a multitude of intricate challenges and nuanced considerations that warrant careful
+examination.
+
+One of the foremost challenges is the substantial computational requirements associated with imple-
+menting ensemble deep learning methodologies. The intricate nature of combining multiple models
+necessitates robust computational infrastructures, often entailing high-performance GPUs or TPUs
+for efﬁcient training. The simultaneous training and maintenance of diverse models can escalate the
+computational costs and extend the training duration, posing potential impediments for applications
+with real-time or time-sensitive demands [73][122]. Furthermore, the risk of overﬁtting is ampliﬁed,
+particularly when the constituent models are closely correlated, leading to potentially inﬂated per-
+formance metrics that do not generalize well to unseen data [17]. Ensuring heterogeneity amongst
+ensemble members is crucial to obviate this risk. This can be achieved through strategic deployment
+of disparate architectures, diverse initialization strategies, or variance in training data [123].
+
+The challenge of model interpretability surfaces prominently when deploying ensemble models. A
+conﬂuence of multiple models tends to obscure the decision-making processes, complicating efforts
+to glean transparent insights [124]. This opacity can be particularly problematic in domains where
+interpretability is paramount, such as in legal or healthcare settings. The intricacy of interpretation
+augments commensurately with an increase in ensemble size. Ascertaining an optimal ensemble size
+and adeptly selecting constituent models demands a judicious blend of expertise and experimental
+rigor [125]. A diminutive ensemble may fall short of realizing tangible beneﬁts, while an excessively
+large ensemble can precipitate computational conundrums.
+
+Effective management of training data and ensuring diversity therein is a pivotal concern. Navigat-
+ing through myriad linguistic variations and contexts mandates strategic planning to preclude biases
+and ensure representativeness [126]. Addressing potential imbalances in data distribution across con-
+stituent models is imperative for preserving the equilibrium and efﬁcacy of the ensemble. Moreover,
+the deployment and integration of ensemble models into production environments herald additional
+complexities. The endeavor necessitates meticulous engineering to guarantee efﬁcient and harmo-
+nious interactions with other system components, alongside ensuring scalability to accommodate
+ﬂuctuating workloads [127].
+
+Maintenance of ensemble models emerges as a continuous imperative. Given the mutable nature
+of data distributions, periodic reassessment and updating of individual models within an ensemble
+become crucial. Managing the requisite hardware and software resources for perpetually training
+and deploying these ensembles can indeed be resource-intensive and necessitate strategic planning.
+Furthermore, a persistent tension exists between the quest for interpretability and the pursuit of peak
+performance. Ensemble deep learning, while prioritizing performance, may inadvertently compro-
+mise on interpretability, ushering in ethical and practical quandaries in certain applications [128].
+In light of these challenges, the deployment of ensemble deep learning in NLP warrants a holistic
+approach that judiciously balances computational demands, interpretability, and performance.
+
+5 Conclusion
+
+In the domain of Natural Language Processing (NLP), ensemble deep learning models have rapidly
+ascended as a formidable mechanism, recalibrating the thresholds of state-of-the-art performance
+by intricately navigating the multifaceted challenges inherent to human language. These ensemble
+models judiciously amalgamate the predictive prowess of multiple diverse models, thereby yielding
+a synergy that is capable of deciphering the myriad subtleties and complexities intrinsic to linguistic
+
+10
+
+communication. The interplay between ensemble methods and deep learning architectures has been
+instrumental in sculpting the trajectory of advancements in NLP, fostering signiﬁcant breakthroughs
+across an array of linguistic tasks.
+
+The utilization of ensemble methods in NLP is characterized by a pragmatic conﬂuence of individual
+model strengths, effectively counteracting their intrinsic limitations and culminating in an enhanced
+performance across a spectrum of complex linguistic tasks. From unraveling the complexities of
+machine translation and deciphering nuanced sentiments in textual data, to achieving unprecedented
+precision in tasks such as named entity recognition, ensemble techniques have consistently validated
+their indispensability. These methods, encompassing a variety of techniques such as voting, bagging,
+boosting, and stacking, have been meticulously adapted and tailored to meet the unique exigencies
+posed by the multifarious nuances of human language [18].
+
+In the context of NLP, ensemble models transcend the conventional boundaries of accuracy enhance-
+ment, introducing an unparalleled degree of robustness and versatility in tackling linguistic chal-
+lenges. Moreover, hybrid models, which seamlessly blend different learning paradigms, further
+augment the capabilities of ensemble techniques. By fusing traditional machine learning algorithms
+with sophisticated deep learning models, hybrid ensembles emerge as a holistic solution capable of
+harnessing complementary strengths and achieving robust performance across diverse NLP tasks.
+
+Nevertheless, the myriad advantages conferred by the ensemble approach do not come devoid of
+challenges. The computational overhead associated with orchestrating multiple models, the im-
+perative to ensure diversity in model predictions to avert redundancy, and the intricate layers of
+complexity introduced during training and deployment phases are among the pivotal considerations
+that researchers and practitioners must meticulously navigate. Additionally, striking a judicious bal-
+ance between model interpretability and predictive performance poses a perennial challenge in the
+deployment of ensemble methods in NLP.
+
+In summation, the synergistic alliance between ensemble methods and deep learning models in
+the realm of NLP epitomizes the scientiﬁc community’s unwavering endeavor to continually rede-
+ﬁne the boundaries of linguistic understanding and computational capabilities. As the technologi-
+cal landscape evolves, marked by burgeoning computational prowess and incessant reﬁnement of
+methodologies, it is envisaged that this symbiotic conﬂuence will continue to catalyze groundbreak-
+ing advancements in deciphering and processing human language, thereby ushering in an era of
+unparalleled linguistic comprehension and interaction [10].
+
+References
+
+[1] Karen Sparck Jones. Natural language processing: A historical review. In Current Issues
+in Computational Linguistics: In Honour of Don Walker, pages 3–16. Springer Netherlands,
+1994.
+
+[2] Elizabeth DuRoss Liddy. Anaphora in natural language processing and information retrieval.
+
+Information Processing & Management, 26(1):39–52, 1990.
+
+[3] D. Jurafsky and J. H. Martin. Speech and Language Processing. 2014.
+
+[4] W. J. Hutchins. Machine translation: A brief history, pages 431–445. Pergamon, 1995.
+
+[5] P. M. Nadkarni, L. Ohno-Machado, and W. W. Chapman. Natural language processing: an in-
+troduction. Journal of the American Medical Informatics Association, 18(5):544–551, 2011.
+
+[6] Alan Mathison Turing. Mind. Mind, 59(236):433–460, 1950.
+
+[7] C. D. Manning, P. Raghavan, and H. Schütze. Introduction to Information Retrieval. Cam-
+
+bridge University Press, 2008.
+
+[8] L. Deng and D. Yu. Deep learning: methods and applications. Foundations and trends® in
+
+signal processing, 7(3–4):197–387, 2014.
+
+[9] C. Zhang, S. Bengio, M. Hardt, B. Recht, and O. Vinyals. Understanding deep learning (still)
+requires rethinking generalization. Communications of the ACM, 64(3):107–115, 2021.
+
+[10] Ian Goodfellow, Yoshua Bengio, and Aaron Courville. Deep learning. MIT press, 2016.
+
+[11] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, et al. Attention is
+
+all you need. pages 5998–6008, 2017.
+
+11
+
+[12] T. Mikolov, K. Chen, G. Corrado, and J. Dean. Efﬁcient estimation of word representations
+
+in vector space. arXiv preprint arXiv:1301.3781, 2013.
+
+[13] Jeremy Howard and Sebastian Ruder. Universal language model ﬁne-tuning for text classiﬁ-
+
+cation. arXiv preprint arXiv:1801.06146, 2018.
+
+[14] Tom Young, Devamanyu Hazarika, Soujanya Poria, and Erik Cambria. Recent trends in
+deep learning based natural language processing. ieee Computational intelligenCe magazine,
+13(3):55–75, 2018.
+
+[15] J. Devlin, M. W. Chang, K. Lee, and K. Toutanova. Bert: Pre-training of deep bidirectional
+transformers for language understanding. In Proceedings of the 2019 Conference of the North
+American Chapter of the Association for Computational Linguistics: Human Language Tech-
+nologies, pages 4171–4186, 2019.
+
+[16] T. G. Dietterich. Ensemble methods in machine learning.
+
+In International workshop on
+
+multiple classiﬁer systems, pages 1–15. Springer Berlin Heidelberg, 2000.
+
+[17] D. Opitz and R. Maclin. Popular ensemble methods: An empirical study. Journal of Artiﬁcial
+
+Intelligence Research, 11:169–198, 1999.
+
+[18] Zhi-Hua Zhou. Ensemble methods: foundations and algorithms. CRC press, 2012.
+[19] X. Mi, F. Zou, and R. Zhu. Bagging and deep learning in optimal individualized treatment
+
+rules. Biometrics, 75(2):674–684, 2019.
+
+[20] L. Kumar and D. P. Sinha. From cmp to crs: an overview of stacking techniques of seis-
+mic data. In 7th Biennial international conference and exposition on petroleum geophysics,
+volume 414, 2008.
+
+[21] Leo Breiman. Bagging predictors. Machine learning, 24:123–140, 1996.
+[22] Yoav Freund and Robert E Schapire. A decision-theoretic generalization of on-line learning
+and an application to boosting. Journal of computer and system sciences, 55(1):119–139,
+1997.
+
+[23] David H Wolpert. Stacked generalization. Neural networks, 5(2):241–259, 1992.
+[24] L. Kurniasari and A. Setyanto. Sentiment analysis using recurrent neural network. In Journal
+
+of Physics: Conference Series, volume 1471, page 012018. IOP Publishing, 2020.
+
+[25] L. Arras, G. Montavon, K. R. Müller, and W. Samek. Explaining recurrent neural network
+
+predictions in sentiment analysis. arXiv preprint arXiv:1706.07206, 2017.
+
+[26] A. Patel and A. K. Tiwari. Sentiment analysis by using recurrent neural network. In Proceed-
+ings of 2nd International Conference on Advanced Computing and Software Engineering
+(ICACSE), February 2019.
+
+[27] J. L. Elman. Finding structure in time. Cognitive science, 14(2):179–211, 1990.
+[28] A. Graves. Supervised sequence labelling with recurrent neural networks. Springer Science
+
+& Business Media, 2012.
+
+[29] Z. C. Lipton, J. Berkowitz, and C. Elkan. A critical review of recurrent neural networks for
+
+sequence learning. arXiv preprint arXiv:1506.00019, 2015.
+
+[30] Y. Ming, S. Cao, R. Zhang, Z. Li, Y. Chen, Y. Song, and H. Qu. Understanding hidden
+memories of recurrent neural networks. In 2017 IEEE conference on visual analytics science
+and technology (VAST), pages 13–24. IEEE, 2017.
+
+[31] P. J. Werbos. Backpropagation through time: what it does and how to do it. Proceedings of
+
+the IEEE, 78(10):1550–1560, 1990.
+
+[32] J. V. Tembhurne and T. Diwan. Sentiment analysis in textual, visual and multimodal inputs
+
+using recurrent neural networks. Multimedia Tools and Applications, 80:6871–6910, 2021.
+
+[33] S. O. Alhumoud and A. A. Al Wazrah. Arabic sentiment analysis using recurrent neural
+
+networks: a review. Artiﬁcial Intelligence Review, 55(1):707–748, 2022.
+
+[34] S. Mao and E. Sejdi´c. A review of recurrent neural network-based methods in computational
+
+physiology. IEEE Transactions on Neural Networks and Learning Systems, 2022.
+
+[35] X. Zhang, J. Zhao, and Y. LeCun. Character-level convolutional networks for text classiﬁca-
+tion. In Proceedings of the 28th International Conference on Neural Information Processing
+Systems - Volume 1, 2018.
+
+12
+
+[36] K. Baktha and B. K. Tripathy. Investigation of recurrent neural networks in the ﬁeld of sen-
+timent analysis. In 2017 International Conference on Communication and Signal Processing
+(ICCSP), pages 2047–2050. IEEE, 2017.
+
+[37] S. Sachin, A. Tripathi, N. Mahajan, S. Aggarwal, and P. Nagrath. Sentiment analysis using
+
+gated recurrent neural networks. SN Computer Science, 1:1–13, 2020.
+
+[38] S. Islam, N. Ab Ghani, and M. Ahmed. A review on recent advances in deep learning for
+sentiment analysis: Performances, challenges and limitations. Compusoft, 9(7):3775–3783,
+2020.
+
+[39] C. Baziotis, N. Pelekis, and C. Doulkeridis. Datastories at semeval-2017 task 4: Deep lstm
+with attention for message-level and topic-based sentiment analysis. In Proceedings of the
+11th international workshop on semantic evaluation (SemEval-2017), pages 747–754, 2017.
+
+[40] N. Maheswaranathan and D. Sussillo. How recurrent networks implement contextual process-
+
+ing in sentiment analysis. arXiv preprint arXiv:2004.08013, 2020.
+
+[41] T. Ito, K. Tsubouchi, H. Sakaji, T. Yamashita, and K. Izumi. Contextual sentiment neural
+network for document sentiment analysis. Data Science and Engineering, 5:180–192, 2020.
+
+[42] M. Birjali, M. Kasri, and A. Beni-Hssane. A comprehensive survey on sentiment analysis:
+
+Approaches, challenges and trends. Knowledge-Based Systems, 226:107134, 2021.
+
+[43] U. D. Gandhi, P. Malarvizhi Kumar, G. Chandra Babu, and G. Karthick. Sentiment analysis
+on twitter data by using convolutional neural network (cnn) and long short term memory
+(lstm). Wireless Personal Communications, pages 1–10, 2021.
+
+[44] S. Rani and P. Kumar. Deep learning based sentiment analysis using convolution neural
+
+network. Arabian Journal for Science and Engineering, 44:3305–3314, 2019.
+
+[45] Y. Kim.
+
+Convolutional neural networks for sentence classiﬁcation.
+
+arXiv preprint
+
+arXiv:1408.5882, 2014.
+
+[46] Y. Yu, H. Lin, J. Meng, and Z. Zhao. Visual and textual sentiment analysis of a microblog
+
+using deep convolutional neural networks. Algorithms, 9(2):41, 2016.
+
+[47] H. Kim and Y. S. Jeong. Sentiment classiﬁcation using convolutional neural networks. Ap-
+
+plied Sciences, 9(11):2347, 2019.
+
+[48] Y. LeCun, Y. Bengio, and G. Hinton. Deep learning. Nature, 521(7553):436–444, 2015.
+
+[49] Mohammad Al-Smadi, Bashar Talafha, Mahmoud Al-Ayyoub, and Yaser Jararweh. Using
+long short-term memory deep neural networks for aspect-based sentiment analysis of arabic
+reviews. International Journal of Machine Learning and Cybernetics, 10:2163–2175, 2019.
+
+[50] X. Zhang, J. Zhao, and Y. LeCun. Character-level convolutional networks for text classiﬁca-
+
+tion. 28, 2015.
+
+[51] P. F. Muhammad, R. Kusumaningrum, and A. Wibowo. Sentiment analysis using word2vec
+In Procedia Computer
+
+and long short-term memory (lstm) for indonesian hotel reviews.
+Science, volume 179, pages 728–735, 2021.
+
+[52] Karmesh Yadav, Ram Ramrakhya, Santhosh Kumar Ramakrishnan, Theo Gervet, John
+Turner, Aaron Gokaslan, Noah Maestre, Angel Xuan Chang, Dhruv Batra, Manolis Savva,
+et al. Habitat-matterport 3d semantics dataset. In Proceedings of the IEEE/CVF Conference
+on Computer Vision and Pattern Recognition, pages 4927–4936, 2023.
+
+[53] F. Miedema and S. Bhulai. Sentiment analysis with long short-term memory networks. Vrije
+
+Universiteit Amsterdam, 1:1–17, 2018.
+
+[54] J. Shobana and M. Murali. An efﬁcient sentiment analysis methodology based on long short-
+
+term memory networks. Complex & Intelligent Systems, 7(5):2485–2501, 2021.
+
+[55] R. C. Staudemeyer and E. R. Morris. Understanding lstm–a tutorial into long short-term
+
+memory recurrent neural networks. arXiv preprint arXiv:1909.09586, 2019.
+
+[56] C. Olah. Understanding lstm networks, 2015.
+
+[57] H. Fei and F. Tan. Bidirectional grid long short-term memory (bigridlstm): A method to
+
+address context-sensitivity and vanishing gradient. Algorithms, 11(11):172, 2018.
+
+13
+
+[58] A. Hassan and A. Mahmood. Deep learning approach for sentiment analysis of short texts.
+In 2017 3rd international conference on control, automation and robotics (ICCAR), pages
+705–710. IEEE, 2017.
+
+[59] S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural computation, 9(8):1735–
+
+1780, 1997.
+
+[60] S. Alaparthi and M. Mishra. Bidirectional encoder representations from transformers (bert):
+
+A sentiment analysis odyssey. arXiv preprint arXiv:2007.01127, 2020.
+
+[61] M. D. Deepa. Bidirectional encoder representations from transformers (bert) language model
+for sentiment analysis task. Turkish Journal of Computer and Mathematics Education (TUR-
+COMAT), 12(7):1708–1721, 2021.
+
+[62] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+
+training of deep bidirectional transformers for language understanding.
+arXiv:1810.04805, 2018.
+
+Bert: Pre-
+arXiv preprint
+
+[63] Chi Sun, Luyao Huang, and Xipeng Qiu. Utilizing bert for aspect-based sentiment analysis
+
+via constructing auxiliary sentence. arXiv preprint arXiv:1903.09588, 2019.
+
+[64] N. Zainuddin and A. Selamat. Sentiment analysis using support vector machine. In 2014
+international conference on computer, communications, and control technology (I4CT), pages
+333–337. IEEE, 2014.
+
+[65] G. Patil, V. Galande, V. Kekan, and K. Dange. Sentiment analysis using support vector
+International Journal of Innovative Research in Computer and Communication
+
+machine.
+Engineering, 2(1):2607–2612, 2014.
+
+[66] A. Gupta, P. Tyagi, T. Choudhury, and M. Shamoon. Sentiment analysis using support vec-
+tor machine. In 2019 International conference on contemporary computing and informatics
+(IC3I), pages 49–53. IEEE, 2019.
+
+[67] T. Mullen and N. Collier. Sentiment analysis using support vector machines with diverse
+information sources. In Proceedings of the 2004 conference on empirical methods in natural
+language processing, pages 412–418, 2004.
+
+[68] B. Pang, L. Lee, and S. Vaithyanathan. Thumbs up? sentiment classiﬁcation using machine
+learning techniques. In Proceedings of the ACL-02 conference on Empirical methods in nat-
+ural language processing, pages 79–86, 2002.
+
+[69] K. X. Han, W. Chien, C. C. Chiu, and Y. T. Cheng. Application of support vector machine
+(svm) in the sentiment analysis of twitter dataset. Applied Sciences, 10(3):1125, 2020.
+
+[70] A. L. Maas, R. E. Daly, P. T. Pham, D. Huang, A. Y. Ng, and C. Potts. Learning word vectors
+In Proceedings of the 49th annual meeting of the association for
+
+for sentiment analysis.
+computational linguistics: Human language technologies, volume 1, pages 142–150, 2011.
+
+[71] S. Nießen, F. J. Och, G. Leusch, and H. Ney. An evaluation tool for machine translation: Fast
+
+evaluation for mt research. In LREC, May 2000.
+
+[72] D. Kenny. Machine translation, pages 428–445. Routledge, 2018.
+
+[73] I. Sutskever, O. Vinyals, and Q. V. Le. Sequence to sequence learning with neural networks.
+
+pages 3104–3112, 2014.
+
+[74] M. Hearne and A. Way. Statistical machine translation: a guide for linguists and translators.
+
+Language and Linguistics Compass, 5(5):205–226, 2011.
+
+[75] A. Lopez. Statistical machine translation. ACM Computing Surveys (CSUR), 40(3):1–49,
+
+2008.
+
+[76] P. F. Brown, V. J. D. Pietra, S. A. D. Pietra, and R. L. Mercer. The mathematics of statistical
+machine translation: Parameter estimation. Computational Linguistics, 19(2):263–311, 1993.
+
+[77] S. K. Mahata, D. Das, and S. Bandyopadhyay. Mtil2017: Machine translation using recurrent
+neural network on statistical machine translation. Journal of Intelligent Systems, 28(3):447–
+453, 2019.
+
+[78] S. Doherty, D. Kenny, and A. Way. Taking statistical machine translation to the student
+
+translator. 2012.
+
+14
+
+[79] V. Bakarola and J. Nasriwala. Attention based sequence to sequence learning for machine
+translation of low resourced indic languages–a case of sanskrit to hindi. arXiv preprint
+arXiv:2110.00435, 2021.
+
+[80] D. Bahdanau, K. Cho, and Y. Bengio. Neural machine translation by jointly learning to align
+and translate. In Proceedings of the International Conference on Learning Representations
+(ICLR), 2015.
+
+[81] Y. T. Phua, S. Navaratnam, C. M. Kang, and W. S. Che. Sequence-to-sequence neural machine
+translation for english-malay. IAES International Journal of Artiﬁcial Intelligence, 11(2):658,
+2022.
+
+[82] K. Han, A. Xiao, E. Wu, J. Guo, C. Xu, and Y. Wang. Transformer in transformer. Advances
+
+in Neural Information Processing Systems, 34:15908–15919, 2021.
+
+[83] Q. T. Do, S. Sakti, and S. Nakamura.
+
+Sequence-to-sequence models for emphasis
+speech translation. IEEE/ACM Transactions on Audio, Speech, and Language Processing,
+26(10):1873–1883, 2018.
+
+[84] Z. Huang, X. Shi, C. Zhang, Q. Wang, K. C. Cheung, H. Qin, et al. Flowformer: A trans-
+In European Conference on Computer Vision, pages
+
+former architecture for optical ﬂow.
+668–685. Springer Nature Switzerland, 2022.
+
+[85] Lynette Hirschman and Robert Gaizauskas. Natural language question answering: the view
+
+from here. natural language engineering, 7(4):275–300, 2001.
+
+[86] Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ ques-
+
+tions for machine comprehension of text. arXiv preprint arXiv:1606.05250, 2016.
+
+[87] J. Bao, N. Duan, M. Zhou, and T. Zhao. An information retrieval-based approach to table-
+based question answering. In Natural Language Processing and Chinese Computing: 6th
+CCF International Conference, NLPCC 2017, pages 601–611. Springer International Pub-
+lishing, 2018.
+
+[88] A. Sagrado Sala. Master dissertation: Information retrieval for question answering based on
+
+distributed representations. Master’s thesis, 2022.
+
+[89] A. M. N. Allam and M. H. Haggag. The question answering systems: A survey. International
+
+Journal of Research and Reviews in Information Sciences (IJRRIS), 2(3), 2012.
+
+[90] B. Ojokoh and E. Adebisi. A review of question answering systems. Journal of Web Engi-
+
+neering, 17(8):717–758, 2018.
+
+[91] D. Bahdanau, K. Cho, and Y. Bengio. Neural machine translation by jointly learning to align
+
+and translate. arXiv preprint arXiv:1409.0473, 2014.
+
+[92] Y. P. Nie, Y. Han, J. M. Huang, B. Jiao, and A. P. Li. Attention-based encoder-decoder model
+for answer selection in question answering. Frontiers of Information Technology & Electronic
+Engineering, 18(4):535–544, 2017.
+
+[93] B. Afrae, B. A. Mohamed, and A. A. Boudhir. A question answering system with a sequence
+to sequence grammatical correction. In Proceedings of the 3rd International Conference on
+Networking, Information Systems & Security, pages 1–6, 2020.
+
+[94] Y. Liu, X. Zhang, F. Huang, X. Tang, and Z. Li. Visual question answering via attention-based
+
+syntactic structure tree-lstm. Applied Soft Computing, 82:105584, 2019.
+
+[95] David Nadeau and Satoshi Sekine. A survey of named entity recognition and classiﬁcation.
+
+Lingvisticae Investigationes, 30(1):3–26, 2007.
+
+[96] Ralph Grishman and Beth M Sundheim. Message understanding conference-6: A brief his-
+In COLING 1996 Volume 1: The 16th International Conference on Computational
+
+tory.
+Linguistics, 1996.
+
+[97] J. Lafferty, A. McCallum, and F. C. Pereira. Conditional random ﬁelds: Probabilistic models
+for segmenting and labeling sequence data. In Proceedings of the 18th International Confer-
+ence on Machine Learning, pages 282–289, 2001.
+
+[98] B. Mohit. Named entity recognition. In Natural language processing of semitic languages,
+
+pages 221–245. Springer Berlin Heidelberg, 2014.
+
+15
+
+[99] P. Sun, X. Yang, X. Zhao, and Z. Wang. An overview of named entity recognition.
+
+In
+2018 International Conference on Asian Language Processing (IALP), pages 273–278. IEEE,
+2018.
+
+[100] J. Li, A. Sun, J. Han, and C. Li. A survey on deep learning for named entity recognition.
+
+IEEE Transactions on Knowledge and Data Engineering, 34(1):50–70, 2020.
+
+[101] N. Patil, A. Patil, and B. V. Pawar. Named entity recognition using conditional random ﬁelds.
+
+Procedia Computer Science, 167:1181–1188, 2020.
+
+[102] S. Song, N. Zhang, and H. Huang. Named entity recognition based on conditional random
+
+ﬁelds. Cluster Computing, 22:5195–5206, 2019.
+
+[103] W. Khan, A. Daud, K. Shahzad, T. Amjad, A. Banjar, and H. Fasihuddin. Named entity
+
+recognition using conditional random ﬁelds. Applied Sciences, 12(13):6391, 2022.
+
+[104] Xiaoran Yang and Wenkang Huang. A conditional random ﬁelds approach to clinical name
+
+entity recognition. In CCKS tasks, pages 1–6, 2018.
+
+[105] Z. Huang, W. Xu, and K. Yu. Bidirectional lstm-crf models for sequence tagging. arXiv
+
+preprint arXiv:1508.01991, 2015.
+
+[106] Z. Dai, X. Wang, P. Ni, Y. Li, G. Li, and X. Bai. Named entity recognition using bert bilstm
+crf for chinese electronic health records. In 2019 12th International Congress on Image and
+Signal Processing, Biomedical Engineering and Informatics (CISP-BMEI), pages 1–5. IEEE,
+2019.
+
+[107] Rongen Yan, Xue Jiang, and Depeng Dang. Named entity recognition by using xlnet-bilstm-
+
+crf. Neural Processing Letters, 53(5):3339–3356, 2021.
+
+[108] Z. Chenhao and W. Chengyao. Named entity recognition in steel ﬁeld based on bilstm-crf
+model. In Journal of Physics: Conference Series, volume 1314, page 012217. IOP Publishing,
+2019.
+
+[109] X. Ma and E. Hovy. End-to-end sequence labeling via bi-directional lstm-cnns-crf. In Pro-
+ceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Vol-
+ume 1: Long Papers), pages 1064–1074, 2016.
+
+[110] P. Evangelatos, C. Iliou, T. Mavropoulos, K. Apostolou, T. Tsikrika, S. Vrochidis, and I. Kom-
+patsiaris. Named entity recognition in cyber threat intelligence using transformer-based mod-
+els. In 2021 IEEE International Conference on Cyber Security and Resilience (CSR), pages
+348–353. IEEE, 2021.
+
+[111] A. C. Rouhou, M. Dhiaf, Y. Kessentini, and S. B. Salem. Transformer-based approach for
+joint handwriting and named entity recognition in historical document. Pattern Recognition
+Letters, 155:128–134, 2022.
+
+[112] C. Berragan, A. Singleton, A. Calaﬁore, and J. Morley. Transformer based named entity
+recognition for place name extraction from unstructured text. International Journal of Geo-
+graphical Information Science, 37(4):747–766, 2023.
+
+[113] C. Chelba and F. Jelinek. Structured language modeling. Computer Speech & Language,
+
+14(4):283–332, 2000.
+
+[114] X. Liu and W. B. Croft. Statistical language modeling for information retrieval. Annu. Rev.
+
+Inf. Sci. Technol., 39(1):1–31, 2005.
+
+[115] W. De Mulder, S. Bethard, and M. F. Moens. A survey on the application of recurrent neu-
+ral networks to statistical language modeling. Computer Speech & Language, 30(1):61–98,
+2015.
+
+[116] Rafal Jozefowicz, Wojciech Zaremba, and Ilya Sutskever. An empirical exploration of recur-
+rent network architectures. In International conference on machine learning, pages 2342–
+2350. PMLR, 2015.
+
+[117] A. M. Grachev, D. I. Ignatov, and A. V. Savchenko. Compression of recurrent neural networks
+
+for efﬁcient language modeling. Applied Soft Computing, 79:354–362, 2019.
+
+[118] J. Chung, C. Gulcehre, K. Cho, and Y. Bengio. Empirical evaluation of gated recurrent neural
+
+networks on sequence modeling. arXiv preprint arXiv:1412.3555, 2014.
+
+[119] K. Cho et al. Learning phrase representations using rnn encoder-decoder for statistical ma-
+
+chine translation. arXiv preprint arXiv:1406.1078, 2014.
+
+16
+
+[120] Y. Hussain, Z. Huang, Y. Zhou, and S. Wang. Codegru: Context-aware deep learning
+with gated recurrent unit for source code modeling. Information and Software Technology,
+125:106309, 2020.
+
+[121] S. Kanai, Y. Fujiwara, and S. Iwamura. Preventing gradient explosions in gated recurrent
+
+units. Advances in neural information processing systems, 30, 2017.
+
+[122] T. Khai Tran and T. Thi Phan. Deep learning application to ensemble learning—the simple,
+but effective, approach to sentiment classifying. Applied Sciences, 9(13):2760, 2019.
+[123] B. Mueller, T. Kinoshita, A. Peebles, M. A. Graber, and S. Lee. Artiﬁcial intelligence and
+machine learning in emergency medicine: a narrative review. Acute medicine & surgery,
+9(1):e740, 2022.
+
+[124] R. Caruana, Y. Lou, J. Gehrke, P. Koch, M. Sturm, and N. Elhadad. Intelligible models for
+healthcare: Predicting pneumonia risk and hospital 30-day readmission. In Proceedings of
+the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining,
+2015.
+
+[125] L. K. Hansen and P. Salamon. Neural network ensembles.
+
+IEEE transactions on pattern
+
+analysis and machine intelligence, 12(10):993–1001, 1990.
+
+[126] N. V. Chawla, K. W. Bowyer, L. O. Hall, and W. P. Kegelmeyer. Smote: synthetic minority
+over-sampling technique. Journal of artiﬁcial intelligence research, 16:321–357, 2002.
+
+[127] A. Gupta and A. Singhal. Scaling and performance of the apache solr search engine.
+
+In
+
+Proceedings of the 16th international conference on World Wide Web, 2011.
+
+[128] C. Rudin. Stop explaining black box machine learning models for high stakes decisions and
+use interpretable models instead. Nature Machine Intelligence, 1(5):206–215, 2019.
+
+17
+
+

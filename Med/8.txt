@@ -1,0 +1,1831 @@
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+NIH Public Access
+Author Manuscript
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+Published in final edited form as:
+
+Hosp Rec Study. 1988 June ; 10(6): 62–79.
+
+WHICH LIVER-DESEASE PATIENTS NEED A TRANSPLANT?:
+
+Organ replacement has come into its own as a treatment for end-stage liver disease. A
+
+team of experts from two leading transplant centers reviews current indications, survival
+
+rates, and methods of evaluating candidates for operation
+
+Leonard Makowka, MD, PhD, Linda Sher, MD, Delawir Kahn, MD, Thomas E. Starzl, MD,
+PhD, A.G. Tzakis, MD, S. Todo, MD, J.W. Marsh, MD, A. Stieber, MD, B. Koneru, MD, G.B.G.
+Klintmalm, MD, PhD, S.M. Staschak, RN, S. Iwatsuki, MD, R.D. Gordon, MD, and D. Van
+Thiel, MD
+Department of surgery, University Health Center of Pittsburgh, University of Pittsburgh; the
+Veterans Administration Medical Center, Pittsburgh; and Baylor University Medical Center, Dallas
+
+Liver transplantation is now the treatment of choice for many patients with end-stage liver
+disease.1–3 Since the introduction of the immunosuppressive agent cyclosporine in 1978,4
+organ replacement has gained acceptance as the only intervention that can cure this
+relentless, chronic process and offer the chance of complete rehabilitation.
+
+One-year survival rates of 70% or better have been reported for many groups of patients.5,6
+The majority can look forward to long, productive lives. The operation now can be
+recommended to persons formerly thought to be at prohibitively high risk because of their
+particular disease, prior abdominal surgery, extreme youth, or advanced age. The youngest
+and oldest recipients of successful transplants at our institutions were 3½ weeks and 76
+years old.
+
+Refinements in surgical technique have contributed to these improved results, particularly
+the introduction of the venovenous bypass,7 improvements in biliary tract reconstruction,8
+and the development of methods for multiple organ procurement.9–11 For a description of
+how the operations on donor and recipient are done, see “Current surgical technique,” page
+78.
+
+PATIENT EVALUATION
+
+Even though most patients are referred to a transplant center with an established diagnosis,
+each person is thoroughly evaluated to assess suitability and fitness for operation. We take a
+careful history, paying special attention to alcohol and drug abuse, blood-product
+transfusions, concomitant illnesses, previous operations, medications, and exposure to
+toxins. During the physical examination, we look for xanthomas and Kayser-Fleischer rings,
+which are associated with primary biliary cirrhosis and Wilson’s disease, respectively.
+
+Mental status is assessed. We grade encephalopathy, according to its severity (Table 1), and
+try to identify precipitating causes, such as dehydration, infection, or gastrointestinal (GI)
+bleeding. More severe cases are managed in the intensive care unit; endotracheal intubation
+is sometimes necessary to prevent aspiration. Patients with encephalopathy are given
+neomycin and lactulose.
+
+Routine blood tests include CBC, full coagulation profile, liver-function tests, measures of
+serum electrolytes and glucose, and renal-function tests. Abnormalities in the coagulation
+profile should be corrected before any invasive procedures are done. Renal-function
+abnormalities are investigated, in order to distinguish among the hepatorenal syndrome,
+
+ 
+ 
+ 
+ 
+ 
+ 
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Makowka et al.
+
+Page 2
+
+simple dehydration (due to chronic diuretic therapy and ascites), and intrinsic renal disease.
+Morbidity and mortality are increased in patients who develop renal failure during the
+posttransplant period. Patients who have end-stage liver disease and irreversible renal failure
+can be managed successfully with combined liver-kidney transplantation.12
+
+We have found the indocyanine clearance study useful in assessing residual liver function
+and in determining the urgency of a patient’s need for a transplant. After an initial loading
+dose of 0.5 mg/kg, indocyanine retention is measured at five-minute intervals. A retention of
+5% or greater at 20 minutes constitutes evidence of liver disease; values greater than 30% or
+50% indicate significant or very severe liver disease, respectively.
+
+Upper-GI endoscopy is performed to detect esophageal varices. Persons who have a history
+of variceal bleeding or have severe varices at endoscopy are treated with injection
+sclerotherapy. Colonoscopy may be performed to detect other pathologic conditions, such as
+inflammatory bowel disease (IBD) or neoplasia in patients with primary sclerosing
+cholangitis.
+
+Ultrasound and Doppler studies determine the patency of the portal vein, hepatic artery,
+hepatic veins, and vena cava. Angiography is reserved for patients whose portal veins cannot
+be visualized by noninvasive means and for those with previous portosystemic venous
+shunts; it is important to assess the status of both the shunt and the portal vein.
+
+A thrombosed portal vein (Figure 1), once an absolute contraindication to liver
+transplantation, is now only a relative contraindication. It is often possible either to perform
+a thrombectomy on the recipient portal vein, to anastomose the donor portal vein, or to
+interpose a graft of donor iliac vein at the confluence of the recipient mesenteric and splenic
+veins.13
+
+The transplant center’s social service department evaluates all candidates. Psychiatric
+assessment and treatment are sometimes sought for patients with psychosocial problems.
+The most frequent reasons for referral are substance abuse and compliance problems.
+
+Once we have determined that a patient needs a liver transplant, we evaluate pulmonary,
+cardiac, and renal status in order to gauge surgical risk and to prepare for the operation. We
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Makowka et al.
+
+Page 3
+
+also consider other risk factors—previous abdominal or portosystemic shunt surgery, active
+infection, and advanced age. Although risk does increase with age, transplantation can
+succeed with carefully selected patients aged 70 or more.14 The oldest patient in our series, a
+76-year-old woman with primary biliary cirrhosis, is doing extremely well more than 18
+months after operation.
+
+The absolute contraindications to liver transplantation are malignant disease outside the
+liver, a patient’s inability to accept or understand the procedure, symptomatic acquired
+immunodeficiency syndrome, and other systemic diseases or debilitating complications that
+transplantation cannot reverse. Indications for early hepatic transplantation include major GI
+bleeding, repeated bouts of encephalopathy, progressive neuropathy, refractory ascites, a
+recent precipitous deterioration in liver function, rapid progression of bone disease, and
+severe wasting.
+
+The patient’s weight, height, ABO blood group, and liver volume as assessed by ultrasound
+or computed tomography (CT) (Figure 2) aid in donor-recipient matching.15 The ultrasound
+study and CT are also useful means of detecting hepatic tumors and excluding extrahepatic
+extension.
+
+The results of the evaluation are discussed at a weekly conference attended by the transplant
+surgeons, hepatologists, nurse coordinators, social workers, anesthesiologists, radiologists,
+pathologists, critical-care physicians, psychiatrists, and sometimes other specialists. At this
+meeting, we assess the urgency of the patient’s need for a transplant, on the basis of clinical
+findings and performance status, as described in Table 2.
+
+While awaiting a donor, patients who can be managed at home return to the care of their
+private physicians, maintaining close communication with the clinic through an assigned
+nurse coordinator. Others find local accommodations and visit the clinic once or twice a
+week. Persons in urgent need of transplantation remain in the hospital until a donor becomes
+available, to ensure that they are in the best possible condition at the time of operation.
+
+INDICATIONS FOR TRANSPLANTATION
+
+Between March 1980, when cyclosporine-corticosteroid therapy was introduced, and July
+1987, 666 adults and 334 children underwent liver transplantation at programs in Denver
+and Pittsburgh, and at Baylor University Medical Center in Dallas. In adults, the most
+common indications for transplantation were postnecrotic cirrhosis, primary biliary
+cirrhosis, and sclerosing cholangitis; in children, they were biliary atresia, inborn errors of
+metabolism, and cirrhosis (Figure 3). The one- and five-year actuarial survival rates for
+these 1,000 patients were 71.2% and 62.6%, respectively.16 Actuarial survival rates by
+reason for operation appear in Figure 4.
+
+Postnecrotic cirrhosis
+
+Most patients with cirrhosis, the most common indication for liver transplantation, have
+chronic active hepatitis. Some have cryptogenic cirrhosis, and an increasing number have
+Laënnec’s cirrhosis.
+
+After transplantation, disease often recurs in persons whose earlier serologic tests were
+positive for hepatitis B surface antigen (HBsAg). Some patients have undergone
+retransplantation after recurrence, but the risk of a second recurrence is high. We are
+currently evaluating whether α-interferon, administered during the perioperative period to
+HBsAg-positive patients and the donor livers, will reduce the recurrence rate.
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Makowka et al.
+
+Page 4
+
+Because of general ill-health, patients with Laënnec’s cirrhosis are a high-risk group, and
+alcoholic recidivism is a concern. However, transplantation should be offered to carefully
+selected patients who have this condition. Experience with our first 41 such individuals
+suggests that their chances of survival and rehabilitation are as good as those of patients who
+have nonalcoholic cirrhosis.16
+
+Primary biliary cirrhosis
+
+An uncommon disease that most often affects middle-aged women, primary biliary cirrhosis
+is the second leading indication for transplantation in adults. It is characterized by jaundice,
+pruritus, hepatomegaly, easy fatigability, and bone disease of varying severity. Although its
+cause is unknown, it is believed to be an autoimmune disease; antimitochondrial antibodies
+are found in over 90% of patients. Thyroiditis, lupus erythematosus, scleroderma, renal
+tubular acidosis, and rheumatoid arthritis are likely concomitant illnesses.
+
+Asymptomatic patients have an excellent life expectancy, and many never develop clinically
+significant organ damage.17 For those who do, medical therapy—D-penicillamine,
+chlorambucil, colchicine, corticosteroids, azathioprine, or cyclosporine—has been
+advocated, but there is little evidence that these agents are effective.18 Recent trials with D-
+penicillamine failed to demonstrate a significant benefit.19–21 Once the disease has
+progressed to an advanced stage, with jaundice and ascites, liver transplantation is the
+treatment of choice. Since advanced age, a debilitated state, and disabling bone disease can
+complicate postoperative recovery, referral for transplantation should not be delayed.
+
+Sclerosing cholangitis
+
+Most common in young men, sclerosing cholangitis frequently occurs in association with
+other disorders, especially IBD. The incidence of coexisting cholangiocarcinoma has been
+reported to be about 10%.22 Clinical findings suggesting such a carcinoma include an
+exceedingly high bilirubin, recent deterioration in liver function, a long history of sclerosing
+cholangitis, and an elevated level of carcinoembryonic antigen. However, as these findings
+may be absent, everyone with sclerosing cholangitis should undergo cholangiography and
+brush biopsy of suspicious lesions.
+
+The results of transplantation in patients with cholangiocarcinoma have been poor; these
+individuals should be referred for radiotherapy. We are presently considering preoperative
+radiotherapy for patients with small, early bile duct cancers, to determine whether such
+treatment reduces the incidence of tumor recurrence.
+
+Sclerosing cholangitis is an incurable disease. Previous attempts at surgical biliary diversion
+and hilar reconstruction usually complicate transplantation. Such operations should be
+avoided except in highly selected patients with well-defined, localized extrahepatic lesions.
+Operation for associated IBD is best deferred until three to six months after liver
+transplantation.
+
+Liver tumors
+
+Transplantation should be considered for patients with advanced hepatic malignancy and
+those who have benign tumors that cannot be removed by conventional subtotal resections.
+Types of tumors for which patients have undergone liver transplantation include
+hepatocellular carcinoma, cholangiocarcinoma, hemangioendothelioma, neuroendocrine
+tumors, and multiple adenoma. One patient whose liver had been almost entirely replaced by
+lymphangioma received a transplant.23
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Makowka et al.
+
+Page 5
+
+Most patients with tumors are excellent candidates for operation, since portal hypertension
+and its complications are usually not present. Early survival after transplantation has been
+good, but long-term survival has been poor because tumors may recur fairly soon after
+transplantation.
+
+Patients with a hepatic malignancy must be examined thoroughly to determine that the
+tumor does not extend beyond the confines of the liver. Often, the final decision must be
+made at surgery. If a suitable donor becomes available, the surgeon does an exploratory
+operation, proceeding to transplantation only if there is no evidence of extrahepatic tumor
+spread.
+
+In general, the survival rate after transplantation for hepatocellular carcinoma has been poor;
+however, there are exceptions. Patients who receive transplantation for end-stage liver
+disease and are found to have an incidental primary hepatic tumor have the same survival
+rate as do others with the same original disease, and their tumors have not recurred.
+
+The fibrolamellar variant of hepatocellular carcinoma tends to occur in younger patients and
+is less aggressive than other malignant lesions. Although tumor generally recurs, palliation
+for two or more years can be achieved in many patients. Even after recurrence, the quality of
+life may be good for a prolonged period, which is not the case when other malignancies
+recur. Liver transplantation for hemangioendothelioma offers similarly favorable results.24
+
+Conventional adjuvant chemotherapy and radiotherapy have been used in combination with
+liver transplantation in an effort to improve survival, but additional follow-up is needed to
+evaluate their success. Furthermore, immunosuppressive agents given during the
+posttransplant period may accelerate the growth of extrahepatic nests of malignant cells that
+were not detected at the time of transplantation. Improved results may have to await the
+advent of more selective methods of immunosuppression.
+
+Biliary atresia
+
+Nearly all infants and children who receive transplantation for biliary atresia have had a
+previous operation, usually a portoenterostomy (Kasai procedure). Prior operation in the
+right upper quadrant, particularly in the hepatic hilum, makes transplantation much more
+difficult and increases postoperative morbidity. Although a well-timed and properly
+performed portoenterostomy can be useful, we advise restraint rather than liberal use of this
+procedure, especially in patients with established cirrhosis. Replacement of the liver is the
+treatment of choice for biliary atresia, although the limited availability of very small
+pediatric donors continues to be a major problem.
+
+Inborn errors of metabolism
+
+Most patients with inborn errors of metabolism are in good health otherwise, and few have
+had previous upper-abdominal surgery. Thus, they are good candidates for transplantation.
+The one-year survival rate is excellent, and no deaths have occurred beyond that point.
+
+α-1-Antitrypsin deficiency and Wilson’s disease are two metabolic diseases that
+transplantation can cure. The former causes a progressive macronodular cirrhosis and
+obstructive pulmonary disease; the latter is associated with reduced copper excretion,
+decreased serum ceruloplasmin, and excessive deposition of copper in the liver and brain.
+Hereditary tyrosinemia, which causes progressive cirrhosis and increases the risk of
+hepatocellular cancer, is another indication for operation. Transplantation has also been
+performed in patients with glycogen storage disease, hemochromatosis, and familial
+hypercholesterolemia.
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Makowka et al.
+
+Budd-Chiari syndrome
+
+Page 6
+
+Some patients given transplants because of Budd-Chiari syndrome require extensive
+thrombectomy of the portal vein and vena cava, and all of them must be maintained on
+permanent anticoagulation after operation. If anticoagulation is interrupted even briefly,
+thrombosis, possibly fatal, may recur.
+
+CURRENT SURGICAL TECHNIQUE
+Operation to remove the liver from a donor is performed through a complete midline
+incision from the suprasternal notch to the pubis. For the transplant recipient, a bilateral
+subcostal incision with a superior midline T extension is almost always used. It should
+not be necessary to enter the chest.
+
+Standard approach to donor
+
+The standard technique is first to divide the falciform, left triangular, and gastrohepatic
+ligaments9 and then to ligate and divide the branches of the celiac trunk, including the
+right gastric, gastroduodenal, splenic, and left gastric arteries. The common bile duct is
+divided and the gallbladder flushed out. The portal vein is skeletonized and the splenic
+vein cannulated. The supraceliac aorta is encircled for later cross-clamping. Next, the
+distal aorta is ligated and cannulated. The superior mesenteric artery is ligated and
+divided, the aorta cross-clamped, and ice-cold Ringer’s solution rapidly infused through
+the splenic (portal) vein and the aorta. Infusion of preservation solution follows.
+
+Once the liver has become very cold, it is removed, along with a large cuff of diaphragm
+around the suprahepatic vena cava and over the bare area of the liver. The infrahepatic
+vena cava is divided just above the renal veins. The celiac trunk is removed, with a cuff
+of aorta. This technique is slightly modified when vascular anomalies are found.25,26
+
+New approach
+
+Recently, a method that entails virtually no preliminary dissection of the liver has been
+used.10,11 The inferior mesenteric vein and distal aorta are ligated and cannulated. The
+supraceliac aorta is cross-clamped, and the ice-cold infusion through the inferior
+mesenteric vein and aorta begun. When the liver is thoroughly cooled, working in a
+bloodless field without risk of inadvertent compromise of blood flow, the surgeon ligates
+and divides the hilar structures and removes the organ as described above.
+
+In both methods, the final dissection and preparation for anastomosis of the vena cava
+and the hilar structures is performed on the back table. These methods allow the safe
+removal of multiple organs (heart or heart-lung, kidney, liver, pancreas) in various
+combinations, while maintaining excellent function.
+
+Recipient operation
+
+Once the abdomen is entered, the structures of the hepatic hilum are skeletonized, and the
+hepatic artery and common bile duct are ligated and divided. A pump-driven venovenous
+bypass system without recipient heparinization is used almost routinely in adults and
+children over 30 pounds.7 Cannulae for the bypass are placed into the portal, femoral,
+and axillary veins. With the patient on bypass, the coronary and triangular ligaments are
+taken down and the vena cava is dissected to complete the hepatectomy.
+
+The venovenous bypass allows the surgeon sufficient time to close the raw surfaces
+created during the hepatectomy. It also converts a crisis environment during the
+anhepatic phase of the operation into one that is easily controlled, and it has reduced
+intraoperative bleeding, postrevascularization pulmonary edema and cardiac standstill,
+and postoperative renal and gastrointestinal dysfunction.
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Makowka et al.
+
+Page 7
+
+Vascular cuffs are fashioned and the upper and lower caval anastomoses performed.
+Alter portal anastomosis, the liver is reperfused. The bypass cannulae are removed and
+hemostasis secured. Revascularization of the liver is completed with the arterial
+anastomosis. If the recipient hepatic artery is inadequate, an iliac artery graft is
+interposed between the donor hepatic artery and the infrarenal aorta, through a tunnel
+created in an avascular plane behind the pancreas and duodenum. Finally, the biliary tract
+is restored, using either a duct-to-duct repair over a T-tube stent or a
+choledochojejunostomy to a jejunal Roux-en-Y limb.
+
+A LOOK AT THE FUTURE
+
+Future advances in immunology, organ procurement and preservation, and surgical
+technique can be expected to lead to additional improvements in survival and quality of life.
+Progress in organ preservation will make more livers available for transplantation by
+extending ischemia time and thus allowing harvesting at greater distances from the
+transplant center. The recent development of a lactobionate-hydroxyethyl starch-based
+preservation solution, by Belzer and associates at the University of Wisconsin, has already
+made it possible to preserve organs for significantly increased lengths of time.27 In over 100
+transplantations of donor livers preserved in this solution, we have found it to be superior to
+conventional preservation methods.
+
+Although cyclosporine-corticosteroid therapy deserves much of the credit for current high
+survival rates after transplantation, further improvements in immunosuppressive therapy are
+anticipated; the ultimate goal is donor-specific immunotherapy. The monoclonal antibody
+OKT3, produced by Ortho Pharmaceuticals as Orthoclone OKT3, has proved highly
+effective in reversing steroid-resistant rejections, but like other relatively nonspecific
+immunosuppressives, it is associated with a significant incidence of opportunistic
+infections.28 A recent symposium in Gothenburg, Sweden, introduced a new agent known as
+FK506, which has been tested extensively in animals with promising results.29
+
+References
+
+1. Starzl TE, Iwatsuki S, Van Thiel DH, et al. Evolution of liver transplantation. Hepatology. 1982;
+
+2:614–636. [PubMed: 6749635]
+
+2. National Institutes of Health Consensus Development Conference Statement. Liver Transplantation
+
+—June 20–23, 1983. Hepatology. 1984; 4:107S–110S. [PubMed: 6363254]
+
+3. Report of the task force on organ transplantation. Organ transplantation issues and
+
+recommendations. April 1986. U.S. Department of Health and Human Services, Health Resources
+and Services, HRP-090676.
+
+4. Calne RY, White DJ, Thiru S, et al. Cyclosporin A in patients receiving renal allografts from
+
+cadaver donors. Lancet. 1978; 2:1323–1327. [PubMed: 82836]
+
+5. Busuttil RW, Colonna JO 2d, Hiatt JR, et al. The first 100 liver transplants at UCLA. Ann Surg.
+
+1987; 206:387–402. [PubMed: 3310930]
+
+6. Gordon RD, Iwatsuki S, Esquivel CO, et al. Progress in liver transplantation. Adv Surg. 1987;
+
+21:49–64. [PubMed: 3120501]
+
+7. Shaw BW Jr, Martin DJ, Marquez JM, et al. Venous bypass in clinical liver transplantation. Ann
+
+Surg. 1984; 200:524–534. [PubMed: 6385876]
+
+8. Lerut J, Gordon RD, Iwatsuki S, et al. Biliary tract complications in human orthotopic liver
+
+transplantation. Transplantation. 1987; 43:47–51. [PubMed: 3541321]
+
+9. Starzl TE, Hakala TR, Shaw BW Jr, et al. A flexible procedure for multiple cadaveric organ
+
+procurement. Surg Gynecol Obstet. 1984; 158:223–230. [PubMed: 6367113]
+
+10. Starzl TE, Miller C, Broznick B, et al. An improved technique for multiple organ harvesting. Surg
+
+Gynecol Obstet. 1987; 65:343–348. [PubMed: 3310285]
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 8
+
+11. Miller C, Mazzaferro V, Makowka L, et al. Rapid flush technique for donor hepatectomy. Safety
+and efficacy of an improved method of liver recovery for transplantation. Transplant Proc. 1988;
+20(suppl 1):948–950. [PubMed: 3291331]
+
+12. Fung JJ, Makowka L, Griffin M, et al. Successful sequential liver-kidney transplantation in
+
+patients with preformed lymphocytotoxic antibodies. Clinical Transplantation. 1987; 1:187–194.
+13. Shaw BW Jr, Iwatsuki S, Bron K, et al. Portal vein grafts in hepatic transplantation. Surg Gynecol
+
+Obstet. 1985; 161:66–68. [PubMed: 3892734]
+
+14. Starzl TE, Todo S, Gordon RD, et al. Liver transplantation in older patients [letter]. New Engl J
+
+Med. 1987; 316:484–485. [PubMed: 3543681]
+
+15. Van Thiel DH, Hagler NG, Schade RR, et al. In vivo hepatic volume determination using
+
+sonography and computed tomography. Validation and a comparison of the two techniques.
+Gastroenterology. 1985; 88:1812–1817. [PubMed: 3888769]
+
+16. Iwatsuki S, Starzl TE, Todo S, et al. Experience in 1000 liver transplants under cyclosporine
+steroid therapy. A survival report. Transplant Proc. 1988; 20(suppl 1):498–504. [PubMed:
+3279643]
+
+17. James O, Macklon AF, Watson AJ. Primary biliary cirrhosis—a revised clinical spectrum. Lancet.
+
+1981; 1:1278–1281. [PubMed: 6112603]
+
+18. James SP, Hoofnagle JH, Strober W, et al. NIH conference. Primary biliary cirrhosis. A model
+autoimmune disease [clinical conference]. Ann Intern Med. 1983; 99:500–512. [PubMed:
+6226227]
+
+19. Bodenheimer HC Jr, Schaffner F, Sternlieb I, et al. A prospective clinical trial of D-penicillamine
+
+in the treatment of primary biliary cirrhosis. Hepatology. 1985; 5:1139–1142. [PubMed: 3905561]
+
+20. Dickson ER, Fleming TR, Wiesner RH, et al. Trial of penicillamine in advanced primary biliary
+
+cirrhosis. N Engl J Med. 1985; 312:1011–1015. [PubMed: 3885033]
+
+21. Neuberger J, Christensen E, Portmann B, et al. Double blind controlled trial of d-penicillamine in
+
+patients with primary biliary cirrhosis. Gut. 1985; 26:114–119. [PubMed: 3881323]
+
+22. Wiesner RH, LaRusso NF. Clinicopathologic features of the syndrome of primary sclerosing
+
+cholangitis. Gastroenterology. 1980; 79:200–206. [PubMed: 7399227]
+
+23. Miller C, Mazzaferro V, Makowka L, et al. Orthotopic liver transplantation for massive hepatic
+
+lymphangiomatosis. Surgery. 1988; 103:490–495. [PubMed: 3281302]
+
+24. Iwatsuki S, Gordon RD, Shaw BW Jr, et al. Role of liver transplantation in cancer therapy. Ann
+
+Surg. 1985; 202:401–407. [PubMed: 2996449]
+
+25. Shaw BW Jr, Iwatsuki S, Starzl TE. Alternative methods of arterialization of the hepatic graft.
+
+Surg Gynecol Obstet. 1984; 159:490–493. [PubMed: 6387980]
+
+26. Gordon RD, Shaw BW Jr, Iwatsuki S, et al. A simplified technique for revascularization of
+homografts of the liver with a variant transplantation of a hepatic artery from the superior
+mesenteric artery. Surg Gynecol Obstet. 1985; 160:474–476. [PubMed: 3887623]
+
+27. Jamieson NV, Sundberg R, Liddell S, et al. Successful 24–30–hour preservation of the canine
+liver. A preliminary report. Transplant Proc. 1988; 20(suppl 1):945–947. [PubMed: 3291330]
+28. Fung JJ, Demetris AJ, Porter KA, et al. Use of OKT3 with cyclosporin and steroids for reversal of
+acute kidney and liver allograft rejection. Nephron. 1987; 1(suppl):19–33. [PubMed: 3306422]
+29. Starzl, TE.; Makowka, L.; Todo, S., editors. Transplant Proc. Vol. 19. 1987. Symposium: FK506—
+
+a potential breakthrough in immunosuppression; p. 3-104.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 9
+
+FIGURE 1.
+When a transplant candidate’s portal vein cannot be visualized on ultrasound or Doppler
+examination, angiography is performed. At left, the venous phase of a splenic arteriogram
+demonstrates confluence of the inferior mesenteric vein and the splenic vein with absence of
+the portal vein (arrow). At right, the venous phase of a superior mesenteric arteriogram in
+the same patient demonstrates absence of the superior mesenteric vein (arrow). Such
+abnormalities can often be repaired by thrombectomy, anastomosis, or a graft at the time of
+operation.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 10
+
+FIGURE 2.
+Computed tomography determines liver volume in a transplant recipient, as part of the
+donor-recipient matching process.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 11
+
+FIGURE 3.
+Between March 1980 and July 1987, 666 adults and 334 children underwent liver
+transplantation at programs in Denver, Pittsburgh, and Dallas. Among adults (left), cirrhosis
+was the most common reason for transplantation; among children (right), biliary atresia.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 12
+
+FIGURE 4.
+Since 1980, one- and five-year survival rates after transplantation have risen to 71.2% and
+62.6%, respectively. Patients with HBsAg-negative cirrhosis, primary biliary cirrhosis,
+biliary atresia, and inborn errors of metabolism have the best prognosis. Five-year rates for
+patients with sclerosing cholangitis are not yet available, as the longest-surviving patients
+received new livers four years ago. There have been no five-year survivors after
+transplantation for nonfibrolamellar hepatoma.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 13
+
+GRADING HEPATIC ENCEPHALOPATHY
+
+TABLE 1
+
+Stage I
+
+Agitation
+
+Mild confusion
+
+Tremors
+
+Stage II
+
+Disorientation
+
+Lethargy
+
+Asterixis
+
+Stage III
+
+Delirium
+
+Somnolence
+
+Seizures
+
+Muscle twitching
+
+Hyperactive reflexes
+
+Stage IVA
+
+Coma with response to noxious stimuli
+
+Stage IVB
+
+Coma with no response to noxious stimuli
+
+Source: Adapted from Schitt L. Schitt ER (eds); Diseases of the Liver. ed 5. Philadelphia. JB Lippincott Co. 1982, p 449.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+Makowka et al.
+
+Page 14
+
+CLASSIFYING PERFORMANCE IN PATIENTS WITH LIVER DISEASE
+
+TABLE 2
+
+Performance level Adult
+
+Child
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+Working
+
+Working or full-time student; normal growth
+
+Partially disabled; capable of self-care
+
+At home most of the time; mild to moderate growth retardation
+
+Homebound with attendant; unable to work Homebound; requires professional care; unable to attend school; moderate
+to severe growth retardation
+
+Hospitalized
+
+Hospitalized
+
+Needs intensive care
+
+Needs intensive care
+
+On life support
+
+On life support
+
+Source: Adapted from Starzl TE, Gordon RD, Tzakis AG, et al: Equitable allocation of extrarenal organs. With special reference to the liver.
+Transplant Proc 1988; 20: 131–138.
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+I
+
+-
+
+N
+H
+P
+A
+A
+u
+t
+h
+o
+r
+
+M
+a
+n
+u
+s
+c
+r
+i
+p
+t
+
+Hosp Rec Study. Author manuscript; available in PMC 2011 May 10.
+
+ 
+ 
+ 
+ 
+ 
+ 
+

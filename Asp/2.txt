@@ -1,0 +1,4149 @@
+EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Annual Review of Earth and Planetary Sciences
+The Role of Giant Impacts in
+Planet Formation
+
+Travis S.J. Gabriel1,(cid:3) and Saverio Cambioni2,(cid:3)
+1Astrogeology Science Center, U.S. Geological Survey, Flagstaff, AZ, USA;
+email: tgabriel@usgs.gov
+2Department of Earth, Atmospheric and Planetary Sciences, Massachusetts Institute of
+Technology, Cambridge, MA, USA; email: cambioni@mit.edu
+
+Annu. Rev. Earth Planet. Sci. 2023. 51:671–95
+
+Keywords
+
+The Annual Review of Earth and Planetary Sciences is
+online at earth.annualreviews.org
+
+https://doi.org/10.1146/annurev-earth-031621-
+055545
+
+This work is licensed under a Creative Commons
+Attribution 4.0 International License, which permits
+unrestricted use, distribution, and reproduction in
+any medium, provided the original author and
+source are credited. See credit lines of images or
+other third-party material in this article for license
+information.
+
+(cid:3)The authors contributed equally to this review, and
+their order was determined by coin flip
+
+collisions, giant impacts, planet formation
+
+Abstract
+
+Planets are expected to conclude their growth through a series of giant im-
+pacts: energetic, global events that significantly alter planetary composition
+and evolution. Computer models and theory have elucidated the diverse
+outcomes of giant impacts in detail, improving our ability to interpret colli-
+sion conditions from observations of their remnants. However, many open
+questions remain, as even the formation of the Moon—a widely suspected
+giant-impact product for which we have the most information—is still de-
+bated. We review giant-impact theory, the diverse nature of giant-impact
+outcomes, and the governing physical processes. We discuss the importance
+of computer simulations, informed by experiments, for accurately modeling
+the impact process. Finally, we outline how the application of probabil-
+ity theory and computational advancements can assist in inferring collision
+histories from observations, and we identify promising opportunities for
+advancing giant-impact theory in the future.
+
+■ Giant impacts exhibit diverse possible outcomes leading to changes in
+planetary mass, composition, and thermal history depending on the
+conditions.
+
+■ Improvements to computer simulation methodologies and new labo-
+ratory experiments provide critical insights into the detailed outcomes
+of giant impacts.
+
+■ When colliding planets are similar in size, they can merge or escape
+one another with roughly equal probability, but with different effects
+on their resulting masses, densities, and orbits.
+
+671
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+■ Different sequences of giant impacts can produce similar planets, encouraging the use of
+
+probability theory to evaluate distinct formation hypothesis.
+
+Planetary embryo:
+solid planetary body
+that is the precursor of
+a planet (sometimes
+synonymous with
+protoplanet); thought
+to be Moon sized or
+larger
+
+1. INTRODUCTION
+
+The last stage of planet formation is thought to have been marked by a period of mutual collisions,
+called giant impacts (see the sidebar titled What Makes an Impact Giant?). For the Solar System,
+these collisions have been proposed to involve Moon- to Mars-sized planetary embryos, eventually
+resulting in a few terrestrial planets remaining in widely spaced, stable orbits (Figure 1). Because
+of the similar size of the colliding bodies and the large range of their expected impact velocities
+(up to tens of kilometers per second), giant impacts are global-scale, high-energy events that
+
+WHAT MAKES AN IMPACT GIANT?
+
+When impactors are small, their imprints generally resemble a bowl-shaped divot or a wide, flat impression, deemed
+crater-forming or basin-forming events, qualifiers that depend on the outcome. When the impactor and target are
+comparable, such as the Moon-forming impact or collisions in the asteroid belt, the common monikers are pairwise
+accretion and similar-sized collisions; aside from gas giants, there is little distinction between the terms similar size
+and similar mass. When the similarly sized colliding bodies are large and their interaction is dominated by gravity,
+the term giant impacts is often employed. The terms similar-sized collisions and giant impacts are not based on
+outcome as the results vary considerably under expected impact parameters. The exact transition from cratering to
+giant impacts remains unclear.
+
+Figure 1
+
+A simplified view of the classical model for terrestrial planet formation (not to scale). From top to bottom: The central star is
+surrounded by nebular gas and dust where early solids form. In the next stage, nebular gas begins to dissipate over (cid:24)2–3 million years
+(Williams & Cieza 2011), and mass accumulates into fewer and larger bodies, forming planetary embryos. Next, the orbits of the
+planetary embryos cross each other and lead to giant impacts such as that illustrated in the inset. After tens to hundreds of millions of
+years of giant impacts, the terrestrial planets achieve a stable architecture (for a review, see Raymond & Morbidelli 2022) (see
+Section 3). Figure adapted from Levin (1972); image courtesy of Andrew Gonzalez.
+
+672
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+can alter planetary compositions and atmospheres that planets inherited from nebular processes.
+For example, primordial volatiles or atmospheres may be driven off by a giant impact, or mantle
+materials can be stripped and ejected entirely. Magma oceans are also often a consequence of giant
+impacts. Heat production in large fractions of the planets can influence geodynamic processes and
+promote the outgassing of volatiles previously bound within planetary interiors. The consequences
+of these effects on planetary habitability are not yet entirely understood.
+
+Analytical work and computer simulations have revealed that giant-impact outcomes can vary
+considerably depending on the impact conditions. In some scenarios, the colliding bodies merge
+into a larger body, with minor amounts of material ejected in the process. For off-axis scenarios
+at sufficient velocity, the bodies can graze each other and escape along deflected paths. Although
+expected to be rare in Solar System formation, highly erosive outcomes are also possible, resulting
+in destruction of the target and/or impactor depending on preimpact conditions. Crust and mantle
+materials are ejected to varying degrees in all scenarios causing changes in composition. As an
+important by-product, ejected debris can collide with other planets or contribute to the population
+of small bodies such as moons and asteroids.
+
+The diversity of giant-impact outcomes may be the cause of the wide array of planetary bulk
+compositions observed in the Solar System and exoplanetary data. However, addressing this hy-
+pothesis is challenging because different impact conditions can produce similar outcomes. For
+example, several models of the Moon-forming giant impact can reproduce the bulk properties of
+the Earth-Moon system with similar fidelity. Furthermore, different planetary systems can form
+from the same initial conditions due in part to the chaotic nature of gravitational interactions. Un-
+derstanding the diversity of giant-impact outcomes and incorporating them into models of planet
+formation are critical steps to address competing hypotheses for the formation of Solar System
+and exoplanetary bodies.
+
+1.1. Basics of Giant-Impact Theory
+
+Study of the giant-impact phenomenon started in the mid-twentieth century as part of the larger
+debate on nebular theory and the coagulation of early Solar System solids (e.g., Schmidt 1958).
+Analytical studies of the evolution of protoplanets before and after nebular gas dissipation showed
+that collisions played a vital role in both stages. Without the presence of gas, two bodies generally
+collide at a velocity (vcoll) larger than or equal to their mutual escape velocity,
+
+√
+
+vesc D
+
+2G (MT C MI)
+(RT C RI)
+
+,
+
+1.
+
+where G is Newton’s gravitational constant, M is mass, and subscripts T and I indicate the target
+and impactor, respectively (e.g., Gurevich & Lebedinsky 1950). An impact velocity of vcoll D vesc
+is the result of gravitational forces between two bodies accelerating toward one another from an
+infinite distance with no initial relative velocity (v1 D 0). It is derived by equating the impact
+kinetic energy,
+
+K D 1
+2
+
+MTMI
+MT C MI
+
+v2
+coll,
+
+to the orbital potential energy of the bodies at contact,
+
+UG,contact D G MTMI
+(RT C RI)
+
+,
+
+2.
+
+3.
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+673
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+WHAT IS THE MOST PROBABLE COLLISION ANGLE ((cid:18)coll)?
+The differential probability that a point-mass impactor will hit a massless spherical target at a distance x D RT
+sin (cid:18) coll from its center is dP D 2(cid:25) xdx D 2(cid:25)R2
+coll with a maximum at (cid:18) coll D 45° (Gilbert 1893). For
+coll d(cid:18)
+an undeformable target with mass, the gravitational cross section R, which represents the maximum distance of an
+impactor’s undeflected path from the target that would result in impact, exceeds RT. From conservation of angular
+momentum, x D RTvcoll=v1 sin (cid:18) coll yielding dP D 2(cid:25)xdx D 2(cid:25)R2
+coll, and peaking at (cid:18) coll D
+45° (Shoemaker 1962). The dP((cid:18) coll) / sin (2(cid:18) coll) proportionality is expected to hold for giant impacts, although
+tidal distortions may complicate matters (Asphaug 2010).
+
+=v1)2 sin 2(cid:18)
+
+T sin 2(cid:18)
+
+coll d(cid:18)
+
+T(vcoll
+
+and solving for velocity. Impact velocities at the mutual escape speed result in the accretion of
+the impactor and target (e.g., Safronov 1964). During planet formation however, vcoll > vesc is
+commonplace. This is due to the scattering of planetary bodies into more eccentric (more ellip-
+tical) or inclined (tilted with respect to the paths of other bodies) orbits by gravitational forces,
+increasing relative velocities. Colliding bodies thus are not generally in free fall (v1 D 0) but
+have an additional contribution to their relative velocity (v1 > 0). This yields a collision velocity,
+1, that often exceeds vesc. Material may be ejected as a result, leading to erosion
+vcoll
+of the colliding bodies (e.g., Safronov 1972).
+
+C v2
+
+v2
+esc
+
+√
+
+D
+
+1.2. Diversity of Giant-Impact Outcomes
+
+Early computer simulations of the giant-impact process led to the characterization of the outcomes
+of collisions that occur beyond vesc and provided new potential pathways for the formation of
+the Moon and Mercury. These studies also revealed that impact geometry plays a central role in
+dictating the fate of any colliding pair [see the sidebar titled What Is the Most Probable Collision
+Angle ((cid:18) coll)?].
+
+1.2.1. Moon formation in off-axis collisions. From calculations of planet formation near 1 as-
+tronomical unit (AU), Hartmann & Davis (1975) showed that giant impacts into proto-Earth at
+collision velocities just above vesc would have been commonplace. They proposed that the Moon
+coagulated from a silicate-rich disk around Earth generated by a large-scale collision, providing an
+explanation for the paucity of volatile elements in Apollo samples. The colliding body was posited
+to be roughly the mass of Mars—a truly giant impact. Furthermore, radiometric age dating of
+Apollo lunar samples indicates that the oldest samples formed (cid:24)100 million years after the for-
+mation of the Solar System (Tatsumoto & Rosholt 1970). This was broadly consistent with giant
+impacts occurring after the nebular gas dissipated (Safronov 1964), (cid:24)2–3 million years into Solar
+System formation (e.g., Williams & Cieza 2011). Accretion of the Moon from silicate materials
+also provides a natural explanation for its small core, which accounts for about 10% of its mass
+(Asphaug 2014).
+
+The angular momentum of the Earth-Moon system has also served as a critical benchmark
+for constraining the preimpact parameters of the Moon-forming impact. To form the proto-lunar
+disk, debris must be ejected into bound and stable orbits (Cameron & Ward 1976). This is made
+possible by collisions with sufficient angular momentum, which are predominantly dependent
+on collision angle and velocity (neglecting preimpact rotation of the two bodies). At contact, the
+specific angular momentum of the relative orbit is proportional to (RT C RI)vcoll sin (cid:18) coll, where
+(cid:18) coll is the collision angle (Figure 2a). As such, simulations of the Moon-forming giant impact in-
+volved off-axis collision geometries as a means of generating bound postimpact disks around Earth
+((cid:18) coll k 0°) (e.g., Benz et al. 1986, Stevenson 1987, Cameron & Benz 1991, Cameron 2000).
+
+674
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Figure 2
+(a) A diagram of the geometry of a giant impact. (b) The differential probability distribution of the collision angle, dP((cid:18) coll) D sin (2(cid:18) coll)
+d(cid:18) coll (Shoemaker 1962). Due to the sin (2(cid:18) coll) distribution, head-on ((cid:18) coll (cid:24) 0°) or glancing collisions ((cid:18) coll (cid:24) 90°) are much less likely
+than moderately glancing geometries ((cid:18) coll (cid:24) 45°).
+
+By examining the intermediate epochs of lengthy Moon formation calculations, it was dis-
+covered that the impactor can graze the target, proceed along a gravitationally bound orbit,
+and eventually be accreted onto the proto-Earth in a spiraling fashion (see Figure 3 and the
+Supplemental Videos). This graze-and-merge process liberates debris that form the circum-
+planetary disk from which the Moon can accrete and can occur even in relatively gentle scenarios
+(vcoll < 1.1vesc). Refinements of the graze-and-merge formation of the Moon with a Mars-sized
+impactor would result in the canonical model of Moon formation (Canup 2004). In alternative,
+´Cuk & Stewart 2012), the
+high-angular momentum, high-velocity giant-impact models (e.g.,
+postimpact Earth is a distended vapor-rich structure from which the Moon forms, a formation
+pathway that has become the focus of recent work (Lock et al. 2018).
+
+1.2.2. Mercury formation in erosive collisions.
+Just as the Moon’s small core has been at-
+tributed to a giant-impact origin, Mercury’s large core has been attributed to a giant impact of a
+particularly destructive nature (Smith 1979). As indicated by data from NASA’s MESSENGER
+mission and by earlier measurements of Mercury’s large uncompressed density, the planet’s core-
+mass fraction of (cid:24)70% far exceeds that of the other terrestrial planets (25–35%) and the iron
+fraction expected from early Solar System materials (Palme & O’Neill 2003). Giant-impact sim-
+ulations demonstrated that an impactor colliding at several multiples of vesc into proto-Mercury
+(a relatively high-energy collision) is indeed capable of stripping the target of most of its mantle,
+forming a planet with a large core (Benz et al. 1988). Ejected materials, however, may reaccumu-
+late onto the target, counteracting the initial mantle stripping (e.g., Benz et al. 2007). As such,
+the giant-impact models for Mercury formation continue to undergo testing and revision (Ebel &
+Stewart 2018), and models of nonimpact origin continue to provide alternatives to this hypothesis
+(e.g., Johansen & Dorn 2022).
+
+1.2.3. Hit-and-run collisions. A central challenge to forming planets with large cores by erod-
+ing the target’s mantle materials in a near–head-on giant impact is that these scenarios are generally
+not common (Figure 2b). When vcoll=vesc is high enough, an off-axis collision can result in the
+impactor glancing the target and escaping along deflected orbits as a runner (Agnor & Asphaug
+2004). In this hit-and-run outcome, the impactor avoids accretion and continues along a deflected
+orbit around the central star as a body distinct from the target (Asphaug et al. 2006). To achieve the
+
+Canonical model of
+Moon formation:
+accretion of the Moon
+from a circum-Earth
+disk generated by a
+grazing impact
+between proto-Earth
+and Theia (a roughly
+Mars-sized impactor)
+
+Core-mass fraction:
+the ratio between the
+mass of the core of a
+planetary body and its
+total mass; a simplified
+compositional
+parameter
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+675
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Figure 3
+(a) Accretion efficiency (cid:24) L D (ML (cid:0) MT)=MI and (cid:24) S D (MS (cid:0) MI)=MI for the largest and second largest remnants mass ML (left) and
+MS (right) of a giant impact as a function of collision angle and velocity. Warm and cool colors represent mass gain and loss as a result of
+the collision, respectively. The target is Mars sized, and the impactor-to-target mass ratio is 0.7. Both have a core-mass fraction of 30%.
+(b) The same data as panel a, but axes ticks are spaced according to the expected distribution of collision angles governed by sin (2(cid:18) coll)
+and impact velocities derived by Gabriel et al. (2020) from Solar System formation simulations by Chambers (2013). Outcomes that are
+more probable encompass more area in panel b. The figure was generated using a machine-learning giant-impact model (Cambioni
+et al. 2019, Emsenhuber et al. 2020) and is analogous to Stewart & Leinhardt (2012), figure 5. Giant-impact simulation videos are
+provided in Supplemental Videos 1–5 and can also be accessed by clicking the hyperlinks in the figure in the online PDF.
+
+necessary velocity, the impactor must approach the target along an eccentric or inclined orbit in
+order to have sufficient v1 ( Jackson et al. 2018). Such a collision has high angular momentum, al-
+lowing for the production of postimpact disks from which satellites can form, motivating the explo-
+ration of hit-and-run collisions as a potential model for Moon formation (e.g., Reufer et al. 2012).
+Hit-and-run collisions preferentially strip outer mantle materials of the impactor (Figure 3),
+providing a second pathway for increasing planetary core-mass fractions. The impactor is
+
+676
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Collision chains:
+a sequence of
+collisions between two
+or more bodies that
+are a consequence of
+an off-axis impact
+geometry
+
+preferentially eroded because, due to its smaller mass, it receives a higher energy per unit mass
+in the collision and has a lower gravitational binding energy than the target. The gravitational
+binding energy of a planet acts to hold the planet together from disruption and is defined as
+
+UG D G
+
+∫
+
+R
+
+0
+
+M(r)m(r)
+
+dr
+r
+
+,
+
+4.
+
+where m(r) is the mass of a shell of size dr, M(r) is the planetary mass interior to the shell, and R
+is the radius of the planet. Assuming constant-density bodies, the binding energy is
+
+3GM2=5R,
+
+5.
+
+which is larger for the target due to its larger mass. As a result, the target tends to preferentially
+accrete the mantle of the runner, acting as a gravitational sink for impact debris. The effectiveness
+at which impactors are eroded in hit-and-run collisions and the sequestration of mantle debris
+by the target led to the proposal that Mercury could be the runner of a hit-and-run collision
+instead of the target in an erosive collision (Asphaug & Reufer 2014). Analogous to what the
+target experiences in an erosive head-on collision, runners in hit-and-run collisions experience
+hydrostatic unloading of deep mantle rocks by upward of several tens of percent of pressure,
+potentially generating melt and the release of volatiles (Asphaug et al. 2006).
+
+But what is the orbital-dynamical fate of the runner in a hit-and-run collision? Planet forma-
+tion studies that take into account hit-and-run outcomes have demonstrated that the runner can
+recollide with the target (Chambers 2013). Reimpact is likely because the deflected postimpact
+orbits of the two bodies intersect at the original impact point in inertial space. The returning
+impactor can hit-and-run as well, starting a series of interconnected recollision events called col-
+lision chains (Emsenhuber & Asphaug 2019a). However, the recollision is not immediate and has
+been shown to occur tens of millions of years later for chains in the Solar System near 1 AU (e.g.,
+Emsenhuber & Asphaug 2019b). Collision chains have recently been shown to be a viable mech-
+anism of Moon formation (e.g., Asphaug et al. 2021) because each recollision would contribute
+to the proto-lunar disk from which the Moon is thought to have formed. The collisions lead to
+homogenization between the disk and Earth, helping to explain the remarkable isotopic similarity
+between Earth and the Moon. The consequences of collision chains on planetary interior processes
+(e.g., planetary dynamo generation and mantle and core convection) have yet to be explored.
+
+2. MODELING GIANT IMPACTS
+
+Impossible to be fully replicated in physical laboratories, giant impacts are understood predomi-
+nantly through computer simulations. This places important emphasis on the number of variables
+and processes involved in collisions, as well as the methodologies used to simulate them (see the
+sidebar titled The Combinatorics of Giant Impacts).
+
+2.1. Dominant Variables
+
+2.1.1. Relative size of the colliding bodies. As the sizes of the impactors relative to the targets
+grow, so do the consequences of their collisions. When the impactor-to-target mass ratio is much
+less than 1%, a crater is generated on the surface. At a mass ratio near 1%, impactors leave near-
+global scars. For example, the South Pole–Aitken basin covers nearly one-third of the Moon, yet
+its proposed impactor is estimated to be at most (cid:24)1% of the Moon’s mass (Schultz & Crawford
+2011, Wieczorek et al. 2012, Melosh et al. 2017). Even this not-so-giant impact is thought to
+have excavated deeply, reaching the ancient lunar mantle, making the crater an important target
+of future exploration (e.g., Natl. Acad. Sci. Eng. Med. 2022). In giant impacts, the impactor is
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+677
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+THE COMBINATORICS OF GIANT IMPACTS
+
+The vastness of the parameter space of giant impacts becomes evident even when considering only a few of
+the preimpact conditions. Sampling 10 values of collision angle, impact velocity, and relative size requires N D
+103 D 1,000 computer simulations, discussed later. Accounting for 10 values of core-mass fraction for the target
+and impactor corresponds to N D 105 D 100,000 scenarios. Accounting for the rotational angular momentum of
+the colliding bodies adds 6 additional parameters: 2 for the rotational rates and 4 angles to describe the angles
+between the rotational axes and the impact plane. Even ignoring the presence of atmospheres, third-body effects,
+and thermal states, a full parameter sampling requires N D 1010 D 100,000,000,000 giant-impact simulations! Far
+too intensive to explore in this way, giant impacts are a ripe area for the application of machine-driven methods
+and advancements in simulation methodology.
+
+larger than 1% of the mass of the target. A prominent example is the Borealis basin on Mars, for
+which impact hypotheses demand an impactor that was 9–43% the mass of Mars to produce a
+hemispherical magma ocean from which the Mars northern lowlands can form (Marinova et al.
+2011).
+
+2.1.2. Absolute size of the colliding bodies. Material strength and gravity moderate the out-
+comes of collisions depending on the absolute size of the colliding bodies (Holsapple 1994). The
+gravitational binding energy of a body increases with its size (Equation 4). In contrast, material
+strength is predicted to decrease with size as larger bodies feature larger and thus weaker flaws
+[e.g., the so-called size-dependent strength theory (Weibull 1939)]. Flaws act as nucleation sites for
+fractures that lead to the failure of the material. As such, there exists a poorly understood threshold
+size (roughly a few hundred meters in diameter) where bodies are the easiest to erode for a given
+specific impact kinetic energy (e.g., Benz & Asphaug 1999). Below and above the threshold size,
+the impact outcomes are said to be strength dominated and gravity dominated, respectively.
+
+Importantly, material strength can still play a role in giant impacts between large bodies that
+would otherwise be understood to be gravity dominated based on their size. Rheological effects
+such as friction and the crushing of preexisting spaces (pores) during collisions, for example, have
+been demonstrated to serve as a sink for impact kinetic energy, reducing the amount of ejected
+materials in giant impacts for bodies as large as 100 km ( Jutzi 2015). The overall consequence
+of material strength on the collisional evolution of Solar System bodies larger than 100 km is the
+object of current studies ( Jutzi et al. 2019, Jutzi & Michel 2020, Rozehnal et al. 2022). Even giant-
+impact models of Mars-scale bodies show that frictional heating causes a broader melt region in
+the martian mantle than when friction is neglected, which has important implications for the hy-
+pothesized Borealis impact basin (Emsenhuber et al. 2018). Thus, even where the broad outcomes
+of giant impacts, such as the mass of the largest remnant, are gravity dominated, other metrics such
+as heat and melt generation may depend critically on the absolute scale of the collision and the
+assumed rheology.
+
+The presence of a core and the effects of compression under self-gravity also have important
+consequences for the susceptibility of planetary bodies to disruption. Under self-gravity, mantle
+materials become compressed at depth, causing some minerals to transition to their higher-density
+crystal structures, increasing the bulk density of a planet. In addition, during differentiation, higher
+density materials become centrally concentrated into planetary centers, forming cores. In both
+processes, the gravitational binding energy of the planet (Equation 4) increases, exceeding that of
+the constant density assumption (Equation 5). The total binding energy of the colliding system,
+which is the sum of the binding energies of the target and impactors (Equation 4) and the orbital
+
+Strength: the ability
+of a material to
+withstand an applied
+load without
+deformation
+
+Friction: a force that
+resists motion between
+solid materials as they
+undergo deformation
+
+Rheology: the study
+of how rocks deform
+considering their
+physical properties and
+conditions when
+subjected to loads
+
+Differentiation:
+process where molten
+planets partition
+denser materials into
+the center, generally
+forming a metal-rich
+core
+
+678
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+potential energy at contact (Equation 3)
+
+U D UG,T C UG,I C UG,contact,
+
+6.
+
+can exceed the constant-density approximation by 10% or more depending on the core-mass
+fractions of the colliding bodies and their absolute size (Gabriel et al. 2020). This deviation is
+noteworthy, as the ratio of kinetic energy to the total potential (K=U) is a quantity used to estimate
+the disruption threshold for colliding planets. This is because collisions with equal values of K=U
+result in similar outcomes across decades of the total colliding mass (e.g., Movshovitz et al. 2016).
+Whether this finding holds true for super-Earths and more exotic planetary compositions [e.g.,
+dense, likely iron-rich planets in the exoplanetary catalog (Adibekyan et al. 2021)] is not currently
+understood.
+
+Planetary density may also influence the transition to hit-and-run collisions. Differentiated
+and centrally compressed planets feature a concentration of higher-density materials and mass
+in the interior (e.g., planetary cores). This concentration of mass in the core translates to less
+material being involved in collisions at glancing angles (see the cores in Figure 2 and Asphaug
+2010, equation 9). The result provides geometrical context for recent hydrocode simulations that
+suggest that differentiated planets more readily undergo hit-and-run (Gabriel et al. 2020). At
+the same impact velocities, early planets that have yet to undergo differentiation would be more
+susceptible to impactor disruption (Leinhardt & Stewart 2012). And since hit-and-run collisions
+lengthen the timescales of planetary growth (e.g., Chambers 2013), the size of a planet’s core may
+influence how it evolves through subsequent collisions.
+
+Impact strain.
+
+2.1.3.
+Impact disruption and the size distribution of debris in strength-
+dominated collisions are controlled in large part by material fragmentation and failure. However,
+there are several challenges to account for these rheological processes in giant-impact simulations.
+The resistance of a material to deformation (strain), fragmentation, and failure is dependent on
+rate of deformation. For impacts, strain rates scale approximately by vcoll=(2RI). Models of dynamic
+fracturing and failure developed in the laboratory are used to make predictions at the giant-impact
+scale. However, due in part to the difference in scale RI, strain rates in giant impacts are several or-
+ders of magnitude lower than dynamic experiments conducted in the laboratory (e.g., Grady et al.
+1977). Lab-based models are thus extrapolated to lower strain rates with significant deviations
+in results, motivating the development of new models based on first principles and multi-scale
+approaches in order to take into account failure processes in giant impacts (e.g., Ramesh et al.
+2015).
+
+Strain rate also varies depending on the proximity to the impact site, making different rheologic
+models relevant for various regions in the impacting bodies. The concentration of stresses closer to
+the interface between colliding bodies is expected to enhance the degree of material fragmentation
+resulting in smaller debris sizes (e.g., Grady et al. 1977, Grady & Kipp 1985). Elsewhere strain rates
+are lower because stresses are driven by tidal effects over gravitational timescales [minutes to hours
+for typical planetary densities (Asphaug 2010)]. Here, models of dynamic fracturing become rele-
+vant due to the concentration of shear stresses (Ramesh et al. 2015), and pore collapse and friction
+( Jutzi 2015) may also contribute to the overall heating budget and fragmentation behavior. Under-
+standing the influence of rheological processes that are characteristic of different zones of the col-
+lision through dedicated hydrocode simulations remains an important area of future development.
+
+If the absolute velocity vcoll is higher than the
+2.1.4. Absolute velocity and thermodynamics.
+sound speed in the material, a giant impact is a supersonic event, and understanding these events
+demands accurate shock equations of state. Shock waves generated by supersonic collisions lead
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+679
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Figure 4
+
+Collision velocity as a function of the mass of the target in Earth masses. The lowest possible collision velocity without the presence of
+nebular gas is vcoll D 1 vesc, a gentle scenario that always results in a merger of the two bodies. Solar System formation simulations
+report velocities vcoll (cid:25) 1–1.6 vesc, with exceedingly few near 3 vesc (e.g., Agnor et al. 1999). For simplicity, sound speeds are shown for
+(cid:24)0°C and (cid:24)1 atm conditions, a constant density of 5 g/cm3 is assumed for the escape velocity calculation, and the impactor-to-target
+mass ratio is 0.7. The sizes of the planet images are not to scale.
+
+to a discontinuous change in pressure and density across the wave front, transforming kinetic
+energy into heat, leading to phase change and the production of vast amounts of melt, vapor,
+and plasma. This effectively overwhelms the rheological processes discussed previously. Melt and
+vapor production from shocks are expected to be enhanced in warm planetary embryos such as
+those emerging from the nebular phase (e.g., Weiss & Elkins-Tanton 2013) because they are closer
+to thermodynamic thresholds for melting and vaporization of planetary materials (Davies et al.
+2020).
+
+Due to the dependence of impact velocity on vesc, the sound speed in solid water (ice) al-
+lows shock-inducing collisions to occur in giant impacts between bodies roughly the size of Pluto
+(Figure 4). The large pressures in planetary interiors and in the shock front generate high-
+pressure crystalline phases of water and, upon release, can produce ample steam in the process,
+motivating new shock equations of state to describe water under a wider range of conditions
+(Stewart et al. 2008). A central challenge in modeling the fate of debris in collisions involving
+
+Equation of state:
+a thermodynamic tool
+that relates variables
+such as pressure,
+volume, and density
+for a material
+
+680
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+hydrated minerals is that most equations of state implementations do not explicitly account for
+the devolatilization and rehydration process that would occur within impact plumes. Further de-
+velopments in this area are key to refining models of icy body collisions, such as those posited for
+the formation of the Pluto-Charon system and the Haumea collisional family (e.g., Brown et al.
+2007, Leinhardt et al. 2010, Canup 2011, Kenyon & Bromley 2014).
+
+For rocky bodies, the dynamical evolution of giant-impact debris is likely influenced by its
+thermodynamic state. Debris-debris collisions between solid particles have a strong control on the
+lifetime and size distribution of the debris cloud (e.g., Jackson et al. 2014, Kobayashi et al. 2019).
+As colliding bodies grow larger than the Moon, their collision velocities are supersonic, transition-
+ing them from producing mostly solid debris driven by material fragmentation to predominantly
+producing debris in the form of melt and vapor (Gabriel & Allen-Sutter 2021) (Figure 4). The
+process generates melt in planetary mantles (e.g., Nakajima et al. 2021), and in Earth-scale gi-
+ant impacts (vesc > 10 km/s) collisions cause rocks to reach stellar temperatures (Canup 2004)
+(see also videos in the Supplemental Materials). Modeling these extreme conditions at high fi-
+delity demands continued development of new shock equations of state (e.g., Root et al. 2018)
+and the inclusion of thermal radiation, chemical disequilibrium, and other complex processes in
+calculations.
+
+2.1.5. Preimpact rotation. The relative spin rate and orientation of colliding bodies are impor-
+tant yet poorly understood factors influencing impact outcomes. For example, preimpact rotation
+may enhance the amount of material released to a postimpact disk. In extreme conditions, a body
+rotating near the limit of its stability requires only a small perturbation to deliver mass shedding
+consequences (e.g., Dobrovolskis 1990). This mechanism of angular momentum transfer from
+the rotating planets to postimpact disks naturally motivates the exploration of preimpact rotation
+on the formation of the Moon (e.g., Rufu et al. 2017). In addition to potentially contributing to
+the generation of disks, preimpact rotation can eject materials into different orbits than expected
+from models of collisions between nonrotating bodies. Thoroughly parameterizing the effects of
+preimpact rotation on giant impacts, however, continues to present a major challenge, as it en-
+tails expanding the parameter space considerably beyond the few basic parameters of mass ratio,
+velocity, and collision angle.
+
+2.2. Computer Simulations
+
+The outcomes of giant impacts are predominantly studied through computer simulations and in
+particular the Smoothed-Particle Hydrodynamics (SPH) method (Figure 5). The advancement
+of computational power has allowed for the wider exploration of preimpact conditions, such as
+core-mass fraction and material type (Marcus et al. 2009, 2010; Reufer 2011). Improvements in
+resolution have also allowed for postimpact disks and the debris-size distribution to be under-
+stood in greater detail (e.g., Nakajima & Stevenson 2014, Genda et al. 2015). Furthermore, novel
+machine-learning methods now enable generalizing the results of sparse data sets of SPH simula-
+tions to provide predictions over the relevant parameter space (e.g., Cambioni et al. 2019, Timpe
+et al. 2020).
+
+Developed in the 1970s for stellar astrophysics applications (e.g., Gingold & Monaghan 1977),
+such as the mergers of stars and galaxies, SPH was extended to giant-impact studies in the 1990s
+(e.g., Benz & Asphaug 1999) and continues to undergo refinements today (e.g., Monaghan 2012).
+The method discretizes the model domain (planets) into mass particles (sometimes referred to
+as nodes), ensuring conservation of mass throughout the simulation. Particles move according to
+fluid motion described by the Navier-Stokes hydrodynamic equations of motion (for a review,
+see Violeau 2012). Each particle serves as a point of interpolation for continuous fluid properties
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+681
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Figure 5
+
+The physics and computational modules and approaches involved in performing computer simulations of giant impacts. The inclusion
+of additional physics modules, such as radiation transfer and chemical reactions, lies at the forefront of giant-impact modeling.
+
+according to a smoothing kernel that defines a variable’s value in space, and the kernel function
+can vary depending on the SPH setup. In regions where no particles are present, the equations of
+motion are not solved. This is inherently beneficial to calculations that involve material trans-
+port across long distances in the vacuum of space typical of giant impacts, saving computational
+resources. Shock discontinuities in SPH are commonly smeared across several particles using
+
+682
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Smoothing kernel:
+a function that allows
+for continuous fluid
+properties to be
+computed from
+discrete particles in
+SPH
+
+Artificial viscosity:
+an addition to the
+SPH momentum
+conservation equation,
+ensuring
+differentiability in
+shocks
+
+artificial viscosity, which ensures that momentum fields are differentiable and provides a shock
+heating mechanism (e.g., Gingold & Monaghan 1977). The pairwise force of gravity between
+particles would normally require computationally expensive calculations of order N 2 (where N is
+the number of SPH particles). Instead, planetary and astrophysical SPH codes implement approx-
+imation methods, such as hierarchical tree-based algorithms, which afford critical improvements
+to the rapid calculation of gravity (Barnes & Hut 1986), enabling higher-resolution simulations
+for a given run time.
+
+Similar to other methods, accurate interpretation of SPH results requires taking into account
+possible artifacts that depend on simulation design. The number of SPH particles over which the
+planets are subdivided defines the simulation resolution and has a marked effect on outcome. The
+highest-resolution simulations now approach tens of millions of particles, but a planet divided into
+millions of equal-mass particles still has only hundreds along the radial dimension, limiting the
+resolution of smaller-scale flows, turbulence, and the debris field. This shortcoming produces sim-
+ulation outcomes, such as the mass of the largest remnant, that vary as a function of resolution (e.g.,
+Genda et al. 2015). Generally, greater particle resolution reduces the overall influence of artificial
+tension forces between particles that can arise in SPH (Agertz et al. 2007). Importantly, simula-
+tion outcomes tend to converge to a particular value as resolution increases. It is thus critical to
+perform what are called resolution convergence tests, where resolution is increased incrementally
+until the convergence of an output of interest can be inferred. For common choices in resolu-
+tion, the impact energy necessary to disrupt two planets by a giant impact may be underestimated
+by tens of percent (Genda et al. 2015). Reaching resolution convergence in the angular momen-
+tum of the postimpact disk—a key parameter to benchmark models of Moon formation—also
+remains challenging, even at very high particle counts (Hosono et al. 2017). Obtaining higher
+resolution in general enables higher-order flow in simulations (more accurate material mixing),
+which is important in developing accurate chemical equilibration models in planetary evolution
+studies.
+
+Finally, the stability of vapor-rich postimpact structures common to large-scale collisions (e.g.,
+Lock & Stewart 2019) is intimately influenced by SPH’s sensitivity to artificial viscosity. Erroneous
+triggering of artificial viscosity and momentum transport in shear flows (e.g., Okamoto et al. 2003)
+allows for the unphysical collapse of pressure-supported disks (Raskin & Owen 2016). Depending
+on the form of artificial viscosity used in an SPH simulation, the production of impact heat, vapor,
+and melt can vary (Gabriel & Allen-Sutter 2021). These various artifacts are the topic of current
+important efforts to improve the SPH method (e.g., Read et al. 2010, Monaghan 2012, Frontiere
+et al. 2017) and represent important hurdles for giant-impact science.
+
+3. GIANT IMPACTS IN TERRESTRIAL PLANET FORMATION
+
+Giant impacts are expected to occur throughout planet formation, under different conditions
+depending on the presence or absence of nebular gas and the mass distribution of the bodies.
+For terrestrial planets, however, signatures of earlier planet formation processes can be overwrit-
+ten by the giant impacts that follow. New models of giant-impact outcomes and the application
+of probability theory provide pathways for disentangling the complex nature of giant-impact
+histories.
+
+3.1. The Aftermath of Early Accretion
+
+The formation and properties of planetary embryos set the initial conditions of the giant-impact
+phase. These initial conditions, which remain debated, influence the nature and number of giant
+impacts, thus producing different impact histories for the forming planets.
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+683
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Planetesimals:
+roughly 100-km-sized
+bodies that form early
+in the planet formation
+process in the presence
+of nebular gas
+
+Survivorship bias:
+the error of inferring
+conclusions from
+outcomes that made it
+past a selection process
+and overlooking those
+that did not
+
+3.1.1. Giant impacts in traditional formation theory. The traditional view of planet forma-
+tion is that terrestrial planets form through collisions among planetary embryos (e.g., Wetherill
+1976). Before nebular gas dissipation, mass is distributed within a large number of planetesimals
+with low relative velocities. As a few larger bodies coalesce, they undergo oligarchic growth by
+preferentially accreting the smaller bodies. This process is expected to create lunar-to-Mars-mass
+planetary embryos over (cid:24)105 years in the Solar System (Lissauer 1993, Kokubo & Ida 1996).
+After the nebular gas dissipates, gravitational interactions between the largest bodies lead to cross-
+ing orbits. Chaotic growth ensues, generating giant impacts occurring across tens to hundreds
+of millions of years (Lissauer 1993, Kokubo & Ida 1996, Chambers 2013).
+
+3.1.2. Giant impacts in pebble accretion theory. The recent theory of pebble accretion pro-
+poses that the drag by nebular gas enhances the accretion of millimeter- to centimeter-sized
+particles (referred to as pebbles) onto planetesimals, forming protoplanets within a few million
+years (e.g., Levison et al. 2010, 2015; Johansen & Lambrechts 2017; Lambrechts et al. 2019).
+When applied to the formation of terrestrial bodies in the Solar System, pebble accretion models
+report a decrease in the number of embryos by a factor of (cid:24)2 compared to classical Solar System
+formation theory. This corresponds to an order of magnitude fewer giant impacts (e.g., Voelkel
+et al. 2021) or just a single, Moon-forming giant impact ( Johansen et al. 2021), placing critical
+emphasis on the nature of that singular collision and its detailed outcome.
+
+3.2. Giant Impacts and Planetary Diversity
+
+A simple statistical exercise can provide insight into the effect of the nature and number of gi-
+ant impacts on planetary diversity. Assuming that accretion and hit-and-run are equally probable
+outcomes during the late stage of terrestrial planet formation, Asphaug & Reufer (2014) showed
+that one can evaluate impact outcomes of N embryos picked out of a jar assuming either accretion
+(i.e., one of the bodies is removed from the jar) or hit-and-run (i.e., both bodies survive and are
+put back in the jar). They found that each final planet in their model survives two hit-and-runs on
+average. Every time an impactor survives as a runner, it loses part of its outermost silicate man-
+tle. The greater number of times this occurs in this demonstration, the greater amount of mantle
+erosion the body experiences, increasing its core-mass fraction. As a result, the onset of chains of
+hit-and-run collisions is expected to increase the diversity of planetary composition.
+
+To track the diversity of the population, we repeat the exercise of Asphaug & Reufer (2014) and
+measure the planetary diversity of the evolving embryos as the number of different hit-and-run
+species over the total population size (i.e., its statistical richness) (Figure 6). A hit-and-run species
+encompasses those embryos that have survived the same number of hit-and-run collisions and
+have similar core-mass fractions. We assume that the initial population is composed of embryos
+with the same core-mass fraction (that is, diversity of 0%) and measure how diversity of core-mass
+fraction increases as a function of number of giant impacts. If long chains of giant impacts occur,
+planetary diversity increases rapidly. If instead just a handful of giant impacts occur, as expected
+in some pebble accretion models for planet formation, a lower degree of planetary diversity is
+expected.
+
+Depending on the number of collisions, the giant-impact process can be so transformative for
+the embryos that the information about the nature of the primordial population can be partially or
+completely lost. The primordial population is transformed through giant impacts due to the cou-
+pled effect of hit-and-run collisions, which increase the diversity of planetary compositions, and
+the loss of primordial bodies through accretion onto the larger ones. The latter process—defined
+as accretionary attrition by Asphaug & Reufer (2014)—is akin to a loss of genetic history by ex-
+tinction and may induce survivorship biases in planet formation studies. However, it is noteworthy
+
+684
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Figure 6
+
+Left axis: planetary diversity as a function of the number of giant impacts. Diversity is measured as the
+number of different hit-and-run species—that is, the subset of the population whose bodies have survived
+the same number of hit-and-run collisions. Right axis: the fraction of bodies equal to those of the initial
+population, whose bodies are identical to one another and never participated in a hit-and-run collision. The
+solid curves are the average value of 10,000 runs, assuming that accretion and hit-and-run have 50–50%
+probability of occurring as in Asphaug & Reufer (2014). Shaded areas indicate the corresponding 1-standard-
+deviation bands. The results do not change significantly when the hit-and-run occurrence rate is varied by
+(cid:6)10% [the variability observed in studies in the literature (e.g., Chambers 2013, Emsenhuber et al. 2020)].
+
+that, in the simple exercise of Figure 6, accretion alone is not sufficient to induce the complete
+loss of information. Indeed, if we assume that all collisions lead to perfect accretion (another very
+unlikely scenario), the embryos would become larger versions of their previous selves but new hit-
+and-run species would not form, unrealistically keeping planetary diversity of core-mass fractions
+to 0%. This is potentially at odds with the high core-mass fractions of Mercury and the high den-
+sity of some M-type asteroids (Asphaug & Reufer 2014) and some super-Earths (Adibekyan et al.
+2021). Importantly, these bodies may also form in erosive high-velocity, low-impact-angle colli-
+sions, but these events are expected to be rare, at least in Solar System formation (e.g., 10–15% of
+the collisions) (Emsenhuber et al. 2020).
+
+3.3. Modeling Giant Impacts in Planet Formation Studies
+
+N-body simulations have greatly advanced our understanding of Solar and extra-Solar System
+formation (for reviews, see Morbidelli et al. 2012, Raymond & Morbidelli 2022). These simula-
+tions model the heliocentric orbits and accretion of growing bodies for millions of years and have
+confirmed the central role of giant impacts in shaping the diversity of planets (e.g., Stewart &
+Leinhardt 2012, Chambers 2013, Quintana et al. 2016, Scora et al. 2020). Here, we review the
+three predominant methods to model giant impacts in N-body simulations.
+
+3.3.1. Brute-force approach. The most rigorous and computationally demanding method is to
+hand off each collision to an SPH simulation for explicit modeling, pause the N-body integration
+temporarily, and then feed the results back into the planet formation simulation (e.g., Genda et al.
+2017, Burger et al. 2020). The challenge, however, is that each SPH simulation can require days
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+685
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+PERFECT MERGING AND OTHER OVERSIMPLIFICATIONS IN COLLISION
+MODELING
+
+Before the advent of fast computers and giant-impact models, two colliding bodies of mass MT and MI were often
+assumed to perfectly merge into a body of mass MT C MI without losses to debris. However, decades of com-
+puter simulations have shown that this is an oversimplification (e.g., Asphaug et al. 2006, Leinhardt & Stewart
+2012). Furthermore, as the masses perfectly merge, so do the rotational angular momenta (Agnor & Asphaug 2004),
+which would lead to unphysically high spin rates (Agnor et al. 1999). To hasten N-body planet formation calcula-
+tions, artificial inflation factors for planetary radii have often been used to achieve accretion even in noncollisional
+trajectories. These shortcuts artificially decrease the amount of material transport throughout the system, reduce
+formation timescales, and reduce the degree of dynamical stirring through the lack of close encounters (e.g., Süli
+2021, Haghighipour & Maindl 2022), demonstrating the importance in accounting for inefficient accretion.
+
+of computer time, even at modest resolution (e.g., Vacondio et al. 2021). N-body simulations may
+take months to complete, depending on the number N of bodies. For hundreds of giant impacts,
+calculations can require a year to run (see the sidebar titled Perfect Merging and Other Oversim-
+plifications in Collision Modeling). Thanks to recent computational improvements [e.g., N-body
+simulations using graphics-processing units (Grimm & Stadel 2014, Woo et al. 2021)], brute-force
+approaches may be just within reach.
+
+3.3.2. Scaling-law approach. Scaling laws are mathematical equations that help to predict the
+outcome of a physical process based on the results from the same process under different condi-
+tions [i.e., scaling results under certain conditions to another (Buckingham 1914)]. For example,
+experimental data of impacts into small targets may be used to predict the outcomes of impacts
+into larger targets (e.g., asteroids). In this case, target size is being scaled, but other variables such
+as velocity can be chosen. Traditionally, scaling laws have been fit to a range of different data types
+such as crater observations, nuclear/explosive tests, laboratory experiments of hypervelocity im-
+pacts, and hydrocode output (for a review, see Holsapple 1993). The challenge of using scaling
+laws for giant impacts is in the choice of the scaling variable. In impact cratering the point-source
+approximation is used to choose scaling variables based on the assumption that the deposition of
+energy occurs at a single location (Dienes & Walsh 1970). However, in giant impacts, bodies are
+similar in size, violating the point-source approximation. The need to revise scaling-law variables
+led to the proposal that impact disruption is equal for equal values of the scaling variable K=U
+(e.g., Movshovitz et al. 2016). However, supersonic collisions produce deviations from this rela-
+tion whose origins are uncertain (Gabriel et al. 2020). Thus, understanding the nature of rheologic
+and thermodynamic transitions at various scales and building unified scaling laws that span across
+these regimes remain important endeavors.
+
+3.3.3. Machine-learning approach. Supervised machine-learning models are parametric func-
+tions that are trained to map inputs into outputs based on a preexisting data set of examples. In
+the context of giant impacts, machine-learning models are parametric functions that relate preim-
+pact parameters to impact outcomes and are trained on preexisting hydrocode simulation data
+sets (Cambioni et al. 2019, 2021; Valencia et al. 2019; Emsenhuber et al. 2020; Timpe et al.
+2020). Most of the data set is used to tune the parametric model to fit the output data, and
+procedures are adopted to avoiding overfitting. The remaining data are used to assess whether
+the trained model can accurately predict the outcome of collision scenarios not seen during
+training.
+
+Overfitting: when a
+function accurately
+predicts data to which
+it was fit but performs
+poorly on data to
+which it was not
+
+686
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Scaling laws are based on and provide intuitions about the physics of giant impacts, while
+machine-learning models provide ultimate accuracy within the confines of existing simulation
+results and are trained without physical assumptions (for further discussion, see Cambioni et al.
+2022). Caution should be paid when extrapolating the predictions of both methodologies beyond
+the limits of the data sets used to build them. Similar to how scaling laws can break down in
+certain regimes, a machine-learning model trained to predict outcomes of collisions between rocky
+planets should not be used for predicting the outcomes of collisions between sub-Neptunes, for
+example. There the initial collision is entirely between atmospheric envelopes, producing unique
+relationships with respect to the preimpact conditions (e.g., Marcus et al. 2010, Liu et al. 2015,
+Denman et al. 2022).
+
+A rich venue of future research lies at the intersection between the two approaches. For exam-
+ple, machine learning can be used to identify previously unknown dependencies between impact
+conditions and outcomes by means of pattern recognition through unsupervised classification
+methods, aiding the formulation of new scaling laws. The mathematical framework of scaling
+laws and machine-learning models can also be used to incorporate new physical processes in
+planetary formation models. Typically, processes such as crust formation, geodynamical evolu-
+tion, atmosphere formation, and the orbital evolution of debris are not simultaneously included
+in N-body studies due to the high computational cost of performing these calculations in paral-
+lel. This impedes our ability to match the output of N-body studies to planetary observations for
+hypothesis testing. Crustal evolution, for example, is intimately tied to the planet’s impact history.
+Ejected debris in the canonical Moon formation model can recollide with the terrestrial planets
+over 100 million years, depositing an amount of debris equivalent to a kilometer-scale or deeper
+layer, depending on the planet ( Jackson & Wyatt 2012). This occurs despite the minor amount of
+total debris mass in graze-and-merge compared to other collision styles. Hit-and-run and erosive
+collisions shown in Figure 3 can eject even larger amounts of debris (Leinhardt & Stewart 2012).
+Fitting scaling laws or training machine-learning algorithms on data from high-resolution sim-
+ulations of these processes and implementing them in N-body studies will significantly advance
+the realism of planet formation models, and careful tracking of how the uncertainties of these
+processes propagate through the entire calculation is warranted.
+
+3.4. Inverting Giant-Impact Outcomes
+
+For planetary bodies suspected to be giant-impact remnants (e.g., the Moon, Mercury), previous
+studies have focused on how to deterministically infer impact conditions from observations of
+their properties, such as mass and composition. However, a major challenge to understanding
+and solving this inverse problem is that the solution may not be stable. As such, a probabilistic
+treatment of the giant-impact process may be preferred.
+
+To highlight the instability of the solution to the inversion problem, in Figure 7 we use a giant-
+impact model to understand what impact scenario(s) may lead to a Mercury-like planet based on
+its mass and iron content. We explore two possible pathways: The planet is an eroded target body
+(Figure 7a, top-left panel) or an eroded impactor surviving a hit-and-run collision (Figure 7a,
+top-right panel). Even when we assume to know the masses of the colliding bodies, the solution
+exists, but it is not unique: Several combinations of impact velocity and angle lead to the same
+outcome. Including the possibility of chains of collisions considerably expands the range of po-
+tential scenarios (Figure 7b). Observations of additional iron-rich bodies in exoplanetary systems
+may add constraints on the impact scenarios required to erode mantle materials and thus help
+rule out regions of the solution space. However, if the number of iron-rich planets remains small,
+statistical assessments may not be robust (e.g., Dean & Dixon 1951). In this context, the solution
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+687
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Figure 7
+(a) Goodness of fit of predictions from two giant-impact scenarios that form a Mercury-like planet with a mass M D 0.05 Earth masses
+and a core-mass fraction of (cid:24)70%. The planet can be either the largest remnant (Scenario 1) or a runner (Scenario 2). Mass is predicted
+using collresolve (Cambioni et al. 2019, Emsenhuber et al. 2020) and core-mass fraction using the model by Cambioni et al. (2021),
+assuming an initial core-mass fraction of 30%. Goodness of fit is computed as ((M (cid:0) Mobs)=(cid:27) M)2 C ((Z (cid:0) Zobs)=(cid:27) Z)2, where (cid:27) M and
+(cid:27) Z are assumed uncertainties for Mobs and Zobs. (b) Different giant-impact histories can result in an iron-rich body (indicated with the
+letter C): a catastrophic collision (e.g., Benz et al. 2007), a hit-and-run (e.g., Asphaug & Reufer 2014), or a chain of hit-and-run
+collisions (e.g., Chau et al. 2018).
+
+may be unique but still not stable, as it can change when additional data are considered. Finally, in
+any hit-and-run scenario where the iron-rich planet is an eroded impactor, the question remains:
+What is the fate of the target?
+
+A possible way to achieve a stable inverse problem and deal with the challenge of small number
+statistics is to compare the probabilities P(xjy) associated with different giant-impact scenarios.
+This can be performed using Bayes’ theorem (e.g., Cambioni et al. 2022), by treating impact
+
+688
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Stable inverse
+problem: an inverse
+problem whose
+solution exists, is
+unique, and does not
+change if new data are
+considered
+
+Prior information
+(cid:25)pr: probability
+distribution that
+expresses previously
+known information
+about the impact
+event x
+
+conditions x as probability distributions with associated prior information (cid:25) pr(x) and computing
+the probability P(xjy) that an impact scenario x leads to the observed impact outcome y as
+
+P(xjy) D
+
+∫
+
+(cid:25)pr (x)P(yjx)
+(cid:25)pr (x)P(yjx)dx
+
+,
+
+x
+
+7.
+
+where the probability P(yjx) of observing y given the impact scenario x is sampled using a
+giant-impact model y D f (x). This typically requires computing thousands of model evaluations
+to determine y under various conditions. Instead of computing new giant-impact hydrocode
+simulations for each evaluation, surrogate models (machine learning and/or scaling laws) that are
+fit to preexisting simulations can be used. This Bayesian framework also tackles the small number
+statistics challenges because it does not assume that the data are normally distributed, which is
+justified only for large data sets (e.g., Kruschke 2010).
+
+The solution of Equation 7 strongly depends on the choice of the prior information (cid:25) pr(x). For
+the collision angle, dP (cid:24) sin 2(cid:18) colld(cid:18) coll is the appropriate prior (cid:25) pr((cid:18) coll) (Figure 2). Prior infor-
+mation for initial compositions is largely derived from measurements of meteorite composition
+and stellar abundance (e.g., Rubie et al. 2016, Adibekyan et al. 2021) because compositional infor-
+mation for most large asteroids and exoplanets is limited to their bulk density (DeMeo & Carry
+2014, Dorn et al. 2015). The velocity distribution from studies of late planet formation could be
+used to exclude certain styles of collisions [e.g., just a few percent of high vcoll=vesc disruptions are
+expected (Figure 3)] and knowledge of the largest bodies in a swarm may help constrain the abso-
+lute scale of the expected collisions. Important caveats are that impact velocities vary in time and in
+location during planet formation, and velocities also vary depending on how impacts are handled
+in those calculations (e.g., Chambers 2013, Emsenhuber et al. 2020). The size-frequency distribu-
+tion of asteroids or the formation of meteorites such as mesosiderites and pallasites may serve as
+important constraints on the nature of Solar Systems collisions (e.g., Scott et al. 2001, Windmill
+et al. 2022). Recent observations of debris fields in young exoplanetary systems that are thought
+to be impact remnants (e.g., Meng et al. 2014, Wyatt 2021) may also be used as benchmarks for
+N-body simulations of impact debris ( Jackson & Wyatt 2012). As such, continued (exo)planetary
+exploration and model development, particularly for planets such as Venus, Uranus, Neptune, and
+others whose interior structures and compositions are poorly constrained, are essential to build
+reliable a priori information for determining impact conditions from present-day observations.
+
+4. CONCLUSIONS
+
+Giant impacts are global-scale, high-energy events that occur between similar-sized planets at
+velocities ranging from hundreds of meters to tens of kilometers per second. These events can sig-
+nificantly change the composition, atmosphere formation, and habitability of planets. The physics
+of giant impacts is rich, involving material rheology such as friction, strength, and compaction, and
+shock physics processes, which have important thermodynamic consequences that influence the
+nature and evolution of impact debris. Over several decades, computer simulations have shown
+that outcomes range from accretion of the impactor by the target to erosion of the target, po-
+tentially leading to distended postimpact structures dominated by vapor and melt, depending on
+impact velocity. Off-axis collisions are common, leading to the transient or permanent survival of
+the impactor depending on the velocity. Long collision chains are also possible, with unknown
+consequences for debris disks around the postimpact bodies.
+
+For these reasons, giant impacts are understood to be important contributors to the observed
+diversity and configuration of the Solar System terrestrial planets, asteroids, and exoplanets.
+However, many challenges and exciting opportunities for future work remain. The transition be-
+tween different collision regimes is unclear due to the poorly understood sensitivity of outcomes
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+689
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+to parameters such as preimpact rotation; the equation of state; and the relative importance of
+material strength, gravity, and vaporization at different scales. The postimpact evolution of giant
+impacts also likely demands the addition of important, yet commonly unmodeled, physical and
+chemical processes. Linking giant-impact diversity to planetary diversity and pinpointing unique
+scenarios for the formation of suspected giant-impact remnants also remain challenging. This is
+due to the chaotic nature of planetary gravitational interactions and the dependence of planetary
+diversity on the number and types of giant impacts. The Moon-forming giant impact is the event
+for which we may have the most constraints; yet, many collision hypotheses remain plausible.
+At the frontier, improving hydrocode calculations; building a statistical understanding of giant
+impacts; taking advantage of the growing data set of exoplanets and debris disks; and developing
+new scaling laws, machine-learning methods, and N-body simulations are key endeavors.
+
+FUTURE ISSUES
+
+1. Improving the treatment of heating and including additional physics to model postim-
+pact effects in planetary hydrocodes are necessary steps toward testing competing impact
+hypotheses for the formation of the Moon, Mercury, and other suspected giant-impact
+products.
+
+2. New machine-learning models and scaling laws would enable more detailed and realistic
+
+outcomes of giant impacts to be included in N-body planet formation studies.
+
+3. Dedicated modeling of debris and other improvements to N-body and SPH simulations
+are necessary to interpret recent observations of debris disks around nearby stars and can
+provide new insights into the formation of small Solar System bodies.
+
+4. The nonuniqueness of giant-impact inverse problems and the small number statistics
+of planetary accretion can be tackled through statistical frameworks such as Bayesian
+inference.
+
+DISCLOSURE STATEMENT
+
+The authors are not aware of any affiliations, memberships, funding, or financial holdings that
+might be perceived as affecting the objectivity of this review.
+
+ACKNOWLEDGMENTS
+
+The authors contributed equally to this review, and their order was determined by coin flip.
+T.S.J.G. acknowledges funding from the U.S. Geological Survey Astrogeological Science Cen-
+ter. S.C. acknowledges funding from the Crosby Distinguished Postdoctoral Fellowship of the
+Department of Earth, Atmospheric and Planetary Sciences of the Massachusetts Institute of Tech-
+nology. The authors thank the reviewer, H. Allen-Sutter, E. Asphaug, S. Dibb, A. Emsenhuber,
+Z. Essack, Z. Lin, J. Lightholder, E. Mansbach, C. Raskin, and B. Weiss for feedback. Any use of
+trade, firm, or product names is for descriptive purposes only and does not imply endorsement by
+the U.S. Government.
+
+LITERATURE CITED
+
+Adibekyan V, Dorn C, Sousa SG, Santos NC, Bitsch B, et al. 2021. A compositional link between rocky
+
+exoplanets and their host stars. Science 374(6565):330–32
+
+690
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Agertz O, Moore B, Stadel J, Potter D, Miniati F, et al. 2007. Fundamental differences between SPH and grid
+
+methods. MNRAS 380(3):963–78
+
+Agnor C, Asphaug E. 2004. Accretion efficiency during planetary collisions. Astrophys. J. 613:L157–60
+Agnor CB, Canup RM, Levison HF. 1999. On the character and consequences of large impacts in the late
+
+stage of terrestrial planet formation. Icarus 142:219–37
+
+Asphaug E. 2010. Similar-sized collisions and the diversity of planets. Geochemistry 70:199–219
+Asphaug E. 2014. Impact origin of the Moon? Annu. Rev. Earth Planet. Sci. 42:551–78
+Asphaug E, Agnor CB, Williams Q. 2006. Hit-and-run planetary collisions. Nature 439:155–60
+Asphaug E, Emsenhuber A, Cambioni S, Gabriel TSJ, Schwartz SR. 2021. Collision chains among the
+
+terrestrial planets. III. Formation of the Moon. Planet. Sci. J. 2(5):200
+
+Asphaug E, Reufer A. 2014. Mercury and other iron-rich planetary bodies as relics of inefficient accretion.
+
+Nat. Geosci. 7(8):564–68
+
+Barnes J, Hut P. 1986. A hierarchical O(N log N) force-calculation algorithm. Nature 324:446–49
+Benz W, Anic A, Horner J, Whitby JA. 2007. The origin of Mercury. Space Sci. Rev. 132:189–202
+Benz W, Asphaug E. 1999. Catastrophic disruptions revisited. Icarus 142:5–20
+Benz W, Slattery WL, Cameron AGW. 1986. The origin of the moon and the single-impact hypothesis. I.
+
+Icarus 66:515–35
+
+Benz W, Slattery WL, Cameron AGW. 1988. Collisional stripping of Mercury’s mantle. Icarus 74:516–28
+Brown ME, Barkume KM, Ragozzine D, Schaller EL. 2007. A collisional family of icy objects in the Kuiper
+
+belt. Nature 446(7133):294–96
+
+Buckingham E. 1914. On physically similar systems; illustrations of the use of dimensional equations. Phys.
+
+Rev. 4(4):345–76
+
+Burger C, Bazsó Á, Schäfer CM. 2020. Realistic collisional water transport during terrestrial planet formation:
+
+self-consistent modeling by an N-body–SPH hybrid code. Astron. Astrophys. 634:A76
+
+Cambioni S, Asphaug E, Emsenhuber A, Gabriel TSJ, Furfaro R, Schwartz SR. 2019. Realistic on-the-fly
+outcomes of planetary collisions: machine learning applied to simulations of giant impacts. Astrophys. J.
+875:40
+
+Cambioni S, Asphaug E, Furfaro R. 2022. Combining machine-learned regression models with Bayesian
+inference to interpret remote sensing data. In Machine Learning for Planetary Science, ed. J Helbert,
+M D’Amore, M Aye, H Kerner, pp. 193–207. Amsterdam: Elsevier
+
+Cambioni S, Jacobson SA, Emsenhuber A, Asphaug E, Rubie DC, et al. 2021. The effect of inefficient accretion
+
+on planetary differentiation. Planet. Sci. J. 2(3):93
+
+Cameron AGW. 2000. Higher-resolution simulations of the giant impact. In Origin of the Earth and Moon, ed.
+
+RM Canup, K Righter, pp. 133–44. Tucson, AZ: Univ. Arizona Press
+
+Cameron AGW, Benz W. 1991. The origin of the moon and the single impact hypothesis IV. Icarus 92(2):204–
+
+16
+
+Cameron AGW, Ward WR. 1976. The origin of the Moon. Lunar Planet. Sci. Conf. Abstr. 7:120
+Canup RM. 2004. Dynamics of lunar formation. Annu. Rev. Astron. Astrophys. 42:441–75
+Canup RM. 2011. On a giant impact origin of Charon, Nix, and Hydra. Astron. J. 141:35
+Chambers JE. 2013. Late-stage planetary accretion including hit-and-run collisions and fragmentation. Icarus
+
+224:43–56
+
+Chau A, Reinhardt C, Helled R, Stadel J. 2018. Forming Mercury by giant impacts. Astrophys. J. 865:35
+´Cuk M, Stewart ST. 2012. Making the Moon from a fast-spinning Earth: a giant impact followed by resonant
+
+despinning. Science 338(6110):1047–52
+
+Davies EJ, Carter PJ, Root S, Kraus RG, Spaulding DK, et al. 2020. Silicate melting and vaporization during
+
+rocky planet formation. J. Geophys. Res. Planets 125(2):e06227
+
+Dean RB, Dixon WJ. 1951. Simplified statistics for small numbers of observations. Anal. Chem. 23(4):636–38
+DeMeo FE, Carry B. 2014. Solar System evolution from compositional mapping of the asteroid belt. Nature
+
+505(7485):629–34
+
+Denman TR, Leinhardt ZM, Carter PJ. 2022. Atmosphere loss in oblique Super-Earth collisions. MNRAS
+
+513(2):1680–700
+
+Dienes J, Walsh J. 1970. Theory of impact: some general principles and the method of eulerian codes. In
+
+High-Velocity Impact Phenomena, Vol. 2, ed. R Kinslow, pp. 45–104. New York: Academic
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+691
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Dobrovolskis AR. 1990. Tidal disruption of solid bodies. Icarus 88(1):24–38
+Dorn C, Khan A, Heng K, Connolly JAD, Alibert Y, et al. 2015. Can we constrain the interior structure of
+
+rocky exoplanets from mass and radius measurements? Astron. Astrophys. 577:A83
+
+Ebel DS, Stewart ST. 2018. The elusive origin of Mercury. In Mercury: The View After MESSENGER, ed.
+
+SC Solomon, LR Nittler, BJ Anderson, pp. 497–515. Cambridge, UK: Cambridge Univ. Press
+
+Emsenhuber A, Asphaug E. 2019a. Fate of the runner in hit-and-run collisions. Astrophys. J. 875(2):95
+Emsenhuber A, Asphaug E. 2019b. Graze-and-merge collisions under external perturbers. Astrophys. J. 881:102
+Emsenhuber A, Cambioni S, Asphaug E, Gabriel TSJ, Schwartz SR, Furfaro R. 2020. Realistic on-the-fly
+outcomes of planetary collisions. II. Bringing machine learning to N-body simulations. Astrophys. J. 691:6
+Emsenhuber A, Jutzi M, Benz W. 2018. SPH calculations of Mars-scale collisions: the role of the equation of
+
+state, material rheologies, and numerical effects. Icarus 301:247–57
+
+Frontiere N, Raskin CD, Owen JM. 2017. CRKSPH—a conservative reproducing kernel smoothed particle
+
+hydrodynamics scheme. J. Comput. Phys. 332:160–209
+
+Gabriel TSJ, Allen-Sutter H. 2021. Dependencies of mantle shock heating in pairwise accretion. Astrophys. J.
+
+915(2):L32
+
+Gabriel TSJ, Jackson AP, Asphaug E, Reufer A, Jutzi M, Benz W. 2020. Gravity-dominated collisions: a model
+for the largest remnant masses with treatment for “hit and run” and density stratification. Astrophys. J.
+892:40
+
+Genda H, Fujita T, Kobayashi H, Tanaka H, Suetsugu R, Abe Y. 2017. Impact erosion model for gravity-
+
+dominated planetesimals. Icarus 294:234–46
+
+Genda H, Kobayashi H, Kokubo E. 2015. Warm debris disks produced by giant impacts during terrestrial
+
+planet formation. Astrophys. J. 810:136
+
+Gilbert GK. 1893. The Moon’s face: a study of the origin of its features. Bull. Philos. Soc. Washington 12:240–92
+Gingold RA, Monaghan JJ. 1977. Smoothed particle hydrodynamics: theory and application to non-spherical
+
+stars. MNRAS 181(3):375–89
+
+Grady D, Hollenbach R, Schuler K, Callender J. 1977. Strain rate dependence in dolomite inferred from
+
+impact and static compression studies. J. Geophys. Res. 82(8):1325–33
+
+Grady D, Kipp M. 1985. Geometric statistics and dynamic fragmentation. J. Appl. Phys. 58(3):1210–22
+Grimm SL, Stadel JG. 2014. The GENGA code: gravitational encounters in N-body simulations with GPU
+
+acceleration. Astrophys. J. 796:23
+
+Gurevich L, Lebedinsky A. 1950. Gravitational condensation of dust cloud. Dokl. Akad. Nauk SSSR 74(4):673–
+
+75
+
+Haghighipour N, Maindl TI. 2022. Building terrestrial planets: why results of perfect-merging simulations are
+not quantitatively reliable approximations to accurate modeling of terrestrial planet formation. Astrophys.
+J. 926(2):197
+
+Hartmann WK, Davis DR. 1975. Satellite-sized planetesimals and lunar origin. Icarus 24:504–14
+Holsapple KA. 1993. The scaling of impact processes in planetary sciences. Annu. Rev. Earth Planet. Sci. 21:333–
+
+73
+
+Holsapple KA. 1994. Catastrophic disruptions and cratering of Solar System bodies: a review and new results.
+
+Planet. Space Sci. 42(12):1067–78
+
+Hosono N, Iwasawa M, Tanikawa A, Nitadori K, Muranushi T, Makino J. 2017. Unconvergence of very-large-
+
+scale giant impact simulations. PASJ 69(2):26
+
+Jackson AP, Gabriel TSJ, Asphaug EI. 2018. Constraints on the pre-impact orbits of Solar System giant
+
+impactors. MNRAS 474:2924–36
+
+Jackson AP, Wyatt MC. 2012. Debris from terrestrial planet formation: the Moon-forming collision. MNRAS
+
+425:657–79
+
+Jackson AP, Wyatt MC, Bonsor A, Veras D. 2014. Debris from giant impacts between planetary embryos at
+
+large orbital radii. MNRAS 440:3757–77
+
+Johansen A, Dorn C. 2022. Nucleation and growth of iron pebbles explains the formation of iron-rich planets
+
+akin to Mercury. Astron. Astrophys. 662:A19
+
+Johansen A, Lambrechts M. 2017. Forming planets via pebble accretion. Annu. Rev. Earth Planet. Sci. 45:359–87
+Johansen A, Ronnet T, Bizzarro M, Schiller M, Lambrechts M, et al. 2021. A pebble accretion model for the
+
+formation of the terrestrial planets in the Solar System. Sci. Adv. 7(8):eabc0444
+
+692
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Jutzi M. 2015. SPH calculations of asteroid disruptions: the role of pressure dependent failure models. Planet.
+
+Space Sci. 107:3–9
+
+Jutzi M, Michel P. 2020. Collisional heating and compaction of small bodies: constraints for their origin and
+
+evolution. Icarus 350:113867
+
+Jutzi M, Michel P, Richardson DC. 2019. Fragment properties from large-scale asteroid collisions: I: re-
+sults from SPH/N-body simulations using porous parent bodies and improved material models. Icarus
+317:215–28
+
+Kenyon SJ, Bromley BC. 2014. The formation of Pluto’s low-mass satellites. Astron. J. 147(1):8
+Kobayashi H, Isoya K, Sato Y. 2019. Importance of giant impact ejecta for orbits of planets formed during the
+
+giant impact era. Astrophys. J. 887(2):226
+
+Kokubo E, Ida S. 1996. On runaway growth of planetesimals. Icarus 123:180–91
+Kruschke JK. 2010. Bayesian data analysis. Wiley Interdiscip. Rev. Cogn. Sci. 1(5):658–76
+Lambrechts M, Morbidelli A, Jacobson SA, Johansen A, Bitsch B, et al. 2019. Formation of planetary systems by
+pebble accretion and migration. How the radial pebble flux determines a terrestrial-planet or super-Earth
+growth mode. Astron. Astrophys. 627:A83
+
+Leinhardt ZM, Marcus RA, Stewart ST. 2010. The formation of the collisional family around the dwarf planet
+
+Haumea. Astrophys. J. 714:1789–99
+
+Leinhardt ZM, Stewart ST. 2012. Collisions between gravity-dominated bodies. I. Outcome regimes and
+
+scaling laws. Astrophys. J. 745:79
+
+Levin BJ. 1972. Origin of the earth. Tectonophysics 13(1–4):7–29
+Levison HF, Kretke KA, Duncan MJ. 2015. Growing the gas-giant planets by the gradual accumulation of
+
+pebbles. Nature 524(7565):322–24
+
+Levison HF, Thommes E, Duncan MJ. 2010. Modeling the formation of giant planet cores. I. Evaluating key
+
+processes. Astron. J. 139(4):1297–314
+
+Lissauer JJ. 1993. Planet formation. Annu. Rev. Astron. Astrophys. 31:129–74
+Liu SF, Hori Y, Lin DNC, Asphaug E. 2015. Giant impact: an efficient mechanism for the devolatilization of
+
+super-Earths. Astrophys. J. 812(2):164
+
+Lock SJ, Stewart ST. 2019. Giant impacts stochastically change the internal pressures of terrestrial planets.
+
+Sci. Adv. 5(9):eaav3746
+
+Lock SJ, Stewart ST, Petaev MI, Leinhardt Z, Mace MT, et al. 2018. The origin of the moon within a terrestrial
+
+synestia. J. Geophys. Res. Planets 123(4):910–51
+
+Marcus RA, Sasselov D, Hernquist L, Stewart ST. 2010. Minimum radii of super-Earths: constraints from
+
+giant impacts. Astrophys. J. 712:L73–76
+
+Marcus RA, Stewart ST, Sasselov D, Hernquist L. 2009. Collisional stripping and disruption of super-Earths.
+
+Astrophys. J. 700:L118–22
+
+Marinova MM, Aharonson O, Asphaug E. 2011. Geophysical consequences of planetary-scale impacts into a
+
+Mars-like planet. Icarus 211:960–85
+
+Melosh HJ, Kendall J, Horgan B, Johnson BC, Bowling T, et al. 2017. South Pole–Aitken basin ejecta reveal
+
+the Moon’s upper mantle. Geology 45(12):1063–66
+
+Meng HYA, Su KYL, Rieke GH, Stevenson DJ, Plavchan P, et al. 2014. Large impacts around a solar-analog
+
+star in the era of terrestrial planet formation. Science 345(6200):1032–35
+
+Monaghan JJ. 2012. Smoothed particle hydrodynamics and its diverse applications. Annu. Rev. Fluid Mech.
+
+44:323–46
+
+Morbidelli A, Lunine JI, O’Brien DP, Raymond SN, Walsh KJ. 2012. Building terrestrial planets. Annu. Rev.
+
+Earth Planet. Sci. 40:251–75
+
+Movshovitz N, Nimmo F, Korycansky DG, Asphaug E, Owen JM. 2016. Impact disruption of gravity-
+
+dominated bodies: new simulation data and scaling. Icarus 275:85–96
+
+Nakajima M, Golabek GJ, Wünnemann K, Rubie DC, Burger C, et al. 2021. Scaling laws for the geometry of
+
+an impact-induced magma ocean. Earth Planet. Sci. Lett. 568:116983
+
+Nakajima M, Stevenson DJ. 2014. Investigation of the initial state of the Moon-forming disk: bridging SPH
+
+simulations and hydrostatic models. Icarus 233:259–67
+
+Natl. Acad. Sci. Eng. Med. 2022. Origins, Worlds, and Life: A Decadal Strategy for Planetary Science and Astrobiology
+
+2023–2032. Washington, DC: Natl. Acad.
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+693
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Okamoto T, Jenkins A, Eke VR, Quilis V, Frenk CS. 2003. Momentum transfer across shear flows in smoothed
+
+particle hydrodynamic simulations of galaxy formation. MNRAS 345(2):429–46
+
+Palme H, O’Neill HSC. 2003. Cosmochemical estimates of mantle composition. Treatise Geochem. 2:568
+Quintana EV, Barclay T, Borucki WJ, Rowe JF, Chambers JE. 2016. The frequency of giant impacts on
+
+Earth-like worlds. Astrophys. J. 821:126
+
+Ramesh KT, Hogan JD, Kimberley J, Stickle A. 2015. A review of mechanisms and models for dynamic failure,
+
+strength, and fragmentation. Planet. Space Sci. 107:10–23
+
+Raskin C, Owen JM. 2016. Examining the accuracy of astrophysical disk simulations with a generalized
+
+hydrodynamical test problem. Astrophys. J. 831:26
+
+Raymond SN, Morbidelli A. 2022. Planet formation: key mechanisms and global models. In Demographics of
+Exoplanetary Systems: Lecture Notes of the 3rd Advanced School on Exoplanetary Science, ed. K Biazzo, V Bozza,
+L Mancini, A Sozzetti, pp. 3–82. Cham, Switz.: Springer
+
+Read J, Hayfield T, Agertz O. 2010. Resolving mixing in smoothed particle hydrodynamics. MNRAS
+
+405(3):1513–30
+
+Reufer A. 2011. Collisions in planetary systems. PhD thesis, Univ. Bern, Bern, Switz.
+Reufer A, Meier MMM, Benz W, Wieler R. 2012. A hit-and-run giant impact scenario. Icarus 221:296–99
+Root S, Townsend JP, Davies E, Lemke RW, Bliss DE, et al. 2018. The principal Hugoniot of forsterite to
+
+950 GPa. Geophys. Res. Lett. 45(9):3865–72
+
+Rozehnal J, Brož M, Nesvorný D, Walsh KJ, Durda DD, et al. 2022. SPH simulations of high-speed collisions
+
+between asteroids and comets. Icarus 383:115064
+
+Rubie DC, Laurenz V, Jacobson SA, Morbidelli A, Palme H, et al. 2016. Highly siderophile elements were
+
+stripped from Earth’s mantle by iron sulfide segregation. Science 353(6304):1141–44
+
+Rufu R, Aharonson O, Perets HB. 2017. A multiple-impact origin for the Moon. Nat. Geosci. 10:89–94
+Safronov VS. 1964. The growth of terrestrial planets. Probl. Cosmogeny 6:71
+Safronov VS. 1972. Evolution of the Protoplanetary Cloud and Formation of the Earth and the Planets. Jerusalem:
+
+Israel Program Sci. Transl.
+
+Schmidt OY. 1958. A Theory of the Origin of the Earth, transl. GH Hannah. London: Lawrence & Wishart.
+
+3rd ed.
+
+Schultz PH, Crawford DA. 2011. Origin of nearside structural and geochemical anomalies on the Moon. Geol.
+
+Soc. Am. Spec. Pap. 477:141–59
+
+Scora J, Valencia D, Morbidelli A, Jacobson S. 2020. Chemical diversity of super-Earths as a consequence of
+
+formation. MNRAS 493(4):4910–24
+
+Scott ERD, Haack H, Love SG. 2001. Formation of mesosiderites by fragmentation and reaccretion of a large
+
+differentiated asteroid. Meteorit. Planet. Sci. 36(6):869–91
+
+Shoemaker EM. 1962. Interpretation of lunar craters. In Physics and Astronomy of the Moon, ed. Z Kopal,
+
+pp. 283–359. New York: Academic
+
+Smith JV. 1979. Mineralogy of the planets: a voyage in space and time. Philos. Trans. R. Soc. A 286:433–37
+Stevenson DJ. 1987. Origin of the moon—the collision hypothesis. Annu. Rev. Earth Planet. Sci. 15:271–315
+Stewart ST, Leinhardt ZM. 2012. Collisions between gravity-dominated bodies. II. The diversity of impact
+
+outcomes during the end stage of planet formation. Astrophys. J. 751:32
+
+Stewart ST, Seifter A, Obst AW. 2008. Shocked H2O ice: thermal emission measurements and the criteria for
+
+phase changes during impact events. Geophys. Res. Lett. 35(23):L23203
+
+Süli Á. 2021. Statistics of collision parameters computed from 2D simulations. MNRAS 503(4):4700–18
+Tatsumoto M, Rosholt JN. 1970. Age of the Moon: an isotopic study of uranium-thorium-lead systematics of
+
+lunar samples. Science 167(3918):461
+
+Timpe ML, Han Veiga M, Knabenhans M, Stadel J, Marelli S. 2020. Machine learning applied to simulations
+
+of collisions between rotating, differentiated planets. Comput. Astrophys. Cosmol. 7(1):2
+
+Vacondio R, Altomare C, De Leffe M, Hu X, Le Touzé D, et al. 2021. Grand challenges for smoothed particle
+
+hydrodynamics numerical schemes. Comput. Part. Mech. 8(3):575–88
+
+Valencia D, Paracha E, Jackson AP. 2019. Can a machine learn the outcome of planetary collisions? Astrophys.
+
+J. 882:35
+
+Violeau D. 2012. Fluid Mechanics and the SPH Method. Oxford, UK: Oxford Univ. Press
+
+694
+
+Gabriel (cid:15) Cambioni
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51CH25_Gabriel
+
+ARjats.cls
+
+May 12, 2023
+
+18:0
+
+Voelkel O, Deienno R, Kretke K, Klahr H. 2021. Linking planetary embryo formation to planetesimal
+
+formation. II. The effect of pebble accretion in the terrestrial planet zone. Astron. Astrophys. 645:A132
+
+Weibull W. 1939. A Statistical Theory of Strength of Materials. Stockholm: Gen. litogr. anst. forl.
+Weiss BP, Elkins-Tanton LT. 2013. Differentiated planetesimals and the parent bodies of chondrites. Annu.
+
+Rev. Earth Planet. Sci. 41:529–60
+
+Wetherill GW. 1976. The role of large bodies in the formation of the Earth and Moon. Lunar Planet. Sci. Conf.
+
+Proc. 3:3245–57
+
+Wieczorek MA, Weiss BP, Stewart ST. 2012. An impactor origin for lunar magnetic anomalies. Science
+
+335(6073):1212
+
+Williams JP, Cieza LA. 2011. Protoplanetary disks and their evolution. Annu. Rev. Astron. Astrophys. 49:67–117
+Windmill RJ, Franchi IA, Hellmann JL, Schneider JM, Spitzer F, et al. 2022. Isotopic evidence for pallasite
+formation by impact mixing of olivine and metal during the first 10 million years of the Solar System.
+PNAS Nexus 1(1):pgac015
+
+Woo JMY, Grimm S, Brasser R, Stadel J. 2021. Growing Mars fast: high-resolution GPU simulations of
+
+embryo formation. Icarus 359:114305
+
+Wyatt MC. 2021. Debris disks. In ExoFrontiers: Big Questions in Exoplanetary Science, ed. N Madhusudhan,
+
+pp. 2514–3433. Bristol, UK: IOP Publish.
+
+www.annualreviews.org (cid:15) Giant Impacts
+
+695
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51_FrontMatter
+
+ARjats.cls
+
+April 28, 2023
+
+14:19
+
+Contents
+
+Estella Atekwana: Autobiographical Notes
+(cid:2)
+
+Estella A. Atekwana (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+The Evolving Chronology of Moon Formation
+(cid:2)
+
+Lars E. Borg and Richard W. Carlson (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Annual Review
+of Earth and
+Planetary Sciences
+
+Volume 51, 2023
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2) 1
+
+(cid:2)25
+
+Harnessing the Power of Communication and Behavior Science to
+
+Enhance Society’s Response to Climate Change
+Edward W. Maibach, Sri Saahitya Uppalapati, Margaret Orr, and Jagadish Thaker (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)53
+
+River Deltas and Sea-Level Rise
+
+Jaap H. Nienhuis, Wonsuck Kim, Glenn A. Milne, Melinda Quock,
+(cid:2)
+
+Aimée B.A. Slangen, and Torbjörn E. Törnqvist (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Machine Learning in Earthquake Seismology
+(cid:2)
+S. Mostafa Mousavi and Gregory C. Beroza (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Bubble Formation in Magma
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)79
+
+(cid:2) 105
+
+James E. Gardner, Fabian B. Wadsworth, Tamara L. Carley, Edward W. Llewellin,
+(cid:2)
+(cid:2)
+
+Halim Kusumaatmaja, and Dork Sahagian (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2) 131
+
+Continental Crustal Growth Processes Recorded in the Gangdese
+
+Batholith, Southern Tibet
+Di-Cheng Zhu, Qing Wang, Roberto F. Weinberg, Peter A. Cawood,
+(cid:2)
+
+Zhidan Zhao, Zeng-Qian Hou, and Xuan-Xue Mo (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2) 155
+
+Iceberg Calving: Regimes and Transitions
+
+R.B. Alley, K.M. Cuffey, J.N. Bassis, K.E. Alley, S. Wang, B.R. Parizek,
+(cid:2)
+(cid:2)
+
+S. Anandakrishnan, K. Christianson, and R.M. DeConto (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2) 189
+
+Fracture Energy and Breakdown Work During Earthquakes
+
+Massimo Cocco, Stefano Aretusini, Chiara Cornelio, Stefan B. Nielsen,
+(cid:2)
+(cid:2)
+
+Elena Spagnuolo, Elisa Tinti, and Giulio Di Toro (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Evolution of Atmospheric O2 Through the Phanerozoic, Revisited
+
+Benjamin J.W. Mills, Alexander J. Krause, Ian Jarvis, and Bradley D. Cramer (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2) 217
+
+(cid:2) 253
+
+ix
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51_FrontMatter
+
+ARjats.cls
+
+April 28, 2023
+
+14:19
+
+Instructive Surprises in the Hydrological Functioning of Landscapes
+(cid:2)
+(cid:2)
+
+James W. Kirchner, Paolo Benettin, and Ilja van Meerveld (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Deconstructing the Lomagundi-Jatuli Carbon Isotope Excursion
+
+Malcolm S.W. Hodgskiss, Peter W. Crockford, and Alexandra V. Turchyn (cid:2)
+
+Elastic Thermobarometry
+
+Matthew J. Kohn, Mattia L. Mazzucchelli, and Matteo Alvaro (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Mimas: Frozen Fragment, Ring Relic, or Emerging Ocean World?
+(cid:2)
+(cid:2)
+(cid:2)
+(cid:2)
+
+Alyssa Rose Rhoden (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+The Mid-Pleistocene Climate Transition
+(cid:2)
+(cid:2)
+
+Timothy D. Herbert (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Neogene History of the Amazonian Flora: A Perspective Based on
+Geological, Palynological, and Molecular Phylogenetic Data
+Carina Hoorn, Lúcia G. Lohmann, Lydian M. Boschman,
+(cid:2)
+(cid:2)
+
+and Fabien L. Condamine (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Hydrological Consequences of Solar Geoengineering
+
+Katharine Ricke, Jessica S. Wan, Marissa Saenger, and Nicholas J. Lutsko (cid:2)
+
+What Models Tell Us About the Evolution of Carbon Sources
+
+and Sinks over the Phanerozoic
+Y. Goddéris, Y. Donnadieu, and B.J.W. Mills (cid:2)
+
+The Rock-Hosted Biosphere
+
+Alexis S. Templeton and Tristan A. Caro (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Petrogenesis and Geodynamic Significance of Xenolithic Eclogites
+(cid:2)
+(cid:2)
+
+Sonja Aulbach and Katie A. Smart (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+A Systems Approach to Understanding How Plants Transformed
+
+Earth’s Environment in Deep Time
+William J. Matthaeus, Sophia I. Macarewich, Jon Richey, Isabel P. Montañez,
+
+Jennifer C. McElwain, Joseph D. White, Jonathan P. Wilson,
+(cid:2)
+(cid:2)
+(cid:2)
+(cid:2)
+(cid:2)
+and Christopher J. Poulsen (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Ductile Deformation of the Lithospheric Mantle
+(cid:2)
+(cid:2)
+
+Jessica M. Warren and Lars N. Hansen (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Frontiers of Carbonate Clumped Isotope Thermometry
+(cid:2)
+(cid:2)
+
+Katharine W. Huntington and Sierra V. Petersen (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+Mars Seismology
+
+P. Lognonné, W.B. Banerdt, J. Clinton, R.F. Garcia, D. Giardini,
+(cid:2)
+(cid:2)
+
+B. Knapmeyer-Endrun, M. Panning, and W.T. Pike (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+The Role of Giant Impacts in Planet Formation
+(cid:2)
+(cid:2)
+Travis S.J. Gabriel and Saverio Cambioni (cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+x
+
+Contents
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2)
+
+(cid:2) 277
+
+(cid:2) 301
+
+(cid:2) 331
+
+(cid:2) 367
+
+(cid:2) 389
+
+(cid:2) 419
+
+(cid:2) 447
+
+(cid:2) 471
+
+(cid:2) 493
+
+(cid:2) 521
+
+(cid:2) 551
+
+(cid:2) 581
+
+(cid:2) 611
+
+(cid:2) 643
+
+(cid:2) 671
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51_FrontMatter
+
+ARjats.cls
+
+April 28, 2023
+
+14:19
+
+Errata
+
+An online log of corrections to Annual Review of Earth and Planetary Sciences articles
+may be found at http://www.annualreviews.org/errata/earth
+
+Contents
+
+xi
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51_FrontMatter
+
+ARjats.cls
+
+April 28, 2023
+
+14:19
+
+Related Articles
+
+From the Annual Review of Astronomy and Astrophysics, Volume 60 (2022)
+
+Atmospheres of Rocky Exoplanets
+
+Robin Wordsworth and Laura Kreidberg
+
+From the Annual Review of Chemical and Biomolecular Engineering, Volume 13
+(2022)
+
+Direct Air Capture of CO2 Using Solvents
+
+Radu Custelcean
+
+Technological Options for Direct Air Capture: A Comparative Process
+
+Engineering Review
+Xiaowei Wu, Ramanan Krishnamoorti, and Praveen Bollini
+
+From the Annual Review of Ecology, Evolution, and Systematics, Volume 53 (2022)
+
+Evolutionary Ecology of Fire
+
+Jon E. Keeley and Juli G. Pausas
+
+Integrating Fossil Observations Into Phylogenetics Using the Fossilized
+
+Birth–Death Model
+April M. Wright, David W. Bapst, Joëlle Barido-Sottani,
+
+and Rachel C.M. Warnock
+
+The Macroevolutionary History of Bony Fishes: A Paleontological View
+
+Matt Friedman
+
+From the Annual Review of Environment and Resources, Volume 47 (2022)
+
+The Ocean Carbon Cycle
+
+Tim DeVries
+
+Permafrost and Climate Change: Carbon Cycle Feedbacks From
+
+the Warming Arctic
+Edward A.G. Schuur, Benjamin W. Abbott, Roisin Commane, Jessica Ernakovich,
+
+Eugenie Euskirchen, Gustaf Hugelius, Guido Grosse, Miriam Jones, Charlie Koven,
+Victor Leshyk, David Lawrence, Michael M. Loranty, Marguerite Mauritz,
+David Olefeldt, Susan Natali, Heidi Rodenhizer, Verity Salmon, Christina Schädel,
+Jens Strauss, Claire Treat, and Merritt Turetsky
+
+xii
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51_FrontMatter
+
+ARjats.cls
+
+April 28, 2023
+
+14:19
+
+Remote Sensing the Ocean Biosphere
+
+Sam Purkis and Ved Chirayath
+
+From the Annual Review of Fluid Mechanics, Volume 55 (2023)
+
+Submesoscale Dynamics in the Upper Ocean
+John R. Taylor and Andrew F. Thompson
+
+Fluid Dynamics of Polar Vortices on Earth, Mars, and Titan
+
+Darryn W. Waugh
+
+Icebergs Melting
+
+Claudia Cenedese and Fiamma Straneo
+
+The Fluid Mechanics of Deep-Sea Mining
+
+Thomas Peacock and Raphael Ouillon
+
+Turbulent Rotating Rayleigh–Bénard Convection
+
+Robert E. Ecke and Olga Shishkina
+
+From the Annual Review of Marine Science, Volume 15 (2023)
+
+From Stamps to Parabolas
+S. George Philander
+
+Sociotechnical Considerations About Ocean Carbon Dioxide Removal
+Sarah R. Cooley, Sonja Klinsky, David R. Morrow, and Terre Satterfield
+
+Nuclear Reprocessing Tracers Illuminate Flow Features and Connectivity
+
+Between the Arctic and Subpolar North Atlantic Oceans
+Núria Casacuberta and John N. Smith
+
+The Arctic Ocean’s Beaufort Gyre
+
+Mary-Louise Timmermans and John M. Toole
+
+Global Quaternary Carbonate Burial: Proxy- and Model-Based Reconstructions
+
+and Persisting Uncertainties
+Madison Wood, Christopher T. Hayes, and Adina Paytan
+
+Quantifying the Ocean’s Biological Pump and Its Carbon Cycle Impacts
+
+on Global Scales
+David A. Siegel, Timothy DeVries, Ivona Cetini´c, and Kelsey M. Bisson
+
+Novel Insights into Marine Iron Biogeochemistry from Iron Isotopes
+
+Jessica N. Fitzsimmons and Tim M. Conway
+
+Insights from Fossil-Bound Nitrogen Isotopes in Diatoms, Foraminifera,
+
+and Corals
+Rebecca S. Robinson, Sandi M. Smart, Jonathan D. Cybulski, Kelton W. McMahon,
+
+Basia Marcks, and Catherine Nowakowski
+
+Prokaryotic Life in the Deep Ocean’s Water Column
+
+Gerhard J. Herndl, Barbara Bayer, Federico Baltar, and Thomas Reinthaler
+
+Related Articles
+
+xiii
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. EA51_FrontMatter
+
+ARjats.cls
+
+April 28, 2023
+
+14:19
+
+Lipid Biogeochemistry and Modern Lipidomic Techniques
+
+Bethanie R. Edwards
+
+From the Annual Review of Materials Research, Volume 52 (2022)
+
+Biomineralized Materials for Sustainable and Durable Construction
+
+Danielle N. Beatty, Sarah L. Williams, and Wil V. Srubar III
+
+Brittle Solids: From Physics and Chemistry to Materials Applications
+
+Brian R. Lawn and David B. Marshall
+
+Material Flows and Efficiency
+
+Jonathan M. Cullen and Daniel R. Cooper
+
+Architectural Glass
+
+Sheldon M. Wiederhorn and David R. Clarke
+
+xiv
+
+Related Articles
+
+Annu. Rev. Earth Planet. Sci. 2023.51:671-695. Downloaded from www.annualreviews.org Access provided by 2600:8800:6215:7500:4526:b649:b5dd:a4b on 12/22/23. See copyright for approved use. 

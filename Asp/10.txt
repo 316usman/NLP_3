@@ -1,0 +1,1975 @@
+Draft version December 29, 2023
+Preprint typeset using LATEX style emulateapj v. 12/16/11
+
+SPECTROASTROMETRIC SURVEY OF PROTOPLANETARY DISKS WITH INNER DUST CAVITIES
+
+3
+2
+0
+2
+c
+e
+D
+8
+2
+
+]
+
+R
+S
+.
+h
+p
+-
+o
+r
+t
+s
+a
+[
+
+1
+v
+8
+1
+2
+7
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Stanley K. Jensen Jr.
+Department of Physics and Astronomy, 118 Kinard Laboratory, Clemson University, Clemson, SC 29634-0978
+
+Sean D. Brittain
+Department of Physics and Astronomy, 118 Kinard Laboratory, Clemson University, Clemson, SC 29634-0978
+
+Andrea Banzatti
+Department of Physics, Texas State University, 749 N Comanche Street, San Marcos, TX 78666, USA
+
+Joan R. Najita
+NSF’s NOIRLab, 950 North Cherry Avenue, Tucson, AZ 85719
+
+John S. Carr
+Department of Astronomy, University of Maryland, College Park, MD 20742, USA
+
+Joshua Kern
+Department of Physics and Astronomy, 118 Kinard Laboratory, Clemson University, Clemson, SC 29634-0978
+
+Janus Kozdon
+Department of Physics and Astronomy, 118 Kinard Laboratory, Clemson University, Clemson, SC 29634-0978
+
+Jonathan Zrake
+Department of Physics and Astronomy, 118 Kinard Laboratory, Clemson University, Clemson, SC 29634-0978
+
+Jeffery Fung
+Department of Physics and Astronomy, 118 Kinard Laboratory, Clemson University, Clemson, SC 29634-0978
+Draft version December 29, 2023
+
+ABSTRACT
+We present high-resolution spectra and spectroastrometric (SA) measurements of fundamental ro-
+vibrational CO emission from nine nearby (≲300 pc) protoplanetary disks where large inner dust
+cavities have been observed. The emission line profiles and SA signals are fit with a slab disk model
+that allows the eccentricity of the disk and intensity of the emission to vary as power laws. Six of the
+sources are well fit with our model, and three of these sources show asymmetric line profiles that can
+be fit by adopting a non-zero eccentricity. The three other sources have components in either their line
+profile or SA signal that are not captured by our disk model. Two of these sources (V892 Tau, CQ Tau)
+have multi-epoch observations that reveal significant variability. CQ Tau and AB Aur have CO line
+profiles with centrally-peaked components that are similar to line profiles that have been interpreted
+as evidence of molecular gas arising from a wide-angle disk wind. Alternatively, emission from a
+circumplanetary disk (CPD) could also account for this component. The interpretations of these
+results can be clarified in the future with additional epochs that will test the variability timescale of
+these SA signals. We discuss the utility of using high-resolution spectroscopy for probing the dynamics
+of gas in the disk and the scenarios that can give rise to profiles that are not fit with a simple disk
+model.
+
+1.
+
+INTRODUCTION
+As gas giant planets form, they interact with the disk
+in ways that are expected to produce observable signa-
+tures of their presence. For example, a massive planet
+
+will restrict the flow of material from the outer disk
+across its orbit and into the inner disk (e.g., Lubow et al.
+1999). This process is expected to result in disks whose
+inner regions reveal evidence of the depletion of dust (i.e.,
+
+ 
+ 
+ 
+ 
+ 
+ 
+2
+
+Jensen et al.
+
+gapped disks, pre-transitional disks, or transition disks).
+Giant planets can also drive spiral arms in the disk (e.g.,
+Fung et al. 2015). Indeed, Dong et al. (2018) point out
+that direct imaging of nearby Herbig stars indicates that
+∼ 20−50% of intermediate-mass stars harbor a gas giant
+planet from beyond ∼30 au.
+
+While the depletion of dust in the inner disk and the
+appearance of spiral arms are enticing signposts of planet
+formation in disks, other effects can give rise to these
+features. For example, Najita et al. (2007b) summarize
+three other scenarios that can in principle result in a
+transition disk without the presence of a planet: tidal
+interactions with a stellar companion, preferential grain
+growth in the inner disk, and photoevaporation of the
+disk. Similarly, stellar flybys can induce spiral patterns in
+disks (Smallwood et al. 2023). Thus the identification of
+a disk whose inner region is cleared or whose disk reveals
+spiral structures is not sufficient to identify the presence
+of a planet in a disk. Unfortunately, direct imaging of gas
+giant planets in disks has proven difficult. To date, the
+reported detections of forming planets in disks remain
+hotly contested with the exception of PDS 70 bc (Keppler
+et al. 2018; M¨uller et al. 2018; Haffert et al. 2019).
+
+An alternative way to search for signposts of planet
+formation is the use of high-resolution spectroscopy
+(R≳25,000) of ro-vibrational molecular emission lines
+(e.g., Brittain et al. 2023). The observation of ro-
+vibrational CO emission has been used extensively to
+study warm molecular gas in the inner disk (e.g., Na-
+jita et al. 2000). While such emission is generally not
+spatially resolved, the radial distribution of the emitting
+gas can be inferred from the resolved spectral line profiles
+(Brittain et al. 2003; Najita et al. 2007a; Blake & Boogert
+2004; Salyk et al. 2011). Warm ro-vibrational molecular
+emission is typically found to arise within the inner ∼1 au
+of disks around T Tauri stars (Najita et al. 2003), though
+it can be far more extended in the case of Herbig stars
+(Brittain et al. 2003, 2007; Goto et al. 2006; van der Plas
+et al. 2015). The availability of even higher resolution
+spectrometers (R∼100,000), surprisingly revealed that
+even many resolved lines were centrally peaked (Bast
+et al. 2011). Pontoppidan et al. (2008) applied spectroas-
+trometry (SA) to the study of ro-vibrational CO emission
+lines that provided additional information about the dis-
+tribution of the gas.
+
+SA is the measurement of the center of the point spread
+function (PSF) of the spectrum at each wavelength (e.g.,
+Bailey 1998; Takami et al. 2003; Brannigan et al. 2006;
+Whelan & Garcia 2008; Brittain et al. 2015). In the case
+of an emission line arising from a circumstellar disk, the
+red- and blueshifted side of the line will be extended in
+opposite directions along the slit axis when the position
+angle of the slit is aligned with the position angle of the
+disk (e.g., Pontoppidan et al. 2008, 2011). As the slit
+is rotated from the semi-major to the semi-minor this
+offset reduces until none is observed. When the gas is
+not axisymmetric, the shift in the center of the PSF can
+be more complicated (e.g. Brittain et al. 2013). Brittain
+et al. (2015) provided a review of the application of SA to
+the study of protoplanetary disks, including the ability
+to measure to small scales and usefulness in monitoring
+spatial aspects of spectroscopic variability.
+
+Ro-vibrational spectra from protoplanetary disks have
+been analyzed with SA in several studies (Pontoppidan
+
+et al. 2008, 2011; Brittain et al. 2009, 2015, 2018; Brown
+In many cases
+et al. 2012, 2013; Jensen et al. 2021).
+the spectra were found to be consistent with emission
+arising from gas in a Keplerian orbit in an axisymmetric
+disk. For high accreting systems ( ˙M > 10−7), Pontoppi-
+dan et al. (2011) found that the radial distribution of ro-
+vibrational CO emission was surprisingly compact, such
+that if line emission originated from rotating gas within
+the disk then the emitting gas must be sub-Keplerian.
+Sub-Keplerian rotation of the disk atmosphere is ex-
+pected for disks that redistribute angular momentum
+via surface accretion flows (e.g. Zhu & Stone 2018; Bai
+2017). Pontoppidan et al. (2011) proposed that the lines
+observed in these systems arose from a wide-angle disk
+wind rotating at a sub-Keplerian orbital velocity, a pos-
+sibility which has also been investigated in other studies
+without SA (e.g. Bast et al. 2011; Banzatti et al. 2022).
+Since the blueshift of the emission is at most a few km
+s−1, the outflow velocity of the hypothesized wind can-
+not be large. In T Tauri stars, outflows have long been
+studied using optical [OI] emisison as a tracer of low-
+density, hot gas (e.g. Edwards et al. 1987; Hartigan et al.
+1995). Recent studies of low-velocity components of [OI]
+found singly-peaked, low-blueshift lines consistent with
+a wind interpretation (e.g. Fang et al. 2018; McGinnis
+et al. 2018; Banzatti et al. 2019). Modeling efforts have
+also reinforced the idea of emission blueshifted by only a
+few km s−1 relating to [OI] and molecular winds, includ-
+ing CO (e.g. Wang et al. 2019; Weber et al. 2020; Rab
+et al. 2022) while the counterflow may be hidden by the
+circumstellar disk. While a singly-peaked, low-velocity
+wind can be difficult to distinguish from a Keplerian pro-
+file with spectroscopy alone, by employing SA it is possi-
+ble to reveal non-Keplerian signatures which can differen-
+tiate between the two scenarios. If the CO emission from
+such a wind is sufficiently far from the disk surface, we
+would expect to detect a SA signal directed perpendic-
+ular to the disk (Pontoppidan et al. 2011). The degree
+of variability of emission lines formed in a wind is un-
+certain as there are limited multi-epoch observations of
+such sources. If the lines are variable, whether in bright-
+ness or spatial offset, it is expected that the timescale of
+such variability would be stochastic like that of variable
+accretion.
+
+High-resolution, multi-epoch observations of CO emis-
+sion revealed further surprises. CO emission from the
+transition disk around the Herbig star HD 100546 was
+found to be variable (Brittain et al. 2009). Subsequent
+observations confirmed the variability, and the applica-
+tion of SA enabled these authors to determine the loca-
+tion of the variability (Brittain et al. 2013, 2014, 2019).
+These authors found that the source of the variability
+was a compact source of emission orbiting near the inner
+edge of the disk. Such a signal is consistent with emission
+from a circumplanetary disk (CPD).
+
+CPDs are expected to extend between 30% to 100% of
+the extent of the Hill sphere (e.g., Quillen et al. 2004;
+Szul´agyi et al. 2016, 2017). For a 5 MJ planet 10 au
+from 2.5 M⊙ star, the extent of a CPD is expected to
+be 0.3-1.0 au and reach temperatures in excess of 500 K
+(e.g., Szul´agyi et al. 2017). The emission lines from the
+CPD are expected to shift relative to the system velocity
+on an orbital time scale, a signature that has been ob-
+
+Keplerian and Eccentric Modeling
+
+3
+
+served for HD 100546 (Brittain et al. 2013, 2014, 2019).
+Indeed, radiation-thermochemical simulations of a CPD
+orbiting HD 100546 by Oberg et al. (2022) reproduce the
+CO luminosity of the orbiting emission reported by Brit-
+tain et al. (2013). Another signpost of the presence of a
+forming planet results from the tidal interaction between
+the planet and the disk giving rise to a persistent disk
+eccentricity in the vicinity of the planet (e.g., Papaloizou
+et al. 2001; Kley & Dirksen 2006). The ro-vibrational OH
+emission lines observed from HD 100546 have an asym-
+metric structure that can be produced by a narrow ec-
+centric annulus of gas (Liskowsky et al. 2012; Brittain
+et al. 2019).
+
+Other effects can give rise to emission line profiles
+and/or SA signals that are not consistent with emission
+from an axisymmetric disk. For example, a vortex can
+also create non-axisymmetric structures in the disk that
+have been revealed by sub-mm imaging (van der Marel
+et al. 2021). Three-dimensional hydrodynamical simula-
+tions indicate that a vortex extends vertically throughout
+the disk (e.g. Barge et al. 2016; Raettig et al. 2021) or
+may even move away from the midplane and reside at
+the disk surface (Barranco & Marcus 2005; Marcus et al.
+2013). Vortices in Keplerian disks are anticyclonic and,
+therefore, high-pressure regions that are elevated in tem-
+perature and/or density, depending on thermodynamics.
+The density and temperature fluctuations of gas have a
+complicated relationship with the emission arising from
+molecular gas at the disk surface. If the gas density is
+below the critical density for the vibrational levels of CO
+(n∼ 1012 cm−3, e.g. Najita et al. 1996), density fluc-
+tuations will have a strong influence on the vibrational
+population of the molecules. On the other hand, den-
+sity enhancements may quench fluorescence (Thi et al.
+2013). Temperature fluctuations in the gas can also affect
+the level populations, but they can also affect the scale
+height of the gas thereby changing the amount of UV
+light captured by the molecules and thus the intensity of
+ro-vibrational CO lines (e.g., Brittain et al. 2007). Re-
+gardless of whether vorticity enhances or diminishes the
+luminosity of CO emission, this effect will be azimuthally
+extended and vary on an orbital timescale. The obser-
+vational consequences of these three scenarios, as well as
+the previously discussed wind scenario, are summarized
+in Table 1.
+
+Here we present ro-vibrational CO spectra from nine
+disks drawn from Banzatti et al. (2022) for which an SA
+signal can be measured. The majority of the emission
+line profiles observed among the sample can be repro-
+duced with a slab model of a disk that treats the inten-
+sity and eccentricity of the disk as power laws. However,
+three sources (CQ Tau, V892 Tau, and AB Aur) exhibit
+features in their spectroscopic and SA profiles that can-
+not be replicated with emission from an axisymmetric
+rotating disk and are prime candidates for follow-up ob-
+servations and more detailed modeling.
+
+In this paper, we begin with an overview of our sample
+followed by a description of the observations and data
+reduction process. We then describe the modeling of
+the data and discuss the results of our modeling for the
+individual sources. We conclude with a summary of the
+results of the survey and discuss further observations that
+can elucidate the origin of the emission.
+
+2. SAMPLE
+
+We selected nine intermediate-mass
+
+stars within
+∼300 pc with evidence of gaps/large inner holes (see Ta-
+ble 2). Eight of the targets are known to have structures
+such as spiral arms (HD 141569, LkHα 330, EM* SR 21A,
+CQ Tau, V892 Tau, AB Aur) and/or rings (HD 141569,
+HD 169142, EM* SR 21A, Oph-IRS 48). Here we provide
+a brief overview of each target.
+
+2.1. HD 141569
+HD 141569 is a ∼2 M⊙ (Guzm´an-D´ıaz et al. 2021) star
+with an extended disk (e.g. Clampin et al. 2003) at a dis-
+tance of 110.6±0.5 pc (Gaia Collaboration et al. 2016,
+2018; Vioque et al. 2018). Mawet et al. (2017) find the
+position angle (PA) of the disk is 349 ± 8◦ and the incli-
+nation of the disk is 53 ± 6◦ based on scattered light L′
+imaging which is consistent with the PA (356◦) and incli-
+nation (51◦) inferred from near-infrared, scattered light
+observations of the outer disk acquired with NICMOS at
+1.1 µm on the Hubble Space Telescope (Weinberger et al.
+1999). We adopt these latter values to be consistent with
+previous modeling efforts (Jensen et al. 2021).
+
+The inner edge of the disk was estimated to extend
+into ∼10 au based on modeling of the SED (Malfait et al.
+1998) as well as various other structures at larger radii
+such as spirals and rings (Clampin et al. 2003; Perrot
+et al. 2016; Konishi et al. 2016). This target is further
+noteworthy for being between the transition disk and de-
+bris disk classifications (Wyatt et al. 2015). Previously
+published work, revisited in more detail below, found ro-
+vibrational CO emission from 12 to 60 au consistent with
+an axisymmetric rotating disk (Jensen et al. 2021).
+
+2.2. HD 179218
+HD 179218 is a 3 M⊙ (Guzm´an-D´ıaz et al. 2021) Herbig
+Ae/Be star at a distance of 266.0±3.3 pc (Gaia Collab-
+oration et al. 2016, 2018). We adopted the disk inclina-
+tion of 40◦ from Fedele et al. (2008) and position angle
+of 23◦ from van der Plas et al. (2015) for the analysis
+in this paper. Previous observation of the ro-vibrational
+CO emission indicates that the inner edge of the molec-
+ular component of the disk is 11 au (van der Plas et al.
+2015; Brittain et al. 2018). However, modeling of the
+SED is consistent with the disk extending into 0.56 au
+(Guzm´an-D´ıaz et al. 2021), and high contrast imaging in
+the J−band with GPI reveals no structure in the outer
+disk (R≳20 au) (Rich et al. 2022).
+
+2.3. HD 169142
+HD 169142 is a 1.85 M⊙ (Gratton et al. 2019) Her-
+big at a distance of 114.0±0.8 pc (Gaia Collaboration
+et al. 2016, 2018). We adopt a disk PA of 5◦ and in-
+clination of 13◦ (Raman et al. 2006) for the analysis in
+this paper. The disk has a variety of features, including
+a number of rings (e.g. Quanz et al. 2013; Fedele et al.
+2017; Mac´ıas et al. 2017; P´erez et al. 2019) as well as
+gaps at various wavelengths, including mid-infrared and
+radio/millimeter (e.g. Honda et al. 2012; Quanz et al.
+2013; Osorio et al. 2014; Fedele et al. 2017) with a dust-
+depleted cavity inward of ∼20 au. A point-like feature in
+the disk has been observed over three epochs (Hammond
+et al. 2023). The motion of this point source is consis-
+tent with an object in a Keplerian orbit and indicates
+
+4
+
+Jensen et al.
+
+the presence of a young gas giant planet. This source of
+emission is 0′′.32 from the star at a PA=44◦.
+
+2.4. LkHα 330
+LkHα 330 is a 2-3 M⊙ (e.g. Valeg˚ard et al. 2021; Pon-
+toppidan et al. 2011; Andrews et al. 2018) intermediate
+mass T Tauri star with a (pre-)transition disk (Espaillat
+et al. 2014) at a distance of 318.2±3.5 pc (Gaia Collab-
+oration et al. 2016, 2018). We adopt the position angle
+and inclination of the disk from Pinilla et al. (2022, 28◦
+and 49◦ respectively). It is known to have a significant
+dust cavity from submillimeter and infrared (IR) imag-
+ing (Brown et al. 2008; Andrews et al. 2011; Isella et al.
+2013; Uyama et al. 2018) with a size of ∼50-80 au as
+well as indications of spiral and asymmetric structure
+(Akiyama et al. 2016; Pinilla et al. 2022). Pinilla et al.
+(2022) find that they can account for the structures ob-
+served in the disk with a 10 MJ planet orbiting at 60 au
+with an eccentricity of 0.1.
+
+2.5. EM* SR 21A
+EM* SR 21A (hearafter SR 21) is a 1.64 M⊙ (Valeg˚ard
+et al. 2021) star at a distance of 136.4±0.6 pc (Gaia Col-
+laboration et al. 2016, 2018). For the analysis in this
+paper, we adopt the PA (18◦) and inclination (16◦) of
+the disk from van der Marel et al. (2016). The profile of
+the ro-vibrational CO emission lines indicates that the
+inner edge of the molecular disk is at 6.5 au (Pontoppi-
+dan et al. 2008). Observations at millimeter wavelengths
+have yielded evidence of ring structure and a large cavity
+in dust, while there is either no gas cavity or a significant
+size mismatch (e.g. van der Marel et al. 2016). Other au-
+thors have noted features such as gaps and spiral arms,
+including an apparent mismatch between the gas and
+dust extent (∼7 au inner edge for the gas and ∼35 au
+clearing of large dust grains), and have been interpreted
+as possible signs of planet-disk interaction (Sallum et al.
+2019; Muro-Arena et al. 2020).
+
+2.6. Oph-IRS 48
+Oph-IRS 48 (hearafter IRS 48) is a 2 M⊙ (Brown et al.
+2012) star at a distance of 134.5±2.1 pc (Gaia Collab-
+oration et al. 2016, 2018). For the analysis in this pa-
+per, we adopt the position angle (95◦) and inclination
+(42◦) of the disk from Brown et al. (2012). Previous
+CO ro-vibrational observations with CRIRES showed ev-
+idence of a ring of emission co-spatial with the edge of a
+dust cavity at approximately 34 au (Brown et al. 2012).
+The inner edge of the disk (R∼15-20 au) shows evidence
+of eccentricity based on dust modeling compared with
+690 GHz continuum observations, which may be caused
+by a stellar-mass binary companion at approximately
+10 au (Calcino et al. 2019).
+
+2.7. CQ Tau
+CQ Tau is a 1.57 M⊙ (W¨olfer et al. 2021) star at a
+distance of 163.1±2.2 pc (Parker et al. 2022). For the
+analysis in this paper, we adopt the position angle and
+inclination of the disk from Ubeira Gabellini et al. (2019,
+55◦ and 35◦ respectively). The disk is known to have an
+inner cavity of approximately 20 au as observed at mil-
+limeter wavelengths, and recent 12CO millimeter obser-
+vations with ALMA (W¨olfer et al. 2021). These authors
+
+show evidence of non-Keplerian motion in the inner disk
+of the system, possibly due to a pressure profile caused by
+a planetary-mass companion. These authors also iden-
+tified three spiral arms in their resolved images of CO
+emission, ranging from ∼10-180 au. These features may
+be the result of a previously hypothesized massive com-
+panion (6-9 MJup; Ubeira Gabellini et al. 2019) within
+the disk. There is also evidence to suggest a misalign-
+ment of the inner and outer disks. Bohn et al. (2022)
+found different PAs for the semi-major axis for the inner
+and outer disk, being 140◦ and 234◦, respectively. Mis-
+alignment was similarly noted by Safonov et al. (2022)
+by analyzing shadows cast within the disk.
+
+2.8. V892 Tau
+V892 Tau is a roughly equal mass binary system, total
+mass 6.0±0.2 M⊙, of Herbig stars with a circumbinary
+disk (e.g. Long et al. 2021) at a distance of 134.5±1.5 pc
+(Gaia Collaboration et al. 2016, 2018). The orbit of the
+binary is eccentric (e=0.27) with a semi-major axis of
+7.1±0.1 au and a period of 7.7±0.2 years (Long et al.
+2021). For the analysis in this paper, we adopt a posi-
+tion angle of 52◦ and inclination angle of 55◦ (Long et al.
+2021). Previous observations at IR and millimeter wave-
+lengths have noted features such as an inner cavity (∼35
+au in MIR) and spiral arms (e.g. Monnier et al. 2008;
+Pinilla et al. 2018; Long et al. 2021).
+
+2.9. AB Aur
+AB Aur is a ∼2.2 M⊙ star at a distance of 155.9±0.9 pc
+(Gaia Collaboration et al. 2016, 2018). For the anal-
+ysis in this paper, we adopt 50◦ for the position an-
+gle of the disk and 20◦ for the inclination of the disk
+(Rivi`ere-Marichalar et al. 2022). Position-velocity anal-
+ysis of the rotational lines from CO isotopologues indi-
+cates that the gas has a non-Keplerian component (e.g.
+Pi´etu et al. 2005; Lin et al. 2006) associated with spiral
+arms at large radii (∼150 au). This may be the result
+of interactions with a companion within the dust cavity
+(Poblete et al. 2020). The dust cavity itself has an inner
+edge of ∼70 au when observed at millimeter wavelengths
+(e.g. Pi´etu et al. 2005), though mid-infrared observations
+indicate the gas may extend as close as 0.3 au (di Folco
+et al. 2009). Recent observations have also found a point-
+like source that is consistent with an embedded planet
+within the disk at a PA of ∼ 180◦ East of North and a
+separation of 0′′.6 (∼93 au Currie et al. 2022; Zhou et al.
+2022).
+
+3. OBSERVATIONS AND DATA
+Observations were taken between April 2017 and Jan-
+uary 2023, inclusive, with the Infrared echelle spectro-
+graph (iSHELL) on the NASA Infrared Telescope Facil-
+ity (IRTF) 3.2-meter telescope at Mauna Kea, Hawaii
+(Rayner et al. 2022). The resolution of the instrument
+is R≈92,000 for the 0′′.375 slit and R≈60,000 for the
+0′′.75 slit (Banzatti et al. 2022). In some sources, data
+for multiple PAs or epochs were taken as part of an on-
+going spectroscopic survey of potentially planet-forming
+protoplanetary disks (Banzatti et al. 2022). The targets
+were observed in the M-band (spanning 4.5 to 5.2 µm
+or 1950 to 2200 cm−1) using an ABBA nodding pattern,
+keeping the target in slit while nodding between A and B
+
+Keplerian and Eccentric Modeling
+
+5
+
+positions. This allowed the sky to be removed to first or-
+der by combining the images with an A-B-B+A pattern.
+Table 3 reports the observing settings for all spectra in-
+cluded here.
+
+The observations were acquired to facilitate the mea-
+surement of the SA signal of the ro-vibrational CO emis-
+sion lines. The center of the PSF can be measured to
+high precision, well below the angular resolution of the
+observing system, δ ∼ FWHM /(2.35 · SNR), where δ
+is the accuracy of the measurement of the center of the
+PSF, SN R is the signal-to-noise ratio of the spectrum,
+and F W HM is the full width of the seeing profile at half
+of its maximum intensity Whelan & Garcia (2008).
+
+Brannigan et al. (2006) note several sources of artifacts
+in spectro-astrometric signals. Some artifacts can be re-
+moved by rotating the slit 180 degrees such that instru-
+mental effects remain constant while the astronomical
+source is inverted. By differencing these measurements,
+instrumental effects are removed while the astronomical
+source is averaged. This does not account for all sources
+of artifacts however. For example, if the PSF is com-
+parable or narrower than the slit width, tracking errors
+can induce a signal. This signal is most prominent in the
+sharpest lines. Artifacts can also appear in telluric lines.
+We examined our spectra for artifacts in sources with
+narrow lines such as HD 169142 where the emission lines
+are only marginally resolved. We do not detect a sig-
+nal from this source (artificial or real). Further, M-band
+spectra are dominated by telluric lines where artificial
+signals are not detected either.
+
+The PA of the slit for each observation is reported in
+Table 3. The majority are aligned to or near the semi-
+major axis (HD 141569, HD 169142, SR 21, IRS 48)
+with some also including observations along or near the
+semi-minor (HD 179218, CQ Tau). The observations of
+AB Aur were acquired with the slit aligned with the
+semi-major and semi-minor axes. A third observation
+was acquired with the PA of the slit aligned with a fea-
+ture reported by Boccaletti et al. (2020). Of the re-
+maining two disks, V892 Tau has two observations, one
+along the semi-major axis and one somewhat offset, while
+LkHα 330 has only one observation offset from the semi-
+minor axis by 26◦.
+
+The data were reduced in a manner typical of IR spec-
+troscopy (flat fielding, image stacking, spectra extrac-
+tion, etc.) using a custom IDL reduction pipeline; the full
+reduction process is described in Brittain et al. (2018).
+The raw frames are combined before being flat fielded.
+As the iSHELL instrument is an echelle spectrograph,
+the spectrum is split into multiple orders, and each is re-
+duced separately. As the orders are curved, a low-order
+polynomial is fit to the spectrum order being reduced
+and then rectified. A first-pass wavelength calibration is
+done at this point using the Spectrum Synthesis Program
+telluric model (SSP; Kunde & Maguire 1974) as a refer-
+ence. Following this, a rectangular extraction window
+is used to obtain A and B beam (resulting from the A
+and B nod positions) spectra from the corresponding nod
+positions which are then combined. Further refinements
+to the wavelength calibration are done at this point as
+necessary. Once this has been completed for all orders
+for both science and telluric standard targets, the ratio
+of the two stars’ spectra are taken, removing telluric ab-
+sorption features in the process. The spectral ranges with
+
+low flux, approximately 50% or less of the continuum
+level as determined by the standard star, are omitted.
+Any final adjustments to the wavelength calibration are
+made at this point to ensure that the science and stan-
+dard results agree with one another. Once completed,
+the systemic uncertainty is approximately 1 km s−1 for
+the wavelength calibration.
+
+Measurement of the SA signal was accomplished using
+the same process described in Jensen et al. (2021). As
+in that case, a skewed Moffat function was used because
+it faithfully reproduced the shape of the PSF of the con-
+tinuum. An initial parameter fit to the profile was found
+using the continuum, which it should be noted is typ-
+ically thermal dust emission rather than stellar contin-
+uum except in the case of the dust-depleted HD 141569,
+to determine the typical shape of the PSF. We do not
+find evidence for extended continuum emission over the
+seeing. Afterward, the entire spectrum was fit, allowing
+a more limited range to the parameters, although with
+the centroid and peak values still being freely variable.
+
+The SNR of the line profile and SA signal are enhanced
+by stacking multiple lines. The lines selected are the ro-
+vibrational v=1-0 12C16O lines between 2000 cm−1 and
+2200 cm−1 (approximately 4.5 to 5.2 µm). Lines that
+were blended with other emission features (e.g. with ro-
+vibrational CO lines from other excitation bands or iso-
+topologues) were excluded. In addition to blended lines,
+unexcited lines (or otherwise of extremely low SNR) and
+lines heavily affected by telluric absorption were also ex-
+cluded. The v=1-0 12C16O line profiles are displayed in
+Figure 1. It should be noted that the SA data shown in
+Figure 1 is not a spatial offset, but the pixel shift of the
+PSF centroid converted to the spatial scale at the target
+disk.
+
+4. MODELING
+To characterize the origin of the emission line, we at-
+tempt to fit each profile and SA signal with a simple disk
+model where the intensity of the emission and eccentric-
+ity of the disk are treated as power laws,
+
+I(r) = I0(r/ain)αI
+e(a) = e0(a/ain)αe
+
+(1)
+(2)
+
+where I0 and e0 are the fiducial intensity and eccentricity
+of the disk, αI and αe are the power law indices of the
+intensity and eccentricity, ain is the semi-major axis of
+the innermost annulus of the disk, a is the semi-major
+axis of an annulus, and r is the distance from the star to
+a position within the disk.
+
+The disk is divided into annuli from ain to aout such
+that the width of each annulus corresponds to a change
+in velocity at perihelion of 1 km s−1. If the width of the
+annulus is greater than 1 au, then the width is set to 1 au.
+Similarly, each annulus is divided into segments such that
+the azimuthal extent of the segment corresponds to a
+shift in the projected velocity of 1 km s−1. If this results
+in fewer than 12 segments around the annulus, then the
+annulus is divided into 12 segments. The intensity, area,
+and projected velocity are computed for each segment
+where the velocity is given by,
+
+6
+
+Jensen et al.
+
+v(a, θ) =
+
+(cid:115)
+
+GM⋆
+a(1 − e(a)2)
+
+(cos(θ + ω) + e(a)cos(ω))sin(i)
+
+(3)
+where G is the gravitational constant, M⋆ is the stellar
+mass, a is the semi-major axis of the annulus, e is the
+eccentricity of the annulus, θ the true anomaly for all
+annuli, ω is the argument of periapse, and i is the incli-
+nation of the disk. The profile of the emission line that
+arises from each segment is assumed to have a Gaussian
+shape with a width of 2 km s−1. The line from each seg-
+ment of each annulus is shifted by the projected velocity
+and summed to create the spectral line profile. This pro-
+file is scaled to the area of the average profile that is
+observed. Both the synthetic spectral line profile and
+spectroastrometric signal are convolved with the instru-
+ment profile at the appropriate resolution (3.5 km s−1
+for the 0′′.375 slit, and 6 km s−1 for the 0′′.75 slit).
+
+The SA signal is calculated by measuring the distance
+of each segment from the star and projecting it to the
+plane of the sky along the slit axis. The product of the
+luminosity of the segment and its distance from the star
+is divided by the luminosity of the entire line and contin-
+uum at a given projected velocity. The distances for each
+velocity element of the spectral line are then summed.
+
+The free parameters in our model are the inner and
+outer boundaries of the disk emission, the fiducial eccen-
+tricity, power-law indices of the intensity and eccentricity,
+the argument of periapse of the disk, and the normaliza-
+tion of the spectral line profile. We fix the stellar mass,
+disk PA, disk inclination, and distance to the star based
+on values described in Section 2 and summarized in Ta-
+ble 2.
+
+In cases where there is no asymmetry in the line profile
+at the SNR of our data, we fix the power law index of
+the eccentricity αe at −3 to approximate the radial de-
+pendence of of eccentricity found from numerical simula-
+tions for a planet/star ratio ≤ 0.003 (see Kley & Dirksen
+2006). The argument of periapse, ω at 0◦, is set to 0◦ to
+maximize the effect of the eccentricity on the line profile
+to place an upper limit on the eccentricity of the disk.
+An emission line from a disk will be symmetric for any
+eccentricity when the argument of periapse is 90◦. While
+the eccentricity of a single disk can never be ruled out
+definitively, the fraction of disks that have a non-zero ec-
+centricity can be inferred statistically from a sufficiently
+large sample.
+
+We run a Monte Carlo simulation for each system and
+report the best fit and uncertainty in each parameter in
+Table 4. Assuming the emission arises from a disk, the
+resolved sources have a unique solution. For the unre-
+solved sources, only upper limits can be placed on certain
+parameters. The average spectroscopic and SA profiles
+along with their best-fit models are compiled in Figure 1.
+
+5. RESULTS
+Six of the nine objects are well fit with our disk model.
+CQ Tau, AB Aur, and V892 Tau have components that
+could not be fit with our model. Here we will discuss the
+modeling results for each target.
+
+5.1. HD 141569
+
+The CO emission profile and SA signal are reproduced
+with our model assuming the emission extends from 12.5-
+43 au and has a relatively flat intensity profile. While the
+asymmetry of the line profile is quite modest, we find
+that we arrive at the best fit with a significant eccentric-
+ity (0.23) that declines sharply (∝ r−5). This is signifi-
+cantly sharper than the decline shown in an example cal-
+culation by Kley & Dirksen (2006, ∝ r−3) and considered
+in Jensen et al. (2021). The power law dependence of the
+eccentricity adopted in the model implies that only the
+first ∼4 au of the disk would have an eccentricity above
+0.05. If the inner rim is indeed eccentric and is driven by
+a companion in the inner disk, the dependency of the ec-
+centricity on the distance from the inner rim of the disk
+scales with the companion mass and the viscosity of the
+disk. Exploration of how the induced eccentricity of the
+disk scales with companion mass and other disk param-
+eters will be the subject of future work. Alternatively, it
+could be that there is an elongated vortex at the inner
+rim of the disk that gives rise to the modest asymmetry
+of the line profile.
+
+One way to distinguish these scenarios is to acquire ad-
+ditional observations at similar resolution and SNR. Gas
+orbiting HD 141569 at 12.5 au has a period of ∼30yrs.
+The data presented in this paper were acquired in 2017,
+so in 2024 a vortex will have orbited by about 70◦. The
+angle of periapse of the gas on an elliptical orbit driven
+by a companion is expected to be persistent over an orbit
+(Kley & Dirksen 2006).
+
+5.2. HD 179218
+The analysis of iSHELL spectra obtained in 2016 was
+presented in Brittain et al. (2018); here we present new
+spectra obtained in 2020. Spectra at two PAs, 23◦ (semi-
+major axis) and 113◦ (semi-minor), were obtained for this
+target. The emission line and SA signal of the observa-
+tion with the slit aligned with the semi-major axis were
+fit assuming the gas extends from 8-55 au. The eccen-
+tricity of the disk at the inner rim is 0.12 and falls off as
+∝ r−0.8 - consistent with the effect of a companion orbit-
+ing interior to the inner edge of the disk (Kley & Dirksen
+2006). The blue wing of the line profile is extended rela-
+tive to the red side. Though this fell in a velocity range
+that may be affected by telluric absorption, the line pro-
+file from an observation acquired in 2016 did not vary to
+within the noise of the spectra (Fig. 2). Thus we con-
+clude that the asymmetry we observe is unlikely due to
+contamination from the telluric correction.
+
+5.3. HD 169142
+The spectra of HD 169142 acquired on April 2017 and
+August 2017 were combined (Fig. 1). The observations
+were acquired at the same PA, but the slit width of the
+observations was not the same. The effective resolution
+of the observations is determined by the lower resolution
+observations (6 km s−1) The profile of the emission line is
+only marginally resolved and no SA signal was detected.
+The line profile was fit assuming the emission extends
+from 2.7 au to 80 au. The SA signal from the modeled
+emission falls below the SNR of the measurement (which
+limits the outer extent of the centrally peaked line). Be-
+cause the line is so narrow and the emission extended,
+our upper limit on the eccentricity is 0.25.
+
+Keplerian and Eccentric Modeling
+
+7
+
+Figure 1. Modeled line profiles and SA signals for the sample. The SA signal and average line profile are plotted for each target (black
+lines in the upper and lower panels respectively). The PA of the slit is indicated for the observation presented in the figure. The horizontal
+black bars indicate the instrumental resolution of the observation. The best-fit models are plotted in blue, and the residuals between the
+data and the fits are plotted above in red. The Doppler shift has been corrected for Earth’s motion and the radial velocity of the star
+using the values presented in Table 2. For the targets with multiple observations or epochs, those shown here are as follows: HD 169142
+is averaged between Apr. 20 and Aug. 25 of 2017; CQ Tau is from Jan. 21, 2023; V892 Tau is from Jan. 16, 2021; and AB Aur is from
+Feb. 6, 2021. The velocity range affected by telluric correction of the low-J CO lines is indicated with vertical gray lines. For HD 169142,
+the data from two nights separated by four months were combined so two velocity ranges are indicated. The range containing telluric
+absorption for AB Aur falls outside of the plotted velocity range. The SA data provide a measure of the shift of the PSF (emission line
+and continuum) and should not be confused with the maximum spatial offset of the emission line.
+
+−20−10010203040−20−10010203040−40−20020401.01.21.41.61.8−2−101234−2−101234−30−20−1001020301.001.051.101.15−10−505101520−10−505101520Centroid Shift (au)−40−2002040Velocity (km −1)1.01.11.21.31.4Normalized Flux−50510−50510−40−20020401.01.11.21.31.4−4−202468−4−202468−30−20−1001020301.01.11.21.31.4−2−101234−2−101234−60−40−2002040601.01.11.21.31.4−10−5051015−10−5051015−100−500501001.01.21.41.6−20246−20246Centroid Shift (au)−30−20−100102030Velocity (km −1)1.01.11.21.31.4Normalized FluxVelocity (km −1)Velocity (km −1)Velocity (km −1)Velocity (km −1)Centroid Shift (au)Normalized FluxCentroid Shift (au)Normalized FluxCentroid Shift (au)Normalized FluxCentroid Shift (au)Normalized FluxCentroid Shift (au)Normalized FluxCentroid Shift (au)Normalized FluxCentroid Shift (au)Normalized FluxHD 141569PA=356oHD 179218PA=23oHD 169142PA=5oLk Hα 330PA=165oSR 21PA=16oIRS 48PA=95oCQ TauPA=47oV892 TauPA=235oAB AurPA=60oVelocity (km −1)Velocity (km −1)−2−101234−2−101234−40−20020401.01.11.21.31.48
+
+Jensen et al.
+
+unoptimized nature of our observations. Deeper observa-
+tion of HD 169142 with the slit aligned with the position
+angle of the candidate CPD would in principle enable its
+detection from the SA signal. While a sufficiently mas-
+sive companion should drive an eccentricity in the disk
+in the vicinity of its orbit, the large separation and face-
+on orientation of the disk would render any asymmetry
+induced in the line profile from this region of the disk dif-
+ficult to detect with iSHELL in either the spectral profile
+because the line is so narrow (∼7 km s−1) while the SA
+signal would be comparatively easy to detect with suffi-
+cient fidelity and proper alignment.
+
+5.4. LkHα 330
+The spectroscopic profile of LkHα 330 is broad and
+asymmetric (Fig. 3). The red wing of the line extends
+further than the blue wing, however, the core of the line
+is extended further to the blue than to the red. The
+line profile from Pontoppidan et al. (2011) also showed
+asymmetry, but was significantly narrower with a sharper
+peak (see comparison of profiles in Figure 8 in Banzatti
+et al. 2022). The SA signal detected by Pontoppidan
+et al. (2011) is not observed due to the lower SNR of
+our observation. The line profile and upper limit on the
+SA signal were fit assuming the emission extended from
+0.46-120 au. The gas near the inner edge of the disk in
+our model has a modest eccentricity (0.08) though it is
+consistent with zero at 3σ. Interestingly, we were unable
+to find a fit that captured the asymmetry of the wings
+and the core at the same time (see the residual in Fig. 3
+at +7 km s−1). One way to capture this is by allowing
+the argument of periapse to shift phases in the disk (see
+for example, Kozdon et al. 2023). Such a scenario is
+expected when a companion opens a gap in the disk as
+the argument of periapse will precess at different rates
+at the inner and outer boundaries of the gap. Whether
+this is consistent with the presence of the 10 MJ planet
+at ∼60 au hypothesized by Pinilla et al. (2022) will be
+explored in future work.
+
+Figure 3. LkHα 330 profile (black) and its reflection (blue) show-
+ing asymmetric structure. The velocity ranges covering the low-J
+v=1-0 telluric lines are indicated in red. The horizontal black line
+indicates the instrumental resolution of the observation. The core
+of the and the wings reveal a significant asymmetry. The HWZI of
+the blue side of the line occurs near −20km s−1 while the HWZI
+of the red side of the line falls near +30km s−1. The core of the
+line shows an asymmetry in the opposite direction.
+
+Figure 2.
+HD 179218 line profile (top panel) and SA signal
+(lower panel). In the upper panel, the average profile of all three
+observations is presented (in black). The difference between the av-
+erage profile and the profile from each observation is plotted above.
+The horizontal black line indicates the instrumental resolution of
+the observation. HD 179218 was observed in 2016 (Brittain et al.
+2018) with the slit aligned with the semi-major axis (in red) and in
+2020 with the slit aligned with the semi-major axis (in blue) and
+the semi-minor axis (in green). There is no evidence of variability
+in the line profile - either temporally or due to changes in the ori-
+entation of the slit. In the lower panel, the SA signal for each date
+and PA are plotted using the same color scheme. The average of
+the SA signal measured with the slit aligned with the semi-major
+axis of the disk (in black) is also plotted. The SA signals measured
+in 2016 and 2020 are consistent.
+
+A companion has been reported for this target with a
+separation of ∼0′′.3 and a position angle of ∼45◦ (Ham-
+mond et al. 2023). The position angle of our slit on the
+sky was 5◦. If the candidate object has a disk, some of
+the emission from the disk could be captured by our slit.
+However, the orientation of the slit was not optimized for
+detection from this source. Here we assume that the con-
+tinuum is coming from warm dust near the star and that
+any continuum emission from the CSD is insignificant.
+We also assume that 50% of the CO emission comes from
+the CPD while the other 50% comes form an axisymmet-
+ric CSD. The spatial offset of the candidate along the slit
+for this is ∼230 mas when taking into account the 40◦ dif-
+ference in the reported CPD PA and our observed PA.
+With the line-to-continuum ratio of ∼0.2 the expected
+SA offset would be 230 × 0.5 × 0.2/(1 + 0.2) = 19 mas or
+∼2 au, which is below our detection threshold. (see, e.g.,
+Takami et al. 2003, for the effect of line-to-continuum ra-
+tio in the context of SA). As such while we do not detect
+evidence of a CPD here, we cannot rule it out due to the
+
+−30−20−1001020301.001.051.101.151.20−30−20−100102030Velocity (km s−1)1.001.051.101.151.20Normalized Flux−30−20−100102030Velocity (km s−1)02468Centroid Shift (au)2016: PA=23o2020: PA=23o2020: PA=133o2016: PA=23o2020: PA=23o2020: PA=133o−40−20020401.001.051.101.151.201.25−40−2002040Velocity (km s−1)1.001.051.101.151.201.25Normalized FluxKeplerian and Eccentric Modeling
+
+9
+
+5.5. SR 21
+SR 21 includes a central narrow absorption in the low-
+J lines assumed to be from foreground gas, so these lines
+are excluded from the average spectral and SA profiles
+presented in Fig. 1. The best fit model indicates that
+the emission arises from a narrow annulus (∆R=1.7 au).
+The blue side of the line is somewhat brighter (consistent
+with Pontoppidan et al. (2008)), though at the SNR of
+our spectrum this is only marginally significant. We can
+rule out an eccentricity greater than 0.13 with our data
+assuming ω=0◦. The SA signal from our model has a
+maximum offset of 1 au. The PA of our observations is
+offset by 7◦ relative to the PA presented by Pontoppidan
+et al. (2008) that found a signal that extended to 1.3 au
+(updated for the distance determined by Gaia).
+
+5.6. IRS 48
+IRS 48 includes a central narrow absorption in the low-
+J lines, so these lines are excluded from the average spec-
+tral and SA profiles presented in Fig 1. The modeling
+results for IRS 48, shown in Fig. 1, are consistent with
+an axisymmetric disk with an emitting region extending
+from 20 to 35 au – consistent with the gas ring noted by
+Brown et al. (2012) based on modeling of CRIRES ro-
+vibrational CO data, including spectroastrometry. Addi-
+tionally we do not find evidence of variability compared
+to this previous work. The signal-to-noise of the data
+presented here is insufficient to detect the existence of
+an eccentricity in the inner rim, with an upper limit of
+e<0.17 assuming ω=0◦. The SA signal is well reproduced
+by our model.
+
+5.7. CQ Tau
+The data presented here were obtained in January 2021
+with a slit PA of 47◦ (near the semi-major axis, PA=55◦;
+Ubeira Gabellini et al. 2019) and a slit width of 0′′.375,
+in January 2022 with a PA of 137◦ (near the semi-minor
+axis) and a slit width of 0′′.75, and January 2023 with
+a PA of 47◦ and a slit width of 0′′.75 (Table 3). The
+profile of the emission lines and the SA signal from each
+epoch are complex and variable (Fig. 4).
+In all three
+epochs, there is a narrow component that is blueshifted
+5 km s−1 relative to the star. In 2021 and 2023 when the
+slit PA was 47◦, the centroid of the PSF of the narrow
+component was shifted along the slit in the southwest
+direction. The broad component of the line profile of
+CQ Tau in 2023 can be fit if we mask the narrow emis-
+sion component (Fig. 1). For this epoch, we find that
+the profile can be fit with emission that extends from 0.5-
+9.8 au assuming the inner rim is highly eccentric (e=0.27)
+and that the eccentricity drops rapidly (∝ r−5). The SA
+signal produced by the model is consistent with the up-
+per limit across the broad component of the profile. A
+wind may be able to qualitatively explain the nature of
+the narrow component and the corresponding SA sig-
+nal (Pontoppidan et al. 2011). However, rather than the
+expected maximal SA offset for the CO emission when
+observed along the semi-minor axis of the disk for a wind,
+we found the offset of the SA signal was minimal along
+that direction while it was much more pronounced along
+the semi-major axis. Alternatively, taking into account
+evidence of misalignment of the inner and outer disks
+by approximately 90◦ (Bohn et al. 2022; Safonov et al.
+
+2022), this is consistent with a wind assuming it is being
+launched from the inner disk. At present it is not clear
+what the timescale of variability of the emission is (or-
+bital, stochastic, or otherwise), but further epochs may
+clarify this.
+
+Figure 4. Comparison of the spectroscopic and SA profiles of
+CQ Tau observed in 2021 (black), 2022 (blue), and 2023 (red).
+The horizontal bars are scaled to the instrumental resolutional of
+each observation. A narrow emission component persists in all
+three epochs, though its line/continuum ratio varies. The centroid
+of the PSF of the narrow component is extended when the slit 47◦
+E of N (2021 and 2023) and disappears when the slit PA is 137◦ E
+of N.
+
+5.8. V892 Tau
+The CO line profile was previously shown to be highly
+variable on 1yr timescales (Banzatti et al. 2022). We find
+that the SA signal varies with profile of the line as well
+(Fig. 5). The data acquired in 2021 shows an asymme-
+try with a single peak on the blue side of the line. In
+2022 the line showed an asymmetric and double-peaked
+line profile. We could not find a parameter combination
+that could fit either profile well. A model for a chosen set
+of parameters for the 2021 epoch is displayed for compar-
+ison purposes (Fig. 1). The SA signal from the model is
+similar in extent to the measurement, but it is not a good
+fit. If the wings of the line arises from the circumbinary
+disk, the gas must extend inward to ∼7 au - significantly
+interior to the continuum inferred by MIR interferometry
+(Monnier et al. 2008).
+
+−100−500501001.001.051.10−100−50050100Velocity (km s−1)1.001.051.10Normalized Flux−100−50050100Velocity (km s−1)−1.5−1.0−0.50.00.51.01.5Centroid Shift (au)2021: Black2022: Blue2023: Red10
+
+Jensen et al.
+
+candidate by 24◦ on night 2. Additionally it is possible
+that a vortex in the disk can lead to an asymmetry in
+the surface CO emission. Alternatively, a disk wind can
+lead to a signal qualitatively similar to what is observed
+here (Pontoppidan et al. 2011). The emission line is cen-
+trally peaked, and the SA signal is extended along the
+semi-minor axis of the disk as expected in the wind case.
+Previous works have found evidence supporting a disk
+wind from Hα observations and modeling of the NIR ex-
+cess (Bans & K¨onigl 2012; Perraut et al. 2016). Further
+observations are planned to investigate these possibili-
+ties.
+
+6. DISCUSSION
+Of the sample, six of the nine disks (HD 141569,
+HD 179218, HD 169142, LkHα 330, SR 21, and IRS 48)
+have spectral profiles and SA signals that can be repro-
+duced by assuming the gas arises from a circumstellar
+disk. Of these six, the two profiles that are centrally
+peaked are also nearly face-on (HD 169142 with an incli-
+nation of 13◦ and LkHα 330 with an inclination of 28◦).
+The outer disk of SR 21 is also nearly face on (i=18◦) in-
+dicating that the emission arises from a narrow annulus.
+In the cases of HD 169142, SR 21, IRS 48, and AB Aur
+only upper limits to the inner edge eccentricity, e0, were
+determined using an argument of periapse, ω, of 0 as the
+most favorable orientation with a power law index, αe, of
+-3, as in Kley & Dirksen (2006). For these six cases, we
+cannot at present rule out alternative explanations to a
+gap-opening planet or CPD such as a (sub-)stellar com-
+panion, vortex, or outflow. Improved or better optimized
+observations, additional epochs, or more detailed model-
+ing may better distinguish between the various possible
+explanations for the cavities/gaps present in this sample.
+For all but two of our sources, the CO emission
+must extend to very large distances from the star (∼50-
+100 au). This is quite different from T Tauri stars where
+the emission typically arises from the inner few au (Na-
+jita et al. 2003). The excitation of molecular gas by the
+much stronger UV continuum of these earlier type stars
+might account for the difference in the radial extent of
+the emission.
+
+The radial extent of the source of the ro-vibrational
+CO emission is not always aligned with the radial extent
+of the dust or gas as measured in the (sub)mm. One
+such case is HD 169142, where ALMA observations show
+a dust cavity inward of approximately 20 au (Hammond
+et al. 2023) while the ro-vibrational CO emission extends
+inward to 2.7 au. Such discrepancies have been noted
+previously (e.g. Banzatti et al. 2018). While an orbit-
+ing companion can open a gap in the disk resulting in a
+pressure bump that can trap mm-sized grains, gas may
+accrete inward. The transition strength of ro-vibrational
+lines is about six-order of magnitude larger than for ro-
+tational lines in the ground vibrational state, thus the
+observations of the former at NIR wavelengths for CO
+are more sensitive to warm gas than the latter at submm
+wavelengths.
+
+At the SNR of our observations, four of the observed
+line profiles are symmetric and upper limits on the ec-
+centricity have been set assuming that the argument of
+the periapse is 0◦. Of the five sources with asymmet-
+ric line profiles, the line profile and SA signal of three
+of the sources can be fit with a model of an eccentric
+
+Figure 5. Comparison of 2021 (black) and 2022 (red) average
+spectroscopic and SA profiles of V892 Tau. The horizontal bars
+indicate the instrumental resolution of each observation. The PA is
+offset by 35◦ between epochs. While the line profile is asymmertic
+in both epochs, the overall spectroscopic profile changed to exhibit
+a double-peaked structure, though still with an excess on the blue
+side. The SA signal is extended on the red and blue side of the line
+consistent with emission arising from an extended disk.
+
+5.9. AB Aur
+The observations for this target were taken at three
+separate PAs: aligned with the semi-major axis (60◦;
+Feb. 6, 2021), semi-minor axis (150◦; Feb. 4, 2021), and
+the position of a possible feature noted by Boccaletti
+et al. (2020, 24◦; Feb. 5, 2021). The line profile and SA
+signal acquired with the slit aligned with the semi-major
+axis can be reproduced by our model for emission that
+extends from 1-106 au. The line is quite symmetric and
+the upper limit we place on the eccentricity (assuming
+ω=0) is e<0.05. For an axisymmetric disk, the SA should
+vanish when the slit is aligned with the semi-minor axis
+(PA=150◦) and diminish when the slit is in an interme-
+diate orientation (PA=24◦). This is not observed. The
+model is a poor fit to the SA signal when observed with
+the slit aligned with the semi-minor axis (Fig. 6).
+
+During the observations (Feb 4 - Feb 6, 2021), the see-
+ing improved dramatically (from 1′′.76 on the first night
+to 0′′.62 by the third night). If the behavior of the SA
+signal is due to emission from a CPD around the ob-
+ject observed by Currie et al. (2022) at a PA∼180◦, it
+is possible that more of the emission from this source
+was captured in the slit on the first night than on subse-
+quent nights explaining why the effect was larger when
+the slit was misaligned with the candidate planet by 30◦
+on night 1 than when the slit was misaligned with the
+
+−100−500501001.01.11.21.31.41.5−100−50050100Velocity (km s−1)1.01.11.21.31.41.5Normalized Flux−100−50050100Velocity (km s−1)−4−2024Centroid Shift (au)2021: Black2022: RedKeplerian and Eccentric Modeling
+
+11
+
+Figure 6. Comparison of AB Aur observed at three different slit PAs. The data are plotted with black lines, the model is blue and
+the residual is plotted above in red. The horizontal lines in the lower panels indicate the instrumental resolution of the observation. The
+model used to fit the profile and SA signal for the slit aligned with the semi-major axis of the disk (PA=60◦) was applied for two other
+PAs. While the profile could be fit reasonably well, the SA signal diverged significantly from the model. One way to account for this is for
+a non-axisymmetric source of emission on the southern part of the disk.
+
+−30−20−100102030−20246−30−20−100102030Velocity (km −1)−20246Centroid Shift (au)−30−20−100102030Velocity (km −1)1.01.11.21.31.4Normalized Flux−30−20−100102030−50510−30−20−100102030Velocity (km −1)−50510Centroid Shift (au)−30−20−100102030Velocity (km −1)1.01.11.21.31.4Normalized FluxPA=24oPA=150o−30−20−100102030−20246−30−20−100102030Velocity (km −1)−20246Centroid Shift (au)−30−20−100102030Velocity (km −1)1.01.11.21.31.4Normalized FluxPA=60oJensen et al.
+
+12
+
+circumstellar disk.
+
+The line profile and SA signals of AB Aur, CQ Tau,
+and V892 Tau cannot be fit with a simple disk model.
+Some other non-axisymmetric component is necessary
+beyond that caused by eccentricity. In principle, emission
+from a CPD could account for the SA signal of AB Aur
+similarly to what observed in HD 100546 (e.g., Brittain
+et al. 2019). Alternatively, a vortex at a large distance
+or a disk wind could account for the line profile and ob-
+served SA signal (Table 1). These three scenarios can be
+distinguished with further observations and is the subject
+of ongoing work.
+
+As noted above, CQ Tau has been hypothesized to har-
+bor a 6-9 MJup planet 20 au from the star based on struc-
+tures in the disk (Ubeira Gabellini et al. 2019). If so, it is
+unlikely to affect the broad component of the molecular
+emission profile as the emission only extends to ∼10 au.
+Given the large eccentricity necessary to account for the
+observed line asymmetry, it is possible that CQ Tau har-
+bors a close-in (sub-)stellar mass companion. The non-
+variable narrow component whose emission is extended
+along the slit when it is aligned with the semi-major re-
+mains a mystery. The line does not appear to shift more
+than 1 km s−1 over two years. However, if it arises from
+a CPD orbiting the star at 20 au, the orbital phase of
+the companion would only shift 10◦ resulting in a pro-
+jected Doppler shift below our detection threshold. An
+alternative explanation for the narrow component and
+SA signal is a low-velocity disk wind. However, the ex-
+tension of the SA signal is a maximum when the slit is
+oriented near the semi-major axis, and it is not detected
+when the slit is aligned with the semi-minor axis in con-
+flict with what is expected for low-velocity disk winds
+(Pontoppidan et al. 2011). The broad component of the
+spectral profile is the more variable of the two, but the
+narrow SA signal also appears to be variable as well. The
+complexity of the profiles over our three epochs makes it
+difficult to infer the distribution of the gas giving rise to
+these phenomena. Measuring the line profile at multiple
+PAs in a single night as well as long term monitoring may
+clarify the origin of the SA signal.
+
+V892 Tau is an equal mass binary, and the dust compo-
+nent of the circumbinary disk extends into ∼17 au (Mon-
+nier et al. 2008). The wings of the CO profile indicate
+that the gas extends into about 7 au - substantially in-
+ward of the inner edge of the dust component of the
+circumbinary disk. The orbital period of the gas at 7 au
+is 8 years, so the observations presented in this paper,
+spaced by 1 year, correspond to an orbital shift in the
+disk of 45◦. With just three epochs, it is impossible to
+infer whether the CO lines vary stochastically on an or-
+bital timescale. Observations are planned to monitor this
+object over six months and consecutive nights to better
+constrain the timescale of the variability.
+
+7. CONCLUSIONS
+SA combined with high resolution spectroscopy of
+warm molecules in disks provides a powerful probe of
+the conditions of gas in the disk. We find that warm
+molecular emission can extend 10’s of au from Herbig
+stars. Our sample was selected on the basis of various
+signposts of a companion (e.g., spiral structure or gaps).
+Four of our nine sources have asymmetric line profiles
+that can be fit assuming that the emission arises from
+
+gas on an eccentric orbit indicative of companions near
+the inner edge of the disk. HD 169142 is nearly face-on
+so the emission is only marginally resolved at our reso-
+lution of 3.5 km s−1. A candidate planet was identified
+after our observations were acquired, and our slit orien-
+tation was not favorably aligned to detect emission from
+this companion. While AB Aur has a symmetric pro-
+file, the SA signal indicates non-axisymmetric structure
+in the outer disk. The origin of this structure will be
+tested with further observations. The SNR of IRS 48
+and SR 21 are insufficient to place strong constraints on
+the eccentricity of the disk. Deeper observations at sim-
+ilar resolutions with instruments such as CRIRES+ on
+the VLT will provide stronger constraints on any line
+asymmetry. CQ Tau reveals a complex line profile. The
+broad component varies significantly and does not reveal
+an SA signal. The narrow component is less variable, and
+it is extended. The origin of these components remain
+unclear. V892 Tau is an equal mass binary for which the
+CO line profile and SA signal is highly variable. Monitor-
+ing of this object will clarify the cadence of the variability
+and thus possibly the origin of the emission. LkHα 330
+has a complex profile that indicates that the argument
+of periapse of the eccentricity flips. The profile is also
+variable. A higher fidelity line profile and modeling that
+allows for the argument of periapse to flip may indicate
+the presence of a companion embedded in the disk.
+
+CQ Tau and AB Aur individually represent interesting
+signals warranting continued observation in the context
+of potentially planet-harboring disks. However, they also
+are worthwhile testbeds for the use of SA to distinguish
+between such an origin as well as other scenarios such
+as disk winds. Winds in particular can have coinciden-
+tally similar spectral and SA signals in single epochs,
+but can vary drastically at other times and on different
+variability timescales (orbital timescales for planets or
+CPDs, stochastic timescales for winds). Continued in-
+vestigation and monitoring of these and similar sources
+may result in better methods for determining the origin
+of the emission.
+
+The sample presented here suggests that disks with an
+eccentric component are common among Herbigs with
+evidence of ongoing planet formation. Confirmation of
+our interpretation will provide a way to gain statistical
+information about giant planets in disks in large sam-
+ple of stars at distances too far to detect such objects
+with direct imaging. New and upcoming instruments
+(e.g. METIS, Brandl et al. 2008) on 30m class telescopes
+will be able to provide improved observations of this kind
+by providing a sensitivity increase by an order of magni-
+tude.
+
+ACKNOWLEDGEMENTS
+This publication makes use of data products from the
+Wide-field Infrared Survey Explorer, which is a joint
+project of the University of California, Los Angeles,
+and the Jet Propulsion Laboratory/California Institute
+of Technology, funded by the National Aeronautics and
+Space Administration.
+
+This work has made use
+
+from the
+(ESA) mission Gaia
+European
+Space Agency
+(https://www.cosmos.esa.int/gaia),
+processed
+by the Gaia Data Processing and Analysis Consortium
+(DPAC,
+https://www.cosmos.esa.int/web/gaia/
+
+of data
+
+Keplerian and Eccentric Modeling
+
+13
+
+dpac/consortium). Funding for the DPAC has been
+in particular the
+provided by national
+institutions participating in the Gaia Multilateral
+Agreement.
+
+institutions,
+
+These observations were obtained as visiting as-
+tronomers at the Infrared Telescope Facility, which is
+operated by the University of Hawaii under contract
+80HQTR19D0030 with the National Aeronautics and
+Space Administration.
+
+14
+
+Jensen et al.
+
+REFERENCES
+
+Akiyama, E., Hashimoto, J., Liu, H. B., et al. 2016, AJ, 152, 222
+Andrews, S. M., Terrell, M., Tripathi, A., et al. 2018, ApJ, 865,
+
+157
+
+Haffert, S. Y., Bohn, A. J., de Boer, J., et al. 2019, Nature
+
+Astronomy, 3, 749
+
+Hammond, I., Christiaens, V., Price, D. J., et al. 2023, MNRAS,
+
+522, L51
+
+Hartigan, P., Edwards, S., & Ghandour, L. 1995, ApJ, 452, 736
+Honda, M., Maaskant, K., Okamoto, Y. K., et al. 2012, ApJ, 752,
+
+Andrews, S. M., Wilner, D. J., Espaillat, C., et al. 2011, ApJ,
+
+143
+
+732, 42
+
+Bai, X.-N. 2017, ApJ, 845, 75
+Bailey, J. A. 1998, in Society of Photo-Optical Instrumentation
+
+Engineers (SPIE) Conference Series, Vol. 3355, Optical
+Astronomical Instrumentation, ed. S. D’Odorico, 932–939
+
+Bans, A., & K¨onigl, A. 2012, ApJ, 758, 100
+Banzatti, A., Garufi, A., Kama, M., et al. 2018, A&A, 609, L2
+Banzatti, A., Pascucci, I., Edwards, S., et al. 2019, ApJ, 870, 76
+Banzatti, A., Abernathy, K. M., Brittain, S., et al. 2022, AJ, 163,
+
+174
+
+Barge, P., Richard, S., & Le Diz`es, S. 2016, A&A, 592, A136
+Barranco, J. A., & Marcus, P. S. 2005, ApJ, 623, 1157
+Bast, J. E., Brown, J. M., Herczeg, G. J., van Dishoeck, E. F., &
+
+Pontoppidan, K. M. 2011, A&A, 527, A119
+
+Blake, G. A., & Boogert, A. C. A. 2004, ApJ, 606, L73
+Boccaletti, A., Di Folco, E., Pantin, E., et al. 2020, A&A, 637, L5
+Bohn, A. J., Benisty, M., Perraut, K., et al. 2022, A&A, 658,
+
+A183
+
+Brandl, B. R., Lenzen, R., Pantin, E., et al. 2008, in Society of
+Photo-Optical Instrumentation Engineers (SPIE) Conference
+Series, Vol. 7014, Ground-based and Airborne Instrumentation
+for Astronomy II, ed. I. S. McLean & M. M. Casali, 70141N
+Brannigan, E., Takami, M., Chrysostomou, A., & Bailey, J. 2006,
+
+MNRAS, 367, 315
+
+Brittain, S. D., Carr, J. S., & Najita, J. R. 2018, PASP, 130,
+
+074505
+
+Brittain, S. D., Carr, J. S., Najita, J. R., Quanz, S. P., & Meyer,
+
+M. R. 2014, ApJ, 791, 136
+
+Brittain, S. D., Kamp, I., Meeus, G., Oudmaijer, R. D., &
+
+Waters, L. B. F. M. 2023, Space Sci. Rev., 219, 7
+
+Brittain, S. D., Najita, J. R., & Carr, J. S. 2009, ApJ, 702, 85
+—. 2015, Ap&SS, 357, 54
+—. 2019, ApJ, 883, 37
+Brittain, S. D., Najita, J. R., Carr, J. S., et al. 2013, ApJ, 767,
+
+159
+
+Brittain, S. D., Rettig, T. W., Simon, T., et al. 2003, ApJ, 588,
+
+535
+
+Brittain, S. D., Simon, T., Najita, J. R., & Rettig, T. W. 2007,
+
+ApJ, 659, 685
+
+Brown, J. M., Blake, G. A., Qi, C., Dullemond, C. P., & Wilner,
+
+D. J. 2008, ApJ, 675, L109
+
+Brown, J. M., Herczeg, G. J., Pontoppidan, K. M., & van
+
+Dishoeck, E. F. 2012, ApJ, 744, 116
+
+Brown, J. M., Pontoppidan, K. M., van Dishoeck, E. F., et al.
+
+2013, ApJ, 770, 94
+
+Calcino, J., Price, D. J., Pinte, C., et al. 2019, MNRAS, 490, 2579
+Clampin, M., Krist, J. E., Ardila, D. R., et al. 2003, AJ, 126, 385
+Currie, T., Lawson, K., Schneider, G., et al. 2022, Nature
+
+Astronomy, 6, 751
+
+di Folco, E., Dutrey, A., Chesneau, O., et al. 2009, A&A, 500,
+
+1065
+
+Dong, R., Najita, J. R., & Brittain, S. 2018, ApJ, 862, 103
+Edwards, S., Cabrit, S., Strom, S. E., et al. 1987, ApJ, 321, 473
+Espaillat, C., Muzerolle, J., Najita, J., et al. 2014, in Protostars
+
+and Planets VI, ed. H. Beuther, R. S. Klessen, C. P.
+Dullemond, & T. Henning, 497
+
+Fang, M., Pascucci, I., Edwards, S., et al. 2018, ApJ, 868, 28
+Fedele, D., van den Ancker, M. E., Acke, B., et al. 2008, A&A,
+
+491, 809
+
+Fedele, D., Carney, M., Hogerheijde, M. R., et al. 2017, A&A,
+
+600, A72
+
+Fung, J., Artymowicz, P., & Wu, Y. 2015, ApJ, 811, 101
+Gaia Collaboration, Prusti, T., de Bruijne, J. H. J., et al. 2016,
+
+A&A, 595, A1
+
+Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2018,
+
+A&A, 616, A1
+
+Goto, M., Usuda, T., Dullemond, C. P., et al. 2006, ApJ, 652, 758
+Gratton, R., Ligi, R., Sissa, E., et al. 2019, A&A, 623, A140
+Guzm´an-D´ıaz, J., Mendigut´ıa, I., Montesinos, B., et al. 2021,
+
+A&A, 650, A182
+
+Isella, A., P´erez, L. M., Carpenter, J. M., et al. 2013, ApJ, 775, 30
+Jensen, Stanley K., J., Brittain, S. D., Najita, J. R., & Carr, J. S.
+
+2021, PASP, 133, 104402
+
+Keppler, M., Benisty, M., M¨uller, A., et al. 2018, A&A, 617, A44
+Kley, W., & Dirksen, G. 2006, A&A, 447, 369
+Konishi, M., Grady, C. A., Schneider, G., et al. 2016, ApJ, 818,
+
+L23
+
+Kozdon, J., Brittain, S. D., Fung, J., et al. 2023, AJ, 166, 119
+Kunde, V. R., & Maguire, W. C. 1974,
+
+J. Quant. Spec. Radiat. Transf., 14, 803
+
+Lin, S.-Y., Ohashi, N., Lim, J., et al. 2006, ApJ, 645, 1297
+Liskowsky, J. P., Brittain, S. D., Najita, J. R., et al. 2012, ApJ,
+
+760, 153
+
+Long, F., Andrews, S. M., Vega, J., et al. 2021, ApJ, 915, 131
+Lubow, S. H., Seibert, M., & Artymowicz, P. 1999, ApJ, 526, 1001
+Mac´ıas, E., Anglada, G., Osorio, M., et al. 2017, ApJ, 838, 97
+Malfait, K., Bogaert, E., & Waelkens, C. 1998, A&A, 331, 211
+Marcus, P. S., Pei, S., Jiang, C.-H., & Hassanzadeh, P. 2013,
+
+Phys. Rev. Lett., 111, 084501
+
+Mawet, D., Choquet, ´E., Absil, O., et al. 2017, AJ, 153, 44
+McGinnis, P., Dougados, C., Alencar, S. H. P., Bouvier, J., &
+
+Cabrit, S. 2018, A&A, 620, A87
+
+Monnier, J. D., Tannirkulam, A., Tuthill, P. G., et al. 2008, ApJ,
+
+681, L97
+
+M¨uller, A., Keppler, M., Henning, T., et al. 2018, A&A, 617, L2
+Muro-Arena, G. A., Ginski, C., Dominik, C., et al. 2020, A&A,
+
+636, L4
+
+Najita, J., Carr, J. S., Glassgold, A. E., Shu, F. H., & Tokunaga,
+
+A. T. 1996, ApJ, 462, 919
+
+Najita, J., Carr, J. S., & Mathieu, R. D. 2003, ApJ, 589, 931
+Najita, J. R., Carr, J. S., Glassgold, A. E., & Valenti, J. A.
+
+2007a, in Protostars and Planets V, ed. B. Reipurth, D. Jewitt,
+& K. Keil, 507
+
+Najita, J. R., Edwards, S., Basri, G., & Carr, J. 2000, in
+
+Protostars and Planets IV, ed. V. Mannings, A. P. Boss, &
+S. S. Russell, 457
+
+Najita, J. R., Strom, S. E., & Muzerolle, J. 2007b, MNRAS, 378,
+
+369
+
+Oberg, N., Kamp, I., Cazaux, S., Rab, C., & Czoske, O. 2022,
+
+arXiv e-prints, arXiv:2212.03007
+
+Osorio, M., Anglada, G., Carrasco-Gonz´alez, C., et al. 2014, ApJ,
+
+791, L36
+
+Papaloizou, J. C. B., Nelson, R. P., & Masset, F. 2001, A&A,
+
+366, 263
+
+Parker, R., Ward-Thompson, D., & Kirk, J. 2022, MNRAS, 511,
+
+2453
+
+P´erez, S., Casassus, S., Baruteau, C., et al. 2019, AJ, 158, 15
+Perraut, K., Dougados, C., Lima, G. H. R. A., et al. 2016, A&A,
+
+596, A17
+
+Perrot, C., Boccaletti, A., Pantin, E., et al. 2016, A&A, 590, L7
+Pi´etu, V., Guilloteau, S., & Dutrey, A. 2005, A&A, 443, 945
+Pinilla, P., Tazzari, M., Pascucci, I., et al. 2018, ApJ, 859, 32
+Pinilla, P., Benisty, M., Kurtovic, N. T., et al. 2022, A&A, 665,
+
+A128
+
+Poblete, P. P., Calcino, J., Cuello, N., et al. 2020, MNRAS, 496,
+
+2362
+
+Pontoppidan, K. M., Blake, G. A., & Smette, A. 2011, ApJ, 733,
+
+84
+
+Pontoppidan, K. M., Blake, G. A., van Dishoeck, E. F., et al.
+
+2008, ApJ, 684, 1323
+
+Quanz, S. P., Avenhaus, H., Buenzli, E., et al. 2013, ApJ, 766, L2
+Quillen, A. C., Blackman, E. G., Frank, A., & Varni`ere, P. 2004,
+
+ApJ, 612, L137
+
+Rab, C., Weber, M., Grassi, T., et al. 2022, A&A, 668, A154
+Raettig, N., Lyra, W., & Klahr, H. 2021, ApJ, 913, 92
+Raman, A., Lisanti, M., Wilner, D. J., Qi, C., & Hogerheijde, M.
+
+2006, AJ, 131, 2290
+
+Rayner, J., Tokunaga, A., Jaffe, D., et al. 2022, PASP, 134,
+
+015002
+
+Keplerian and Eccentric Modeling
+
+15
+
+Rich, E. A., Monnier, J. D., Aarnio, A., et al. 2022, AJ, 164, 109
+Rivi`ere-Marichalar, P., Fuente, A., Esplugues, G., et al. 2022,
+
+van der Marel, N., Birnstiel, T., Garufi, A., et al. 2021, AJ, 161,
+
+33
+
+A&A, 665, A61
+
+van der Plas, G., van den Ancker, M. E., Waters, L. B. F. M., &
+
+Safonov, B. S., Strakhov, I. A., Goliguzova, M. V., & Voziakova,
+
+Dominik, C. 2015, A&A, 574, A75
+
+O. V. 2022, AJ, 163, 31
+
+Sallum, S., Skemer, A. J., Eisner, J. A., et al. 2019, ApJ, 883, 100
+Salyk, C., Blake, G. A., Boogert, A. C. A., & Brown, J. M. 2011,
+
+ApJ, 743, 112
+
+Vioque, M., Oudmaijer, R. D., Baines, D., Mendigut´ıa, I., &
+
+P´erez-Mart´ınez, R. 2018, A&A, 620, A128
+
+Wang, L., Bai, X.-N., & Goodman, J. 2019, ApJ, 874, 90
+Weber, M. L., Ercolano, B., Picogna, G., Hartmann, L., &
+
+Smallwood, J. L., Yang, C.-C., Zhu, Z., et al. 2023, MNRAS, 521,
+
+Rodenkirch, P. J. 2020, MNRAS, 496, 223
+
+3500
+
+Szul´agyi, J., Masset, F., Lega, E., et al. 2016, MNRAS, 460, 2853
+Szul´agyi, J., Mayer, L., & Quinn, T. 2017, MNRAS, 464, 3158
+Takami, M., Bailey, J., & Chrysostomou, A. 2003, A&A, 397, 675
+Thi, W. F., Kamp, I., Woitke, P., et al. 2013, A&A, 551, A49
+Ubeira Gabellini, M. G., Miotello, A., Facchini, S., et al. 2019,
+
+MNRAS, 486, 4638
+
+Uyama, T., Hashimoto, J., Muto, T., et al. 2018, AJ, 156, 63
+Valeg˚ard, P. G., Waters, L. B. F. M., & Dominik, C. 2021, A&A,
+
+652, A133
+
+van der Marel, N., van Dishoeck, E. F., Bruderer, S., et al. 2016,
+
+A&A, 585, A58
+
+Weinberger, A. J., Becklin, E. E., Schneider, G., et al. 1999, ApJ,
+
+525, L53
+
+Whelan, E., & Garcia, P. 2008, Spectro-astrometry: The Method,
+its Limitations, and Applications, ed. F. Bacciotti, L. Testi, &
+E. Whelan, 123
+
+W¨olfer, L., Facchini, S., Kurtovic, N. T., et al. 2021, A&A, 648,
+
+A19
+
+Wyatt, M. C., Pani´c, O., Kennedy, G. M., & Matr`a, L. 2015,
+
+Ap&SS, 357, 103
+
+Zhou, Y., Sanghi, A., Bowler, B. P., et al. 2022, ApJ, 934, L13
+Zhu, Z., & Stone, J. M. 2018, ApJ, 857, 34
+
+16
+
+Jensen et al.
+
+Table 1
+Scenarios affecting Spectroastrometric Signals of Ro-vibrational CO Emission Lines
+
+Scenario
+Line Profile
+Circumplanetary Disk Asymmetric
+
+Geometry Resulting in SA Signal
+A planet plus a circumplanetary disk (CPD) system
+offset from the star. The CPD emission would be
+nearly a point source.
+
+Eccentric Annulus
+
+Asymmetric
+
+Brighter side of profile more extended.
+
+Vortex
+
+Asymmetric
+
+Disk Wind
+
+Centrally peaked;
+Preferentially blueshifted
+
+An azimuthally asymmetric circumstellar disk.
+
+Extended along semi-minor axis toward observer.
+
+Variability Timescale
+Orbital timescale.
+
+Persistent for 100’s of
+orbital timescales.
+Orbital timescale.
+
+Stochastic variability
+timescale.
+
+Star ID
+
+Mstar
+
+HD 141569
+HD 179218
+HD 169142
+LkHα 330
+EM* SR 21A
+Oph-IRS 48
+CQ Tau
+V892 Tau
+AB Aur
+
+(M⊙)
+2.00
+3.00
+1.85
+2.00
+1.66
+2.00
+1.57
+6.00
+2.20
+
+Table 2
+Adopted Parameters
+
+Disk
+Inclination
+(◦)
+51
+40
+13
+28
+16
+42
+35
+55
+20
+
+Semi-Major
+Axis PA
+(◦)
+356
+23
+5
+49
+18
+95
+55
+52
+50
+
+Table 3
+Observation Details
+
+Radial
+Velocity
+(km s−1)
+-6.0
+15.1
+-3.0
+16.3
+-7.1
+-5.7
+15.8
+17.2
+15.3
+
+Distance
+
+(pc)
+110.6
+260
+114
+308
+178
+136
+162
+135
+156
+
+Star ID
+
+Date
+
+HD 141569
+HD 179218
+HD 169142
+
+Apr 19, 2017
+Jul 7, 2020
+Apr 20, 2017
+Aug 25, 2017
+LkHα 330
+Aug 25, 2017
+EM* SR 21A Aug 2, 2017
+Aug 2, 2017
+Oph-IRS 48
+Jan 16, 2021
+CQ Tau
+Jan 22, 2022
+Jan 21, 2023
+Jan 16, 2021
+Jan 21, 2022
+Feb 6, 2021
+Feb 5, 2021
+Feb 4, 2021
+
+V892 Tau
+
+AB Aur
+
+Slit PA
+Parallel/Antiparallel
+(◦)
+356 / 176
+23, 113 / 203, 283
+5 / 185
+5 / 185
+165 / 345
+16 / 96
+95 / 275
+47 / 227
+137 / 317
+47 / 227
+235 / 55
+270 / 90
+60 / 240
+24 / 204
+150 / 330
+
+Slit width
+
+Seeing
+
+Integration time Resolution
+
+(′′)
+0.375
+0.375
+0.75
+0.375
+0.75
+0.375
+0.375
+0.375
+0.75
+0.75
+0.375
+0.75
+0.375
+0.375
+0.375
+
+(′′)
+0.75
+0.55
+0.78
+0.72
+0.81
+0.75
+0.79
+0.82
+0.92
+0.72
+1.23
+2.06
+0.62
+0.91
+1.76
+
+(s)
+11388
+3240
+2372
+2135
+6405
+2372
+712
+4448
+2700
+2640
+2224
+2040
+6240
+6960
+6960
+
+(km s−1)
+6
+3.5
+6
+3.5
+6
+3.5
+3.5
+3.5
+6
+6
+3.5
+6
+3.5
+3.5
+3.5
+
+Table 4
+Model Fit Parameters
+
+Star ID
+
+αI
+
+e0
+
+αe
+
+ain
+(au)
+12.5±0.9
+8±1
+2.7+0.6
+−0.3
+0.46±0.03
+7.3+0.5
+−0.7
+25+3
+−5
+0.51±0.02
+7
+1.0±0.2
+
+aout
+(au)
+43±2
+55±5
+80±20
+120±20
+9.0+2.0
+−0.5
+41±10
+9.8±0.7
+50
+106±15
+
+-0.11±0.14
+HD 141569
+-1.8±0.1
+HD 179218
+2.0±0.1
+HD 169142
+2.23±0.03
+LkHα 330
+1.4+0.2
+EM* SR 21A
+−1.1
+Oph-IRS 48
+2.0±1.5
+2.52±0.03
+CQ Tau
+V892 Tau†
+2.3
+AB Aur
+2.2±0.1
+†No good fit could be found. Parameters used for example model presented in Figure 1.
+
+0.23±0.03
+0.12±0.06
+<0.25
+0.08±0.03
+<0.13
+<0.17
+0.27±0.02
+0.1
+<0.07
+
+-5.3±0.6
+-0.8±0.2
+-3
+-2.3±0.7
+-3
+-3
+-5.0±0.5
+-3
+-3
+
+ω
+(rad)
+0.26±0.04
+0.4±0.3
+0
+3.1±0.33
+0
+0
+2.54±0.05
+0
+0
+
+

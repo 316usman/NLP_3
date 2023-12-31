@@ -1,0 +1,890 @@
+3
+2
+0
+2
+c
+e
+D
+7
+2
+
+]
+
+D
+S
+.
+s
+c
+[
+
+1
+v
+3
+1
+6
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+SELF-SUPERVISED PRETRAINING FOR ROBUST PERSONALIZED VOICE ACTIVITY
+DETECTION IN ADVERSE CONDITIONS
+
+Holger Severin Bovbjerg1, Jesper Jensen1,2, Jan Østergaard 1, Zheng-Hua Tan1,3
+
+1Department of Electronic Systems, Aalborg University, Denmark
+2Oticon A/S, Denmark
+3Pioneer Centre for AI, Denmark
+{hsbo,jje,jo,zt}@es.aau.dk
+
+ABSTRACT
+
+In this paper, we propose the use of self-supervised pretraining on
+a large unlabelled data set to improve the performance of a person-
+alized voice activity detection (VAD) model in adverse conditions.
+We pretrain a long short-term memory (LSTM)-encoder using the
+autoregressive predictive coding (APC) framework and fine-tune it
+for personalized VAD. We also propose a denoising variant of APC,
+with the goal of improving the robustness of personalized VAD. The
+trained models are systematically evaluated on both clean speech
+and speech contaminated by various types of noise at different SNR-
+levels and compared to a purely supervised model. Our experiments
+show that self-supervised pretraining not only improves performance
+in clean conditions, but also yields models which are more robust to
+adverse conditions compared to purely supervised learning.
+
+Index Terms— Self-Supervised Learning, Voice Activity De-
+
+tection, Target Speaker, Deep Learning
+
+1. INTRODUCTION
+
+Being able to detect the presence of speech in a potentially noisy
+signal is a commonly utilized processing step in modern speech pro-
+cessing systems, generally referred to as voice activity detection
+(VAD). A VAD system has to classify whether a short frame of au-
+dio contains speech, usually from speech features like Mel-filterbank
+features, in an unsupervised [1] or supervised manner [2]. Applica-
+tions include using a VAD model as a preprocessing step for auto-
+matic speech recognition, as a gating mechanism for microphones in
+online meeting devices, or as a part of a speech enhancement sys-
+tem. For real-time applications, such as speech enhancement for
+hearing aids, it is desired that the VAD model is low-latency and low
+complexity, while also being robust in adverse conditions such as
+background noise.
+
+Recently, personalized VAD models, which are also able to de-
+termine whether the speech is from a target speaker, have been pro-
+posed [3, 4, 5, 6]. These personalized VAD models introduce a
+number of interesting capabilities, such as removing false-triggering
+on background speakers, at the expense of also needing to model
+speaker characteristics. Training a model to detect voice activity
+and distinguish between target speech and non-target speech in a
+supervised fashion requires a large amount of speech data from sev-
+eral speakers annotated with both VAD labels and framewise speaker
+identity. For example, [3] and [4] utilize 960 h of annotated speech
+from 2 338 different speakers to train their models, while [6] uti-
+lize up to 27 500 h of annotated speech. Although high-quality VAD
+labels can be automatically obtained using forced-alignment [7], rel-
+
+atively clean speech and a corresponding transcript of the speech
+signal is required. Additionally, frame-level speaker identity labels
+can be difficult to obtain. Therefore, the adoption of Personalized
+VAD models is limited by the ability to obtain such large labelled
+data sets, restricting their widespread adoption.
+
+Self-supervised learning (SSL) methods provide a means of uti-
+lizing unlabelled data, which is easier to obtain in large quantities.
+Models pretrained using SSL have shown state-of-the-art perfor-
+mance in many domains, including speech processing [8, 9, 10],
+and have also been shown to learn more robust features than purely
+supervised models [11, 12]. The application of SSL for pretraining
+of VAD models is currently unexplored, although one study used
+speech features from a pretrained wav2vec2 [8] model as input
+features to a VAD model, and found that they perform better than
+standard Mel-spectrogram features [13]. However, using a large
+pretrained speech model (95M+ parameters) for feature extraction
+arguably defeats the purpose of having a small, efficient VAD model.
+In this work, we propose to use a simple SSL framework known
+as Autoregressive Predictive Coding (APC), to directly pretrain a
+small LSTM-encoder, with the aim of improving performance and
+robustness in adverse conditions, when fine-tuning for personalized
+VAD. Additionally, we propose a denoising variant of APC for im-
+proved robustness. Here, we modify the APC framework to predict
+future clean speech frames from noisy input features, as opposed to
+predicting clean future frames from clean input features.
+
+We carry out experiments, using both clean and noisy training
+data generated through online multistyle training (MTR) [14]. The
+trained models are evaluated systematically on both clean test data
+and on different test sets containing either seen or unseen noise at
+SNR levels ranging from −5 dB to 20 dB. The results show the
+following:
+
+1. APC pretraining and fine-tuning on clean data, leads to an
+absolute improvement in mean average precision (mAP) of
+1.9 % compared to supervised training, when evaluating the
+models in clean conditions. Interestingly, an average abso-
+lute improvement of 6.05 % is observed for noisy conditions,
+while not having seen any noise during training.
+
+2. When using MTR, APC pretraining leads to an average ab-
+solute improvement for seen noise 4.8 % over the baseline,
+while a further absolute improvement 2.3 % is observed for
+the proposed DenoisingAPC. For unseen noise, Denoisin-
+gAPC+MTR also achieves the best performance, with an
+absolute improvement of 8 % compared to baseline+MTR.
+
+To appear in Proc. ICASSP2024, April 14th, 2024, Seoul, South Korea
+
+© IEEE 2024
+
+ 
+ 
+ 
+ 
+ 
+ 
+The source code used to produce the results of this paper is made
+
+publicly available. 1
+
+2. METHODOLOGY AND DATA SETS
+
+This section describes our personalized VAD model, the APC pre-
+training framework and the data used for training and testing.
+
+2.1. Personalized VAD model
+
+Our personalized VAD model is inspired by the Personal VAD sys-
+tem presented in [3] and is illustrated in Figure 1. The personalized
+VAD classifies input log Mel-filterbank features as either non-speech
+(ns), target-speaker speech (tss) or non-target-speaker speech (ntss).
+We choose to separate the speaker verification and VAD tasks into
+separate modules and reside to using an already trained model for
+speaker verification. More specifically, we focus on training a robust
+VAD model, and use a separate already trained d-vector model [15]
+to extract speaker embeddings for speaker verification.
+
+Fig. 1. Overview of the personalized VAD system model used in this
+work. We only train the blue boxes, while we use an already trained
+d-vector model with fixed weights.
+
+The VAD module predicts the probability of speech or no
+speech, zs and zns, for any given input frame. The d-vector model
+generates an embedding which is compared to the target-speaker
+embedding through cosine similarity to generate a target-speaker
+similarity score s. As s is a similarity score, its value might not nec-
+essarily represent the probability of a target-speaker being present.
+Therefore, s is scaled by learnable parameters α and β such that the
+scaled similarity becomes s′ = sα + β. Finally, the VAD output
+and scaled similarity score are combined such that
+
+
+
+zk
+t =
+
+zns
+t
+s′zs
+t
+(1 − s′)zs
+t
+
+
+
+k = ns,
+k = tss,
+k = ntss.
+
+(1)
+
+where zk
+t is the output corresponding to class k at time frame t and is
+used to classify each frame as either non-speech (ns), target-speaker
+speech (tss) or non-target-speaker speech (ntss).
+
+In [3], the authors also propose a personalized VAD where the
+target-speaker embedding is simply concatenated to the features,
+which is then used as input to the VAD. Here, the VAD model also
+learns to extract speaker characteristics through implicit knowledge
+distillation from the speaker embedding model, removing the need
+for a separate speaker embedding model during runtime. However,
+our implementation failed to achieve good performance using this
+approach.
+
+For the speaker embedding model, we use a freely available d-
+vector model as described in [15]. The d-vector model used in this
+work, is pretrained on VoxCeleb [16] and LibriSpeech-other data. It
+has 3 LSTM layers, each with a hidden dimension of 256 produc-
+ing 256-dimensional d-vector speaker embeddings and has a total
+of 1.4M parameters. As in [3], our VAD model is a 2-layer LSTM
+with a hidden dimension of 64, yielding a total of 60k parameters.
+Both the d-vector and VAD models take 40-dimensional log Mel-
+filterbank features as input, computed from 25 ms frames with frame
+shift of 10 ms.
+
+Target-speakers are enrolled by generating a d-vector embed-
+ding using one or more enrolment utterances (minimum 5 s). Here,
+speaker embeddings are computed by sliding a 1.6 s window across
+the enrolment utterances with a shift of 0.4 s, generating an embed-
+ding for each window position, which are then averaged to generate
+the target-speaker d-vector embedding.
+
+1https://github.com/HolgerBovbjerg/
+
+SelfSupervisedPVAD
+
+Fig. 2. Overview of the APC framework and DenoisingAPC vari-
+ant. Note that noise is only added for DenoisingAPC, while this is
+skipped for standard APC.
+
+2.2. Autoregressive predictive coding
+
+Inspired by the success of pretraining language models, the Autore-
+gressive Predictive Coding [17] framework predicts future speech
+features from the current and previous feature vectors. More for-
+mally, given a sequence of feature vectors z0, . . . , zt computed from
+frames x0, . . . , xt, we ideally seek a model f that predicts zt+n
+such that yt = f (z0, . . . , zt) = zt+n, denoting zt as the feature
+vector and yt as the output at time frame t. APC thus builds on
+the notion that if a model is able to predict the future, it must have a
+good representation of the past and present. An overview of the APC
+framework, including the denoising variant, is illustrated in Figure 2.
+Models pretrained using APC have been shown to learn both speaker
+and content information and shown good performance for a number
+of downstream tasks [18].
+
+While more complex SSL methods such as wav2vec2 [8] can
+also learn information from future frames, APC only encodes infor-
+mation from previous frames. Thus, the learned representation does
+not rely on future information. This is particularly suitable for VAD
+applied to real-time applications, as the VAD model is desired to be
+causal. In our experiments, we feed the log Mel-filterbank features
+to a 2-layer LSTM encoder, and use a single 1D-convolutional layer
+to project the hidden representations back to the input feature space.
+
+2
+
+Target-speakerembedding2-layer LSTM64 hiddenFullyConnectedd-vectormodelMulti-speakerutterancelogMelCosineSim.Score combinationnstssntssSpeakerVerificationVAD2-layer LSTM64 hidden1D-conv-losslogMellogMelAdd NoiseDenoisingAPC only framesIn addition to the standard APC framework, we also propose a
+denoising variant of APC. Here, speech features are extracted from
+both clean speech and speech which have been corrupted by noise.
+We then predict future clean features from noisy input features, as
+depicted in Figure 2. This forces the model to extract information
+related to the source signal from a noisy mixture, thus learning to
+distinguish the source signal from background noise.
+
+2.3. Data sets
+
+As mentioned in [3], the amount of readily available multi-speaker
+data with natural speaker turns, as well as speaker identity infor-
+mation is limited, and as a result we carry out experiments on a
+simulated multi-speaker data set. While speakers might overlap in
+realistic settings, such as a cocktail party scenario, it has been found
+that a personalized VAD model trained on non-overlapping speech
+also performs well on overlapping speech [4]. Following [3], we
+uniformly sample 1 to 3 utterances from individual speakers and a
+target-speaker is randomly selected from one of the individual utter-
+ances. We then simply concatenate the utterances to generate multi-
+speaker utterances.
+
+For our experiments, we use the freely available Librispeech
+[19] data set to construct both training and test data. Librispeech
+consists of 960 h training data split into two sets of 100 h and 360 h
+categorized as “clean”, and a 500 h “other” set, which is “less clean”.
+Similarly, both a “clean” and an “other” set is available for testing.
+Table 1 shows a summary of the different data sets used in our ex-
+periments for training, pretraining and testing.
+
+In our experiments, we only use utterances within the same
+set when constructing multi-speaker utterances. For pretraining,
+the multi-speaker utterances constructed from the train-clean-100,
+train-clean-360 and train-other-500 sets are used, yielding a total
+of all 960 h speech. For supervised training, only multi-speaker
+utterances generated from the 100 h train-clean-100 set are used.
+Additionally, we also train the models on the 10h LibriLight [20]
+training set. This simulates a setting with a large pool of unanno-
+tated data available for pretraining and a smaller pool of labelled data
+available for supervised training. As Librispeech includes speech
+transcripts, VAD labels are generated using forced-alignment [21],
+while we generate framewise speaker labels using the speaker iden-
+tity information included in the Librispeech metadata.
+
+For testing the model performance in clean conditions, we use
+the utterances generated from the test-clean set. To be able to evalu-
+ate the trained model in varying adverse conditions, noisy test data is
+generated by adding noise, to the test-clean multi-speaker utterances.
+Here, we pick two environmental noise types, namely bus and caf´e,
+and two speech-like noise types, namely babble and speech-shaped
+noise, each representing a realistic adverse condition. For each noise
+type, noisy tests set have been generated by adding the noise type at
+a specific SNR level, ranging from −5 dB to 20 dB in steps of 5 dB,
+yielding a total of 24 noisy test sets.
+
+2.4. Supervised baseline
+
+When training the personalized VAD model, the pretrained d-vector
+model weights are fixed, and we only update the VAD network and
+fully-connected network depicted in Figure 1. We reuse the hyperpa-
+rameter choices in [3] using a cross-entropy loss and a batch size of
+64, the ADAM optimizer with an initial learning rate of 5·10−5, and
+a gradual reduction of the learning rate following a cosine annealing
+schedule.
+
+2.5. Pretraining and fine-tuning
+
+During pretraining, only the LSTM-encoder in the VAD network de-
+picted in Figure 1 is pretrained, yielding a system as seen in Figure 2.
+In [22] it is found that predicting n = 3 frames ahead during APC
+pretraining leads to good downstream task performance, thus we
+adopt this choice and use an ℓ1-loss as the objective function. We
+pretrain the LSTM encoder for 10 epochs using a batch size of 32
+and ADAM optimizer with an initial learning-rate of 0.01, and a co-
+sine annealing learning rate schedule. After pretraining, the LSTM
+encoder weights are copied to a Personal VAD model which is then
+fine-tuned, using the same procedure as used for training the super-
+vised baseline.
+
+2.6. Multistyle training
+
+A commonly used technique to improve model robustness is adding
+various noise to the training data. This technique is generally re-
+ferred to as multistyle training (MTR) and has been shown to im-
+prove model robustness [14]. Therefore, we also carry out experi-
+ments where we apply online MTR. Here, we add noise from dif-
+ferent adverse conditions as described in [23], namely babble, bus,
+pedestrian, street and speech-shaped noise. We include babble, bus
+and speech-shaped noise in both training data and test sets, while
+keeping caf´e noise unseen during training. The noise is added at
+varying SNR levels in the range −5 dB to 20 dB. We also add room
+acoustics from recorded RIRs as used in [24]. When applying MTR,
+randomly sampled noise and room acoustics are added to the indi-
+vidual multi-speaker utterances, each with a probability of 50 %.
+
+2.7. Metrics
+
+To evaluate the performance of the trained model, we follow [3] and
+compute the average precision score for each class and use the mean
+average precision (mAP) score as our main evaluation metric. For a
+given class, average precision is computed as
+
+AP =
+
+(cid:88)
+
+n
+
+(Rn − Rn−1) · Pn
+
+(2)
+
+with Pn and Rn being the precision and recall at threshold n. To
+compute the mAP score, we compute the AP score for each class
+and take the mean.
+
+Table 1. Summary of data sets with concatenated utterances used
+for training, pretraining and testing.
+
+Set
+
+#Multi-speaker Utt.
+
+#Speakers
+
+Used for
+
+3. RESULTS
+
+train-100-clean
+train-360-clean
+train-500-other
+LibriLight 10h
+test-clean
+
+14252
+52068
+74177
+1364
+1315
+
+251
+921
+1166
+44
+40
+
+SSL + Supervised
+SSL
+SSL
+Supervised
+Testing
+
+In the following section, the results from our experiments are pre-
+sented. First, we analyse how the trained models perform in clean
+conditions, followed by an in-depth analysis of how the trained mod-
+els perform in various adverse environments. All models have been
+trained using five different random seeds.
+
+3
+
+Table 2. Results on clean test set (mAP, %) and 95 % confidence
+intervals. Baseline is a purely supervised model, while APC and
+DN-APC are SSL pretrained models which have been fine-tuned for
+personalized VAD. MTR denotes that multistyle training was used
+during supervised training.
+
+Model
+
+Baseline
++MTR
+
+APC
++MTR
+
+DN-APC
++MTR
+
+ns
+
+AP
+tss
+
+ntss
+
+mAP
+
+82.5±1.13
+79.8±0.75
+
+94.5±0.22
+94.1±0.19
+
+94.8±0.22
+93.6±0.31
+
+90.6±0.47
+89.2±0.28
+
+86.9±0.54
+81.9±0.88
+
+94.9±0.11
+94.4±0.09
+
+95.6±0.01
+94.2±0.38
+
+92.5±0.23
+90.1±0.30
+
+88.0±0.57
+81.9±0.31
+
+94.7±0.16
+94.2±0.30
+
+96.1±0.08
+95.2±0.30
+
+92.9±0.14
+90.4±0.10
+
+3.1. Clean conditions
+
+In Table 2 the performance of the various models on the clean test set
+is presented. Here, ns, tss and ntss denotes no-speech, target-speaker
+speech and non-targets-speaker speech, respectively.
+
+Comparing the models without MTR, Baseline and APC, the
+APC pretrained model shows an improvement in mAP of 2.1 % and
+DN-APC an improvement of 2.5 %. The DN-APC model scores
+highest of all models with an mAP of 92.9 %. Using MTR for
+model robustness usually comes at the cost of a performance drop in
+clean conditions [14]. As expected, we observe that the models using
+MTR perform slightly worse, although the DN-APC model performs
+comparable to the baseline without MTR. When using MTR, the
+DN-APC pretrained model performs best, with an overall improve-
+ment of 1.3 % compared to the supervised baseline using MTR.
+
+Table 3. Performance in seen noise (mAP, %) and 95 % confidence
+intervals.
+SNR
+
+Baseline
+
+APC
+
+APC
++MTR
+
+DN-APC
++ MTR
+
+Baseline
++ MTR
+
+-5
+0
+5
+10
+15
+20
+Avg.
+
+63.0±1.51
+63.8±2.32
+64.9±2.44
+66.3±1.72
+68.7±1.60
+73.1±1.67
+66.6±1.73
+
+67.1±0.81
+71.0±1.25
+75.2±1.48
+79.1±1.73
+82.5±1.23
+84.9±1.19
+76.6±1.13
+
+65.9±2.22
+67.3±2.99
+69.0±2.89
+71.8±1.78
+76.6±2.79
+82.4±3.24
+72.2±1.43
+
+72.3±1.48
+76.9±1.62
+80.9±0.89
+84.1±0.44
+86.5±0.43
+88.0±0.47
+81.4±0.75
+
+74.1±0.99
+80.0±0.52
+84.3±0.43
+86.9±0.35
+88.2±0.29
+89.1±0.32
+83.7±0.46
+
+Table 4. Performance in unseen noise (mAP, %) and 95 % confi-
+dence intervals.
+Baseline
+
+APC
+
+SNR
+
+APC
++MTR
+
+DN-APC
++MTR
+
+Baseline
++MTR
+
+-5
+0
+5
+10
+15
+20
+Avg.
+
+63.3±1.05
+64.0±1.44
+65.2±1.56
+67.3±1.36
+71.0±1.82
+77.3±1.19
+68.0±2.19
+
+63.7±0.91
+68.1±1.20
+73.5±1.14
+78.7±0.96
+82.9±0.88
+85.7±0.74
+75.4±0.82
+
+66.0±1.21
+67.9±1.05
+70.8±1.33
+75.3±2.42
+80.9±3.14
+86.1±2.30
+74.5±1.44
+
+68.3±1.92
+74.5±2.24
+80.2±1.69
+84.3±0.91
+86.9±0.55
+88.3±0.44
+80.4±1.16
+
+72.8±0.46
+79.5±0.40
+84.0±0.31
+86.6±0.26
+88.1±0.27
+89.1±0.34
+83.4±0.29
+
+In summary, using APC pretraining improves performance
+substantially in noisy conditions, and additionally improves perfor-
+mance in noisy conditions. Our proposed DN-APC in combination
+with MTR achieves the best performance, with an average improve-
+ment of 7.1 % in seen noise and 8 % in unseen noise compared to
+baseline+MTR.
+
+3.2. Adverse conditions
+
+4. CONCLUSIONS
+
+We evaluate the performance of the trained models in various ad-
+verse conditions, including background noise consisting of bus, bab-
+ble, and speech-shaped noise. Additionally, we also evaluate the
+performance on a noise type (caf´e noise) unseen during training, to
+evaluate whether the robustness of the models generalize to an un-
+seen noise type.
+
+Table 3 presents the mAP scores and 95 % confidence intervals
+of the trained models when testing for seen noise at different SNR-
+levels are reported. While Table 3 shows summary scores averaged
+over all noise types, the general picture for each individual noise type
+is the same.
+
+Looking Table 3, the pretrained models clearly outperform the
+supervised baseline models in seen noise.
+Interestingly, the APC
+model outperforms the baseline by 5.6 % on average when neither
+is using MTR, without having seen any noise during pretraining or
+supervised training. Using MTR leads to a further improvement,
+while DN-APC+MTR yields the best results, outperforming the
+baseline+MTR by 7.1 % on average and APC+MTR pretraining by
+2.3 %. For Table 4, showing results when evaluating the models in
+unseen noise, a similar pattern is observed, with DN-APC+MTR
+showing the best results, outperforming the baseline+MTR by 8 %
+on average and APC+MTR by 3 %.
+
+In Table 5 the average performance for models trained on Lib-
+riLight 10h training set is presented. Here, we observe that the pre-
+trained models outperform the supervised baselines by an even larger
+margin, with an average improvement of 24.3 % for DN-APC+MTR
+compared to baseline+MTR.
+
+In this paper, we proposed the use of self-supervised pretraining to
+leverage unlabelled data for improving the robustness of a person-
+alized VAD model in adverse conditions. For pretraining we used
+the APC framework, while we also proposed a Denoising variant of
+APC for improved robustness. We compared the pretrained models
+with a supervised baseline and tested their performance in both clean
+and adverse conditions with both seen and unseen noise at various
+SNR-levels.
+
+Our results show a significant improvement in robustness to
+background noise when using APC pretraining. Both APC and our
+proposed Denoising APC outperform the baseline, while our pro-
+posed Denoising APC achieves the best performance. Overall, it
+can be concluded that self-supervised pretraining can improve the
+personalized VAD performance in both clean and noisy conditions.
+
+Table 5. Avg. performance for models trained on 10h LibriLight
+training set in clean, seen and unseen noise (mAP, %) and 95 % con-
+fidence intervals.
+Baseline
+Test
+set
+
+DN-APC
++MTR
+
+Baseline
++MTR
+
+APC
++MTR
+
+APC
+
+57.2±6.96
+Clean
+54.9±2.37
+Seen
+Unseen 56.2±2.45
+
+55.6±6.47
+55.0±2.43
+56.3±2.45
+
+83.8±1.89
+63.7±2.05
+65.0±2.87
+
+82.5±2.46
+68.9±2.07
+69.6±3.73
+
+83.2±1.91
+77.9±1.57
+78.6±1.46
+
+4
+
+5. REFERENCES
+
+[1] Zheng-Hua Tan, Achintya kr. Sarkar, and Najim Dehak, “rvad:
+An unsupervised segment-based robust voice activity detection
+method,” Computer Speech & Language, vol. 59, pp. 1–21,
+2020.
+
+[2] Heinrich Dinkel, Shuai Wang, Xuenan Xu, Mengyue Wu, and
+Kai Yu, “Voice activity detection in the wild: A data-driven
+approach using teacher-student training,” IEEE/ACM Transac-
+tions on Audio, Speech, and Language Processing, vol. 29, pp.
+1542–1555, 2021.
+
+[3] Shaojin Ding, Quan Wang, Shuo-Yiin Chang, Li Wan, and Ig-
+nacio Lopez Moreno, “Personal VAD: Speaker-Conditioned
+Voice Activity Detection,” in Proc. The Speaker and Language
+Recognition Workshop (Odyssey 2020), 2020, pp. 433–439.
+
+[4] Ivan Medennikov, Maxim Korenevsky, Tatiana Prisyach,
+Yuri Y. Khokhlov, Mariya Korenevskaya, Ivan Sorokin, Ta-
+tiana Timofeeva, Anton Mitrofanov, Andrei Andrusenko,
+Ivan Podluzhny, Aleksandr Laptev, and Aleksei Romanenko,
+“Target-speaker voice activity detection: a novel approach for
+multi-speaker diarization in a dinner party scenario,” in Proc.
+Interspeech 2020, 2020.
+
+[5] Maokui He, Desh Raj, Zili Huang, Jun Du, Zhuo Chen, and
+Shinji Watanabe, “Target-speaker voice activity detection with
+improved i-vector estimation for unknown number of speaker,”
+in Proc. Interspeech 2021, 2021, pp. 2523–2527.
+
+[6] Shaojin Ding, Rajeev Rikhye, Qiao Liang, Yanzhang He, Quan
+Wang, Arun Narayanan, Tom O’Malley, and Ian McGraw,
+“Personal VAD 2.0: Optimizing Personal Voice Activity De-
+tection for On-Device Speech Recognition,” in Proc. Inter-
+speech 2022, 2022, pp. 3744–3748.
+
+[7] Ivan Kraljevski, Zheng-Hua Tan, and Maria Paola Bissiri,
+“Comparison of forced-alignment speech recognition and hu-
+in Proc. Interspeech
+mans for generating reference VAD,”
+2015, 2015, pp. 2937–2941.
+
+[8] Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and
+Michael Auli, “wav2vec 2.0: A framework for self-supervised
+learning of speech representations,” Advances in neural infor-
+mation processing systems, vol. 33, pp. 12449–12460, 2020.
+
+[9] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai,
+Kushal Lakhotia, Ruslan Salakhutdinov, and Abdel rahman
+Mohamed,
+“Hubert: Self-supervised speech representation
+learning by masked prediction of hidden units,” IEEE/ACM
+Transactions on Audio, Speech, and Language Processing, vol.
+29, pp. 3451–3460, 2021.
+
+[10] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu,
+et al., “Wavlm: Large-scale self-supervised pre-training for
+full stack speech processing,” IEEE Journal of Selected Topics
+in Signal Processing, vol. 16, pp. 1505–1518, 2021.
+
+[11] Hong Liu, Jeff Z. HaoChen, Adrien Gaidon, and Tengyu
+Ma, “Self-supervised learning is more robust to dataset im-
+balance,” in International Conference on Learning Represen-
+tations, 2022.
+
+[12] Zeping Luo, Shiyou Wu, Cindy Weng, Mo Zhou, and Rong
+Ge, “Understanding the robustness of self-supervised learn-
+ing through topic modeling,” in International Conference on
+Learning Representations, 2023.
+
+5
+
+[13] Sina Alisamir, Fabien Ringeval, and Franc¸ois Portet, “Cross-
+domain voice activity detection with self-supervised represen-
+tations,” ArXiv, vol. abs/2209.11061, 2022.
+
+[14] Rohit Prabhavalkar, Raziel Alvarez, Carolina Parada, Preetum
+Nakkiran, and Tara N. Sainath, “Automatic gain control and
+multi-style training for robust small-footprint keyword spotting
+with deep neural networks,” in 2015 IEEE International Con-
+ference on Acoustics, Speech and Signal Processing (ICASSP),
+2015, pp. 4704–4708.
+
+[15] Li Wan, Quan Wang, Alan Papir, and Ignacio Lopez Moreno,
+“Generalized end-to-end loss for speaker verification,” in 2018
+IEEE International Conference on Acoustics, Speech and Sig-
+nal Processing (ICASSP), 2018, pp. 4879–4883.
+
+[16] Arsha Nagrani, Joon Son Chung, Weidi Xie, and Andrew Zis-
+“Voxceleb: Large-scale speaker verification in the
+serman,
+wild,” Computer Speech & Language, vol. 60, pp. 101027,
+2020.
+
+[17] Yu-An Chung, Wei-Ning Hsu, Hao Tang, and James R. Glass,
+“An unsupervised autoregressive model for speech representa-
+tion learning,” in Proc. Interspeech 2019, pp. 146–150.
+
+[18] Gene-Ping Yang, Sung-Lin Yeh, Yu-An Chung, James Glass,
+and Hao Tang, “Autoregressive predictive coding: A compre-
+hensive study,” IEEE Journal of Selected Topics in Signal Pro-
+cessing, pp. 1–12, 2022.
+
+[19] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev
+Khudanpur, “Librispeech: An ASR corpus based on public
+domain audio books,” in 2015 IEEE International Conference
+on Acoustics, Speech and Signal Processing (ICASSP), 2015,
+pp. 5206–5210.
+
+[20] J. Kahn, M. Rivi`ere, W. Zheng, E. Kharitonov, Q. Xu, P. E.
+Mazar´e, J. Karadayi, V. Liptchinsky, R. Collobert, C. Fuegen,
+T. Likhomanenko, G. Synnaeve, A. Joulin, A. Mohamed, and
+E. Dupoux, “Libri-light: A benchmark for asr with limited or
+no supervision,” in 2020 IEEE International Conference on
+Acoustics, Speech and Signal Processing (ICASSP), 2020, pp.
+7669–7673.
+
+[21] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael
+Wagner, and Morgan Sonderegger, “Montreal Forced Aligner:
+Trainable Text-Speech Alignment Using Kaldi,” in Proc. In-
+terspeech 2017, 2017, pp. 498–502.
+
+[22] Yu-An Chung and James Glass, “Generative pre-training for
+speech with autoregressive predictive coding,” in 2020 IEEE
+International Conference on Acoustics, Speech and Signal Pro-
+cessing (ICASSP), 2020, pp. 3497–3501.
+
+[23] Morten Kolbœk, Zheng-Hua Tan, and Jesper Jensen, “Speech
+enhancement using long short-term memory based recurrent
+neural networks for noise robust speaker verification,” in 2016
+IEEE Spoken Language Technology Workshop (SLT), 2016, pp.
+305–311.
+
+[24] Tom Ko, Vijayaditya Peddinti, Daniel Povey, Michael L.
+Seltzer, and Sanjeev Khudanpur, “A study on data augmen-
+tation of reverberant speech for robust speech recognition,” in
+2017 IEEE International Conference on Acoustics, Speech and
+Signal Processing (ICASSP), 2017, pp. 5220–5224.
+
+

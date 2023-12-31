@@ -1,0 +1,3300 @@
+A BAYESIAN APPROACH TO FUNCTIONAL REGRESSION:
+THEORY AND COMPUTATION
+
+PREPRINT
+
+José R. Berrendero*1,2, Antonio Coín†1, and Antonio Cuevas‡1,2
+1Departamento de Matemáticas, Universidad Autónoma de Madrid (UAM), Madrid, Spain
+2Instituto de Ciencias Matemáticas ICMAT (CSIC-UAM-UC3M-UCM), Madrid, Spain
+
+December 21, 2023
+
+Abstract
+
+We propose a novel Bayesian methodology for inference in functional linear and logistic
+regression models based on the theory of reproducing kernel Hilbert spaces (RKHS’s). These
+models build upon the RKHS associated with the covariance function of the underlying
+stochastic process, and can be viewed as a finite-dimensional approximation to the classical
+functional regression paradigm. The corresponding functional model is determined by a
+function living on a dense subspace of the RKHS of interest, which has a tractable parametric
+form based on linear combinations of the kernel. By imposing a suitable prior distribution
+on this functional space, we can naturally perform data-driven inference via standard Bayes
+methodology, estimating the posterior distribution through Markov chain Monte Carlo
+(MCMC) methods. In this context, our contribution is two-fold. First, we derive a theoretical
+result that guarantees posterior consistency in these models, based on an application of a
+classic theorem of Doob to our RKHS setting. Second, we show that several prediction
+strategies stemming from our Bayesian formulation are competitive against other usual
+alternatives in both simulations and real data sets, including a Bayesian-motivated variable
+selection procedure.
+
+Keywords functional data · linear regression · logistic regression · reproducing kernel Hilbert space · Bayesian
+inference · posterior consistency
+
+1
+
+Introduction
+
+The problem of predicting a scalar response from a functional covariate is one that has gained traction over the
+last few decades, as more and more data is being generated with an ever-increasing level of granularity in the
+measurements. While in principle the functional data could simply be regarded as a discretized vector in a
+very high dimension, there are often many advantages in taking into account the functional nature of the data,
+ranging from modeling the possibly high correlation among points that are close in the domain, to extracting
+information that may be hidden in the derivatives of the function in question. As a consequence, numerous
+proposals have arisen on how to suitably deal with functional data, all of them encompassed under the term
+Functional Data Analysis (FDA), which essentially explores statistical techniques to process, model and make
+inference on data varying over a continuum. A partial survey on such methods is Cuevas (2014) or Goia and
+Vieu (2016), while a more detailed exposition of the theory and applications can be found for example in
+Ramsay and Silverman (2005) or Hsing and Eubank (2015).
+
+FDA is undoubtedly an active area of research, which finds applications in a wide variety of fields, such
+as biomedicine, finance, meteorology or chemistry (see for example Ullah and Finch, 2013). Accordingly,
+
+∗joser.berrendero@uam.es
+†antonio.coin@uam.es (corresponding author)
+‡antonio.cuevas@uam.es
+
+3
+2
+0
+2
+
+c
+e
+D
+1
+2
+
+]
+E
+M
+
+.
+t
+a
+t
+s
+[
+
+1
+v
+6
+8
+0
+4
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+ 
+ 
+ 
+ 
+ 
+ 
+2
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+there are many recent contributions on how to tackle functional data problems, both from a theoretical and
+practical standpoint. Chief among them is the approach of reducing the problem to a finite-dimensional one,
+for example using a truncated basis expansion or spline interpolation methods (e.g. Müller and Stadtmüller,
+2005; Aguilera and Aguilera-Morillo, 2013). At the same time, much effort has also been put into the task
+of building a sound theoretical basis for FDA, generalizing different concepts to the infinite-dimensional
+framework. Examples of this endeavor include the definition of centrality measures and depth-based notions
+for functional data (e.g. Fraiman and Muniz, 2001; Cuevas et al., 2007; López-Pintado and Romo, 2009),
+an ANOVA test for functional data (Cuevas et al., 2004), a purely functional partial least squares algorithm
+(Delaigle and Hall, 2012b), a functional Mahalanobis distance (e.g. Galeano et al., 2015; Berrendero et al.,
+2020a), or an extension of Fisher’s discriminant analysis for random functions (e.g. James and Hastie, 2001;
+Shin, 2008), among many others. Moreover, additional non-parametric methods for functional prediction
+and classification were notably explored in Ferraty and Vieu (2006). As the name suggests, FDA techniques
+are heavily inspired by functional analysis tools and methods: Hilbert spaces, orthonormal systems, linear
+operators, and so on. Incidentally, a notion that also intersects with the classical theory of machine learning
+and pattern recognition, and that has gained popularity in recent years, is that of reproducing kernel Hilbert
+spaces (RKHS’s) and their applications in functional data problems (see for example Yuan and Cai, 2010 or
+Berrendero et al., 2018, 2020b).
+
+On the other hand, Bayesian inference methods are ubiquitous in the realm of statistics, and their usual
+non-parametric approach also makes use of random functions, though in a slightly different manner than in
+the FDA context. However, while there are recent works in the literature that offer a Bayesian treatment of
+functional data (e.g. Scarpa and Dunson, 2009; Crainiceanu and Goldsmith, 2010; Shi and Choi, 2011; Kang
+et al., 2023), there is still no systematic approach to Bayesian methodologies within the FDA framework. It is
+precisely at this relatively unexplored intersection between FDA and Bayesian methods that our work is aimed.
+In particular, our goal is to study functional regression problems, which are the infinite-dimensional equivalents
+of the usual regression problems that appear in statistics and machine learning. We follow the path started
+by Ferguson (1974) of setting a prior distribution on a functional space, but in our case we take a particular
+RKHS as the ambient space, obtaining functional regression models that allow for a simple yet efficient
+Bayesian treatment of functional data. Moreover, we also study the basic theoretical question of posterior
+consistency in these RKHS models within the proposed Bayesian framework. The concepts of consistency
+and posterior concentration are a kind of frequentist validation that have arguably been an active point of
+research in the last few decades, particularly in infinite-dimensional settings (see Amewou-Atisso et al., 2003;
+Ghosh and Ramamoorthi, 2003; Choi and Ramamoorthi, 2008), and also in the functional regression case (e.g.
+Lian et al., 2016; Abraham and Grollemund, 2020). To put it simply, posterior consistency ensures that with
+enough samples, the Bayesian updating mechanism works as intended and the posterior distribution eventually
+concentrates around the true value of the parameters, supposing the model is well specified. We leverage
+the properties of RKHS’s and existing techniques, mainly by Nobile (1994) and Miller (2023), to show that
+posterior consistency holds in our RKHS models under some mild identifiability conditions, thus providing a
+strong and coherent background to our Bayesian approach. Finally, this theoretical side is complemented by
+extensive experimentation that demonstrates the predictive performance of the proposed functional regression
+models, especially when compared with other usual frequentist methods.
+
+L2-models, shortcomings and alternatives
+
+In this work we are concerned with functional linear and logistic regression models, that is, situations where
+the goal is to predict a continuous or dichotomous variable from functional observations. Even though these
+problems can be formally stated with almost no differences from their finite-dimensional counterparts, there are
+some fundamental challenges as well as some subtle drawbacks that emerge as a result of working in infinite
+dimensions. To set a common framework, we will consider throughout a scalar response variable Y (either
+continuous or binary) which has some dependence on a stochastic L2-process X = X(t) = X(t, ω) with
+trajectories in L2[0, 1]. We will further suppose that X is centered, that is, its mean function m(t) = E[X(t)]
+vanishes for all t ∈ [0, 1]. In addition, when prediction is our ultimate objective, we will tacitly assume the
+existence of a labeled data set Dn = {(Xi, Yi) : i = 1, . . . , n} of independent observations from (X, Y ), and
+our aim will be to accurately predict the response corresponding to unlabeled samples from X.
+
+The most common scalar-on-function linear regression model is the classical L2-model, widely popularized
+since the first edition (1997) of the monograph by Ramsay and Silverman (2005).
+It can be seen as a
+generalization of the usual finite-dimensional model, replacing the scalar product in Rd for that of the
+
+A Bayesian approach to functional regression: theory and computation
+
+3
+
+functional space L2[0, 1] (henceforth denoted by ⟨·, ·⟩):
+
+Y = α0 + ⟨X, β⟩ + ε = α0 +
+
+(cid:90) 1
+
+0
+
+X(t)β(t) dt + ε,
+
+(1.1)
+
+where α0 ∈ R, ε is a random error term independent from X with E[ε] = 0, and the functional slope parameter
+β = β(·) is assumed to be a member of the infinite-dimensional space L2[0, 1]. In this case, the inference
+on β is hampered by the fact that L2[0, 1] is an extremely wide space that contains many non-smooth or
+ill-behaved functions, so that any estimation procedure involving optimization on it would typically be hard.
+In spite of this, model (1.1) is not flexible enough to include “simple” finite-dimensional models based on
+linear combinations of the marginals, such as Y = α0 + β1X(t1) + · · · + βpX(tp) + ε for some constants
+βj ∈ R and instants tj ∈ [0, 1]; see Berrendero et al. (2020b) for additional details on this. Moreover, the
+non-invertibility of the covariance operator associated with X, which plays the role of the covariance matrix
+in the infinite case, invalidates the usual least squares theory (see e.g. Cardot and Sarda, 2018). Thus, some
+regularization or dimensionality reduction technique is needed for parameter estimation; see Reiss et al. (2017)
+for a summary of several widespread methods.
+
+A similar L2-based functional logistic equation can be derived for the binary classification problem via the
+
+logistic function:
+
+P(Y = 1 | X) =
+
+1
+1 + exp{−α0 − ⟨X, β⟩}
+
+,
+
+(1.2)
+
+where α0 ∈ R and β ∈ L2[0, 1]. In this situation, the most common way of estimating the slope function β is
+via its Maximum Likelihood Estimator (MLE). However, not only do the same complications as in the linear
+regression model apply in this situation, but there is also the additional problem that in functional settings the
+MLE does not exist with probability one under fairly general conditions (see Berrendero et al., 2023).
+
+It turns out that in both scenarios a natural alternative to the L2-model is the so-called reproducing kernel
+Hilbert space (RKHS) model, which instead assumes the unknown functional parameter to be a member of
+the RKHS associated with the covariance function of the process X, making use of the scalar product of that
+space. As we will show later on, not only is this model simpler and arguably easier to interpret, but it also
+constrains the parameter space to smoother and more manageable functions. In fact, it does include a model
+based on finite linear combinations of the marginals of X as a particular case, which is especially appealing to
+practitioners confronted with functional data problems due to its simplicity. These RKHS-based models and
+their idiosyncrasies have been explored in Berrendero et al. (2019, 2020b) in the functional linear regression
+setting, and in Berrendero et al. (2023) for the case of functional logistic regression. Incidentally, these models
+also shed light on the near-perfect classification phenomenon for functional data, described by Delaigle and
+Hall (2012a) and further examined for example in the works of Berrendero et al. (2018) or Torrecilla et al.
+(2020).
+
+A major aim of this work is to motivate the aforementioned RKHS models inside the functional framework,
+while also providing efficient techniques to apply them in practice. Our main contribution is the proposal of a
+Bayesian approach to parameter estimation and prediction within these models, in which a prior distribution
+is imposed on the unknown functional parameter and the posterior distribution is used as a basis for several
+prediction techniques. Following recent trends in Bayesian computation techniques, this posterior distribution
+is approximated via generic Markov chain Monte Carlo (MCMC) methods (e.g. Brooks et al., 2011). Although
+setting a prior distribution on a function space is generally a hard task, the specific parametric formulation of
+the RKHS models we propose greatly facilitates this (see Section 2 for details). Similar Bayesian schemes have
+recently been explored in Grollemund et al. (2019) and Abraham (2023), albeit not within a RKHS framework.
+Another set of techniques extensively studied in this context are variable selection methods, which aim to select
+the marginals {X(tj)} of the process that better summarize it according to some optimality criterion. As it
+happens, some variable selection methods have already been proposed in the RKHS framework (e.g. Berrendero
+et al., 2019; Bueno-Larraz and Klepsch, 2019), but in general they have their own dedicated algorithms and
+procedures. As will become apparent in the forthcoming sections, given the nature of our suggested Bayesian
+model we can easily isolate the marginal posterior distribution corresponding to a finite set of points {tj}, and
+thus provide a Bayesian-motivated variable selection process along with the other prediction methods that
+naturally arise within our model. These points-of-impact selection models for functional predictors have also
+been considered in the literature; see Ferraty et al. (2010), Berrendero et al. (2016) or Poß et al. (2020) by way
+of illustration. Another example of a related strategy is the work of James et al. (2009), in which the authors
+propose a method based on variable selection to estimate the functional parameter β(t) in such a way that it is
+exactly zero over some regions in the domain.
+
+4
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Some essentials on RKHS’s and notation
+
+The methodology proposed in this work relies heavily on the use of RKHS’s, so before diving into it, we will
+briefly describe the main characteristics of these spaces from a probabilistic point of view (for a more detailed
+account, see for example Berlinet and Thomas-Agnan, 2004). Let us denote by K(t, s) = E[X(t)X(s)] the
+covariance function of the centered process X, and in what follows suppose that it is continuous. To construct
+the RKHS H(K) associated with the covariance function, we start by defining the functional space H0(K) of
+all finite linear combinations of evaluations of K, that is,
+
+(cid:40)
+
+H0(K) =
+
+f ∈ L2[0, 1] : f (·) =
+
+p
+(cid:88)
+
+i=1
+
+aiK(ti, ·), p ∈ N, ai ∈ R, ti ∈ [0, 1]
+
+.
+
+(1.3)
+
+(cid:41)
+
+This space is endowed with the inner product ⟨f, g⟩K = (cid:80)
+i aiK(ti, ·) and
+g(·) = (cid:80)
+j bjK(sj, ·). Then, H(K) is defined to be the completion of H0(K) under the norm induced by
+the scalar product ⟨·, ·⟩K. As it turns out, functions in this space satisfy the so-called reproducing property
+⟨K(t, ·), f ⟩K = f (t), for all f ∈ H(K) and t ∈ [0, 1]. An important consequence of this is that H(K) is a
+space of genuine functions and not of equivalence classes, since the values of the functions at particular points
+are in fact relevant, unlike in L2-spaces.
+
+i,j aibjK(ti, sj), where f (·) = (cid:80)
+
+Now, a particularly useful approach in statistics is to regard H(K) as an isometric copy of a well-known
+space. Specifically, via Loève’s isometry (Loève, 1948) one can establish a congruence ΨX between H(K) and
+the linear span of the process, L(X), in the space of all random variables with finite second moment, L2(Ω)
+(see Lemma 1.1 in Luki´c and Beder, 2001). This isometry is essentially the completion of the correspondence
+
+p
+(cid:88)
+
+i=1
+
+aiX(ti) ←→
+
+p
+(cid:88)
+
+i=1
+
+aiK(ti, ·),
+
+(1.4)
+
+X (U )(t) = E[U X(t)] for U ∈ L(X). Despite the
+and can be formally defined, in terms of its inverse, as Ψ−1
+close connection between the process X and the space H(K), special care must be taken when dealing with
+concrete realizations of the process, since under rather general conditions the trajectories of X do not belong
+to the corresponding RKHS with probability one (see for example Luki´c and Beder, 2001, Corollary 7.1). As
+a consequence, the expression ⟨x, f ⟩K is ill-defined and lacks meaning when x is a realization of X. However,
+following Parzen’s approach in his seminal work (e.g. Parzen, 1961, Theorem 4E), we can leverage Loève’s
+isometry and identify ⟨x, f ⟩K with the image Ψx(f ) := ΨX (f )(ω), for x = X(ω) and f ∈ H(K). This
+notation, viewed as a formal extension of the inner product, often proves to be useful and convenient.
+
+Organization of the paper
+
+The rest of the paper is organized as follows. In Section 2 we explain the Bayesian methodology and the
+functional regression models we propose. Section 3 is devoted to presenting a positive posterior consistency
+result, along with an overview of the proof. The empirical results of the experimentation are contained in
+Section 4, which includes a short discussion of computational details. Lastly, the conclusions drawn from this
+work are presented in Section 5.
+
+2 A Bayesian methodology for RKHS-based functional regression models
+
+In this section we present the precise functional models and Bayesian methodologies explored in this work.
+The RKHS-based functional models under consideration are those obtained by taking a functional parameter
+α ∈ H(K) and replacing the scalar product for ⟨X, α⟩K in the L2-models (1.1) and (1.2). However, to further
+simplify things we will follow a parametric approach and suppose that α is in fact a member of the dense
+subspace H0(K) defined in (1.3). The general idea will be to impose a prior distribution on this functional
+parameter to derive an approximate posterior model (via MCMC methods) after incorporating the available
+sample information. Moreover, as we said before, with a slight abuse of notation we will understand the
+expression ⟨x, α⟩K as Ψx(α), where x = X(ω) and Ψx is Loève’s isometry. Hence, taking into account
+that α ∈ H0(K) and that ΨX (K(t, ·)) = X(t) by definition, we can write ⟨x, α⟩K ≡ (cid:80)
+j βjx(tj) when
+α(·) = (cid:80)
+j βjK(tj, ·). In this way we get a simpler, finite-dimensional approximation of the functional RKHS
+model, which we argue reduces the overall complexity of the model while still capturing most of the relevant
+information. Moreover, the model remains “truly functional”, in the sense that we are exploiting the RKHS
+perspective to give a functional nature to discretized models.
+
+A Bayesian approach to functional regression: theory and computation
+
+5
+
+In view of (1.3) and Loève’s isometry, to set a prior distribution on the unknown function α (that is, a prior
+distribution on the functional space H0(K)) it suffices to consider a discrete distribution on p, and then impose
+p-dimensional continuous prior distributions on the coefficients βj and the times tj given p. Thanks to this
+parametric approach, the challenging task of setting a prior distribution on a space of functions is considerably
+simplified, while simultaneously not constraining the model to any specific distribution (in contrast to, say,
+Gaussian process regression methods). Moreover, note that starting from a probability distribution P0 on
+H0(K) we can obtain a probability distribution P on H(K) merely by defining P(B) = P0(B ∩ H0(K))
+for all Borel sets B. Consequently, our simplifying assumption on α is not very restrictive, since any prior
+distribution on H0(K) can be directly extended to a prior distribution on H(K).
+
+However, after some initial experimentation we found that, for practical and computational reasons, the
+value of p ∈ N (the dimensionality of the model) is best fixed beforehand in a suitable way; see Appendix A.2
+for details. Thus, we will regard only the βj and tj as free parameters, and search for our functional parameter
+in the space
+
+H0,p(K) =
+
+
+
+
+p
+(cid:88)
+
+
+
+j=1
+
+βjK(tj, ·) : βj ∈ R, tj ∈ [0, 1]
+
+
+
+
+
+
+.
+
+(2.1)
+
+Even though we actually work on H0,p(K), the discrete parameter p can still be selected in several meaningful
+ways that make use of the available data (such as cross-validation or some information criteria), and the set
+of feasible values is not very large in practice: we advocate for simple, parsimonious models. Moreover, we
+could think of this approach as imposing a degenerate prior distribution on p, so it is in a way a particular case
+of the more general model discussed above.
+
+2.1 Functional linear regression
+
+In the case of functional linear regression, the simplified RKHS model considered is
+
+Y = α0 + ⟨X, α⟩K + ε = α0 +
+
+p
+(cid:88)
+
+j=1
+
+βjX(tj) + ε,
+
+(2.2)
+
+where α(·) = (cid:80)p
+j=1 βjK(tj, ·) ∈ H0,p(K), α0 ∈ R, and ε ∼ N (0, σ2) is an error term independent from X.
+This model is essentially a finite-dimensional approximation from a functional perspective to the more general
+RKHS model that assumes α ∈ H(K), proposed in Berrendero et al. (2019). When p is fixed, the parameter
+space of dimension 2p + 2 becomes Θp = Rp × [0, 1]p × R × R+, and in the sequel a generic element of this
+space will be denoted by θ = (β1, . . . , βp, t1, . . . , tp, α0, σ2) ≡ (b, τ, α0, σ2). Before proceeding any further,
+observe that we can rewrite model (2.2) in a more explicit and practical fashion in terms of the available
+sample information in Dn. For θ ∈ Θp, the reinterpreted model assumes the form
+
+
+
+Yi | Xi, θ ind.∼ N
+
+α0 +
+
+p
+(cid:88)
+
+j=1
+
+
+
+βjXi(tj), σ2
+
+ ,
+
+i = 1, . . . , n.
+
+(2.3)
+
+It is worth mentioning that the model remains linear in the sense that it fundamentally involves a random
+variable ⟨X, α⟩K = ΨX (α) belonging to the linear span of the process X in L2(Ω). Also, note that given the
+time instants tj, the model becomes a multiple linear model with the X(tj) as scalar covariates. As a matter
+of fact, this RKHS model is particularly suited as a basis for variable selection methods, and furthermore
+the general RKHS model entails the classical L2-model (1.1) under certain conditions (see Berrendero et al.,
+2020b, Section 3). In addition, this model could be easily extended to the case of several covariates via an
+expression of type Y = α0 + ΨX 1 (α1) + · · · + ΨX q (αq) + ε. In that case, as argued in Grollemund et al.
+(2019) for a similar situation, if we were to set a prior distribution on all the parameters involved, we could
+recover the full posterior by looking alternately at the posterior distribution of each covariate conditional on
+the rest of them.
+
+6
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+The Bayesian approach: prior selection and posterior derivation
+
+A simple, natural prior distribution for the parameter vector θ ∈ Θp, suggested by the structure of the parameter
+space and usually employed in similar situations in the Bayesian literature, is given by
+π(α0, σ2) ∝ 1/σ2,
+
+τ ∼ U([0, 1]p),
+b | τ, σ2 ∼ Np(b0, gσ2(cid:0)X T
+
+τ Xτ + ηI(cid:1)
+(cid:123)(cid:122)
+(cid:125)
+Gτ
+
+(cid:124)
+
+−1
+
+),
+
+(2.4)
+
+where I is the identity matrix, Xτ is the data matrix (Xi(tj))i,j, and b0 ∈ Rp, g ∈ R and η ∈ R+ are
+hyperparameters of the model. On the one hand, note the use of a joint prior distribution on α0 and σ2, which
+is a widely used non-informative prior known as Jeffrey’s prior (Jeffreys, 1946). In any event, the estimation
+of α0 = E[Y ] is straightforward, so it could have been left out of the model altogether. On the other hand, the
+prior on b is a slight modification of the well-known Zellner’s g-prior (Zellner, 1986), in which a regularizing
+term is added to avoid ill-conditioning problems in the Gram matrix, obtaining a ridge-like Zellner prior
+controlled by the tuning parameter η (Baragatti and Pommeret, 2012). All in all, with a slight abuse of notation
+the proposed prior distribution becomes π(θ) = π(b|τ, σ2)π(τ )π(α0, σ2).
+
+As for the posterior distribution, we only compute a function proportional to its log-density, since that is all
+that is needed for a MCMC algorithm to work. A standard algebraic manipulation in the posterior expression
+yields the following result:
+Proposition 2.1. Under the linear model (2.3), the prior distribution implied in (2.4) produces the log-posterior
+distribution
+
+log π(θ | Dn) ∝
+
+1
+2σ2
+
+(cid:18)
+
+∥Y − α01 − Xτ b∥2 +
+
+(b − b0)T Gτ (b − b0)
+
+(cid:19)
+
+1
+g
+
+where Y = (Y1, . . . , Yn)T and 1 is an n-dimensional vector of ones.
+
++ (p + n + 2) log σ −
+
+1
+2
+
+log |Gτ |,
+
+Making predictions
+
+In order to generate predictions, we have to take into account that when performing the empirical posterior
+approximation, a MCMC algorithm is an iterative procedure that produces a chain of M approximate samples
+θ(m)∗ = (b(m)∗, τ (m)∗, α(m)∗
+, (σ2)(m)∗) of the posterior distribution π(θ|Dn). Assuming now a previously
+unseen test set D′
+n′ in the same conditions as Dn, we propose to construct three different kinds of predictors:
+
+0
+
+Summarize-then-predict. If we consider a point-estimate statistic T , we can get the corresponding esti-
+mates ˆθ = (ˆb, ˆτ , ˆα0, ˆσ2) ≡ (T {b(m)∗}, T {τ (m)∗}, T {α(m)∗
+}, T {(σ2)(m)∗}), and then use these
+summaries of the marginal posterior distributions to predict the responses in the usual way following
+model (2.2), i.e.:
+
+0
+
+ˆYi = ˆα0 +
+
+ˆβjXi(ˆtj),
+
+i = 1, . . . , n′.
+
+(2.5)
+
+p
+(cid:88)
+
+j=1
+
+Note that in this case the variance σ2 is treated as a nuisance parameter. Although it contributes to
+measure the uncertainty in the approximations, its estimates are discarded in the final prediction.
+
+Predict-then-summarize. Alternatively, we can look at the approximate posterior distribution as a whole,
+and compute the predictive distribution of the simulated responses at each step of the chain following
+model (2.3):
+
+(cid:110)
+
+Y (m)∗ :=
+
+≡ Yi | Xi, θ(m)∗ : i = 1, . . . , n′(cid:111)
+Then, we can take the mean of all such simulated responses as a proxy for each response variable,
+that is,
+
+, m = 1, . . . , M.
+
+Y (m)∗
+i
+
+(2.6)
+
+ˆYi =
+
+1
+M
+
+M
+(cid:88)
+
+m=1
+
+Y (m)∗
+i
+
+,
+
+i = 1, . . . , n′.
+
+This method differs from the previous one in that it takes into account the full approximate posterior
+distribution instead of summarizing it directly.
+
+A Bayesian approach to functional regression: theory and computation
+
+7
+
+Variable selection. Lastly, we can focus only on the marginal posterior distribution of τ |Dn and select p
+time instants using a point-estimate statistic T as in our first strategy, but discarding the rest of the
+parameters. Specifically, we can consider the times ˆtj = T {t(m)∗
+} and reduce the original data set to
+just the n × p real matrix {Xi(ˆtj) : i = 1, . . . , n, j = 1, . . . , p}. After this variable selection has
+been carried out, we can tackle the problem using a finite-dimensional linear regression model and
+apply any of the well-known prediction algorithms suited for this situation.
+
+j
+
+Note that these predictors can be obtained all at once after only one round of training (that is, an individual
+MCMC run to approximate the posterior distribution). As a consequence, what we have in practice is a single
+algorithm that can produce multiple predictors at the same computational cost, so that any of them can be
+chosen (or even switched back and forth) depending on the particularities of the problem at hand. Moreover,
+one could even contemplate an ensemble model in which some kind of aggregation of several of the available
+prediction methods is performed to produce a final result.
+
+2.2 Functional logistic regression
+
+In the case of functional logistic regression, we regard the binary response variable Y ∈ {0, 1} as a Bernoulli
+random variable given the regressor X = x ∈ L2[0, 1], and as usual suppose that log (p(x)/(1 − p(x))) is
+linear in x, where p(x) = P(Y = 1|X = x). Then, following the approach suggested by Berrendero et al.
+(2023), a logistic RKHS model might be given, in terms of the correspondence ⟨X, α⟩K = ΨX (α), by the
+equation
+
+P(Y = 1 | X) =
+
+1
+1 + exp{−α0 − ⟨X, α⟩K}
+
+, α0 ∈ R, α ∈ H0,p(K).
+
+(2.7)
+
+Indeed, note that this can be seen as a finite-dimensional approximation (but still with a functional interpre-
+tation) to the general RKHS functional logistic model proposed by these authors, which can be obtained by
+replacing H0,p(K) with the whole RKHS space H(K). Now, if we aim at a classification problem, our strategy
+will be similar to that followed in the functional linear model: after incorporating the sample information, we
+can rewrite (2.7) as
+
+Yi | Xi, θ ind.∼ Bernoulli(pi),
+
+i = 1, . . . , n,
+
+with
+
+pi = P(Yi = 1 | Xi, θ) =
+
+where in turn α0, βj ∈ R and tj ∈ [0, 1].
+
+1
+
+−α0 −
+
+p
+(cid:88)
+
+j=1
+
+
+
+
+
+
+1 + exp
+
+βjXi(tj)
+
+
+
+
+
+
+,
+
+i = 1, . . . , n,
+
+(2.8)
+
+(2.9)
+
+In much the same way as the linear regression model described above, this RKHS-based logistic regres-
+sion model offers some advantages over the L2-model. First and foremost, it has a more straightforward
+interpretation and allows for a workable Bayesian approach, as we will demonstrate below. Secondly, it
+can be shown that under mild conditions the general RKHS logistic functional model holds whenever the
+conditional distributions X|Y = i (i = 0, 1) are homoscedastic Gaussian processes, and in some cases it
+also entails the L2-model (see Section 4 in Berrendero et al., 2023); this arguably provides a solid theoretical
+motivation for the reduced model. Furthermore, a maximum likelihood approach for parameter estimation,
+although not considered here, is possible as well. Indeed, the use of a finite-dimensional approximation
+mitigates the problem of non-existence of the MLE in the functional case. However, let us recall that even
+in finite-dimensional settings there are cases of quasi-complete separation in which the MLE does not exist
+(Albert and Anderson, 1984), though this issue could be partially circumvented using, for example, Firth’s
+corrected estimator (Firth, 1993). Nevertheless, there are still cases in high-dimensional logistic regression in
+which the MLE may not exist, as exemplified in the theory recently developed by Sur and Candès (2019) and
+Candès and Sur (2020). In any event, we argue that the Bayesian RKHS model presented here is a compelling
+and feasible approach to functional logistic regression, since it bypasses the main difficulties of the usual
+maximum likelihood techniques.
+
+The Bayesian approach: prior selection and posterior derivation
+
+As far as prior distributions go, we propose to use the same ones as we did in (2.4) for the linear regression
+model. Note that in this case the nuisance parameter σ2 only appears as part of the hierarchical prior
+distribution, and not in the final model. The posterior distribution is again derived after a routine calculation:
+
+8
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Proposition 2.2. Under the logistic model (2.8), the prior distribution implied in (2.4) produces the log-
+posterior distribution
+
+log π(θ | Dn) ∝
+
+n
+(cid:88)
+
+[(α0 + ⟨Xi, α⟩K) Yi − log (1 + exp {α0 + ⟨Xi, α⟩K})]
+
+i=1
+1
+2
+
++
+
+log |Gτ | − (p + 2) log σ −
+
+1
+2gσ2 (b − b0)T Gτ (b − b0).
+
+Making predictions
+
+Bear in mind that in this case we are essentially approximating probabilities, so we need to transform the pre-
+dicted values to a binary output in {0, 1}. According to the usual criterion of minimizing the misclassification
+probability, the Bayes optimal rule is recovered by predicting ˆY = 1 when P(Y = 1|X) ≥ 1/2. Nevertheless,
+for a more general cost function one could consider other criteria that would lead to evaluating whether
+P(Y = 1|X) ≥ γ for some threshold γ ∈ [0, 1]. With this last strategy in mind, the summarize-then-predict
+approach is analogous to the linear regression case:
+
+
+
+
+
+
+ˆYi = I
+
+
+
+
+1 + exp
+
+−ˆα0 −
+
+ˆβjXi(ˆtj)
+
+
+
+≥ γ
+
+
+ ,
+
+i = 1, . . . , n′,
+
+(2.10)
+
+
+
+
+
+
+p
+(cid:88)
+
+j=1
+
+
+
+−1
+
+
+
+
+
+
+where I is the indicator function (I(P ) is 1 if P is true and 0 otherwise). The hat estimates are obtained
+once again through a summary statistic T of the corresponding marginal posterior distributions. On the other
+hand, the prediction method that takes into account the entire posterior approximation (i.e. the predict-then-
+summarize approach) is somewhat different now, since there is the question of which response (the Bernoulli
+variables in (2.8) or the raw probabilities in (2.9)) to consider when averaging the posterior samples. Hence,
+there are primarily two possible outcomes:
+
+Average approximate probability. Averaging the approximate probabilities p(m)∗
+
+computed following (2.9) results in predictors ˆYi = I( 1
+M
+
+(cid:80)M
+
+m=1 p(m)∗
+
+i
+
+= P(Yi = 1|Xi, θ(m)∗)
+
+i
+≥ γ), for i = 1, . . . , n′.
+
+Average approximate response. Averaging the approximate binary responses Y (m)∗
+
+to predictions of the form ˆYi = I( 1
+M
+follows a Bernoulli distribution with parameter p(m)∗
+equivalent to predicting ˆYi from the majority vote of all the Y (m)∗
+
+m=1 Y (m)∗
+
+i
+
+i
+
+(cid:80)M
+
+.
+
+i
+
+instead (see (2.6)) leads
+≥ γ), for i = 1, . . . , n′. In this case, each Y (m)∗
+, and note that when γ = 1/2 this strategy is
+
+i
+
+i
+
+Lastly, the variable selection method is essentially the same as in the case of linear regression: we select p
+time instants from each trajectory based on a summary of the posterior distribution τ |Dn, and then feed the
+reduced data set to a finite-dimensional binary classification procedure.
+
+3 Posterior consistency
+
+In this section we will show how the Bayesian methodology in conjunction with the RKHS models provides a
+strong theoretical background for the prediction procedures derived from them. Firstly, let us briefly recall
+what we understand by posterior consistency. Note that to avoid confusion, throughout this section we will
+sometimes use bold letters to represent random variables. Consider a sample space X and X1, . . . , Xn an i.i.d.
+sample of the data X. Let us fix a prior distribution Π for random variables θ on the parameter space Θ, that
+is, θ ∼ Π, and let Pθ represent a sampling model (a distribution on X indexed by θ ∈ Θ) such that X|θ ∼ Pθ.
+Furthermore, assume that the model is well-specified, i.e., there is a true value θ0 ∈ Θ such that X ∼ Pθ0 , and
+denote by P ∞
+0
+Definition 3.1 (Ghosh and Ramamoorthi, 2003). We say that the posterior distribution is (strongly) consistent
+at θ0 if for every neighborhood U of θ0 it holds that
+
+the joint probability measure of (X1, X2, . . . ) when θ0 is the true value of the parameter.
+
+lim
+n→∞
+
+Π(θ ∈ U | X1, . . . , Xn) = 1 P ∞
+
+0 − a.s.
+
+For a metric space (Θ, d), this is equivalent to
+
+lim
+n→∞
+
+Π(d(θ, θ0) < ε | X1, . . . , Xn) = 1 P ∞
+
+0 − a.s,
+
+for all ε > 0.
+
+A Bayesian approach to functional regression: theory and computation
+
+9
+
+Note that
+
+the conditional probabilities are computed under
+
+the assumed joint distribution of
+(θ, (X1, X2, . . . )). Essentially, we are saying that the posterior concentrates around θ0 for almost all se-
+quences of data. Thus, if consistency holds, the effect of the prior gets diluted as more and more data is used
+for the inference.
+
+Doob’s theorem
+
+It turns out that, under very general conditions, the posterior distribution is consistent at almost every value of
+θ0 with respect to the measure induced by the prior (Doob, 1949). Let the sample space X and the parameter
+space Θ be complete separable metric spaces, endowed with their respective Borel sigma-algebras. Suppose
+that Π is a prior distribution on Θ, and for each θ ∈ Θ let Pθ be a probability distribution on X . Consider the
+model θ ∼ Π and X1, X2, . . . |θ ∼ Pθ i.i.d., where θ is a random variable taking values in Θ. Observe that
+this induces a posterior distribution Π(θ|X1, . . . , Xn).
+Theorem 3.1 (Doob’s consistency theorem). If θ (cid:55)→ Pθ is one-to-one and θ (cid:55)→ Pθ(A) is measurable for
+all measurable sets A ⊆ X , then the posterior distribution is consistent at Π-almost all values of Θ. That
+is, there exists Θ∗ ⊆ Θ such that Π(Θ∗) = 1 and for all θ0 ∈ Θ∗, if X1, X2, . . . ∼ Pθ0 i.i.d., then for any
+neighborhood B of θ0 we have
+
+lim
+n→∞
+
+Π(θ ∈ B | X1, . . . , Xn) = 1 P ∞
+
+0 − a.s.
+
+See chapter 7.4.1 of Schervish (1995), chapter 10.4 of Van der Vaart (1998), chapter 1.3 of Ghosh and
+Ramamoorthi (2003), or Miller (2018) for more details on this result. As a side note, in a nonparametric
+setting where the parameter of interest is a random function (e.g. a probability density), there is also a stronger
+consistency result by Schwartz (1965) which omits the Π-almost sure qualification under some more restrictive
+conditions. Moreover, there are some extensions of this result that deal with independent but not identically
+distributed data, such as Choi and Ramamoorthi (2008).
+
+3.1 Consistency in our RKHS model
+
+Now we study in detail whether Doob’s theorem can be applied in our linear RKHS model, but the posterior
+consistency results we obtain hold mutatis mutandis in the case of the RKHS-based logistic model proposed
+here. In this section we will assume that the covariance function K of the underlying stochastic process X
+is strictly positive definite. In the linear case the sample space is X × Y = L2[0, 1] × R, which is already a
+complete separable metric space. Consider for each p ∈ N the subset of the (2p + 2)-Euclidean space
+
+Θp = {(β, τ, α0, σ2) : β ∈ Rp, τ ∈ [0, 1]p, α0 ∈ R, σ2 ∈ R+
+
+0 }.
+
+Then, we can write our infinite-dimensional parameter space as
+
+Θ =
+
+∞
+(cid:91)
+
+p=1
+
+Θp.
+
+(3.1)
+
+At this point we can follow an approach very similar to Miller (2023), in which posterior consistency is
+established in a mixture model with an infinite-dimensional parameter space that factorizes in the same way
+as (3.1). Note that given θ ∈ Θ there is a unique p = p(θ) such that θ ∈ Θp. Considering that we will only be
+interested in small balls around the true value of the parameter, we can define a metric for θ, θ′ ∈ Θ by
+(cid:26)min {∥θ − θ′∥, 1} ,
+
+d(θ, θ′) =
+
+1,
+
+if p(θ) = p(θ′),
+otherwise.
+
+Since each Θp is itself a complete separable metric space with the inherited Euclidean norm, Proposition A.1
+in Miller (2023) ensures that (Θ, d) is a complete separable metric space. Further, we equip both X × Y
+and Θ with their respective Borel sigma-algebras. In terms of θ ∈ Θ, the data distribution can be expressed
+as Pθ(X, Y ) = Pβ,τ,α0,σ2(X, Y ), which formally factorizes as Pθ(X, Y ) = P (X)Pθ(Y |X), where in turn
+X ∼ P (X) and, in our RKHS setting, Pθ(Y |X) ≡ N (α0 + (cid:80)p(θ)
+j=1 βjX(tj), σ2). Now, let us suppose that
+θ (cid:55)→ Pθ(X, Y )(A) is measurable for all measurable sets A ⊆ X × Y (which holds under mild conditions; see
+Appendix B). Moreover, for convenience, we will denote the sequences (X, Y )1:n = (X1, Y1), . . . , (Xn, Yn)
+and (X, Y )1:∞ = (X1, Y1), (X2, Y2), . . ..
+
+10
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Now, the full hierarchical model under consideration is
+
+(no. of components) P ∼ π,
+(component values) β | P = p ∼ Fp,
+(component times) τ | P = p ∼ Gp,
+(intercept) α0 ∼ C,
+(error variance) σ2 ∼ D,
+(observed data)
+
+(X, Y )1:n | β, τ, α0, σ2 ∼ Pβ,τ,α0,σ2 (X, Y )
+
+(3.2)
+
+i.i.d.,
+
+where π, Fp, Gp, C and D are probability measures on N, Rp, [0, 1]p, R and R+
+0 , respectively. Note
+that since Pθ(X, Y ) is invariant under permutations of the component labels β and τ , we can only show
+consistency up to one such permutation. To that effect, and mirroring the strategy of Miller (2023), let
+Sp denote the set of permutations of {1, . . . , p}, and for ν ∈ Sp and θ ∈ Θp, denote by θ[ν] the result of
+applying the permutation ν to the component labels of θ. That is, if θ = (β1, . . . , βp, t1, . . . , tp, α0, σ2),
+then θ[ν] = (βν1, . . . , βνp , tν1 , . . . , tνp , α0, σ2). Now, for θ0 ∈ Θp and ε > 0 define the neighborhood
+˜B(θ0, ε) = (cid:83)
+{θ ∈ Θ : d(θ, θ0[ν]) < ε}, which is the set of all parameters that are within ε of some
+permutation of (the component labels of) θ0. Lastly, define the random variable θ = (β, τ, α0, σ2), which
+takes values in Θ, and denote by Π the prior distribution on θ implied by the model in (3.2). In order for
+identifiability to hold, we need to place some restrictions on the prior:
+Condition 3.1 (Identifiability constraints). Under the model in (3.2), for all p ∈ N:
+
+ν∈Sp
+
+1. Π(ti = tj|P = p) = 0 for all 1 ≤ i < j ≤ p.
+
+2. There exists δ > 0 such that Π(|βj| < δ|P = p) = 0 for all 1 ≤ j ≤ p.
+
+Both assumptions can be interpreted as a way of pursuing parsimony in the model, aiming for as few
+components as possible. In practical and computational terms, we can think of δ as the machine precision
+number, so that virtually all continuous prior distributions satisfy the associated condition. With this setup in
+mind, we are now ready to state our main theorem:
+Theorem 3.2. Suppose that Condition 3.1 holds. Then there exists Θ∗ ⊆ Θ such that Π(θ ∈ Θ∗) = 1 and for
+all θ0 ∈ Θ∗, if (X, Y )1:∞ ∼ Pθ0 (X, Y ) i.i.d., then for all ε > 0
+
+and
+
+lim
+n→∞
+
+Π(θ ∈ ˜B(θ0, ε) | (X, Y )1:n) = 1 P ∞
+
+0 (X, Y ) − a.s.
+
+lim
+n→∞
+
+Π(P = p(θ0) | (X, Y )1:n) = 1 P ∞
+
+0 (X, Y ) − a.s.
+
+All in all, this result guarantees consistency for almost every parameter in the support of the prior distribution.
+In addition, the second conclusion is of certain relevance in itself because the estimation of the number of
+components in mixture-like models is a hard problem in general (see Miller and Harrison, 2018, and references
+therein). However, even though we can choose the prior in such a way that supp(Π) = Θ, in principle there
+is no assurance that the Π-null set in which consistency may fail will not be a large set. In fact, when the
+parameter space is infinite-dimensional there are examples of large inconsistency sets, even for reasonably
+chosen prior distributions (e.g. Diaconis and Freedman, 1986). Nonetheless, when the parameter space is a
+countable union of disjoint finite-dimensional sets, we can further refine our almost sure statement. First, note
+that there is a natural extension of the Lebesgue measure to our parameter space Θ: just consider the genuine
+Lebesgue measure λp on Θp, and for all B ⊆ Θ measurable define λ(B) = (cid:80)∞
+p=1 λp(Θp ∩ B). Then, if we
+choose a prior distribution with respect to which this measure is absolutely continuous, the consistency set Θ∗
+in Theorem 3.2 will satisfy λ(Θ \ Θ∗) = 0. A similar approach is considered in Nobile (1994) and Miller
+(2023) to establish “Lebesgue”-almost sure consistency in finite mixture models with a prior on the number
+of components. In our case, the requirement of absolute continuity can be relaxed so that sets with nonzero
+Lebesgue measure have nonzero prior probability for some permutation of the component labels. We also
+need to impose the somewhat technical condition that the prior assign positive mass to all p ∈ N.
+Condition 3.2 (Absolute continuity). Under the model in (3.2), for all p ∈ N:
+
+1. Π(P = p) > 0.
+2. (cid:80)
+
+ν∈Sp
+
+Π(θ[ν] ∈ B|P = p) = 0 implies λp(B) = 0, for all B ⊆ Θp measurable.
+
+A Bayesian approach to functional regression: theory and computation
+
+11
+
+The second condition is met, for example, if θ|p has a density with respect to Lebesgue measure that is
+invariant to permutations of the component labels and positive on all of Θp. Finally, we get the announced
+result:
+
+Theorem 3.3. Assume Condition 3.1 and Condition 3.2 hold. Then the conclusion of Theorem 3.2 remains
+valid with λ(Θ \ Θ∗) = 0.
+
+Additionally, the proof of Theorem 3.2 can be easily tweaked to guarantee consistency when the number
+of components is fixed beforehand (and thus the parameter space is finite-dimensional). Indeed, in this case
+Doob’s theorem applies directly under the sole condition that the times be distinct with prior probability one.
+The coefficients βj do not cause a problem for identifiability now, since the dimension of every parameter is
+the same.
+Theorem 3.4. Assume the model (3.2) in which the value of p is fixed, and hence Θp is the finite-dimensional
+parameter space. Suppose that Condition 3.1-1 holds. Then if θ0 is the true value of the parameter, the
+posterior is consistent at θ0 with Π-probability one. If moreover Condition 3.2-2 holds, then the inconsistency
+set has Lebesgue measure zero.
+
+Note that by allowing βj to be zero we can sometimes circumvent the fact that the true value of the parameter
+might not have exactly p components, as long as p is larger than the true value p(θ0). Indeed, if θ0 ∈ Θ with
+p(θ0) < p and (X, Y )1:∞ ∼ Pθ0 (X, Y ) i.i.d., then we can find θ1 ∈ Θp such that Pθ0(X, Y) = Pθ1(X, Y )
+and the result holds: just set p − p(θ0) components of θ1 to zero and keep the rest of the values as in θ0.
+
+3.2 A sketch of the proofs
+
+We now present an overview of the proof of the consistency results. The general strategy will be to apply
+Doob’s theorem to a subset of the parameter space Θ, where permutations are suitably taken into account
+and full identifiability holds, and then we will extend the results to the whole parameter space. As we will
+see shortly, save for an eventual permutation, identifiability of the map θ (cid:55)→ Pθ(X, Y ) is obtained when the
+covariance function K of the underlying stochastic process X = X(t) is non-degenerate.
+
+Reduced parameter space. Consider the spaces [0, 1]p
+
+ord = {(t1, . . . , tp) ∈ [0, 1]p : t1 < · · · < tp}
+and Rδ = (−∞, −δ] ∪ [δ, +∞), with δ the fixed value given in Condition 3.1-2, and define a new finite-
+0 . Now consider ˜Θ = (cid:83)
+dimensional parameter space ˜Θp = Rp
+˜Θp, and note that the
+ord × R × R+
+sets ˜Θ1, ˜Θ2, . . . are still disjoint. Then, by the same argument as above, we can conclude that ˜Θ is a complete
+separable metric space under the metric d. We will henceforth say that a parameter in ˜Θ is “ordered”.
+
+δ × [0, 1]p
+
+p≥1
+
+Transformation into ordered form. For θ ∈ Θp, define T (θ) = θ[ν] if there is ν ∈ Sp such that θ[ν] ∈ ˜Θp;
+otherwise set T (θ) = θ. Note that we can only transform θ to be in ˜Θp if the times tj are all distinct and
+the coefficients βj satisfy |βj| ≥ δ. But since the prior distribution assigns probability one to both events by
+Condition 3.1, we have Π(T (θ) ∈ ˜Θ) = 1. It will be useful later to observe that for any set B ⊆ ˜Θp, if we
+denote B[ν] = {θ[ν] : θ ∈ B}, we have
+
+B[ν] = T −1(B).
+
+(cid:91)
+
+ν∈Sp
+
+(3.3)
+
+Collapsed model. Let ˜Q denote the distribution of T (θ) restricted to ˜Θ, and note the equivalence
+
+PT (θ)(X, Y ) = Pθ(X, Y ). Then the following model holds on the reduced space ˜Θ:
+
+T (θ) ∼ ˜Q,
+(X, Y )1:n | T (θ) ∼ PT (θ)(X, Y )
+
+i.i.d.
+
+(3.4)
+
+Verifying conditions. We will now show that the conditions of Doob’s theorem hold on ˜Θ. First, since
+θ (cid:55)→ Pθ(X, Y )(A) is measurable on Θ, it is also measurable on ˜Θ for all sets A ⊆ X × Y measur-
+able. For the identifiability part, suppose by contradiction that there are θ, θ′ ∈ ˜Θ such that θ ̸= θ′ and
+Pθ(X, Y ) = Pθ′(X, Y ). Then necessarily (cid:80)p(θ)
+j), which reordering the terms
+implies (cid:80)p(θ)+p(θ′)
+j X(t∗
+β∗
+j must vanish,
+since the covariance function of the process X is strictly positive definite. But that can only happen if θ′ = θ[ν]
+
+jX(t′
+j ∈ [0, 1]. Now observe that all the β∗
+
+j=1 βjX(tj) = (cid:80)p(θ′)
+j ∈ R and t∗
+
+j ) = 0 for some β∗
+
+j=1 β′
+
+j=1
+
+12
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+p, so ν must be the identity permutation, that is, θ′ = θ, contradicting the initial assumption.
+
+for some ν ∈ Sp, where p = p(θ) = p(θ′) (because βj ̸= 0 and ti ̸= tj on ˜Θp). However, t1 < · · · < tp and
+t′
+1 < · · · < t′
+Applying Doob’s theorem. Next we analyze the conclusions of Doob’s theorem applied to the collapsed
+model (3.4): there exists ˜Θ∗ ⊆ ˜Θ with Π(T (θ) ∈ ˜Θ∗) = 1 such that, if T (θ0) ∈ ˜Θ∗ and the data verifies
+(X, Y )1:∞ ∼ PT (θ0)(X, Y ) i.i.d., then for any neighborhood B ⊆ ˜Θ of T (θ0) it holds that
+
+Π(T (θ) ∈ B | (X, Y )1:n) n→∞−−−−→ 1 P ∞
+
+T (θ0) − a.s.
+
+(3.5)
+
+Now define Θ∗ to be the set of all parameters in Θ that can be obtained by permuting the component labels of
+a parameter in ˜Θ∗, i.e., Θ∗ = (cid:83)∞
+
+(cid:83)
+
+p=1
+
+( ˜Θ∗ ∩ ˜Θp)[ν]. Then, by (3.3) we have
+(cid:33)
+
+ν∈Sp
+(cid:32)
+
+Π(θ ∈ Θ∗) = Π
+
+T (θ) ∈
+
+( ˜Θ∗ ∩ ˜Θp)
+
+= Π(T (θ) ∈ ˜Θ∗) = 1.
+
+∞
+(cid:91)
+
+p=1
+
+Extending the result to Θ. Now, let θ0 ∈ Θ∗, define p0 = p(θ0) and S0 = Sp0, and suppose that
+(X, Y )1:∞ ∼ Pθ0 (X, Y ) i.i.d. Fix ε ∈ (0, 1) and consider the set B of all ordered parameters that are within ε
+of the ordered version of θ0, i.e.,
+
+B =
+
+(cid:111)
+(cid:110)
+θ ∈ ˜Θ : d(θ, T (θ0)) < ε
+
+.
+
+(3.6)
+
+Observe that, since ε < 1, we have B ⊆ ˜Θp0 by definition of d. Moreover, (cid:83)
+again by (3.3), we can write
+
+ν∈S0
+
+B[ν] ⊆ ˜B(θ0, ε). Then,
+
+Π(θ ∈ ˜B(θ0, ε) | (X, Y )1:n) ≥ Π(θ ∈
+
+(cid:91)
+
+ν∈S0
+
+B[ν] | (X, Y )1:n)
+
+(3.7)
+
+= Π(T (θ) ∈ B | (X, Y )1:n).
+
+Now, T (θ0) ∈ ˜Θ∗ because θ0 ∈ Θ∗, and in that case we know that the collapsed model is consistent at
+T (θ0). Note that we also have (X, Y )1:∞ ∼ PT (θ0)(X, Y ) i.i.d. (since Pθ0 = PT (θ0)), and the set B in (3.6)
+is a neighborhood of T (θ0) in ˜Θ. Then, by (3.5) we can conclude that, Π(T (θ) ∈ B|(X, Y )1:n) n→∞−−−−→ 1,
+P ∞
+(X, Y ) − a.s., and this fact together with (3.7) proves consistency for θ0 in the original model (3.2). Lastly,
+θ0
+since ε < 1 implies ˜B(θ0, ε) ⊆ Θp0, we have also proved the second assertion of our theorem:
+
+Π(P = p0 | (X, Y )1:n) = Π(θ ∈ Θp0 | (X, Y )1:n)
+
+≥ Π(θ ∈ ˜B(θ0, ε) | (X, Y )1:n)
+−−−−→
+n→∞
+
+(X, Y ) − a.s.
+
+1 P ∞
+θ0
+
+The proof of Theorem 3.3 is now straightforward. Define Θ∗ as in the proof of Theorem 3.2, and observe
+that 0 = Π(Θ \ Θ∗) = (cid:80)∞
+p=1 Π(Θp \ Θ∗|P = p)Π(P = p), since Π(Θ∗) = 1. Now, since Π(P = p) > 0
+for all p ∈ N by Condition 3.2-1, then necessarily Π(Θp \ Θ∗|P = p) = 0 for all p ∈ N. Then, for ν ∈ Sp,
+let µν
+p be the distribution of θ[ν]|P = p under the model. Given that (Θp \ Θ∗)[ν] = Θp \ Θ∗ by definition of
+Θ∗, we have that for all ν ∈ Sp,
+
+µν
+p(Θp \ Θ∗) = µid
+
+p (Θp \ Θ∗) = Π(Θp \ Θ∗ | P = p) = 0.
+µν
+
+Lastly, note that Condition 3.2-2 means that λp ≪ (cid:80)
+p, where ≪ denotes absolute continuity, and
+this together with (3.8) implies that λp(Θp \ Θ∗) = 0. But this is valid for all p ∈ N, so we conclude that
+λ(Θ \ Θ∗) = (cid:80)∞
+
+p=1 λp(Θp \ Θ∗) = 0.
+
+ν∈Sp
+
+(3.8)
+
+As a final comment, it is worth reiterating that in this theoretical aspect of our work we have closely
+followed the techniques recently developed in Miller (2023), where the author provides a simplification of the
+work by Nobile (1994) in studying posterior consistency in finite-dimensional mixture models with a prior
+on the number of components. While the methods are quite similar, we have succeeded in extending this
+theory to a fundamentally different situation, namely functional (i.e. infinite-dimensional) regression models,
+which, thanks to the RKHS formulation, share the key properties that allow for a treatment parallel to the
+finite-dimensional mixture case.
+
+A Bayesian approach to functional regression: theory and computation
+
+13
+
+4 Experimental results
+
+In this section we present the results of the experiments carried out to test the performance of our models in
+different scenarios, both simulated and with real data. More details on them (such as simulation parameters in
+data sets, hyperparameters or implementation decisions), as well as additional experiments, figures and tables
+are available on Appendix C, while the code itself is available at https://github.com/antcc/rk-bfr (see
+also Appendix D). For the purposes of computation we consider the point statistics mean, median and mode
+for our summarize-then-predict approach (see (2.5) and (2.10)). As a result, in linear regression we have 4
+prediction methods (one for each statistic and one for the predict-then-summarize approach) and 3 variable
+selection methods (one for each statistic), while in logistic regression there are similarly 5 prediction methods
+and 3 variable selection procedures. We will refer to the predict-then-summarize methods as posterior_mean
+(with the additional posterior_vote in logistic regression). In each case, after variable selection is performed,
+we use an l2-penalized multiple linear/logistic regression method to generate the corresponding predictions.
+All in all, we are looking at 7 (8 in the case of logistic regression) prediction methods, and although all of
+them are derived from a single MCMC run, we will treat them as separate in the experimentation.
+
+For the experimental setting we take n = 150 training samples and n′ = 100 testing samples on an
+equispaced grid of N = 100 points on [0, 1] for the simulated data sets, and we do a 66%/33% train/test
+split on the real data sets. We then perform 5-fold cross validation (CV) on the training set to select the
+best values of p and η for each model (the other hyperparameters in (2.4) are fixed for simplicity), and after
+refitting the best model in each case on the whole training set, we evaluate it and measure the predictive
+performance on the test set. Since the initial experiments carried out indicate that low values of p provide
+sufficient flexibility in most scenarios, we look for p in the set {1, 2, . . . , 10}, while the possible values of η
+are {10−4, 10−3, . . . , 102}. Lastly, we independently repeat the whole process 10 times (each with a different
+train/test configuration) to account for the stochasticity in the prediction procedure, and average the results
+across these executions. The metrics used to evaluate the performance of the models are the Root Mean
+Square Error (RMSE) for linear regression and the accuracy (rate of correctly predicted samples) for logistic
+regression.
+
+The Python library used to perform the MCMC approximation is emcee (Foreman-Mackey et al., 2013),
+and thus our methods inherit that name as a prefix in their denomination (see Appendices A.3 and A.4 for
+more information). Because of execution time constraints, the hyperparameters of the MCMC method are
+not part of the CV process, and are selected manually based on an initial set of experiments, as well as
+recommendations from the original article. Moreover, a small adjustment is needed to mitigate the well-known
+label switching phenomenon that occurs in MCMC approximations of mixture-like models (e.g. Stephens,
+2000); see Appendix A.1 for details.
+
+Data sets
+
+We consider a set of functional regressors common to linear and logistic regression problems. They are four
+Gaussian processes (GPs), each with a different covariance function. In particular, we consider a Brownian
+motion, a fractional Brownian motion, an Ornstein-Uhlenbeck process, and a GP with a Gaussian kernel. Also,
+when applicable, we fix a variance σ2 = 0.5 for the error terms ε.
+
+Linear regression data sets. We employ two different types of simulated data sets, all with a common value
+of α0 = 5.
+
+• A finite-dimensional RKHS response with three components for each of the four GP regressors
+
+mentioned above: Y = 5 − 5X(0.1) + X(0.4) + 10X(0.8) + ε.
+
+• A “component-less” response generated by an L2-model with a smooth underlying coefficient
+
+function, namely β(t) = log(1 + 4t), again for the same four GPs.
+
+As for the real data sets, we use the (twice-differentiated) Tecator data set (Borggaard and Thodberg, 1992) to
+predict fat content based on near-infrared absorbance curves of 193 meat samples, as well as what we call the
+Moisture (Kalivas, 1997) and Sugar (Bro, 1999) data sets. The first consists of near-infrared spectra of 100
+wheat samples and the objective is to predict the samples’ moisture content, whereas the second contains 268
+samples of sugar fluorescence data in order to predict ash content. The three data sets are measured on a grid
+of 100, 101 and 115 equispaced points on [0, 1], respectively.
+
+14
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Logistic regression data sets. Again we consider two different types of simulated data sets, with a common
+value of α0 = −0.5. In this case we randomly permute 10% of the labels to introduce some noise in the
+simulations.
+
+• Four logistic finite-dimensional RKHS responses with the same functional parameter as in the linear
+
+regression case (one for each GP). Specifically,
+
+P(Y = 1 | X) =
+
+1
+1 + exp {0.5 + 5X(0.1) − X(0.4) − 10X(0.8)}
+
+.
+
+• Four logistic responses following an L2-model with the same coefficient function as in the linear
+
+regression case, i.e., β(t) = log(1 + 4t).
+
+Additionally, we use three real data sets well known in the literature. The first one is a subset of the Medflies
+data set (Carey et al., 1998), consisting on samples of the number of eggs laid daily by 534 flies over 30
+days, to predict whether their longevity is high or low. The second one is the Berkeley Growth Study data set
+(Tuddenham and Snyder, 1954), which records the height of 54 girls and 39 boys over 31 different points in
+their lives. Finally, we selected a subset of the Phoneme data set (Hastie et al., 1995), based on 200 digitized
+speech frames over 128 equispaced points to predict the phonemes “aa” and “ao”.
+
+Comparison algorithms
+
+We have included a fairly comprehensive suite of comparison algorithms, chosen among the most common
+methods used in machine learning and FDA, and following a standard choice of implementation and hyper-
+parameters. There are purely functional methods (such as the usual L2 regression that follows models (1.1)
+and (1.2)), finite-dimensional models that work on the discretized data (e.g. penalized finite-dimensional
+regression), and variable selection/dimension reduction procedures (like PCA or PLS). The main parameters
+of all these algorithms are selected by cross-validation, using the same 5 folds as our proposed models so that
+the comparisons are fair. A detailed account of these algorithms is available in Appendix C.1.
+
+Results display
+
+We have adopted a visual approach to presenting the experimentation results, using colored graphs instead of
+tables to help visualize them, since we felt that this was a better way of summarizing a large empirical study
+such as the one we have carried out. In each case, the mean and standard deviation of the score obtained across
+the 10 random runs is shown, depicting our models in orange and the comparison algorithms in blue. We
+also show the global mean of all the comparison algorithms with a dashed vertical line, excluding extreme
+negative results from this mean to avoid distortion. Moreover, we separate complete prediction algorithms
+from two-stage methods, the latter being the ones that perform variable selection or dimension reduction prior
+to a multiple linear/logistic regression method.
+
+4.1 Functional linear regression
+
+Simulated data sets
+
+In Figure 1 we see the results for the four GP regressors considered in the RKHS case. This is the most
+favorable case for us, as the underlying model coincides with our assumed model. Indeed, we can see that in
+most cases our algorithms are the ones with lower RMSE, save for a few exceptions, notably the Gaussian
+kernel. A subsequent analysis showed that this particular data set is especially sensitive to the value of the
+hyperparameter η in our prior distribution, so a more customized approach would be needed to obtain better
+results.
+
+In Figure 2 we see the results for the case with an underlying L2-model, which would be our most direct
+competitor. In this case the outcome is satisfactory, since for the most part our models are on a par with the
+rest, even beating other methods that were designed with the L2-model in mind. Moreover, whenever one of
+our models has a higher RMSE, the difference is pretty small in comparison. Note that some of our Bayesian
+models have a higher standard deviation, partly because there is an intrinsic randomness in the methods, and it
+can be the cause of the occasional worse performance. In relation to this, we observe that the methods that use
+the mean as a summary statistic tend to perform much worse. Since the mean is very sensitive to outliers, if at
+some point a MCMC chain randomly deviates from the rest, the average of the posterior samples is greatly
+impacted.
+
+A Bayesian approach to functional regression: theory and computation
+
+15
+
+Figure 1: Mean and standard error of RMSE of predictors (lower is better) for 10 runs with GP regressors, one
+in each column, that obey an underlying linear RKHS model. The first row are direct methods and the second
+are dimensionality reduction methods.
+
+Figure 2: Mean and standard error of RMSE of predictors (lower is better) for 10 runs with GP regressors, one
+in each column, that obey an underlying linear L2-model. The first row are direct methods and the second are
+dimensionality reduction methods.
+
+Real data
+
+Figure 3 shows the results for the real data sets, where we can see that there is sometimes a substantial
+difference in performance between some of our methods and the reference algorithms. However, our predict-
+then-summarize approach (emcee_posterior_mean) seems to work quite well, always scoring near the mean
+RMSE of all the comparison algorithms. Moreover, our two-stage methods seem to outperform the summarize-
+then-predict methods in the Moisture and Sugar data sets, scoring again very close to the mean of the reference
+models. We have to bear in mind that real data is more complex and noisy than simulated data, and it is
+possible that after a suitable pre-preprocessing we would obtain better results. However, our goal was to
+perform a general comparison without focusing too much on the specifics of any particular data set.
+
+16
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Figure 3: Mean and standard error of RMSE of predictors (lower is better) for 10 runs with real data sets, one
+in each column. The first row are direct methods and the second are dimensionality reduction methods.
+
+4.2 Functional logistic regression
+
+Simulated data sets
+
+In Figure 4 we see the results for the GP regressors in the logistic RKHS case. Our models perform fairly well
+in this advantageous case, although they are not always better than the comparison methods. However, in most
+cases the differences observed account for only one or two misclassified samples.
+
+Figure 4: Mean and standard error of accuracy of classifiers (higher is better) for 10 runs with GP regressors,
+one in each column, that obey an underlying logistic RKHS model. The first row are direct methods and the
+second are dimensionality reduction methods.
+
+Moreover, Figure 5 shows that the results in the L2 case are again promising, since our models score
+consistently on or above the mean of the reference models, and in many instances surpass most of them. The
+predict-then-summarize approaches (emcee_posterior_mean and emcee_posterior_vote) are particularly good
+in this case, and in general have low standard errors. Moreover, the overall accuracy of all methods is poor
+(below 60%), so this is indeed a difficult problem in which even small increases in accuracy are relevant.
+
+A Bayesian approach to functional regression: theory and computation
+
+17
+
+Figure 5: Mean and standard error of accuracy of classifiers (higher is better) for 10 runs with GP regressors,
+one in each column, that obey an underlying logistic L2-model. The first row are direct methods and the
+second are dimensionality reduction methods.
+
+Real data
+
+As for the real data sets, in Figure 6 we see positive results in general, obtaining in most cases accuracies well
+above the mean of the reference models, and sometimes above most of them. In particular, the predict-then-
+summarize methods tend to have a good performance and achieve a lower standard error across executions,
+which is a trend that we also saw in the simulated data sets. However, as we have been seeing almost invariably,
+the models that use emcee_mean are the exception: in all these data sets they perform steadily worse than the
+rest of our Bayesian models. Moreover, we can appreciate that for the most part our logistic models perform
+better in comparison with our linear regression models.
+
+Figure 6: Mean and standard error of accuracy of classifiers (higher is better) for 10 runs with real data sets,
+one in each column. The first row are direct methods and the second are dimensionality reduction methods.
+
+18
+
+5 Conclusion
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+In this work we have introduced a natural and computationally feasible way of integrating Bayesian inference
+into functional regression models, by means of a RKHS approach that simplifies the usually hard task of setting
+a prior distribution on a functional space. Moreover, the RKHS framework motivates models based on a linear
+combination of marginals of the underlying stochastic process, which in a way gives a theoretical background
+to these popular models, but still retains the functional point of view. Our finite-dimensional approximation
+has the advantage of working with simpler functional parameters, thus increasing the interpretability and ease
+of implementation. In addition, it is worth pointing out that our approach works especially well in the logistic
+case, bypassing the difficulties associated with maximum likelihood techniques and providing a tractable
+alternative to the more studied methods in the literature.
+
+We have also proved a posterior consistency result that ensures the coherence and correctness of the Bayesian
+methods we developed. These kinds of results have in other contexts more intricate and restrictive conditions
+to arrive at essentially the same conclusions as we did, but again the introduction of RKHS’s is the key point to
+greatly simplifying them. In the end, we can regard our derivations as yet another way of applying the abstract
+posterior consistency theorem of Doob to a concrete situation, giving a positive answer to a problem which
+was not originally envisioned by this result. Lastly, we have presented numerical evidence that supports the
+proposed RKHS-based Bayesian methodology and its predictive performance with simulated and real data.
+This practical side of our work goes to show that the prediction methods we constructed from the posterior
+distribution are competitive against several non-cherry-picked frequentist alternatives, while still remaining
+relatively simple, interpretable and viable implementation-wise.
+
+Acknowledgments
+
+This research was partially supported by grants PID2019-109387GB-I00 and PRE2020-095147 of the Spanish Ministry
+of Science and Innovation (MCIN), co-financed by the European Social Fund (ESF). J. R. Berrendero and A. Cuevas
+acknowledge financial support from grant CEX2019-000904-S funded by MCIN/AEI/ 10.13039/501100011033. The
+authors also wish to acknowledge the computational resources provided by the Centro de Computación Científica-
+Universidad Autónoma de Madrid (CCC-UAM).
+
+References
+
+Abdi, H. (2010). “Partial least squares regression and projection on latent structure regression (PLS Re-
+gression).” WIREs Computational Statistics, 2(1): 97–106. doi: https://doi.org/10.1002/wics.51.
+27
+
+Abraham, C. (2023). “An informative prior distribution on functions with application to functional regression.”
+
+Statistica Neerlandica, Early View: 1–17. doi: https://doi.org/10.1111/stan.12322. 3
+
+Abraham, C. and Grollemund, P.-M. (2020). “Posterior concentration for a misspecified Bayesian regression
+model with functional covariates.” Journal of Statistical Planning and Inference, 208: 58–65. doi:
+https://doi.org/10.1016/j.jspi.2020.01.008. 2
+
+Aguilera, A. M. and Aguilera-Morillo, M. (2013). “Comparative study of different B-spline approaches for
+functional data.” Mathematical and Computer Modelling, 58(7-8): 1568–1579. doi: https://doi.org/
+10.1016/j.mcm.2013.04.007. 2
+
+Aguilera, A. M., Escabias, M., Preda, C., and Saporta, G. (2010). “Using basis expansions for estimating
+functional PLS regression: applications with chemometric data.” Chemometrics and Intelligent Laboratory
+Systems, 104(2): 289–305. doi: https://doi.org/10.1016/j.chemolab.2010.09.007. 27
+
+Albert, A. and Anderson, J. A. (1984). “On the existence of maximum likelihood estimates in logistic
+regression models.” Biometrika, 71(1): 1–10. doi: https://doi.org/10.1093/biomet/71.1.1. 7
+Amewou-Atisso, M., Ghosal, S., Ghosh, J. K., and Ramamoorthi, R. V. (2003). “Posterior consistency for
+semi-parametric regression problems.” Bernoulli, 9(2): 291–312. doi: https://doi.org/10.3150/bj/
+1068128979. 2
+
+Baragatti, M. and Pommeret, D. (2012). “A study of variable selection using g-prior distribution with ridge
+parameter.” Computational Statistics & Data Analysis, 56(6): 1920–1934. doi: https://doi.org/10.
+1016/j.csda.2011.11.017. 6
+
+Berlinet, A. and Thomas-Agnan, C. (2004). Reproducing kernel Hilbert spaces in probability and statistics.
+
+Springer. doi: https://doi.org/10.1007/978-1-4419-9096-9. 4
+
+A Bayesian approach to functional regression: theory and computation
+
+19
+
+Berrendero, J. R., Bueno-Larraz, B., and Cuevas, A. (2019). “An RKHS model for variable selection in
+functional linear regression.” Journal of Multivariate Analysis, 170: 25–45. doi: https://doi.org/10.
+1016/j.jmva.2018.04.008. 3, 5
+
+— (2020a). “On Mahalanobis Distance in Functional Settings.” Journal of Machine Learning Research, 21(9):
+
+1–33. url: http://jmlr.org/papers/v21/18-156.html. 2
+
+— (2023). “On functional logistic regression: some conceptual issues.” Test, 32: 321–349. doi: https:
+
+//doi.org/10.1007/s11749-022-00836-9. 3, 7, 27
+
+Berrendero, J. R., Cholaquidis, A., and Cuevas, A. (2020b). “On a general definition of the functional linear
+
+model.” Preprint arXiv:2011.05441. 2, 3, 5
+
+Berrendero, J. R., Cuevas, A., and Torrecilla, J. L. (2016). “Variable selection in functional data classification:
+a maxima-hunting proposal.” Statistica Sinica, 619–638. doi: https://doi.org/10.5705/ss.202014.
+0014. 3
+
+— (2018). “On the use of reproducing kernel Hilbert spaces in functional classification.” Journal of the
+American Statistical Association, 113(523): 1210–1218. doi: https://doi.org/10.1080/01621459.
+2017.1320287. 2, 3, 27
+
+Borggaard, C. and Thodberg, H. H. (1992). “Optimal minimal neural interpretation of spectra.” Analytical
+
+Chemistry, 64(5): 545–551. doi: https://doi.org/10.1021/ac00029a018. 13
+
+Bro, R. (1999). “Exploratory study of sugar production using fluorescence spectroscopy and multi-way
+analysis.” Chemometrics and Intelligent Laboratory Systems, 46(2): 133–147. doi: https://doi.org/
+10.1016/s0169-7439(98)00181-6. 13
+
+Brooks, S., Gelman, A., Jones, G., and Meng, X.-L. (2011). Handbook of Markov Chain Monte Carlo.
+
+Chapman and Hall/CRC. doi: https://doi.org/10.1201/b10905. 3
+
+Bueno-Larraz, B. and Klepsch, J. (2019). “Variable Selection for the Prediction of C[0, 1]-Valued Autore-
+gressive Processes using Reproducing Kernel Hilbert Spaces.” Technometrics, 61(2): 139–153. doi:
+https://doi.org/10.1080/00401706.2018.1505660. 3
+
+Candès, E. J. and Sur, P. (2020). “The phase transition for the existence of the maximum likelihood estimate
+in high-dimensional logistic regression.” The Annals of Statistics, 48(1): 27 – 42. doi: https://doi.org/
+10.1214/18-AOS1789. 7
+
+Cardot, H. and Sarda, P. (2018). “Functional Linear Regression.” In Ferraty, F. and Romain, Y. (eds.), The
+Oxford Handbook of Functional Data Analysis, 21–46. Oxford Handbooks. doi: https://doi.org/10.
+1093/oxfordhb/9780199568444.013.2. 3
+
+Carey, J. R., Liedo, P., Müller, H.-G., Wang, J.-L., and Chiou, J.-M. (1998). “Relationship of Age Patterns of
+Fecundity to Mortality, Longevity, and Lifetime Reproduction in a Large Cohort of Mediterranean Fruit Fly
+Females.” The Journals of Gerontology: Series A, 53(4): B245–B251. doi: https://doi.org/10.1093/
+gerona/53a.4.b245. 14
+
+Celeux, G., Hurn, M., and Robert, C. P. (2000). “Computational and Inferential Difficulties with Mixture
+Posterior Distributions.” Journal of the American Statistical Association, 95(451): 957–970. doi: https:
+//doi.org/10.1080/01621459.2000.10474285. 23
+
+Choi, T. and Ramamoorthi, R. V. (2008). “Remarks on consistency of posterior distributions.” In Clarke,
+B. and Ghosal, S. (eds.), Pushing the limits of contemporary statistics: contributions in honor of Jayanta
+K. Ghosh, 170–186. Institute of Mathematical Statistics Collections. doi: https://doi.org/10.1214/
+074921708000000138. 2, 9
+
+Crainiceanu, C. M. and Goldsmith, A. J. (2010). “Bayesian Functional Data Analysis Using WinBUGS.”
+Journal of Statistical Software, 32(11): 1–33. doi: https://doi.org/10.18637/jss.v032.i11. 2
+Cuevas, A. (2014). “A partial overview of the theory of statistics with functional data.” Journal of Statistical
+
+Planning and Inference, 147: 1–23. doi: https://doi.org/10.1016/j.jspi.2013.04.002. 1
+
+Cuevas, A., Febrero, M., and Fraiman, R. (2004). “An anova test for functional data.” Computational statistics
+
+& data analysis, 47(1): 111–122. doi: https://doi.org/10.1016/j.csda.2003.10.021. 2
+
+— (2007). “Robust estimation and classification for functional data via projection-based depth notions.”
+Computational Statistics, 22(3): 481–496. doi: https://doi.org/10.1007/s00180-007-0053-0. 2
+Delaigle, A. and Hall, P. (2012a). “Achieving near Perfect Classification for Functional Data.” Journal of the
+Royal Statistical Society Series B: Statistical Methodology, 74(2): 267–286. doi: https://doi.org/10.
+1111/j.1467-9868.2011.01003.x. 3, 27
+
+20
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+— (2012b). “Methodology and theory for partial least squares applied to functional data.” The Annals of
+
+Statistics, 40(1): 322–352. doi: https://doi.org/10.1214/11-aos958. 2, 27
+
+Diaconis, P. and Freedman, D. (1986). “On the Consistency of Bayes Estimates.” The Annals of Statistics,
+
+14(1): 1–26. doi: https://doi.org/10.1214/aos/1176349830. 10
+
+Doob, J. L. (1949). “Application of the theory of martingales.” Le calcul des probabilites et ses applications.
+Colloques Internationaux, 13: 23–27. url: https://www.jehps.net/juin2009/Locker.pdf [at the
+end]. 9
+
+Dudley, R. M. (2002). Real Analysis and Probability. Cambridge University Press. doi: https://doi.org/
+
+10.1017/CBO9780511755347. 26
+
+Ferguson, T. S. (1974). “Prior Distributions on Spaces of Probability Measures.” The Annals of Statistics, 2(4):
+
+615 – 629. doi: https://doi.org/10.1214/aos/1176342752. 2
+
+Ferraty, F., Hall, P., and Vieu, P. (2010). “Most-predictive design points for functional data predictors.”
+
+Biometrika, 97(4): 807–824. doi: https://doi.org/10.1093/biomet/asq058. 3
+
+Ferraty, F. and Vieu, P. (2006). Nonparametric functional data analysis: theory and practice. Springer. doi:
+
+https://doi.org/10.1007/0-387-36620-2. 2
+
+Firth, D. (1993). “Bias reduction of maximum likelihood estimates.” Biometrika, 80(1): 27–38. doi:
+
+https://doi.org/10.1093/biomet/80.1.27. 7
+
+Folland, G. B. (1999). Real Analysis: Modern Techniques and Their Applications. John Wiley & Sons. 26
+Foreman-Mackey, D., Hogg, D. W., Lang, D., and Goodman, J. (2013). “emcee: the MCMC hammer.”
+Publications of the Astronomical Society of the Pacific, 125(925): 306–312. doi: https://doi.org/10.
+1086/670067. 13, 24, 25
+
+Fraiman, R. and Muniz, G. (2001). “Trimmed means for functional data.” Test, 10(2): 419–440. doi:
+
+https://doi.org/10.1007/bf02595706. 2
+
+Galeano, P., Joseph, E., and Lillo, R. E. (2015). “The Mahalanobis Distance for Functional Data With
+Applications to Classification.” Technometrics, 57(2): 281–291. doi: https://doi.org/10.1080/
+00401706.2014.902774. 2
+
+Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., and Rubin, D. B. (2013). Bayesian Data
+
+Analysis. Chapman and Hall/CRC. doi: https://doi.org/10.1201/b16018. 23
+
+Ghosh, A. K. and Chaudhuri, P. (2005). “On Maximum Depth and Related Classifiers.” Scandinavian Journal
+of Statistics, 32(2): 327–350. doi: https://doi.org/10.1111/j.1467-9469.2005.00423.x. 27
+Ghosh, J. and Ramamoorthi, R. V. (2003). Bayesian Nonparametrics. Springer. doi: https://doi.org/10.
+
+1007/b97842. 2, 8, 9
+
+Goia, A. and Vieu, P. (2016). “An introduction to recent advances in high/infinite dimensional statistics.”
+Journal of Multivariate Analysis, 146: 1–6. doi: https://doi.org/10.1016/j.jmva.2015.12.001.
+1
+
+Goodman, J. and Weare, J. (2010). “Ensemble samplers with affine invariance.” Communications in Applied
+Mathematics and Computational Science, 5(1): 65–80. doi: https://doi.org/10.2140/camcos.2010.
+5.65. 24
+
+Green, P. J. (1995). “Reversible jump Markov chain Monte Carlo computation and Bayesian model determina-
+
+tion.” Biometrika, 82(4): 711–732. doi: https://doi.org/10.1093/biomet/82.4.711. 23
+
+Grollemund, P.-M., Abraham, C., Baragatti, M., and Pudlo, P. (2019). “Bayesian Functional Linear Regression
+with Sparse Step Functions.” Bayesian Analysis, 14(1): 111 – 135. doi: https://doi.org/10.1214/
+18-BA1095. 3, 5, 23, 24
+
+Hastie, T., Buja, A., and Tibshirani, R. (1995). “Penalized discriminant analysis.” The Annals of Statistics,
+
+23(1): 73–102. doi: https://doi.org/10.1214/aos/1176324456. 14
+
+Hsing, T. and Eubank, R. (2015). Theoretical Foundations of Functional Data Analysis, with an Introduction
+
+to Linear Operators. John Wiley & Sons. doi: https://doi.org/10.1002/9781118762547. 1
+
+James, G. M. and Hastie, T. (2001). “Functional Linear Discriminant Analysis for Irregularly Sampled
+Curves.” Journal of the Royal Statistical Society Series B: Statistical Methodology, 63(3): 533–550. doi:
+https://doi.org/10.1111/1467-9868.00297. 2
+
+James, G. M., Wang, J., and Zhu, J. (2009). “Functional linear regression that’s interpretable.” The Annals of
+
+Statistics, 37(5A): 2083–2108. doi: https://doi.org/10.1214/08-aos641. 3
+
+A Bayesian approach to functional regression: theory and computation
+
+21
+
+Jasra, A., Holmes, C. C., and Stephens, D. A. (2005). “Markov Chain Monte Carlo Methods and the Label
+Switching Problem in Bayesian Mixture Modeling.” Statistical Science, 20(1): 50–67. doi: https:
+//doi.org/10.1214/088342305000000016. 23
+
+Jeffreys, H. (1946). “An invariant form for the prior probability in estimation problems.” Proceedings of
+the Royal Society of London Series A: Mathematical and Physical Sciences, 186(1007): 453–461. doi:
+https://doi.org/10.1098/rspa.1946.0056. 6
+
+Kalivas, J. H. (1997). “Two data sets of near infrared spectra.” Chemometrics and Intelligent Laboratory
+
+Systems, 37(2): 255–259. doi: https://doi.org/10.1016/s0169-7439(97)00038-5. 13
+
+Kang, H. B., Jung, Y. J., and Park, J. (2023). “Fast Bayesian Functional Regression for Non-Gaussian Spatial
+Data.” Bayesian Analysis, Advance Publication: 1–32. doi: https://doi.org/10.1214/22-ba1354. 2
+Lian, H., Choi, T., Meng, J., and Jo, S. (2016). “Posterior convergence for Bayesian functional linear regression.”
+Journal of Multivariate Analysis, 150: 27–41. doi: https://doi.org/10.1016/j.jmva.2016.04.008.
+2
+
+Loève, M. (1948). “Fonctions aléatoires du second ordre.” In Lévy, P. (ed.), Processus stochastiques et
+
+mouvement Brownien, 299–352. Gauthier-Villars. 4
+
+López-Pintado, S. and Romo, J. (2009). “On the Concept of Depth for Functional Data.” Journal of the
+American statistical Association, 104(486): 718–734. doi: https://doi.org/10.1198/jasa.2009.
+0108. 2
+
+Luki´c, M. N. and Beder, J. H. (2001). “Stochastic processes with sample paths in reproducing kernel
+Hilbert spaces.” Transactions of the American Mathematical Society, 353(10): 3945–3969. doi: https:
+//doi.org/10.1090/s0002-9947-01-02852-5. 4
+
+Miller, J. W. (2018). “A detailed treatment of Doob’s theorem.” Preprint arXiv:1801.03122. 9
+— (2023). “Consistency of mixture models with a prior on the number of components.” Dependence Modeling,
+
+11(1): 20220150. doi: https://doi.org/10.1515/demo-2022-0150. 2, 9, 10, 12
+
+Miller, J. W. and Harrison, M. T. (2018). “Mixture Models with a Prior on the Number of Components.”
+Journal of the American Statistical Association, 113(521): 340–356. doi: https://doi.org/10.1080/
+01621459.2016.1255636. 10
+
+Müller, H.-G. and Stadtmüller, U. (2005). “Generalized functional linear models.” The Annals of Statistics,
+
+33(2): 774–805. doi: https://doi.org/10.1214/009053604000001156. 2
+
+Nobile, A. (1994). “Bayesian analysis of finite mixture distributions.” Ph.D. thesis, Carnegie Mellon University.
+
+2, 10, 12
+
+Papastamoulis, P. (2016). “label.switching: An R Package for Dealing with the Label Switching Problem in
+MCMC Outputs.” Journal of Statistical Software, 69(Code Snippet 1): 1–24. doi: https://doi.org/10.
+18637/jss.v069.c01. 23
+
+Parzen, E. (1961). “An Approach to Time Series Analysis.” The Annals of Mathematical Statistics, 32(4):
+
+951–989. doi: https://doi.org/10.1214/aoms/1177704840. 4
+
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P.,
+Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay,
+É. (2011). “Scikit-learn: Machine Learning in Python.” Journal of Machine Learning Research, 12(85):
+2825–2830. url: http://jmlr.org/papers/v12/pedregosa11a.html. 28
+
+Piironen, J. and Vehtari, A. (2017). “Comparison of Bayesian predictive methods for model selection.”
+Statistics and Computing, 27(3): 711–735. doi: https://doi.org/10.1007/s11222-016-9649-y. 23
+Poß, D., Liebl, D., Kneip, A., Eisenbarth, H., Wager, T. D., and Barrett, L. F. (2020). “Superconsistent
+Estimation of Points of Impact in Non-Parametric Regression with Functional Predictors.” Journal of the
+Royal Statistical Society Series B: Statistical Methodology, 82(4): 1115–1140. doi: https://doi.org/
+10.1111/rssb.12386. 3
+
+Preda, C., Saporta, G., and Lévéder, C. (2007). “PLS classification of functional data.” Computational
+
+Statistics, 22(2): 223–235. doi: https://doi.org/10.1007/s00180-007-0041-4. 27
+
+Ramos-Carreño, C., Torrecilla, J. L., Carbajo-Berrocal, M., Marcos, P., and Suárez, A. (2023). “scikit-fda: A
+
+Python Package for Functional Data Analysis.” Preprint arXiv:2211.02566. 28
+
+Ramsay, J. O. and Silverman, B. W. (2005). Functional Data Analysis. Springer. doi: https://doi.org/
+
+10.1007/b98888. 1, 2
+
+22
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Reiss, P. T., Goldsmith, J., Shang, H. L., and Ogden, R. T. (2017). “Methods for Scalar-on-Function Regression.”
+International Statistical Review, 85(2): 228–249. doi: https://doi.org/10.1111/insr.12163. 3
+Rodríguez, C. E. and Walker, S. G. (2014). “Label Switching in Bayesian Mixture Models: Deterministic
+Relabeling Strategies.” Journal of Computational and Graphical Statistics, 23(1): 25–45. doi: https:
+//doi.org/10.1080/10618600.2012.735624. 23
+
+Scarpa, B. and Dunson, D. B. (2009). “Bayesian Hierarchical Functional Data Analysis Via Contaminated
+Informative Priors.” Biometrics, 65(3): 772–780. doi: https://doi.org/10.1111/j.1541-0420.2008.
+01163.x. 2
+
+Schervish, M. J. (1995).
+
+Theory of Statistics.
+
+Springer.
+
+doi:
+
+https://doi.org/10.1007/
+
+978-1-4612-4250-5. 9
+
+Schwartz, L. (1965). “On Bayes procedures.” Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte
+
+Gebiete, 4(1): 10–26. doi: https://doi.org/10.1007/bf00535479. 9
+
+Shi, J. Q. and Choi, T. (2011). Gaussian Process Regression Analysis for Functional Data. Chapman and
+
+Hall/CRC. doi: https://doi.org/10.1201/b11038. 2
+
+Shin, H. (2008). “An extension of Fisher’s discriminant analysis for stochastic processes.” Journal of
+Multivariate Analysis, 99(6): 1191–1216. doi: https://doi.org/10.1016/j.jmva.2007.08.001. 2
+Simola, U., Cisewski-Kehe, J., and Wolpert, R. L. (2021). “Approximate Bayesian computation for finite
+mixture models.” Journal of Statistical Computation and Simulation, 91(6): 1155–1174. doi: https:
+//doi.org/10.1080/00949655.2020.1843169. 23
+
+Stephens, M. (2000). “Dealing With Label Switching in Mixture Models.” Journal of the Royal Statistical
+Society Series B: Statistical Methodology, 62(4): 795–809. doi: https://doi.org/10.1111/1467-9868.
+00265. 13, 23
+
+Sur, P. and Candès, E. J. (2019). “A modern maximum-likelihood theory for high-dimensional logistic
+regression.” Proceedings of the National Academy of Sciences, 116(29): 14516–14525. doi: https:
+//doi.org/10.1073/pnas.1810420116. 7
+
+Torrecilla, J. L., Ramos-Carreño, C., Sánchez-Montañés, M., and Suárez, A. (2020). “Optimal classification of
+Gaussian processes in homo- and heteroscedastic settings.” Statistics and Computing, 30(4): 1091–1111.
+doi: https://doi.org/10.1007/s11222-020-09937-7. 3, 28
+
+Torrecilla, J. L. and Suárez, A. (2016). “Feature selection in functional data classification with recursive
+maxima hunting.” In Lee, D., Sugiyama, M., Luxburg, U., Guyon, I., and Garnett, R. (eds.), Advances
+in Neural Information Processing Systems 29 (NIPS 2016). url: https://proceedings.neurips.cc/
+paper/2016/hash/28b60a16b55fd531047c0c958ce14b95-Abstract.html. 27
+
+Tuddenham, R. D. and Snyder, M. M. (1954). “Physical growth of California boys and girls from birth
+to eighteen years.” University of California Publications in Child Development, 1(2): 183–364. url:
+https://pubmed.ncbi.nlm.nih.gov/13217130/. 14
+
+Ullah, S. and Finch, C. F. (2013). “Applications of functional data analysis: A systematic review.” BMC
+Medical Research Methodology, 13:43: 1–12. doi: https://doi.org/10.1186/1471-2288-13-43. 1
+Van der Vaart, A. W. (1998). Asymptotic Statistics. Cambridge University Press. doi: https://doi.org/10.
+
+1017/CBO9780511802256. 9
+
+Wales, D. J. and Doye, J. P. K. (1997). “Global Optimization by Basin-Hopping and the Lowest Energy
+Structures of Lennard-Jones Clusters Containing up to 110 Atoms.” The Journal of Physical Chemistry A,
+101(28): 5111–5116. doi: https://doi.org/10.1021/jp970984n. 25
+
+Yuan, M. and Cai, T. T. (2010). “A reproducing kernel Hilbert space approach to functional linear regression.”
+
+The Annals of Statistics, 38(6): 3412–3444. doi: https://doi.org/10.1214/09-AOS772. 2
+
+Zellner, A. (1986). “On Assessing Prior Distributions and Bayesian Regression Analysis with g-Prior
+Distributions.” In Goel, P. and Zellner, A. (eds.), Bayesian Inference and Decision Techniques: Essays in
+Honor of Bruno de Finetti, volume 6, 233–243. Elsevier. 6
+
+A Bayesian approach to functional regression: theory and computation
+
+23
+
+A Model choice and implementation details
+
+A.1 Label switching
+
+A well-known issue that arises when using MCMC methods in mixture-like models such as the one proposed
+in this work is label switching, which in short refers to the non-identifiability of the components of the model
+caused by their interchangeability. In our case, this happens because the likelihood is symmetric with respect
+to the ordering of the component parameters b and τ , that is, π(Y |X, θ) = π(Y |X, ν(θ)) for any permutation
+ν that rearranges the indices j = 1, . . . , p. Thus, since the components are arbitrarily ordered, they may be
+inadvertently exchanged from one iteration to the next in a MCMC algorithm. This can cause nonsensical
+answers when summarizing the marginal posterior distributions to perform inference, as different labelings
+might be mixed on each component (Stephens, 2000). However, this phenomenon is perhaps surprisingly
+a condition for the convergence of the MCMC method: as pointed out by many authors (e.g. Celeux et al.,
+2000), a lack of switching would indicate that not all modes of the posterior distribution were being explored
+by the sampler. For this reason, many ad-hoc solutions revolve around post-processing and relabeling the
+samples to eliminate the switching effect, but they generally do not prevent it from happening in the first place.
+
+The most straightforward solutions consist on imposing an artificial identifiability constraint on the parame-
+ters to break the symmetry of their posterior distributions; see Jasra et al. (2005) and references therein. A
+common approach that seems to work well is to simply enforce an ordering in the parameters in question, which
+in our case would mean requiring for example that βi < βj for i < j, or the analogous with the times in τ . We
+have implemented a variation of this method described in Simola et al. (2021), which works by post-processing
+the samples and relabeling the components to satisfy the order constraint mentioned above, choosing either b
+or τ depending on which set of ordered parameters would produce the largest separation between any two of
+them (suitably averaged across all iterations of the chains). This is an area of ongoing research, and thus there
+are other, more complex relabeling strategies, both deterministic and probabilistic. A summary of several such
+methods can be found for example in Rodríguez and Walker (2014) and Papastamoulis (2016).
+
+A.2 Selection of hyperparameters
+
+One of the key decisions in our Bayesian modeling scheme was whether to consider the number of components
+p as a member of the parameter space and integrate it into the model. While theoretically we could impose
+a prior distribution on p as well (e.g. a categorical distribution with a fixed maximum value), we found that
+this would have some unwanted practical implications. For instance, it would make the implementation more
+complex, since the dimensionality of the parameters b and τ would need to be fixed at a certain maximum
+value beforehand, but the working value of p within the MCMC algorithm would vary from one iteration to
+the next. In this case we would have no immediate way of tracking down which set of parameters is “active”
+at any given time. A simple approach would be to always consider the first p parameters and ignore the rest,
+and we did indeed try this technique, but it gave rise to new difficulties and the results obtained were not
+good. In fact, the label switching issue is accentuated when p is allowed to vary (c.f. Grollemund et al., 2019,
+Section 2.3), and on top of that, the interpretation of, say, the first coefficient β1 in a model with 3 components
+is different from the interpretation of the same coefficient in a model with only 2 components.
+
+This inconsistency in the interpretation of the components when the dimensionality of the model increases
+or decreases could be mitigated using a particular type of MCMC method known as reversible-jump MCMC
+(Green, 1995). Theoretically, these algorithms are specifically designed to approximate the posterior dis-
+tribution in mixture-like models when the number of components is unknown, allowing the underlying
+dimensionality to change between iterations. However, since they are not yet widely adopted in practice
+and a reference implementation is not available, we decided against using them in our applications. Another
+possibility would be to adapt a purely Bayesian model selection technique to our framework (see Piironen
+and Vehtari, 2017; Gelman et al., 2013), or even derive some model aggregation methods to combine the
+posterior distributions obtained for different-sized models. These methods are usually based in computing
+a quantity known as the Bayes factor, which in turn requires the specific value of the normalizing integral
+constant we have been trying to avoid all along. In the end, for the sake of simplicity we decided to let p be a
+hyperparameter, so that we could use any model selection criteria (e.g. BIC, DIC or cross-validation) to select
+its optimal value.
+
+As for the default values of the rest of hyperparameters in the prior distributions we propose, several
+
+comments are in order:
+
+24
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+• For the expected value b0 we propose to use the MLE of b. Although the likelihood function is rather
+involved, an approximation of the optimal value is enough for our purposes. Our numerical studies
+suggest that the results are much better with this choice than, say, with a random or null vector.
+
+• We found that the parameter g does not have as much influence on the final result, and the experimen-
+
+tation indicates that g = 5 is a good enough value.
+
+• Lastly, we observed that the choice of η can have a considerable impact on the final predictors. This
+is why, in an effort to normalize its scale, we consider a compound parameter η = ˜ηλmax(X T
+τ Xτ ),
+where λmax(X T
+τ Xτ , and ˜η > 0 is the actual tuning
+parameter (which can be selected for instance by cross-validation strategies). This standardization
+technique has been used previously in the literature; see for example Grollemund et al. (2019).
+
+τ Xτ ) is the largest eigenvalue of the matrix X T
+
+A.3 Affine-invariant ensemble sampler
+
+An interesting and often desirable property of MCMC sampling algorithms is that they be affine-invariant,
+which means that they regard two distributions that differ in an affine transformation, say π(x) and πA,b(Ax+b),
+as equally difficult to sample from. This is useful when one is working with very asymmetrical or skewed
+distributions, for an affine transformation can turn them into ones with simpler shapes. Generally speaking, a
+MCMC algorithm can be described through a function R as Λ(t + 1) = R(Λ(t), ξ(t), π), where Λ(t) is the
+state of the chain at instant t, π is the objective distribution, and ξ(t) is a sequence of i.i.d. random variables
+that represent the random behavior of the chain. With this notation, the affine-invariance property can be
+characterized as R(Aλ + b, ξ(t), πA,b) = AR(λ, ξ(t), π) + b, for all A, b and λ, and almost all ξ(t). This
+means that if we fix a random generator and run the algorithm twice, one time using π and starting in Λ(0)
+and a second time using πA,b with initial point Γ(0) = AΛ(0) + b, then Γ(t) = AΛ(t) + b for all t. In
+Goodman and Weare (2010) the authors consider an ensemble of samplers with the affine invariance property.
+Specifically, they work with a set Λ = (Λ1, . . . , ΛL) of walkers, where Λl(t) represents an individual chain at
+time t. At each iteration, an affine-invariant transformation is used to find the next point, which is constructed
+using the current values of the rest of the walkers (similar to Gibb’s algorithm), namely the complementary
+ensemble
+
+Λ−l(t) = {Λ1(t + 1), . . . , Λl−1(t + 1), Λl+1(t), . . . , ΛL(t)},
+
+l = 1, . . . , L.
+
+To maintain the affine invariance and the joint distribution of the ensemble, the walkers are advanced one by
+
+one following a Metropolis-Hastings acceptance scheme. There are mainly two types of moves:
+
+Stretch move. For each walker 1 ≤ l ≤ L another walker Λj ∈ Λ−l(t) is chosen at random, and the proposal
+
+is constructed as
+
+Λl(t) → Γ = Λj + Z(Λl(t) − Λj),
+where Z i.i.d.∼ g(z) satisfying the symmetry condition g(z−1) = zg(z). In particular, the suggested
+density is
+
+if z ∈ [a−1, a],
+otherwise.
+Supposing Rp is the sample space, the corresponding acceptance probability (chosen so that the
+detailed balance equations are satisfied) is:
+
+ga(z) ∝
+
+a > 1.
+
+z ,
+
+,
+
+(cid:40) 1√
+0,
+
+α = min
+
+(cid:26)
+
+1, Z p−1 π(Γ)
+π(Λl(t))
+
+(cid:27)
+
+.
+
+Walk move. For each walker 1 ≤ l ≤ L a random subset Sl ⊆ Λ−l(t) with |Sl| ≥ 2 is selected, and the
+
+proposed move is
+
+Λl(t) → Γ = Λl(t) + W,
+where W is a normal distribution with mean 0 and the same covariance as the sample covariance
+of all walkers in Sl. The acceptance probability in this case is just the Metropolis ratio, that is,
+α = min{1, π(Γ)/π(Λl(t))}.
+
+From a computational perspective, the Python library emcee (Foreman-Mackey et al., 2013) provides a
+parallel implementation of this algorithm. The idea is to divide the ensemble Λ into two equally-sized subsets
+Λ(0) and Λ(1), and then proceed on each iteration in the following alternate fashion:
+
+A Bayesian approach to functional regression: theory and computation
+
+25
+
+1. Update all walkers in Λ(0) through one of the available moves explained above, using Λ(1) as the
+
+complementary ensemble.
+
+2. Use the new values in Λ(0) to update Λ(1).
+
+In this way the detailed balance equations are still satisfied, and each of the steps can benefit from the
+computing power of an arbitrary number of processors (up to L/2).
+
+A.4 MCMC implementation
+
+The MCMC method chosen for approximating the posterior distribution in our models is the affine-invariant
+ensemble sampler described in Appendix A.3. As mentioned there, we utilize the computational implemen-
+tation in the Python library emcee, which is both reliable and easy to use; it aims to be a general-purpose
+package that performs well in a wide class of problems. One advantage of this method, apart from the property
+of affine-invariance, is that it only requires us to specify a few hyperparameters, irrespective of the underlying
+dimension. This contrasts to, say, the O(N 2) degrees of freedom corresponding to the covariance matrix of
+an N -dimensional jump distribution in Metropolis-Hastings. After selecting the number of iterations and
+the number of chains we want, we need to specify the initial points for each of them. As pointed out in
+Foreman-Mackey et al. (2013), a good initial choice is a Gaussian ball around a point in Θp that is expected to
+have a high probability with respect to the objective distribution. In our implementation we adopt this method,
+choosing an approximation of the MLE of θ as the central point in each case. To perform this approximation
+we employ the Basin-hopping optimization algorithm (Wales and Doye, 1997). This is a two-phase stochastic
+method that combines global steps with local optimization, in the hope of avoiding getting stuck too quickly in
+local maxima. To reduce the effects of randomness, we run the algorithm a few times and retain the point with
+the highest likelihood, and to avoid biasing the sampler too much towards the specific point selected, we let a
+fraction of the initial points be random (within reasonable bounds). This approximation is also used to specify
+the hyperparameter b0.
+
+Other less relevant hyperparameters include the burn-in period for the chains, which is the number of initial
+samples discarded, or the amount of thinning performed, which is the number of consecutive samples discarded
+to reduce the correlation among them. We use 64 chains and run them for 900 iterations in total, discarding the
+first 500 iterations as burn-in. Moreover, we use a weighted mixture of walk and stretch moves in the emcee
+sampler to advance the chains in each iteration, selecting the stretch move (the default) with probability 0.7 or
+the walk move with probability 0.3. Another computational decision we made is working with log σ instead of
+σ2, so that the domain of this parameter is an unconstrained space, which is a widespread recommendation
+that helps increase the efficiency of the method.
+
+26
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+B Measure-theoretic subtleties
+
+There are some technicalities to take into account in the theoretical exposition in Section 3, especially
+pertaining to measure theory. For example, to justify the existence of regular conditional distributions such as
+θ|X1, . . . , Xn, one should see Theorem 10.2.1 and Theorem 10.2.2 in Dudley (2002), which guarantee they
+are well-defined provided that the underlying spaces are sufficiently regular. Another issue is the measurability
+of the mapping θ (cid:55)→ Pθ(X, Y )(A), which is assumed in the proof of the consistency results. We illustrate
+how this can be proved for example in the linear case, under the additional condition of sample continuity,
+which is arguably not a very restrictive condition in real-life scenarios.
+Proposition B.1. If the process X is sample-continuous (i.e. the trajectories are continuous functions), then
+the mapping θ (cid:55)→ Pθ(X, Y )(A) is measurable for every measurable set A ⊆ X × Y.
+
+Proof. We start by checking that θ (cid:55)→ Pθ(Y |X)(A1) is measurable for every measurable set A1 ⊆ Y. Indeed,
+consider the function F (y, θ) = f (y|X, θ)1A1 (y), where f (·|X, θ) is the density of the normal distribution
+N (α0 + (cid:80)
+j βjX(tj), σ2) and 1A is the indicator function of a set A. It is easy to see that F (y, θ) is jointly
+measurable (it is in fact continuous) if X has continuous sample paths. Then, by Tonelli’s theorem (e.g.
+Folland, 1999, Theorem 2.37), the function
+
+θ (cid:55)→
+
+(cid:90)
+
+Y
+
+f (y|X, θ)1A1(y) dy = EPθ(Y |X) [1A1 (Y )] = Pθ(Y |X)(A1)
+
+is measurable. Now, if A is a measurable subset of X × Y, we have
+
+Pθ(X, Y )(A) =
+
+(cid:90)
+
+X
+
+Pθ(Y |X = x)(Ax)dP (X)(x),
+
+where Ax = {y ∈ Y : (x, y) ∈ A} is the x-section of A. We just saw that θ (cid:55)→ Pθ(Y |X = x)(Ax)
+is measurable, and thus we conclude that θ (cid:55)→ Pθ(X, Y )(A) is measurable, since integration respects
+measurability.
+
+A Bayesian approach to functional regression: theory and computation
+
+27
+
+C Experimentation
+
+C.1 Overview of data sets and comparison algorithms
+
+To generate the simulated data sets for the comparison experiments of Section 4, we used four types of
+Gaussian process regressors commonly employed in the literature, each with a different covariance function:
+
+BM. A Brownian motion, with kernel K1(t, s) = min{t, s}.
+fBM. A fractional Brownian motion, with kernel K2(t, s) = 1/2(s2H + t2H − |t − s|2H ) and Hurst parameter
+
+H = 0.8.
+
+O-U. An Ornstein-Uhlenbeck process, with kernel K3(t, s) = e−|t−s|.
+Gaussian. A Gaussian process with Gaussian kernel K4(t, s) = e−(t−s)2/2ν2
+
+, where ν = 0.2.
+
+For the comparison algorithms themselves, we considered several frequentist methods which were selected
+among popular ones in FDA and machine learning in general. As was specified in Section 4, variable selection
+and dimensionality reduction methods are part of a pipeline followed by a standard multiple regression
+technique. In the linear regression case, we chose the following algorithms:
+
+Manual. Dummy variable selection method with a pre-specified number of components (equispaced on
+
+[0, 1]).
+
+Lasso Linear least squares with l1 regularization.
+Ridge. Linear least squares with l2 regularization.
+PLS. Partial least squares for dimension reduction.
+PCA. Principal component analysis for dimension reduction.
+PLS1. Partial least squares regression (e.g. Abdi, 2010).
+APLS. Functional partial least squares regression proposed by Delaigle and Hall (2012b).
+RMH. Recursive maxima hunting variable selection method proposed by Torrecilla and Suárez (2016).
+FLin. Functional L2 linear regression model with fixed basis expansion.
+FPCA. Functional principal component analysis.
+FPLS1. Functional PLS regression through basis expansion, implemented as in Aguilera et al. (2010).
+
+In the logistic regression case, all the variable selection and dimension reduction techniques from above were
+also considered, with the addition of the following classification methods:
+
+Log. Standard multiple logistic regression with l2 regularization.
+LDA. Linear discriminant analysis.
+QDA. Quadratic discriminant analysis.
+RKVS. RKHS-based variable selection and classification method proposed in Berrendero et al. (2018).
+APLS. Functional PLS used as a dimension reduction method, as proposed in Delaigle and Hall (2012a) in
+
+combination with the nearest centroid (NC) algorithm.
+
+FLog. Functional RKHS-based logistic regression algorithm proposed in Berrendero et al. (2023).
+FLDA. Implementation of the functional version of linear discriminant analysis proposed in Preda et al.
+
+(2007).
+
+MDC. Maximum depth classifier (e.g. Ghosh and Chaudhuri, 2005).
+FKNN. Functional K-nearest neighbors classifier with the L2-distance.
+FNC. Functional nearest centroid classifier with the L2-distance.
+
+The main parameters of all these algorithms are selected by cross-validation, using the same 5 folds as
+our proposed models so that the comparisons are fair. In particular, regularization parameters are searched
+among 20 values in the logarithmic space [10−4, 104], the number of manually selected variables is one of
+{5, 10, 15, 20, 25, 50}, the number of components for dimension reduction and variable selection techniques is
+in the set {2, 3, 4, 5, 7, 10, 15, 20}, the number of basis elements for cubic spline bases is in {8, 10, 12, 14, 16},
+
+28
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+the number of basis elements for Fourier bases is one of {3, 5, 7, 9, 11}, and the number of neighbors in the
+KNN classifier is in {3, 5, 7, 9, 11}. Most algorithms have been taken from the libraries scikit-learn (Pedregosa
+et al., 2011) and scikit-fda (Ramos-Carreño et al., 2023), the first oriented to machine learning in general and
+the second to FDA in particular. However, some methods were not found in these packages and had to be
+implemented from scratch. This is the case of the FLDA, FPLS and APLS methods, which we coded following
+the corresponding articles.
+
+C.2 Simulations with non-Gaussian regressors
+
+We performed a set of experiments in linear and logistic regression in which the regressors are not Gaussian
+processes (GPs). These experiments where run in the same conditions as those reported in Section 4.
+
+Functional linear regression
+
+We use a geometric Brownian motion (GBM) as the regressor variable, defined as X(t) = eBM (t), where
+BM (t) is a standard Brownian motion. In this case we consider two data sets, one with a RKHS response
+and one with an L2 response, both with the same parameters as in the corresponding data sets in Section 4.
+The comparison results can be seen in Figure 7: in this case we still get better results under the RKHS model,
+while the results under the L2-model are slightly worse. However, as with other simulations, the difference is
+small (except for the emcee_mean methods).
+
+Figure 7: Mean and standard error of RMSE of predictors (lower is better) for 10 runs with GBM regressors.
+In the first column the response obeys a linear L2-model, while in the second columns it follows a RKHS
+linear model. The first row are direct methods and the second are dimensionality reduction methods.
+
+Functional logistic regression
+
+We consider a “mixture” situation in which we combine regressors from two different GPs with equal
+probability and label them according to their origin. Firstly, we consider a homoscedastic case to distinguish
+between a standard Brownian motion and a Brownian motion with a mean function that is zero until t = 0.5, and
+then becomes m(t) = 0.75t. Secondly, we consider a heteroscedastic case to distinguish between a standard
+Brownian motion and a Brownian motion with variance 2, that is, with kernel K(t, s) = 2 min{t, s}. Figure 8
+shows that our classifiers perform better than most comparison algorithms when separating two homoscedastic
+Gaussian processes, but they struggle in the heteroscedastic case. Incidentally, this heteroscedastic case of two
+zero-mean Brownian motions has a special interest, since it can be shown that the Bayes error is zero in the
+limit of dense monitoring (i.e. with an arbitrarily fine measurement grid), a manifestation of the “near-perfect”
+classification phenomenon analyzed for example in Torrecilla et al. (2020). Our results are in line with the
+empirical studies of this article, where the authors conclude that even though the asymptotic theoretical error
+
+A Bayesian approach to functional regression: theory and computation
+
+29
+
+is zero, most classification methods are suboptimal in practice (possibly due to the high collinearity of the
+data), with the notable exception of PCA+QDA.
+
+Figure 8: Mean and standard error of accuracy of classifiers (higher is better) for 10 runs with a mix of
+regressors coming from two different GPs and labeled according to their origin. In the first column we try to
+separate two Brownian motions with the same mean but different variance, while in the second column we
+discriminate between two Brownian motions with different mean functions but the same variance. The first
+row are direct methods and the second are dimensionality reduction methods.
+
+C.3 Model misspecification
+
+One requirement that our model should satisfy is that it ought to be able to recover the true parameter function
+when the underlying data generation model is a finite-dimensional RKHS model. This is generally the case
+when the value of p in our model and the true value p0 coincide, but what happens when we change the value
+of p in the model? Take for example a RKHS data set with two components generated according to the formula
+Y = 5 − 5X(0.1) + 10X(0.8) + ε, with ε ∼ N (0, 0.5). Figure 9 shows the resulting posterior distribution of
+the parameters b = (β1, β2, β3) and τ = (t1, t2, t3) for a model with 3 components. As we can see, one of
+the coefficients has gone to zero to account for the overspecification of the model, while the other two have
+stabilized very close to the true parameters. The same goes for the time instants, except that in this case there
+is no default value to represent that a component is unused, so the time corresponding to the null coefficient
+oscillates back and forth. Note that the estimated function (based for example in the mode of the posterior
+distributions) will not be perfect, essentially because of the noise in the response. But it should be close to the
+true parameter function α(t) = −5K(t, 0.1) + 10K(t, 0.8), providing a good predictive performance in most
+cases.
+
+In contrast, if we consider now a model with p = 4 with the same data, we might obtain posterior
+distributions like the ones in Figure 10. In this situation two coefficients should go to zero, but that is no longer
+the case. For example, while the green component has a high density around 0, it also has a considerable mass
+around 10, effectively “competing” with the red component. This is a manifestation of the label switching
+issue, caused in this case by an excessive number of degrees of freedom in the model. There is still another
+possible situation, one in which no label switching occurs but the estimated function has four non-negligible
+components. This can happen because the different components exploit the additional freedom and “work
+together”, so to speak. In this way we might obtain an estimate that does not resemble the true coefficient
+function, but that has a very low prediction error. However, this could also work to our detriment and cause the
+estimated function to be worse prediction-wise than simpler alternatives. This phenomenon is expected to
+strengthen as the difference between the true and assumed value of p grows larger.
+
+30
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Figure 9: Left: estimated posterior distribution for the parameters b and τ using our RKHS linear regression
+model with p = 3, in a linear dataset with p0 = 2 components. Right: the corresponding trace evolution for
+400 iterations in the MCMC sampler.
+
+Figure 10: Left: estimated posterior distribution for the parameters b and τ using our RKHS linear regression
+model with p = 4, in a linear dataset with p0 = 2 components. Right: the corresponding trace evolution for
+400 iterations in the MCMC sampler.
+
+C.4 Dependence on the number of components
+
+Another thing we wanted to look at was the dependence of the final prediction result on the chosen value of
+p, especially when there is no concept of “components” in the underlying model. We can take for example
+the homoscedastic mixture data set described in Appendix C.2 for the logistic regression problem, and
+fix the parameter η = 0.01. The corresponding mean accuracies (in 10 repetitions) for RKHS models
+with p = 1, 2, . . . 10 components are shown in Figure 11, along with their standard errors (which are
+arguably not very informative). It would appear that the methods that use the whole posterior distribution
+(emcee_posterior_mean and emcee_posterior_vote) are more stable and somewhat independent of the value
+of p > 1 in terms of accuracy. On the other hand, the rest of the algorithms show a slight downward trend
+as p increases (although not so much in the variable selection methods), and in general their best results are
+obtained at p = 2. We expect that this effect or some small variation of it will remain valid in other situations,
+and it would be in line with our view that the RKHS models work best with fewer components. However, a
+profound study of this would be the subject of a different experiment altogether.
+
+A Bayesian approach to functional regression: theory and computation
+
+31
+
+Figure 11: Mean accuracy in 10 independent repetitions for our logistic RKHS methods as a function of p,
+using η = 0.01 and the homoscedastic mixture data set. The corresponding standard errors are shown in faded
+colors.
+
+C.5 Tables of experimental results
+
+We present below the tables corresponding to the empirical comparison studies in Appendix C.2 and in
+Section 4, which show the numerical values that were depicted there graphically. In each case the best and
+second-best results are shown in bold and italics, respectively.
+
+Functional linear regression
+
+Prediction method
+
+BM
+
+fBM
+
+O-U
+
+Gaussian
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+apls
+flin
+fpls1
+lasso
+pls1
+ridge
+
+emcee_mean+ridge
+emcee_median+ridge
+emcee_mode+ridge
+fpca+ridge
+manual+ridge
+pca+ridge
+pls+ridge
+rmh+ridge
+
+0.913 (0.310)
+0.729 (0.048)
+0.735 (0.039)
+0.743 (0.047)
+1.003 (0.045)
+1.219 (0.056)
+1.235 (0.069)
+0.727 (0.034)
+1.032 (0.116)
+0.920 (0.043)
+
+0.816 (0.154)
+0.759 (0.063)
+0.746 (0.058)
+1.149 (0.041)
+1.221 (0.050)
+1.153 (0.041)
+0.955 (0.053)
+1.423 (0.117)
+
+0.759 (0.068)
+0.729 (0.045)
+0.748 (0.068)
+0.726 (0.036)
+0.792 (0.030)
+0.800 (0.022)
+0.800 (0.024)
+0.738 (0.027)
+0.782 (0.034)
+0.778 (0.021)
+
+0.749 (0.044)
+0.741 (0.041)
+0.735 (0.036)
+0.784 (0.020)
+0.784 (0.021)
+0.784 (0.022)
+0.783 (0.031)
+0.847 (0.043)
+
+0.806 (0.098)
+0.740 (0.052)
+0.769 (0.102)
+0.863 (0.416)
+1.167 (0.068)
+1.630 (0.051)
+1.631 (0.053)
+0.731 (0.039)
+0.974 (0.063)
+0.965 (0.059)
+
+0.734 (0.039)
+0.751 (0.065)
+0.726 (0.038)
+1.420 (0.063)
+1.548 (0.072)
+1.422 (0.050)
+0.962 (0.059)
+1.375 (0.266)
+
+1.408 (1.359)
+0.743 (0.041)
+0.803 (0.147)
+0.766 (0.061)
+0.728 (0.035)
+0.738 (0.030)
+0.738 (0.035)
+0.726 (0.032)
+0.729 (0.041)
+0.728 (0.035)
+
+0.799 (0.175)
+0.755 (0.058)
+0.735 (0.036)
+0.728 (0.033)
+0.727 (0.032)
+0.730 (0.033)
+0.729 (0.035)
+1.226 (0.117)
+
+Table 1: Mean RMSE of predictors (lower is better) for 10 runs with GP regressors, one in each column, that
+obey an underlying linear RKHS model. The corresponding standard errors are shown between brackets.
+
+32
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Prediction method
+
+BM
+
+fBM
+
+O-U
+
+Gaussian
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+apls
+flin
+fpls1
+lasso
+pls1
+ridge
+
+emcee_mean+ridge
+emcee_median+ridge
+emcee_mode+ridge
+fpca+ridge
+manual+ridge
+pca+ridge
+pls+ridge
+rmh+ridge
+
+0.769 (0.037)
+0.730 (0.049)
+0.732 (0.032)
+0.723 (0.040)
+0.715 (0.030)
+0.733 (0.035)
+0.718 (0.039)
+0.712 (0.027)
+0.717 (0.041)
+0.716 (0.029)
+
+0.717 (0.029)
+0.722 (0.038)
+0.726 (0.036)
+0.717 (0.032)
+0.717 (0.030)
+0.717 (0.032)
+0.719 (0.033)
+0.753 (0.029)
+
+0.744 (0.061)
+0.751 (0.071)
+0.739 (0.075)
+0.720 (0.032)
+0.710 (0.030)
+0.727 (0.033)
+0.726 (0.035)
+0.712 (0.028)
+0.720 (0.036)
+0.717 (0.032)
+
+0.718 (0.030)
+0.723 (0.038)
+0.735 (0.048)
+0.718 (0.030)
+0.719 (0.030)
+0.720 (0.031)
+0.728 (0.046)
+0.713 (0.030)
+
+0.756 (0.054)
+0.718 (0.031)
+0.730 (0.038)
+0.755 (0.079)
+0.710 (0.029)
+0.733 (0.035)
+0.731 (0.034)
+0.717 (0.029)
+0.722 (0.029)
+0.716 (0.032)
+
+0.719 (0.027)
+0.717 (0.035)
+0.736 (0.030)
+0.718 (0.033)
+0.716 (0.032)
+0.716 (0.032)
+0.720 (0.033)
+0.791 (0.037)
+
+0.794 (0.129)
+0.722 (0.030)
+0.730 (0.029)
+0.726 (0.026)
+0.726 (0.031)
+0.735 (0.032)
+0.726 (0.033)
+0.722 (0.029)
+0.729 (0.031)
+0.727 (0.033)
+
+0.743 (0.052)
+0.730 (0.025)
+0.743 (0.050)
+0.727 (0.031)
+0.728 (0.031)
+0.727 (0.031)
+0.730 (0.031)
+0.812 (0.027)
+
+Table 2: Mean RMSE of predictors (lower is better) for 10 runs with GP regressors, one in each column, that
+obey an underlying linear L2-model. The corresponding standard errors are shown between brackets.
+
+Prediction method
+
+GBM + L2
+
+GBM + RKHS
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+apls
+flin
+fpls1
+lasso
+pls1
+ridge
+
+emcee_mean+ridge
+emcee_median+ridge
+emcee_mode+ridge
+fpca+ridge
+manual+ridge
+pca+ridge
+pls+ridge
+rmh+ridge
+
+0.948 (0.354)
+0.737 (0.036)
+0.786 (0.106)
+0.763 (0.083)
+0.716 (0.034)
+0.726 (0.033)
+0.731 (0.040)
+0.726 (0.042)
+0.710 (0.029)
+0.721 (0.035)
+
+0.725 (0.040)
+0.738 (0.033)
+0.733 (0.040)
+0.716 (0.036)
+0.724 (0.046)
+0.719 (0.036)
+0.713 (0.030)
+0.805 (0.051)
+
+1.278 (0.622)
+0.747 (0.031)
+0.928 (0.275)
+0.786 (0.084)
+1.456 (0.170)
+2.427 (0.352)
+2.336 (0.365)
+0.759 (0.073)
+1.309 (0.122)
+1.175 (0.205)
+
+1.432 (1.059)
+0.780 (0.093)
+0.760 (0.073)
+1.873 (0.302)
+2.253 (0.226)
+1.879 (0.304)
+1.299 (0.125)
+1.640 (0.189)
+
+Table 3: Mean RMSE of predictors (lower is better) for 10 runs with GBM regressors. In the first column
+the response obeys a linear L2-model, while in the second column it follows a RKHS linear model. The
+corresponding standard errors are shown between brackets.
+
+A Bayesian approach to functional regression: theory and computation
+
+33
+
+Prediction method
+
+Moisture
+
+Sugar
+
+Tecator
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+flin
+fpls1
+lasso
+pls1
+ridge
+apls
+
+emcee_mean+ridge
+emcee_median+ridge
+emcee_mode+ridge
+fpca+ridge
+manual+ridge
+pca+ridge
+pls+ridge
+rmh+ridge
+
+1.268 (1.096)
+0.296 (0.051)
+0.301 (0.049)
+0.255 (0.039)
+0.257 (0.026)
+0.236 (0.038)
+0.242 (0.028)
+0.228 (0.023)
+0.221 (0.026)
+0.234 (0.031)
+
+0.262 (0.043)
+0.260 (0.034)
+0.302 (0.092)
+0.289 (0.035)
+0.228 (0.026)
+0.226 (0.027)
+0.226 (0.025)
+0.327 (0.086)
+
+9.207 (9.248)
+3.130 (2.584)
+2.628 (0.700)
+2.813 (0.897)
+1.978 (0.210)
+1.993 (0.223)
+1.975 (0.199)
+2.045 (0.190)
+1.952 (0.235)
+2.050 (0.238)
+
+2.020 (0.198)
+1.995 (0.219)
+2.037 (0.200)
+1.976 (0.227)
+1.987 (0.227)
+1.963 (0.234)
+2.012 (0.218)
+2.031 (0.216)
+
+9.811 (7.446)
+3.714 (0.922)
+3.531 (1.494)
+2.918 (0.222)
+2.604 (0.344)
+2.604 (0.294)
+2.892 (0.270)
+2.704 (0.467)
+3.387 (0.218)
+2.349 (0.470)
+
+6.673 (1.037)
+5.393 (1.210)
+5.442 (0.563)
+9.521 (0.603)
+4.126 (0.305)
+3.388 (0.218)
+2.415 (0.501)
+5.580 (0.513)
+
+Table 4: Mean RMSE of predictors (lower is better) for 10 runs with real data sets, one in each column. The
+corresponding standard errors are shown between brackets.
+
+34
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Functional logistic regression
+
+Classification method
+
+BM
+
+fBM
+
+O-U
+
+Gaussian
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+emcee_posterior_vote
+fknn
+flda
+flog
+fnc
+lda
+log
+mdc
+qda
+
+emcee_mean+logistic
+emcee_median+logistic
+emcee_mode+logistic
+apls+log
+apls+nc
+fpca+log
+manual+log
+pca+log
+pca+qda
+pls+log
+pls+nc
+rkvs+log
+rmh+log
+
+0.743 (0.052)
+0.771 (0.048)
+0.777 (0.037)
+0.764 (0.044)
+0.765 (0.043)
+0.765 (0.027)
+0.767 (0.055)
+0.771 (0.033)
+0.743 (0.029)
+0.514 (0.054)
+0.778 (0.031)
+0.724 (0.033)
+0.499 (0.038)
+
+0.781 (0.036)
+0.766 (0.041)
+0.776 (0.042)
+0.783 (0.025)
+0.771 (0.048)
+0.773 (0.028)
+0.753 (0.033)
+0.780 (0.032)
+0.751 (0.037)
+0.786 (0.040)
+0.744 (0.032)
+0.770 (0.037)
+0.768 (0.047)
+
+0.739 (0.040)
+0.716 (0.048)
+0.752 (0.043)
+0.756 (0.046)
+0.753 (0.040)
+0.768 (0.033)
+0.755 (0.048)
+0.761 (0.042)
+0.775 (0.042)
+0.601 (0.030)
+0.750 (0.042)
+0.762 (0.037)
+0.488 (0.041)
+
+0.746 (0.038)
+0.749 (0.045)
+0.746 (0.047)
+0.756 (0.036)
+0.745 (0.045)
+0.755 (0.038)
+0.758 (0.040)
+0.758 (0.036)
+0.750 (0.049)
+0.768 (0.037)
+0.766 (0.039)
+0.757 (0.040)
+0.760 (0.043)
+
+0.734 (0.029)
+0.714 (0.049)
+0.724 (0.029)
+0.734 (0.029)
+0.747 (0.027)
+0.743 (0.032)
+0.735 (0.036)
+0.745 (0.025)
+0.661 (0.063)
+0.578 (0.032)
+0.761 (0.039)
+0.648 (0.052)
+0.472 (0.055)
+
+0.725 (0.051)
+0.717 (0.024)
+0.726 (0.025)
+0.739 (0.020)
+0.740 (0.022)
+0.758 (0.032)
+0.742 (0.031)
+0.756 (0.032)
+0.736 (0.019)
+0.740 (0.035)
+0.745 (0.055)
+0.738 (0.026)
+0.745 (0.019)
+
+0.751 (0.039)
+0.746 (0.055)
+0.760 (0.048)
+0.753 (0.040)
+0.753 (0.043)
+0.738 (0.022)
+0.761 (0.050)
+0.777 (0.040)
+0.755 (0.035)
+0.702 (0.059)
+0.761 (0.031)
+0.732 (0.023)
+0.483 (0.027)
+
+0.750 (0.034)
+0.732 (0.066)
+0.761 (0.036)
+0.761 (0.028)
+0.751 (0.034)
+0.765 (0.039)
+0.754 (0.032)
+0.756 (0.033)
+0.741 (0.030)
+0.766 (0.033)
+0.767 (0.035)
+0.772 (0.039)
+0.781 (0.036)
+
+Table 5: Mean accuracy of classifiers (higher is better) for 10 runs with GP regressors, one in each column,
+that obey an underlying logistic RKHS model. The corresponding standard errors are shown between brackets.
+
+A Bayesian approach to functional regression: theory and computation
+
+35
+
+Classification method
+
+BM
+
+fBM
+
+O-U
+
+Gaussian
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+emcee_posterior_vote
+fknn
+flda
+flog
+fnc
+lda
+log
+mdc
+qda
+
+emcee_mean+logistic
+emcee_median+logistic
+emcee_mode+logistic
+apls+log
+apls+nc
+fpca+log
+manual+log
+pca+log
+pca+qda
+pls+log
+pls+nc
+rkvs+log
+rmh+log
+
+0.571 (0.053)
+0.557 (0.033)
+0.553 (0.063)
+0.575 (0.049)
+0.576 (0.034)
+0.557 (0.022)
+0.554 (0.032)
+0.587 (0.034)
+0.601 (0.036)
+0.507 (0.041)
+0.576 (0.034)
+0.605 (0.039)
+0.476 (0.050)
+
+0.583 (0.038)
+0.565 (0.044)
+0.568 (0.047)
+0.556 (0.066)
+0.549 (0.056)
+0.559 (0.037)
+0.573 (0.037)
+0.570 (0.036)
+0.567 (0.030)
+0.564 (0.042)
+0.581 (0.038)
+0.572 (0.058)
+0.570 (0.036)
+
+0.557 (0.037)
+0.539 (0.045)
+0.513 (0.067)
+0.560 (0.036)
+0.554 (0.039)
+0.505 (0.047)
+0.516 (0.053)
+0.542 (0.036)
+0.545 (0.045)
+0.482 (0.056)
+0.546 (0.033)
+0.544 (0.055)
+0.518 (0.048)
+
+0.575 (0.043)
+0.552 (0.037)
+0.544 (0.036)
+0.535 (0.040)
+0.523 (0.040)
+0.548 (0.033)
+0.542 (0.029)
+0.541 (0.033)
+0.532 (0.045)
+0.556 (0.028)
+0.535 (0.048)
+0.550 (0.023)
+0.557 (0.033)
+
+0.594 (0.021)
+0.559 (0.059)
+0.575 (0.038)
+0.593 (0.022)
+0.579 (0.023)
+0.576 (0.042)
+0.543 (0.057)
+0.576 (0.038)
+0.587 (0.037)
+0.524 (0.042)
+0.560 (0.053)
+0.584 (0.039)
+0.470 (0.071)
+
+0.569 (0.021)
+0.589 (0.029)
+0.581 (0.041)
+0.548 (0.070)
+0.545 (0.054)
+0.579 (0.034)
+0.575 (0.043)
+0.579 (0.028)
+0.577 (0.037)
+0.559 (0.041)
+0.589 (0.043)
+0.592 (0.018)
+0.584 (0.024)
+
+0.565 (0.082)
+0.556 (0.049)
+0.550 (0.042)
+0.578 (0.039)
+0.576 (0.041)
+0.557 (0.026)
+0.526 (0.049)
+0.578 (0.043)
+0.546 (0.056)
+0.525 (0.052)
+0.554 (0.037)
+0.533 (0.042)
+0.485 (0.039)
+
+0.559 (0.030)
+0.585 (0.041)
+0.557 (0.033)
+0.560 (0.055)
+0.545 (0.047)
+0.564 (0.032)
+0.568 (0.035)
+0.567 (0.033)
+0.574 (0.059)
+0.564 (0.036)
+0.558 (0.057)
+0.567 (0.024)
+0.581 (0.025)
+
+Table 6: Mean accuracy of classifiers (higher is better) for 10 runs with GP regressors, one in each column,
+that obey an underlying logistic L2-model. The corresponding standard errors are shown between brackets.
+
+36
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+Classification method
+
+Heteroscedastic Homoscedastic
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+emcee_posterior_vote
+fknn
+flda
+flog
+fnc
+lda
+log
+mdc
+qda
+
+emcee_mean+logistic
+emcee_median+logistic
+emcee_mode+logistic
+apls+log
+apls+nc
+fpca+log
+manual+log
+pca+log
+pca+qda
+pls+log
+pls+nc
+rkvs+log
+rmh+log
+
+0.513 (0.035)
+0.492 (0.039)
+0.543 (0.033)
+0.497 (0.056)
+0.469 (0.058)
+0.574 (0.031)
+0.489 (0.047)
+0.515 (0.045)
+0.463 (0.069)
+0.493 (0.040)
+0.509 (0.055)
+0.521 (0.052)
+0.502 (0.056)
+
+0.503 (0.054)
+0.504 (0.041)
+0.512 (0.036)
+0.529 (0.034)
+0.496 (0.039)
+0.481 (0.032)
+0.496 (0.029)
+0.483 (0.030)
+0.748 (0.055)
+0.489 (0.043)
+0.454 (0.037)
+0.499 (0.041)
+0.516 (0.049)
+
+0.667 (0.053)
+0.647 (0.070)
+0.680 (0.038)
+0.690 (0.050)
+0.684 (0.048)
+0.652 (0.034)
+0.696 (0.059)
+0.673 (0.040)
+0.664 (0.053)
+0.548 (0.046)
+0.686 (0.046)
+0.601 (0.058)
+0.517 (0.039)
+
+0.678 (0.063)
+0.680 (0.038)
+0.681 (0.036)
+0.684 (0.058)
+0.674 (0.050)
+0.704 (0.041)
+0.694 (0.044)
+0.699 (0.040)
+0.703 (0.037)
+0.711 (0.055)
+0.649 (0.076)
+0.684 (0.037)
+0.691 (0.030)
+
+Table 7: Mean accuracy of classifiers (higher is better) for 10 runs with a mix of regressors coming from two
+different GPs and labeled according to their origin. In the first column we try to separate two heteroscedastic
+Brownian motions, while in the second column we discriminate between two homoscedastic Brownian motions.
+The corresponding standard errors are shown between brackets.
+
+A Bayesian approach to functional regression: theory and computation
+
+37
+
+Classification method
+
+Growth
+
+Medflies
+
+Phoneme
+
+emcee_mean
+emcee_median
+emcee_mode
+emcee_posterior_mean
+emcee_posterior_vote
+fknn
+flda
+flog
+fnc
+lda
+log
+mdc
+qda
+
+emcee_mean+logistic
+emcee_median+logistic
+emcee_mode+logistic
+apls+log
+apls+nc
+fpca+log
+manual+log
+pca+log
+pca+qda
+pls+log
+pls+nc
+rkvs+log
+rmh+log
+
+0.858 (0.147)
+0.894 (0.112)
+0.932 (0.034)
+0.926 (0.032)
+0.919 (0.046)
+0.942 (0.040)
+0.945 (0.032)
+0.935 (0.050)
+0.735 (0.112)
+0.894 (0.052)
+0.965 (0.030)
+0.700 (0.087)
+0.581 (0.000)
+
+0.906 (0.118)
+0.932 (0.049)
+0.935 (0.043)
+0.952 (0.026)
+0.952 (0.041)
+0.965 (0.030)
+0.961 (0.032)
+0.958 (0.029)
+0.958 (0.032)
+0.952 (0.036)
+0.829 (0.094)
+0.923 (0.052)
+0.955 (0.030)
+
+0.533 (0.041)
+0.573 (0.032)
+0.582 (0.034)
+0.596 (0.044)
+0.575 (0.052)
+0.534 (0.031)
+0.561 (0.020)
+0.601 (0.029)
+0.546 (0.038)
+0.572 (0.019)
+0.575 (0.028)
+0.524 (0.026)
+0.569 (0.023)
+
+0.528 (0.029)
+0.580 (0.031)
+0.585 (0.032)
+0.572 (0.016)
+0.554 (0.020)
+0.551 (0.032)
+0.584 (0.018)
+0.576 (0.030)
+0.567 (0.036)
+0.578 (0.018)
+0.570 (0.040)
+0.596 (0.032)
+0.606 (0.025)
+
+0.763 (0.041)
+0.776 (0.044)
+0.770 (0.056)
+0.797 (0.035)
+0.801 (0.031)
+0.760 (0.046)
+0.781 (0.037)
+0.766 (0.041)
+0.703 (0.036)
+0.618 (0.040)
+0.822 (0.026)
+0.663 (0.031)
+0.457 (0.043)
+
+0.779 (0.033)
+0.796 (0.036)
+0.791 (0.038)
+0.816 (0.028)
+0.807 (0.032)
+0.797 (0.021)
+0.778 (0.039)
+0.794 (0.030)
+0.784 (0.034)
+0.804 (0.031)
+0.754 (0.041)
+0.796 (0.031)
+0.778 (0.048)
+
+Table 8: Mean accuracy of classifiers (higher is better) for 10 runs with real data sets, one in each column. The
+corresponding standard errors are shown between brackets.
+
+38
+
+J. R. Berrendero, A. Coín and A. Cuevas
+
+D Source code overview
+
+The Python code developed for this work is available under a GPLv3 license at the GitHub repository
+https://github.com/antcc/rk-bfr. The code is adequately documented and is structured in several
+directories as follows:
+
+• In the rkbfr folder we find the files responsible for the implementation of our Bayesian models,
+
+separated according to the functionality they provide.
+
+• The reference_methods folder contains our implementation of the functional comparison algo-
+
+rithms that were not available through a standard Python library.
+
+• The utils folder has some utility files for simulation, experimentation and visualization.
+• The experiments folder contains plain text files with the numerical experimental results shown in
+Appendix C.5, as well as .csv and .npz files that facilitate working with them directly in Python.
+• At the root folder we have files for executing our experiments, which accept several user-
+specified parameters (such as the number of iterations or the type of data set).
+In particular,
+the script results_cv.py contains the code for our comparison experiments, while the script
+results_all.py executes our Bayesian methods without a cross-validation loop.
+
+When possible, the code was implemented in a generic way that would allow for easy extensions or
+derivations. It was also developed with efficiency in mind, so many functions and methods exploit the
+vectorization capabilities of the numpy and scipy libraries. Moreover, since we followed closely the style
+of the scikit-learn and scikit-fda libraries, our methods are compatible and could be integrated (after some
+minor tweaking) with both of them. The code for the experiments was executed with a random seed set to
+the value 2022 for reproducibility. We provide a script file launch.sh that illustrates a typical execution.
+Lastly, there are Jupyter notebooks that demonstrate the use of our methods in a more visual way. Inside these
+notebooks there is a step-by-step guide on how one might execute our algorithms, accompanied by many
+graphical representations, and offering the possibility of changing multiple parameters to experiment with
+the code. In addition, there is also a notebook that can be used to generate all the tables and figures of this
+document pertaining to the experimental results.
+
+

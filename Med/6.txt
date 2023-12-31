@@ -1,0 +1,900 @@
+ORIGINAL PAPER
+
+doi: 10.5455/medarh.2015.69.280-283
+Med Arh. 2015 Oct; 69(5): 280-283
+Received: August 25th 2015 | Accepted: October 05th 
+2015
+
+© 2015 Selma Sijercic Avdagic, Harun 
+Brkic, Harun Avdagic, Jasmina Smajic, 
+Samir Hodzic
+
+This is an Open Access article distributed 
+under the terms of the Creative Commons 
+Attribution Non-Commercial License 
+(http://creativecommons.org/licenses/
+by-nc/4.0/) which permits unrestricted 
+non-commercial use, distribution, and 
+reproduction in any medium, provided 
+the original work is properly cited.
+
+Impact of Comorbidity on 
+Early Outcome of Patients with 
+Subarachnoid Hemorrhage 
+Caused by Cerebral Aneurysm 
+Rupture
+
+Selma Sijercic Avdagic1, Harun Brkic1, Harun Avdagic2, Jasmina 
+Smajic2, Samir Hodzic3
+
+1Clinic for Anesthesiology and Reanimatology, University Clinical Center Tuzla, Tuzla, 
+Bosna i Hercegovina
+2Clinic for Neurosurgery, University Clinical Center Tuzla, Tuzla, Bosna i Hercegovina
+3Clinic for Cardiovascular Desease, University Clinical Center Tuzla, Tuzla, Bosna i 
+Hercegovina
+
+Corresponding author: Ass. prof. Selma Sijercic Avdagic, MD, PhD. Clinic of 
+Anesthesiology and Reanimatology, University Clinical Centre Tuzla. E-mail: 
+sijercicavdagic.selma@gmail.com
+
+ABSTRACT
+Background: One of the complications aneurysms subarachnoid hemorrhage is the de-
+velopment of vasospasm, which is the leading cause of disability and death from ruptured 
+cerebral aneurysm. Aim: To evaluate the significance of previous comorbidities on early 
+outcome of patients with subarachnoid hemorrhage caused by rupture of a cerebral an-
+eurysm in the prevention of vasospasm. Patients and methods: The study had prospec-
+tive  character  in  which  included  50  patients,  whose  diagnosed  with  SAH  caused  by  the 
+
+rupture of a brain aneurysm in the period from 2011to 2013. Two groups of patients were 
+
+formed.  Group  I:  patients  in  addition  to  the  standard  initial  treatment  and  “3H  therapy” 
+
+administered nimodipine at a dose of 15-30 mg / kg bw / h (3-10 ml) for the duration of 
+
+the  initial  treatment.  Group  II:  patients  in  addition  to  the  standard  initial  treatment  and 
+
+“3H therapy” administered with MgSO4 at a dose of 12 grams in 500 ml of 0.9% NaCl / 24 
+h during the initial treatment. Results: Two-thirds of the patients (68%) from both groups 
+had a good outcome measured with values according to GOS scales, GOS IV and V. The 
+
+poorer outcome, GOS III had 20% patients, the GOS II was at 2% and GOS I within 10% of 
+
+patients. If we analyze the impact of comorbidity on the outcome, it shows that there is a 
+
+significant relationship between the presence of comorbidity and outcomes. The patients 
+
+without comorbidity (83.30%) had a good outcome (GOS IV and V), the same outcome 
+
+was observed (59.4%) with comorbidities, which has a statistically significant difference (p 
+
+= 0.04). Patients without diabetes (32%) had a good outcome (GOS IV and V), while the 
+
+percentage of patients with diabetes less frequent (2%) with a good outcome, a statistical-
+ly significant difference (p = 0.009). Conclusion: The outcome of treatment 30 days after 
+the subarachnoid hemorrhage analyzed values WFNS and GOS, is not dependent on the 
+
+method of prevention and treatment of vasospasm. Most concomitant diseases in patients 
+
+with  SAH  which,  requiring  additional  treatment  measures  are  arterial  hypertension  and 
+
+diabetes mellitus. The best predictors in the initial treatment of patients with subarachnoid 
+
+hemorrhage caused by rupture of a cerebral aneurysm has the presence of comorbidity, 
+
+which has statistical significance.
+
+Key words: subarachnoid hemorrhage, vasospasm, comorbidity.
+
+1. INTRODUCTION
+
+Fifty  percent  of  survivors  have 
+neurological  deficits.  Re-rupture 
+usually  occurs  within  the  first  day 
+and the risk is still very high for the 
+first  two  weeks  (about  25%),  if  left 
+
+untreated  (1,2).  One  of  the  com-
+plications  aneurysm  subarachnoid 
+hemorrhage  is  the  development  of 
+vasospasm, which is a leading cause 
+of  disability  and  death  from  rup-
+tured cerebral aneurysm (3). Diseas-
+
+280
+
+ORIGINAL PAPER | MEd ARh. 2015 Oct; 69(5): 280-283
+
+Impact of comorbidity on Early Outcome of Patients with Subarachnoid hemorrhage
+
+es caused by rupture of intracranial aneurysms are com-
+plex and caused by genetic (4), and acquired risk factors 
+(5),  whose  mechanisms  in  the  formation,  progress  and 
+rupture of aneurysms are poorly understood. Type 2 di-
+abetes has a complex trait that aff ects the changes in the 
+arterial  wall  through  several  diff erent  mechanisms  (6). 
+However,  combining  all  studies,  hypertension  remains 
+an  important  risk  factor  (7).  Patients  who  used  antihy-
+pertensive drugs may have a decreased risk for the for-
+mation  and  growth  of  the  aneurysm  (8).  On  the  other 
+hand, hypertension is associated with the development 
+of  subarachnoid hemorrhage is an important risk factor 
+for poor treatment outcome (9). Nimodipine is indicated 
+for the treatment of ischemic neurological defi cits after 
+subarachnoid hemorrhage caused by rupture of cerebral 
+aneurysm  (10).  Clinical  studies  show  that  nimodipin 
+reducing  neurological  defi cit  and  prevents  or  reduces 
+vasospazam  (11,  12).  In  patients  with  stroke  and  SAH, 
+magnesium is a convenient and secure (13, 14). Th  e ef-
+fectiveness of magnesium in SAH is refl ected, in addition 
+to its biochemical properties as a physiological antago-
+nist of calcium, and ease of administration, low cost, able 
+to measure and control the concentration in body fl uids, 
+as well as a favorable safety profi le (15, 16).
+
+2. PATIENTS AND METHODS
+
+WFNS 
+
+Study had prospective character in which included 50 
+patients. Th  e subjects were patients admitted to the In-
+tensive Case Unit (ICU) of the Clinic for Anesthesiology 
+and  Reanimatology,  Neurology  Clinic  and  Neurosur-
+gery Clinic Center Tuzla diagnosed with SAH caused by 
+GCS 
+the  rupture  of  a  cerebral  aneurysm  in  the  period  from 
+2011  to  2013.  Inclusion  criteria  are:  patients  with  sub-
+arachnoid  hemorrhage  caused  by  rupture  of  cerebral 
+aneurysm,  patients  older  than  20  years  and  younger 
+than  70  years,  patients  admitted  within  72  hours  after 
+the occurrence of hemorrhage, patients who had initial 
+measures  and  intensive  care  treatment  up  to  12  days 
+Pupils 
+after  the  occurrence  of  hemorrhage.  Exclusion  criteria 
+are:  patients  underwent  surgical  treatment  due  to  sub-
+arachnoid  hemorrhage  not  originating  from  aneurysm, 
+patients previously underwent surgical treatment due to 
+cerebrovascular disease, patients who are already treat-
+ed  for  cancer  and  other  systemic  diseases.  Two  groups 
+of  patients  are  formed:  Group  I:  patients  who  in  addi-
+tion  to  the  standard  initial  treatment  and  “3H  thera-
+py”  also received  nimodipine at a dose of  15-30 mg/kg 
+bw/h (3-10 ml) for the duration of the initial treatment. 
+Group  II:  patients  who  in  addition  to  the  standard  ini-
+tial  treatment  and  “3H  therapy”  received  Mg  SO4  at  a 
+dose of 12 g in 500 ml of 0.9% NaCl/2 h during the initial 
+treatment.  All  patients  upon  admission  to  the  hospital 
+underwent  native  brain  CT  which  confi rmed  the  exis-
+tence  of  SAH,  and  after  that  CT  angiography  of  blood 
+vessels  of  the  brain  which  revealed  the  existence,  size, 
+shape and localization of cerebral aneurysm. All patients 
+are  monitored  by  non-invasive  monitoring  of  vital  pa-
+rameters:  state  of  consciousness,  blood  pressure,  heart 
+rate,  respiratory  rate,  body  temperature,  CVP,  diuresis. 
+State  of  consciousness  was  measured  by  the  Glasgow 
+
+Coma  Scale–GCS.  Measures  of  initial  treatment  were 
+analyzed according to the values of World Federation of 
+Neurosurgical Society scale–WFNS. Patients were ana-
+lyzed also on the existence of underlying diseases prior 
+to admission to hospital: hypertension, diabetes mellitus, 
+cardiovascular  diseases  and  previous  neurological  dis-
+eases. For testing statistical signifi cance between groups 
+were  used  parametric  or  non-parametric  tests,  χ2test 
+and t-test. Statistical hypotheses were tested at the level 
+of a = 0.05, or diff erences between samples were consid-
+ered signifi cant if p <0.05. Regression analysis has deter-
+mined the prognostic value of some potential predictors 
+of treatment outcome after SAH (displayed as OR-odds 
+ratio value).
+
+3. RESULTS
+
+Basic  demographic  and  clinical  characteristics  were 
+analyzed according to the age, gender, GCS, WFNS and 
+pupil’s examination at the hospital admission. Th  e clini-
+cal characteristics were analyzed in form of existence of 
+hypertension,  diabetes,  cardiomyopathy,  or  jointly  ob-
+served as a comorbidity (Table 1).
+
+Nimodipin
+56.93±8.94
+15 (50 %)
+
+MgSO4
+55.8±9.20
+15 (75 %)
+
+p
+0.667
+0.077
+
+17 (56.7 %)
+3 (10 %)
+5 (16.7 %)
+
+13 (65.0 %)
+3 (15 %)
+1 (5.0 %)
+
+5 (16.7 %) 
+
+1 (3.3 %)
+0
+5 (16.7 %)
+24 (80 .0%)
+
+2 (10 %)
+1 (3.3 %) 
+0 
+0
+5 (16.7 %) 
+2 (10.0 %)
+24 (80 .0%) 
+16 (80.0 %)
+
+28 (93.3 %)
+1 (3.3 %)
+1 (3.3 %)
+
+28 (93.3 %) 
+1 (3.3 %) 
+1 (3.3 %) 
+
+18 (90 %)
+0
+29 (96.7 %) 
+0 
+2 (10. 0 %)
+1 (3.3 %) 
+
+0.556
+0.594
+0.214
+
+1 (5.0 %) 
+
+0.530
+
+2 (10 %) 
+0 
+2 (10.0 %) 
+16 (80.0 %) 
+
+18 (90 %) 
+0 
+2 (10. 0 %) 
+0.456
+
+18 (90 %) 
+1 (5.0 %) 
+1 (5.0 %) 
+
+0.214 
+
+0.530 
+
+0.456 
+
+0.846 
+
+Other 
+
+<8 
+9-11 
+12-13 
+14-15 
+
+Parameter
+Age (years)
+Gender (% female)
+Comorbidity
+Hypertension
+Diabetes
+Other
+GCS
+<8
+9-11
+12-13
+14-15
+WFNS
+I and II
+III
+Neat 
+Anisocoric 
+IV and V
+Bilateral mydriasis 
+Pupils
+Neat
+Anisocoric
+Bilateral mydriasis
+
+I and II 
+III 
+IV and V 
+
+One month after admission, there was 16 (32%) patients with values of Glasgow Outcome Scale - 
+GOS  5,  GOS  4  had  18  patients  (36%).  GOS  grade  3  had  10  patients  (20%),  GOS  II  had  one 
+patient (2%) and GOS I had 5 (10%) patients in both groups analyzed (Figure 1). This means that 
+two-thirds of patients (68%) in both groups had a good outcome measured by GOS, GOS IV and 
+Table 1. Age, gender, values of GCS, WFNS and pupil’s 
+V. The poorer outcome, GOS III had 20% of patients, GOS II was present at 2% and the GOS I 
+was present 10 % of patients (Figure 1). 
+fi ndings at the hospital admission
+
+29 (96.7 %)
+0
+1 (3.3 %)
+
+18 (90 %)
+1 (5.0 %)
+1 (5.0 %)
+
+0.846
+
+16; 32%
+
+5; 10%
+
+1; 2%
+
+10; 20%
+
+GOS I
+
+GOS II
+
+GOS III
+
+GOS IV
+
+GOS V
+
+18; 36%
+
+Figure 1. Recovery measured Glasgow Outcome Scale–
+Figure 1. Recovery measured Glasgow Outcome Scale - GOS scale after one month 
+GOS scale after one month
+
+There were no significant differences between the groups in terms of recovery measured by GOS 
+(Table 2). 
+
+ORIGINAL PAPER | MEd ARh. 2015 Oct; 69(5): 280-283
+
+Table 2. The difference in the recovery of the GOS scale between groups  
+GOS 
+
+Nimodipin 
+
+MgSO4 
+
+p 
+
+281
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Impact of comorbidity on Early Outcome of Patients with Subarachnoid hemorrhage
+
+One  month  after  admission,  there  was  16  (32%)  pa-
+tients  with  values  of  Glasgow  Outcome  Scale–GOS  5, 
+GOS 4 had 18 patients (36%). GOS grade 3 had 10 pa-
+tients (20%), GOS II had one patient (2%) and GOS I had 
+5 (10%) patients in both groups analyzed (Figure 1). Th  is 
+means that two-thirds of patients (68%) in both groups 
+had a good outcome measured by GOS, GOS IV and V. 
+Th  e poorer outcome, GOS III had 20% of patients, GOS 
+II was present at 2% and the GOS I was present 10 % of 
+patients (Figure 1).
+
+Th  ere  were  no  signifi cant  diff erences  between  the 
+groups in terms of recovery measured by GOS (Table 2).
+GOS
+I
+II
+III
+IV
+V
+Total
+
+MgSO4
+3 (10 %)
+0 (0 %)
+7 (23,3 %)
+13 (43,3 %)
+7 (23,3 %)
+100 %
+
+Nimodipin
+2 (10 %)
+1 (5,0 %)
+3 (15 %)
+5 (25 %)
+9 (45 %)
+100 %
+
+p
+0,309
+
+Table 2. The diff erence in the recovery of the GOS scale 
+between groups. χ2=4.79; df=4; p=0.309
+
+Risk factors in the initial treatment
+Also analyzed is the infl uence of comorbidity on treat-
+ment  outcome,  radiological  fi ndings,  the  infl uence  of 
+age  and  gender  on  the  outcome  of  treatment,  clinical 
+parameters, the infl uence of the treatment and preven-
+tion of vasospasm during treatment of initial treatment 
+outcome (Table 3).
+
+Risk factors
+Comorbidities
+Fisher
+Age
+WFNS
+Gender
+Type of treatment
+
+OR 
+3.7
+3.5
+2.2
+1.9
+1.6
+1.6
+
+95 % CI
+0.00-9.43
+0.57-21.80
+0.63-7.48
+0.52-6.95
+0.29-8.79
+0.29-8.79
+
+p
+0.016
+0.150
+0.208
+0.365
+0.597
+0.597
+
+Table 3. Values of risk factors in the initial treatment. OR 
+(Odds ratio) value
+
+Th  e  impact  of  comorbidity  on  the  outcome  of  the 
+
+situation
+
+If  we  analyze  the  impact  of  comorbidity  on  the  out-
+come it is obvious that there is a signifi cant relationship 
+between the presence of comorbidity and outcome. Th  e 
+patients without comorbidity (83.30%) had a good out-
+come (GOS IV and V), the same outcome was observed 
+
+100%
+
+90%
+
+80%
+
+70%
+
+60%
+
+50%
+
+40%
+
+30%
+
+20%
+
+10%
+
+0%
+
+59,40%
+
+21,90%
+
+18,8%
+
+Comorbidity
+
+83,30%
+
+GOS IV ii V
+
+GOS III
+
+GOS I i II
+
+16,70%
+
+0,0%
+Withouth comorbidity
+
+Figure 2. The eff ect of comorbidity on the SAH
+
+Figure 2. The effect of comorbidity on the SAH 
+
+in  59.4%  of  patients  with  comorbidities,  which  has  a 
+statistically signifi cant diff erence (p = 0.04). Th  e poorer 
+outcome, GOS III is present in higher percentage among 
+patients  with  comorbidities  (21.9%)  than  in  patients 
+without comorbidity (16.7%). Poor outcome (GOS I and 
+II) was not present among patients without comorbidi-
+ty, whereas in patients with comorbidity was present in 
+18.8% (Figure 2). If we separately analyze the impact of 
+hypertension as the most common form of comorbidi-
+ty in patients with SAH there is a noticeable higher fre-
+quency of negative outcomes in patients with hyperten-
+sion,  and  this  relationship  is  almost  reaching  statistical 
+signifi cance (p = 0.054) (Table 4). Also a diabetes is com-
+mon comorbidity entity which have a signifi cant impact 
+on  SAH  treatment  outcome.  Patients  without  diabetes 
+(32%)  had  a  good  outcome  (GOS  IV  and  V),  while  the 
+patients with diabetes only in 2% had a good outcome, 
+which  represents  a  statistically  signifi cant  diff erence  (p 
+= 0.009) (Table 5).
+
+GOS
+Without hypertension
+With hypertension
+Total
+
+GOS I and II GOS III
+0 (0 %)
+6 (20 %)
+6 (12 %)
+
+3 (15 %)
+7 (23.3 %) 17 (56.7 %)
+10 (20 %) 34 (68 %)
+
+GOS IV i V
+17 (85 %)
+
+p
+0.054
+
+100 %
+
+Table 4. The eff ect of hypertension on the outcome of SAH
+
+4. DISCUSSION
+
+Among the comorbidity registered in our sample hy-
+pertension  is  most  common  one  (30  patients  or  60%), 
+followed by diabetes (6 patients or 12%). Th  ere were no 
+signifi cant diff erences in the presence of comorbidity be-
+tween  groups.  If  we  analyze  the  impact  of  comorbidity 
+on the outcome it can be seen that there is a signifi cant 
+relationship  between  the  presence  of  comorbidity  and 
+the outcome. Results show that in case of hypertension 
+as  the  most  common  form  of  comorbidity  in  patients 
+with  SAH  there  is  a  higher  frequency  of  negative  out-
+comes, and this relationship is almost reaching statistical 
+signifi cance (p=0.054). Also diabetes represents a com-
+mon  comorbidity  entity  and  had  a  signifi cant  impact 
+on  SAH  treatment  outcome.  Patients  without  diabetes 
+(32%) had a good outcome (GOS IV and V), while the pa-
+tients with diabetes were only in 2% had good outcome, 
+which represents a statistically signifi cant diff erence (p = 
+0.009). Th  e patients without comorbidity (83.30%) had a 
+good outcome (GOS IV and V), while the same outcome 
+was  observed  (59.4%)  with  comorbidities,  which  has  a 
+statistically  signifi cant  diff erence  (p=0.04).  Th  e  poorer 
+outcome,  GOS  III  in  a  higher  percentage  was  present 
+in  patients  with  comorbidities  (21.9%)  than  in  patients 
+without comorbidity (16.7%). Poor outcome (GOS I and 
+II)  was  not  present  among  patients  without  comorbid-
+ity,  whereas  in  patients  with  comorbidity  was  present 
+in  18.8%.  In  the  study  from  2010,  Ingawa  came  to  the 
+conclusion  that  the  hypertension  was  the  most  power-
+ful  risk  factor  for  the  aneurismal  formation,  regardless 
+of age and sex, followed by hypercholesterolemia, heart 
+disease,  smoking,  diabetes  and  that  daily  drinking  was 
+insignifi cant  for  aneurismal  formation  (17).  Rasing 
+and  associates  studied  2012  patients  with  SAH  caused 
+by  rupture  of  cerebral  aneurysms  which  as  risk  factors 
+
+If we separately analyze the impact of hypertension as the most common form of comorbidity in 
+patients with SAH there is a noticeable higher frequency of negative outcomes in patients with 
+hypertension, and this relationship is almost  reaching  statistical significance (p = 0.054)  (Table 
+282
+4). 
+
+ORIGINAL PAPER | MEd ARh. 2015 Oct; 69(5): 280-283
+
+Table 4. The effect of hypertension on the outcome of SAH  
+GOS 
+Without hypertension 
+
+GOS I and II 
+0 (0 %) 
+
+GOS III 
+3 (15 %) 
+
+GOS IV i V 
+17 (85 %) 
+
+17 (56.7 %) 
+
+p 
+
+0.054 
+
+34 (68 %) 
+
+100 % 
+
+With hypertension 
+
+Total 
+
+6 (20 %) 
+
+6 (12 %) 
+
+7 (23.3 %) 
+
+10 (20 %) 
+
+Also a diabetes is common comorbidity entity which have a significant impact on SAH treatment 
+
+outcome.  Patients  without  diabetes  (32%)  had  a  good  outcome  (GOS  IV  and  V),  while  the 
+
+patients with diabetes only in 2% had a good outcome, which represents a statistically significant 
+
+difference (p = 0.009) (Table 5). 
+
+Table 5. The effect of diabetes on the outcome of SAH  
+
+GOS 
+
+Without diabetes 
+
+Diabetes  
+
+GOS I and II 
+
+3 (6.8 %) 
+
+           3 (50 %) 
+
+GOS III 
+
+9 (20.5 %) 
+
+1 (16.7 %) 
+
+GOS IV i V 
+
+32 (72.7 %) 
+
+2 (33.3 %) 
+
+p 
+
+0.009 
+
+4. DISCUSSION  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Impact of comorbidity on Early Outcome of Patients with Subarachnoid hemorrhage
+
+GOS
+Without diabetes 3 (6.8 %)
+ 3 (50 %)
+Diabetes 
+
+9 (20.5 %)
+1 (16.7 %)
+
+GOS IV i V
+32 (72.7 %)
+2 (33.3 %)
+
+p
+0.009
+
+GOS I and II GOS III
+
+Table 5. The effect of diabetes on the outcome of SAH
+
+had  hypertension  and  were  smokers.  The  increase  in 
+RR  (relative  risk)  for  hypertension  was  found  in  wom-
+en and in men, but an increase in RR for smoking was 
+found only in women (18). Lindgren et al in 2013 pub-
+lished a study claiming that type 2 diabetes does not in-
+crease the risk of rupture of the aneurysm, but that his 
+connection with the development of SAH, as the cause 
+of ruptured aneurysms still remains unclear (19). In our 
+study, is applied regression analysis, which is the model 
+included all potential predictors of outcome. As poten-
+tial predictors of outcome were considered: age, gender, 
+presence of comorbidity, clinical condition at presenta-
+tion, Fisher scale, and type of treatment (nimodipine or 
+MgSO4). The best and one independent good predictor 
+of outcome proved the presence of comorbidity, with OR 
+value above 3.5. Unexpectedly, the clinical condition at 
+presentation gradient WFNS scale has not proved to be 
+a good predictor of outcome. Schmid-Elsaesser et al in 
+2006 examined one hundred and thirteen patients with 
+aneurysmal SAH infection and were randomized to re-
+ceive either magnesium sulfate (10 mg/kg followed by 30 
+mg/kg daily), or nimodipine (48 mg/d) injecting at least 
+until the seventh postoperative day. There was no differ-
+ence in the results between the groups. The effectiveness 
+of magnesium in preventing delayed ischemic neurolog-
+ical deficit in patients with aneurysmal SAH seems to be 
+comparable to that of nimodipine. The difference in their 
+pharmacological properties seems to raise the possibility 
+of their combination (20). However, Van den Bergh, 2005 
+proved  that,  MgSO4  infusion  reduces  ischemic  neuro-
+logic deficit by 34% and fatalities by 23% (21). Mortality 
+in patients with SAH is still very high, despite substantial 
+qualitative progress in their treatment, the improvement 
+of  microsurgical  and  endovascular  treatment  meth-
+od  (the  adoption  of  new  insights  into  the  etiology  and 
+pathophysiology of events after SAH and possibilities of 
+medication complications) (22).
+
+5. CONCLUSIONS
+
+Patients  who  received  MgSO4  had  less  neurological 
+deficits,  better  functional  recovery  in  the  initial  phase 
+and  a  better  outcome  in  the  GOS-in,  but  without  sta-
+tistical  significance.  The  outcome  of  treatment  30  days 
+after the occurrence of SAH, analyzed values WFNS and 
+GOS, is not dependent on the method of prevention and 
+treatment of vasospasm. The most common comorbid-
+ities  in  patients  with  aneurysms  SAH,  requiring  addi-
+tional treatment measures are: arterial hypertension and 
+diabetes  mellitus.  The  biggest  pro-activity  in  the  initial 
+treatment  of  patients  with  subarachnoid  hemorrhage 
+caused  by  rupture  of  cerebral  aneurysms  has  the  pres-
+ence of comorbidity, which has statistical significance.
+
+CONFLICT OF INTEREST: NONE DECLARED
+
+REFERENCES
+1. 
+
+2. 
+
+3. 
+
+4. 
+
+5. 
+
+6. 
+
+7. 
+
+8. 
+
+Brisman  JL,  Song  JK,  Newell  DW.  Cerebral  aneurysms.  N  Engl  J  Med. 
+2006; 355(9): 928-939.
+Bederson J, Connolly E, Batjer H. Guidelines for the management of aneu-
+rysmal subarachnoid hemorrhage: a statement for healthcare profession-
+als from a special writing group of the Stroke Council, American Heart 
+Association. Stroke. 2009; 40(3); 994-1025.
+Soehle M, Czosnyka M, Pickard JD, Kirkpatrick PJ. Continuous assess-
+ment  of  cerebral  autoregulation  in  subarachnoid  hemorrhage.  Anesth 
+Analg. 2004; 98(4): 1133-1139.
+Yasuno K, Bilguvar K, Bijlenga P. Genome-wide association study of in-
+tracranial aneurysm identifies  threenew  risk  loci.  Nat  Genet.  2010; 42: 
+420-425.
+Huttunen T, von und zu Fraunberg M, Frösen J, Lehecka M, Tromp G, Helin 
+K, Koivisto T, Rinne J, Ronkainen A, Hernesniemi J, Jääskeläinen JE. Saccu-
+lar intracranial aneurysm disease: distribution of site, size, and age suggests 
+different etiologies for aneurysm formation and rupture in 316 familial 
+and 1454 sporadic eastern Finnish patienHYPERLINK “http://www.ncbi.
+nlm.nih.gov/pubmed/20190670”ts. Neurosurgery. 2010; 66(4): 631-638.
+Huttunen  T,  von  und  Zu  Fraunberg  M,  Koivisto  T,  Ronkainen  A, 
+Rinne  J,  Sankila  R,  Seppä  K,  Jääskeläinen  JE.  Long-term  excess  mor-
+tality  of  244  familial  and  15HYPERLINK  “http://www.ncbi.nlm.nih.
+gov/pubmed/21099703”02  sporadic  one-year  survivors  of  aneurysmal 
+subarachnoid  hemorrhage  compared  with  a  matched  Eastern  Finn-
+ish  catchment  populationHYPERLINK  “http://www.ncbi.nlm.nih.gov/
+pubmed/21099703”. Neurosurgery. 2011; 68(1): 20-27..
+Feigin VL, Rinkel GJ, Lawes CM, Algra A, Bennett DA, van Gijn J, Ander-
+son CS. Risk factors for subarachnoid hemorrhage: an updated systematic 
+review of epidemiological studies. Stroke. 2005; 36: 2773-2780.
+Juvela S, Poussa K, Porras M. Factors affecting formation and growth of 
+intracranial  aneurysms:  a  long-term  follow-up  study.  Stroke.  2001;  32: 
+485-491.
+
+9.  Wermer MJ, van der Schaaf IC, Velthuis BK, Algra A, Buskens E, Rinkel 
+GJ. Follow-up screening after subarachnoid haemorrhage: frequency and 
+determinants of new aneurysms and enlargement of existing aneurysms. 
+Brain. 2005; 128: 2421-2429.
+
+10.  Harrod CG, Bendok BR, Batjer HH. Prediction of cerebral vasospasm in 
+patients presenting with aneurysmal subarachnoid hemorrhage: a review. 
+Neurosurgery. 2005; 56: 633-654.
+
+11.  Rinkel GJ, Feigin VL, Algra A, van den Bergh WM, Vermeulen M, van 
+Gijn J. Calcium antagonist for aneurysmal subarachnoid haemorrhage. 
+Cochrane Database Syst Rew. 2005; 25;(1): CD00027.
+
+13. 
+
+12.  Liu GJ, Luo J, Zhang LP, Wang ZJ, Xu LL, He GH, Zeng YJ, Wang YF. Me-
+ta-analysis of the effectiveness and safety of prophylactic use of nimodip-
+ine in patients with an aneurysmal subarachnoid haemorrhage. CNS Neu-
+rol Disord Drug Targets. 2011; 10(7): 834-844.
+Saver JL, Kidwell C, Eckstein M, Starkman S. Prehospital neuro-protec-
+tive therapy for acute stroke: results of the Field Administration of Stroke 
+Therapy-Magnesium (FAST-MAG) pilot trial. Stroke. 2004; 35: e106-108.
+14.  Yahia AM, Kirmani JF, Qureshi AI, Guterman LR, Hopkins LN. The safety 
+and feasibility of continuous intravenous magnesium sulfate for preven-
+tion of cerebral vasospasm in aneurysmal subarachnoid hemorrhage. Neu-
+rocritical Care. 2005; 3: 16-23.
+
+15.  Veyna  RS,  Seyfried  D,  Burke  DG,  Zimmerman  C,  Mlynarek  M,  Nich-
+ols V, Marrocco A, Thomas AJ, Mitsias PD, Malik GM. Magnesium sul-
+fate  therapy  after  aneurysmal  subarachnoid  hemorrhage.  J  Neurosurg. 
+2002; 96: 510-514.
+
+17. 
+
+16.  Wong GK, Chan MT, Gin T, Poon WS. Intravenous magnesium sulfate 
+after aneurysmal subarachnoid hemorrhage. Acta Neurochir Suppl. 2011; 
+110 (Pt 2): 169-173.
+Ingawa T. Risk factors for the formation and rupture of intracraniali saccu-
+lar aneurysms in Shimane, Japan. World Neurosurg. 2010; 73(3): 155-164.
+18.  Rasing I, Nieuwkamp DJ, Algra A, Rinkel GJ. Additional risk of hyper-
+tension  and  smoking  for  aneurysms  in  people  with  a  family  history  of 
+subarachnoid haemorrhage. J Neurol Neurosurg Psychiatry. 2012; 83(5): 
+541-542.
+Lindgren AE, Kurki MI, Riihinen A, Koivisto T, Ronkainen A, Rinne J, 
+Hernesniemi J, Eriksson JG, Jääskeläinen JE. Type 2 Diabetes and Risk of 
+Rupture of Saccular Intracranial Aneurysm in Eastern Finland. Diabetes 
+Care. 2013; 36(7): 2020-2026.
+Schmid-Elsaesser R, Kunz M, Zausinger S, Prueckner S, Briegel J, Steiger 
+HJ. Intravenous magnesium versus nimodipine in the treatment of pa-
+tients with aneurysmal subarachnoid hemorrhage: a randomized study. 
+Neurosurgery. 2006; 58: 1054-1065.
+
+20. 
+
+19. 
+
+21.  Van den Bergh WM, Algra A, van der Sprenkel JW, Tulleken CA, Rinkel 
+GJ. Hypomagnesemia after aneurysmal subarachnoid hemorrhage. Neu-
+rosurgery. 2003; 52: 276-281. discussion 281–282.
+
+22.  Gavranić A, Šimić H, Škoro I. Subarachnoid hemorrhage. Medicina flu-
+
+minensis. 2011; 47(2): 143-156.
+
+ORIGINAL PAPER | MEd ARh. 2015 Oct; 69(5): 280-283
+
+283
+
+

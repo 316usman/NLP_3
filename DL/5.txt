@@ -1,0 +1,2348 @@
+Uncertainty Quantification in Machine Learning for
+Joint Speaker Diarization and Identification
+
+Simon W. McKnight, Student Member, IEEE, Aidan O. T. Hogg, Student Member, IEEE,
+Vincent W. Neo, Student Member, IEEE, and Patrick A. Naylor, Fellow, IEEE
+
+1
+
+3
+2
+0
+2
+
+c
+e
+D
+8
+2
+
+]
+S
+A
+.
+s
+s
+e
+e
+[
+
+1
+v
+3
+6
+7
+6
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Abstract—This paper studies modulation spectrum features
+(Φ) and mel-frequency cepstral coefficients (Ψ) in joint speaker
+diarization and identification (JSID). JSID is important as
+speaker diarization on its own to distinguish speakers is insuf-
+ficient for many applications, it is often necessary to identify
+speakers as well. Machine learning models are set up using
+convolutional neural networks (CNNs) on Φ and recurrent
+neural networks – long short-term memory (LSTMs) on Ψ, then
+concatenating into fully connected layers.
+
+Experiment 1 shows machine learning models on both Φ and
+Ψ have significantly better diarization error rates (DERs) than
+models on either alone; a CNN on Φ has DER 29.09%, compared
+to 27.78% for a LSTM on Ψ and 19.44% for a model on both.
+Experiment 1 also investigates aleatoric uncertainties and shows
+the model on both Φ and Ψ has mean entropy 0.927 bits (out of
+4 bits) for correct predictions compared to 1.896 bits for incorrect
+predictions which, along with entropy histogram shapes, shows
+the model helpfully indicates where it is uncertain.
+
+Experiment 2 investigates epistemic uncertainties as well as
+aleatoric using Monte Carlo dropout (MCD). It compares models
+on both Φ and Ψ with models trained on x-vectors (X ), before
+applying Kalman filter smoothing on the epistemic uncertainties
+for resegmentation and model ensembles. While the two models
+on X perform better (DERs 10.23% and 9.74%) than the models
+on Φ and Ψ (DER 17.85%) after their individual Kalman filter
+smoothing, combining the models using a Kalman filter smooth-
+ing method improves the DER to 9.29%. Aleatoric uncertainties
+are again shown to be higher for incorrect predictions.
+
+Both Experiments show models on Φ do not distinguish over-
+lapping speakers as well as anticipated. However, Experiment 2
+shows model ensembles do better with overlapping speakers than
+individual models do.
+
+Index Terms—modulation spectrum,
+
+speaker diarization,
+
+aleatoric and epistemic uncertainty, Kalman filter smoothing.
+
+I. INTRODUCTION
+
+S PEAKER diarization is the process of distinguishing dif-
+
+ferent speakers in any given speech signal and identifying
+the times during which they speak. It involves two fundamental
+aspects: (i) segmentation of speech data into either constant
+time periods (e.g. a fixed number of frames) or non-constant
+time periods that are homogeneous in some way (e.g. single
+speaker speech, overlapping speaker speech or no speech);
+and (ii) clustering and/or labelling the segments identified to
+attribute them to individual speakers [1], [2], [3], [4]. Diariza-
+tion is useful both alone to distinguish speakers and as an
+
+The authors are in the Electrical and Electronic Engineering De-
+partment, Imperial College London, Exhibition Road, South Kensington,
+London SW7 2BX, UK, e-mails: {s.mcknight18, a.hogg, vincent.neo09,
+p.naylor}@imperial.ac.uk.
+
+This manuscript is first received 5 May 2023.
+
+upstream process leading to speaker identification, automatic
+speech recognition (ASR) or other systems.
+
+Most diarization research systems distinguish speakers but
+do not identify them (e.g. as “Speaker 1”). This is consistent
+with diarization challenges (e.g.
+the DIHARD challenges
+[5], [6], [7]), which usually also require the system to be
+tested on speakers not in the training set. It is possible to
+have a subsequent speaker identification system that identifies
+speakers once they have been diarized, but a significant
+amount of research combines the two to, for example, im-
+prove performance or facilitate online applications. Examples
+include speech separation using speaker inventory [8], [9],
+joint speaker identification and speech separation [1] and
+continuous speaker identification [10]. Others reformulate as
+multi-label classification [11].
+
+The term joint speaker diarization and identification (JSID)
+is used as the emphasis is on speaker diarization (including
+diarization scoring methods), but it also performs closed set
+speaker identification for training and testing features.
+
+A. Modulation Spectrum Background
+
+The modulation spectrum describes how the frequency
+content of a speech signal changes over time [12]. There
+are many different ways of calculating modulation spectrum
+features (Φ). This paper uses the joint acoustic and modulation
+spectrum approach of [13] as extended in [14]. Φ has two parts
+here: (i) the temporal envelope (ENV), which uses amplitude
+modulation (AM) principles to look at the slowly changing
+temporal trajectory of specific acoustic frequency bands; and
+(ii) the temporal fine structure (TFS), which uses frequency
+modulation (FM) principles to look at the rapidly changing
+instantaneous frequency around the centre frequencies of those
+acoustic frequency bands [14]. Φ is expected to perform well
+for distinguishing speakers [15] and detecting overlapping
+speakers [13].
+
+B. Uncertainty Quantification Background
+
+Most trained machine learning models are deterministic,
+with point values set for specific weights and outputs despite
+the inherent uncertainties caused by inaccurate labels and
+imperfect models. Machine learning models that additionally
+indicate the confidence in their predictions are generally more
+advantageous. Attempts have been made to quantify the levels
+of uncertainty [16], [17], [18], [19] in terms of: (a) aleatoric
+uncertainty, also known as stochastic, statistical or irreducible
+uncertainty; and (b) epistemic uncertainty, also known as
+
+ 
+ 
+ 
+ 
+ 
+ 
+systemic or reducible uncertainty. Total uncertainty is both
+aleatoric and epistemic uncertainty.
+
+Aleatoric uncertainty describes noise in observations,
+whereas epistemic uncertainty describes errors due to im-
+perfect models. Epistemic uncertainty describes uncertainty
+in the models fitted on the data, both for the weights of
+the models (i.e. parametric) and the model structures. A
+Bayesian neural network (BNN) is a common starting point
+for evaluating the parametric epistemic uncertainty by fitting
+probability distributions for some or all of the weights in the
+model [20], but it was found to be very difficult to find a
+suitable BNN model architecture that did not underfit the data.
+Consequently, this paper uses the Monte Carlo dropout ap-
+proximation to Bayesian inference that applies dropout during
+testing as well as during training [21], [22]. Note that what
+one machine learning model treats as aleatoric uncertainty,
+another may treat as epistemic uncertainty, and vice versa
+[23], [24]. Research has only recently started to investigate
+uncertainty quantification in speaker diarization [25], [26], and
+the research in those papers is very different from this research.
+Aleatoric uncertainty is known to be particularly important
+for speaker diarization, and consequently JSID, because of the
+difficulty and subjectivity in obtaining accurate labels [27].
+
+C. Resegmentation
+
+Most diarization systems use some form of resegmentation
+in the post-processing stage to improve initial clusters or labels
+[28]. This paper considers two: simple smoothing; and Kalman
+filter methods, both forward only and the two-pass Rauch-
+Tung-Striebel (RTS) fixed interval smoothing [29].
+
+D. This Research
+
+The novel contributions of this research are showing that:
+(a) Φ and mel-frequency cepstral coefficients (MFCCs) both
+have information that the other does not have and establishing
+a model to take advantage of it; (b) aleatoric uncertainties
+contain meaningful information that can be used to calculate
+frame entropies that show how models perform based on
+various conditions (e.g. the number of speakers in a frame);
+and (c) total uncertainties can be used to combine models and
+improve results.
+
+II. ANALYSIS
+
+A. Generating Modulation Spectrum Features Φ
+
+The 4-stage process used to generate Φ is described in [14].
+Here, they are: (a) first short-time discrete Fourier transform
+(STFT); (b) calculate the spectral envelope using Hilbert
+transforms; (c) second STFT across frequency bands; and
+(d) calculate ENV and TFS features using Hilbert transforms.
+As [14] showed that the TFS features contain additional
+speaker-specific information over and above the ENV features,
+the form of TFS features ΦT F S ∈ RL×K×H was chosen
+to have the same dimensions as the ENV features ΦEN V ∈
+RL×K×H where L is the number of modulation frames, K is
+the number of acoustic frequency bands and H is the number
+of modulation frequency bands.
+
+Φ ∈ RL×K×H×2 stacks the ENV and TFS features so
+
+Φ(l, k, h, 0) = ΦEN V (l, k, h) and
+Φ(l, k, h, 1) = ΦT F S(l, k, h)
+
+2
+
+(1)
+
+(2)
+
+for {l ∈ Z : 0 ≤ l ≤ L − 1}, {k ∈ Z : 0 ≤ k ≤ K − 1} and
+{h ∈ Z : 0 ≤ h ≤ H − 1}.
+
+To emphasise relative magnitudes within each frame rather
+than absolute values, each element ΦEN V (l, k, h) was divided
+by the Frobenius norm ||ΦEN V (l)||F of frame l, and similarly
+for ΦT F S(l). As is common practice, the values were then
+standardised across frames.
+
+B. Uncertainty Quantification
+
+The aleatoric uncertainty for a particular modulation frame
+l, speaker s of S possible speakers, input features Xl,s and
+output vector yl,s where each speaker is a binary output is
+given by p(yl,s|Xl,s, θ), where θ denotes the weights of the
+relevant neural network comprising the weight terms W and
+bias terms b. The epistemic uncertainty is p(θ|Dl,s), where
+Dl,s denotes the observed data, i.e. Dl,s = {Xl,s, yl,s}.
+
+the
+
+to give
+
+following [30]
+
+The experiments used Bernoulli output probability dis-
+additional op-
+tributions
+taking random samples from the outputs. The
+tion of
+IndependentBernoulli class
+from the TensorFlow
+Probability library [31], [32] was used. However, the results
+reported in this paper only use the mean output, which gives
+exactly the same result as using sigmoid activation in the
+final dense layer when training with binary cross-entropy loss.
+In addition, it was noted that the calibration graphs such as
+that shown in Fig. 1 were found to be well calibrated, so no
+probability calibration was used.
+
+The output aleatoric probability predicted by a particular
+model for a particular speaker and modulation frame is de-
+noted by ˆp(yl,s|Xl,s, θ) and shortened to ˆpl,s. The model
+prediction for the speakers for that frame is then
+
+ˆyl,s =
+
+(cid:26) 1
+0
+
+if ˆpl,s > λ
+if ˆpl,s ≤ λ
+
+,
+
+(3)
+
+where λ is the probability threshold that is usually set to 0.5
+(see Section III-G for experiments on this).
+
+Quantifying epistemic uncertainty using Monte Carlo
+dropout involves running the trained model N times on the test
+data. As the dropout is also applied when testing, the output
+values differ each time, and it is then possible to fit probability
+distributions for the predictions of each modulation frame
+that would quantify the uncertainty. In this paper, the mean
+probability, 2.5% to 97.5% probability range, mean prediction
+and modal prediction are calculated. Denoting each sample n
+with superscript [n], the mean probability is
+
+¯pl,s =
+
+1
+N
+
+N −1
+(cid:88)
+
+n=0
+
+ˆp[n]
+l,s ,
+
+(4)
+
+the 2.5% to 97.5% percentile probability range is calculated
+from those same values ˆp[n]
+l,s sorted in ascending order and the
+mean prediction is
+
+¯yl,s =
+
+1
+N
+
+N −1
+(cid:88)
+
+n=0
+
+ˆy[n]
+l,s .
+
+(5)
+
+Defining the set of samples for each modulation frame and
+
+speaker as ˆYl,s, the modal prediction is defined as
+
+˜yl,s = arg max
+
+ˆy[n]
+l,s
+
+|{ˆy[n]
+
+l,s ∈ ˆYl,s}| ∀ n,
+
+(6)
+
+where |{·}| denotes the cardinality of the set.
+
+Since the Kalman filter discussed in Section II-C uses
+standard deviations as well as means,
+initial experiments
+used the means ¯pl,s (which were generally very close to the
+medians) and divided the 2.5% to 97.5% percentile ranges
+by four to approximate the standard deviation. However,
+although this crude measure was a useful starting point,
+and better than a typical Gaussian distribution because the
+values of ¯pl,s were all within the range [0, 1], better re-
+sults were obtained by fitting a truncated Gaussian distri-
+bution ϕl,s instead. There is no closed-form way to calcu-
+late the values, so the distributions were fitted using the
+scipy.optimize.fmin_slsqp sequential least squares
+programming function on the scipy.stats.truncnorm
+generated values following [33].
+
+C. Resegmentation
+
+Initially, a simple smoothing mechanism was used. This
+had two effects: (a) it bridged prediction gaps (ˆyl,s = 1
+for P-MODEL and ˜yl,s = 1 for MCD-MODEL) of up to
+G frames, where {G ∈ Z : 0 ≤ G ≤ 10}, between the
+same person speaking were treated as all speech; and (b) it
+then flattened any remaining single frame spikes. The results
+shown in Table V had G = 3. Although G was initially tested
+as a hyperparameter to be optimised on the validation set,
+the optimum value of G on the validation set did not always
+correspond to the optimum value of G on the test set, which
+led to using G = 3 as an empirically selected value.
+
+An alternative method that takes advantage of the standard
+deviations for the epistemic uncertainty is to use Kalman filters
+[29]. Kalman filters work on both single models and multiple
+models by treating the predictions of each model as separate
+observations. Several variations of Kalman filters exist, but this
+
+3
+
+paper uses the two-pass RTS fixed interval method described
+in Algorithm 1. The Kalman filter equations are normally set
+out in matrix form, but since this paper is only tracking a
+single variable x that is based on the observations z = ¯pl,s the
+simpler formulation is preferred for clarity. Some experiments
+were also run without the backward pass step of RTS, but
+results were generally better with it.
+
+The validation set was used to find optimal values of
+certain Kalman filter hyperparameters for subsequent use on
+the training set. Not all Kalman filter variable parameters were
+found to generalise well to the training set (e.g. the threshold
+percentage discussed in Section III-G), so those were set at
+empirically selected fixed values. Transition factor f for frame
+l and speaker s is
+
+
+
+
+,
+
+
+
+(7)
+
+fl,s =
+
+f0
+f1
+f2
+
+if forward and ¯pl,s > λ
+if forward and ¯pl,s ≤ λ
+if backward
+where f0, f1 and f2 are scalars that are fitted on the validation
+set. Some experiments tested setting f0 and f1 to be the same
+value, but it was generally found that f1 should be higher than
+f0. This makes sense because although f0 bears similarities
+to the probability that a speaker continues speaking and f1 to
+the probability that a speaker starts speaking if not speaking
+before, it is not exactly the same because it (a) is a multiple of
+the previous value of ˆxl−1,s|l−1,s and (b) could not be greater
+than one (pl,s rapidly exceeded computer memory if it did).
+The process variance ql,s is treated similarly, though only
+
+applies in the forward stage so
+
+ql,s =
+
+(cid:26) q0
+q1
+
+if ¯pl,s > λ
+if ¯pl,s ≤ λ
+
+.
+
+(8)
+
+The observation factor h ∈ RU ×1 for U models, where
+each hu is fitted on the validation set. The model observation
+variance Rl,s ∈ RU ×U is different for each modulation frame
+and is a diagonal matrix based on the epistemic uncertainty
+variance calculated using ϕl,s for each model u. The variables
+in Algorithm 1 are: (a) ˆxl,s|l−1,s is the initial a priori state
+estimate and ˆxl,s|l−1,s is the updated a posteriori state esti-
+mate; (b) pl,s|l−1,s is the initial a priori covariance estimate
+and pl,s|l,s is the updated a posteriori state estimate (i.e. it
+should not be confused with the use of pl,s for probability in
+Section II-B; and (c) kl,s ∈ RU ×1 is the Kalman gain.
+
+Fig. 1: Probability calibration graph on validation set for total uncertainties of MCD2-X R (defined in Section III-C).
+
+0-55-1010-1515-2020-2525-3030-3535-4040-4545-5050-5555-6060-6565-7070-7575-8080-8585-9090-9595-100Predicted probability bins (%)020406080100Percentage correct (%)D. Scoring Metrics
+
+The standard binary accuracy metric in TensorFlow 2 was
+used on the training and validation sets, then the time-based
+diarization error rate (DER) metric md-eval.pl developed
+for the National Institute of Standards and Technology (NIST)
+Rich Transcription Challenges [34] was used on the test set.
+However, using the binary accuracy metric meant that a system
+would show around 78% accuracy simply by predicting no
+speakers for any frames, so the precision and recall metrics
+give more meaningful results.
+
+In addition to those metrics, it became evident when running
+the experiments that a frame-based DER metric was essen-
+tial. Although it was possible to reconstruct the signal and
+apply md-eval.pl following each training epoch, it was
+prohibitively computationally intensive and slow. By contrast,
+a frame-based DER metric could take advantage of the vec-
+torisation and parallelisation inherent in TensorFlow 2 and its
+batch training, and allow easier tracking of the DER metrics
+during training of the models. A further benefit of a frame-
+based DER metric was to enable more detailed inspection of
+where errors occurred (e.g. whether the model tended to over-
+or under-estimate the number of speakers for a ground truth
+labelling of two or more speakers). This Section II-D describes
+the construction of these frame-based DER metrics.
+The time-based DER metric in md-eval.pl is
+
+DERτ =
+
+τM + τF A + τSE
+τT OT AL
+
+= Mτ + F Aτ + SEτ ,
+
+(9)
+
+where τ denotes time-based metrics (distinguished from ϵ used
+for the frame-based metrics later); {τM , τF A, τSE, τT OT AL}
+are the missed speaker time, false alarm time, speaker error
+
+Algorithm 1: Kalman filter tracking employed
+Forward prediction
+for 0 ≤ s ≤ S − 1 do
+
+l,spl−1,s|l−1,s + ql,s
+
+for 0 ≤ l ≤ L − 1 do
+Predict step
+ˆxl,s|l−1,s = fl,s ˆxl−1,s|l−1,s
+pl,s|l−1,s = f 2
+Update step
+˜yl,s = zl,s − hˆxl,s|l−1,s
+Sl,s = hpl,s|l−1,shT + Rl,s
+kl,s = pl,s|l−1,shT S−1
+l,s
+ˆxl,s|l,s = ˆxl,s|l−1,s + kT
+pl,s|l,s = (1 − kT
+
+l,s˜yl,s
+l,sh)pl,s|l−1,s
+
+end
+
+end
+Backward sweep
+for 0 ≥ s ≥ S − 1 do
+
+for L − 2 ≥ l ≥ 0 do
+
+al,s = pl,s|l,sfl,s/pl+1,s|l,s
+ˆxl,s|L−1,s = al,s(ˆxl+1,s|L−1,s − ˆxl+1,s|l,s)
+pl,s|L−1,s =
+pl,s|l,s + al,s(pl+1,s|L−1,s − pl+1,s|l,s)/al,s
+
+end
+
+end
+
+4
+
+time and total speech time respectively; and {Mτ , F Aτ , SEτ }
+are the time-based missed speaker percentage, false alarm
+percentage and speaker error percentage respectively.
+
+For a particular batch,
+
+the ground truth training labels
+Y ∈ RB × S, where B is the batch size, S is the number of
+speakers and each entry is either 0 or 1 (this is not the same
+as one-hot encoding as there can be more than one speaker
+per modulation frame). For each training batch, the miss error
+metric ϵM is calculated using
+
+ϵM =
+
+1
+B
+
+B−1
+(cid:88)
+
+l=0
+
+max
+
+(cid:32) S−1
+(cid:88)
+
+s=0
+
+yl,s −
+
+S−1
+(cid:88)
+
+s=0
+
+(cid:33)
+
+ˆyl,s, 0
+
+(10)
+
+and the false alarm metric ϵF A is calculated similarly as
+
+B−1
+(cid:88)
+
+max
+
+(cid:32) S−1
+(cid:88)
+
+S−1
+(cid:88)
+
+(cid:33)
+.
+
+ˆyl,s −
+
+yl,s, 0
+
+(11)
+
+ϵF A =
+
+1
+B
+
+l=0
+
+s=0
+
+s=0
+
+product ⊙ is
+
+The Hadamard
+
+to
+H = Y ⊙ ˆY. The speaker error metric ϵSE is
+(cid:32)S−1
+(cid:80)
+s=0
+
+S−1
+(cid:80)
+s=0
+
+S−1
+(cid:80)
+s=0
+
+ϵSE =
+
+B−1
+(cid:88)
+
+ˆyl,s,
+
+used
+
+1
+B
+
+min
+
+yl,s
+
+(cid:33)
+
+−
+
+(cid:34)
+
+l=0
+
+calculate
+
+(cid:35)
+.
+
+(12)
+
+hl,s
+
+These individual errors are summed to give ϵDER as the
+
+frame-based proxy for τDER
+
+DERϵ =
+
+ϵM + ϵF A + ϵSE
+ϵT OT AL
+
+= Mϵ + F Aϵ + SEϵ,
+
+(13)
+
+ϵ
+
+denotes
+
+frame-based
+
+metrics;
+where
+{ϵM , ϵF A, ϵSE, ϵT OT AL} are number of missed speaker
+modulation frames, false alarm modulation frames, speaker
+error modulation frames and total speech modulation frames
+respectively; and {Mϵ, F Aϵ, SEϵ} are the frame-based
+missed speaker percentage,
+false alarm percentage and
+speaker error percentage respectively. The frame-based values
+do not exactly match the time-based measures because of
+the rounding into modulation frames as well as the use
+of
+the ground truth speech activity detection (GT-SAD)
+post-processing before calculating the time-based metrics.
+
+III. EXPERIMENTAL DESIGN AND RESULTS
+
+A. Experiment Structure
+
+This research is split into two complementary experiments:
+1) Experiment 1 - studies whether modulation spectrum
+has useful information for speaker diarization beyond
+MFCCs or Ψ; and
+
+2) Experiment 2 - studies whether total uncertainty quan-
+tification can be used to gain more meaningful infor-
+mation about the model predictions and produce better
+models in the resegmentation step.
+
+B. Datasets and Ground Truth Labels
+
+AMI Corpus [35] ES2008 headset recordings were used.
+These four meetings all had the same four speakers, which
+enabled (a) for Experiment 1, training on three of them and
+testing on one and (b) for Experiment 2, training on two of
+them, validating and fitting resegmentation models on one and
+then testing on one. Experiment 1 models were trained on
+
+TABLE I: Statistics for ES2008 meetings, where “Dur.” is duration of meeting, “Tot. Spch” is total speech time that includes
+overlapping speakers individually, “Utts” is number of utterances by individual speakers, “Comb. Spch” is speech time that
+only counts overlapping speakers once, “Segs” is number of speech segments (one segment may have more than one speaker
+and more than one utterance), “Overlap” is percentage of time that there is more than one speaker, “Ch. Rate” is speaker
+change rate (twice number of ground truth segments divided by speech file length) and “ASD” is average segment duration.
+
+Meeting
+ES2008a
+ES2008b
+ES2008c
+ES2008d
+
+Dur. (mins)
+17:23.360
+37:11.659
+35:02.621
+43:45.824
+
+Dur. (s)
+1,043.360
+2,231.659
+2,102.621
+2,625.824
+
+Tot. Spch (s)
+806.640
+1,849.770
+1,957.110
+2,349.910
+
+Utts
+168
+439
+396
+757
+
+Comb. Spch (s)
+775.940
+1,742.020
+1,741.850
+2,113.810
+
+Segs Overlap (%)
+107
+248
+174
+396
+
+3.955
+6.185
+12.358
+11.169
+
+Ch. Rate (Hz)
+0.322
+0.393
+0.377
+0.577
+
+ASD (s)
+4.80
+4.21
+4.94
+3.10
+
+5
+
+meetings ES2008b, c and d, then tested on ES2008a as it is
+the shortest. Experiment 2 models use the ES2008c meetings
+as the validation set as it is the second shortest.
+
+Initially, ground truth labels were constructed from the
+ES2008a.[A-D].segments.xml files, but it was found
+that (a) these contained silence of 0.25-0.5 s at
+the start
+and end of each segment [36] which greatly increased miss
+errors as well as confusing the model training (the reason for
+these silences was possibly because false positives were seen
+as worse than false negatives in a speech activity detection
+(SAD) used for ASR [37], [38]) and (b) they included non-
+lexical sounds such as laughter and coughing. Consequently,
+the ground truth labels, and also the ground truth SAD
+which was used in Experiment 2, were constructed from the
+ES2008a.[A-D].words.xml files generated for the AMI
+corpus for words only using forced alignment and HTK [35]
+(conveniently already extracted in the “only words” directory
+of [39], [40]). This led to DERϵ and DERτ improvements of
+around 6-8%. Table I shows general statistics for the meetings.
+Diarization performance is greatly affected by the amount of
+overlapping speech as well as how often the speakers change.
+
+C. Features and Systems Used
+
+A particular challenge for comparing single frame vector
+features such as MFCCs with modulation spectrum matrix
+features is the drastically different frame durations as well
+as the different shapes. MFCCs involve STFTs that need
+stationary processes in each frame, so the frames cannot
+be longer than about 40 ms [41]. By contrast, modulation
+spectrum features need many acoustic frames, so even if the
+acoustic frame steps Fa used by the modulation spectrum are
+significantly shorter than those for MFCCs denoted Fa2, using
+many of them will generally result in modulation frame steps
+Fa being significantly longer than Fa2. DiarTk [42] is an
+existing speaker diarization system that is designed to work
+with multiple different input feature types, but unfortunately
+it (a) requires different input features to have the same frame
+duration and step and (b) only works on vector inputs.
+
+Consequently, a novel deep learning architecture extending
+[14] was established that uses convolutional neural networks
+(CNNs) for the modulation spectrum features and a many-
+to-one recurrent neural network - long short-term memory
+(LSTM) for a number of MFCCs such that the aggregate
+duration of those frame steps equals the modulation frame
+step. The outputs of those convolutional neural network (CNN)
+and LSTM blocks were then concatenated and fed into fully
+
+connected layers. This architecture had a further benefit that
+it continued to work with just the CNN or LSTM blocks
+alone feeding into the fully connected layers. Bidirectional
+LSTM (BiLSTM) with output concatenation were tried in both
+Experiments 1 and 2, and were found to improve results in
+Experiment 1 but not Experiment 2.
+
+For Experiment 1, Φ was constructed from Wa = 3 ms
+frames stepped by Fa = 1 ms and modulation frames Wm =
+1 s stepped by Fm = 250 ms. The MFCCs Ψ were created
+using 30 ms frames stepped by 10 ms using 32 filter banks,
+reduced to 19 dimensions after the discrete cosine transform
+(DCT) then grouped into lots of 250
+10 = 25 so that the aggregate
+length of those frame steps equals Fm.
+
+For Experiment 2, Fm was increased to 1.5 s for consistency
+with the x-vector lengths in [43], [39] and which are used in
+Experiment 2. This enabled more direct comparison as well
+as facilitating the use of Kalman filters to combine the model
+outputs. This paper denotes x-vectors generally as X . There
+are two types of x-vectors used in this paper, namely the 512×
+1 dimension x-vectors from [43] defined as X B and the 256×
+1 dimension x-vectors from [43] defined as X R.
+
+The models were constructed in Python using TensorFlow 2.
+The TensorFlow Probability (TFP) library was used for the
+probabilistic layers [32]. The aleatoric aspects follow [30]
+and Monte Carlo dropout follows [44]. Experiments on model
+architecture tuning showed most consistent and reliable perfor-
+mance for: (a) the probabilistic model (P-MODEL) in Table II;
+and (b) the Monte Carlo dropout models on MFCCs and
+
+TABLE II: P-MODEL structure (P-ΦΨ).
+
+Layer
+Inputs
+Conv2D
+Conv2D
+MaxPool2D
+Conv2D
+Conv2D
+MaxPool2D
+Flatten
+Inputs
+BiLSTM
+Flatten
+Concat.
+Dropout
+Dense
+Dropout
+Dense
+Dropout
+Dense
+Bernoulli
+
+Units/Filter
+-
+F1, (3, 3)
+F2, (3, 3)
+(3, 3)
+F3, (3, 3)
+F4, (3, 3)
+(3, 3)
+-
+-
+UL
+-
+-
+-
+UD1
+-
+UD2
+-
+S
+-
+
+Activation
+-
+ReLU
+ReLU
+-
+ReLU
+ReLU
+-
+-
+-
+tanh/sig.
+-
+-
+-
+ReLU
+-
+ReLU
+-
+None
+-
+
+Output Shape
+(L, 25, 501, 2)
+(L, 23, 499, F1)
+(L, 21, 497, F2)
+(L, 7, 165, F2)
+(L, 5, 163, F3)
+(L, 3, 161, F4)
+(L, 1, 53, F4)
+(L, 53 × F4)
+(L, 25, 19)
+(L, 2UL)
+(L, 2UL)
+(L, 53 × F4 + 2UL)
+-
+(L, UD1)
+-
+(L, UD2)
+-
+(L, S)
+(L, S)
+
+1
+
+k
+c
+o
+l
+B
+
+2
+
+k
+c
+o
+l
+B
+
+d
+e
+n
+i
+b
+m
+o
+C
+
+modulation spectrum features in Table III and on x-vectors
+in Table IV (generically referred to as the MCD-MODEL).
+Using P-MODEL for both modulation spectrum features is
+shortened to P-ΦΨ, for modulation spectrum features only
+(i.e. without Block 2) is shortened to P-Φ and using it without
+Block 1 is shortened to P-Ψ for MFCCs only, P-Ψ∆ with
+delta features as well and P-Ψ∆∆ with both delta and delta-
+delta features as well. Similarly,
+the MCD-MODEL used
+in Experiment 1 is shortened to MCD1-ΦΨ, shortened to
+MCD1-Φ without Block 2 and to MCD1-Ψ, MCD1-Ψ∆ and
+MCD1-Ψ∆ without Block 1 depending on the delta features
+included. The same logic applies to MCD2-ΦΨ, MCD2-Φ,
+MCD2-Ψ, MCD2-Ψ∆ and MCD2-Ψ∆∆.
+
+The input data was put into batches of 512 shuffled each
+epoch, “valid” padding applied to the CNNs, the LSTM not
+stateful across modulation frames and adaptive momentum
+(adam) optimisation used. N = 200 for MCD-MODELs.
+
+Fig. 2 shows MCD1-ΦΨ example outputs for a 30 s test
+extract. The epistemic uncertainty ranges are clearly visible in
+parts (a) and (b), then the mean and modal predictions in (c)
+and (d) respectively look similar to the ground truth in (e).
+
+Monte Carlo dropout has additional dropout layers after
+each CNN layer. Following [22], the LSTM has the same
+dropout value for the input as well as for the recurrent layers
+(not shown in Table IV as included in LSTM function).
+Importantly, dropout continued to be applied in validation and
+testing. In each case, the model was trained using up to 100
+epochs (patience 10 and early stopping 25) and up to 100 tree
+Parzen estimator (TPE) trials.
+
+Experiment 2 compares results to three baseline systems:
+(a) DiarTk on Ψ [42], which is a agglomerative information
+bottleneck system; (b) the x-vector based system in [43]
+(BDII); and (c) the x-vector based system in [39] (ResNet101).
+
+D. Generating Features
+
+Because the features are computed with different frame
+sizes, the relevant speech signals were prepended and ap-
+pended with enough zeros before extracting the relevant fea-
+tures to ensure alignment. Accordingly, for a speech signal
+
+TABLE III: MCD-MODEL structure (MCD1-ΦΨ and
+MCD2-ΦΨ); “Act.” is activation, “Out. Sh.” is output shape.
+
+Layer
+Inputs
+Conv2D
+Dropout
+Conv2D
+Dropout
+MaxPool2D
+Conv2D
+Dropout
+Conv2D
+Dropout
+MaxPool2D
+Flatten
+Inputs
+(Bi)LSTM
+Flatten
+Concat.
+Dense
+Dropout
+Dense
+Dropout
+Dense
+Bernoulli
+
+Units/Filter
+-
+F1, (3, 3)
+-
+F2, (3, 3)
+-
+(3, 3)
+F3, (3, 3)
+-
+F4, (3, 3)
+-
+(3, 3)
+-
+-
+UL
+-
+-
+UD1
+-
+UD2
+-
+S
+-
+
+Act.
+-
+ReLU
+-
+ReLU
+-
+-
+ReLU
+-
+ReLU
+-
+-
+-
+-
+tanh/sig.
+-
+-
+ReLU
+-
+ReLU
+-
+None
+-
+
+MCD1 Out. Sh.
+(L, 25, 501, 2)
+(L, 23, 499, F1)
+-
+(L, 21, 497, F2)
+-
+(L, 7, 165, F2)
+(L, 5, 163, F3)
+-
+(L, 3, 161, F4)
+-
+(L, 1, 53, F4)
+(L, 53 × F4)
+(L, 25, 19)
+(L, 2UL)
+(L, 2UL)
+(L, 53F4 + 2UL)
+(L, UD1)
+-
+(L, UD2)
+-
+(L, S)
+(L, S)
+
+MCD2 Out. Sh.
+(L, 25, 751, 2)
+(L, 23, 749, F1)
+-
+(L, 21, 747, F2)
+-
+(L, 7, 249, F2)
+(L, 5, 247, F3)
+-
+(L, 3, 245, F4)
+
+(1, 81, F4)
+(L, 81 × F4)
+(L, 25, 19)
+(L, UL)
+(L, UL)
+(L, 81F4 + UL)
+(L, UD1)
+-
+(L, UD2)
+-
+(L, S)
+(L, S)
+
+1
+
+k
+c
+o
+l
+B
+
+2
+
+k
+c
+o
+l
+B
+
+d
+e
+n
+i
+b
+m
+o
+C
+
+6
+
+of time duration T , the number of modulation (and x-vector)
+frames was Nm = ⌈ T
+⌉. Speech signals were prepended
+Fm
+with [(Wm − Fm) + (Wa − Fa)]fs/2 zeros and appended
+with [(Nm × Fm − T ) + (Wm − Fm) + (Wa − Fa)]fs/2 zeros
+before calculating Φ and X . A copy of original speech signal
+were prepended with (Wa2 − Fa2)/2 zeros and appended with
+[(Nm × Fm − T ) + (Wa2 − Fa2)]fs/2 zeros before calculating
+Ψ.
+
+Although desirable to avoid using any SAD, uncertainties
+around when the speech actually started meant that there were
+long lead-in periods that could be mitigated using a post-
+processing SAD, applied to the ground truth data. Furthermore,
+the x-vectors were trained on speech only, and therefore not
+trained to distinguish speech from non-speech. The frame-
+based error metrics are reported before this GT-SAD is per-
+formed, so only the time-based error metrics are affected by
+it. Note that there is a significant advantage in using a SAD as
+pre-processing as the system can infer at least one speaker in
+the relevant segment, which biases results in favour of systems
+using them.
+
+E. Data Augmentation and Dither
+
+For Experiment 2, because the size of the training was
+comparatively small, data augmentation was used to double
+the size of the training set by supplementing the clean data
+with features generated from the same speech files but with
+additive white Gaussian noise (AWGN). The noisy signal for
+each sample was generated using random Gaussian ∼ N (0, 1)
+and scaled to achieve the desired target signal-to-noise ratio
+(SNR), then added to the speech signal with values still in 16-
+bit wav format (i.e. before dividing by 32,768). Using 30 dB
+SNR, which would be almost imperceptible when listening
+[45], was found to improve test DER of the X -based models
+by 1-2%, though was less helpful for the Φ-based models.
+Using 20 dB SNR in initial experiments made results worse
+in all cases, which suggests some sensitivity of the methods
+to noise.
+
+Although dither was applied in the published code for
+generating X [46], for this research dither was disapplied.
+Additional experiments were also carried out on Experiment 2
+X , Φ and Ψ to add dither (specifically a random integer in
+the range [−4 : 4] added to the 16-bit wav speech signal),
+but results were not affected significantly and are not reported
+here.
+
+F. Selecting Results
+
+The experiments in this paper used the Tree Parzen Estima-
+tor (TPE) in the Hyperopt library [47], [48] to optimize the
+
+TABLE IV: MCD2-X B and MCD2-X R.
+
+Layer
+Inputs
+Dense
+Dropout
+Dense
+Dropout
+Dense
+Bernoulli
+
+Filter/Units
+-
+UD1
+-
+UD2
+-
+UD3
+-
+
+Activation
+-
+ReLU
+-
+ReLU
+-
+None
+-
+
+Output Shape
+(L, [512|256], 1)
+(L, UD1)
+-
+(L, UD2)
+-
+(L, S)
+(L, S)
+
+7
+
+Fig. 2: 30 s extract of ES2008a for MCD1-ΦΨ before resegmentation: (a) aleatoric uncertainty from the mean ¯pl,s and
+epistemic uncertainty 2.5% to 97.5% percentile range; (b) total uncertainty from fitting truncated Gaussian ϕl,s; (c) mean
+prediction ¯yl,s; (d) modal prediction ˜yl,s; and (e) ground truth. (d) and (e) are offset slightly on y-axis to clarify overlaps.
+The shaded regions in (a) and (b) show the epistemic uncertainty ranges).
+
+hyperparameters. For Experiment 1, the model with lowest
+DERϵ after each TPE trial was saved. For Experiment 2, the
+model from each TPE trial was then run 200 times in the
+Monte Carlo test simulation (applying dropout), and the modal
+prediction of each of the 200 modulation frames was used to
+calculate the final model prediction for that TPE trial. The
+best model retained from all TPE trials was the one that had
+the lowest DERϵ on the validation set after the Monte Carlo
+simulations, so models that could have had lower DERϵ on
+the test set were discarded (avoids possible overfitting).
+
+The search space comprised the number of CNN filters in
+each layer (F1, F2, F3, F4 ∈ {16, 32, 64, 128}), the number
+of units in each LSTM layer (UL ∈ {128, 256, 512}) and
+each dense layer (UD1, UD2 ∈ {32, 64, 128, 256}), the dropout
+rates (uniform in [0, 1]) and the learning rate (log uniform
+in [10−5, 10−3]). With the LSTMs, the input dropout and
+
+the recurrent dropout were specified to be the same value
+following [22]. Others that were tried were regularization rates,
+though later removed to rely on dropout only. It was found
+that the model optimization was non-convex and the random
+initialisation of the weights and biases had a corresponding
+significant impact on results. To mitigate this, the best hyper-
+parameters for the number of CNN filters, the number of units
+in each LSTM layer and dense layer and the dropout rates were
+identified before running again with those hyperparameters
+fixed.
+
+G. Threshold
+
+Plotting the output frame-based error graphs against the
+prediction threshold λ in 0.1% increments consistently showed
+behaviour such as seen in Fig. 4, with the best test DER
+
+TABLE V: Experiment 1 test set results comparison on best models of each type (all in %): (a) “Accu.” is accuracy, “Prec.”
+is precision and “Rec.” is recall; (b) no resegmentation applied; and (c) post-processing GT-SAD applies to time-based errors.
+
+c
+i
+r
+o
+t
+a
+e
+l
+A
+
+l
+a
+t
+o
+T
+
+Model
+P-Ψ
+P-Ψ∆
+P-Ψ∆∆
+P-Φ
+P-ΦΨ
+MCD1-Ψ
+MCD1-Ψ∆
+MCD1- Ψ∆∆
+MCD1-Φ
+MCD1-ΦΨ
+
+Accu.
+93.26
+93.42
+93.29
+92.08
+94.80
+93.47
+93.81
+93.67
+92.57
+94.85
+
+Prec.
+90.87
+91.71
+92.07
+84.73
+90.38
+90.46
+92.43
+91.39
+87.08
+93.81
+
+Rec.
+72.21
+72.34
+71.21
+71.71
+81.65
+73.83
+73.83
+74.05
+72.02
+78.38
+
+F1
+80.47
+80.88
+80.31
+77.68
+85.79
+81.30
+82.09
+81.81
+78.84
+85.40
+
+Mϵ
+18.04
+18.52
+19.31
+15.24
+10.85
+17.06
+17.73
+17.13
+16.22
+14.59
+
+FAϵ
+2.25
+2.28
+1.89
+3.43
+3.43
+2.92
+2.25
+2.54
+2.92
+1.94
+
+SEϵ
+3.33
+2.76
+2.83
+6.52
+3.26
+3.07
+2.40
+2.83
+5.29
+2.04
+
+DERϵ
+23.62
+23.55
+24.03
+25.18
+17.54
+23.05
+22.38
+22.50
+24.44
+18.57
+
+Mτ
+23.75
+24.33
+25.38
+20.39
+14.71
+23.15
+23.39
+22.60
+21.50
+19.44
+
+FAτ
+0.03
+0.00
+0.00
+0.22
+0.81
+0.24
+0.28
+0.35
+0.32
+0.62
+
+SEτ
+4.00
+3.25
+3.38
+8.48
+3.92
+3.49
+2.79
+3.26
+6.93
+2.40
+
+DERτ
+27.78
+27.58
+28.76
+29.09
+19.44
+26.88
+26.47
+26.21
+28.75
+22.45
+
+5055606570750.000.250.500.751.00Probability(a)SpeakerFEE029FEE030MEE031FEE032SpeakerFEE029FEE030MEE031FEE0325055606570750.000.250.500.751.00Probability(b)5055606570750.000.250.500.751.00Probability(c)50556065707501Modal Pred.(d)505560657075Time (s)01Ground Truth(e)8
+
+Fig. 4: Frame-based errors for threshold in 0.1% increments.
+
+Fig. 5: Experiment 1 MCD1-ΦΨ entropies histograms for
+correct and incorrect predictions of modulation frames.
+
+ranging from 35% to 65%. It was found that the optimum
+threshold for the validation set was generally not a good
+predictor of the optimum threshold for the test set, so it was
+not advantageous to include the threshold as a hyperparameter
+to be optimised in the TPE. Instead, λ was set at 0.5.
+
+H. Experiment 1 Results: Ψ v Φ
+
+Table V shows how the best performing model performed on
+the relevant features on which it was trained (see the “Model”
+columns). All models had better precision than recall, and
+misses were by far the largest error type. Mϵ was generally
+around 60-80% of DERϵ and Mτ was generally around 70-
+90% of DERτ (the latter is greater than the former because
+using the GT-SAD effectively reduces F Aτ to near zero each
+time, thereby increasing overall DERτ attributable to Mτ ).
+This shows that false negatives are more prevalent than false
+positives and misses are more problematic than false alarms.
+The most significant result is that models using both Ψ and
+Φ together gives dramatically better results than either alone.
+This is particularly significant for the aleatoric models where
+P-ΦΨ has DERϵ 17.54% and DERτ 19.44% is a substantial
+improvement of both P-Ψ DERϵ 23.62% and DERτ 27.78%
+and P-Φ DERϵ 25.18% and DERτ 29.09%. The total uncer-
+tainty models also show significant improvements using both
+Ψ and Φ features, though not quite as dramatic as MCD1-ΦΨ
+that has DERϵ 18.57% and DERτ 22.45% improving from
+MCD1-Ψ DERϵ 23.05% and DERτ 26.88% and MCD1-Φ
+DERϵ 24.44% and DERτ 28.75%. There are two possible
+
+conclusions to draw from this: (a) that modulation spectrum
+features have additional information about speaker identity that
+is not present in MFCCs and vice versa; and/or (b) the method
+of extracting the information using either CNN or LSTM
+extracts the information in a different way that effectively
+provides additional information about speaker identity; the
+CNN takes advantage of information in adjacent modulation
+spectrum features in through the 3 × 3 filters whereas the
+LSTM uses sequential information in the MFCCs.
+
+Other Table V results of interest are: (a) using MFCCs
+on their own gives slightly better performance than Φ alone;
+(b) adding delta coefficients (∆) improves results marginally,
+but adding delta-delta coefficients (∆∆) is less reliable as
+it sometimes improves results and sometimes does not; and
+(c) total uncertainty models on either Φ or Ψ alone give
+slightly better results than the aleatoric only models on those
+features, but models on both Φ and Ψ show the opposite.
+
+Entropies for right and wrong predictions in Fig. 5 clearly
+show higher entropies for the wrong predictions as the mean
+is 0.927 bits for the correct predictions compared to 1.896 bits
+for the incorrect predictions. It is also evident that the shape of
+the correct predictions histogram is right-skewed whereas the
+incorrect predictions histogram is bell-shaped, which shows
+that in many cases the model rightly indicates that it is uncer-
+tain. There are four speakers in these files, so the maximum
+entropy for each modulation frame is four.
+
+Distinguishing entropies based on the number of actual
+
+Fig. 3: Experiment 1 MCD1-ΦΨ entropies histograms for correct and incorrect modulation frame predictions broken up by
+actual number of speakers in those modulation frames (none had 4 speakers).
+
+20304050607080Threshold  (%)01020304050607080Error (%)MissFalse alarmSpeaker errorDER9
+
+speakers in each modulation frame as shown in Fig. 3 suggests
+that the modulation spectrum is not as good at distinguishing
+overlapping speakers as might be anticipated. For the modu-
+lation frames with 0 or 1 speaker, the means and histogram
+shapes for the correct predictions are similar to the correct
+predictions from Fig. 5, and similarly those for the incorrect
+predictions are similar to the incorrect predictions from Fig. 5.
+This is not the case with 2 speakers as the mean entropy for the
+correct predictions is higher than for the incorrect predictions,
+and many of the incorrect predictions show a high confidence
+(i.e. low entropy) in their results despite being incorrect. None
+of the modulation frames with 3 speakers were correctly
+predicted, and the mean entropy was high thereby correctly
+indicating the uncertainty. Equivalent graphs for other best
+performing models were found to be similar so not shown.
+
+I. Experiment 2 Results: X v Φ
+
+The “No Reseg.” section of Table VI shows how the best
+performing model performed on the relevant data on which
+it was trained as specified in the “Model” column before
+any resegmentation was applied. The first three models in
+that section (MCD2-ΦΨ, MCD2-X B and MCD2-X R) were
+created for this paper. The last three are baseline models,
+but their respective resegmentation methods were disapplied.
+Fig. 6 compares a 30 s extract of each of these models,
+showing that the ones based on X have significantly greater
+confidence in their predictions and will consequently dominate
+the Kalman filter combination, and (d) shows the Kalman filter
+
+combination before taking the predictions based on the chosen
+threshold λ. Fig. 7 shows the entropies histograms for correct
+and incorrect predictions.
+
+MCD2-ΦΨ performed worse than P-ΦΨ and MCD1-ΦΨ
+from Experiment 1. Although using 1.5 s modulation frames
+might have been expected to give better results, here the
+problems were that (a) there was less training data (meeting
+ES2008c was used as the validation set in Experiment 2) and
+data augmentation was not as good a substitute and (b) the
+wider modulation frames meant more labelling uncertainty.
+
+Unsurprisingly, the two models based on X did better than
+the one based on Φ and Ψ as (a) they have the benefit of much
+more training data for a wider range of speakers and (b) the
+data is cleaner in that the speakers are clearly speaking for
+nearly all of the relevant frames (this is the way VoxCeleb 1
+and 2 are set up, there is no timing information to consider).
+As with Experiment 1, all models had better precision than
+recall and misses were by far the largest component of errors.
+Table V compares results with the three baseline systems.
+In each case, the results are reported both with and without
+their respective in-built resegmentation methods. The base-
+line systems are all designed to undercluster before their
+resegmentation, though in the case of DiarTk and BDII the
+initial clustering gave good results that were subsequently
+made worse by the resegmentation (no change was made to
+the tuned hyperparameters of those systems). Each of these
+systems are for unsupervised speaker diarization and have a
+significant advantage in that they use the ground truth SAD
+before clustering the frames generated. Nonetheless, in general
+
+Fig. 6: Experiment 2 30 s extract of test meeting ES2008a for total uncertainty of fitting the truncated Gaussian distributions
+for: (a) MCD2-ΦΨ; (b) MCD2-X B; and (c) MCD2-X R. (d) is the Kalman filter combined and smoothed version
+MCD2-ΦΨ, X B, X R, which only has a single aleatoric uncertainty prediction per modulation frame.
+
+5055606570750.000.250.500.751.00Probability(a)SpeakerFEE029FEE030MEE031FEE032SpeakerFEE029FEE030MEE031FEE0325055606570750.000.250.500.751.00Probability(b)5055606570750.000.250.500.751.00Probability(c)505560657075Time (s)0.000.250.500.751.00Probability(d)10
+
+Fig. 7: Experiment 2 entropies histograms for correct and incorrect predictions of modulation frames for: (a) MCD2-ΦΨ;
+(b) MCD2-X B; (c) MCD2-X R; and (d) the Kalman filter combined and smoothed version MCD2-ΦΨ, X B, X R.
+
+the models tested in this paper perform better than DiarTk and
+BDII, though not quite as well as the more recent ResNet101.
+
+J. Experiment 2 Results: Resegmentation and Ensembles
+
+The need for some form of resegmentation is evident when
+inspecting the graphical results (e.g. comparing the predictions
+in Fig. 2(d) with the ground truth in Fig. 2(e)) and noting the
+high proportion of the overall DERϵ and DERτ attributable
+to Mϵ and Mτ respectively in both Experiments.
+
+Table VI in the “Smoo.” section shows how applying
+simple smoothing improves the results. The improvement in
+the frame-based measures is significant and comparable to
+those for Kalman filter smoothing, but the particularly good
+performance comes for the time-based measures. This dra-
+matic improvement is largely attributable to the application of
+post-processing GT-SAD. Because the GT-SAD reduces F Aτ
+significantly, it will also reduce DERτ significantly unless
+
+Mτ and SEτ increase significantly. Mτ and SEτ do often
+increase as there is reduced speech duration to be assessed
+and consequently they will increase unless they are specifically
+improved (this is clear from Table V). By smoothing troughs
+of up to G = 3 and flattening spikes within the GT-SAD
+(which by definition has at least one speaker), Mτ and SEτ
+turn out to be similar to Mτ and SEτ here, thereby resulting
+in DERτ being significantly better than DERϵ. This simple
+smoothing results in better performance than the DiarTk and
+BDII methods, but somewhat lower than ResNet101.
+
+The results in Table VI, “KF”, show how applying Kalman
+filter smoothing also improves results. The frame-based met-
+rics improve for all the single models, though most signif-
+icantly for MCD2-ΦΨ (22.42% to 19.00%) as MCD2-X B
+(13.49% to 12.94%), and MCD2-X R (13.94% to 13.37%)
+only improved marginally. Again, the improvement in time-
+based metrics was more substantial in all cases, with MCD2-
+
+TABLE VI: Experiment 2 epistemic test set results comparison on best performing models of each type (all in %), where:
+(a) “Accu.” is accuracy, “Prec.” is precision, “Rec.” is recall; and (b) no frame-based scores available for the baseline systems.
+
+o
+N
+
+.
+g
+e
+s
+e
+R
+
+Model
+MCD2-ΦΨ
+MCD2-X B
+MCD2-X R
+DiarTk Ψ∆∆
+BDII
+ResNet101
+MCD2-ΦΨ
+MCD2-X B
+MCD2-X R
+MCD2-ΦΨ
+MCD2-X B
+MCD2-X R
+MCD2-X B, X R
+MCD2-ΦΨ, X B, X R
+e DiarTk Ψ∆∆ Viterbi
+
+.
+o
+o
+m
+S
+
+F
+K
+
+s
+a
+B
+
+BDII VBx
+ResNet101 VBx
+
+Accu.
+93.60
+96.44
+96.34
+-
+-
+-
+95.07
+96.52
+96.42
+94.58
+96.54
+96.48
+96.54
+96.39
+-
+-
+-
+
+Prec.
+90.69
+94.13
+93.55
+-
+-
+-
+93.06
+92.81
+92.02
+87.73
+92.02
+91.64
+92.69
+91.61
+-
+-
+-
+
+Rec.
+76.17
+87.89
+87.98
+-
+-
+-
+81.73
+89.76
+90.11
+85.11
+90.79
+90.91
+90.02
+90.47
+-
+-
+-
+
+F1
+82.80
+90.91
+90.68
+-
+-
+-
+87.03
+91.26
+91.06
+86.40
+91.40
+91.28
+91.34
+91.03
+-
+-
+-
+
+Mϵ
+16.10
+9.06
+9.03
+-
+-
+-
+13.80
+7.59
+7.23
+9.37
+6.56
+6.66
+7.28
+6.92
+-
+-
+-
+
+FAϵ
+3.14
+3.69
+4.22
+-
+-
+-
+3.95
+4.94
+5.61
+6.95
+5.49
+6.01
+4.96
+5.92
+-
+-
+-
+
+SEϵ
+3.19
+0.74
+0.69
+-
+-
+-
+0.98
+0.69
+0.72
+2.68
+0.89
+0.69
+0.79
+0.79
+-
+-
+-
+
+DERϵ
+22.42
+13.49
+13.94
+-
+-
+-
+18.74
+13.22
+13.61
+19.00
+12.94
+13.37
+13.03
+13.63
+-
+-
+-
+
+Mτ
+20.69
+9.30
+9.29
+3.80
+3.84
+3.84
+14.28
+7.42
+7.22
+10.54
+7.10
+6.89
+7.34
+6.77
+3.80
+3.84
+3.84
+
+FAτ
+0.19
+0.66
+0.33
+0.00
+0.00
+0.00
+1.03
+0.53
+0.27
+4.01
+2.02
+1.84
+1.00
+1.59
+0.13
+0.00
+0.00
+
+SEτ
+2.91
+0.88
+0.73
+11.39
+5.68
+12.26
+1.27
+0.91
+0.71
+3.30
+1.11
+1.01
+0.93
+0.93
+12.34
+7.41
+2.39
+
+DERτ
+23.79
+10.84
+10.34
+15.33
+9.52
+16.10
+16.58
+8.86
+8.21
+17.85
+10.23
+9.74
+9.27
+9.29
+16.28
+11.25
+6.23
+
+(a)(b)(c)(d)ΦΨ 23.79% to 17.85%, MCD2-X B 10.84% to 10.23% and
+10.34% to 9.74%, albeit not as good as for simple smoothing.
+The combined models MCD2-X B, X R and MCD2-
+ΦΨ, X B, X R do not improve the best DERϵ, but do improve
+the DERτ . This improvement largely comes from the reduced
+F Aτ after applying the GT-SAD. Using the Kalman filter
+smoothing to combine models results in decent performance,
+but not as good as simple smoothing or the best baseline
+model. This is most likely because the models being combined
+are giving results that are too similar – if one had great
+precision and one had great recall, then combining them would
+make more sense than combining two with better precision
+than recall. A similar argument applies to misses, false alarms
+and speaker errors. Disappointingly, MCD2-ΦΨ did not give
+the improved detection of overlapping speakers anticipated.
+
+The entropies histograms in Fig. 7 show that MCD2-X B
+has the most modulation frames correct at 87.11%. This
+is different from the metrics in Table VI as it
+looks at
+the predictions of all speakers in the modulation frame, not
+summing each individually. The shape of the MCD2-X B
+correct predictions histogram is strongly right skewed and has
+a low mean of 0.625 bits that is less than half the 1.477 bits
+mean of the incorrect predictions. The incorrect predictions
+histogram is also slightly right skewed, which makes it difficult
+to distinguish correct and incorrect predictions based on the
+entropies alone. The MCD2-X R histograms and figures show
+similar patterns and numbers to X B, although with somewhat
+reduced performance. The MCD2-ΦΨ correct predictions
+mean is 1.358 bits, significantly less than the 2.320 bits
+of the incorrect predictions, but higher than those of the
+other models. However, the fact that the correct predictions
+histogram is right skewed whereas the incorrect predictions
+histogram is left skewed is a significant and advantageous
+difference. The Kalman filter combined and smoothed model
+MCD2-ΦΨ, X B, X R has 86.80% correct predictions, slightly
+lower than the 87.11% of MCD2-X B, but the mean entropy
+of the correct predictions is substantially lower at 0.398 bits
+compared to 0.625 bits and, importantly, is just 33.4% of the
+mean entropy of the correct predictions compared to 42.3%
+of MCD2-X B so correct predictions should be easier to
+distinguish from incorrect predictions. The combined model’s
+correct entropies histogram is more strongly right skewed than
+the others and its entropy information is more informative.
+
+The entropies histograms equivalent
+
+to Fig. 3 are not
+reproduced for Experiment 2 for conciseness, but as in Experi-
+ment 1, the results for 0 and 1 speaker are similar to the general
+findings seen in Fig. 7. None of the models handled 2 speakers
+well. The MCD2-ΦΨ had only 0.66% correct compared to
+3.29% for MCD2-X B and 1.97% for MCD2-X R. However,
+the Kalman filter combined and smoothed version improved
+this substantially to 10.53% correct, suggesting that model
+ensembles should indeed help with overlapping speakers, and
+it also gave the highest percentage of correct frames with 1
+speaker at 93.15%, though the number of correct predictions
+for 0 speaker frames fell substantially to 80.08%. No models
+correctly predicted frames with 3 speakers.
+
+Lastly,
+
+the baselines all had much better Mτ than the
+MCD2-MODELS, but the latter had much better SEτ . This
+
+11
+
+is likely because the baselines used the GT-SAD as a pre-
+processing step and were therefore able to infer that there was
+at least one speaker in the relevant segments (the Mτ were
+all due to missed overlapping speakers, which the baseline
+systems were not able to detect). By contrast, the MCD2-
+MODELS used GT-SAD as a post-processing step, so if they
+predicted a speaker when the GT-SAD said there was none
+then those would be removed, but predicting no speaker when
+the GT-SAD said there was one did not help.
+
+IV. DISCUSSION AND CONCLUSION
+
+Experiment 1 clearly shows that models using both Φ and Ψ
+are better than models using either alone for both probabilistic
+and Monte Carlo dropout models: (a) DERτ is 29.09% for P1-
+Φ, 27.78% for P1-Ψ and 19.44% for P1-ΦΨ; and (b) DERτ
+is 28.75% for MCD1-Φ, 26.88% for MCD1-Ψ and 22.45% for
+MCD1-ΦΨ. Experiment 1 also shows that the model on both
+features has mean entropy 0.927 bits (maximum 4 bits) for
+its correct predictions compared to 1.896 bits for its incorrect
+predictions, which along with the entropy histogram shapes
+shows the model helpfully indicates where it is uncertain.
+
+Experiment 2 shows that models on X (DERτ is 10.23%
+for MCD2-X B and 9.74% for MCD2-X R) perform bet-
+ter than models on both Φ and Ψ (DERτ 17.85% for
+MCD2-ΦΨ), in each case after their individual Kalman filter
+smoothing. Combining the models using a Kalman filter
+smoothing method improves the DERτ to 9.29% for MCD2-
+ΦΨ, X B, X R, which shows it to be an advantageous way
+of combining models, though performance still lags behind
+simple smoothing of individual models (DERτ 8.21% for
+MCD2-X R). The aleatoric and epistemic uncertainties are
+again shown to be higher for incorrect predictions.
+
+Both Experiments 1 and 2 show that models on the modu-
+lation spectrum are not as good at distinguishing overlapping
+speakers as anticipated. This could be because the relevant
+CNN model structure is insufficient to identify the relevant
+relations between modulation spectrum features (only a simple
+3 × 3 CNN filter with 4 layers is used) rather than a failing
+with the modulation spectrum. However, Experiment 2 shows
+that the combined model identifies overlapping speakers sub-
+stantially better than the individual models does, though the
+accuracy is still poor at 10.53%.
+
+REFERENCES
+
+[1] T. J. Park, N. Kanda, D. Dimitriadis, K. J. Han, S. Watanabe, and
+S. Narayanan, “A review of speaker diarization: recent advances with
+deep learning,” Comput. Speech and Language, vol. 72/101317, Mar.
+2022.
+
+[2] X. Anguera Miro, S. Bozonnet, N. Evans, C. Fredouille, G. Friedland,
+and O. Vinyals, “Speaker diarization: a review of recent research,” IEEE
+Trans. Audio, Speech, Language Process., vol. 20, no. 2, pp. 356–370,
+Feb. 2012.
+
+[3] S. E. Tranter and D. A. Reynolds, “An overview of automatic speaker
+diarization systems,” IEEE Trans. Audio, Speech, Language Process.,
+vol. 14, no. 5, pp. 1557–1565, Sep. 2006.
+
+[4] G. Soldi, M. Todisco, H. Delgado, C. Beaugeant, and N. Evans, “Semi-
+supervised on-line speaker diarization for meeting data with incremental
+maximum a-posteriori adaptation,” in Proc. Odyssey: The Speaker and
+Language Recognition Workshop, 2016, pp. 377–384.
+
+[5] N. Ryant, K. Church, C. Cieri, A. Cristia, J. Du, S. Ganapathy,
+and M. Liberman, “First DIHARD challenge evaluation plan,” Tech.
+[Online]. Available: https://zenodo.org/record/1199638#
+Rep., 2018.
+.XkABaWj7Q2w
+
+[6] ——, “The second DIHARD diarization challenge: dataset, task, and
+baselines - version 1.2,” in Proc. Conf. of Int. Speech Commun. Assoc.
+(INTERSPEECH), 2019, pp. 978–982.
+
+[7] N. Ryant, K. Church, C. Cieri, J. Du, S. Ganapathy, and M. Liberman,
+[Online].
+https://dihardchallenge.github.io/dihard3/docs/third dihard
+
+“Third DIHARD challenge
+Available:
+eval plan v1.2.pdf
+
+evaluation
+
+plan,”
+
+2020.
+
+[8] P. Wang, Z. Chen, X. Xiao, Z. Meng, T. Yoshioka, T. Zhou, L. Lu,
+and J. Li, “Speech separation using speaker inventory,” in 2019 IEEE
+Automatic Speech Recognition and Understanding Workshop (ASRU),
+Dec. 2019, pp. 230–236.
+
+[9] C. Han, Y. Luo, C. Li, T. Zhou, K. Kinoshita, S. Watanabe, M. Delcroix,
+H. Erdogan, J. R. Hershey, N. Mesgarani, and Z. Chen, “Continuous
+speech separation using speaker inventory for long multi-talker record-
+ing,” arXiv:2012.09727, Dec. 2020.
+
+[10] N. Flemotomos and D. Dimitriadis, “A memory augmented architecture
+for continuous speaker identification in meetings,” in Proc. IEEE Int.
+Conf. on Acoust., Speech and Signal Process. (ICASSP), May 2020, pp.
+6524–6528.
+
+[11] Y. Fujita, S. Watanabe, S. Horiguchi, Y. Xue, and K. Nagamatsu, “End-
+to-end neural diarization: reformulating speaker diarization as simple
+multi-label classification,” arXiv:2003.02966, Feb. 2020.
+
+[12] H. Hermansky, “History of modulation spectrum in ASR,” in Proc. IEEE
+Int. Conf. on Acoust., Speech and Signal Process. (ICASSP), 2010, pp.
+5458–5461.
+
+[13] L. Atlas and S. A. Shamma, “Joint acoustic and modulation frequency,”
+EURASIP J. on Advances in Signal Process., vol. 310290, Dec. 2003.
+[14] S. W. McKnight, A. O. T. Hogg, V. W. Neo, and P. A. Naylor, “A
+study of salient modulation domain features for speaker identification,”
+in Asia-Pacific Signal and Inform. Process. Assoc. Annual Summit and
+Conf. (APSIPA), 2021, pp. 705–712.
+
+[15] F.-G. Zeng, K. Nie, G. S. Stickney, Y.-Y. Kong, M. Vongphoe, A. Bhar-
+gave, C. Wei, and K. Cao, “Speech recognition with amplitude and
+frequency modulations,” Proc. National Academy of Sciences, vol. 102,
+no. 7, pp. 2293–2298, Feb. 2005.
+
+[16] R. C. Smith, Uncertainty Quantification: Theory, Implementation, and
+Applications. Society for Industrial and Applied Mathematics, 2014.
+[17] R. Senge, S. B¨osner, K. Dembczy´nski, J. Haasenritter, O. Hirsch,
+N. Donner-Banzhoff, and E. H¨ullermeier, “Reliable classification: learn-
+ing classifiers that distinguish aleatoric and epistemic uncertainty,”
+Information Sciences, vol. 255, pp. 16–29, Jan. 2014.
+
+[18] E. C. S. Acquesta, “Introduction to the basics of uncertainty
+quantification,” 2019. [Online]. Available: https://www.osti.gov/servlets/
+purl/1645907
+
+[19] L. V. Jospin, W. Buntine, F. Boussaid, H. Laga, and M. Bennamoun,
+“Hands-on Bayesian neural networks – a tutorial for deep learning
+users,” arXiv:2007.06823, Sep. 2021.
+
+[20] R. M. Neal, Bayesian Learning for Neural Networks, ser. Lecture Notes
+in Statistics, P. Bickel, P. Diggle, S. Fienberg, K. Krickeberg, I. Olkin,
+N. Wermuth, and S. Zeger, Eds. New York, NY: Springer New York,
+1996, vol. 118.
+
+[21] Y. Gal and Z. Ghahramani, “Dropout as a Bayesian approximation:
+representing model uncertainty in deep learning,” in Proc. Int. Conf.
+Machine Learning (ICML), vol. 48, 2016, pp. 1050–1059.
+
+[22] Y. Gal, “Uncertainty in deep learning,” Ph.D. dissertation, University of
+
+Cambridge, 2016.
+
+[23] A. D. Kiureghian and O. Ditlevsen, “Aleatory or epistemic? Does it
+matter?” Structural Safety, vol. 31, no. 2, pp. 105–112, Mar. 2009.
+[24] E. H¨ullermeier and W. Waegeman, “Aleatoric and epistemic uncertainty
+in machine learning: an introduction to concepts and methods,” Machine
+Learning, vol. 110, no. 3, pp. 457–506, Mar. 2021.
+
+[25] A. Silnova, N. Br¨ummer, J. Rohdin, T. Stafylakis, and L. Burget,
+“Probabilistic embeddings for speaker diarization,” arXiv:2004.04096,
+Nov. 2020. [Online]. Available: http://arxiv.org/abs/2004.04096
+
+[26] H. Aronowitz, W. Zhu, M. Suzuki, G. Kurata, and R. Hoory, “New
+advances in speaker diarization,” in Proc. Conf. of Int. Speech Commun.
+Assoc. (INTERSPEECH), Oct. 2020, pp. 279–283.
+
+[27] S. W. McKnight, A. O. T. Hogg, and P. A. Naylor, “Analysis of phonetic
+dependence of segmentation errors in speaker diarization,” in Proc. Eur.
+Signal Process. Conf. (EUSIPCO), 2020.
+
+[28] G. Sell and D. Garcia-Romero, “Diarization resegmentation in the factor
+analysis subspace,” in Proc. IEEE Int. Conf. on Acoust., Speech and
+
+12
+
+Signal Process. (ICASSP), South Brisbane, Queensland, Australia, Apr.
+2015, pp. 4794–4798.
+
+[29] R. G. Brown and P. Y. C. Hwang, Introduction to Random Signals and
+Applied Kalman Filtering with Matlab Exercises, 4th ed. Hoboken, NJ:
+John Wiley & Sons, Inc., Feb. 2012.
+
+[30] K. Webster,
+2019.
+tensorflow2-deeplearning
+
+“Tensorflow 2 for deep learning specialisation,”
+[Online]. Available: https://www.coursera.org/specializations/
+
+[31] J. V. Dillon,
+
+I. Langmore, D. Tran, E. Brevdo, S. Vasudevan,
+D. Moore, B. Patton, A. Alemi, M. Hoffman, and R. A. Saurous,
+“TensorFlow Distributions,” Nov. 2017.
+[Online]. Available: http:
+//arxiv.org/abs/1711.10604
+
+[32] C. Davidson-Pilon,
+
+Bayesian Methods
+2015.
+[Online]. Available: https://camdavidsonpilon.github.io/Probabilistic-
+Programming-and-Bayesian-Methods-for-Hackers/#tensorflow
+
+for Hackers,
+
+[33] scipy,
+
+“scipy.stats.truncnorm — SciPy
+
+[On-
+https://docs.scipy.org/doc/scipy/reference/generated/
+
+v1.8.1 Manual.”
+
+line]. Available:
+scipy.stats.truncnorm.html
+“The
+
+rich
+
+2009.
+
+[34] NIST,
+
+transcription
+
+(RT-09)
+plan,”
+
+2009
+evaluation
+
+meeting
+[Online]. Avail-
+Feb.
+https://web.archive.org/web/20100606092041if /http://www.itl.
+
+recognition
+able:
+nist.gov/iad/mig/tests/rt/2009/docs/rt09-meeting-eval-plan-v2.pdf
+[35] J. Carletta, S. Ashby, S. Bourban, M. Flynn, M. Guillemot, T. Hain,
+J. Kadlec, V. Karaiskos, W. Kraaij, M. Kronenthal, G. Lathoud, M. Lin-
+coln, A. Lisowska, I. McCowan, W. Post, D. Reidsma, and P. Wellner,
+“The AMI meeting corpus: a pre-announcement,” in Proc. of the 2nd Int.
+Workshop on Mach. Learning for Multimodal Interaction (MLMI’05),
+2006, pp. 28–39.
+
+[36] J. Moore, M. Kronenthal, and S. Ashby, “Guidelines for AMI speech
+transcriptions,” Tech. Rep., 2005. [Online]. Available: https://groups.inf.
+ed.ac.uk/ami/corpus/Guidelines/speech-transcription-manual.v1.2.pdf
+
+[37] V. W. Neo, S. Weiss, S. W. McKnight, A. O. T. Hogg, and P. A.
+Naylor, “Polynomial eigenvalue decomposition-based target speaker
+voice activity detecction in the presence of competing talkers,” in Proc.
+Int. Workshop on Acoustic Signal Enhancement (IWAENC), 2022.
+[38] J. Sohn, N. S. Kim, and W. Sung, “A statistical model-based voice
+activity detection,” IEEE Signal Process. Lett., vol. 6, no. 1, pp. 1–3,
+Jan. 1999.
+
+[39] F. Landini, J. Profant, M. Diez, and L. Burget, “Bayesian HMM
+clustering of x-vector sequences (VBx) in speaker diarization: theory,
+implementation and analysis on standard tasks,” Comput. Speech and
+Language, vol. 71/101254, Dec. 2020.
+
+[40] ——, “AMI diarization setup,” 2020.
+
+[Online]. Available: https:
+
+//github.com/BUTSpeechFIT/AMI-diarization-setup
+
+[41] K. K. Paliwal, J. G. Lyons, and K. K. Wojcicki, “Preference for 20-
+40 ms window duration in speech analysis,” in 2010 4th International
+Conference on Signal Processing and Communication Systems, Gold
+Coast, Australia, Dec. 2010, pp. 1–4.
+
+[42] D. Vijayasenan and F. Valente, “DiarTk: an open source toolkit for
+research in multistream speaker diarization and its application to
+meetings recordings,” in Proc. Conf. of Int. Speech Commun. Assoc.
+(INTERSPEECH), 2012, pp. 2170–2173.
+
+[43] F. Landini, S. Wang, M. Diez, L. Burget, P. Matˇejka, K. ˇZmol´ıkov´a,
+L. Moˇsner, A. Silnova, O. Plchot, O. Novotn´y, H. Zeinali, and J. Rohdin,
+“BUT system for the second DIHARD speech diarization challenge,” in
+Proc. IEEE Int. Conf. on Acoust., Speech and Signal Process. (ICASSP),
+2020, pp. 6529–6533.
+
+[44] O. D¨urr, B. Sick, and E. Murina, Probabilistic Deep Learning. Manning
+
+Publications, 2020.
+
+[45] ICSI, “ICSI Speech FAQ - 4.1 How is the SNR of a speech example
+[Online]. Available: https://www1.icsi.berkeley.edu/
+
+defined?” 2000.
+Speech/faq/speechSNR.html
+
+[46] F. Landini and M. Diez, “VBHMM x-vectors Diarization (aka VBx),”
+2020. [Online]. Available: https://github.com/BUTSpeechFIT/VBx/tree/
+v1.0 DIHARDII
+
+[47] J. Bergstra, D. Yamins, and D. D. Cox, “Making a science of model
+search: hyperparameter optimization in hundreds of dimensions for
+vision architectures,” in Proc. Int. Conf. Machine Learning (ICML), ser.
+ICML’13. Atlanta, GA, USA: JMLR.org, 2013, pp. I–115–I–123.
+[48] F. Hutter, H. H. Hoos, and K. Leyton-Brown, “Sequential Model-Based
+Optimization for General Algorithm Configuration,” in Learning and
+Intelligent Optimization, C. A. C. Coello, Ed.
+Berlin, Heidelberg:
+Springer Berlin Heidelberg, 2011, vol. 6683, pp. 507–523.
+
+

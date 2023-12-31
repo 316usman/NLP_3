@@ -1,0 +1,3513 @@
+3
+2
+0
+2
+
+c
+e
+D
+3
+2
+
+]
+
+G
+L
+.
+s
+c
+[
+
+1
+v
+7
+5
+3
+5
+1
+.
+2
+1
+3
+2
+:
+v
+i
+X
+r
+a
+
+Optimal Decision Tree with Noisy Outcomes
+
+Optimal Decision Tree with Noisy Outcomes
+
+Su Jia
+Center of Data Science for Enterprise and Society
+Cornell University
+
+Fatemeh Navidi
+Aquatic Trading
+
+Viswanath Nagarajan
+Industrial & Operations Engineering
+University of Michigan
+
+R. Ravi
+Tepper School of Business
+Carnegie Mellon University
+
+Editor: TBD
+
+sj693@cornell.edu
+
+Niusha.Navidi@chicagobooth.edu
+
+viswa@umich.edu
+
+ravi@andrew.cmu.edu
+
+Abstract
+
+In pool-based active learning, the learner is given an unlabeled data set and aims to effi-
+ciently learn the unknown hypothesis by querying the labels of the data points. This can
+be formulated as the classical Optimal Decision Tree (ODT) problem: Given a set of tests,
+a set of hypotheses, and an outcome for each pair of test and hypothesis, our objective is
+to find a low-cost testing procedure (i.e., decision tree) that identifies the true hypothesis.
+This optimization problem has been extensively studied under the assumption that each
+test generates a deterministic outcome. However, in numerous applications, for example,
+clinical trials, the outcomes may be uncertain, which renders the ideas from the determin-
+istic setting invalid. In this work, we study a fundamental variant of the ODT problem
+in which some test outcomes are noisy, even in the more general case where the noise is
+persistent, i.e., repeating a test gives the same noisy output. Our approximation algorithms
+provide guarantees that are nearly best possible and hold for the general case of a large
+number of noisy outcomes per test or per hypothesis where the performance degrades con-
+tinuously with this number. We numerically evaluated our algorithms for identifying toxic
+chemicals and learning linear classifiers, and observed that our algorithms have costs very
+close to the information-theoretic minimum.1
+
+Keywords: approximation algorithms, active learning, optimal decision tree, submodular
+functions, stochastic set cover
+
+1. A preliminary version of this paper appeared as Jia et al. (2019) in the Proceedings of the Thirty-third
+Neural Information Processing Systems (NeurIPS’19). This paper substantially expanded the proceed-
+ings version by (i) generalizing our results beyond decision trees to a novel problem called Adaptive
+Submodular Ranking with Noise (ASRN), and (ii) extending our analysis from binary outcome space to
+finite outcome space.
+
+1
+
+ 
+ 
+ 
+ 
+ 
+ 
+Jia, Navidi, Nagarajan and Ravi
+
+1 Introduction
+
+In the Optimal Decision Tree (ODT) problem, our objective is to identify an unknown true
+hypothesis drawn from a known prior distribution over a given set of hypotheses. To collect
+information on the true hypothesis, we are also given a set of tests. Upon selection, a test
+produces a binary (i.e., positive or negative) outcome that depends on the true hypothesis,
+and a certain cost is incurred. Finally, we are given a binary matrix that documents the
+outcome of every pair of test and hypothesis. The goal is to find a low-cost testing procedure
+(i.e., decision tree) that always identifies the true hypothesis.
+
+This fundamental problem encapsulates many real-world challenges wherein the learner
+aims to interactively gather information to identify the unknown ground truth. For example,
+in medical diagnosis, a doctor must diagnose a patient’s unknown disease by performing a
+low-cost sequence of medical tests, chosen from a set of available tests (Loveland, 1985).
+As another example, in active learning (e.g., Dasgupta 2005), the learner is given a set
+of unlabeled data points and aims to find a correct binary classifier by efficiently querying
+the labels of the data points. Other applications include entity identification in databases
+(Chakaravarthy et al. 2011) and experimental design to choose the most accurate theory
+among competing candidates (Golovin et al. 2010).
+
+The ODT problem has been extensively studied under the assumption that each test
+generates a deterministic outcome. However, this assumption is unrealistic in many appli-
+cations. For example, in clinical trials, the results of the same medical test may vary among
+individuals due to genetic differences, despite the fact that they share the same underlying
+disease. Similarly, in online A/B experiments, users’ reactions to a particular treatment
+(“test”) may vary within the same user group (“hypothesis”) due to personal preferences.
+Despite the considerable literature on the ODT problem, the fundamental problem of
+ODT with noisy outcomes is not yet adequately understood, especially from the perspec-
+tive of approximation algorithms. Previous work incorporating noise (e.g., Golovin et al.
+2010) was restricted to settings with very few noisy outcomes. One of the central technical
+challenges in the presence of noise is that each hypothesis can potentially follow one of an
+exponential (in the level of uncertainty) number of trajectories. This leads to an unfavorable
+approximation ratio if the noise-free analysis is applied directly.
+
+Against this backdrop, we embark on a comprehensive study of the fundamental problem
+of Optimal Decision Tree with Noise (ODTN) in full generality and design novel approxi-
+mation algorithms with provable guarantees. Essentially, we generalize the ODT problem
+to the setting where the test-hypothesis matrix may contain some independently random
+entries. The positions of these entries are known but their values can only be revealed when
+the corresponding test is performed.
+
+Adding to the challenge, we consider the persistent noise model, where repeating the
+same test always produces the same outcome. This model is (a) more general and (b) more
+challenging than the independent noise model, which is more common in the literature on
+active learning and ODT. In fact, to see (a), we can reduce the independent noise model
+to the persistent noise model by creating sufficiently many copies of each test. To see (b),
+note that in the independent noise model, we can “denoise” by repeating a test many times
+and reducing the problem to a deterministic one. However, this approach obviously fails
+under persistent noise.
+
+2
+
+Optimal Decision Tree with Noisy Outcomes
+
+what to choose what is unknown what to observe
+unlabeled data
+classifier
+hypothesis
+test
+target function
+element
+
+label
+outcome
+response
+
+AL
+ODT
+ASR
+
+Table 1: One stone, three birds: Analogous terminologies in active learning (AL), optimal
+
+decision tree (ODT), and adaptive submodular ranking (ASR).
+
+Beyond the ODTN problem, our results are valid in a substantially more general setting,
+called Adaptive Submodular Ranking with Noise (ASRN): Given a set of elements, we need
+to construct a subset of elements sequentially to cover an unknown target function, which
+comes from a given family of submodular functions. When an element is selected, we not
+only increase the value of the target function but also receive a random response that helps
+further localize the target function in the given family. Therefore, we face a learning-
+versus-earning trade-off: An intelligent algorithm must consider both the coverage and the
+information gain when selecting the next element. The goal is to minimize the cover time
+of the target function, i.e., the expected number of elements selected until the value of the
+target function reaches a prescribed threshold.
+
+The ASRN problem generalizes the ODTN problem. To see this, note that since the
+output must be correct with probability 1, we need to eliminate all but one hypothesis. This
+motivates us to consider a set function for each hypothesis, whose value is proportional to
+the number of other hypotheses eliminated. Intuitively, this function is submodular: The
+elimination power of the same test diminishes as we select more tests. Our objective is to
+cover the submodular function of the true hypothesis, which is unknown initially but can
+be “learned” as we observe more test outcomes. To help the reader see the connection, we
+list and compare analogous concepts in these problems in Table 1.
+
+In the absence of noisy outcomes, this problem has been studied in both non-adaptive
+(Azar and Gamzu, 2011) and adaptive (Navidi et al., 2020) settings. In addition to the ODT
+problem, this submodular setting captures a number of applications such as Multiple-intent
+Search Ranking (Azar et al., 2009), Decision Region Determination (Javdani et al., 2014)
+and Correlated Knapsack Cover (Navidi et al., 2020). Our work is the first to handle noisy
+outcomes in all of these applications in a unified manner.
+
+1.1 Contributions
+
+Our results can be categorized into the following four parts.
+
+1. Non-adaptive Setting. We first consider the non-adaptive version of the ASRN
+problem, dubbed Submodular Function Ranking with Noise (SFRN). We obtain a
+polynomial-time algorithm with cost O(log 1
+ε ) times the optimum; see Theorem 14.
+Here, ε > 0 is the separability of the family of submodular functions, formally defined
+in Section 2. This result is significant because of the following aspects.
+
+(a) Implications for the ODTN Problem: The above implies an O(log m)-
+approximation for the non-adaptive ODTN problem where m is the number
+
+3
+
+Jia, Navidi, Nagarajan and Ravi
+
+of hypotheses. This is best possible assuming P ̸= NP, due to the renowned
+APX-hardness result for the Set Cover problem; see Theorem 4.4 in Feige 1998.
+ε )-approximation
+
+(b) Optimality: Unless P = NP, there is no polynomial-time o(log 1
+
+algorithm (even without noise); see Theorem 3.1 in Azar and Gamzu 2011.
+
+2. Adaptive Setting with Low Noise. We present an algorithm whose performance
+guarantee degrades with the noise level. Specifically, we introduce the notions of row
+uncertainty r and column uncertainty c (formally defined in Section 5), and present
+an O(min{c, r} + log m
+ε )-approximation algorithm for the ASRN problem where m
+is the number of submodular functions; see Theorem 19. In the noiseless case, i.e.,
+c = r = 0, our result matches the known bound (Theorem 1 in Navidi et al. 2020) for
+the special case without noise. Our result is significant in the following respects.
+
+(a) Implications for the ODTN Problem: By setting ε = 1
+
+m , we immediately
+obtain an O(min{c, r}+log m) approximation for the (adaptive) ODTN problem.
+In this context, c (resp. r) is the maximum number of noisy outcomes in each
+column (resp. row) of the test-hypothesis matrix.
+
+(b) Optimality Under Low Noise Level: If the number of noisy outcomes in each
+ε ), which is
+
+row or column is O(log m
+best possible due to Theorem 4.1 in Chakaravarthy et al. 2011.
+
+ε ), the approximation ratio becomes O(log m
+
+(c) Improved Approximation for the ODTN Problem: Golovin et al. (2010)
+obtained an O(log2
+)-approximation that is polynomial-time only when c =
+O(log m), where pmin ≤ 1
+m is the minimum probability mass of any hypothesis.
+Our result improves the above by a logarithmic factor and is polynomial-time
+regardless of c, r.
+
+1
+pmin
+
+3. Adaptive Setting with High Noise. So far we have focused on the case with
+few uncertain entries in the test-hypothesis matrix. Now, we consider the other ex-
+treme, where this matrix has few deterministic entries. At first sight, considering the
+increased level of noise, the problem appears considerably more challenging. Surpris-
+ingly, we obtain a logarithmic approximation by combining the following components.
+
+(a) Sparsity of the Instance: An ODTN instance is α-sparse for some α ∈ [0, 1] if
+each test has O(mα) deterministic outcomes. The lower α, the more challenging
+it is to identify the true hypothesis. We quantify this relation by showing that
+the optimum is Ω(m1−α); see Proposition 21.
+
+(b) Lower Bound via Stochastic Set Cover: As the key technical novelty, we
+relate the ODTN problem to the Stochastic Set Cover (SSC) problem by “charg-
+ing” the cost to a family of SSC instances. For each hypothesis i, we associate an
+SSC instance and show that its optimum, denoted OPTSSC(i), is a lower bound
+on the cost of any algorithm attributed to i. We then show that the optimum is
+at least the sum of OPTSSC(i)’s, weighted by the prior probabilities.
+
+(c) A Novel Greedy Algorithm: Motivated by the above observation, we present
+a hybrid algorithm that integrates (i) the greedy algorithm for the SSC prob-
+lem and (ii) a brute-force subroutine that checks whether one of the hypotheses
+
+4
+
+Optimal Decision Tree with Noisy Outcomes
+
+with the highest posterior probability is the true hypothesis; see Algorithm 4.
+This algorithm has a low cost since (i) the greedy SSC algorithm is an O(log m)-
+approximation, and (ii) the brute-force subroutine enumerates only a small num-
+ber of hypotheses.
+
+(d) Approximation for α-Sparse Instances: Building on (b) and (c), we show
+that the above algorithm has cost O(mα +log m·OPT) for any α-sparse instance;
+see Theorem 26. When α ≤ 1
+2 , we have OPT = Ω(mα) due to (a), and we obtain
+an O(log m)-approximation.
+
+4. Comprehensive Numerical Experiments. We tested our algorithms on both a
+synthetic and a real data set arising from toxic chemical identification. We compared
+the empirical performance guarantee of our algorithms to an information-theoretic
+lower bound. The cost of the solution returned by our non-adaptive algorithm is
+typically within 50% of this lower bound, and typically within 20% for the adaptive
+algorithm, demonstrating the effective practical performance of our algorithms.
+
+1.2 Related Work
+
+The ODT problem has been extensively studied for several decades; see Garey and Graham
+1974; Hyafil and Rivest 1976/77; Loveland 1985; Arkin et al. 1998; Kosaraju et al. 1999;
+Adler and Heeringa 2008; Chakaravarthy et al. 2009; Gupta et al. 2017; Li et al. 2020. The
+state-of-the-art result is an O(log m)-approximation (Gupta et al., 2017), for instances with
+arbitrary probability distribution and costs. On the other hand, Chakaravarthy et al. (2011)
+showed that ODT cannot be approximated to a factor better than O(log m) unless P=NP.
+The application of ODT to Bayesian active learning was formalized in Dasgupta 2005.
+There are also several results on the statistical complexity of active learning; see, e.g.,
+Balcan et al. 2006; Hanneke 2007; Nowak 2009. There are two main differences from these
+works from ours. First, they focus on proving sample complexity bounds for structured
+hypothesis classes, such as threshold functions or linear classifiers. Secondly, these works
+primarily focus on analyzing the sample complexity, rather than comparing the cost with
+the optimal algorithm. On the contrary, we consider arbitrary (finite) hypothesis classes
+and obtain computationally efficient policies with provable approximation bounds relative
+to the optimal (instance-specific) policy. This approach is similar to that of Dasgupta 2005;
+Guillory and Bilmes 2009; Golovin and Krause 2011; Golovin et al. 2010; Cicalese et al.
+2014; Javdani et al. 2014.
+
+The noisy ODT problem was studied previously in Golovin et al. 2010. Using a con-
+nection to adaptive submodularity, Golovin and Krause (2011) obtained an O(log2
+)-
+approximation algorithm for noisy ODT in the presence of very few noisy outcomes, where
+pmin ≤ 1
+m is the minimum probability of any hypothesis.2 In particular, the running time of
+the algorithm in Golovin et al. 2010 is exponential in the number of noisy outcomes per hy-
+pothesis. As noted earlier, our result improves both the running time (it is now polynomial
+for any number of noisy outcomes) and the approximation ratio. We note that an O(log m)
+
+1
+pmin
+
+2. The paper Golovin et al. 2010 states the approximation ratio as O(log
+
+) because it relied on an
+erroneous claim in Golovin and Krause (2011). The correct approximation ratio, based on Nan and
+Saligrama (2017); Golovin and Krause (2017), is O(log2
+
+).
+
+1
+pmin
+
+1
+pmin
+
+5
+
+Jia, Navidi, Nagarajan and Ravi
+
+approximation ratio (still only for very sparse noise) follows from work on the “equivalence
+class determination” problem by Cicalese et al. (2014). For this setting, our result is also
+an O(log m) approximation, but our algorithm is simpler. More importantly, ours is the
+first result that can handle any number of noisy outcomes.
+
+Other variants of noisy ODT have also been considered, where the goal is to identify
+the correct hypothesis with at least some target probability (Naghshvar et al., 2012; Bellala
+et al., 2011; Chen et al., 2017). Chen et al. (2017) provided a bi-criteria approximation in
+which the algorithm has a higher error probability than the optimal policy. Our setting is
+different because we require zero probability of error. Many results for ODT (including
+some of ours) rely on certain submodularity properties. We briefly survey some background
+In the basic Submodular Cover problem, we are given a set of elements and a
+results.
+submodular function f . The goal is to use the minimal number of elements to increase
+the value of f to reach a certain threshold. Wolsey (1982) first considered this problem
+and proved that the natural greedy algorithm is a (1 + ln 1
+ε )-approximation, where ε is the
+minimal positive marginal increment of the function. As a natural generalization, in the
+Submodular Function Ranking problem we are given multiple submodular functions and
+aim to sequentially select elements so as to minimize the total cover time of these functions.
+Azar and Gamzu (2011) proposed a best-possible O(log 1
+ϵ )-approximation algorithm for
+this problem, and Im et al. (2016) extended this result to also handle arbitrary costs.
+More recently, Navidi et al. (2020) studied an adaptive version of the submodular ranking
+problem and presented a best-possible O(log m/ε)-approximation where m is the number
+of functions.
+
+Finally, we note that there is also work considering the worst-case (instead of average
+case) cost in ODT and active learning; see, e.g., Moshkov 2010; Saettler et al. 2017; Guillory
+and Bilmes 2010, 2011. These results are incomparable to ours because we are interested in
+the average cost. Moreover, the analysis of average cost is, in general, more intricate than
+that of the worst-case cost.
+
+2 Preliminaries
+
+In the problem of Optimal Decision Tree with Noise (ODTN), we are given a set of m
+possible hypotheses with a prior probability distribution {πi}m
+i=1, from which an unknown
+true hypothesis ¯i is drawn. There is also a set T of n binary tests. Each test T ∈ T is a
+mapping T : [m] → {+1, −1, ⋆}. When this test is performed, we will observe an outcome
+T (¯i) if T (¯i) ̸= ⋆, and observe +, − with probability 1
+2 if T (¯i) = ⋆. We assume that the
+random outcomes are independent, conditioned on the true hypothesis.
+
+Alternatively, we can view an instance as a matrix M ∈ {+1, −1, ⋆}n×m, where each
+⋆-entry is independently drawn from +1 and −1 uniformly. We emphasize that we only
+know the positions of the ⋆ entries but not their realized binary values, which can only be
+revealed when the corresponding test is selected.
+
+We aim to identify ¯i by iteratively eliminating hypotheses. Suppose we select a test T
+and observe an outcome O ∈ {±1}. Then, we can rule out the hypotheses i ∈ [m] with
+T (i) = −O. We emphasize that we can not rule out hypotheses h with T (h) = ⋆. In fact,
+if h is the true hypothesis, then there is still non-zero probability that we will observe O
+when T is selected.
+
+6
+
+Optimal Decision Tree with Noisy Outcomes
+
+We consider the persistent noise model. That is, repeating a test T with ¯i ∈ T ∗ always
+produces the same outcome. This model is (a) more general and (b) more challenging than
+the independent noise model, which is more common in the literature on active learning
+and ODT. In fact, to see (a), we can reduce the independent noise model to the persistent
+noise model by creating sufficiently many copies of each test. To see (b), note that in the
+independent noise model, we can “denoise” by repeating a test many times and reducing
+the problem to a deterministic one. However, this approach fails under persistent noise.
+
+We require that the output be correct with probability 1. To ensure that this is feasible,
+we assume that the true hypothesis ¯i can be uniquely identified by performing all tests,
+regardless of the outcomes of ⋆-tests, i.e., tests T where T (¯i) = ⋆.
+
+Assumption 1 (Identifiability). For any hypotheses i, j ∈ [m], there exists a test T such
+that T (i) ̸= T (j) and T (i), T (j) ∈ {+1, −1}.
+
+Many of our results still hold (with possibly weaker guarantees) without the identifia-
+bility assumption; see Appendix 7. Our goal is to minimize the expected number of tests
+performed. We formally define the cost when we introduce the more general problem of
+ASRN in Section 3.
+
+3 Submodular Function Ranking and Its Variants
+
+Many of our results for the ODTN problem are obtained as corollaries of a more general
+problem, Adaptive Submodular Ranking with Noise (ASRN). To define this problem, we first
+review the basic versions. In Section 3.1, we introduce the Submodular Function Ranking
+(SFR) problem (Azar and Gamzu, 2011), where elements are selected non-adaptively to
+cover a family of submodular functions. Then, in Section 3.2, we review the adaptive
+version of SFR, called the Adaptive Submodular Ranking (ASR) problem (Navidi et al.,
+2020), where the elements are selected to cover an unknown target submodular function,
+adaptively based on observed information on the target function. Finally, in Section 3.3, we
+dive into full generality by introducing the problem of Adaptive Submodular Ranking with
+Noise (ASRN), which generalizes both the ASR and ODTN problems.
+
+3.1 Submodular Function Ranking, Noiseless Case
+
+Let us begin with the simplest setting and gradually add components in the next two sub-
+sections. Azar and Gamzu (2011) introduced the following Submodular Function Ranking
+(SFR) problem. We are given a ground set of elements [n] := {1, ..., n} and a collection of
+monotone submodular functions {f1, ..., fm} where fi : 2[n] → [0, 1] satisfies fi(∅) = 0 and
+fi([n]) = 1 for all i ∈ [m]. It is without loss of generality (w.l.o.g.) to assume that the range
+is [0, 1], since any bounded function can be normalized to take values in [0, 1]. Each i ∈ [m]
+is called a scenario. An unknown target scenario is drawn from a known distribution {πi}
+over [m].
+
+Note that in this problem, we are not able to “learn” the target function based on any
+observable information. Therefore, a decision rule can be formulated as a permutation of
+elements. For a fixed permutation σ, we define the cover time of a scenario i as the first
+time fi reaches the value 1 if we select elements one by one according to σ. The objective
+in the SFR problem is to find a permutation σ of [n] with minimal expected cover time.
+
+7
+
+Jia, Navidi, Nagarajan and Ravi
+
+Definition 1 (Cover Time and Cost). Let σ = (σ(1), . . . , σ(n)) be any permutation of the
+elements and i ∈ [m] be a scenario. Then, the cover time is defined as
+
+C(i, σ) := min {t |fi({σ(1), ..., σ(t)}) = 1} .
+
+The cost of σ is Cost(σ) := (cid:80)
+
+i∈[m] πi · C(i, σ).
+
+Azar and Gamzu (2011) proposed a greedy algorithm that constructs a permutation of
+elements by iteratively selecting the next element with the highest score. This score assigns
+higher priority to those scenarios close to being covered. Specifically, the weight of each
+scenario is inversely proportional to the distance from 1 and the current value of fi. We will
+formally state this algorithm in the form of pseudo-code in Algorithm 1 after we introduced
+the noisy variant in the next subsection.
+
+This algorithm has the best possible approximation ratio in terms of separability param-
+
+eter ε > 0, defined as the minimum positive marginal increment of any function.
+
+Definition 2 (Separability). Given a family of non-decreasing functions F, its separabil-
+ity is defined as
+
+ε := min{fi(S ∪ {e}) − fi(S) > 0 | ∀S ⊆ [n], i ∈ [m], e ∈ [n]}.
+
+Azar and Gamzu (2011) showed the following in their Theorem 2.1.
+
+Theorem 3 (Azar and Gamzu 2011). There is a polynomial-time algorithm whose cost is
+O(log 1
+ε ) times the optimum for any SFR instance with separability parameter ε > 0.
+
+3.2 Adaptive Submodular Ranking, Noiseless Case
+
+An instance in the Adaptive Submodular Ranking (ASR) problem is slightly more involved
+than in the SFR problem in the following two ways. First, for each scenario i ∈ [m], there
+is a known response function ri : [n] → Ω where Ω is a finite set of responses (or outcomes,
+which we use interchangeably). If i is the true scenario and an element e ∈ [n] is selected,
+then a response ω = ri(e) ∈ Ω is generated and thus any scenario j with rj(e) ̸= ω can be
+eliminated. Second, the domain of each submodular function is expanded to incorporate
+the variability of the responses: The domain for each submodular function is 2[n] in an SFR
+instance, and is instead 2[n]×Ω in an ASR instance. The SFR problem can be cast as a
+special case of the ASR problem: The reduction is immediate by setting the response set Ω
+to a singleton.
+
+An adaptive policy (or decision tree) constructs a sequence of elements incrementally and
+adaptively, based on the responses of the previous elements. A policy is simply a function
+that maps the current state, i.e., elements selected so far and their responses, to an element
+that will be selected next. We formalize this concept below.
+
+Definition 4 (Adaptive Policy). The state is a tuple (E, O) where E ⊆ [n] and O ∈ ΩE.
+An adaptive policy is a mapping Φ : 2[n]×Ω → [n].
+
+Similarly to the non-adaptive setting, we aim to minimize the expected cover time. Let
+Φ be an adaptive policy. Observe that, conditional on any true scenario i ∈ [n], the sequence
+
+8
+
+Optimal Decision Tree with Noisy Outcomes
+
+of elements selected is uniquely determined by Φ. In fact, this sequence can be specified
+inductively and explicitly as follows. Suppose that elements e1, . . . , ek have been selected
+in the first k iterations. Then, the responses are ri(e1), . . . , ri(ek). By the definition of Φ,
+the next element selected would be ek+1 := Φ({(et, ri(et)) : t = 1, . . . , k}). We denote this
+sequence by σi,Φ and define the cover time as follows.
+
+Definition 5 (Cover Time, Adaptive Setting). Let Φ be a policy and i ∈ [m] be a scenario.
+Suppose e1, . . . , en is the (deterministic) sequence of elements selected by Φ if i is the true
+scenario. The cover time of i is then defined as
+
+C(i, Φ) := min{k | fi({(et, ri(et)) : t ∈ [k]}) = 1}.
+
+The expected cover time is ECT(Φ) := (cid:80)
+
+i∈[m] πi · C(i, Φ).
+
+The objective of the ASR problem is to find an adaptive policy Φ with minimal expected
+cover time. Navidi et al. (2020) showed a best-possible approximation algorithm (see their
+Theorem 1) that we will apply in Section 5.
+
+Theorem 6 (Navidi et al. 2020). There is a polynomial-time algorithm whose cost is
+O(log m
+ϵ ) times the optimum for any ASR instance with separability parameter ε > 0.
+
+Note that the ASR problem is a generalization of the (noiseless) ODT problem. In fact,
+for any hypothesis i in the ODT problem, we can define a submodular function fi that
+maps a subset of tests to the number of other hypotheses eliminated by these tests, if i is
+the true hypothesis.
+
+Analogously, we next introduce a noisy version of the ASR problem and show that it
+
+generalizes the ODTN problem.
+
+3.3 Adaptive Submodular Ranking with Noise
+
+We now formally define the problem of Adaptive Submodular Ranking with Noise (ASRN).
+An ASRN instance is almost identical to that of an ASR instance: We are given a set of
+n elements and a set of m scenarios. Each scenario i ∈ [m] is associated with a known
+submodular function fi : 2[n]×Ω → [0, 1]. We are also given a known prior distribution (πi)
+over the scenarios.
+
+The only difference lies in the response function: For each scenario i, the response
+function ri : [n] → Ω ∪ {⋆} can take a special value ⋆. Suppose i ∈ [m] is the true hypothesis
+and ri(e) = ⋆, then the response will be independently drawn from a known distribution
+on Ω. For simplicity, we will consider uniform distribution, although our results extend to
+arbitrary distributions.
+
+Although the responses are random, we can still use them to eliminate scenarios. To
+see this, take Ω = {±1}. Suppose i ∈ [m] is the true hypothesis and ri(e) = ⋆ for some
+If +1 is
+element e ∈ [n]. When e is selected, we observe +1, −1 with probability 1/2.
+observed, then we eliminate every scenario j with rj(e) = −1. Similarly, if −1 is observed,
+then we eliminate every scenario j with rj(e) = +1. In other words, a random outcome
+helps eliminate a random subset of scenarios.
+
+As a key technique challenge, unlike in the deterministic case, a scenario i ∈ [m] may
+follow multiple (more precisely, exponentially many in the number of ⋆’s) paths in the
+
+9
+
+Jia, Navidi, Nagarajan and Ravi
+
+decision tree corresponding to policy Φ. To formally define the cover time, we observe
+that, conditioned on the realized responses of all elements, the policy selects a deterministic
+sequence of elements. To formalize this idea, we need the following notion of consistent
+vectors.
+
+Definition 7 (Consistency of Response Vectors). A vector ω = (ωe)e∈[n] ∈ Ωn is con-
+sistent with a scenario i ∈ [m] if for any element e ∈ [n] with ri(e) ̸= ⋆, it holds that
+ri(e) = ωe.
+
+Using terminologies from probability theory, conditioned on the event that the true
+scenario is i, we can view Ωn as the ground set (for the probability space) and ω as a
+“sample path”. This probability space is equipped with a uniform probability measure over
+all sample paths consistent with i. Next, we define conditional cover time as a random
+variable (i.e., a function defined on Ωn) that maps each sample path ω to the cover time
+conditioned on ω.
+
+Definition 8 (Conditional Cover Time). Let Φ be an adaptive policy. Let i ∈ [m] be a
+scenario and ω ∈ Ωn be a consistent vector. We denote by σi,ω = (σi,ω(1), . . . , σi,ω(n)) the
+unique sequence of elements selected by Φ if i is the true scenario and the responses are
+given by ω. We write σ := σi,ω as a shorthand and define the conditional cover time as
+
+C(i, Φ|ω) := min{k | fi({(eσ(1), ωσ(1)), . . . , (eσ(k), ωσ(k))}) = 1}.
+
+To define the cost of a policy, we take the expectation over (i) all scenarios and (ii) all
+
+sample paths, conditional on a scenario.
+
+Definition 9 (Cost of a Policy). Let Φ be a policy and ω ∈ Ωn. Let pω|i be the probability
+mass of ω when i is the true hypothesis, and define the expected cover time of i as
+ECT(i, Φ) := (cid:80)
+
+ω∈Ωn pω|i · C(i, Φ|ω). The cost of Φ is defined as
+
+Cost(Φ) :=
+
+(cid:88)
+
+i∈[m]
+
+πi · ECT(i, Φ).
+
+To ensure the existence of a policy with finite cost, we need an assumption analogous
+to the identifiability assumption for the ODTN problem (Assumption 1). We assume that
+for each scenario i ∈ [m], the function fi can be covered w.p. 1 if we select all elements.
+
+Assumption 2 (Feasibility of Coverage). For any scenario i ∈ [m] and any ω ∈ Ωn
+consistent with i, we have fi({(e, ωe) : e ∈ [n]}) = 1.
+
+An important special case is where Ω is a singleton set. In this case, adaptivity does not
+provide any additional advantage, because we cannot observe anything informative. This
+setting is called Submodular Function Ranking with Noise (SFRN), and will be studied in
+order to obtain our results for the non-adaptive ODTN problem. We completely settle the
+SFRN problem in Section 4, thus setting the stage for our study of the ASRN problem in
+Section 5.
+
+10
+
+Optimal Decision Tree with Noisy Outcomes
+
+Figure 1: Connections between related problems: Edges represent (direct) reductions be-
+tween problems. The test cover problem (De Bontridder et al., 2003) , which was
+not mentioned so far, is essentially a non-adaptive version of the ODT problem,
+and hence can be reduced to the SFR problem. We highlight the new problems
+introduced in this work in red color.
+
+3.4 Connection to the ODTN Problem
+
+We illustrate the connections between the problems in Figure 1. We observe that the ODTN
+problem can be reduced to the ASRN problem. Let us view the tests and hypotheses in
+the ODTN problem as elements and scenarios respectively in the ASRN problem. For any
+hypothesis i ∈ [m], define its response function ri(T ) = T (i) ∈ Ω ∪ {⋆}. Furthermore, for
+any i ∈ [m] and any S ⊆ T × {±1}, we define a submodular function
+
+fi(S) =
+
+1
+m − 1
+
+·
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+(cid:91)
+
+T − (cid:91) (cid:91)
+
+T +
+
+T :(T,+1)∈S
+
+T :(T,−1)∈S
+
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+(cid:12)
+
+,
+
+where we recall that each test is a three-way partition (T +, T −, T ∗) of [m]. In words, fi(S)
+is the fraction of hypotheses (other than i) that are incompatible with at least one outcome
+in S.
+
+It is easy to see that each function fi : 2[n]×Ω → [0, 1] is monotone and submodular.
+Furthermore, the separability parameter ε = 1
+m−1 . More importantly, we observe that i is
+identified if and only if the function fi has value 1. The reduction follows by combining the
+above observations.
+
+3.5 Expanded Scenario Set
+
+For both non-adaptive and adaptive settings, given an ASRN instance I, we will consider
+an equivalent ASR instance J . Thus, we can apply known algorithms for the ASR problem
+to the ASRN setting, and immediately bound the approximation ratio.
+
+We emphasize that this does not suggest that our results are mere straightforward
+extensions of the known results for the ASR problem. In fact, the instance J is exponentially
+
+11
+
+Jia, Navidi, Nagarajan and Ravi
+
+large compared to the original instance I, and therefore it is highly non-trivial to find an
+efficient implementation of the ASR-based algorithm. In fact, most of Section 4 and Section
+5 is dedicated to elucidating our efficient implementation.
+
+In this subsection, we focus on explaining how to define the equivalent ASR instance.
+Let I be a given ASRN instance with scenarios [m], submodular functions {fi(·)} and
+response functions {ri(·)}. In the ASR instance J = J (I), each scenario in the original
+instance is divided into an exponential number of expanded scenarios, each corresponding
+to a sample path.
+
+Definition 10 (Expanded Scenarios). For each i ∈ [m], denote
+
+Ω(i) := {ω ∈ Ωn : ω is consistent with i}
+
+= {ω ∈ Ωn : ωe = ri(e) for all e ∈ [n] with ri(e) ̸= ⋆}.
+
+An expanded scenario is a tuple (i, ω) where ω ∈ Ω(i). Furthermore, we denote Hi :=
+{(i, ω) : ω ∈ Ω(i)} and H := (cid:83)m
+
+i=1 Hi.
+
+To define the prior distribution in the new instance, for a fixed scenario i, consider
+ci := |{e ∈ [n] : ri(e) = ⋆}|. Since the response of any ⋆-element for i is uniformly drawn
+from Ω, each of these |Ω|ci possible expanded scenarios occurs with the same probability
+πi,ω = πi/|Ω|ci. To complete the reduction, for each (i, ω) ∈ H, we define the response
+function ri,ω : [n] → Ω where
+
+ri,ω(e) = ωe,
+
+∀e ∈ [n],
+
+and the submodular function fi,ω : 2[n] → [0, 1] where
+
+fi,ω(S) = fi ({(e, ωe)}e∈S),
+
+∀S ⊆ [n].
+
+By this definition, since fi is monotone and submodular on [n] × Ω, the function fi,ω is also
+monotone and submodular on [n]. We will formally show the following in Appendix A.
+
+Proposition 11 (Reduction to the Noiseless Setting). The ASRN instance I is equivalent
+to the ASR instance J .
+
+We reiterate that the number of expanded scenarios can be exponential in the number
+of uncertain entries, and therefore we cannot directly apply the existing algorithms for the
+ASR problem. We explain how to circumvent this issue in Section 4 and Section 5.
+
+4 The Non-adaptive ASRN Problem
+
+This main result in this section is an O(log 1
+ε )-approximation for the SFRN problem, where
+we recall that ε > 0 is the minimal marginal increment of any submodular function in the
+given family. As a corollary, we obtain an O(log 1
+m )-approximation for the non-adaptive
+ODTN problem where m is the number of hypotheses.
+
+12
+
+Optimal Decision Tree with Noisy Outcomes
+
+4.1 The Greedy Score
+
+Azar and Gamzu (2011) proposed a greedy algorithm for the SFR problem. We rephrase
+this algorithm in the context of expanded scenarios. Suppose we have selected a set E of
+elements. We then select the next element to be the one with the highest score, which
+measures the additional coverage it provides when selected.
+
+Definition 12 (Non-adaptive Greedy Score). Let E ⊆ [n] be a subset of elements. Then,
+for each e ∈ [n] \ E, we define
+
+∆E(i, ω, e) :=
+
+(cid:40) fi,ω({e}∪E)−fi,ω(E)
+1−fi,ω(E)
+
+,
+
+0,
+
+if fi,ω(E) < 1,
+otherwise.
+
+Furthermore, we define the greedy score as
+
+GE(e) :=
+
+(cid:88)
+
+(i,ω)∈H
+
+πi,ω · ∆E(i, ω; e),
+
+(1)
+
+(2)
+
+Let us understand the intuition behind the above definition. The numerator in the ratio
+is the increase of fi,ω when e is selected. The denominator measures the remaining distance
+from the current value to 1, and helps prioritize the scenarios that are close to being covered.
+The algorithm then selects an element e with the highest GE(e).
+
+4.2 Estimating the Greedy Score
+
+Since the summation in eqn.(2) has exponentially many terms, it is not clear how to compute
+the exact value of GE(e) in polynomial time. However, since GE(e) is the expectation of
+∆E(i, ω; e) over the expanded scenarios, we can estimate it and select an approximately
+greediest element by sampling. The performance of this approach is guaranteed by the
+following result, which follows directly from the analysis in Azar and Gamzu (2011) and Im
+et al. (2016).
+
+Theorem 13 (Approximate Greedy Algorithm). Let σ = (e1, . . . , en) be a permutation
+of elements and denote Et := (e1, . . . , et) for t ≥ 1 and E0 := ∅. Suppose for each t =
+0, . . . , n − 1, we have
+
+Then,
+
+GEt(et+1) ≥ Ω(1) · max
+
+e′∈[n]\Et
+
+GEt(e′).
+
+(cid:18)
+
+Cost(σ) ≤ O
+
+log
+
+(cid:19)
+
+1
+ε
+
+· OPT
+
+where OPT denotes the optimum of the SFRN problem.
+
+To find such an approximately greediest element, for a fixed element e, we independently
+sample a polynomial number of expanded scenarios from the distribution (πi,ω). We evaluate
+∆E(i, ω, e) for each expanded scenario (i, ω) sampled, and compute their empirical mean.
+Due to standard concentration bounds, the deviation from GE(e), which is its expectation,
+is likely small. Therefore, the empirical mean can serve as a reliable estimate of the greedy
+score. We formally define this algorithm in Algorithm 1.
+
+13
+
+Jia, Navidi, Nagarajan and Ravi
+
+Algorithm 1 Non-adaptive SFRN algorithm
+1: Initialize E ← ∅ and permutation σ = ∅.
+2: for t = 1, . . . , n do
+3:
+
+E ← {σ(1), . . . , σ(t − 1)}
+For each e ∈ [n]\E, let GE(e) be the empirical mean of ∆E(i, ω; e) over N = m3n4ε−1
+
+independent draws of expanded scenarios (i, ω) from the distribution (πi,ω).
+
+Let σ(t) be the element e ∈ [n] \ E that maximizes GE(e).
+
+4:
+
+5:
+
+6: Return the permutation σ.
+
+4.3 Handling Small Greedy Score
+
+The desired O(log 1
+ε )-approximation would immediately follow if we could show that the
+estimation is always within a (multiplicative) O(1) factor to the true score GE(e) for every
+element e. Unfortunately, this is not true. In fact, it may fail when GE(e) is tiny for every
+element e.
+
+To see this, consider an i.i.d. sample X1, . . . , Xk (which corresponds to ∆E(i, ω; E)),
+each with mean µ > 0 (which corresponds to GE(e)). Chernoff’s inequality states that the
+probability of having a large deviation decays exponentially in kµ. In other words, to ensure
+a target level of confidence, we need the sample complexity k to scale as Ω(1/µ), which can
+be large when µ is small.
+
+To overcome this, we observe that if the score is small for all elements, then the set of
+elements selected so far is likely to have already covered all scenarios. Therefore, the choice
+of the next element is barely relevant. More precisely, we show that if GE(e) is less than
+a certain (small) threshold that scales polynomially in n, m and 1/ε, then with probability
+1 − n−Ω(1), the current set already covers all scenarios. We formalize this in Lemma 34 in
+Appendix B.
+
+So far, we have explained why our algorithm (a) is efficient (in Section 4.1), (b) identifies
+a sufficiently greedy element until all scenarios are covered (in Section 4.3), and (c) leads
+to a low approximation factor (in Section 4.2). Combining the above components, we have
+the following main result of this section.
+
+Theorem 14 (Approx. Algo.
+approximation for the SFRN problem.
+
+for SFRN). Algorithm 1 is a poly( 1
+
+ε , n, m) time O(log 1
+
+ε )-
+
+It should be noted that the approximation factor is best possible due to Theorem 3.1
+in Azar and Gamzu 2011. Furthermore, observe that for the ODTN problem, we have
+ε = 1
+
+m−1 , so we obtain the following.
+
+Corollary 15 (Approx. Algo. for Non-adaptive ODTN). Algorithm 1 gives an O(log m)-
+approximation for the non-adaptive ODTN problem where m is the number of hypotheses.
+
+We defer all details to Appendix B.
+
+5 The ASRN Problem with Low Noise Level
+
+In this section, we present an adaptive algorithm whose performance depends on the uncer-
+tainty level of the instance. Informally, suppose we store the response functions {ri(·)}i∈[m]
+
+14
+
+Optimal Decision Tree with Noisy Outcomes
+
+as a matrix whose rows and columns correspond to the elements and scenarios. Then, the
+column/row uncertainty is the maximum number of ⋆’s in any column/row, formally defined
+as follows.
+
+Definition 16 (Column and Row Uncertainty). Given an ASRN instance, the column
+uncertainty is c := maxi∈[m] |{e ∈ [n] : ri(e) = ⋆}|. Similarly, the row uncertainty is
+r := maxe∈[n]{i ∈ [m] : ri(e) = ⋆}.
+
+The main result of this section is an O (cid:0)log m
+
+ε + min{c log |Ω|, r}(cid:1)-approximation for
+the ASRN problem for instances that have column uncertainty c, row uncertainty r and
+separability ε. This is achieved by choosing between two algorithms, each having an ap-
+proximation ratio of O(c log |Ω| + log m
+In both algorithms, we
+maintain the posterior probability of each scenario based on the responses of the selected
+elements. We use these probabilities to calculate a score for each element, which depends
+on (a) the balancedness of the partition on the remaining scenarios, resulting from selecting
+this element, and (b) the expected number of scenarios eliminated.
+
+ε ) and an O(r + log m
+
+ε ).
+
+Unlike the noiseless setting, in the ASRN (and ODTN) problem, each scenario can follow
+an exponential number of paths in the decision tree. Therefore, a naive generalization of
+the analysis in Navidi et al. (2020) incurs an undesirable approximation factor.
+
+We overcome this challenge by reducing to the ASR instance J defined in Section 3.5.
+However, since J involves exponentially many scenarios, a naive implementation of the
+algorithm in Navidi et al. (2020) leads to an exponential running time.
+In Section 5.1
+we exploit the special structure of J and devise a polynomial-time algorithm. Then, in
+Section 5.2, we propose a slightly different algorithm than that of Navidi et al. (2020), and
+show an O(r + log m
+
+ε ) approximation ratio.
+
+Algorithm 2 Algorithm for ASR instance J , based on Navidi et al. (2020)
+1: Initialize E ← ∅, H ′ ← H.
+2: while H ′ ̸= ∅ do
+3:
+
+For any element e ∈ [n], let Be(H ′) be the largest cardinality set among
+
+{(i, ω) ∈ H ′ : ri,ω(e) = o}
+
+∀o ∈ Ω
+
+Define Le(H ′) = H ′ \ Be(H ′)
+Select the element e ∈ [n] \ E maximizing
+
+Scorec(e, E, H ′) = π(cid:0)Le(H ′)(cid:1) +
+
+(cid:88)
+
+(i,ω)∈H ′,fi,ω(E)<1
+
+πi,ω ·
+
+fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
+(3)
+
+Observe response o and update H ′ as H ′ ← {(i, ω) ∈ H ′ : ωe = o and fi,ω(E∪e) < 1}
+E ← E ∪ {e}
+
+4:
+
+5:
+
+6:
+
+7:
+
+5.1 An O(c log |Ω| + log m
+
+ε )-Approximation Algorithm
+
+Our first adaptive algorithm is based on the O(log m
+ε )-approximation algorithm for the
+(noiseless) ASR problem from Navidi et al. (2020), rephrased in our notation Algorithm 2.
+
+15
+
+Jia, Navidi, Nagarajan and Ravi
+
+Applying this result to the ASR instance J , we obtain an O(log |H|
+that |H| ≤ |Ω|c · m, we immediately obtain the desired guarantee on the cost.
+
+ε )-approximation. Note
+
+This algorithm maintains the set H ′ ⊆ H of expanded scenarios that are compatible
+with all the observed outcomes, and iteratively selects the element with maximum score, as
+defined in (3)‡. This score strikes a balance between covering the submodular functions (of
+the remaining scenarios) and shrinking H ′ (thereby reducing the uncertainty in the target
+scenario).
+
+To interpret the first term in Scorec, for simplicity, assume that Ω = {±1}. Upon
+selecting an element, H ′ is split into two subsets, among which Le(H ′) is the lighter (in
+cardinality). Thus, this term is simply the number of expanded scenarios eliminated in
+the worst case (over the responses in Ω). The higher this term, the more progress is made
+towards identifying the target (expanded) scenario. The second term is similar to the score
+in our non-adaptive algorithm (Algorithm 1). It involves the sum of incremental coverage
+over all expanded scenarios, weighted by their current coverage, with higher weights on
+expanded scenarios closer to being covered.
+
+As noted above, computing the summation in Scorec naively requires exponential time.
+However, in Appendix C we explain how to utilize the structure of the ASRN instance J to
+reformulate each of the two terms in Scorec in a manageable form, enabling a polynomial-
+time implementation. Now we are ready to formally state the main result of this subsection.
+
+Theorem 17 (Approx. Algo., Low Column Uncertainty). Algorithm 2 can be implemented
+in polynomial time and is an O(c log |Ω| + log m
+ε )-approximation algorithm for the ASRN
+problem on any instance with column uncertainty c.
+
+5.2 An O(r + log m
+
+ε )-Approximation Algorithm
+
+In this section, we consider a slightly different score function, Scorer, and obtain an O(r +
+log m
+ε )-approximation. Recall that in Algorithm 2, upon selecting an element e, the re-
+maining expanded scenarios are partitioned into at most |Ω| subsets, where the one with
+the lightest cardinality is denoted Le(H ′).
+
+In the modified score function Scorer, we instead consider the partition on the original
+scenarios, rather than the expanded scenarios. We define the subset S of the remaining
+original scenarios that has at least one expanded scenario remaining. If an element e is
+selected, then S is partitioned into (at most) |Ω| subsets, where the subset with the largest
+cardinality is denoted as Ce(S) ⊆ [m]. The set Re(H ′) ⊆ H ′ is then defined as the consistent
+expanded scenarios that have a different response than Ce(S). We formally describe this
+score function in Algorithm 5 in Appendix D.2.
+
+Note that S can be efficiently. More generally, for each scenario i, we can efficiently
+maintain the number ni of expanded scenario of i that is not eliminated. In fact, observe
+that if we select a ⋆-element e for i, then ni decreases by half. Moreover, the response is
+incompatible with the outcome, i.e., ri(e) ̸= o, then ni becomes 0.
+
+Similarly to Algorithm 2, the main computational challenge lies in evaluating the second
+term, since it involves summing over exponentially many terms, but a polynomial-time
+implementation follows by a similar approach as outlined in Section 5.1.
+
+‡. We use the subscript c to distinguish from the score function Scorer considered in Section 5.2, but for
+
+ease of notation, we will suppress the subscript in this subsection.
+
+16
+
+Optimal Decision Tree with Noisy Outcomes
+
+The main result of this section, stated below, is proved by adapting the proof technique
+
+from Navidi et al. (2020) and formally proved in Appendix D.2.
+
+Theorem 18 (Apxn. Algo., Low Row Uncertainty). Algorithm 5 can be implemented in
+polynomial time and is an O(r + log m
+ε )-approximation algorithm for the ASRN problem for
+any instance with row uncertainty r.
+
+By selecting between Algorithm 2 and Algorithm 5 depending on whether c log |Ω| > r,
+
+we immediately obtain the following.
+
+Theorem 19 (Meta Algo. for ASRN). There is an adaptive O(min{c log |Ω|, r} + log m
+approximation algorithm for the ASRN problem.
+
+ε )-
+
+In particular, this gives an O(min{c log |Ω|, r} + log m
+
+ε )-approximation algorithm for the
+ODTN problem. We also provide closed-form expressions for the scores used in Algorithm
+2 and Algorithm 5 for the ODTN problem in Appendix D.1, which will be used for our
+experiments.
+
+6 ODTN with Many Unknowns
+
+Our adaptive algorithm in Section 5 has a low approximation ratio when the vast majority
+of entries in the test-hypothesis matrix are deterministic. In this section, we focus on the
+other extreme, where ODTN instance has very few deterministic outcomes.
+
+More precisely, we quantify the noise level by its sparsity. An ODTN instance is α-sparse
+if every test has O(mα) deterministic hypotheses. Our main result is a polynomial-time
+approximation algorithm with cost O(mα + log m · OPT) where OPT is the optimum of the
+ODTN problem, whose output may be wrong with a low probability. Furthermore, we show
+that for any α ∈ [0, 1] we have OPT = Ω(m1−α). Therefore, when α < 1
+2 , we obtain an
+O(log m)-approximation for the ODTN problem. It should be noted that the cost matches
+the APX-hardness result (Theorem 4.1 of Chakaravarthy et al. 2011) within O(1) factors.
+We next explain the ideas in more detail.
+
+6.1 Stochastic Set Cover
+
+The design and analysis of our algorithm are closely related to the problem of Stochastic
+Set Cover (SSC) (Liu et al. 2008; Im et al. 2016). An SSC instance consists of a ground
+set [m] of items and a collection of random subsets S1, · · · , Sn of [m]. The distribution of
+each subset is known, but its instantiation is unknown until being selected. The goal is to
+minimize the expected number of sets to cover all elements in [m].
+
+A key component of our analysis is the following lower bound on the optimum of the
+ODTN problem, in terms of the optima of the following SSC instances. Recall that a test
+T can be represented as a three-way partition (T +, T −, T ∗) of [m].
+
+Definition 20 (Induced SSC Instances). For any hypothesis i ∈ [m], let SSC(i) denote the
+SSC instance with ground set [m] \ {i} and n random sets, given by
+
+ST (i) =
+
+
+
+
+
+
+T + with prob. 1
+T − with prob. 1
+T − or T + with prob. 1
+
+2 each
+
+if i ∈ T −
+if i ∈ T +
+if i ∈ T ∗
+
+,
+
+∀T ∈ [n].
+
+17
+
+Jia, Navidi, Nagarajan and Ravi
+
+To see the connection between the SSC and ODTN problem, observe that when i is
+the target hypothesis in the ODTN instance, any feasible algorithm must identify i by
+In the SSC terminology, we have covered all items in
+eliminating all other hypotheses.
+[m]\{i}. This leads to the following lower bound.
+
+Proposition 21 (SSC-based Lower Bound). For any ODTN instance with optimum OPT
+and induced SSC instancees {SSC(i)}i∈[m], we have
+
+OPT ≥
+
+(cid:88)
+
+i∈[m]
+
+πi · OPTSSC(i).
+
+Therefore, to bound the cost of an ODTN algorithm, we only need to charge its cost to
+the corresponding SSC instances and apply the above inequality. The next two subsections
+are dedicated to constructing such an algorithm.
+
+6.2 A Greedy SSC Algorithm
+
+A natural greedy algorithm is known to be an O(log m)-approximation (Liu et al. 2008; Im
+et al. 2016). As we recall, the greedy algorithm for the (deterministic) Set Cover problem
+iteratively selects a set that covers the largest number of new items (i.e., items that are not
+covered so far). Analogously, in the SSC problem, the greedy algorithm selects the set that
+maximizes the expected number of new items covered.
+
+More generally, we will consider an even more general version of the greedy algorithm,
+dubbed (β, ρ)-greedy where β, ρ > 1 are constants. This algorithm (i) is (only) required to
+apply the greedy rule for an Ω(1/ρ) fraction of all iterations, and (ii) selects a set whose
+coverage is Ω(1/β) that of the greediest set when it does apply the greedy rule. We formally
+define this algorithm (class) in Algorithm 3.
+
+Algorithm 3 (β, ρ)-Greedy algorithm for the SSC Problem
+
+1: Initialize C ← ∅, U ← [m].
+2: while U ̸= ∅ do
+for i /∈ C do
+3:
+
+▷ Selected sets and uncovered items
+
+Cov(i; U ) ← E[U ∩ Si]
+
+▷ Compute the expected coverage of Si
+
+Select any i∗ /∈ C satisfying Cov(i∗; U ) ≥ 1
+Observe the instantiation ¯Si∗ of Si∗
+U ← U \ ¯Si
+C ← C ∪ {i∗}
+
+β maxi∈C Cov(i; U )
+
+▷ Update the uncovered items
+
+4:
+
+5:
+
+6:
+
+7:
+
+8:
+
+The following is implied by Theorem 1.1 of Im et al. 2016 and serves as the cornerstone
+
+for our analysis.
+
+Theorem 22 (Greedy SSC Algorithm). Any (β, ρ)-greedy algorithm with β, ρ > 1 is an
+O(βρ log m)-approximation for the SSC problem.
+
+This result inspires a simple greedy algorithm for the ODTN problem, which we describe
+
+in the next subsection and use as a strawman to motivate further algorithmic ideas.
+
+18
+
+Optimal Decision Tree with Noisy Outcomes
+
+6.3 A First Attempt: SSC-based Greedy ODTN Algorithm
+
+Our ODTN algorithm is inspired by the following key observation. Suppose A is the set of
+alive (i.e., not yet eliminated) hypotheses in the ODTN problem, and a test T maximizes
+|T + ∩ A| + |T − ∩ A|. Then, T results in good progress for all SSC instances SSC(i) with
+i ∈ T ∗ simultaneously.
+
+Lemma 23 (Greedy Is Good for Most Hypotheses). Let A ⊆ [m] and T be a test such that
+
+E [|ST (i) ∩ (A\i)|] =
+
+1
+2
+
+(cid:0)|T + ∩ A| + |T − ∩ A|(cid:1) ≥ max
+T ′∈[n]
+
+1
+2
+
+(cid:0)|(T +)′ ∩ A| + |(T −)′ ∩ A|(cid:1) .
+
+(4)
+
+Then, for any hypothesis i ∈ T ∗, we have
+
+E [|ST (i) ∩ (A\i)|] ≥
+
+1
+2
+
+· max
+T ′∈[n]
+
+E [|ST ′(i) ∩ (A\i)|] .
+
+It should be noted that, in general, the above does not hold for i /∈ T ∗. To see this,
+suppose a test T satisfies eqn. (4) and has imbalanced deterministic sides, for example,
+|T +| = mα and |T −| = 1. Then, for each i ∈ T +, the random set ST has poor coverage in
+the SSC instance SSC(i), since it covers only one item (w.p. 1).
+
+By Lemma 23, a test T makes good progress for most SSC instances if (i) T satisfies
+eqn. (4), and (ii) i ∈ T ∗ is satisfied for most hypotheses i. This motivates us to consider
+the class of ODTN instances where (ii) is satisfied.
+
+Definition 24 (Sparse Instance). An ODTN instance is α-sparse for some α ∈ [0, 1] if
+for all tests T ∈ T we have max{|T +|, |T −|} ≤ mα.
+
+By this definition, if an ODTN instance is α-sparse, then most hypotheses are in T ∗.
+Consequently, by Lemma 23, a test T satisfying eqn. (4) is 2-greedy for most (more precisely,
+m − O(mα)) SSC instances.
+
+This motivates the following naive greedy algorithm. Suppose A is the set of consistent
+2 |T − ∩ A|.
+
+hypotheses. In each iteration, we select a test T that maximizes 1
+Furthermore, consider the following ideal event:
+
+2 |T + ∩ A| + 1
+
+For every t ≥ 1, when we select the t-th test, for every hypothesis i ∈ [m], the algorithm
+has selected Ω(t/ρ) tests T with i ∈ T ∗.
+
+If this event occurs, then the naive greedy algorithm gives an O(log m)-approximation. In
+fact, since the sequence of tests selected is (2, ρ)-greedy for every i, by Theorem 22, the
+expected cost conditional on i being the true hypothesis is O(ρ log m) · OPTSSC(i). Taking
+the expectation over all hypotheses and combining with the SSC-based lower bound in
+Proposition 21, we deduce that the total cost is O(ρ · log m)OPT.
+
+However, the ideal event may not always occur. Next, we explain how to fix this prob-
+lem by intermittently enumerating a small subset of hypotheses with the highest posterior
+probabilities.
+
+19
+
+Jia, Navidi, Nagarajan and Ravi
+
+6.4 Last Piece of the Puzzle: the Membership Oracle
+
+Suppose the ideal event fails, that is, up until some iteration, the sequence of tests selected
+is no longer (2, ρ)-greedy for some hypothesis i. To handle this issue, we modify the above
+greedy algorithm as follows: For each iteration t = 2k where k = 1, 2, . . . , log m, we consider
+the set Z = Zk of O(mα) hypotheses with the fewest ⋆-tests selected so far. Equivalently,
+we may maintain a posterior probability using Bayes’ rule and define Z as the subset of
+O(mα) hypotheses with the highest posterior probabilities.
+
+Then, we invoke a membership oracle Member(Z) to check whether the target hypothesis
+¯i ∈ Z. If so, then the algorithm terminates and returns ¯i. Otherwise, it continues with the
+greedy algorithm until the next power-of-two iteration.
+
+Specifically, the membership oracle Member(Z) takes a subset Z ⊆ [m] of hypotheses
+as input, and decides whether the target hypothesis ¯i is in Z. Whenever |Z| ≥ 2, we pick
+an arbitrary pair (j, k) of hypotheses in Z and choose a test where these two hypotheses
+have distinct deterministic outcomes. Such a test exists due to Assumption 1. Moreover,
+since each of these tests rules out at least one hypothesis, within |Z| − 1 iterations, there is
+only one hypothesis left. In Appendix E.1, we explain how to verify whether this remaining
+scenario is the true hypothesis using O(log m) tests.
+
+We can bound the cost of the membership oracle as follows.
+
+Lemma 25 (Membership Oracle Has Linear Cost). If ¯i ∈ Z, then Member(Z) declares ¯i = i
+with probability 1; otherwise, it declares ¯i /∈ Z with probability 1 − O(m−2). Furthermore,
+the expected cost of Member(Z) is O(|Z| + log m).
+
+The formal proof of the above result is deferred to Appendix E.1. At this juncture, we
+have introduced all relevant concepts and ideas. In the next subsection, we formally state
+our results.
+
+6.5 Sparsity-dependent Approximation Algorithm
+
+We are now ready to state the overall algorithm in Algorithm 4.
+In each iteration, we
+maintain a subset of consistent hypotheses, and iteratively compute the greediest test, as
+formally specified in Step 7. At each power-of-two iteration t = 2k where k = 1, 2, . . . , log m,
+we invoke the membership oracle and terminate if it declares a true hypothesis. This
+algorithm has the following guarantee.
+
+Theorem 26 (Apxn. Algo. for Sparse Instances). Algorithm 4 is a polynomial-time algo-
+rithm which (a) has cost O(mα + log m · OPT) for any α-sparse instance with α ∈ [0, 1],
+where OPT is the optimum for the ODTN problem, and (b) returns the true hypothesis with
+probability 1 − m−1.
+
+The choice of m−1 is not essential: To reduce the error probability, we can simply repeat
+the algorithm many times and perform a majority vote, i.e., return the most frequent output.
+Next, we argue that the first term, mα, is negligible compared to OPT when α ≤ 1
+2 .
+
+Proposition 27 (Sparsity-based Lower Bound on OPT). For any α-sparse instance, we
+have OPT = Ω(m1−α).
+
+20
+
+Optimal Decision Tree with Noisy Outcomes
+
+Algorithm 4 Main algorithm for large number of noisy outcomes
+1: Initialization: consistent hypotheses A ← [m], weights wi ← 0 for i ∈ [m], iteration
+
+index t ← 0
+
+2: while |A| > 1 do
+3:
+
+if t is a power of 2 then
+
+4:
+
+5:
+
+6:
+
+7:
+
+8:
+
+9:
+
+10:
+
+11:
+
+Let Z ⊆ A be the subset of 2mα hypotheses with lowest wi
+Invoke Member(Z)
+If a hypothesis is identified in Z, then Break
+
+Select a test T ∈ T maximizing 1
+Observe outcome oT
+R ← {i ∈ [m] : MT,i = −oT } and A ← A\R
+wi ← wi + 1 for each for each i ∈ T ∗
+t ← t + 1.
+
+2 (|T + ∩ A| + |T − ∩ A|)
+
+▷ Remove incompatible hypotheses
+▷ Update the weights of the hypotheses
+
+In particular, when α < 1
+
+2 the above implies that the cost O(mα) for each call of the
+membership oracle is lower than OPT, and therefore the total cost incurred in the power-
+of-two steps is O(log m · OPT). We therefore conclude the following.
+
+Corollary 28 (Logarithmic-Approximation for Sparse Instances). Algorithm 4 has cost
+O(log m · OPT) for any ODTN instance with α ≤ 1
+2 and returns the true hypothesis with
+probability 1 − m−1.
+
+6.6 Analysis Outline
+
+We outline the proof of Theorem 26 and defer the formal proof to Appendix E.
+Truncated Decision Tree. Let T denote the decision tree corresponding to our algorithm.
+We only consider tests that correspond to step 7. Recall that H is the set of expanded
+hypotheses and that any expanded hypothesis traces a unique path in T. For any (i, ω) ∈ H,
+let Pi,ω denote this path traced; so |Pi,ω| is the number of tests performed in Step 7 under
+(i, ω). We will work with a truncated decision tree T, defined below.
+
+Fix any expanded hypothesis (i, ω) ∈ H. For any t ≥ 1, let θi,ω(t) denote the fraction
+of the first t tests in Pi,ω that are ⋆-tests for hypothesis i. Recall that Pi,ω only contains
+tests from Step 7. Let ρ = 4 and define
+
+(cid:26)
+
+ti,ω = max
+
+t ∈ {20, 21, · · · , 2log m} : θi,ω(t′) ≥
+
+for all t′ ≤ t
+
+(cid:27)
+
+.
+
+1
+ρ
+
+(5)
+
+If ti,ω > |Pi,ω| then we simply set ti,ω = |Pi,ω|.
+
+Now we define the truncated decision tree T. By abuse of notation, we will use θi(t)
+and ti as random variables, with randomness over ω. Observe that for any (i, ω), at the
+next power-of-two step‡ 2⌈log ti⌉, which we call the truncation time, the membership oracle
+will be invoked. Moreover, 2⌈log ti⌉ ≤ 2ti, . This motivates us to define T is the subtree
+of T consisting of the first 2⌈log ti,ω⌉ tests along path Pi,ω, for each (i, ω) ∈ H. Under this
+definition, the cost of Algorithm 4 clearly equals the sum of the cost the truncated tree and
+cost for invoking membership oracles.
+
+‡. Unless stated otherwise, we denote log := log2.
+
+21
+
+Jia, Navidi, Nagarajan and Ravi
+
+Our proof proceeds by bounding the cost of Algorithm 4 at power-of-two steps and
+other steps. In other words, we will decompose the cost into the cost incurred by invoking
+the membership oracle and selecting the greedy tests. We start with the easier task of
+bounding the cost for the membership oracle. The oracle Member is always invoked on
+|Z| = O(mα) hypotheses. Using Lemma 25, the expected total number of tests due to
+Step 4 is O(mα log m). By Lemma 27, when α ≤ 1
+
+2 , this cost is O(log m · OPT).
+
+The remaining part of this subsection focuses on bounding the cost of the truncated
+
+tree as O(log m) · OPT. With this inequality, we obtain an expected cost of
+
+O(log m) · (mα + OP T ) ≤(as α< 1
+
+2 ) O(log m) · (m1−α + OP T ) ≤(cid:0)Lemma 27(cid:1) O(log m) · OP T,
+
+and Theorem 26 follows. At a high level, for a fixed hypothesis i ∈ [m], we will bound the
+cost of the truncated tree as follows:
+
+i has low fraction of ⋆-tests at ti
+
+i is among the top O(mα) hypotheses at ti
+
+=⇒
+Lemma 29
+=⇒
+Lemma 25
+=⇒
+T heorem 22
+
+i is identified w.h.p. by Member(Z) at 2⌈log ti⌉ ≤ 2ti, hence the truncated path is (2, 2)-greedy
+
+the expected cost conditional on i is O(log m) · SSC(i)
+
+and finally by summing over i ∈ [m], it follows from Lemma 21 that the cost of the truncated
+tree is O(log m)·OPT. We formalize each step below.
+
+Consider the first step, formally we show that if θi(t) < 1
+
+4 , then there are O(mα)
+hypotheses with fewer ⋆-tests than i. Suppose i is the target hypothesis and θi(t) drops
+below 1
+4 at t, that is, only less than a quarter of the tests selected are 2-greedy for SSC(i).
+Recall that if i ∈ T ∗ where T maximizes 1
+2 (|A ∩ T +| + |A ∩ T −|), then ST (i) is 2-greedy set
+for SSC(i), so we deduce that less than a t
+4 tests selected are ⋆-tests for i, or, at least 3t
+4
+tests selected thus far are deterministic for i. We next utilize the sparsity assumption to
+show that there can be at most O(mα) such hypotheses.
+
+Lemma 29. Consider any W ⊆ T and I ⊆ [m]. For i ∈ I, let D(i) = |{T ∈ W : MT,i ̸= ∗}|
+denote the number of tests in W for which i has deterministic (i.e. ±1) outcomes. For each
+κ ≥ 1, define I ′ = {i ∈ I : D(i) > |W |/κ}. Then, |I ′| ≤ κmα.
+
+Proof By definition of I ′ and α-sparsity, it holds that
+
+|I ′| ·
+
+|W |
+κ
+
+(cid:88)
+
+<
+
+D(i) =
+
+(cid:88)
+
+i∈I
+
+T ∈W
+
+|{i ∈ I : MT,i ̸= ∗}| ≤ |W | · mα,
+
+where the last step follows since |T ∗| ≤ mα for each test T . The proof follows immediately
+by rearranging.
+
+We now complete the analysis using the relation to SSC. Fix any hypothesis i ∈ [m]
+and consider the decision tree Ti obtained by conditioning T on ¯i = i. Lemma 23 and the
+definition of truncation together imply that Ti is (2, 4)-greedy for SSC(i), so by Theorem 22,
+
+22
+
+Optimal Decision Tree with Noisy Outcomes
+
+the expected cost of Ti is O(log m) · OPTSSC(i). Now, taking expectations over i ∈ [m], the
+expected cost of T is O(log m) (cid:80)m
+
+i=1 πi · OPTSSC(i). Recall from Proposition 21 that
+
+OPT ≥
+
+(cid:88)
+
+i∈[m]
+
+πi · OPTSSC(i),
+
+and therefore the cost of T is O(log m) · OPT.
+Correctness. We finally show that our algorithm identifies the target hypothesis ¯i with
+high probability. By the definition of ti, where the path is truncated, ¯i has less than 1
+4
+fraction of ⋆-tests. Thus, at iteration 2⌈log t¯i⌉, i.e., the first time the membership oracle is
+invoked after ti, ¯i has less than 1
+2 fraction of ⋆-tests. Hence, by Lemma 29, ¯i is among the
+O(mα) hypotheses with fewest ⋆-tests. Finally it follows from Lemma 25 that ¯i is identified
+correctly with probability at least 1 − 1
+m .
+
+7 Extension to Non-identifiable ODT Instances
+
+Previous work on ODT problem usually imposes the following identifiability assumption
+(e.g. Kosaraju et al. (1999)): for every pair hypotheses, there is a test that distinguishes
+them deterministically. However in many real world applications, such assumption does
+not hold. Thus far, we have also made this identifiability assumption for ODTN (see §??).
+In this section, we show how our results can be extended also to non-identifiable ODTN
+instances.
+
+To this end, we introduce a slightly different stopping criterion for non-identifiable in-
+stances. (Note that is is no longer possible to stop with a unique compatible hypothesis.)
+Define a similarity graph G on m nodes, each corresponding to a hypothesis, with an edge
+(i, j) if there is no test separating i and j deterministically. Our algorithms’ performance
+guarantees will now also depend on the maximum degree d of G; note that d = 0 in the per-
+fectly identifiable case. For each hypothesis i ∈ [m], let Di ⊆ [m] denote the set containing
+i and all its neighbors in G. We now define two stopping criteria.
+
+• Neighborhood stopping criterion: Stop when the set K of compatible hypotheses
+
+is contained in some Di, where i might or might not be the true hypothesis ¯x.
+
+• Clique stopping criterion: Stop when K is contained in some clique of G.
+
+Note that clique stopping is clearly a stronger notion of identification than neighborhood
+stopping. That is, if the clique-stopping criterion is satisfied then so is the neighborhood-
+stopping criterion. We now obtain an adaptive algorithm with approximation ratio O(d +
+min(h, r) + log m) for clique-stopping as well as neighborhood-stopping.
+
+Consider the following two-phase algorithm. In the first phase, we will identify some
+subset N ⊆ [m] containing the realized hypothesis ¯i with |N | ≤ d + 1. Given an ODTN
+instance with m hypotheses and tests T (as in §??), we construct the following ASRN in-
+stance with hypotheses as scenarios and tests as elements (this is similar to the construction
+in §3.3). The responses are the same as in ODTN: so the outcomes Ω = {+1, −1}. Let
+U = T × {+1, −1} be the element-outcome pairs. For each hypothesis i ∈ [m], we define a
+
+23
+
+Jia, Navidi, Nagarajan and Ravi
+
+submodular function:
+
+(cid:101)fi(S) = min
+
+
+
+
+
+
+1
+m − d − 1
+
+· (cid:12)
+(cid:12)
+
+(cid:91)
+
+T − (cid:91) (cid:91)
+
+T :(T,+1)∈S
+
+T :(T,−1)∈S
+
+T +(cid:12)
+
+(cid:12) , 1
+
+
+
+
+
+
+,
+
+∀S ⊆ U.
+
+1
+
+It is easy to see that each function (cid:101)fi : 2U → [0, 1] is monotone and submodular, and the
+separability parameter ε =
+m−d−1 . Moreover, (cid:101)fi(S) = 1 if and only if at least m − d − 1
+hypotheses are incompatible with at least one outcome in S. Equivalently, (cid:101)fi(S) = 1 iff
+there are at most d + 1 hypotheses compatible with S. By definition of graph G and max-
+degree d, it follows that function (cid:101)fi can be covered (i.e. reaches value one) irrespective of the
+noisy outcomes. Therefore, by Theorem 19 we obtain an O(min(r, c)+log m)-approximation
+algorithm for this ASRN instance. Finally, note that any feasible policy for ODTN with
+clique/neighborhood stopping is also feasible for this ASRN instance. So, the expected cost
+in the first phase is O(min(r, c) + log m) · OP T .
+
+Then, in the second phase, we run a simple splitting algorithm that iteratively selects
+any test T that splits the current set K of consistent hypotheses (i.e., T + ∩ K ̸= ∅ and
+T − ∩ K ̸= ∅). The second phase continues until K is contained in (i) some clique (for
+clique-stopping) or (ii) some subset Di (for neighborhood-stopping). Since the number of
+consistent hypotheses |K| ≤ d + 1 at the start of the second phase, there are at most d tests
+in this phase. So, the expected cost is at most d ≤ d · OP T . Combining both phases, we
+obtain the following.
+
+Theorem 30 (Apxn. Algo.
+for Non-identifiable Instances). There is an adaptive O(d +
+min(c, r) + log m)-approximation algorithm for the ODTN problem with the clique-stopping
+or neighborhood-stopping criterion.
+
+8 Experiments
+
+We implemented our algorithms on real-world and synthetic data sets. We compared our
+algorithms’ cost (expected number of tests) with an information theoretic lower bound on
+the optimal cost and show that the difference is negligible. Thus, despite our logarithmic
+approximation ratios, the practical performance is much better.
+Chemicals with Unknown Test Outcomes. We considered a data set called WISER§,
+which includes 414 chemicals (hypothesis) and 78 binary tests. Every chemical has either
+positive, negative or unknown result on each test. The original instance (called WISER-
+ORG) is not identifiable: so our result does not apply directly. In Appendix 7 we show how
+our result can be extended to such “non-identifiable” ODTN instances (this requires a more
+relaxed stopping criterion defined on the “similarity graph”). In addition, we also generated
+a modified dataset by removing chemicals that are not identifiable from each other, to
+obtain a perfectly identifiable dataset (called WISER-ID). In generating the WISER-ID
+instance, we used a greedy rule that iteratively drops the highest-degree hypothesis in the
+similarity graph until all remaining hypotheses are uniquely identifiable. WISER-ID has
+255 chemicals.
+
+§. https://wiser.nlm.nih.gov
+
+24
+
+Optimal Decision Tree with Noisy Outcomes
+
+√
+
+Random Binary Classifiers with Margin Error. We construct a dataset containing
+100 two-dimensional points, by picking each of their attributes uniformly in [−1000, 1000].
+We also choose 2000 random triples (a, b, c) to form linear classifiers ax+by
+a2+b2 + c ≤ 0, where
+a, b ∼ N (0, 1) and c ∼ U (−1000, 1000). The point labels are binary and we introduce noisy
+outcomes based on the distance of each point to a classifier. Specifically, for each threshold
+d ∈ {0, 5, 10, 20, 30} we define dataset CL-d that has a noisy outcome for any classifier-
+point pair where the distance of the point to the boundary of the classifier is smaller than
+d. In order to ensure that the instances are perfectly identifiable, we remove “equivalent”
+classifiers and we are left with 234 classifiers.
+Distributions. For the distribution over the hypotheses, we considered permutations of
+power law distribution (Pr[X = x; α] = βx−α) for α = 0, 0.5 and 1. Note that, α = 0
+corresponds to uniform distribution. To be able to compare the results across different
+classifiers’ datasets meaningfully, we considered the same permutation in each distribution.
+Algorithms. We implement the following algorithms: the adaptive O(r + log m + log 1
+ε )-
+approximation (which we denote ODTNr), the adaptive O(c log |Ω|+log m+log 1
+(ODTNc), the non-adaptive O(log m)-approximation (Non-Adap) and a slightly adaptive
+version of Non-Adap (Low-Adap). Algorithm Low-Adap considers the same sequence of
+tests as Non-Adap while (adaptively) skipping non-informative tests based on observed
+outcomes. For the non-identifiable instance (WISER-ORG) we used the O(d + min(c, r) +
+log m + log 1
+ε )-approximation algorithms with both neighborhood and clique stopping crite-
+ria (see Appendix 7). The implementations of the adaptive and non-adaptive algorithms
+are available online.¶
+
+ε )-approximation
+
+Data
+
+Algorithm
+
+Low-BND
+ODTNr
+ODTNh
+Non-Adap
+Low-Adap
+
+WISER-ID
+
+Cl-0
+
+Cl-5
+
+Cl-10
+
+Cl-20
+
+Cl-30
+
+7.994
+8.357
+9.707
+11.568
+9.152
+
+7.870
+7.910
+7.910
+9.731
+8.619
+
+7.870
+7.927
+7.979
+9.831
+8.517
+
+7.870
+7.915
+8.211
+9.941
+8.777
+
+7.870
+7.962
+8.671
+9.996
+8.692
+
+7.870
+8.000
+8.729
+10.204
+8.803
+
+Table 2: Cost of Different Algorithms for α = 0 (Uniform Distribution).
+
+Data
+
+Algorithm
+
+Low-BND
+ODTNr
+ODTNh
+Non-Adap
+Low-Adap
+
+WISER-ID
+
+Cl-0
+
+Cl-5
+
+Cl-10 Cl-20 Cl-30
+
+7.702
+8.177
+9.306
+11.998
+8.096
+
+7.582
+7.757
+7.757
+9.504
+7.837
+
+7.582
+7.780
+7.829
+9.500
+7.565
+
+7.582
+7.789
+8.076
+9.694
+7.674
+
+7.582
+7.831
+8.497
+9.826
+8.072
+
+7.582
+7.900
+8.452
+9.934
+8.310
+
+Table 3: Cost of Different Algorithms for α = 0.5.
+
+Results. Table 2, Table 3 and Table 4 show the expected costs of different algorithms on
+all uniquely identifiable data sets when the parameter α in the distribution over hypothesis
+
+¶. https://github.com/FatemehNavidi/ODTN ; https://github.com/sjia1/ODT-with-noisy-outcomes
+
+25
+
+Jia, Navidi, Nagarajan and Ravi
+
+Data
+
+Algorithm
+
+Low-BND
+ODTNr
+ODTNh
+Non-Adap
+Low-Adap
+
+WISER-ID
+
+Cl-0
+
+Cl-5
+
+Cl-10
+
+Cl-20
+
+Cl-30
+
+6.218
+7.367
+8.566
+11.976
+9.072
+
+6.136
+6.998
+6.998
+9.598
+8.453
+
+6.136
+7.121
+7.134
+9.672
+8.344
+
+6.136
+7.150
+7.313
+9.824
+8.609
+
+6.136
+7.299
+7.637
+10.159
+8.683
+
+6.136
+7.357
+7.915
+10.277
+8.541
+
+Table 4: Cost of Different Algorithms for α = 1.
+
+Data
+
+Parameters
+
+r
+Avg-r
+h
+Avg-h
+
+WISER-ORG WISER-ID Cl-0 Cl-5 Cl-10 Cl-20 Cl-30
+
+388
+50.46
+61
+9.51
+
+245
+30.690
+45
+9.39
+
+0
+0
+0
+0
+
+5
+1.12
+3
+0.48
+
+7
+2.21
+6
+0.94
+
+12
+4.43
+8
+1.89
+
+13
+6.54
+8
+2.79
+
+Table 5: Maximum and Average Number of Stars per Hypothesis and per Test in Different
+
+Data sets.
+
+is 0, 0.5 and 1 correspondingly. These tables also report values of an information-theoretic
+lower bound (the entropy) on the optimal cost (Low-BND). As the approximation ratio
+of our algorithms depend on maximum number c of unknowns per hypothesis and the
+maximum number r of unknowns per test, we have also included these parameters as well as
+their average values in Table 5. Table 6 summarizes the results on WISER-ORG with clique
+and neighborhood stopping criteria. We can see that ODTNr consistently outperforms the
+other algorithms and is very close to the information-theoretic lower bound.
+
+Acknowledgments and Disclosure of Funding
+
+R. Ravi is supported in part by the U.S. Office of Naval Research under award number
+N00014-21-1-2243 and the Air Force Office of Scientific Research under award number
+FA9550-23-1-0031. Viswanath Nagarajan is supported by NSF grants CMMI-1940766 and
+CCF-2006778.
+
+References
+
+Micah Adler and Brent Heeringa. Approximating optimal binary decision trees. In Approx-
+imation, Randomization and Combinatorial Optimization. Algorithms and Techniques,
+pages 1–9. Springer, 2008.
+
+Esther M Arkin, Henk Meijer, Joseph SB Mitchell, David Rappaport, and Steven S Skiena.
+Decision trees for geometric models. International Journal of Computational Geometry
+& Applications, 8(03):343–363, 1998.
+
+26
+
+Optimal Decision Tree with Noisy Outcomes
+
+Algorithm Neighborhood Stopping Clique Stopping
+
+ODTNr
+ODTNh
+Non-Adap
+Low-Adap
+
+11.163
+11.908
+16.995
+16.983
+
+11.817
+12.506
+21.281
+20.559
+
+Table 6: Algorithms on WISER-ORG dataset with Neighborhood and Clique Stopping for
+
+Uniform Distribution.
+
+Yossi Azar and Iftah Gamzu. Ranking with submodular valuations. In Proceedings of the
+twenty-second annual ACM-SIAM symposium on Discrete Algorithms, pages 1070–1079.
+SIAM, 2011.
+
+Yossi Azar, Iftah Gamzu, and Xiaoxin Yin. Multiple intents re-ranking. In Proceedings of
+the forty-first annual ACM symposium on Theory of computing, pages 669–678. ACM,
+2009.
+
+Maria-Florina Balcan, Alina Beygelzimer, and John Langford. Agnostic active learning.
+In Machine Learning, Proceedings of the Twenty-Third International Conference (ICML
+2006), Pittsburgh, Pennsylvania, USA, June 25-29, 2006, pages 65–72, 2006.
+
+Gowtham Bellala, Suresh K. Bhavnani, and Clayton Scott. Active diagnosis under persistent
+noise with unknown noise distribution: A rank-based approach. In Proceedings of the
+Fourteenth International Conference on Artificial Intelligence and Statistics, AISTATS
+2011, Fort Lauderdale, USA, April 11-13, 2011, pages 155–163, 2011.
+
+Venkatesan T Chakaravarthy, Vinayaka Pandit, Sambuddha Roy, and Yogish Sabharwal.
+Approximating decision trees with multiway branches. In International Colloquium on
+Automata, Languages, and Programming, pages 210–221. Springer, 2009.
+
+Venkatesan T. Chakaravarthy, Vinayaka Pandit, Sambuddha Roy, Pranjal Awasthi, and
+Mukesh K. Mohania. Decision trees for entity identification: Approximation algorithms
+and hardness results. ACM Trans. Algorithms, 7(2):15:1–15:22, 2011.
+
+Yuxin Chen, Seyed Hamed Hassani, and Andreas Krause. Near-optimal bayesian active
+learning with correlated and noisy tests. In Proceedings of the 20th International Con-
+ference on Artificial Intelligence and Statistics, AISTATS 2017, 20-22 April 2017, Fort
+Lauderdale, FL, USA, pages 223–231, 2017.
+
+Ferdinando Cicalese, Eduardo Sany Laber, and Aline Medeiros Saettler. Diagnosis de-
+termination: decision trees optimizing simultaneously worst and expected testing cost.
+In Proceedings of the 31th International Conference on Machine Learning, ICML 2014,
+Beijing, China, 21-26 June 2014, pages 414–422, 2014.
+
+Sanjoy Dasgupta. Analysis of a greedy active learning strategy.
+
+In Advances in neural
+
+information processing systems, pages 337–344, 2005.
+
+27
+
+Jia, Navidi, Nagarajan and Ravi
+
+Koen MJ De Bontridder, Bjarni V Halld´orsson, Magn´us M Halld´orsson, Cor AJ Hurkens,
+Jan Karel Lenstra, R Ravi, and Leen Stougie. Approximation algorithms for the test
+cover problem. Mathematical Programming, 98(1-3):477–491, 2003.
+
+Uriel Feige. A threshold of ln n for approximating set cover. Journal of the ACM (JACM),
+
+45(4):634–652, 1998.
+
+M.R. Garey and R.L. Graham. Performance bounds on the splitting algorithm for binary
+
+testing. Acta Informatica, 3:347–355, 1974.
+
+Daniel Golovin and Andreas Krause. Adaptive submodularity: Theory and applications in
+active learning and stochastic optimization. J. Artif. Intell. Res., 42:427–486, 2011. doi:
+10.1613/jair.3278. URL https://doi.org/10.1613/jair.3278.
+
+Daniel Golovin and Andreas Krause. Adaptive submodularity: A new approach to active
+learning and stochastic optimization. CoRR, abs/1003.3967, 2017. URL http://arxiv.
+org/abs/1003.3967.
+
+Daniel Golovin, Andreas Krause, and Debajyoti Ray. Near-optimal bayesian active learning
+with noisy observations. In Advances in Neural Information Processing Systems 23: 24th
+Annual Conference on Neural Information Processing Systems 2010. Proceedings of a
+meeting held 6-9 December 2010, Vancouver, British Columbia, Canada., pages 766–774,
+2010.
+
+Andrew Guillory and Jeff A. Bilmes. Average-case active learning with costs. In Algorithmic
+Learning Theory, 20th International Conference, ALT 2009, Porto, Portugal, October 3-
+5, 2009. Proceedings, pages 141–155, 2009.
+
+Andrew Guillory and Jeff A. Bilmes. Interactive submodular set cover. In Proceedings of
+the 27th International Conference on Machine Learning (ICML-10), June 21-24, 2010,
+Haifa, Israel, pages 415–422, 2010.
+
+Andrew Guillory and Jeff A. Bilmes. Simultaneous learning and covering with adversarial
+noise. In Proceedings of the 28th International Conference on Machine Learning, ICML
+2011, Bellevue, Washington, USA, June 28 - July 2, 2011, pages 369–376, 2011.
+
+Anupam Gupta, Viswanath Nagarajan, and R Ravi. Approximation algorithms for optimal
+decision trees and adaptive tsp problems. Mathematics of Operations Research, 42(3):
+876–896, 2017.
+
+Steve Hanneke. A bound on the label complexity of agnostic active learning. In Machine
+Learning, Proceedings of the Twenty-Fourth International Conference (ICML 2007), Cor-
+vallis, Oregon, USA, June 20-24, 2007, pages 353–360, 2007.
+
+Laurent Hyafil and Ronald L. Rivest. Constructing optimal binary decision trees is N P -
+
+complete. Information Processing Lett., 5(1):15–17, 1976/77.
+
+Sungjin Im, Viswanath Nagarajan, and Ruben Van Der Zwaan. Minimum latency submod-
+
+ular cover. ACM Transactions on Algorithms (TALG), 13(1):13, 2016.
+
+28
+
+Optimal Decision Tree with Noisy Outcomes
+
+Shervin Javdani, Yuxin Chen, Amin Karbasi, Andreas Krause, Drew Bagnell, and Sid-
+dhartha S. Srinivasa. Near optimal bayesian active learning for decision making.
+In
+Proceedings of the Seventeenth International Conference on Artificial Intelligence and
+Statistics, AISTATS 2014, Reykjavik, Iceland, April 22-25, 2014, pages 430–438, 2014.
+
+Su Jia, Viswanath Nagarajan, Fatemeh Navidi, and R. Ravi. Optimal decision tree with
+noisy outcomes. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence
+d’Alch´e-Buc, Emily B. Fox, and Roman Garnett, editors, Annual Conference on Neural
+Information Processing Systems (NeurIPS), pages 3298–3308, 2019.
+
+S Rao Kosaraju, Teresa M Przytycka, and Ryan Borgstrom. On an optimal split tree
+In Workshop on Algorithms and Data Structures, pages 157–168. Springer,
+
+problem.
+1999.
+
+Ray Li, Percy Liang, and Stephen Mussmann. A tight analysis of greedy yields subexpo-
+nential time approximation for uniform decision tree. In Proceedings of the Fourteenth
+Annual ACM-SIAM Symposium on Discrete Algorithms, pages 102–121. SIAM, 2020.
+
+Zhen Liu, Srinivasan Parthasarathy, Anand Ranganathan, and Hao Yang. Near-optimal
+algorithms for shared filter evaluation in data stream systems. In Proceedings of the ACM
+SIGMOD International Conference on Management of Data, SIGMOD 2008, Vancouver,
+BC, Canada, June 10-12, 2008, pages 133–146, 2008.
+
+D. W. Loveland. Performance bounds for binary testing with arbitrary weights. Acta
+
+Inform., 22(1):101–114, 1985.
+
+Mikhail Ju. Moshkov. Greedy algorithm with weights for decision tree construction. Fun-
+
+dam. Inform., 104(3):285–292, 2010.
+
+Mohammad Naghshvar, Tara Javidi, and Kamalika Chaudhuri. Noisy bayesian active learn-
+ing. In 50th Annual Allerton Conference on Communication, Control, and Computing,
+Allerton 2012, Allerton Park & Retreat Center, Monticello, IL, USA, October 1-5, 2012,
+pages 1626–1633, 2012.
+
+Feng Nan and Venkatesh Saligrama. Comments on the proof of adaptive stochastic set cover
+based on adaptive submodularity and its implications for the group identification problem
+in ”group-based active query selection for rapid diagnosis in time-critical situations”.
+IEEE Trans. Information Theory, 63(11):7612–7614, 2017.
+
+Fatemeh Navidi, Prabhanjan Kambadur, and Viswanath Nagarajan. Adaptive submodular
+
+ranking and routing. Oper. Res., 68(3):856–877, 2020.
+
+Robert D. Nowak. Noisy generalized binary search. In Advances in Neural Information Pro-
+cessing Systems 22: 23rd Annual Conference on Neural Information Processing Systems
+2009. Proceedings of a meeting held 7-10 December 2009, Vancouver, British Columbia,
+Canada., pages 1366–1374, 2009.
+
+Aline Medeiros Saettler, Eduardo Sany Laber, and Ferdinando Cicalese. Trading off worst
+
+and expected cost in decision tree problems. Algorithmica, 79(3):886–908, 2017.
+
+29
+
+Jia, Navidi, Nagarajan and Ravi
+
+Laurence A Wolsey. An analysis of the greedy algorithm for the submodular set covering
+
+problem. Combinatorica, 2(4):385–393, 1982.
+
+30
+
+Optimal Decision Tree with Noisy Outcomes
+
+Appendix A. Proof of Proposition 11: Reduction from ASRN to ASR
+
+It suffices to show that any feasible decision tree for the ASR instance J is also feasible for
+the ASRN instance I with the same objective and vice versa.
+
+First, consider a feasible decision tree T for the ASR instance J . For any expanded
+scenario (i, ω) ∈ H, let Pi,ω be the unique path traced in T, and Si,ω the elements selected
+along this path. By the definition of a feasible decision tree, at the last node (i.e., leaf) of
+Pi,ω, we have fi,ω(Si,ω) = 1, i.e.,
+
+Therefore, T is a feasible decision tree to I.
+
+fi({(e, ωe) : e ∈ Si,ω}) = 1.
+
+Now, we consider the other direction. Let T′ be a decision tree for the ASRN instance
+I. Suppose the true scenario is i ∈ [m] and the outcomes are given by a consistent vector
+ω ∈ Ωn. Then, a unique path P ′
+i,ω. Since i
+i,ω}) = 1. Now view T′ as a decision
+is covered at the end of P ′
+tree for the ASR instance J . Then, the expanded scenario (i, ω) corresponds to a unique
+path P ′
+
+i,ω is traced in T′, whose elements we denote by S′
+
+i,ω, we have fi({(e, ωe) : e ∈ S′
+
+i,ω, and therefore the elements S′
+
+i,ω are selected. It follows that
+
+i.e., (i, ω) is covered at the end of P ′
+
+fi,ω(S′
+
+i,ω) = fi({(e, ωe) : e ∈ S′
+
+i,ω}) = 1,
+i,ω. Therefore, T′ is also a feasible tree for J .
+
+Appendix B. Details for the SFRN Problem (Section 4)
+
+Recall that the non-adaptive SFRN algorithm (Algorithm 1) involves two phases. In the
+first phase, we run the SFR algorithm using sampling to obtain estimates GE(e) of the
+scores. If at some step, the maximum sampled score is “too low” then we go to the second
+phase where we perform all remaining elements in an arbitrary order. The number of
+samples used to obtain each estimate is polynomial in m, n, ε−1, so the overall runtime is
+polynomial.
+Pre-processing. We first show that by losing an O(1)-factor in approximation ratio,
+we may assume that πi ≥ n−2 for all i ∈ [m]. Let A = {i ∈ [m] : πi ≤ n−2}, then
+(cid:80)
+i πi ≤ n−2 · n ≤ n−1. Replace all scenarios in A with a single dummy scenario “0” with
+π0 = (cid:80)
+i∈A πi, and define f0 to be any fi where i ∈ A. By our assumption that each fi
+must be covered irrespective of the noisy outcomes, it holds that fi,ω([n]) = 1 for each
+ω ∈ Ω(i), and hence the cover time is at most n. Thus, for any permutation σ, the expected
+cover time of the old and new instance differ by at most O(n−1 · n) = O(1). Therefore, the
+cover time of any sequence of elements differs by only O(1) in this new instance (where we
+removed the scenarios with tiny prior densities) and the original instances.
+
+To analyze our randomized algorithm, we need the following sampling lemma, which
+
+follows from the standard Chernoff bound.
+
+Lemma 31 (Concentration Bound). Let X be a bounded random variable with EX ≥
+m−2n−4ε and X ∈ [0, 1] a.s. Denote by ¯X the average of m3n4ε−1 many independent
+samples of X. Then,
+
+(cid:20)
+¯X /∈
+
+Pr
+
+(cid:20) 1
+2
+
+(cid:21)(cid:21)
+
+≤ e−Ω(m)
+
+EX, 2EX
+
+31
+
+Jia, Navidi, Nagarajan and Ravi
+
+Proof Let X1, ..., XN be i.i.d. samples of random variable where N = m3n4ε−1 is the
+number of samples. Letting Y = (cid:80)
+i∈[N ] Xi, Chernoff’s inequality implies for any δ ∈ (0, 1),
+
+Pr (Y /∈ [(1 − δ)EY, (1 + δ)EY ]) ≤ exp
+
+(cid:18)
+
+−
+
+δ2
+2
+
+(cid:19)
+
+.
+
+· EY
+
+The claim follows by setting δ = 1
+
+2 and using the assumption that
+
+EY = N · EX1 = Ω(m).
+
+The next lemma shows that sampling does find an approximate maximizer unless the
+
+score is very small, and also bounds the failure probability.
+
+Definition 32 (Failure). Consider any iteration in Algorithm 1 with S = maxe∈[n] GE(e)
+and ¯S = maxe∈[n] GE(e) with GE(e∗) = ¯S. We say that this step is a failure if either (i)
+¯S < 1
+
+4 m−2n−4ε and GE(e∗) < S
+4 .
+
+2 m−2n−4ε, or (ii) ¯S ≥ 1
+
+4 m−2n−4ε and S ≥ 1
+
+Lemma 33 (Failure Probability Is Low). The probability of failure is e−Ω(m).
+
+Proof We will consider the two types of failure separately. For the first type, suppose
+S ≥ 1
+2 m−2n−4ε. Applying Lemma 31 on the element e ∈ [n] with GE(e) = S, we obtain
+
+(cid:20)
+
+¯S <
+
+Pr
+
+1
+4
+
+m−2n−4ε
+
+(cid:21)
+
+(cid:20)
+
+≤ Pr
+
+GE(e) <
+
+(cid:21)
+
+m−2n−4ε
+
+1
+4
+
+≤ e−Ω(m).
+
+So the probability of the first type of failure is at most e−Ω(m). For the second type of
+failure, we consider two cases.
+Case 1: Suppose S < 1
+
+8 m−2n−4ε.
+Note that GE(e) is the average of N independent draws, each with mean GE(e). We now
+upper bound the probability of the event Be that GE(e) ≥ 1
+4 m−2n−4ε. We first artificially
+increase each sample mean to 1
+8 m−2n−4ε: note that this only increases the probability of
+the event Be. Now, using Lemma 31 we obtain Pr[Be] ≤ e−Ω(m). By a union bound, it
+follows that Pr[ ¯S ≥ 1
+
+8 m−2n−4ε. For any e ∈ [n] we have GE(e) ≤ S < 1
+
+e∈[n] Pr[Be] ≤ e−Ω(m).
+
+4 m−2n−4ε] ≤ (cid:80)
+
+Case 2: Suppose S ≥ 1
+
+8 m−2n−4ε. Consider now any e ∈ U with GE(e) < S/4. By
+Lemma 31 (artificially increasing GE(e) to S/4 if needed), it follows that Pr[GE(e) > S/2] ≤
+e−Ω(m). Now consider the element e′ with GE(e′) = S. Again, by Lemma 31, it follows that
+Pr[GE(e′) ≤ S/2] ≤ e−Ω(m). This means that element e∗ has GE(e∗) ≥ GE(e′) > S/2 and
+GE(e∗) ≥ S/4 with probability 1 − e−Ω(m). In other words, assuming S ≥ 1
+8 m−2n−4ε, the
+probability that GE(e∗) < S/4 is at most e−Ω(m).
+
+Adding the probabilities over all possibilities for failures, the lemma follows.
+Based on Lemma 33, in the remaining analysis, we condition on the event that our
+algorithm never encounters failures, which occurs with probability 1 − e−Ω(m). To conclude
+the proof, we need the following key lemma which essentially states that if the score of
+the greediest element is low, then the elements selected so far suffices to cover all scenarios
+with high probability, and therefore the ordering of the remaining elements does not matter
+much.
+
+32
+
+Optimal Decision Tree with Noisy Outcomes
+
+Lemma 34 (Handling Small Greedy Score). Assume that there are no failures. Consider
+the end of phase 1 in our algorithm, i.e., the first step with GE(e∗) < 1
+4 m−2n−4ε. Then,
+the probability that the realized scenario is not covered is at most m−2.
+
+Proof Let E denote the elements chosen so far and p the probability that E does not cover
+the realized scenario-copy of H, formally,
+
+p = Pr
+
+(i,ω)∈H
+
+(fi,ω(E) < 1) =
+
+m
+(cid:88)
+
+i=1
+
+πi · Pr
+
+ω∈Ω(i)
+
+(fi,ω(E) < 1).
+
+It follows that there is some i with Prω∈Ω(i)(fi,ω(E) < 1) ≥ p. By definition of separa-
+
+bility, if fi,ω(E) < 1 then fi,ω(E) ≤ 1 − ε. Thus,
+
+(cid:88)
+
+ω∈Ω(i)
+
+πi,ωfi,ω(E) ≤
+
+(cid:88)
+
+πi,ω · 1 +
+
+(cid:88)
+
+πi,ω · fi,ω(E) ≤ (1 − εp)πi.
+
+ω:fi,ω(E)=1
+
+ω:fi,ω(E)<1
+
+On the other hand, taking all the elements, we have fi,ω([n]) = 1 for all ω ∈ Ω(i). Thus,
+
+(cid:88)
+
+ω∈Ω(i)
+
+πi,ωfi,ω([n]) =
+
+(cid:88)
+
+ω∈Ω(i)
+
+πi,ω = πi.
+
+Taking the difference of the above two inequalities, we have
+
+(cid:88)
+
+πi,ω · (fi,ω([n]) − fi,ω(E)) ≥ πi · εp.
+
+ω∈Ω(i)
+Consider function g(S) := (cid:80)
+submodular. From the above, we have g([n]) ≥ πi · εp. Using the submodularity of g,
+εpπi
+(cid:88)
+n
+
+ω∈Ω(i) πi,ω · (fi,ω(S ∪ E) − fi,ω(E)) for S ⊆ [n], which is also
+
+πi,ω · (fi,ω(E ∪ {˜e}) − fi,ω(E)) ≥
+
+=⇒ ∃˜e ∈ [n] :
+
+εpπi
+n
+
+g({e}) ≥
+
+max
+e∈[n]
+
+.
+
+ω∈Ω(i)
+
+It follows that GE(˜e) ≥ εpπi
+contradiction that p ≥ m−2. Since there is no failure and GE(˜e) ≥ n−3m−2ε ≥ 1
+by case (ii) of Lemma 33 , we deduce that GE(e∗) ≥ 1
+4 m−2n−4, a contradiction.
+
+n ≥ n−3εp, where we used mini πi ≥ n−2. Now, suppose for a
+4 n−4m−2ε,
+
+The above is essentially a consequence of the submodularity of the target functions.
+Suppose for contradiction that there is a scenario i that, with at least m−2 probability
+over the random outcomes, remains uncovered by the currently selected elements. Recall
+that according to our feasibility assumption, if all elements were selected, then fi is covered
+with probability 1. Therefore, by submodularity, there exists an individual element ˜e whose
+inclusion brings more coverage than the average coverage over all elements in [n], and
+therefore ˜e has a “high” score.
+Proof of Theorem 14. Assume that there are no failures. We proceed by bounding
+the expected costs (number of elements) from phases 1 and 2 separately. By Lemma 33,
+the element chosen in each step of phase 1 is a 4-approximate maximizer (see case (ii)
+failure) of the score used in the SFR algorithm. Thus, by Theorem 13, the expected cost in
+phase 1 is O(log m) times the optimum. On the other hand, by Lemma 34 the probability
+of performing phase 2 is at most e−Ω(m). As there are at most n elements in phase 2, the
+expected cost is only O(1). Therefore, Algorithm 1 is an O(log m)-approximation algorithm
+for the SFRN problem.
+
+33
+
+Jia, Navidi, Nagarajan and Ravi
+
+Appendix C. Efficient Implementation of Algorithm 2
+
+As we recall, it was not clear why the score function in Algorithm 2 can be efficiently
+computed. In this section, we explain why this algorithm can be implemented in polynomial
+time.
+
+C.1 Computing the First Term in Scorec.
+
+Recall that Hi is the set of all expanded scenarios for i. Since each (i, ω) ∈ Hi has an equal
+share πi,ω = |Ω|−ciπi of prior probability mass the (original) scenario i ∈ [m], computing
+the first term in Scorec reduces to maintaining the number ni = |Hi ∩ H ′| of consistent
+copies of i. We observe that ni can be easily updated in each iteration. In fact, suppose
+outcome o ∈ Ω is observed when selecting element e. We consider how H ′ ∩ Hi changes
+after selecting in the following three cases.
+
+1. if ri(e) /∈ {⋆, o}, then none of i’s expanded scenarios would remain in H ′, so ni becomes
+
+0,
+
+2. if ri(e) = o, then all of i’s expanded scenarios would remain in H ′, so ni remains the
+
+same,
+
+3. if ri(e) = ⋆, then only those (i, ω) with ω(e) = o will remain, and so ni shrinks by an
+
+|Ω| factor.
+
+As ni’s can be easily updated, we are also able to compute the first term in Scorec
+efficiently. Indeed, for any element e (that is not yet selected), we can implicitly describe
+the set Le(H ′) as follows. Note that for any outcome o ∈ Ω,
+
+|{(i, ω) ∈ H ′ : ri,ω(e) = o}| =
+
+(cid:88)
+
+i∈[m]:ri(e)=o
+
+ni +
+
+1
+|Ω|
+
+(cid:88)
+
+ni,
+
+i∈[m]:ri(e)=⋆
+
+so the largest cardinality set Be(H ′) can be easily determined using ni’s. In fact, let b be
+the outcome corresponding to Be(H ′). Then,
+
+π (cid:0)Le
+
+(cid:0)H ′(cid:1)(cid:1) =
+
+(cid:88)
+
+i∈[m]:ri(e) /∈{b,⋆}
+
+πi
+|Ω|ci
+
+· ni +
+
+|Ω| − 1
+|Ω|
+
+(cid:88)
+
+i∈[m]:ri(e)=⋆
+
+πi
+|Ω|ci
+
+· ni.
+
+C.2 Computing the Second Term in Scorec
+
+The second term in Scorec involves summing over exponentially many terms, so a naive
+Instead, we will rewrite this summation as an expectation
+implementation is inefficient.
+that can be calculated in polynomial time.
+
+We introduce some notation before formally stating this equivalence. Suppose the al-
+gorithm selected a subset E of elements, and observed outcomes {νe}e∈E. We overload
+notation slightly and use f (νE) := f (cid:0){(e, νe) : e ∈ E}(cid:1) for any function f defined on
+2[m]×Ω. For each scenario i ∈ [m], let pi = ni · πi
+|Ω|ci be the total probability mass of the
+surviving expanded scenarios for i.† Finally, for any element e and scenario i, let Ei,νe be the
+†. One may easily verify via the Bayesian rule that pi/p([m]) is indeed the posterior probability of scenario
+
+i ∈ [m], given the previously observed outcomes.
+
+34
+
+Optimal Decision Tree with Noisy Outcomes
+
+expectation over the outcome νe of element e conditional on i being the realized scenario.
+We can then rewrite the second term in Scorec as follows.
+
+Lemma 35 (Reformulation of the Greedy Score). For each i ∈ [m], and e /∈ E,
+
+(cid:88)
+
+πi,ω ·
+
+(i,ω)∈H ′
+
+fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
+(cid:88)
+
+=
+
+pi ·
+
+i∈[m]
+
+Ei,νe[fi(νE ∪ {νe}) − fi(νE)]
+1 − fi(νE)
+
+(6)
+
+Proof By decomposing the summation in the left hand side of (3) as H ′ = ∪iH ′ ∩ Hi, and
+noticing that fi,ω(E) = fi(νE), the problem reduces to showing that for each i ∈ [m],
+
+(cid:88)
+
+(i,ω)∈H ′∩Hi
+
+πi,ω · (cid:0)fi,ω(e ∪ E) − fi,ω(E)(cid:1) = pi · Ei,νe[fi(νE ∪ {νe}) − fi(νE)].
+
+Recall that pi = ni · πi
+
+|Ω|ci and π(i,ω) = πi
+
+|Ω|ci , the above simplifies to
+
+1
+ni
+
+(cid:88)
+
+(cid:0)fi,ω(e ∪ E) − fi,ω(E)(cid:1) = Ei,νe[fi(νE ∪ {νe}) − fi(νE)].
+
+(i,ω)∈H ′∩Hi
+
+Note that ni = |H ′ ∩ Hi|, so the above is equivalent to
+
+1
+ni
+
+(cid:88)
+
+fi,ω(e ∪ E) = Ei,νe[fi
+
+(cid:0)νE ∪ {νe}(cid:1)].
+
+(7)
+
+(i,ω)∈H ′∩Hi
+
+It is straightforward to verify that the above by considering the following two cases.
+
+Case 1: If ri(e) = νe ∈ Ω \ {∗}, then the outcome νe is deterministic conditional on
+(cid:0)νE ∪ {νe}(cid:1), the value of fi after selecting e. On the left-hand side,
+scenario i, and so is fi
+for every ω ∈ Hi, by definition of Hi it holds νe = ωe, and hence fi,ω(e ∪ E) = fi(νE ∪ {νe}
+for every (i, ω) ∈ Hi. Therefore all terms in the summation are equal to fi(νE ∪ {νe} and
+hence (7) holds.
+
+Case 2: If ri(e) = ⋆, then each outcome o ∈ Ω occurs with equal probabilities, thus we
+
+may rewrite the right hand side as
+
+Ei,νe[fi (νE ∪ {νe})] =
+
+(cid:88)
+
+o∈Ω
+
+Pi[νe = o] · fi (νE ∪ {νe}) =
+
+1
+|Ω|
+
+(cid:88)
+
+o∈Ω
+
+fi (νE ∪ {(e, o)}) .
+
+To analyze the other side, note that by the definition of Hi and H ′, there are equally many
+expanded scenarios (i, ω) in H ′ ∩ Hi with ωe = o for each outcome o ∈ Ω. Thus, we can
+rewrite the left hand side as
+
+1
+ni
+
+(cid:88)
+
+fi,ω(e ∪ E) =
+
+(i,ω)∈H ′∩Hi
+
+=
+
+=
+
+1
+ni
+
+1
+ni
+
+(cid:88)
+
+(cid:88)
+
+o∈Ω
+
+(i,ω)∈H ′∩Hi,
+ωe=o
+
+fi,ω(e ∪ E)
+
+(cid:88)
+
+ni
+|Ω|
+
+fi,ω(e ∪ E)
+
+(cid:0)νE ∪ {(e, o)}(cid:1),
+
+fi
+
+o∈Ω
+(cid:88)
+
+o∈Ω
+
+1
+|Ω|
+
+35
+
+Jia, Navidi, Nagarajan and Ravi
+
+which matches the right hand side of (7) and completes the proof.
+
+This lemma suggests the following efficient implementation of Algorithm 2. For each i,
+compute and maintain pi using ni. To find the expectation in the numerator, note that if
+ri(e) ̸= ⋆, then νe is deterministic and hence it is straightforward to find this expectation.
+In the other case, if ri(e) = ⋆, recalling that the outcome is uniform over Ω, we may simply
+evaluate fi(νE ∪ {(e, o)}) − fi(νE) for each o ∈ Ω and take the average, since the noisy
+outcome is uniformly distributed over Ω.
+
+Appendix D. Analysis of the ASRN Problem (Section 5)
+
+This section is dedicated to presenting the details of how we establish our results for the
+adaptive SFRN problem, mainly Theorem 17 and Theorem 18.
+
+D.1 Application of Algorithm 2 and Algorithm 5 to ODTN.
+
+For concreteness, we provide a closed-form formula for Scorec and Scorer in the ODTN
+problem using Lemma 35, which were used in our experiments for ODTN. In §3.3, we
+formulated ODTN as an ASRN instance. Recall that the outcomes Ω = {+1, −1}, and
+the submodular function f (associated with each hypothesis i) measures the proportion of
+hypotheses eliminated after observing the outcomes of a subset of tests.
+
+As in §5, at any point in Algorithm 2 or 5, after selecting set E of tests, let νE : E → ±1
+denote their outcomes. For each hypothesis i ∈ [m], let ni denote the number of surviving
+expanded-scenarios of i. Also, for each hypothesis i, let pi denote the total probability
+mass of the surviving expanded-scenarios of i. For any S ⊆ [m], we use the shorthand
+p(S) = (cid:80)
+i∈S pi. Finally, let A ⊆ [m] denote the compatible hypotheses based on the
+observed outcomes νE (these are all the hypotheses i with ni > 0). Then, f (νE) = m−|A|
+m−1 .
+Moreover, for any new test/element T ,
+
+f (νE ∪ {νT }) =
+
+(cid:40) m−|A|+|A∩T −|
+
+m−1
+m−|A|+|A∩T +|
+m−1
+
+if νT = +1
+if νT = −1
+
+.
+
+Recall that T +, T − and T ∗ denote the hypotheses with +1, −1 and ∗ outcomes for test T .
+So,
+
+f (νE ∪ {νT }) − f (νE)
+1 − f (νE)
+
+=
+
+(cid:40) |A∩T −|
+|A|−1
+|A∩T +|
+|A|−1
+
+if νT = +1
+if νT = −1
+
+.
+
+It is then straightforward to verify the following.
+
+Proposition 36. Consider implementing Algorithm 2 on an ODTN instance. Suppose
+after selecting tests E, the expanded-scenarios H ′ (and original scenarios A) are compatible
+with the parameters described above. For any test T , if bT ∈ {+1, −1} is the outcome
+corresponding to BT (H ′) then the second term in Scorec(T ; E, H ′) and Scorer(T ; E, H ′) is:
+
+(cid:18) |A ∩ T −|
+|A| − 1
+
++
+
+|A ∩ T +|
+|A| − 1
+
+(cid:19)
+
+·
+
+p (A ∩ T ∗)
+2
+
++
+
+|A ∩ T −|
+|A| − 1
+
+· p (cid:0)A ∩ T +(cid:1) +
+
+|A ∩ T +|
+|A| − 1
+
+· p (cid:0)A ∩ T −(cid:1) .
+
+36
+
+Optimal Decision Tree with Noisy Outcomes
+
+The above expression has a natural interpretation for ODTN: conditioned on the out-
+comes νE so far, it is the expected number of newly eliminated hypotheses due to test T
+(normalized by |A| − 1).
+
+The first term of the score π (LT (H ′)) or π (RT (H ′)) is calculated as for the general
+ASRN problem. Finally, observe that for the submodular functions used for ODTN, the
+separation parameter is ε = 1
+m−1 . So, by Theorem 19 we immediately obtain a polynomial
+time O(min(r, c) + log m)-approximation for ODTN.
+
+D.2 Proof of Theorem 18
+
+Algorithm 5 Modified algorithm for ASR instance J .
+1: Initialize E ← ∅, H ′ ← H
+2: while H ′ ̸= ∅ do
+3:
+
+S ← {i ∈ [m] : Hi ∩ H ′ ̸= ∅}
+▷ Consistent original scenarios
+For e ∈ [n], let Ue(S) = {i ∈ S : ri(e) = ∗} and Ce(S) be the largest cardinality set
+
+4:
+
+among
+
+{i ∈ S : ri(e) = o},
+
+∀o ∈ Ω,
+
+and let oe(S) ∈ Ω be the outcome corresponding to Ce(S).
+
+5:
+
+For each e ∈ [n], let
+
+Re(H ′) = {(i, ω) ∈ H ′ : i ∈ Ce(S)}
+
+(cid:91)
+
+{(j, oe(S)) ∈ H ′ : j ∈ Ue(S)},
+
+be those expanded-scenarios that have outcome oe(S) for element e, and Re(H ′) :=
+H ′ \ Re(H ′).
+
+6:
+
+Select element e ∈ [n] \ E that maximizes
+
+Scorer(e, E, H ′) = π(cid:0)Re(H ′)(cid:1) +
+
+(cid:88)
+
+(i,ω)∈H ′,fi,ω(E)<1
+
+πi,ω ·
+
+fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
+(8)
+
+Observe outcome o
+H ′ ← {(i, ω) ∈ H ′ : ri,ω(e) = o and fi,ω(E ∪ e) < 1}
+
+▷ Update the (expanded)
+
+scenarios
+
+E ← E ∪ {e}
+
+7:
+
+8:
+
+9:
+
+The proof is similar to the analysis in Navidi et al. (2020). With some foresight, set
+α := 15(r + log m). Write Algorithm 5 as ALG and let OPT be the optimal adaptive policy.
+It will be convenient to view ALG and OPT as decision trees where each node represents the
+“state” of the policy. Nodes in the decision tree are labelled by elements (that are selected
+at the corresponding state) and branches out of each node are labelled by the outcome
+observed at that point. At any state, we use E to denote the previously selected elements
+and H ′ ⊆ M to denote the expanded-scenarios that are (i) compatible with the outcomes
+observed so far and (ii) uncovered. Suppose at some iteration, elements E are selected and
+outcomes νE are observed, then a scenario i is said to be covered if fi(E ∪ νE) = 1, and
+uncovered otherwise.
+
+37
+
+Jia, Navidi, Nagarajan and Ravi
+
+For ease of presentation, we use the phrase “at time t” to mean “after selecting t ele-
+
+ments”. Note that the cost incurred until time t is exactly t. The key step is to show
+
+ak ≤ 0.2ak−1 + 3yk,
+
+for all k ≥ 1,
+
+(9)
+
+where
+
+• Ak ⊆ M is the set of uncovered expanded scenarios in ALG at time α · 2k and
+
+ak = p(Ak) is their total probability,
+
+• Yk is the set of uncovered scenarios in OPT at time 2k−1, and yk = p(Yk) is the total
+
+probability of these scenarios.
+
+As shown in Section 2 of Navidi et al. (2020), (9) implies that Algorithm 5 is an O(α)-
+approximation and hence Theorem 18 follows. To prove (9), we consider the total score
+collected by ALG between iterations α2k−1 and α2k, formally given by
+
+α2k
+(cid:88)
+
+Z :=
+
+(cid:88)
+
+t>α2k−1
+
+(E,H ′)∈V (t)
+
+max
+e∈[n]\E
+
+
+
+
+
+(cid:88)
+
+πi,ω +
+
+(cid:88)
+
+(i,ω)∈Re(H ′)
+
+(i,ω)∈H ′
+
+πi,ω ·
+
+fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
+
+
+ (10)
+
+where V (t) denotes the set of states (E, H ′) that occur at time t in the decision tree ALG.
+We note that all the expanded-scenarios seen in states of V (t) are contained in Ak−1.
+
+Consider any state (E, H ′) at time t in the algorithm. Recall that H ′ are the expanded-
+scenarios and let S ⊆ [m] denote the original scenarios in H ′. Let TH ′(k) denote the subtree
+of OPT that corresponds to paths traced by expanded scenarios in H ′ up to time 2k−1. Note
+that each node (labeled by any element e ∈ [n]) in TH (k) has at most |Ω| outgoing branches
+and one of them corresponds to the outcome oe(S) defined in Algorithm 5. We define
+Stemk(H ′) to be the path in TH ′(k) that at each node (labeled e) follows the oe(S) branch.
+We also use Stemk(H ′) ⊆ [n] × Ω to denote the observed element-outcome pairs on this
+path.
+
+Definition 37. Each state (E, H ′) is exactly one of the following types:
+
+• bad if the probability of uncovered scenarios in H ′ at the end of Stemk(H ′) is at least
+
+Pr(H ′)
+3
+
+.
+
+• okay if it is not bad and Pr(∪e∈Stemk(H ′) Re(H ′)) is at least Pr(H ′)
+• good if it is neither bad nor okay and the probability of scenarios in H ′ that get
+
+.
+
+3
+
+covered by Stemk(H ′) is at least Pr(H ′)
+
+.
+
+3
+
+Crucially, this categorization of states is well defined. Indeed, each expanded-scenario
+in H ′ is (i) uncovered at the end of Stemk(H ′), or (ii) in Re(H ′) for some e ∈ Stemk(H ′), or
+(iii) covered by some prefix of Stemk(H ′), i.e. the function value reaches 1 on Stemk(H ′).
+So the total probability of the scenarios in one of these 3 categories must be at least Pr(H)
+.
+In the next two lemmas, we will show a lower bound (Lemma 38) and an upper bound
+(Lemma 39) for Z in terms of ak and yk, which together imply (9) and complete the proof.
+
+3
+
+Lemma 38. For any k ≥ 1, it holds Z ≥ α · (ak − 3yk)/3.
+
+38
+
+Optimal Decision Tree with Noisy Outcomes
+
+Proof The proof of this lower bound is identical to that of Lemma 3 in Navidi et al. (2020)
+for noiseless-ASR. The only difference is that we use the scenario-subset Re(H ′) ⊆ H ′
+instead of subset “Le(H) ⊆ H” in the analysis of Navidi et al. (2020).
+
+Lemma 39. For any k ≥ 1, Z ≤ ak−1 · (1 + ln 1
+
+ϵ + r + log m).
+
+Proof This proof is analogous to that of Lemma 4 in Navidi et al. (2020) but requires new
+ideas, as detailed below. Our proof splits into two steps. We first rewrite Z by interchanging
+its double summation: the outer layer is now over the Ak−1 (instead of times between α2k−1
+to α2k as in the original definition of Z). Then for each fixed (i, ω) ∈ Ak−1, we will upper
+bound the inner summation using the assumption that there are at most r original scenarios
+with ri(e) = ⋆ for each element e.
+Step 1: Rewriting Z. For any uncovered (i, ω) ∈ Ak−1 in the decision tree ALG at time
+α2k−1, let Pi,ω be the path traced by (i, ω) in ALG, starting from time α2k−1 and ending
+at time α2k or when (i, ω) is covered.
+
+Recall that in the definition of Z, for each time t between α2k−1 and α2k, we sum over
+all states (E, H ′) at time t. Since t ≥ α2k−1, and the subset of uncovered scenarios only
+shrinks at t increases, for any (E, H ′) ∈ V (t) we have H ′ ⊆ Ak−1. So, only the expanded
+scenarios in Ak−1 contribute to Z. Thus we may rewrite (10) as
+
+Z =
+
+(cid:88)
+
+πi,ω ·
+
+(cid:88)
+
+(i,ω)∈Ak−1
+
+(e;E,H ′)∈Pi,ω
+
+
+(cid:88)
+
+≤
+
+πi,ω ·
+
+
+
+(cid:88)
+
+(i,ω)∈Ak−1
+
+(e;E,H ′)∈Pi,ω
+
+(cid:18) fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
++ 1[(i, ω) ∈ Re(H ′)]
+
+(cid:19)
+
+fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
++
+
+(cid:88)
+
+1[(i, ω) ∈ Re(H ′)]
+
+ .
+
+
+
+(e;E,H ′)∈Pi,ω
+
+(11)
+
+Step 2: Bounding the Inner Summation. The rest of our proof involves upper bound-
+ing each of the two terms in the summation over e ∈ Pi,ω for any fixed (i, ω) ∈ Ak−1. To
+bound the first term, we need the following standard result on submodular functions.
+
+Lemma 40 (Azar and Gamzu (2011)). Let f : 2U → [0, 1] be any monotone function with
+f (∅) = 0 and ε = min{f (S ∪ {e}) − f (S) : e ∈ U, S ⊆ U, f (S ∪ {e}) − f (S) > 0} be the
+separability parameter. Then for any nested sequence of subsets ∅ = S0 ⊆ S1 ⊆ · · · Sk ⊆ U ,
+it holds
+
+k
+(cid:88)
+
+f (St) − f (St−1)
+1 − f (St−1)
+
+≤ 1 + ln
+
+1
+ε
+
+.
+
+It follows immediately that
+
+t=1
+
+(cid:88)
+
+(e;E,H ′)∈Pi,ω
+
+fi,ω(e ∪ E) − fi,ω(E)
+1 − fi,ω(E)
+
+≤ 1 + ln
+
+1
+ε
+
+.
+
+(12)
+
+Next we consider the second term
+
+(cid:80)
+(e;E,H ′)∈Pi,ω
+is the subset of original scenarios with at least one expanded scenario in H ′. Consider the
+partition of scenarios S into |Ω| + 1 parts based on the response entries (from Ω ∪ {∗})
+for element e. From Algorithm 5, recall that Ue(S) denotes the part with response ∗ and
+
+1[(i, ω) ∈ Re(H ′)]. Recall that S ⊆ [m]
+
+39
+
+Jia, Navidi, Nagarajan and Ravi
+
+Ce(S) denotes the largest cardinality part among the non-∗ responses. Also, oe(S) ∈ Ω is
+the outcome corresponding to part Ce(S). Moreover, Re(H ′) ⊆ H ′ consists of all expanded-
+scenarios that do not have outcome oe(S) on element e. Suppose that (i, ω) ∈ Re(H ′).
+Then, it must be that the observed outcome on e is not oe(S). Let S′ ⊆ S denote the
+subset of original scenarios that are also compatible with the observed outcome on e. We
+now claim that |S′| ≤ |S|+r
+. To see this, let De(S) ⊆ S denote the part having the second
+largest cardinality among the non-∗ responses for e. As the observed outcome is not oe(S)
+(which corresponds to the largest part), we have
+
+2
+
+|S′| ≤ |Ue(S)| + |De(S)| ≤ |Ue(S)| +
+
+(cid:18) |S| − |Ue(S)|
+2
+
+(cid:19)
+
+=
+
+|S| + |Ue(S)|
+2
+
+≤
+
+|S| + r
+2
+
+.
+
+2
+
+≤ |S|−|Ue(S)|
+2
+
+The first inequality above uses the fact that S′ consists of Ue(S) (scenarios with ∗ response)
+and some part (other than Ce(S)) with a non-∗ response. The second inequality uses
+|De(S)| ≤ |De(S)|+|Ce(S)|
+. The last inequality uses the upper-bound r on the
+number of ∗ responses per element. It follows that each time (i, ω) ∈ Re(H ′), the number
+of compatible (original) scenarios on path Pi,ω changes as |S′| ≤ |S|+r
+. Hence, after log2 m
+such events, the number of compatible scenarios on path Pi,ω is at most r. Finally, we
+use the fact that the number of compatible scenarios reduces by at least one whenever
+(i, ω) ∈ Re(H ′), to obtain
+
+2
+
+(cid:88)
+
+(e;E,H ′)∈Pi,ω
+
+1[(i, ω) ∈ Re(H ′)] ≤ r + log2 m.
+
+(13)
+
+Combining (11), (12) and (13), we obtain the lemma.
+
+Appendix E. ASRN with High Noise: Details of Section 6
+
+E.1 Details of the Membership Oracle: Proof of Lemma 25
+
+We first describe how to verify whether a given hypothesis is the true hypothesis using
+(log m) tests. Select an arbitrary set W of 4 log m deterministic tests for i, and let Y be
+the set of consistent hypotheses after performing these tests. Without loss of generality, we
+assume i ∈ T + for all T ∈ W . There are three cases:
+
+• Trivial Case: if ¯i ∈ T − for some T ∈ W , then we rule out i when any test T is
+
+performed.
+
+• Good Case: if ¯i ∈ T ∗ for more than half of the tests T in W , then by Chernoff’s
+inequality, with high probability we observe at least one “-”, hence ruling out i.
+
+• Bad Case: if ¯i ∈ T + for less than half of the tests in W , then we may not be able to
+ruling out i with a high probability. To overcome this, we then test between i with
+each hypothesis in Y by selecting a test where these two hypotheses have distinct
+deterministic outcomes. This test exists due to Assumption 1.
+
+At this juncture, we formally define the membership oracle Member(Z) in Algorithm
+6. Note that Steps 3, 9 and 18 are well-defined because the ODTN instance is assumed to
+
+40
+
+Optimal Decision Tree with Noisy Outcomes
+
+be identifiable. If there is no new test in Step 3 with T + ∩ Z′ ̸= ∅ and T − ∩ Z′ ̸= ∅, then
+we must have |Z′| = 1. If there is no new test in Step 9 with z ̸∈ T ∗ then we must have
+identified z uniquely, i.e. Y = ∅. Finally, in step 18, we use the fact that there are tests
+that deterministically separate every pair of hypotheses.
+
+Algorithm 6 Member(Z) oracle that checks if ¯i ∈ Z.
+1: Initialize: Z′ ← Z.
+2: while |Z′| ≥ 2 do
+3:
+
+Choose any new test T ∈ T with T + ∩ Z′ ̸= ∅ and T − ∩ Z′ ̸= ∅, observe outcome
+
+% While-loop 1: Finding a suspect – reducing |Z′| to 1
+
+ωT ∈ {±1}.
+
+4:
+
+5:
+
+Let R be the set of hypotheses ruled out, i.e. R = {j ∈ [m] : MT,j = −ωT }.
+Let Z′ ← Z′\R.
+
+6: Let z be the unique hypothesis when the while-loop ends.
+7: Initialize k ← 0 and Y = H.
+8: while Y ̸= ∅ and k ≤ 4 log m do
+9:
+
+Choose any new test T with MT,i ̸= ∗ and observe outcome ωT ∈ {±1}.
+if ωT = −MT,i then
+
+▷ i ruled out.
+
+▷ While-loop 2: choose deterministic tests for z.
+
+▷ Identified a “suspect”.
+
+Declare “¯i ̸∈ Z” and stop.
+
+else
+
+Let R be the set of hypotheses ruled out, Y ← Y \ R and k ← k + 1.
+
+10:
+
+11:
+
+12:
+
+13:
+
+Declare “¯i = i” and terminate.
+
+14: if Y = ∅ then
+15:
+16: else
+17:
+
+Let W ⊆ T denote the tests performed in step 9 and ▷ Now consider the“bad” case.
+
+J = {j ∈ Y : MT,j = MT,i for at least 2 log m tests T ∈ W }
+= {j ∈ Y : MT,j = ∗ for at most 2 log m tests T ∈ W }.
+
+(14)
+
+18:
+
+For each j ∈ J, choose a test T = T (j) ∈ T with MT,j, MT,i ̸= ∗ and MT,j = −MT,i
+let W ′ ⊆ T denote the set of these tests.
+
+▷ Let i duel with hypotheses in J.
+
+19:
+20: if no tests in W ∪ W ′ rule out i then
+21:
+22: else
+23:
+
+Declare “¯i = i”.
+
+Declare “¯i /∈ Z”.
+
+Now, let us show that the membership oracle in Algorithm 6 has cost O(|Z| + log m) as
+
+stated in Lemma 25.
+
+Proof of Lemma 25. If ¯i ∈ Z then it is clear that i = ¯i in step 6 and Member(Z) declares
+¯i = i. Now consider the case ¯i ̸∈ Z. Recall that i ∈ Z denotes the unique hypothesis that
+is still compatible in step 6, and that Y denotes the set of compatible hypotheses among
+[m] \ {i}, so it always contains ¯i. Hence, Y ̸= ∅ in step 14, which implies that k = 4 log m.
+Also recall the definition of set S and J from (14).
+
+41
+
+Jia, Navidi, Nagarajan and Ravi
+
+• Case 1. If ¯i ∈ J then we will identify correctly that ¯i ̸= i in step 20 as one of the
+tests in W ′ (step 18) separates ¯i and i deterministically. So in this case we will always
+declare ¯i /∈ Z.
+
+• Case 2. If ¯i ̸∈ J, then by definition of J, we have ¯i ∈ T ∗ for at least 2 log m tests
+T ∈ W . As i has a deterministic outcome for each test in W , the probability that
+all outcomes in W are consistent with i is at most m−2. So with probability at least
+1 − m−2, some test in W must have an outcome (under ¯i) inconsistent with i, and
+based on step 20, we would declare ¯i /∈ Z.
+
+In order to bound the cost, note that the number of tests performed are at most:
+step 3, 4 log m in step 9 and |J| ≤ |Z| in step 18, and the proof follows.
+
+|Z| in
+
+E.2 Proof of Proposition 21: SSC-based Lower Bound on OPT
+Consider any feasible decision tree T for the ODTN instance and any hypothesis i ∈ [m]. If
+we condition on ¯i = i, then T corresponds to a feasible adaptive policy for SSC(i). In fact,
+
+• for any expanded hypothesis (ω, i) ∈ Ω(i), the tests performed in T must rule out all
+
+the hypotheses [m]\{i}, and
+
+• the hypotheses ruled-out by any test T (conditioned on ¯i = i) is a random subset that
+
+has the same distribution as ST (i).
+
+Formally, let Pi,ω denote the path traced in T under test outcomes ω, and |Pi,ω| the number
+of tests performed along this path. Recall that ui is the number of unknown tests for i, and
+that the probability of observing outcomes ω when ¯i = i is 2−ui, so this policy for SSC(i)
+has cost (cid:80)
+
+(i,ω)∈Ω(i) 2−ui · |Pi,ω|. Therefore,
+
+OPTSSC(i) ≤
+
+(cid:88)
+
+2−ui · |Pi,ω|.
+
+(i,ω)∈Ω(i)
+
+Taking expectations over i ∈ [m] the lemma follows.
+
+E.3 Proof of Lemma 23: Greedy Is Good for Most Hypotheses
+
+For simplicity, write (T ′)+ as T ′
++ (similarly define T ′
+1
+2 (|T + ∩ A| + |T − ∩ A|) because i ∈ T ∗. We consider two cases for the test T ′ ∈ T .
+• If MT ′,i = ⋆, then by the definition of the greedy rule (Step 7), we have
+
+∗). Note that E[|ST (i) ∩ (A\i)|] =
+
+−, T ′
+
+E[|ST ′(i) ∩ (A\i)|] =
+
+1
+2
+
+• If i ∈ T ′
+
++ ∪ T ′
+
+−, then
+
+(cid:0)|T ′
+
++ ∩ A| + |T ′
+
+− ∩ A|(cid:1) ≤
+
+(cid:0)|T + ∩ A| + |T − ∩ A|(cid:1) .
+
+1
+2
+
+E[|ST ′(i) ∩ (A\i)|] ≤ max{|T ′
+
++ ∩ A|, |T ′
+
+− ∩ A|} ≤ |T ′
+
++ ∩ A| + |T ′
+
+− ∩ A|,
+
+which is at most |T + ∩ A| + |T − ∩ A| by the choice of T .
+
+Therefore, in either case, the claim holds.
+
+42
+
+Optimal Decision Tree with Noisy Outcomes
+
+E.4 Proof of Proposition 27: Sparsity-based Lower Bound on OPT
+
+To ensure the output is correct w.p. 1, we need to eliminate all (m − 1) hypotheses except
+the true hypothesis. By the definition of α-sparse instances, each test eliminates only O(mα)
+hypotheses, we need to perform Ω( m−1
+
+mα ) = Ω(m1−α) tests.
+
+43
+
+

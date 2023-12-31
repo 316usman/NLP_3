@@ -1,0 +1,1135 @@
+Address for correspondence:
+Jian-Jun Li, MD, PhD, or Jian-Guo He
+(Principal Investigator), MD, PhD
+Department of Cardiology
+Cardiovascular Institute, Fu Wai
+Hospital
+Chinese Academy of Medical
+Sciences
+Peking Union Medical College
+167 Beilishi Road, Xicheng District
+Beijing 100037, China
+hejianguofw@gmail.com
+lijnjn@yahoo.com.cn
+
+Clinical Investigations
+
+The Efﬁcacy and Safety of Sildenaﬁl
+in Patients With Pulmonary Arterial
+Hypertension Associated With the Different
+Types of Congenital Heart Disease
+
+Wei-Jie Zeng, MS; Xian-Ling Lu, MD; Chang-Ming Xiong, MD; Guang-Liang Shan, MD;
+Zhi-Hong Liu, MD; Xin-Hai Ni, MD; Qing Gu, MD; Zhi-Hui Zhao, MD;
+Jian-Jun Li, MD, PhD; Jian-Guo He, MD, PhD; on behalf of the Sildenaﬁl Therapy on
+Pulmonary Arterial Hypertension Associated With Different Types of Congenital Heart
+Disease Study Group
+Center for Diagnosis and Management of Pulmonary Vascular Diseases, Department of
+Cardiology (Zeng, Lu, Xiong, Liu, Ni, Gu, Zhao, Li, He), Cardiovascular Institute, Fu Wai Hospital,
+Chinese Academy of Medical Sciences, Peking Union Medical College, Beijing, China; Department
+of Epidemiology, Institute of Basic Medical Sciences (Shan), Chinese Academy of Medical
+Sciences, Beijing, China
+
+Background: The difference in underlying pathophysiology in different congenital heart disease (CHD) may
+have an inﬂuence on clinical outcome. It remains unclear whether the effect of sildenaﬁl on pulmonary arterial
+hypertension (PAH) varies in different types of CHD.
+Hypothesis: The potential effect of sildenaﬁl on pulmonary arterial hypertension related to CHD may be
+associated with shunt location.
+Methods: In this 12-week, prospective, open label, multicenter trial, 55 patients with CHD were divided into
+the 3 groups: atrial septal defects group (ASD, n = 15), ventricular septal defects group (VSD, n = 24), and
+patent ductus arteriosus group (PDA, n = 16). Exercise capacity, hemodynamic parameters, and arterial oxygen
+saturation were assessed at baseline and after sildenaﬁl therapy (25 mg, 3 times daily).
+Results: Six-minute walk distance signiﬁcantly increased from 377.2 ± 68.7 m to 436.0 ± 70.4 m in patients
+with ASD, from 371.2 ± 66.0 m to 413.7 ± 83.1 m in VSD, and from 384.3 ± 90.2 m to 440.9 ± 71.8 m in PDA
+(P < 0.01, respectively). Moreover, sildenaﬁl also improved the pulmonary vascular resistance and pulmonary
+blood ﬂow index in the 3 groups, whereas no signiﬁcant changes in systemic vascular resistance and systemic
+arterial pressure were observed. However, arterial oxygen saturation was signiﬁcantly improved in the ASD
+group only. The incidence of adverse events was similar among the 3 groups.
+Conclusions: Sildenaﬁl therapy seems to be effective and safe for PAH secondary to ASD, VSD, and PDA,
+although some clinical and hemodynamic parameters were changed in a different manner among the 3 groups.
+
+Introduction
+Pulmonary arterial hypertension (PAH) is a common, long-
+term complication in congenital heart disease (CHD),1,2
+which may persist even after shunt closure by surgical
+or percutaneous means. Simple CHD can be categorized
+as pretricuspid such as atrial septal defects (ASD) and
+
+This study was partly supported by National Grant from The
+Ministry of Science and Technology (2006BAI01A07) and
+Capital Development Scientiﬁc Fund (2005-1018). The authors
+have no other funding, ﬁnancial relationships, or conﬂicts of
+interest to disclose.
+Study Group participants are listed in the Supporting
+Information Appendix.
+
+Received: December 10, 2010
+Accepted with revision: March 8, 2011
+
+post-tricuspid such as ventricular septal defects (VSD), or
+patent ductus arteriosus (PDA) lesions.1 Severity of PAH is
+related to the location of the intracardiac defect.2 In addition,
+because the direction and magnitude of ﬂow across the
+shunt in post-tricuspid lesions is largely dependent on the
+ratio between pulmonary vascular resistance and systemic
+vascular resistance, the use of disease-targeting therapies,
+which may potentially lower systemic vascular resistance
+more than pulmonary vascular resistance, may be at risk
+of aggravating the right-to-left shunt.3,4 Thus, the difference
+in underlying pathophysiology in the different CHDs may
+have a potential inﬂuence on treatment outcome.3,5 This
+highlights the importance of evaluating the safety and
+efﬁcacy of disease-targeting therapies in the different types
+of CHD.
+
+Published online in Wiley Online Library (wileyonlinelibrary.com)
+DOI:10.1002/clc.20917  2011 Wiley Periodicals, Inc.
+
+Clin. Cardiol. 34, 8, 513–518 (2011) 513
+
+A previous study has suggested that a treatment effect
+of bosentan in patients with PAH related to Eisenmenger
+the location of septal
+syndrome was independent of
+defect.4 Some studies have demonstrated that sildenaﬁl
+is a safe and effective treatment for PAH related to CHD
+and/or Eisenmenger syndrome.6 – 10 However, no study has
+speciﬁcally assessed its effect in the different types of CHD,
+and it remains unclear whether the effect of sildenaﬁl on
+pulmonary arterial hypertension varies in different types of
+CHD. The objective of the present study was, therefore, to
+evaluate efﬁcacy and safety of oral sildenaﬁl in patients with
+PAH secondary to ASD, VSD, or PDA, respectively.
+
+repair
+
+interventional
+
+Methods
+Study Population
+Patients with PAH associated with simple CHD were
+they had persistent PAH at 5 years after
+included if
+(ASD group, n = 1;
+surgical or
+interventional
+VSD group, n = 2; PDA group, n = 1), or if they were
+not eligible for surgical or
+treatment
+because of Eisenmenger syndrome (ASD group, n = 12;
+VSD group, n = 20; PDA group, n = 15), or economic
+problems (ASD group, n = 2; VSD group, n = 2). The
+exclusion criteria were the following: (1) a positive acute
+treatment with PAH-
+vasodilator response; (2) current
+speciﬁc therapy; (3) inability to perform a 6-minute walk
+test or with a 6-minute walk distance (6MWD) of <100 m
+or >500 m; (4) previously diagnosed heart diseases such as
+serious cardiac arrhythmias, unstable angina pectoris, and
+myocardial infarction; (5) low blood pressure (<90/50) or
+uncontrolled hypertension (>170/110 mm Hg); (6) positive
+pregnancy test or breastfeeding practice, and (7) history
+or suspicion of inability to cooperate. This study complied
+with the Declaration of Helsinki and was approved by the
+institutional review board of Fu Wai Hospital. A written
+informed consent was obtained from all patients.
+
+Study Design and Procedures
+The study of oral sildenaﬁl therapy on PAH associated with
+the different types of CHD was a 12-week, prospective, open
+label, multicenter trial. Primary endpoint was deﬁned as the
+change in 6MWD from baseline to week 12. Secondary
+endpoints were deﬁned as changes in World Health
+Organization (WHO) functional class, Borg dyspnea index,
+arterial oxygen saturation, and hemodynamic parameters
+from baseline to week 12.
+
+There were 55 patients with PAH related to CHD
+enrolled. Diagnosis of PAH was conﬁrmed using right
+heart catheterization. In this study, 3 groups were identiﬁed
+based on the type of congenital heart defects, including the
+ASD group (n = 15), the VSD group (n = 24), and the PDA
+group (n = 16). In addition to their conventional therapy
+(cardiac glycosides, diuretics, anticoagulants) for PAH,
+patients received oral sildenaﬁl (Viagra; Pﬁzer Ltd., New
+York, NY), 25 mg, 3 times daily for 12 weeks. Treatment
+with calcium channel blocker during the study period was
+prohibited. Exercise capacity, Borg dyspnea index (with 0
+representing no dyspnea and 10 maximal dyspnea), WHO
+functional classiﬁcation of PAH, hemodynamics parameters
+derived from right heart catheterization, and arterial oxygen
+
+514 Clin. Cardiol. 34, 8, 513–518 (2011)
+
+W.-J. Zeng et al: Sildenaﬁl in PAH associated with CHD
+Published online in Wiley Online Library (wileyonlinelibrary.com)
+DOI:10.1002/clc.20917  2011 Wiley Periodicals, Inc.
+
+saturation were assessed at baseline and after 12 weeks
+of sildenaﬁl. The 6-minute walk test was performed
+on all patients according to American Thoracic Society
+guidelines.11 Both pulmonary blood ﬂow and systemic blood
+ﬂow were calculated using the Fick equation. Pulmonary
+vascular resistance and systemic vascular resistance were
+calculated from standard equations. Adverse events were
+monitored throughout the study.
+
+Statistical Methods
+Continuous variables were presented as mean ± standard
+deviation or median (Q1, Q3). Categorical variables were
+presented as frequencies and percentages. Statistical
+comparisons among the 3 groups were performed using
+1-way analysis of variance followed by a least signiﬁcant
+difference test or nonparametric test (Kruskal-Wallis H
+test). Categorical variables were analyzed using χ2 or
+Fisher exact test. Comparisons of the parameters before
+and after chronic sildenaﬁl treatment were performed using
+the paired t test. Statistical analysis was performed using
+the SPSS 13.0 (SPSS Inc., Chicago, IL) statistical package.
+P < 0.05 was considered signiﬁcant.
+
+Results
+Baseline Characteristics of Patients
+Baseline characteristics of patients in the 3 groups are
+summarized in Tables 1–3. There was no signiﬁcant
+
+Table 1. Baseline Characteristics of the 3 Groups of Patients With CHD
+
+ASD (n = 15)
+
+VSD (n = 24)
+
+PDA (n = 16)
+
+P
+
+32.20 ± 6.32 26.58 ± 9.61a 23.75 ± 7.47b 0.020
+
+0/15
+
+8/16
+
+4/12
+
+0.093
+
+Age, y
+
+Male/
+
+female ratio
+
+Weight, kg
+
+50.17 ± 10.26 52.78 ± 12.85 48.81 ± 11.71 0.565
+
+WHO
+
+2.3 ± 0.5
+
+2.3 ± 0.4
+
+2.3 ± 0.6
+
+0.994
+
+functional
+class (mean
+± SD)
+
+II, n (%)
+
+III, n (%)
+
+IV, n (%)
+
+11 (73.3)
+
+18 (75.00)
+
+13 (81.3)
+
+4 (26.7)
+
+6 (25.00)
+
+2 (12.5)
+
+0 (0)
+
+0(0)
+
+1 (6.2)
+
+Shunt patency, n (%)
+
+Open
+
+Closed
+
+14 (93.3)
+
+22 (91. 7)
+
+15 (93.7)
+
+1.000
+
+1 (6.7)
+
+2 (8.3)
+
+1 (6.3)
+
+Concomitant medication, n (%)
+
+Diuretic
+
+13 (86.7)
+
+17 (70.8)
+
+14 (87.5)
+
+0.432
+
+Digoxin
+
+10 (66.7)
+
+16 (66.7)
+
+12 (75.0)
+
+0.869
+
+Warfarin
+
+7 (46.7)
+
+5 (20.8)
+
+7 (43.8)
+
+0.168
+
+Abbreviations: ASD, atrial septal defects; CHD, congenital heart disease;
+PDA, patent ductus arteriosus; SD, standard deviation; VSD, ventricular
+septal defects; WHO, World Health Organization. Signiﬁcant compared
+with ASD group. aP = 0.043. bP = 0.006.
+
+Table 2. Exercise Capacity, Functional Status, Arterial Oxygen Saturation, and Mean Systemic Arterial Pressure in the 3 Groups at Baseline and 12 Weeks
+
+ASD
+
+VSD
+
+PDA
+
+Baseline
+
+12 Weeks
+
+P
+
+Baseline
+
+12 Weeks
+
+P
+
+Baseline
+
+12 Weeks
+
+P
+
+6MWD, m
+
+377.2 ± 68.7
+
+436.0 ± 70.4 <0.001
+
+371.2 ± 66.0
+
+413.7 ± 83.1
+
+0.006
+
+384.3 ± 90.2
+
+440.9 ± 71.8
+
+0.006
+
+Borg dyspnea index
+
+2.6 ± 1.3
+
+1.8 ± 1.0
+
+0.041
+
+2.6 ± 1.5
+
+2.4 ± 1.5
+
+0.496
+
+2.2 ± 1.4
+
+1.9 ± 1.5
+
+WHO functional class
+
+2.3 ± 0.5
+
+2.1 ± 0.6
+
+0.189
+
+2.3 ± 0.4
+
+1.8 ± 0.6
+
+0.002
+
+2.3 ± 0.6
+
+1.8 ± 0.5
+
+0.647
+
+0.029
+
+SaO2, %a
+
+90.98 ± 5.04
+
+93.26 ± 2.95
+
+0.019
+
+88.93 ± 4.83
+
+89.31 ± 5.09
+
+0.748
+
+86.49 ± 3.88b
+
+87.31 ± 4.60
+
+0.598
+
+MAP, mm Hg
+
+87.82 ± 10.74
+
+86.60 ± 7.31
+
+0.631
+
+84.54 ± 7.14
+
+85.03 ± 10.03
+
+0.809
+
+86.48 ± 10.47
+
+82.42 ± 11.79
+
+0.082
+
+Abbreviations: 6MWD, 6-minute walk distance; ASD, atrial septal defects; MAP, mean systemic arterial pressure; PDA, patent ductus arteriosus; VSD,
+ventricular septal defects; SaO2, arterial oxygen saturation; WHO, World Health Organization. aASD group, n = 13; VSD group, n = 16; and PDA group,
+n = 11. bSigniﬁcant compared with ASD group at baseline, P = 0.024.
+
+difference in the sex ratio and weight among the 3
+groups. The predominant WHO functional class at baseline
+was class II. Concomitant medications did not differ
+signiﬁcantly among the 3 groups. Patients in the ASD
+group were older than those in the VSD and PDA groups,
+and those in the ASD group had lower mean pulmonary
+arterial pressure than those in the VSD and PDA groups.
+Pulmonary vascular resistance and systemic blood ﬂow
+index were signiﬁcantly higher in the PDA group than
+those in the ASD group. There was no signiﬁcant difference
+in the 6MWD, WHO functional class, Borg dyspnea index,
+mean systemic arterial pressure, and pulmonary blood ﬂow
+index among the 3 groups at baseline.
+
+Effect of Sildenaﬁl on Exercise Capacity, Functional Status,
+Arterial Oxygen Saturation, and Mean Systemic Arterial
+Pressure
+Results of the exercise capacity, functional status, arterial
+oxygen saturation and mean systemic arterial pressure in
+
+the 3 groups at baseline and at 12 weeks are shown in
+Table 2. The 6MWD increased signiﬁcantly in all groups
+compared with baseline values (Figure 1). There was a
+signiﬁcant decrease in Borg dyspnea index in the ASD
+group compared with baseline, but it did not reach statistical
+signiﬁcance in the VSD and PDA groups. The WHO
+functional class improved signiﬁcantly in both the VSD
+group and the PDA group. In the ASD group, arterial oxygen
+saturation improved signiﬁcantly from 90.98% ± 5.04% to
+93.26% ± 2.95% (P = 0.019). There was no signiﬁcant
+change in the mean systemic arterial pressure compared
+to baseline in all groups.
+
+Effect of Sildenaﬁl on Hemodynamic Parameters
+The results of the baseline and the 12-week postsildenaﬁl
+hemodynamic data in the 3 groups are shown in Table 3.
+Heart rate decreased signiﬁcantly in the ASD group. For
+mean pulmonary artery pressure, signiﬁcant reduction was
+only observed in the VSD group. However, pulmonary blood
+
+Table 3. Change From Baseline to Week 12: Hemodynamic Parameters
+
+ASD
+
+VSD
+
+PDA
+
+Baseline
+
+12 Weeks
+
+P
+
+Baseline
+
+12 Weeks
+
+P
+
+Baseline
+
+12 Weeks
+
+P
+
+HR, beats/min
+
+88.00 ± 11.88
+
+81.00 ± 6.26
+
+0.021
+
+77.54 ± 9.22a
+
+75.50 ± 9.59
+
+0.238
+
+82.25 ± 13.06
+
+80.06 ± 13.16
+
+0.279
+
+mRAP,b mm Hg
+
+7.85 ± 3.08
+
+6.33 ± 3.57
+
+0.177
+
+8.04 ± 4.40
+
+7.49 ± 5.97
+
+0.607
+
+10.38 ± 9.48
+
+7.69 ± 6.16
+
+0.279
+
+mPAP, mm Hg
+
+65.58 ± 11.12
+
+60.85 ± 8.96
+
+0.054 86.32 ± 19.93c
+
+76.58 ± 16.81 <0.001
+
+91.71 ± 17.34c
+
+86.04 ± 16.83
+
+0.245
+
+Qpi, L·min−1·m−2
+
+2.8 ± 1.0
+
+4.1 ± 1.8
+
+0.008
+
+2.8 ± 1.0
+
+3.4 ± 1.5
+
+Qsid,L·min−1·m−2
+
+2.5 ± 0.6
+
+3.3 ± 0.7
+
+0.05
+
+2.7 ± 0.7
+
+2.7 ± 0.6
+
+0.013
+
+0.881
+
+2.6 ± 0.9
+
+3.4 ± 1.0
+
+3.4 ± 1.0e
+
+3.3 ± 0.7
+
+0.004
+
+0.842
+
+PVR, dyn·s·cm−5
+
+1333.7 ± 427.7 921.7 ± 384.0 <0.001
+
+1830.8 ± 977.3 1377.5 ± 682.9 <0.001 2190.4 ± 1348.3f
+
+1495.5 ± 759.9
+
+0.046
+
+SVRg, dyn·s·cm−5
+
+1849.2 ± 520.5 1479.0 ± 404.1
+
+0.166 1569.4 ± 381.4 1558.9 ± 373.2
+
+0.942
+
+1456.4 ± 811.2
+
+1339.7 ± 621.1
+
+0.499
+
+PVR/SVR ratiog
+
+0.79 ± 0.30
+
+0.66 ± 0.24
+
+0.089
+
+1.48 ± 0.96
+
+0.91 ± 0.40
+
+0.006
+
+2.15 ± 1.42f
+
+1.46 ± 0.60
+
+0.225
+
+Abbreviations: ASD, atrial septal defects; HR, heart rates; MAP, mean systemic arterial pressure; mPAP, mean pulmonary artery pressure; mRAP, mean
+right atrial pressure; PDA, patent ductus arteriosus; PVR, pulmonary vascular resistance; Qpi, pulmonary blood ﬂow index; Qsi, systemic blood ﬂow index;
+SVR, systemic vascular resistance; VSD, ventricular septal defects. Compared with baseline values: aVSD group vs ASD group, P < 0.01. bASD group,
+n = 13; VSD group, n = 23; PDA group, n = 14. cPDA group or VSD group vs ASD group, P < 0.01. dASD group, n = 10; VSD group, n = 16; PDA group,
+n = 11. ePDA group vs ASD or VSD group, P < 0.05. f PDA group vs ASD group, P < 0.05. gASD group, n = 9; VSD group, n = 15; PDA group, n = 9.
+
+W.-J. Zeng et al: Sildenaﬁl in PAH associated with CHD
+Published online in Wiley Online Library (wileyonlinelibrary.com)
+DOI:10.1002/clc.20917  2011 Wiley Periodicals, Inc.
+
+Clin. Cardiol. 34, 8, 513–518 (2011) 515
+
+pulmonary vascular resistance/systemic vascular resistance
+ratio decreased signiﬁcantly in VSD group, whereas there
+was a trend toward decrease in the ASD and PDA groups.
+
+Comparision of Changes in Clinical and Hemodynamic
+Parameters in Patients With the Different Types of CHD
+There were no signiﬁcant differences among the 3 groups in
+terms of changes in 6MWD, WHO functional class, arterial
+oxygen saturation, and hemodynamics (Table 4).
+
+Safety
+There were 8 patients who reported 10 adverse events
+during the study period. Two patients reported more than 1
+adverse event. Recorded adverse events included headache
+(1 in the ASD group and 2 in the VSD group), ﬂushing (1
+in the VSD group), nasal congestion (1 in the PDA group),
+tinnitus (1 in the ASD group and 1 in the VSD group),
+menorrhagia and irregular menstrual cycles (2 in the VSD
+group and 1 in the PDA group). Most adverse events were
+mild to moderate in degree. No patient died during the
+12-week trial period. The incidence of adverse events was
+similar among the 3 groups.
+
+Discussion
+There was no data available regarding the effect of sildenaﬁl
+on pulmonary arterial hypertension in the different types
+of CHD. Our study, for the ﬁrst time, demonstrated that
+the use of sildenaﬁl could improve exercise capacity and
+
+Figure 1. The 6-minute walk distance increased signiﬁcantly in all groups
+after 12-weeks of sildenaﬁl therapy (*P < 0.01). Abbreviations: ASD,
+atrial septal defects; PDA, patent ductus arteriosus; VSD, ventricular
+septal defects.
+
+ﬂow index increased signiﬁcantly in all groups. There was
+a borderline signiﬁcant increase in systemic blood ﬂow
+index in the ASD group. Pulmonary vascular resistance
+decreased by 30.89% (ASD group), 24.76% (VSD group),
+and 31.72% (PDA group) to 921.7 ± 384.0 dyn·s·cm−5
+(ASD group), 1377.5 ± 682.9 dyn·s·cm−5 (VSD group),
+and 1495.5 ± 759.9 dyn·s·cm−5 (PDA group) (P < 0.001,
+P < 0.001, P = 0.046, respectively). As compared with
+baseline, sildenaﬁl administration for 12 weeks did not
+result
+in a signiﬁcant decrease in mean right atrial
+pressure or systemic vascular resistance in all groups. The
+
+Table 4. Comparision of Changes in Clinical and Hemodynamic Parameters in Patients With Different Types of Congenital Heart Desease
+
+ASD
+
+VSD
+
+PDA
+
+Change From Baseline
+
+Change From Baseline
+
+Change From Baseline
+
+P Value
+
+6MWD, m
+
+50.00 (29.00, 85.00)
+
+38.00 (15.50, 86.25)
+
+42.50 (20.50, 70.75)
+
+Borg dyspnea index
+
+−1.00 (−1.50, 0)
+
+0 (−1.00, 1.00)
+
+0 (−1.63, 0.75)
+
+Improved WHO functional class
+
+2 (13.3)
+
+9 (37.5)
+
+5 (31.3)
+
+SaO2, %a
+
+MAP, mm Hg
+
+HR, beats/min
+
+mRAP,b mm Hg
+
+mPAP, mm Hg
+
+Qpi, L·min−1·m−2
+
+Qsi,c L·min−1·m−2
+
+PVR, dyn·s·cm−5
+
+SVRd, dyn·s·cm−5
+
+PVR/SVR ratiod
+
+1.90 (0.05, 3.25)
+
+0.80 (−3.73, 4.95)
+
+1.40 (−0.30, 3.20)
+
+−4.67 (−5.00, 3.33)
+
+0.83 (−6.67, 6.67)
+
+−3.33 (−9.17, 0.00)
+
+−6.00 (−13.00, 2.00)
+
+0 (−6.75, 2.75)
+
+0 (−7.25, 3.75)
+
+−2.00 (−5.00, −0.34)
+
+−1.00 (−3.00, 1.00)
+
+−0.50 (−9.75, 4.49)
+
+−3.00 (−15.00, 2.00)
+
+−7.00 (−15.75, −1.50)
+
+−5.00 (−14.00, 11.42)
+
+0.60 (0.07, 1.95)
+
+0.62 (−0.11, 1.37)
+
+0.46 (−0.24, 0.84)
+
+0.22 (−0.28, 0.41)
+
+0.63 (0.05, 1.54)
+
+0.11 (−0.62, 0.51)
+
+−305.88 (−673.30, −238.25)
+
+−493.03 (−755.15, −127.30)
+
+−327.89 (−804.23, −46.99)
+
+−244.20 (−536.89, 166.01)
+
+−218.71 (−467.51, 446.91)
+
+−18.79 (−513.48, 257.78)
+
+−0.13 (−0.30, 0.02)
+
+−0.36 (−1.26, −0.08)
+
+−0.56 (−0.80, 0.29)
+
+0.679
+
+0.408
+
+0.288
+
+0.751
+
+0.437
+
+0.286
+
+0.627
+
+0.396
+
+0.527
+
+0.244
+
+0.971
+
+0.757
+
+0.369
+
+Abbreviations: 6MWD, 6-minute walk distance; ASD, atrial septal defects; HR, heart rates; MAP, mean systemic arterial pressure; mPAP, mean pulmonary
+artery pressure; mRAP, mean right atrial pressure; PDA, patent ductus arteriosus; PVR, pulmonary vascular resistance; Qpi, pulmonary blood ﬂow index;
+Qsi, systemic blood ﬂow index; SaO2, arterial oxygen saturation; SVR, systemic vascular resistance; VSD, ventricular septal defects; WHO, World Health
+Organization. Changes from baseline data are expressed as median (Q1, Q3) or n (%). aASD group, n = 13; VSD group, n = 16; and PDA group, n = 11. bASD
+group, n = 13; VSD group, n = 23; PDA group, n = 14. cASD group, n = 10; VSD group, n = 16; PDA group, n = 11. dASD group, n = 9; VSD group, n = 15;
+PDA group, n = 9.
+
+516 Clin. Cardiol. 34, 8, 513–518 (2011)
+
+W.-J. Zeng et al: Sildenaﬁl in PAH associated with CHD
+Published online in Wiley Online Library (wileyonlinelibrary.com)
+DOI:10.1002/clc.20917  2011 Wiley Periodicals, Inc.
+
+pulmonary hemodynamics without deterioration in systemic
+hemodynamics and systemic arterial oxygen saturation in
+patients with PAH secondary to ASD, VSD, or PDA.
+
+Signiﬁcant improvement in exercise capacity, decrease in
+Borg dyspnea index, and improvement in WHO functional
+class were observed in the 3 groups, indicating that patients
+were able to increase their exercise capacity with a similar
+or even lower level of perceived dyspnea after use of
+sildenaﬁl. The mean increase in 6MWD observed in our
+study was in the range of 42 to 59 m, which is similar
+to the ﬁnding in the sildenaﬁl use in the PAH study in
+which the mean placebo-corrected treatment effect was
+about 45 m after sildenaﬁl therapy (20 mg, 3 times daily).12
+As poor exercise capacity is associated with increased risk
+of hospitalization or death in patients with CHD,13 and it
+has been widely used as the primary endpoint in most
+pivotal PAH clinical trials,12,14,15 the use of sildenaﬁl, which
+can improve exercise capacity, may also result in reduction
+in hospitalization and death as shown in the Dimopoulos
+et al study.16
+
+In our study, mean pulmonary arterial pressure and
+pulmonary vascular resistance in the VSD or PDA groups
+were higher than those in the ASD group. However,
+pulmonary blood ﬂow index and functional status were
+similar among the 3 groups. This phenomenon may be
+attributed to the adaptation of the right ventricle to high
+pressure with time.7
+
+Treatment with sildenaﬁl caused signiﬁcant improve-
+ment in pulmonary hemodynamics in terms of pulmonary
+vascular resistance and pulmonary blood ﬂow index in all
+groups. Sildenaﬁl did not adversely affect systemic hemo-
+dynamics. This is consistent with previous studies and
+reﬂects the pulmonary selectivity of sildenaﬁl.17,18 The fact
+that heart rates did not increase in this study suggests
+that sympathetic activation was probably not the mech-
+anism for the observed increase in the pulmonary blood
+ﬂow index.9,19 The increase in pulmonary blood ﬂow index
+accompanied by a signiﬁcant reduction in pulmonary vas-
+cular resistance in our study suggested that reduction in
+right ventricular afterload might be 1 of the reasons leading
+to increase in pulmonary blood ﬂow index. These results
+are consistent with previous studies.9,19 Sildenaﬁl is able to
+relax pulmonary arterial smooth muscle by enhancing nitric
+oxide-mediated pathway and has an antiproliferative effect
+on human pulmonary vascular smooth muscle cells.20,21 In
+our study, patients with VSD or PDA suffered from more
+severe vascular remodeling and therefore might be less
+responsive to vasodilator stimuli. However, the observed
+reduction in pulmonary vascular resistance was similar
+among the 3 groups. This may imply that reversal of the
+pulmonary vascular remodeling plays important part in the
+decrease in pulmonary vascular resistance.
+
+Our study demonstrated that the changes from baseline in
+exercise capacity and hemodynamics were not signiﬁcantly
+dissimilar among the 3 groups. These results are in
+agreement with the results of Breathe-5 subgroup analysis.4
+These data suggest that the use of sildenaﬁl in the treatment
+of patients with PAH related to simple CHD may be
+considered irrespective of the type of defect.
+
+Instead of causing reduction of arterial oxygen saturation
+the right-to-left shunt, sildenaﬁl
+
+due to aggravation of
+
+actually improved arterial oxygen saturation in patients with
+ASD signiﬁcantly as well as in patients with VSD and PDA,
+although not signiﬁcantly. The increase in arterial oxygen
+saturation may be the result of improvement in pulmonary
+blood ﬂow, better ventilation/perfusion matching, and
+reduction in right-to-left shunt secondary to decrease in
+pulmonary vascular resistance.9,18
+
+Interestingly, the baseline arterial oxygen saturation in
+the ASD group was found to be higher than that in VSD
+and PDA group, and the improvement in arterial oxygen
+saturation was also the greatest among the 3 groups. One
+possible reason is that PAH secondary to ASD is usually less
+severe compared to that in VSD and PDA. It is demonstrated
+that pulmonary vascular abnormalities correlated with
+the overall index of ventilation-perfusion mismatch.22 The
+less severe remodeling of the vascular bed in the ASD
+in
+group may be associated with better improvement
+ventilation/perfusion matching and therefore the increase
+in arterial oxygen saturation.
+
+There were several
+
+limitations in our study such as
+uncontrolled and nonblinded design, relatively small sample
+size, and short-term observation periods. The long-term
+effects of sildenaﬁl on patients with CHD need to be
+investigated.
+
+Conclusion
+In our present study,
+time,
+demonstrated that sildenaﬁl therapy seems to be effective
+and safe for PAH secondary to ASD, VSD, and PDA,
+although some clinical and hemodynamic parameters were
+changed in a different manner between the 3 groups.
+
+the data,
+
+the ﬁrst
+
+for
+
+Acknowledgments
+The authors would like to acknowledge Dr. Wong Ka
+Lam for his editorial assistance in the preparation of this
+manuscript.
+
+References
+1. Galie N, Hoeper MM, Humbert M, et al. Guidelines for the
+diagnosis and treatment of pulmonary hypertension: The Task
+Force for the Diagnosis and Treatment of Pulmonary Hypertension
+of the European Society of Cardiology (ESC) and the European
+Respiratory Society (ERS), endorsed by the International Society
+J.
+of Heart and Lung Transplantation (ISHLT). Eur Heart
+2009;30:2493–2537.
+Beghetti M, Tissot C. Pulmonary arterial hypertension in congeni-
+tal heart diseases. Semin Respir Crit Care Med. 2009;30:421–428.
+van Albada ME, Berger RM. Pulmonary arterial hypertension
+in congenital cardiac disease—the need for reﬁnement of the
+Evian-Venice classiﬁcation. Cardiol Young. 2008;18:10–17.
+Berger RM, Beghetti M, Galie N, et al. Atrial septal defects versus
+ventricular septal defects in BREATHE-5, a placebo-controlled
+study of pulmonary arterial hypertension related to Eisenmenger’s
+syndrome: a subgroup analysis. Int J Cardiol. 2010;144:373–378.
+
+2.
+
+4.
+
+3.
+
+5. Wort SJ. Sildenaﬁl in Eisenmenger syndrome: safety ﬁrst. Int J
+
+6.
+
+7.
+
+8.
+
+Cardiol. 2007;120:314–316.
+Lim ZS, Salmon AP, Vettukattil JJ, et al. Sildenaﬁl therapy for
+pulmonary arterial hypertension associated with atrial septal
+defects. Int J Cardiol. 2007;118:178–182.
+Chau EM, Fan KY, Chow WH. Effects of chronic sildenaﬁl in
+patients with Eisenmenger syndrome versus idiopathic pulmonary
+arterial hypertension. Int J Cardiol. 2007;120:301–305.
+Singh TP, Rohit M, Grover A, et al. A randomized, placebo-
+controlled, double-blind, crossover study to evaluate the efﬁcacy
+
+W.-J. Zeng et al: Sildenaﬁl in PAH associated with CHD
+Published online in Wiley Online Library (wileyonlinelibrary.com)
+DOI:10.1002/clc.20917  2011 Wiley Periodicals, Inc.
+
+Clin. Cardiol. 34, 8, 513–518 (2011) 517
+
+of oral sildenaﬁl therapy in severe pulmonary artery hypertension.
+Am Heart J. 2006;151:e851–e855.
+
+advanced therapy for pulmonary arterial hypertension. Circulation.
+2010;121:20–25.
+
+9. Garg N, Sharma MK, Sinha N. Role of oral sildenaﬁl
+
+in
+severe pulmonary arterial hypertension: clinical efﬁcacy and dose
+response relationship. Int J Cardiol. 2007;120:306–313.
+Lu XL, Xiong CM, Shan GL, et al. Impact of sildenaﬁl therapy on
+pulmonary arterial hypertension in adults with congenital heart
+disease. Cardiovasc Ther. 2010;28:350–355.
+Brooks D, Solway S, Gibbons WJ. ATS statement on six-minute
+walk test. Am J Respir Crit Care Med. 2003;167:1287.
+
+10.
+
+11.
+
+12. Galie N, Ghofrani HA, Torbicki A, et al. Sildenaﬁl citrate
+therapy for pulmonary arterial hypertension. N Engl J Med.
+2005;353:2148–2157.
+
+14.
+
+13. Diller GP, Dimopoulos K, Okonko D, et al. Exercise intolerance
+in adult congenital heart disease: comparative severity, correlates,
+and prognostic implication. Circulation. 2005;112:828–835.
+Rubin LJ, Badesch DB, Barst RJ, et al. Bosentan therapy for
+pulmonary arterial hypertension. N Engl J Med. 2002;346:896–903.
+15. Galie N, Brundage BH, Ghofrani HA, et al. Tadalaﬁl therapy
+for pulmonary arterial hypertension. Circulation. 2009;119:
+2894–2903.
+16. Dimopoulos K,
+
+Improved sur-
+Inuzuka R, Goletto S, et al.
+vival among patients with Eisenmenger syndrome receiving
+
+17. Gupta A, Kerkar P. Sildenaﬁl
+
+secondary to congenital heart diseases.
+2007;59:342–345.
+
+for pulmonary hypertension
+J.
+
+Indian Heart
+
+18. Ghofrani HA, Voswinckel R, Reichenberger F, et al. Differences
+in hemodynamic and oxygenation responses to three different
+phosphodiesterase-5 inhibitors in patients with pulmonary arterial
+hypertension: a randomized prospective study. J Am Coll Cardiol.
+2004;44:1488–1496.
+
+20.
+
+21.
+
+19. Michelakis E, Tymchak W, Lien D, et al. Oral sildenaﬁl is an
+effective and speciﬁc pulmonary vasodilator in patients with
+pulmonary arterial hypertension: comparison with inhaled nitric
+oxide. Circulation. 2002;105:2398–2403.
+Corbin JD, Francis SH. Cyclic GMP phosphodiesterase-5: target of
+sildenaﬁl. J Biol Chem. 1999;274:13729–13732.
+Tantini B, Manes A, Fiumana E, et al. Antiproliferative effect of
+sildenaﬁl on human pulmonary artery smooth muscle cells. Basic
+Res Cardiol. 2005;100:131–138.
+Barbera JA, Riverola A, Roca J, et al. Pulmonary vascular
+abnormalities and ventilation-perfusion relationships in mild
+chronic obstructive pulmonary disease. Am J Respir Crit Care
+Med. 1994;149:423–429.
+
+22.
+
+INDEX TO ADVERTISERS
+
+Efﬁent...................................................................474–477
+
+Takeda...................................................................A3–463
+
+TCT Conference...........................................................C4
+
+This index is provided as a service. Every
+effort to achieve accuracy is made. Publisher
+is not responsible for errors or omissions.
+
+518 Clin. Cardiol. 34, 8, 513–518 (2011)
+
+W.-J. Zeng et al: Sildenaﬁl in PAH associated with CHD
+Published online in Wiley Online Library (wileyonlinelibrary.com)
+DOI:10.1002/clc.20917  2011 Wiley Periodicals, Inc.
+
+

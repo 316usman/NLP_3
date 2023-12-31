@@ -1,0 +1,705 @@
+SARCOIDOSIS VASCULITIS AND DIFFUSE LUNG DISEASES 2017; 34; 336-342 
+
+                 © Mattioli 1885
+
+Original article: Clinical research
+
+Environmental asbestos disease: pleural plaque volume 
+measurement with Chest Tomography is there a correlation 
+between pulmonary function?
+
+Ibrahim Güven Çoşğun1, Fatma Evyapan2, Nevzat Karabulut3
+1 Afyonkarahisar State Hospital, Deparment of Chest Desease, Afyonkarahisar, Turkey; 2 Pamukkale University, Department of Chest De-
+sease, Denizli, Turkey; 3 Pamukkale University, Department of Radiology, Denizli, Turkey
+
+Abstract.  Objectives:  Chest  X-ray  is  correlated  with  pulmonary  function  of  asbestos  related  disease.  These 
+correlations limited by low specific and sensitive. Computed tomography (CT) more sensitive. There was no 
+adopted for the measurement of CT. Our aim in this study was to determine correlation between pleural plaque 
+(PP) volume and lung function for use improving classification with CT. Methods: The study included 75 pa-
+tients with environmental asbestos exposure. PP areas measured in patients were divided by the patient lung 
+area to determine PP ratio with CT. Diffusing capacity and six minute walking distance (6MWD) measured 
+and evaluated quality of life. Results: PP identified in 66 (88%) of the patients with CT. PP most frequently 
+noted in the front right quadrant and had an average plaque volume of 7729,17 mm3. Plaque ratio taken as the 
+percentage of the ratio to the lung volume, mean plaque percentage was 0,37±0,45% (0,003-2,3). In 12(18,1%) 
+of the patients, asbestosis not seen with chest X-ray was detected with CT. Conclusions: PP volume and ratios 
+were not statistically significantly correlated with respiratory functions, exercise capacity, cumulative amount of 
+exposure. Patient of asbestos disease total lung capacity was lower, 6MWD distance was shorter and quality of 
+life was poorer. (Sarcoidosis Vasc Diffuse Lung Dis 2017; 34: 336-342)
+
+Key words: environmental, asbestos, quality of life, pleural plaque
+
+Introduction
+
+Asbestos related disease is worldwide problem. 
+Pleural  plague  (PP),  asbestosis,  malign  mesothelio-
+ma,  pleural  effusion,  diffuse  pleural  thickening  and 
+bronchogenic  carcinoma  of  conditions  of  asbestos 
+related diseases. The most common manifestation of 
+
+Received: 29 September 2016
+Accepted after revision: 24 April 2017
+Correspondence: Ibrahim Güven Çoşğun   
+Afyonkarahisar State Hospital, 
+Department of Chest Disease, 
+Afyonkarahisar, Turkey  
+Tel.+90 0272 213 97 38
+Fax +90 0272 214 75 75
+E-mail: dr_guven@hotmail.com
+
+asbestos related disease PP. Detection of early pleu-
+ral asbestos and parenchymal changes computed to-
+mography (CT) are more sensitive than chest X-ray. 
+Chest X-ray correlated respiratory function, cumula-
+tive amount of exposure These correlations alow sen-
+sitive  and  specificity  detection  of  early  pleural  and 
+parenchymal changes. There was no adopted for the 
+measurement of CT is an International Labour Or-
+ganization (ILO) classification. Standard CT proto-
+col is related to high radiation dose. These protocols 
+increased concern about potential malignant disease. 
+A few studies (lung cancer screening programs) have 
+been reported usefulness of low dose CT for medias-
+tinal sctructures, abnormalities (1-6). Multi detector 
+spiral  CT  created  opportunities  screening  in  terms 
+high spatial resolution and low dose radiation.
+
+ 
+ 
+ 
+Our aim in this study was to determine correla-
+tion between pleural plaque volume and lung func-
+tion for use improving classification with CT.
+
+Methods
+
+Study population
+
+The  soil  around  the  Denizli  region  contains 
+tremolite asbestos (7). The study included 75 patients 
+who had radiological findings consistent with envi-
+ronmental asbestos exposure as defined by Chest X-
+ray. Patients who had none of the exclusion criteria 
+listed  below  were  admitted  to  the  study  after  they 
+have read and signed the informed consent form. 
+
+Exclusion criteria
+
+Clear  contraindications  for  6MWD  were  his-
+tory of instable angina or heart attack during the last 
+one month and clear contraindications for diffusion 
+test  were  chest  or  abdominal  pain  for  any  reason, 
+increased oral or facial pain or deformity associated 
+with mouthpiece, stress incontinency, dementia and 
+confusion.
+
+CT Examinations and interpretation of CT images
+
+CT scans performed using a 16-lead instrument 
+(Briliance  CT  16  v2.00  Philips  Medical  Systems). 
+Patients were in supine position and holding breath, 
+sections  from  the  lung  apex  to  costophrenic  sinuses 
+were scanned. Intravenous (iv) contrast agent was not 
+administered  to  the  patients  for  this  investigation. 
+The  following  low-dose  investigational  parameters 
+applied:  kV  120,  mAs  30,  collimation  16x1,5  mm, 
+section thickness of 1 mm, reconstruction range 0,5 
+mm. Once the scan was complete, all the images were 
+reconstructed using soft a tissue and a bone filter. Im-
+ages were then loaded to the workstation (extended 
+Brilliance  Workspace  v3.5,0  Philips  Medical  Sys-
+tems). Each of the obtained images evaluated by a ra-
+diologist, experienced in chest CT, from the radiology 
+department. PP divided into 4 quadrants (front right, 
+rear  right,  front  left,  rear  left)  in  the  axial  plane  for 
+evaluation. Quadrants divided at the esophageal line 
+in  the  axial  plane.  The  longest  diameters  of  the  PP 
+in these 4 quadrants were taken individually and the 
+
+337
+
+values recorded. (Figure 1) Longest diameters of both 
+hemidiaphragmatic PP and pericardial plaques meas-
+ured at 3 axis and the values were recorded. Lung vol-
+umes taken as the longest diameter in the axis meas-
+ured and recorded (Figure 2). Craniocaudal distance 
+was  measured  from  the  tracheal  line  in  the  coronal 
+plane, and transverse and anterior-posterior distances 
+were measured at the right mid lobe bronchi branch-
+ing line in the axial plane. PP volume measured was 
+divided by lung volume to determine PP ratio. 
+
+Fig. 1. Diaphragmatic plaques on the right and pericardial calci-
+fied pleural plaques on the left with lung radiography
+
+Fig.  2.  Measurement  of  the  longest  diameter  of  the  asbestos 
+plaque at the coronal plane
+
+Environmental asbestos disease: evaluation338
+
+Fig. 3. Measurement of craniocaudal length at the coronal plane
+
+Six minute walking distance
+
+Six minute walking test according to the recom-
+mendations  of  American  Thoracic  Society’s  guide-
+lines performed to evaluate exercise capacity (8).
+
+Diffusion capacity
+
+Results
+
+Radiologic findings 
+
+Pleural  plaques  due  to  environmental  asbestos 
+exposure  were  found  in  66  of  the  75  patients  with 
+chest CT. In most of the 9 patients without plaques in 
+CT, calcified lesions accidentally assessed as plaques. 
+Six of these patients had findings which could repre-
+sent  a  pleural  plaque-like  calcified  appearance  with 
+Chest  X-ray.  66  patients  plaques  were  observed,  64 
+(96,6%)  costal  plaques,  44  (66,6%)  diaphragmatic 
+plaques, and 9 (13,6%) pericardial plaques. PP most 
+frequently was front right quadrant and had an average 
+plaque volume of 7729,17 mm3. There were no sig-
+nificant correlations between plaque volume and time 
+passed since the first exposure or cumulative amount 
+of exposure. Plaque ratio taken as the percentage of 
+the ratio to the lung volume, mean plaque percent-
+age was 0,37±0,45% (0,003-2,3). The comparison of 
+plaque ratio percentages showed no significant differ-
+ence between females an males (p>0,05). Asbestosis 
+was identified in 12 (18,1%) of the patients
+
+Diffusion  capacity  measurements  were  per-
+
+formed using the single-breath method.
+
+Respiratory function results
+
+Quality of life
+
+Short  Forms  (SF  36)  developed  by Ware  et  al 
+used (9). SF-36 is used in the analyses of individuals 
+with chronic disease and of the public health. Sub-
+scales grade health from 0 to 100, with 0 indicating 
+poor  health  status  and  100  indicating  good  health 
+status. 
+
+Statistical evaluation 
+
+Statistical  analyzing  was  performed  using  by 
+Windows-based  SPSS  statistical  software.  Chi 
+square analyses were used to compare nominal vari-
+ables: In the analyses of quantitative data, parametric 
+analyses  (t  tests,  ANOVA)  were  used  for  the  vari-
+ables that were fit for normal distribution and non-
+parametric  analyses  (Mann  Whitney  U,  Kruskal 
+Wallis) were used for the variables that were not fit 
+for normal distribution. P 05 was considered indicate 
+significance.
+
+44 patients were able to complete the diffusion 
+capacity  test.  Their  mean  DLCO  (mmol/kPa/min) 
+was 5,67±1,67, %DLCO was 89,97±20,79, DLCO/
+VA (mmol/kPa/min/l) was 1,38±0,39, and %DLCO/
+VA was 90±20,78. A statistically significant correla-
+tion  was  not  observed  between  plaque  volume  and 
+DLCO%  (p>0,05).  Plaque  ratio  percentages  and 
+DLCO  (mmol/kPa/min),  %DLCO,  DLCO/VA 
+(mmol/kPa/min/1),  %DLCO/VA,  FRC(l),  %FRC, 
+TLC(l) and %TLC were not had statistically signifi-
+cantly  correlated  (p>0,05).  Patients  with  asbestosis 
+statistically significantly lower TLC (p<0,05). The re-
+sult of the diffusion test are shown in table 1. 6MWD 
+could not be performed for 13 of the 66 patients with 
+asbestos  plaque  due  to  an  orthopedic  condition.  53 
+patients  had  mean  walking  distance  369,85±102,43 
+(140-720)  meters.  A  statistically  significant  decline 
+was  observed  in  percentage  saturation  following 
+6MWD  compared  to  baseline  saturation  (Table  2) 
+(p<0,05).  After  6MW  test,  a  statistically  significant 
+increase  in  heart  rate  (pulse/min),  in  dyspnea  scale 
+compared to baseline value (p<0,01). Plaque volume, 
+plaque ratio and walking distance were not statistical-
+
+I. Güven Çoşğun, F. Evyapan, N. KarabulutTable 1. Diffusion test results of patients with asbestosis
+
+Without asbestosis (n:24) 
+
+With asbestosis (n:6) 
+
+DLco (mmol/kPa/min) 
+%DLco  
+DLco/VA (mmol/kPa/min/l) 
+%DLco/VA 
+FRC (l) 
+FRC (%) 
+RV (l) 
+RV (%) 
+RV/TLC (%) 
+TLC (l) 
+TLC (%) 
+
+5,85±1,82 
+89,17±22,44 
+1,37±0,42 
+89,21±22,43 
+3,06±0,72 
+99,67±17,72 
+2,19±0,59 
+97,33±22,71 
+49,21±11,08 
+4,48±0,81 
+86,29±15,26 
+
+NS: Not significant, *Mann-Whitney U test
+
+Table 2. 6MWT comparison of patients with asbestosis
+
+5,02±0,88 
+93,17±13,21 
+1,40±0,26 
+93,17±13,21 
+2,55±0,47 
+92,17±13,84 
+1,99±0,27 
+93,67±14,50 
+52,83±5,56 
+3,80±0,69 
+96,67±20,92 
+
+339
+
+p
+
+NS
+NS
+NS
+NS
+NS
+NS
+NS
+NS
+NS
+p<0,05*
+NS
+
+Without asbestosis (n:46) 
+
+With asbestosis (n:7) 
+
+Walking distance 
+Amount of increase in dyspnea scale after 6MWT  
+Amount of increase in heart rate /min after 6MWT  
+Amount of decrease in saturation after 6MWT  
+
+380,96±102,68 
+2,65±0,99 
+18,95±14,96 
+0,82±2,26 
+
+96,86±68,50 
+3,57±1,27 
+27,42±14,54 
+1,71±5,52 
+
+NS: Not significant, *Mann-Whitney test
+
+p
+
+p<0,05*
+NS
+NS
+NS
+
+Table 3. Comparison of mean quality of life scores of patients with and without asbestosis 
+
+Without asbestosis (n:54) 
+
+With asbestosis (n:12) 
+
+Physical functioning score 
+Physical role difficulty  
+Pain 
+Overall health perception  
+Vitality 
+Social functioning  
+Emotional role difficulty 
+Mental health 
+
+59,26±30,36 
+55,09±46,42 
+59,20±31,98 
+50,31±1969 
+48,89±24,60 
+72,25±24,59 
+70,36±41,39 
+61,26±19,07 
+
+NS: Not significant, *Mann-Whitney test 
+
+33,33±23,86 
+8,33±22,19 
+31,17±22,70 
+31,58±21,97 
+28,33±14,82 
+69,66±3896 
+16,67±38,92 
+47,02±0,61 
+
+p
+
+p<0,01*
+p<0,01*
+p<0,01*
+p<0,05*
+p<0,05*
+NS
+p<0,01*
+p<0,05*
+
+ly significantly correlated. Mean 6MWD of patients 
+with  asbestosis  was  statistically  significantly  shorter 
+compared to those without asbestosis.
+
+Quality of life
+
+Discussion
+
+Pleural plaque volume measurement with chest
+tomography is there a correlation between pulmonary 
+function?
+
+Subscales  of  quality  of  life  compared  by  sex, 
+males  had  statistically  significantly  higher  scores 
+than females (Table 3). PP volume, plaque ratio and 
+quality  of  life  alt  subscale  scores  were  not  statisti-
+cally significantly correlated. Patients with asbestosis 
+demonstrated  statistically  significant  differences  in 
+all subscales except the social functioning subscale.
+
+Chest  X-ray  is  used  in  pneumoconiosis  clas-
+sification of ILO (10). PP due to asbestos exposure 
+irregular  and  occur  on  the  diaphragm  or  through 
+the edge of the lung side. Chest X-ray fail short es-
+pecially  in  demonstrating  the  paravertebrally  and 
+posterior parts of the costal pleura and in revealing 
+initial interstitial fibrosis. CT is superior in demon-
+
+Environmental asbestos disease: evaluation 
+ 
+ 
+340
+
+starting diseases associated with asbestosis but there 
+is no acknowledged classification with CT. There are 
+a number of studies proposing classifications that can 
+be used with CT in individuals with asbestos expo-
+sure.  Meirelles  et  al.  recommeded  a  semiquantita-
+tive PP scoring system (11). HRCT was used in this 
+scoring  system.  PP  was  examined  by  dividing  into 
+4 quadrants in the axial section. PP was grouped by 
+size  (A1:  less  than  50%  of  the  quadrant  and  thick-
+ness less than 5 mm, A2: less than 50% of the quad-
+rant and thickness more than 5 mm, B1: more than 
+50% of the quadrant and thickness less than 5 mm, 
+B2:  more  than  50%  of  the  quadrant  and  thickness 
+more  than  5  mm)  and  was  scored,  and  sum  of  the 
+pleural scores from approximately 20 sections taken. 
+Diaphragmatic plaques scored were by dividing the 
+number  of  tomographic  sections  where  the  plaque 
+visible by the number of tomographic sections where 
+the  diaphragm  visible.  Because  this  scoring  system 
+uses HRCT, it is a source of high-dose radiation and 
+given  the  skip-based  imaging,  estimation  of  plaque 
+dimensions  is  semiquantitative.  The  relationship  of 
+this  staging  with  patients’  respiratory  function  and 
+exercise  parameters,  however,  was  not  investigated. 
+Aberle et al. proposed a classification by conventional 
+CT and 5 additional HRCT sections from the basal 
+lung in patients with asbestos exposure but the au-
+thors not perform an interobserver and intraobserver 
+evaluation for the classification (12). A classification 
+reported by Schwartz et al. determined a decrease in 
+restrictive lung functions (TLC) with pleural fibrosis, 
+but this classification requires dedicated software and 
+workstation  and  is  expensive  and  time  consuming 
+(13).  Kraus  et  al.  published  a  pneumoconiosis  clas-
+sification with HRCT but the classification is com-
+plicated and requires a trained radiologist (14). Van 
+Cleemput et al. proposed a classification which cal-
+culates total lung plaque area by measuring the area 
+of  asbestos  plaque,  where  asbestos  plaque  measure-
+ments  may  be  subject  to  variation  due  to  sectional 
+nature of the CT (15). Jarad et al. proposed a scoring 
+with  CT  using  3  mm  sections  and  10  mm  interval 
+in  20  patients  with  20  asbestos  exposure.  This  sys-
+tem suggests a scoring system that not just addresses 
+to plaques but also enables evaluation of PP, fibrosis 
+and asbestosis findings together (16). A relationship 
+between  respiratory  functions  was  identified  in  the 
+classification proposed in this study. This is because 
+the  scoring  system  are  affected  to  a  higher  extent 
+
+from fibrosis and parenchymal changes than PP. Be-
+sides, the study group that had a higher occupational 
+asbestos exposure had a higher fiber load. Most of the 
+patients in our study group would be stage 1 or 2 with 
+this scoring and stages 3 and 4 would be very few. 
+
+Our  study  involves  quantitative  volume  meas-
+urement of PP with non-sectional CT and taking its 
+ratio  to  the  lung  volume.  Effect  of  PP  not  similar, 
+because of lung volume of patient different. The pre-
+vious  study  did  not  assess  lung  volumes.  Therefore, 
+our study differs from previous studies, there was no 
+correlation between the 6MWT, pulmonary function 
+and quality of life impact.
+
+Demographics 
+
+PP  is  known  to  be  associated  with  the  time 
+passed since the first exposure, rather than the con-
+tacted  dose.  In  a  population  based  study,  the  inci-
+dence of PP reported to rise from 0.2% in 1965 to 
+2.7% in 1985 in individuals aged above 40 years in 
+Uppsala, Sweden (17). In our study, mean age of pa-
+tients who were found to have plaques was 71 years. 
+Of the patients with plaques in our study, 8 (12,1%) 
+were  aged  50-60  years,  18  (27%)  were  aged  60-70 
+years,  32  (48  were  aged)  were  aged  70-80  years,  8 
+(12,1 were aged) were aged 80-90 years. The young-
+est and oldest patients for whom plaque was identi-
+fied were aged 53 and 89 years, respectively.
+
+Characteristics of plaques 
+
+Järvholm et al, reported in their review that the 
+sensitivity of pulmonary radiography was below 50%, 
+in comparison with CT, in detecting pleural plaques 
+(18). With Chest X-ray easy to detect large and thick 
+plaques  but  difficult  to  detect  costal  plaques  and 
+those which are close to the vertebra. In our study, 
+asbestos plaques were detected in 66 patients (88%) 
+with low-dose CT taken for 75 patients. The patients 
+with no plaques with CT findings in chest X-ray that 
+could  be  confused  with  pleural  plaque  such  as  cal-
+cified  sequelae  fibrotic,  calcified  granuloma.  In  our 
+study, the majority of the plaques wbilateral (90,9%), 
+followed by right (6%) and left (3,1%) sided plaques, 
+respectively.  The  most  frequently  involved  site  of 
+pleural plaques chest wall (96,6%), followed by dia-
+phragmatic plaques (66,6%) and pericardial plaques 
+(13,6%).
+
+I. Güven Çoşğun, F. Evyapan, N. KarabulutAsbestosis
+
+Chest x-ray results reported in 6 patients (10%) 
+in a study with 58 patients with asbestosis diagnosed 
+with lung biopsy, and another study identified no di-
+rect radiological evidence in 25 (18%) of 138 patients 
+with  asbestosis  with  histopathologically-established 
+lung  fibrosis  (21-22).  Gevenois  et  al.  reported  that 
+CT  could  detect  early  pleural  and  parenchymal 
+changes before clinical evidence occurs (23). A study 
+by Aberle et al reported high resolution CT findings 
+in about 20-30% of the patients with normal chest 
+X-ray (12). In our study, asbestosis was in the early 
+stage and therefore asbestosis was not detected with 
+Chest x-ray. 
+
+Respiratory functions
+
+PP surface areas and patient’s respiratory func-
+tions did not yield a relationship (15). Similar to the 
+result  of  our  study,  no  relationship  between  pleural 
+plaque volume and respiratory functions.
+
+Diffusion capacity
+
+Abejie et al. reported that patients with asbes-
+tosis  findings  lower  diffusing  capacity  lung  carbon 
+monoxide (DLCO) values compared to those with-
+out  asbestosis  findings  (24).  A  study  with  patients 
+with environmental asbestos exposure evaluated pa-
+tients’ radiological findings with high resolution CT 
+and found DLCO to be within normal ranges in the 
+group of patients interpreted to have early asbesto-
+sis, whereas there was a pronounced decrease in the 
+group  with  evident  asbestosis  and  fibrosis  (25).  In 
+our  study,  the  total  lung  capacity  (TLC)  was  lower 
+in patients with asbestosis. DLCO and DLCO/VA 
+(diffusing  capacity  lung  carbon  nonoxide/alveolar 
+volume)  was  not  different  between  pleural  plaque 
+patients  with  and  without  asbestosis.  In  our  study 
+asbestosis was early stage. 
+
+Exercise capacity
+
+There  are  no  studies  investigating  the  effect  of 
+asbestos exposure on exercise capacity. In this study, 
+patients’ mean walking distance was 420 meters (26). 
+Manali et al. found a mean walking distance of 326 
+meters in patients with idiopathic pulmonary fibro-
+sis  (27).  Lama  et  al  reported  that  desaturations  in 
+
+341
+
+6MWT  was  a  strong  indicator  of  mortality  in  pa-
+tients  with  interstitial  pulmonary  disease  (28).  In 
+our  study,  mean  walking  distance  was  measured  as 
+399 meters in males and 328 meters in females. In 
+our study, patients’ dyspnea scale, heart rate /minute 
+count  increased  and  saturation  decreased  after  the 
+test, with a statistically significant difference between 
+pre- and post-test values.
+
+Quality of life
+
+There are a few studies evaluating the effect of 
+asbestos exposure on quality of life. Chang et al. re-
+ported  that  the  short  form  36  quality  of  question-
+naire  was  sensitive  and  practical  in  interstitial  lung 
+diseases (29). In our study, physical functioning, pain, 
+physical role difficulty, general health perception, vi-
+tality, mental health subscales of quality of life were 
+lower in 12 patients with asbestosis compared to pa-
+tients without asbestosis. 
+
+Conclusion
+
+Pleural plaque volume and ratios were not statis-
+tically significantly correlated with respiratory func-
+tions, exercise capacity, cumulative amount of expo-
+sure. Patients with environmental asbestos exposure 
+low 6MW distance, as in other chronic conditions, 
+when calculated according to the formula proposed 
+for the healthy population. Our study also evaluated 
+patients quality of life with the SF-36 questionnaire 
+and found that their life quality was affected. In 12 
+of the patients, asbestosis not seen with Chest X-ray 
+was detected with CT. Patients with asbestosis TLC 
+(ml) lower, 6MW distance shorter and quality of life 
+was poorer than patient with asbestos.
+
+References 
+
+1.  Kaneko  M,  Eguchi  K,  Ohmatsu  H,  et  al.  Peripheral  lung  cancer: 
+screening  and  detection  with  low-dose  spiral  CT  versus  radiography. 
+Radiology 1996; 201: 798-802.
+
+2.  Henschke CI, McCauley DI, Yankelevitz DF, et al. Early Lung Can-
+cer Action Project: overall design and findings from baseline screening. 
+Lancet 1999; 354: 99-105.
+
+3.  Itoh  S,  Ikeda  M,  Arahata  S,  et  al.  Lung  cancer  screening:  minimum 
+tube current required for helical CT. Radiology 2000; 215: 175-83.
+4.  Jurik AG, Jessen KA, Hansen J. Image quality and dose in computed 
+
+tomography. Eur Radiol 1997; 7: 77-81.
+
+5.  Takahashi M, Maguire WM, Ashtari M, et al. Low-dose spiral com- 
+
+Environmental asbestos disease: evaluation342
+
+   puted tomography of the thorax: comparison with the standard-dose 
+
+technique. Invest Radiol 1998; 33: 68-73.
+
+  6.  Remy-Jardin  M,  Sobaszek  A,  Duhamel  A,  Mastora  I,  Zanetti  C, 
+Remy J. Asbestos-related pleuropulmonary diseases: evaluation with 
+low-dose four-detector row spiral CT. Radiology 2004; 233(1): 182-
+90.
+
+  7.  Evyapan F,Uğurlu E,Ekinci A,Eğri M, Özpınar Y. A New envorio-
+mental asbestos area in Turkey, Çal and it effect on the respiratory sys-
+tem (Thematic Poster Session). ERS Annual Congress Vienna, 2009.
+  8.  Mahler DA, Horowitz MB. Clinical evaluation of exertional dyspnea. 
+
+Clincs in Chest Med 1994;15: 259-69. 
+
+  9.  Ware JE Jr, Kosinski M, Bayliss MS, McHorney CA, Rogers WH, 
+Raczek  A.  Comparison  of  methods  for  the  scoring  and  statistical 
+analysis  of  SF-36  health  profile  and  summary  measures:  summary 
+of  results  from  the  Medical  Outcomes  Study.  Med  Care  1995;  33: 
+264-79.
+
+10.  ILO, Guidelines for the use of the ILO International Classification of 
+
+Radiographs of Pneumoconioses (Edition 2000).
+
+11.  Meirelles GS, Kavakama JI, Jasinowodolinski D, Nery LE, Terra-Fil-
+ho M, Rodrigues RT et al. Pleural plaques in asbestos-exposed work-
+ers: reproducibility of a new high-resolution CT visual semiquantita-
+tive measurement method. J Thorac Imaging 2006; 21(1): 8-13.
+12.  Aberle DR, Gamsu G, Ray CS. High-resolution CT of benign asbes-
+tos-related diseases: clinical and radiographic correlation. AJR Am J 
+Roentgenol 1988; 151: 883-91.
+
+13.  Schwartz DA, Galvin JR, Yagla SJ, Speakman SB, Merchant JA Hun-
+ninghake GW. Restrictive lung function and asbestos-induced pleural 
+fibrosis. A quantitative approach. J Clin Invest 1993; 91(6): 2685-92.
+14.  Kraus T, Raithel HJ, Hering KG. Evaluation and classification of high 
+resolution computed tomographic findings in patients with pneumo-
+coniosis. Int Arch Occup Environ Health 1996; 68: 249-254.
+
+15.  Cleemput  JV,  Raeve  H, Verschakelen  J,Rombuts  J,  Lacquet  L,  Ne-
+mery B. Surface of Localized Pleural Plaques Quantitated by Com-
+puted Tomography Scanning No Relation with Cumulative Asbestos 
+Exposure and No Effect on Lung Function. Am J Respir Crit Care 
+Med 2001; 163: 705-10.
+
+16.  Al Jarad N, Wilkinson P, Pearson MC, Rudd RM. A new high reso-
+
+lution computed tomography scoring system for pulmonary fibrosis, 
+pleural disease, and emphysema in patients with asbestos related dis-
+ease. BJM 1992; 49: 73-84.
+
+17.  Hillerdal G. Pleural plaques in the general population. Ann NY Acad 
+
+Sci 1991; 430-7.
+
+18.  Järvholm B, Arvidsson H, Bake B, Hillerdal G, Westrin CG. Pleural 
+
+plaques asbestos ill-health. Eur J Respir Dis 1986; 145: 1-59.
+
+21.  Epler  GR,  Mc  Loud TC,  Gaensler  EA,  et  al.  Normal  chest  roent-
+genograms in chronic diffuse infiltrative lung disease. N Engl J Med 
+1978; 298: 801-9.
+
+22.  Kipen HM, Lilis R, Suzuki Y, et al. Pulmonary fibrosis in asbestos in-
+sulation workers with lung cancer a radiological and histopathological 
+evaluation. Br J Int Med 1987; 44: 96-100. 
+
+23.  Gevenois  PA,  De  Vuyst  P,  Dediere  J,  Vande  Weyer  R,  Struyven  J. 
+Conventional and high resolution CT in asymptomatic asbestos-ex-
+posed workers. Acta Radiol 1994; 35: 226-9.
+
+24.  Abejie BA, Wang X, Kales SN, Christiani DC. Patterns of pulmonary 
+dysfunction in asbestos workers: a cross-sectional study. J Occup Med 
+Toxicol 2010; 5: 12.
+
+25.  Ulgey N, S. Erginel, N. Özdemir, M. Metintaş, İ. Uçgun, R. Özkan 
+ve  ark.  Nonoccupatıonal  asbestoziste  SFT  parametrelerinin  direkt 
+radyografi, konvansiyonel ve yüksek rezolüsyonlu tomografi bulguları 
+İle Karşılaştırılması. Solunum Dergisi 1995; 20: 499-506.
+
+26.  Eaton T,  Young  P,  Milne  D,  Wells  AU.  Six-minute  walk,  maximal 
+exercise tests: reproducibility in fibrotic interstitial pneumonia. Am J 
+Respir Crit Care Med 2005; 171(10): 1150-7.
+
+27.  Manali ED, Lyberopoulos P, Triantafillidou C, Kolilekas LF, Sotiro-
+poulou C, Milic-Emili J, et al. MRC chronic Dyspnea Scale: Rela-
+tionships  with  cardiopulmonary  exercise  testing  and  6-minute  walk 
+test  in  idiopathic  pulmonary  fibrosis  patients:  a  prospective  study. 
+BMC Pulm Med 2010; 28; 10: 32.
+
+28.  Lama VN, Flaherty KR, Toews GB, et al. Prognostic valueof desatu-
+ration during a 6-minute walk test in idiopathicinterstitial pneumo-
+nia. Am J Respir Crit Care Med 2003; 168: 1084-90.
+
+29.  Chang JA, Curtis JR, Patrick DL, Raghu G. Assessment of health-
+related quality of life in patients with interstitial lung disease. Chest 
+1999; 116(5): 1175-82.
+
+I. Güven Çoşğun, F. Evyapan, N. Karabulut
